@@ -163,6 +163,7 @@ ul {
 	flex-shrink: 0;
 	flex: 0 0 auto;
 	border: 0;
+	cursor: pointer;
 }
 
 .buttonContainer {
