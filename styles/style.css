@@ -23,7 +23,13 @@
 	--supportColorMain: rgb(255 192 0);
 	--supportColorDark1: rgb(191 144 0);
 	--supportColorDark2: rgb(127 96 0);
-
+	--heroesColorLight3: rgb(251 229 214);
+	--heroesColorLight2: rgb(248 203 173);
+	--heroesColorLight1: rgb(224 177 131);
+	--heroesColorMain: rgb(237 125 49);
+	--heroesColorDark1: rgb(197 90 17);
+	--heroesColorDark2: rgb(132 60 12);
+	
 	--maxContentWidth: 1200px;
 }
 
@@ -35,7 +41,7 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	display: flex;
-	flex-direction: column
+	flex-direction: column;
 }
 
 h1 {

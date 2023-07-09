@@ -5809,6 +5809,31 @@ let data = {
                 }
             }
         }
+    },
+    "heroes": {
+        "type": "legacy-heroes",
+        "entries": {
+            "quincy": {
+                "name": "Quincy",
+                "data": {
+                    "1": `
+                        <ul>
+                            <li>+8r (48r)</li>
+                        </ul>
+                    `
+                }
+            },
+            "cyberQuincy": {
+                "name": "Cyber Quincy",
+                "data": {
+                    "1": `
+                        <ul>
+                            <li>+8r (48r)</li>
+                        </ul>
+                    `
+                }
+            }
+        }
     }
 };
 
@@ -5820,52 +5845,68 @@ for (section in data) {
     
 };
 
-const primaryButton = document.querySelector(".primaryButton");
-const militaryButton = document.querySelector(".militaryButton");
-const magicButton = document.querySelector(".magicButton");
-const supportButton = document.querySelector(".supportButton");
-
-const primaryButtonDefaultStyle = "color:black; background-color:var(--primaryColorLight3);";
-const militaryButtonDefaultStyle = "color:black; background-color:var(--militaryColorLight3);";
-const magicButtonDefaultStyle = "color:black; background-color:var(--magicColorLight3);";
-const supportButtonDefaultStyle = "color:black; background-color:var(--supportColorLight3);";
-
-const primaryButtonSelectedStyle = "color:white; background-color:var(--primaryColorMain);";
-const militaryButtonSelectedStyle = "color:white; background-color:var(--militaryColorMain);";
-const magicButtonSelectedStyle = "color:white; background-color:var(--magicColorMain);";
-const supportButtonSelectedStyle = "color:white; background-color:var(--supportColorMain);";
-
-const primaryTowerBar = document.querySelector(".primaryTowerBar");
-const militaryTowerBar = document.querySelector(".militaryTowerBar");
-const magicTowerBar = document.querySelector(".magicTowerBar");
-const supportTowerBar = document.querySelector(".supportTowerBar");
+const buttons = {
+    "primary": {
+        "selector": document.querySelector(".primaryButton"),
+        "defaultStyle": "color:black; background-color:var(--primaryColorLight3);",
+        "selectedStyle": "color:white; background-color:var(--primaryColorMain);",
+        "towerBar": document.querySelector(".primaryTowerBar"),
+    },
+    "military": {
+        "selector": document.querySelector(".militaryButton"),
+        "defaultStyle": "color:black; background-color:var(--militaryColorLight3);",
+        "selectedStyle": "color:white; background-color:var(--militaryColorMain);",
+        "towerBar": document.querySelector(".militaryTowerBar"),
+    },
+    "magic": {
+        "selector": document.querySelector(".magicButton"),
+        "defaultStyle": "color:black; background-color:var(--magicColorLight3);",
+        "selectedStyle": "color:white; background-color:var(--magicColorMain);",
+        "towerBar": document.querySelector(".magicTowerBar"),
+    },
+    "support": {
+        "selector": document.querySelector(".supportButton"),
+        "defaultStyle": "color:black; background-color:var(--supportColorLight3);",
+        "selectedStyle": "color:white; background-color:var(--supportColorMain);",
+        "towerBar": document.querySelector(".supportTowerBar"),
+    },
+    "heroes": {
+        "selector": document.querySelector(".heroesButton"),
+        "defaultStyle": "color:black; background-color:var(--heroesColorLight3);",
+        "selectedStyle": "color:white; background-color:var(--heroesColorMain);",
+        "towerBar": document.querySelector(".heroesTowerBar"),
+    }
+}
 
 //Tower Buttons
-const dartMonkeyButton = document.querySelector(".dartMonkeyButton");
-const boomerangMonkeyButton = document.querySelector(".boomerangMonkeyButton");
-const bombShooterButton = document.querySelector(".bombShooterButton");
-const tackShooterButton = document.querySelector(".tackShooterButton");
-const iceMonkeyButton = document.querySelector(".iceMonkeyButton");
-const glueGunnerButton = document.querySelector(".glueGunnerButton");
+const dartMonkeyButton = document.querySelector(".dartMonkeyButton")
+const boomerangMonkeyButton = document.querySelector(".boomerangMonkeyButton")
+const bombShooterButton = document.querySelector(".bombShooterButton")
+const tackShooterButton = document.querySelector(".tackShooterButton")
+const iceMonkeyButton = document.querySelector(".iceMonkeyButton")
+const glueGunnerButton = document.querySelector(".glueGunnerButton")
 
-const sniperMonkeyButton = document.querySelector(".sniperMonkeyButton");
-const monkeySubButton = document.querySelector(".monkeySubButton");
-const monkeyBuccaneerButton = document.querySelector(".monkeyBuccaneerButton");
-const monkeyAceButton = document.querySelector(".monkeyAceButton");
-const heliPilotButton = document.querySelector(".heliPilotButton");
-const mortarMonkeyButton = document.querySelector(".mortarMonkeyButton");
-const dartlingGunnerButton = document.querySelector(".dartlingGunnerButton");
+const sniperMonkeyButton = document.querySelector(".sniperMonkeyButton")
+const monkeySubButton = document.querySelector(".monkeySubButton")
+const monkeyBuccaneerButton = document.querySelector(".monkeyBuccaneerButton")
+const monkeyAceButton = document.querySelector(".monkeyAceButton")
+const heliPilotButton = document.querySelector(".heliPilotButton")
+const mortarMonkeyButton = document.querySelector(".mortarMonkeyButton")
+const dartlingGunnerButton = document.querySelector(".dartlingGunnerButton")
 
-const wizardMonkeyButton = document.querySelector(".wizardMonkeyButton");
-const superMonkeyButton = document.querySelector(".superMonkeyButton");
-const ninjaMonkeyButton = document.querySelector(".ninjaMonkeyButton");
-const alchemistButton = document.querySelector(".alchemistButton");
-const druidButton = document.querySelector(".druidButton");
+const wizardMonkeyButton = document.querySelector(".wizardMonkeyButton")
+const superMonkeyButton = document.querySelector(".superMonkeyButton")
+const ninjaMonkeyButton = document.querySelector(".ninjaMonkeyButton")
+const alchemistButton = document.querySelector(".alchemistButton")
+const druidButton = document.querySelector(".druidButton")
 
-const monkeyVillageButton = document.querySelector(".monkeyVillageButton");
-const bananaFarmButton = document.querySelector(".bananaFarmButton");
-const spikeFactoryButton = document.querySelector(".spikeFactoryButton");
-const engineerMonkeyButton = document.querySelector(".engineerMonkeyButton");
+const monkeyVillageButton = document.querySelector(".monkeyVillageButton")
+const bananaFarmButton = document.querySelector(".bananaFarmButton")
+const spikeFactoryButton = document.querySelector(".spikeFactoryButton")
+const engineerMonkeyButton = document.querySelector(".engineerMonkeyButton")
+
+const quincyButton = document.querySelector(".quincyButton")
+const cyberQuincyButton = document.querySelector(".cyberQuincyButton")
 
 let selectedButtons = {};
 
@@ -5874,6 +5915,7 @@ let selectedPrimaryCategory = "dartMonkey"
 let selectedMilitaryCategory = "sniperMonkey"
 let selectedMagicCategory = "wizardMonkey"
 let selectedSupportCategory = "monkeyVillage"
+let selectedHeroesCategory = "quincy"
 
 let initialized = false;
 
@@ -5916,9 +5958,9 @@ function generateHTMLFromData() {
 			IDName = entry + "Stats";
 			HTMLLocation.insertAdjacentHTML("beforeend", "<div id=" + IDName + "></div>");
 
+            let tierHTML;
 			switch (data[section]["type"]) {   
                 case "legacy":
-                let tierHTML;
                 for (const path in data[section].entries[entry].data)
                     if (path != "base") {
                         for (const tier in data[section].entries[entry].data[path]) {
@@ -5937,7 +5979,7 @@ function generateHTMLFromData() {
                             }
                         }
                     }
-                //console.log(tierHTML)
+                
                 document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                     <h1>${data[section]["entries"][entry]["name"]}</h1>
                     <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
@@ -5950,54 +5992,20 @@ function generateHTMLFromData() {
                         </div>
                     </div>
                     ${tierHTML}
-                `);
-            };
-		};
-	};
-};
+                `)
+            }
+		}
+	}
+}
 
 function changeCategoryButtons() {
-    //will increment eventually
-    
-    for (section in data) {
-        
-    };
-
-	primaryButton.setAttribute("style", primaryButtonDefaultStyle);
-	militaryButton.setAttribute("style", militaryButtonDefaultStyle);
-	magicButton.setAttribute("style", magicButtonDefaultStyle);
-	supportButton.setAttribute("style", supportButtonDefaultStyle);
-	
-	primaryTowerBar.setAttribute("style", "display:none");
-	militaryTowerBar.setAttribute("style", "display:none");
-	magicTowerBar.setAttribute("style", "display:none");
-	supportTowerBar.setAttribute("style", "display:none");
-
-	dartMonkeyButton.setAttribute("style", primaryButtonDefaultStyle);
-	boomerangMonkeyButton.setAttribute("style", primaryButtonDefaultStyle);
-	bombShooterButton.setAttribute("style", primaryButtonDefaultStyle);
-	tackShooterButton.setAttribute("style", primaryButtonDefaultStyle);
-	iceMonkeyButton.setAttribute("style", primaryButtonDefaultStyle);
-	glueGunnerButton.setAttribute("style", primaryButtonDefaultStyle);
-
-	sniperMonkeyButton.setAttribute("style", militaryButtonDefaultStyle);
-	monkeySubButton.setAttribute("style", militaryButtonDefaultStyle);
-	monkeyBuccaneerButton.setAttribute("style", militaryButtonDefaultStyle);
-	monkeyAceButton.setAttribute("style", militaryButtonDefaultStyle);
-	heliPilotButton.setAttribute("style", militaryButtonDefaultStyle);
-	mortarMonkeyButton.setAttribute("style", militaryButtonDefaultStyle);
-	dartlingGunnerButton.setAttribute("style", militaryButtonDefaultStyle);
-
-	wizardMonkeyButton.setAttribute("style", magicButtonDefaultStyle);
-	superMonkeyButton.setAttribute("style", magicButtonDefaultStyle);
-	ninjaMonkeyButton.setAttribute("style", magicButtonDefaultStyle);
-	alchemistButton.setAttribute("style", magicButtonDefaultStyle);
-	druidButton.setAttribute("style", magicButtonDefaultStyle);
-
-	monkeyVillageButton.setAttribute("style", supportButtonDefaultStyle);
-	bananaFarmButton.setAttribute("style", supportButtonDefaultStyle);
-	spikeFactoryButton.setAttribute("style", supportButtonDefaultStyle);
-	engineerMonkeyButton.setAttribute("style", supportButtonDefaultStyle);
+    for (category in data) {
+        buttons[category].selector.setAttribute("style", buttons[category].defaultStyle)
+        buttons[category].towerBar.setAttribute("style", "display:none");
+        for (tower in data[category].entries) {
+            document.querySelector(`.${tower}Button`).setAttribute("style", buttons[category].defaultStyle);
+        }
+    }
 
 	for (const section in data) {
 		for (const entry in data[section]["entries"]) {
@@ -6005,112 +6013,62 @@ function changeCategoryButtons() {
 		}
 	}
 
-	let element;
-
-	//element = document.querySelector(".pageHeader");
-	//element.setAttribute("style", "background-color:var(--" + selectedCategory + "ColorLight3)");
-
-	element = document.querySelector(".categoryBar");
+	let element = document.querySelector(".categoryBar");
 	element.setAttribute("style", "display:flex");
 	element = document.querySelector(".selectTower");
 	element.setAttribute("style", "display:flex");
 
-	switch (selectedCategory) {
-		//check selected category
-		case "primary":
-			//highlight selected category
-			primaryButton.setAttribute("style", primaryButtonSelectedStyle);
-			primaryTowerBar.setAttribute("style", "display:flex");
-			//check selected tower
-			switch (selectedPrimaryCategory) {
-				//if you selected this tower, highlight this button
-				case "dartMonkey": dartMonkeyButton.setAttribute("style", primaryButtonSelectedStyle); break;
-				case "boomerangMonkey": boomerangMonkeyButton.setAttribute("style", primaryButtonSelectedStyle); break;
-				case "bombShooter": bombShooterButton.setAttribute("style", primaryButtonSelectedStyle); break;
-				case "tackShooter": tackShooterButton.setAttribute("style", primaryButtonSelectedStyle); break;
-				case "iceMonkey": iceMonkeyButton.setAttribute("style", primaryButtonSelectedStyle); break;
-				case "glueGunner": glueGunnerButton.setAttribute("style", primaryButtonSelectedStyle); break;
-			}
-			element = document.getElementById(selectedPrimaryCategory + "Stats");
-			element.style.display = "block";
-			break;
+    buttons[selectedCategory].selector.setAttribute("style", buttons[selectedCategory].selectedStyle);
+    buttons[selectedCategory].towerBar.setAttribute("style", "display:flex");
+    
+    let selectedTower;
+    switch (selectedCategory) {
+        case "primary": selectedTower = selectedPrimaryCategory; break
+        case "military": selectedTower = selectedMilitaryCategory; break
+        case "magic": selectedTower = selectedMagicCategory; break
+        case "support": selectedTower = selectedSupportCategory; break
+        case "heroes": selectedTower = selectedHeroesCategory; break
+    }
+    document.querySelector(`.${selectedTower}Button`).setAttribute("style", buttons[selectedCategory].selectedStyle)
+    element = document.getElementById(selectedTower + "Stats");
+    element.style.display = "block";
 
-		case "military": 
-			militaryButton.setAttribute("style", militaryButtonSelectedStyle);
-			militaryTowerBar.setAttribute("style", "display:flex");
-			//check selected tower
-			switch (selectedMilitaryCategory) {
-				case "sniperMonkey": sniperMonkeyButton.setAttribute("style", militaryButtonSelectedStyle); break;
-				case "monkeySub": monkeySubButton.setAttribute("style", militaryButtonSelectedStyle); break;
-				case "monkeyBuccaneer": monkeyBuccaneerButton.setAttribute("style", militaryButtonSelectedStyle); break;
-				case "monkeyAce": monkeyAceButton.setAttribute("style", militaryButtonSelectedStyle); break;
-				case "heliPilot": heliPilotButton.setAttribute("style", militaryButtonSelectedStyle); break;
-				case "mortarMonkey": mortarMonkeyButton.setAttribute("style", militaryButtonSelectedStyle); break;
-				case "dartlingGunner": dartlingGunnerButton.setAttribute("style", militaryButtonSelectedStyle); break;
-			}
-			element = document.getElementById(selectedMilitaryCategory + "Stats");
-			element.style.display = "block";
-			break;
-
-		case "magic":
-			magicButton.setAttribute("style", magicButtonSelectedStyle);
-			magicTowerBar.setAttribute("style", "display:flex");
-			//check selected tower
-			switch (selectedMagicCategory) {
-				case "wizardMonkey": wizardMonkeyButton.setAttribute("style", magicButtonSelectedStyle); break;
-				case "superMonkey": superMonkeyButton.setAttribute("style", magicButtonSelectedStyle); break;
-				case "ninjaMonkey": ninjaMonkeyButton.setAttribute("style", magicButtonSelectedStyle); break;
-				case "alchemist": alchemistButton.setAttribute("style", magicButtonSelectedStyle); break;
-				case "druid": druidButton.setAttribute("style", magicButtonSelectedStyle); break;
-			}
-			element = document.getElementById(selectedMagicCategory + "Stats");
-			element.style.display = "block";
-			break;
-
-		case "support":
-			supportButton.setAttribute("style", supportButtonSelectedStyle);
-			supportTowerBar.setAttribute("style", "display:flex");
-			//check selected tower
-			switch (selectedSupportCategory) {
-				case "monkeyVillage": monkeyVillageButton.setAttribute("style", supportButtonSelectedStyle); break;
-				case "bananaFarm": bananaFarmButton.setAttribute("style", supportButtonSelectedStyle); break;
-				case "spikeFactory": spikeFactoryButton.setAttribute("style", supportButtonSelectedStyle); break;
-				case "engineerMonkey": engineerMonkeyButton.setAttribute("style", supportButtonSelectedStyle); break;
-			}
-			element = document.getElementById(selectedSupportCategory + "Stats");
-			element.style.display = "block";
-			break;
-	}
 	urlParams.set('section', selectedCategory);
 	urlParams.set('primary', selectedPrimaryCategory);
 	urlParams.set('military', selectedMilitaryCategory);
 	urlParams.set('magic', selectedMagicCategory);
 	urlParams.set('support', selectedSupportCategory);
+    urlParams.set('heroes', selectedHeroesCategory);
 	history.replaceState(null, null, "?" + urlParams.toString());
 };
 
 function createButtonListeners() {
-	//dont yell at me i will fix this eventually
 	//Tower Category Button Listeners
-	primaryButton.addEventListener("click", () => {
+
+	buttons.primary.selector.addEventListener("click", () => {
 		selectedCategory = "primary";
 		changeCategoryButtons();
 	})
 
-	militaryButton.addEventListener("click", () => {
+	buttons.military.selector.addEventListener("click", () => {
 		selectedCategory = "military"
 		changeCategoryButtons();
 	})
 
-	magicButton.addEventListener("click", () => {
+	buttons.magic.selector.addEventListener("click", () => {
 		selectedCategory = "magic"
 		changeCategoryButtons();
 	})
 
-	supportButton.addEventListener("click", () => {
+	buttons.support.selector.addEventListener("click", () => {
 		selectedCategory = "support"
 		changeCategoryButtons();
 	})
+
+    buttons.heroes.selector.addEventListener("click", () => {
+        selectedCategory = "heroes"
+        changeCategoryButtons();
+    })
 
 	//Primary Button Listeners
 	dartMonkeyButton.addEventListener("click", () => {
@@ -6225,75 +6183,17 @@ function createButtonListeners() {
 		selectedSupportCategory = "engineerMonkey";
 		changeCategoryButtons();
 	})
-	for (const category in selectedButtons) {
-		for (const section in selectedButtons[category]) {
-			switch (section) {
-				case "topPath": case "middlePath": case "bottomPath":
-					try {
-						document.getElementById(category + section + "tier1").addEventListener("click", () => {
-							selectedButtons[category][section] = 1;
-							switch (section) {
-								case "topPath": selectedButtons[category]["path"] = 1; break;
-								case "middlePath": selectedButtons[category]["path"] = 2; break;
-								case "bottomPath": selectedButtons[category]["path"] = 3; break;
-							}
-							changeUpgradeButtons();
-						})
-						document.getElementById(category + section + "tier2").addEventListener("click", () => {
-							selectedButtons[category][section] = 2;
-							switch (section) {
-								case "topPath": selectedButtons[category]["path"] = 1; break;
-								case "middlePath": selectedButtons[category]["path"] = 2; break;
-								case "bottomPath": selectedButtons[category]["path"] = 3; break;
-							}
-							changeUpgradeButtons();
-						})
-						document.getElementById(category + section + "tier3").addEventListener("click", () => {
-							selectedButtons[category][section] = 3;
-							switch (section) {
-								case "topPath": selectedButtons[category]["path"] = 1; break;
-								case "middlePath": selectedButtons[category]["path"] = 2; break;
-								case "bottomPath": selectedButtons[category]["path"] = 3; break;
-							}
-							changeUpgradeButtons();
-						})
-						document.getElementById(category + section + "tier4").addEventListener("click", () => {
-							selectedButtons[category][section] = 4;
-							switch (section) {
-								case "topPath": selectedButtons[category]["path"] = 1; break;
-								case "middlePath": selectedButtons[category]["path"] = 2; break;
-								case "bottomPath": selectedButtons[category]["path"] = 3; break;
-							}
-							changeUpgradeButtons();
-						})
-						document.getElementById(category + section + "tier5").addEventListener("click", () => {
-							selectedButtons[category][section] = 5;
-							switch (section) {
-								case "topPath": selectedButtons[category]["path"] = 1; break;
-								case "middlePath": selectedButtons[category]["path"] = 2; break;
-								case "bottomPath": selectedButtons[category]["path"] = 3; break;
-							}
-							changeUpgradeButtons();
-						})
-					} catch (error) {console.log(error)};
-			}
-		}
-	}
-};
 
-function createButtons() {
-	for (const section in data) {
-		for (const entry in data[section]["entries"]) {
-			selectedButtons[entry] = {}
-			if (data[section]["type"] == "standard") {
-				selectedButtons[entry]["path"] = 1;
-				selectedButtons[entry]["topPath"] = 1;
-				selectedButtons[entry]["middlePath"] = 1;
-				selectedButtons[entry]["bottomPath"] = 1;
-			}
-		}
-	}
-}
+    quincyButton.addEventListener("click", () => {
+        selectedHeroesCategory = "quincy";
+        changeCategoryButtons();
+    })
+
+    cyberQuincyButton.addEventListener("click", () => {
+        selectedHeroesCategory = "cyberQuincy";
+        changeCategoryButtons();
+    })
+};
 
 async function main() {
 	//Get Values
@@ -6302,6 +6202,7 @@ async function main() {
 	urlMilitary = urlParams.get('military')
 	urlMagic = urlParams.get('magic')
 	urlSupport = urlParams.get('support')
+    urlHeroes = urlParams.get('heroes')
 
 	if (urlSection != null) {
 		selectedCategory = urlSection;
@@ -6318,10 +6219,11 @@ async function main() {
 	if (urlSupport != null) {
 		selectedSupportCategory = urlSupport;
 	}
+    if (urlHeroes != null) {
+        selectedHeroesCategory = urlHeroes;
+    }
 
 	await getDataJSON();
-
-	createButtons();
 
 	generateHTMLFromData();
 

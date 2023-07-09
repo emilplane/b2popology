@@ -28,7 +28,7 @@ let events = [
     },
     {
         "name": "Battles 2 Update 2.0.2",
-        "startDate": "2023-06-30T08:51:33",
+        "startDate": "2023-06-26T13:55:30",
         "content": null,
         "links": [
             {
