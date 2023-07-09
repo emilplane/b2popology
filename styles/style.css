@@ -117,13 +117,13 @@ a {
 	text-decoration: none;
 }
 
-a:visited {
-	color: inherit;
-}
-
 ul {
 	margin: 0;
 	padding-left: 25px;
+}
+
+.title {
+	color: black;
 }
 
 .push {
@@ -303,6 +303,13 @@ ul {
 .supportSection {
 	border-radius: 10px;
 	background-color:var(--supportColorLight3);
+	padding: 10px;
+	gap: 10px;
+}
+
+.heroesSection {
+	border-radius: 10px;
+	background-color: var(--heroesColorLight3);
 	padding: 10px;
 	gap: 10px;
 }

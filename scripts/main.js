@@ -257,7 +257,7 @@ let data = {
                                 <ul>
                                     <li>bolt attack buffed
                                         <ul>
-                                            <li>+5d &#8594; +3d (11d &#8594; 9d), +7p (13p), +20r (76r), 0.16s &#8594; 0.13s, normal type, increased projectile speed</li>
+                                            <li>+3d (9d), +7p (13p), +20r (76r), 0.13s, normal type, increased projectile speed</li>
                                             <li>crit now occurs every 5 shots</li>
                                         </ul>
                                     </li>
@@ -471,7 +471,7 @@ let data = {
                                 <ul>
                                     <li>boomerang replaced by kylie
                                         <ul>
-                                            <li>2d, 18p &#8594; 24p, 49.45r, 1.2s, normal type</li>
+                                            <li>2d, 24p, 49.45r, 1.2s, normal type</li>
                                             <li>can rehit bloons after 0.3s</li>
                                             <li>travels in a straight line then returns</li>
                                         </ul>
@@ -724,7 +724,7 @@ let data = {
                             "name": "050 - MOAB Eliminator - $25,000",
                             "content": `
                                 <ul>
-                                    <li>bomb buffed: +100md &#8594; +170md (131md &#8594; 201md), normal type</li>
+                                    <li>bomb buffed: +170md (201md), normal type</li>
                                     <li>assassinate replaced by eliminate (10s cooldown, battle ready)
                                         <ul>
                                             <li>4500d</li>
@@ -2270,7 +2270,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Double Shot - $550<",
+                            "name": "200 - Double Shot - $550",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -2292,7 +2292,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>310: grape 40%s (0.39s) &#8594; 33.33%s (0.325s)</li>
+                                            <li>310: grape 33.33%s (0.325s)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -2819,7 +2819,7 @@ let data = {
                                             <li>very weak homing (80 turn rate)</li>
                                             <li>on contact: explosion
                                                 <ul>
-                                                    <li>3d &#8594; 4d, 2cd (5cd &#8594; 6d), 30p, 20r blast, explosion type</li>
+                                                    <li>4d, +2cd (6cd), 30p, 20r blast, explosion type</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -2850,7 +2850,7 @@ let data = {
                                     </li>
                                     <li>bomb buffed
                                         <ul>
-                                            <li>+2d (5d) &#8594; +3d (6d), normal type</li>
+                                            <li>+3d (6d), normal type</li>
                                         </ul>
                                     </li>
                                     <li>gains 2 more copies of barrage, which target last and close</li>
@@ -2865,7 +2865,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li></li>
+                            <li>$900 (500 MM)</li>
                             <li>size: 23 units * 23 units</li>
                             <li>placeable on: land</li>
                             <li>22r</li>
@@ -2878,97 +2878,276 @@ let data = {
                     `,
                     "topPath": {
                         "1": {
-                            "name": "",
+                            "name": "100 - Quad Darts - $600",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains a second dart attack</li>
+                                    <li>note: this means that alchemist buffs are used up twice as fast</li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "200 - Pursuit - $400",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains pursuit targeting option
+                                        <ul>
+                                            <li>always flies towards a point slightly ahead of the first bloon</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "300 - Razor Rotors - $1,750",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains rotor attack
+                                        <ul>
+                                            <li>2d, 13p, 35r zone, 0.55s, normal type</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "400 - Apache Dartship - $19,600",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>75%s (0.3975s)</li>
+                                        </ul>
+                                    </li>
+                                    <li>rotor buffed
+                                        <ul>
+                                            <li>+2d (4d), +7p (20p)</li>
+                                        </ul>
+                                    </li>
+                                    <li>gains machinegun attack
+                                        <ul>
+                                            <li>1d, 9p, 42r, 0.05s, sharp type</li>
+                                        </ul>
+                                    </li>
+                                    <li>gains rocket attack
+                                        <ul>
+                                            <li>4j, 173r, 1.0s</li>
+                                            <li>moderate homing (? turn rate)</li>
+                                            <li>on contact: explosion
+                                                <ul>
+                                                    <li>2d, 3cd (5cd), 3md (5cd), 40p, 25r blast, explosion type</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>402: machinegun 80%s (0.04s), rocket 80%s (0.8s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "500 - Apache Prime - $45,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed: +5d (6), +20p (23), energy type</li>
+                                    <li>rotor buffed: +4d (8d), +20p (40p)</li>
+                                    <li>machinegun buffed: +4d (5d), +6p (15p), plasma type</li>
+                                    <li>rocket buffed: +12cd (17cd), +12md (17md)</li>
+                                </ul>
                             `
                         }
                     },
                     "middlePath": {
                         "1": {
-                            "name": "",
+                            "name": "010 - Bigger Jets - $300",
                             "content": `
-                                
+                                <ul>
+                                    <li>flies faster</li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "020 - IFR - $450",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains camo detection</li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "030 - Downdraft - $3,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains downdraft attack
+                                        <ul>
+                                            <li>1p, 32r zone, 0.15s</li>
+                                            <li>cannot affect blimps or lead</li>
+                                            <li>sends bloons 32-300 units back</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>032: downdraft 80%s (0.12s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "040 - Support Chinook - $7,500",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains redeploy ability (60s cooldown, battle ready)
+                                        <ul>
+                                            <li>move a tower, except for: aces, helis, farms, villages, aircraft carriers (4xx or 5xx buccaneers), and temples (4xx or 5xx supers)</li>
+                                        </ul>
+                                    </li>
+                                    <li>gains supplies ability (60s cooldown, 20s initial)
+                                        <ul>
+                                            <li>drops $4000 cash and 15 lives</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "050 - Special Poperations - $30,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>supplies ability buffed
+                                        <ul>
+                                            <li>$8000 and 15 lives</li>
+                                        </ul>
+                                    </li>
+                                    <li>gains special-poperations ability (25s cooldown, battle ready)
+                                        <ul>
+                                            <li>deploy a marine subtower
+                                                <ul>
+                                                    <li>30s lifetime</li>
+                                                    <li>bullet attack
+                                                        <ul>
+                                                            <li>6d, 20p, 50r, 0.05s, normal type</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>052: marine bullet 80%s (0.04s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     },
                     "bottomPath": {
                         "1": {
-                            "name": "",
+                            "name": "001 - Faster Darts - $250",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>increased projectile speed, increased projectile lifespan</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "002 - Faster Firing - $350",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>80%s (0.456s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "003 - MOAB Shove - $3,50",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains shove attack
+                                        <ul>
+                                            <li>1p</li>
+                                            <li>slows MOABs to - 33% normal speed, BFBs to 0%, DDTs and ZOMGs to 33%</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>013: shove pushes back more (MOABs - 44%, BFBs - 11%, ZOMGs and DDTs 22%)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "004 - Comanche Defense - $8,500",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>+1d (2)</li>
+                                        </ul>
+                                    </li>
+                                    <li>gains comanche-defense ability (triggered by bloon progress)
+                                        <ul>
+                                            <li>summons up to 1 mini-comanche when a bloon crosses 25% of the track, 2 mini-comanches when a bloon crosses 50%, and 3 at 75%</li>
+                                            <li>mini-comanche subtower
+                                                <ul>
+                                                    <li>15s lifetime</li>
+                                                    <li>dart attack
+                                                        <ul>
+                                                            <li>1d, 3j, 34p, 42r, 0.15s, sharp type</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>rocket attack
+                                                        <ul>
+                                                            <li>&#8734;r, 3.0s</li>
+                                                            <li>moderate homing (250 turn rate)</li>
+                                                            <li>on contact: explosion
+                                                                <ul>
+                                                                    <li>1d, 2cd (3cd), 2md (3md), 100p, 18r blast, normal type</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>mini-comanche flight pattern locked on Pursuit</li>
+                                                </ul>
+                                            </li>
+                                            <li>only summons enough mini-comanches to reach the target number, existing ones will have their lifetime refreshed</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>104: mini-comanche dart +2j (5j)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "005 - Comanche Commander - $35,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>+1d (3d)</li>
+                                        </ul>
+                                    </li>       
+                                    <li>mini-comanche buffed: 
+                                        <ul>
+                                            <li>&#8734; lifetime, all 3 mini-comanche subtowers are summoned, +1d</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     }
@@ -2978,101 +3157,335 @@ let data = {
                 "name": "Mortar Monkey",
                 "data": {
                     "base": `
-                        <p>1</p>
+                        <ul>
+                            <li>$700 (500 MM)</li>
+                            <li>size: 8 radius</li>
+                            <li>placeable on: land</li>
+                            <li>30r</li>
+                            <li>shell attack
+                                <ul>
+                                    <li>2.0s passive</li>
+                                    <li>targets randomly within 18 units of selected point</li>
+                                    <li>on expire (0.5s): explosion
+                                        <ul>
+                                            <li>1d, 40p, 20r blast, explosion type</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     `,
                     "topPath": {
                         "1": {
-                            "name": "",
+                            "name": "100 - Bigger Blast - $350",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+5p (45p), +8r (28r)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "200 - Bloon Buster - $500",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+1d (2d)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "300 - Shell Shock - $950",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+10r (38r)</li>
+                                        </ul>
+                                    </li>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>on expire: stun-explosion
+                                                <ul>
+                                                    <li>45p, 19r blast</li>
+                                                    <li>cannot affect black, zebra, or blimps</li>
+                                                    <li>applies stun status: 0.5s duration</li>
+                                                </ul>
+                                            </li>
+                                            <li>on expire: shockwave
+                                                <ul>
+                                                    <li>1d, 45p, 57r blast, explosion type</li>
+                                                    <li>additionally ignores anything within half of the blast radius</li>
+                                                    <li>note: blimps are large enough that they won't fully fit in this inner radius and so get hit</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>302: burn 2d/0.625s, 1.875s duration</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "400 - The Big One - $7,500",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+5d (7d), +40p (85p), +20r (58r), normal type</li>
+                                        </ul>
+                                    </li>
+                                    <li>stun-explosion buffed
+                                        <ul>
+                                            <li>+40p (85p), +10r (29r)</li>
+                                        </ul>
+                                    </li>
+                                    <li>shockwave buffed
+                                        <ul>
+                                            <li>+40p (85p), +30r (87r), normal type</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>402: burn 5d/0.625s</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "500 - The Biggest One - $28,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+18d (25d), +25cd (50cd), 35md (60md), +115p (200p), +16r (74r), normal type</li>
+                                        </ul>
+                                    </li>
+                                    <li>stun-explosion buffed
+                                        <ul>
+                                            <li>+115p (200p), +8r (37r), additionally stuns blimps for 0.35s</li>
+                                        </ul>
+                                    </li>
+                                    <li>shockwave buffed
+                                        <ul>
+                                            <li>+115p (200p), +20cd (21cd), +24r (111r), normal type</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>502: burn 45d/0.625s</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     },
                     "middlePath": {
                         "1": {
-                            "name": "",
+                            "name": "010 - Faster Reload - $300",
                             "content": `
-                                
+                                <ul>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>75%s (1.5s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "020 - Rapid Reload - $500",
                             "content": `
-                                
+                                <ul>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>72%s (1.08s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "030 - Heavy Shells - $900",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>normal type, +3cd (4cd), +1md (2md), +1fd, +1ld, +2sd</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "040 - Artillery Battery - $7.300",
                             "content": `
-                                
+                                <ul>
+                                    <li>25%s (0.27s), +4 BAD damage (6 BAD damage)</li>
+                                    <li>gains bombardment ability (60s cooldown, 8s duration, battle ready)
+                                        <ul>
+                                            <li>25%s (0.0675)</li>
+                                            <li>explosion +15%r (23)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "050 - Pop and Awe - $27,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+9cd (13cd), +6md (7md), +3fd (4fd), +6 BAD damage (17 BAD damage), +3ld (4ld), +8 sd (10sd)</li>
+                                        </ul>
+                                    </li>
+                                    <li>gains pop-and-awe ability (45s cooldown, 10s duration, battle ready)
+                                        <ul>
+                                            <li>20d, &#8734;p, &#8734;r, 1.0s, normal type</li>
+                                            <li>applies stun status: 1s duration</li>
+                                            <li>gains artillery-buff
+                                                <ul>
+                                                    <li>all x4x mortars get +6 BAD damage</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     },
                     "bottomPath": {
                         "1": {
-                            "name": "",
+                            "name": "001 - Increased Accuracy - $200",
                             "content": `
-                                
+                                <ul>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>8 units random target variance</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "002 - Burny Stuff - $500",
                             "content": `
-                                
+                                <ul>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>on contact: applies burn status
+                                                <ul>
+                                                    <li>1d/1.25s, fire type, 3.75s duration</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "003 - Signal Flare - $700",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains camo detection</li>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>on expire: flare
+                                                <ul>
+                                                    <li>80p, 50r blast</li>
+                                                    <li>on hit: decamo bloons including DDTs</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>103: flare +20r (70r)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "004 - Shattering Shells - $8.500",
                             "content": `
-                                
+                                <ul>
+                                    <li>burn buffed
+                                        <ul>
+                                            <li>+4d (5d)</li>
+                                        </ul>
+                                    </li>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>on expire: strip
+                                                <ul>
+                                                    <li>40p, 20r blast</li>
+                                                    <li>cannot affect ZOMG or BAD</li>
+                                                    <li>on hit: degrow, defortify, removes lead from DDTs
+                                                        <ul>
+                                                            <li>note: cannot defortify DDTs</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>104: strip +5p (45p), +8r (28r)</li>
+                                            <li>204: burn +3d (8d)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "005 - Blooncineration - $40,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>shell buffed
+                                        <ul>
+                                            <li>on expire: places wall-of-fire
+                                                <ul>
+                                                    <li>4d, 40p, 15r zone, 0.1s, fire type, camo</li>
+                                                    <li>4.5s lifetime</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>normal type</li>
+                                        </ul>
+                                    </li>
+                                    <li>burn buffed
+                                        <ul>
+                                            <li>5d/0.625s, 100md/0.625s</li>
+                                        </ul>
+                                    </li>
+                                    <li>strip buffed
+                                        <ul>
+                                            <li>can affect DDTs and ZOMGs</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>105: wall-of-fire +5p (25), +6r (21)</li>
+                                            <li>205: burn +50d (150d), wall-of-fire +1d (5)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     }
@@ -3082,101 +3495,278 @@ let data = {
                 "name": "Dartling Gunner",
                 "data": {
                     "base": `
-                        <p>1</p>
+                        <ul>
+                            <li>$800 (500 MM</li>
+                            <li>size: 7 radius</li>
+                            <li>placeable on: land</li>
+                            <li>20r</li>
+                            <li>dart attack
+                                <ul>
+                                    <li>1d, 2p, 0.2s passive, sharp type</li>
+                                    <li>targets randomly within 23&deg of selected point</li>
+                                </ul>
+                            </li>
+                            <li>rotates towards cursor at 180&deg/s</li>
+                        </ul>
                     `,
                     "topPath": {
                         "1": {
-                            "name": "",
+                            "name": "100 - Focused Firing - $250",
                             "content": `
-                                
+                                <ul>
+                                    <li>random targeting spread reduced by 60% (9.2&deg)</li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "200 - Laser Shock - $750",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>applies shocked1 status
+                                                <ul>
+                                                    <li>1d/0.95s, 1s duration</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "300 - Laser Cannon - $3,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart replaced by laser
+                                        <ul>
+                                            <li>2d, 1 shocked2 damage (2 shocked2 damage), 5p, 0.2s passive, plasma type</li>
+                                            <li>applies shocked2 status
+                                                <ul>
+                                                    <li>1d/0.95s, 2s duration</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "400 - Plasma Accelerator - $11,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>laser replaced with beam
+                                        <ul>
+                                            <li>1d, +1 shocked3 damage (2 shocked3 damage), 50p, 0.2s passive, plasma type</li>
+                                            <li>one solid beam from the tower to the target (or an obstacle on the way)</li>
+                                            <li>applies shocked3 status
+                                                <ul>
+                                                    <li>1d/0.95s, 5s duration</li>
+                                                </ul>
+                                            </li>
+                                            <li>any pierce not used on bloons is used to create a focus at the target
+                                                <ul>
+                                                    <li>2d, 10md (12md), +1 shocked3 damage, plasma type</li>
+                                                    <li>applies shocked-3 status</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>402: +25p (75p)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "500 - Ray of Doom - $80,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>beam replaced by full-beam
+                                        <ul>
+                                            <li>25d, +15 shocked4 damage (45 shocked4 damage), 1000p, 0.2s passive, normal type</li>
+                                            <li>one solid beam to the edge of the screen</li>
+                                            <li>applies shocked4 status
+                                                <ul>
+                                                    <li>20d/0.95s, 5s duration</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     },
                     "middlePath": {
                         "1": {
-                            "name": "",
+                            "name": "010 - Advanced Targeting - $250",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains camo detection</li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "020 - Faster Barrel Spin - $500",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>66%s (0.132s)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "030 - Hydra Rocket Pods - $5,600",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart replaced by rocket
+                                        <ul>
+                                            <li>7p, 0.132s</li>
+                                            <li>uses 2 pierce per hit (4 total explosions)</li>
+                                            <li>on contact: explosion
+                                                <ul>
+                                                    <li>1d, 6p, 8r blast, normal type</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath:
+                                        <ul>
+                                            <li>032: rocket gets +3p (5 total explosions), explosion gets +3p (9p)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "040 - Rocket Storm - $5,100",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains rocket-storm ability (40s cooldown, 8s duration, battle ready)
+                                        <ul>
+                                            <li>1i, 10j, 0.5s passive</li>
+                                            <li>120&deg random spread</li>
+                                            <li>on contact: explosion
+                                                <ul>
+                                                    <li>4d, 6p, 8r blast, normal type</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath:
+                                        <ul>
+                                            <li>140: rocket-storm ability random spread decreased to 48&deg </li>
+                                            <li>042: rocket-storm ability explosion gets +2p (10p)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "050 - M.A.D - $68,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>rocket buffed
+                                        <ul>
+                                            <li>3d, 500md, 300%s (0.396)</li>
+                                        </ul>
+                                    </li>
+                                    <li>explosion buffed
+                                        <ul>
+                                            <li>+2d (3)</li>
+                                        </ul>
+                                    </li>
+                                    <li>rocket-storm explosion buffed
+                                        <ul>
+                                            <li>+5cd (9), +13md (17md), +10p (18p), +4r (12r)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     },
                     "bottomPath": {
                         "1": {
-                            "name": "",
+                            "name": "001 - Faster Swivel - $150",
                             "content": `
-                                
+                                <ul>
+                                    <li>rotates twice as fast (360&deg/s)</li>
+                                </ul>
                             `
                         },
                         "2": {
-                            "name": "",
+                            "name": "002 - Powerful Darts - $800",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart buffed
+                                        <ul>
+                                            <li>+3p (5p), shatter type, increased projectile speed</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "3": {
-                            "name": "",
+                            "name": "003 - Buckshot - $3,400",
                             "content": `
-                                
+                                <ul>
+                                    <li>dart replaced with buckshot
+                                        <ul>
+                                            <li>4d, 6j 23&deg spread, 7p, 130r, 1.5s passive, shatter type
+                                                <ul>
+                                                    <li>applies knockback status
+                                                        <ul>
+                                                            <li>0.2s duration</li>
+                                                            <li>300% slow for regular bloons, 150% for leads and ceramics</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>103: +32.5r (162.5r)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         },
                         "4": {
-                            "name": "",
+                            "name": "004 - Bloon Area Denial System - $14,500",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains 3 more buckshot attacks, which attack in sequence for effectively 0.375s attack cooldown</li>
+                                    <li>gains independent targeting
+                                        <ul>
+                                            <li>attacks are no longer passive</li>
+                                            <li>priorities (from top to bottom): first, last, close, strong</li>
+                                        </ul>
+                                    </li>
+                                    <li>note: each barrel has a different vertical position, so higher ones may see over obstacles that lower ones do not</li>
+                                </ul>
                             `
                         },
                         "5": {
-                            "name": "",
+                            "name": "005 - Bloon Exclusion Zone - $53,000",
                             "content": `
-                                
+                                <ul>
+                                    <li>gains 2 more buckshot attacks, for effectively 0.25s cooldown
+                                        <ul>
+                                            <li>independent targeting priorities: first, strong</li>
+                                        </ul>
+                                    </li>
+                                    <li>all attacks buffed
+                                        <ul>
+                                            <li>+4d (8d), +6j (12j), +2p (9p)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             `
                         }
                     }
@@ -3304,7 +3894,7 @@ let data = {
                                             <li>2.6s</li>
                                             <li>on damage: explosion
                                                 <ul>
-                                                    <li>3d &#8594; 2d, 15p, 20r blast, explosion type</li>
+                                                    <li>2d, 15p, 20r blast, explosion type</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -4198,7 +4788,7 @@ let data = {
                                 <ul>
                                     <li>potion buffed
                                         <ul>
-                                            <li>+1d (2d), +3md (5md), +15fmd (20fmd) &#8594; +7fmd (12fmd), can defortify bloons</li>
+                                            <li>+1d (2d), +3md (5md), +7fmd (12fmd), can defortify bloons</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4571,11 +5161,6 @@ let data = {
                                             <li>within 100r: +1d (3d), +4cd (15cd), +4md (15md), sharp type</li>
                                             <li>within 50r: +1d (4d), +4cd (20cd), +4md (20md), sharp type</li>
                                             <li>note: as a damage-over-time, the damage cannot be buffed</li>
-                                        </ul>
-                                    </li>
-                                    <li>jungle-bounty buffed
-                                        <ul>
-                                            <li>+25 &#8594; +0 lives, gain $750 &#8594; $1,000 instead</li>
                                         </ul>
                                     </li>
                                     <li>gains jungle-lives ability (40s cooldown, 15s initial)
@@ -4955,7 +5540,7 @@ let data = {
                                 <ul>
                                     <li>banana attack buffed
                                         <ul>
-                                            <li>+$12,000 income ($15,000) &#8594; +$11,000 income ($14,000)</li>
+                                            <li>+$11,000 income ($14,000)</li>
                                         </ul>
                                     </li>
                                     <li>gains productivity buff
@@ -5525,7 +6110,7 @@ let data = {
                                                         <ul>
                                                             <li>spiked-ball attack
                                                                 <ul>
-                                                                    <li>2d, 1cd (3cd), 22p &#8594; 16p, 50r, 1.1s, sharp type</li>
+                                                                    <li>2d, 1cd (3cd), 16p, 50r, 1.1s, sharp type</li>
                                                                 </ul>
                                                             </li>
                                                             <li>skipped if there are leads (unless black and white are also present), but never skipped if there are ceramics</li>
@@ -5596,10 +6181,10 @@ let data = {
                                         <ul>
                                             <li>plasma attack
                                                 <ul>
-                                                    <li>2d, 5p, 50r, 0.05s &#8594; 0.044s, plasma type</li>
+                                                    <li>2d, 5p, 50r, 0.044s, plasma type</li>
                                                     <li>on expire: selfdestruct attack
                                                         <ul>
-                                                            <li>150d &#8594; 200d, 100p, 45r blast, plasma type</li>
+                                                            <li>200d, 100p, 45r blast, plasma type</li>
                                                             <li>activates either when sold or 2s after expiring</li>
                                                         </ul>
                                                     </li>
@@ -5772,7 +6357,7 @@ let data = {
                                                     <li>pops any visible non-MOAB-class bloon up to its pierce limit</li>
                                                     <li>once full, can be collected manually (100r) or automatically (5s)
                                                         <ul>
-                                                            <li>when collected, gives $2.4 &#8594; $2 times the amount of natural RBE collected</li>
+                                                            <li>when collected, gives $2 times the amount of natural RBE collected</li>
                                                         </ul>
                                                     </li>
                                                     <li>attack rate and deploy time can't be buffed</li>
@@ -5837,13 +6422,16 @@ let data = {
     }
 };
 
-let urlParams = new URLSearchParams(window.location.search);
-
-//Category Buttons
-
-for (section in data) {
-    
+async function getDataJSON() {
+    /*const requestURL =
+    "https://raw.githubusercontent.com/emilplane/emilplane.github.io/main/json/data.json";
+    const request = new Request(requestURL);
+	
+    const response = await fetch(request);
+    data = await response.json();*/
 };
+
+let urlParams = new URLSearchParams(window.location.search);
 
 const buttons = {
     "primary": {
@@ -5928,15 +6516,6 @@ const towerAttributeNames = {
 	footprint: "Tower Footprint"
 }
 
-async function getDataJSON() {
-	/*const requestURL =
-	"https://raw.githubusercontent.com/emilplane/emilplane.github.io/main/json/data.json";
-	const request = new Request(requestURL);
-	
-	const response = await fetch(request);
-	data = await response.json();*/
-};
-
 let nkapiHoms;
 async function getNkapiHomsJSON() {
 	const requestURL = "https://data.ninjakiwi.com/battles2/homs?";
@@ -5961,38 +6540,72 @@ function generateHTMLFromData() {
             let tierHTML;
 			switch (data[section]["type"]) {   
                 case "legacy":
-                for (const path in data[section].entries[entry].data)
-                    if (path != "base") {
-                        for (const tier in data[section].entries[entry].data[path]) {
-                            HTMLString = `
-                                <h3>${data[section].entries[entry].data[path][tier].name}</h3>
-                                <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
-                                    <div style='flex-basis:200px;flex-grow:1'>
-                                        <div>${data[section].entries[entry].data[path][tier].content}</div>
+                    for (const path in data[section].entries[entry].data)
+                        if (path != "base") {
+                            for (const tier in data[section].entries[entry].data[path]) {
+                                HTMLString = `
+                                    <h3>${data[section].entries[entry].data[path][tier].name}</h3>
+                                    <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
+                                        <div style='flex-basis:200px;flex-grow:1'>
+                                            <div>${data[section].entries[entry].data[path][tier].content}</div>
+                                        </div>
                                     </div>
-                                </div>
-                            `
-                            if (tierHTML == undefined) {
-                                tierHTML = HTMLString
-                            } else {
-                                tierHTML = tierHTML + HTMLString
+                                `
+                                if (tierHTML == undefined) {
+                                    tierHTML = HTMLString
+                                } else {
+                                    tierHTML = tierHTML + HTMLString
+                                }
                             }
                         }
-                    }
-                
-                document.getElementById(IDName).insertAdjacentHTML("beforeend", `
-                    <h1>${data[section]["entries"][entry]["name"]}</h1>
-                    <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
-                        <div style='flex-basis:200px;flex-grow:1'>
-                            <div>${data[section].entries[entry].data.base}</div>
+                    
+                    document.getElementById(IDName).insertAdjacentHTML("beforeend", `
+                        <h1>${data[section]["entries"][entry]["name"]}</h1>
+                        <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
+                            <div style='flex-basis:200px;flex-grow:1'>
+                                <div>${data[section].entries[entry].data.base}</div>
+                            </div>
+                            <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
+                                <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
+                                    src='media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
+                            </div>
                         </div>
-                        <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
-                            <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
-                                src='media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
+                        ${tierHTML}
+                    `)
+                    break;
+                case "legacy-heroes":
+                    for (const path in data[section].entries[entry].data)
+                        if (path != "base") {
+                            for (const tier in data[section].entries[entry].data[path]) {
+                                HTMLString = `
+                                    <h3>${data[section].entries[entry].data[path][tier].name}</h3>
+                                    <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
+                                        <div style='flex-basis:200px;flex-grow:1'>
+                                            <div>${data[section].entries[entry].data[path][tier].content}</div>
+                                        </div>
+                                    </div>
+                                `
+                                if (tierHTML == undefined) {
+                                    tierHTML = HTMLString
+                                } else {
+                                    tierHTML = tierHTML + HTMLString
+                                }
+                            }
+                        }
+                    tierHTML = "<p>Coming Soon!</p>" //Temporary
+                    document.getElementById(IDName).insertAdjacentHTML("beforeend", `
+                        <h1>${data[section]["entries"][entry]["name"]}</h1>
+                        <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
+                            <div style='flex-basis:200px;flex-grow:1'>
+                                <h4>Coming Soon!</h4>
+                            </div>
+                            <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
+                                <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
+                                    src='media/Placeholder/placeholder.png'>
+                            </div>
                         </div>
-                    </div>
-                    ${tierHTML}
-                `)
+                    `)
+                    break;
             }
 		}
 	}
@@ -6235,4 +6848,3 @@ async function main() {
 };
 
 main();
-

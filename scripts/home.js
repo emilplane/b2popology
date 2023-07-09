@@ -9,33 +9,6 @@ let events = [
                 "link": "https://reddit.com/r/battles2/comments/14muyub/update_203_is_rolling_out_now_patch_notes/"
             }
         ]
-    },
-    {
-        "name": "2.0 Balance Survey",
-        "startDate": "2023-06-28T14:21:20",
-        "endDate": "2023-07-06T14:21:20",
-        "content": null,
-        "links": [
-            {
-                "name": "Survey",
-                "link": "https://docs.google.com/forms/d/e/1FAIpQLSeF3m9kgCDt0cnnFJobAeiBrDNcuo-s4T2osdK7syQJujBGbQ/viewform"
-            },
-            {
-                "name": "Reddit Post",
-                "link": "https://www.reddit.com/r/battles2/comments/14m6ae2/battles_2_update_20_balance_survey/"
-            }
-        ]
-    },
-    {
-        "name": "Battles 2 Update 2.0.2",
-        "startDate": "2023-06-26T13:55:30",
-        "content": null,
-        "links": [
-            {
-                "name": "Patch Notes",
-                "link": "https://reddit.com/r/battles2/comments/14ji07p/update_202_is_now_rolling_out_patch_notes/"
-            }
-        ]
     }
 ]
 
