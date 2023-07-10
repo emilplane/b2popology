@@ -6401,22 +6401,182 @@ let data = {
             "quincy": {
                 "name": "Quincy",
                 "data": {
-                    "1": `
-                        <ul>
-                            <li>+8r (48r)</li>
-                        </ul>
-                    `
+                    "1": `<ul>
+                        <li>$450</li>
+                        <li>Leveling Rate: 1.0x</li>
+                        <li>Unlock Cost: None</li>
+                        <li>size: 7 radius</li>
+                        <li>placeable on: land</li>
+                        <li>arrow attack
+                            <ul>
+                                <li>1d, 4p, 50r, 0.95s, sharp type</li>
+                                <li>jumps to nearby (50 units) targets</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "2": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+2p (6p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "3": `<ul>
+                        <li>gains rapid-shot ability (45s cooldown, 6.2s duration, 11.25s initial)
+                            <ul>
+                                <li>33.33%s</li>
+                                <li>duration increases 0.5s per level (2 + 0.5 level)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "4": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+2r (52)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "5": `<ul>
+                        <li>gains camo detection</li>
+                    </ul>`,
+                    "6": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+1j (2j 10&deg spread)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "7": `<ul>
+                        <li>every third arrow replaced by bomb-arrow
+                            <ul>
+                                <li>same stats as arrow</li>
+                                <li>on first hit: explosion
+                                    <ul>
+                                        <li>1d, 10p, 25.7r blast, explosion type</li>
+                                        <li>note: bloons can be hit by both the arrow and the explosion</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "8": `<ul>
+                        <li>all attacks buffed
+                            <ul>
+                                <li>+2md (3ms)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "9": `<ul>
+                        <li>arrow and bomb-arrow buffed
+                            <ul>
+                                <li>+2p (8p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "10": `<ul>
+                        <li>gains storm-of-arrows ability (60s cooldown, 3s duration, battle ready)
+                            <ul>
+                                <li>6d, 6md (12), &#8734;p, 100r zone, 0.05s, sharp type</li>
+                                <li>7.5% chance of hitting (per frame)</li>
+                                <li>can rehit after 0.05s</li>
+                                <li>centered according to Quincy's targeting when activated</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "11": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>0.6s</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "12": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+1p (9p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "13": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+2r (54r)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "14": `<ul>
+                        <li>all attacks buffed
+                            <ul>
+                                <li>+2md (5md)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "15": `<ul>
+                        <li>rapid-shot buffed
+                            <ul>
+                                <li>35s cooldown, is now a 25%s buff</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "16": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>0.4s</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "17": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+25% lifetime</li>
+                            </ul>
+                        </li>
+                        <li>bomb-arrow buffed
+                            <ul>
+                                <li>every other arrow is replaced by bomb-arrow</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "18": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>0.25s</li>
+                            </ul>
+                        </li>
+                        <li>storm-of-arrows buffed
+                            <ul>
+                                <li>50s cooldown</li>
+                                <li>10% chance to hit</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "19": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+1j (3j), +2p (11p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "20": `<ul>
+                        <li>arrow buffed: 0.2s</li>
+                        <li>storm-of-arrows buffed
+                            <ul>
+                                <li>+9d (15d), +9md (30md)</li>
+                                <li>15% chance to hit</li>
+                            </ul>
+                        </li>
+                    </ul>`
                 }
             },
             "cyberQuincy": {
                 "name": "Cyber Quincy",
-                "data": {
-                    "1": `
+                "data": [
+                    `
                         <ul>
                             <li>+8r (48r)</li>
                         </ul>
                     `
-                }
+                ]
             }
         }
     }
@@ -6424,7 +6584,7 @@ let data = {
 
 async function getDataJSON() {
     /*const requestURL =
-    "https://raw.githubusercontent.com/emilplane/emilplane.github.io/main/json/data.json";
+    "https://raw.githubusercontent.com/emilplane/b2popology/main/json/data.json";
     const request = new Request(requestURL);
 	
     const response = await fetch(request);
@@ -6573,18 +6733,19 @@ function generateHTMLFromData() {
                         ${tierHTML}
                     `)
                     break;
-                case "legacy-heroes":
-                    for (const path in data[section].entries[entry].data)
-                        if (path != "base") {
-                            for (const tier in data[section].entries[entry].data[path]) {
+                case "legacy-heroes": 
+                    let level = 0;
+                        for (const tier in data[section].entries[entry].data) {
+                            level = level + 1
+                            if (level != 1) {
                                 HTMLString = `
-                                    <h3>${data[section].entries[entry].data[path][tier].name}</h3>
-                                    <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
-                                        <div style='flex-basis:200px;flex-grow:1'>
-                                            <div>${data[section].entries[entry].data[path][tier].content}</div>
-                                        </div>
+                                <h3>Level ${level}</h3>
+                                <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
+                                    <div style='flex-basis:200px;flex-grow:1'>
+                                        <div>${data[section].entries[entry].data[tier]}</div>
                                     </div>
-                                `
+                                </div>
+                            `
                                 if (tierHTML == undefined) {
                                     tierHTML = HTMLString
                                 } else {
@@ -6592,18 +6753,27 @@ function generateHTMLFromData() {
                                 }
                             }
                         }
-                    tierHTML = "<p>Coming Soon!</p>" //Temporary
+                    if (tierHTML == undefined) {
+                        tierHTML = ``
+                    }
+                    let firstLevelHTML;
+                    if (data[section].entries[entry].data[1] == undefined) {
+                        firstLevelHTML = `<h4>Coming Soon!</h4>`
+                    } else {
+                        firstLevelHTML = data[section].entries[entry].data[1]
+                    }
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                         <h1>${data[section]["entries"][entry]["name"]}</h1>
                         <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
                             <div style='flex-basis:200px;flex-grow:1'>
-                                <h4>Coming Soon!</h4>
+                                <div>${firstLevelHTML}</div>
                             </div>
                             <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
                                 <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
                                     src='media/Placeholder/placeholder.png'>
                             </div>
                         </div>
+                        ${tierHTML}
                     `)
                     break;
             }

@@ -217,6 +217,11 @@ ul {
 	background-color: var(--supportColorLight3);
 }
 
+.heroesButtonStyle {
+	color: black;
+	background-color: var(--heroesColorLight3);
+}
+
 .primaryButtonStyle2 {
 	color :black; 
 	background-color: var(--primaryColorLight2);
@@ -237,6 +242,11 @@ ul {
 	background-color: var(--supportColorLight2);
 }
 
+.heroesButtonStyle2 {
+	color: black;
+	background-color: var(--heroesColorLight2);
+}
+
 .primaryButtonStyle3 {
 	color :black; 
 	background-color: var(--primaryColorLight1);
@@ -255,6 +265,11 @@ ul {
 .supportButtonStyle3 {
 	color: black; 
 	background-color: var(--supportColorLight1);
+}
+
+.heroesButtonStyle3 {
+	color: black;
+	background-color: var(--heroesColorLight1);
 }
 
 .consecutiveText {
