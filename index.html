@@ -15,7 +15,7 @@
     <body>
         <header>
             <div class="pageHeader flexWrap alignMid gap">
-                <a href="index.html"><h1 class="title" style="margin:0">Battles 2 Popology</h1></a>
+                <a href="index.html"><h1 class="blackLinks" style="margin:0">Battles 2 Popology</h1></a>
                 <div class="flexWrap gap push">
                     <a href="index.html"><button class="button primaryButtonStyle2 push" style="color:white; background-color:var(--primaryColorMain)"><h4>Home</h4></button></a>
                     <a href="popology.html"><button class="button primaryButtonStyle2"><h4>Popology</h4></button></a>
@@ -37,11 +37,67 @@
                 </div>
             </section>
             <section style="display:flex;gap:10px;align-items:start;flex-wrap:wrap">
-                <div style="flex:2" class="primarySection" id="eventSection">
+                <div style="flex:2;min-width:300px" class="primarySection">
                     <h2>Events and Announcements</h2>
+                    <div id="eventSection"></div>
+                    <h2>Other Resources</h2>
+                    <div class="flexWrap autofit gap">
+                        <div id="b2lol" class="primaryInfoCard" style="flex:1">
+                            <h4>b2.lol</h4>
+                            <p>Get stats on any player in HoM including a recent game history, and access to a full HoM leaderboard, courtesy of the
+                            <a href="https://data.ninjakiwi.com/">Ninja Kiwi API</a>.</p>
+                            <div style="display:grid;padding:0 5px 0 5px">
+                                <div id="leaderboard" class="primaryInfoCard2" style="width:230px;justify-self:center;">
+                                    <h6 id="leaderboardName">Loading Leaderboard...</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex:2;min-width: 175px">
+                            <div class="primaryInfoCard">
+                                <h4>Battles 2 Popology Discord</h4>
+                                <p>Report errors, contribute data, and more in our Discord server!</p>
+                                <a href="https://discord.com/invite/F48THzCSu5">
+                                    <button class="button primaryButtonStyle3">
+                                        <h6>Discord server</h6>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="primaryInfoCard">
+                                <h4>Battles 2 Data</h4>
+                                <p>Up-to-date data on eco stats and efficiency, farm efficiency, and more!</p>
+                                <a href="https://docs.google.com/spreadsheets/d/1guVhez01z09s8LR3_GrBLlYgSRK3XF-ZLop26FMEQK4/edit#gid=1926627977">
+                                    <button class="button primaryButtonStyle3">
+                                        <h6>Go to resource</h6>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="primaryInfoCard">
+                                <h4>Tower Cost Cheat Sheet</h4>
+                                <p>Up-to-date data on eco stats and efficiency, farm efficiency, and more!</p>
+                                <a href="https://docs.google.com/spreadsheets/d/1lxYQIXP7IlBibGsQm0_KOOWyKoDCpEeFaDdvSuAkwt4/edit#gid=1900870458">
+                                    <button class="button primaryButtonStyle3">
+                                        <h6>Go to resource</h6>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="primaryInfoCard">
+                                <h4>Original Document</h4>
+                                <p>Not all data has been transferred yet, so use this if you need something that's missing here.</p>
+                                <a href="https://docs.google.com/document/d/1F2PwRxST2Y4YoHFOGBlWo5yby-qQD53dQqjpItxaAS4/edit">
+                                    <button class="button primaryButtonStyle3">
+                                        <h6>Go to resource</h6>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div style="flex:1" class="primarySection">
+                <div style="flex:1;min-width:200px" class="primarySection">
                     <h2>Updates</h2>
+                    <div class="primaryInfoCard">
+                        <h4>Website 0.3 - 7/10/2023</h4>
+                        <p>Added a other resources section to the home screen</p>
+                    </div>
                     <div class="primaryInfoCard">
                         <h4>Website 0.2.9 - 7/9/2023</h4>
                         <p>Added Quincy data</p>

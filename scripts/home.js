@@ -1,3 +1,11 @@
+function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('resolved');
+        }, 2000);
+    });
+}
+
 let events = [
     {
         "name": "Battles 2 Update 2.0.3",
@@ -13,6 +21,24 @@ let events = [
 ]
 
 let today = new Date();
+
+let nkapiHoms; let nkapiLeaderboard;
+
+async function getNkapiHomsJSON() {
+    const requestURL = "https://data.ninjakiwi.com/battles2/homs?";
+    const request = new Request(requestURL);
+
+    const response = await fetch(request);
+    nkapiHoms = await response.json();
+};
+
+async function getNkapiLeaderboard(URL) {
+    const requestURL = URL;
+    const request = new Request(requestURL);
+
+    const response = await fetch(request);
+    nkapiLeaderboard = await response.json();
+};
 
 function timeString (elapsed) {
     let timeStringResult;
@@ -144,4 +170,28 @@ function showTime(selector, date) {
 
 setInterval(showTime, 1);
 
-//Start: ${timeUntilStart} | End: ${timeUntilEnd}
+async function updateLeaderboard() {
+    await getNkapiHomsJSON();
+    await getNkapiLeaderboard(nkapiHoms.body[0].leaderboard);
+    const leaderboardLoop = 10;
+    for (let i = 0; i < leaderboardLoop; i++) {
+        document.getElementById("leaderboard").insertAdjacentHTML("beforeend", 
+        `
+            <div class="flex alignMid gap">
+                <h4>${i + 1}</h4>
+                <p class="push"><a class="blackLinks" href="https://b2.lol/playerInfo/playerInfo.html?${nkapiLeaderboard.body[i].profile}"><u>${nkapiLeaderboard.body[i].displayName} | ${nkapiLeaderboard.body[i].score}</u></a></p>
+            </div>
+        `)
+    }
+    document.getElementById("b2lol").insertAdjacentHTML("beforeend",
+        `
+            <a href="https://b2.lol/">
+                <button class="button primaryButtonStyle3" style="margin: 0 5px 0 5px">
+                    <h6>See more players</h6>
+                </button>
+            </a>
+        `)
+    document.getElementById(`leaderboardName`).innerHTML = `${nkapiHoms.body[0].name} Leaderboard`
+}
+
+updateLeaderboard()

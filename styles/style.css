@@ -122,7 +122,7 @@ ul {
 	padding-left: 25px;
 }
 
-.title {
+.blackLinks {
 	color: black;
 }
 
@@ -133,6 +133,10 @@ ul {
 .flex {
 	display: flex;
 	flex-wrap: nowrap;
+}
+
+.grid {
+	display: grid;
 }
 
 .alignTop {
@@ -150,6 +154,10 @@ ul {
 .flexWrap {
 	display: flex;
 	flex-wrap: wrap;
+}	
+
+.autofit > * {
+	flex: auto
 }
 
 .gap {
@@ -354,6 +362,13 @@ ul {
 	margin: 5px 0;
 	border-radius: 10px;
 	background-color:var(--supportColorLight2);
+	padding: 5px;
+}
+
+.primaryInfoCard2 {
+	margin: 5px 0;
+	border-radius: 10px;
+	background-color: var(--primaryColorLight1);
 	padding: 5px;
 }
 
