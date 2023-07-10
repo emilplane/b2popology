@@ -8,6 +8,28 @@ function resolveAfter2Seconds() {
 
 let events = [
     {
+        "name": "Battles 2 Eco Simulator Now Available",
+        "startDate": "2023-07-10T20:01:30+0000",
+        "content": `The b2sim Python library is an extensive feature-rich library for simulating flowcharts within battles 2. 
+            Simulating essential aspects of battles 2's income sources with virtually 100% accuracy, the library is a must-use tool for 
+            optimizing eco'ing and farming with any flowchart. Results from the simulator can be used to better inform practical decisions made during games, 
+            improving player game sense and leading to more optimal play. The code is relatively easy to use and does not require prior coding experience to effectively operate.`,
+        "links": [
+            {
+                "name": "Start Here",
+                "link": "https://github.com/redlaserbmBTD/BTDB2_SIMULATOR/tree/main/examples"
+            },
+            {
+                "name": "GitHub",
+                "link": "https://github.com/redlaserbmBTD/BTDB2_SIMULATOR"
+            },
+            {
+                "name": "PyPI",
+                "link": "https://pypi.org/project/b2sim/"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 Update 2.0.3",
         "startDate": "2023-06-30T08:51:33",
         "content": null,
