@@ -778,6 +778,9 @@ let data = {
                                         <ul>
                                             <li>1d, 8j 360&deg spread, 8p, 15r blast, normal type</li>
                                             <li>note: any given bloon may only be hit by one cluster projectile, so the cluster attack can only do 1 damage on a single target (or 2 with 203)</li>
+                                            <ul>
+                                                <li>[BUG] multiple cluster projectiles may hit a bloon when interacting with an obstacle</li>
+                                            </ul>
                                         </ul>
                                     </li>
                                     <li>crosspath
@@ -807,11 +810,17 @@ let data = {
                                                         <ul>
                                                             <li>1d, 8j 360&deg spread, 48p, 34r blast, normal type</li>
                                                             <li>note: any given bloon may only be hit by one subcluster projectile, so the subcluster attack can only do 1 damage on a single target (or 2 with 204)</li>
+                                                            <ul>
+                                                                <li>[BUG] multiple cluster projectiles may hit a bloon when interacting with an obstacle</li>
+                                                            </ul>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>note: any given bloon may only be hit by one supercluster projectile, so the supercluster attack can only do 1 damage on a single target (or 2 with 204)</li>
+                                            <ul>
+                                                <li>[BUG] multiple cluster projectiles may hit a bloon when interacting with an obstacle</li>
+                                            </ul>
                                         </ul>
                                     </li>
                                     <li>crosspath
@@ -6693,6 +6702,306 @@ let data = {
                     "20": ``
                 }
             },
+            "strikerJones": {
+                "name": "Striker Jones",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "bikerBones": {
+                "name": "Biker Bones",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "captainChurchill": {
+                "name": "Captain Churchill",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "sentaiChurchill": {
+                "name": "Sentai Churchill",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "benjamin": {
+                "name": "Benjamin",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "djBenjammin": {
+                "name": "DJ Benjammin'",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "ezili": {
+                "name": "Ezili",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "smudgeCattEzili": {
+                "name": "Smudge Catt Ezili",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "patFusty": {
+                "name": "Pat Fusty",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "fustyTheSnowman": {
+                "name": "Fusty The Snowman",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "agentJericho": {
+                "name": "Agent Jericho",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "highwaymanJericho": {
+                "name": "Highwayman Jericho",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            }
         }
     }
 };
@@ -6774,6 +7083,18 @@ const gwendolynButton = document.querySelector(".gwendolynButton")
 const scientistGwendolynButton = document.querySelector(".scientistGwendolynButton")
 const obynButton = document.querySelector(".obynButton")
 const oceanObynButton = document.querySelector(".oceanObynButton")
+const strikerJonesButton = document.querySelector(".strikerJonesButton")
+const bikerBonesButton = document.querySelector(".bikerBonesButton")
+const captainChurchillButton = document.querySelector(".captainChurchillButton")
+const sentaiChurchillButton = document.querySelector(".sentaiChurchillButton")
+const benjaminButton = document.querySelector(".benjaminButton")
+const djBenjamminButton = document.querySelector(".djBenjamminButton")
+const eziliButton = document.querySelector(".eziliButton")
+const smudgeCattEziliButton = document.querySelector(".smudgeCattEziliButton")
+const patFustyButton = document.querySelector(".patFustyButton")
+const fustyTheSnowmanButton = document.querySelector(".fustyTheSnowmanButton")
+const agentJerichoButton = document.querySelector(".agentJerichoButton")
+const highwaymanJerichoButton = document.querySelector(".highwaymanJerichoButton")
 
 let selectedButtons = {};
 
@@ -7113,6 +7434,66 @@ function createButtonListeners() {
 
     oceanObynButton.addEventListener("click", () => {
         selectedHeroesCategory = "oceanObyn";
+        changeCategoryButtons();
+    })
+
+    strikerJonesButton.addEventListener("click", () => {
+        selectedHeroesCategory = "strikerJones";
+        changeCategoryButtons();
+    })
+
+    bikerBonesButton.addEventListener("click", () => {
+        selectedHeroesCategory = "bikerBones";
+        changeCategoryButtons();
+    })
+
+    captainChurchillButton.addEventListener("click", () => {
+        selectedHeroesCategory = "captainChurchill";
+        changeCategoryButtons();
+    })
+
+    sentaiChurchillButton.addEventListener("click", () => {
+        selectedHeroesCategory = "sentaiChurchill";
+        changeCategoryButtons();
+    })
+
+    benjaminButton.addEventListener("click", () => {
+        selectedHeroesCategory = "benjamin";
+        changeCategoryButtons();
+    })
+
+    djBenjamminButton.addEventListener("click", () => {
+        selectedHeroesCategory = "djBenjammin";
+        changeCategoryButtons();
+    })
+
+    eziliButton.addEventListener("click", () => {
+        selectedHeroesCategory = "ezili";
+        changeCategoryButtons();
+    })
+
+    smudgeCattEziliButton.addEventListener("click", () => {
+        selectedHeroesCategory = "smudgeCattEzili";
+        changeCategoryButtons();
+    })
+
+    patFustyButton.addEventListener("click", () => {
+        selectedHeroesCategory = "patFusty";
+        changeCategoryButtons();
+    })
+
+    fustyTheSnowmanButton.addEventListener("click", () => {
+        selectedHeroesCategory = "fustyTheSnowman";
+        changeCategoryButtons();
+    })
+
+    agentJerichoButton.addEventListener("click", () => {
+        selectedHeroesCategory = "agentJericho";
+        changeCategoryButtons();
+    })
+
+    highwaymanJerichoButton.addEventListener("click", () => {
+        selectedHeroesCategory = "highwaymanJericho";
         changeCategoryButtons();
     })
 };
