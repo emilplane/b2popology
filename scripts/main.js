@@ -6568,7 +6568,7 @@ let data = {
                     </ul>`
                 }
             },
-            "cyberQuincy": {
+            "cyberQuincy": { 
                 "name": "Cyber Quincy",
                 "data": {
                     "1": undefined,
@@ -6592,7 +6592,107 @@ let data = {
                     "19": ``,
                     "20": ``
                 }
-            }
+            },
+            "gwendolyn": {
+                "name": "gwendolyn",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "scientistGwendolyn": {
+                "name": "Scientist Gwendolyn",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "obyn": {
+                "name": "Obyn Greenfoot",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
+            "oceanObyn": {
+                "name": "Ocean Obyn",
+                "data": {
+                    "1": undefined,
+                    "2": ``,
+                    "3": ``,
+                    "4": ``,
+                    "5": ``,
+                    "6": ``,
+                    "7": ``,
+                    "8": ``,
+                    "9": ``,
+                    "10": ``,
+                    "11": ``,
+                    "12": ``,
+                    "13": ``,
+                    "14": ``,
+                    "15": ``,
+                    "16": ``,
+                    "17": ``,
+                    "18": ``,
+                    "19": ``,
+                    "20": ``
+                }
+            },
         }
     }
 };
@@ -6670,6 +6770,10 @@ const engineerMonkeyButton = document.querySelector(".engineerMonkeyButton")
 
 const quincyButton = document.querySelector(".quincyButton")
 const cyberQuincyButton = document.querySelector(".cyberQuincyButton")
+const gwendolynButton = document.querySelector(".gwendolynButton")
+const scientistGwendolynButton = document.querySelector(".scientistGwendolynButton")
+const obynButton = document.querySelector(".obynButton")
+const oceanObynButton = document.querySelector(".oceanObynButton")
 
 let selectedButtons = {};
 
@@ -6989,6 +7093,26 @@ function createButtonListeners() {
 
     cyberQuincyButton.addEventListener("click", () => {
         selectedHeroesCategory = "cyberQuincy";
+        changeCategoryButtons();
+    })
+
+    gwendolynButton.addEventListener("click", () => {
+        selectedHeroesCategory = "gwendolyn";
+        changeCategoryButtons();
+    })
+
+    scientistGwendolynButton.addEventListener("click", () => {
+        selectedHeroesCategory = "scientistGwendolyn";
+        changeCategoryButtons();
+    })
+
+    obynButton.addEventListener("click", () => {
+        selectedHeroesCategory = "obyn";
+        changeCategoryButtons();
+    })
+
+    oceanObynButton.addEventListener("click", () => {
+        selectedHeroesCategory = "oceanObyn";
         changeCategoryButtons();
     })
 };
