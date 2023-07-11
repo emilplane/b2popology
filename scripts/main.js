@@ -2270,7 +2270,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Double Shot - $550<",
+                            "name": "200 - Double Shot - $550",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -5943,7 +5943,7 @@ function generateHTMLFromData() {
                         </div>
                         <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
                             <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
-                                src='media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
+                                src='/media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
                         </div>
                     </div>
                     ${tierHTML}
