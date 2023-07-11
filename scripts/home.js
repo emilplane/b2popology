@@ -8,6 +8,17 @@ function resolveAfter2Seconds() {
 
 let events = [
     {
+        "name": "Battles 2 Popology Website Announcement",
+        "startDate": "2023-07-11T17:37:44",
+        "content": "Hey wait a minute, you're already here!",
+        "links": [
+            {
+                "name": "Announcement",
+                "link": "https://www.reddit.com/r/battles2/comments/14x5xie/the_battles_2_popology_website_is_now_online/"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 Eco Simulator Now Available",
         "startDate": "2023-07-10T20:01:30+0000",
         "content": `The b2sim Python library is an extensive feature-rich library for simulating flowcharts within battles 2. 
