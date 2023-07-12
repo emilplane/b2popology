@@ -666,7 +666,7 @@ let data = {
                         "2": {
                             "name": "020 - Missile Launcher - $400",
                             "content": `
-                                ul>
+                                <ul>
                                     <li>bomb buffed
                                         <ul>
                                             <li>73.33%s (0.825s), +4r (44r), increased projectile speed</li>
@@ -3080,7 +3080,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - MOAB Shove - $3,50",
+                            "name": "003 - MOAB Shove - $3,500",
                             "content": `
                                 <ul>
                                     <li>gains shove attack
@@ -3114,7 +3114,7 @@ let data = {
                                                     <li>15s lifetime</li>
                                                     <li>dart attack
                                                         <ul>
-                                                            <li>1d, 3j, 34p, 42r, 0.15s, sharp type</li>
+                                                            <li>1d, 3j, 4p, 42r, 0.15s, sharp type</li>
                                                         </ul>
                                                     </li>
                                                     <li>rocket attack
@@ -5300,7 +5300,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Primary Training - $80",
+                            "name": "300 - Primary Training - $800",
                             "content": `
                                 <ul>
                                     <li>gains primary-support
@@ -5971,7 +5971,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Long Life Spikes - $1,00",
+                            "name": "003 - Long Life Spikes - $1,000",
                             "content": `
                                 <ul>
                                     <li>spikes buffed
