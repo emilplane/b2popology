@@ -7099,11 +7099,7 @@ const highwaymanJerichoButton = document.querySelector(".highwaymanJerichoButton
 let selectedButtons = {};
 
 let selectedCategory = "primary";
-let selectedPrimaryCategory = "dartMonkey"
-let selectedMilitaryCategory = "sniperMonkey"
-let selectedMagicCategory = "wizardMonkey"
-let selectedSupportCategory = "monkeyVillage"
-let selectedHeroesCategory = "quincy"
+let selectedPage ="dartMonkey"
 
 let initialized = false;
 
@@ -7167,7 +7163,7 @@ function generateHTMLFromData() {
                             </div>
                             <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
                                 <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
-                                    src='media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
+                                    src='/media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
                             </div>
                         </div>
                         ${tierHTML}
@@ -7210,7 +7206,7 @@ function generateHTMLFromData() {
                             </div>
                             <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
                                 <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
-                                    src='media/Placeholder/placeholder.png'>
+                                    src='/media/Placeholder/placeholder.png'>
                             </div>
                         </div>
                         ${tierHTML}
@@ -7241,27 +7237,20 @@ function changeCategoryButtons() {
 	element = document.querySelector(".selectTower");
 	element.setAttribute("style", "display:flex");
 
+
     buttons[selectedCategory].selector.setAttribute("style", buttons[selectedCategory].selectedStyle);
     buttons[selectedCategory].towerBar.setAttribute("style", "display:flex");
     
-    let selectedTower;
-    switch (selectedCategory) {
-        case "primary": selectedTower = selectedPrimaryCategory; break
-        case "military": selectedTower = selectedMilitaryCategory; break
-        case "magic": selectedTower = selectedMagicCategory; break
-        case "support": selectedTower = selectedSupportCategory; break
-        case "heroes": selectedTower = selectedHeroesCategory; break
-    }
-    document.querySelector(`.${selectedTower}Button`).setAttribute("style", buttons[selectedCategory].selectedStyle)
-    element = document.getElementById(selectedTower + "Stats");
+
+    element = document.getElementById(selectedPage + "Stats");
     element.style.display = "block";
 
+    selectedButton = document.querySelector(`.${selectedPage}Button`);
+    selectedButton.setAttribute("style", buttons[selectedCategory].selectedStyle)
+
 	urlParams.set('section', selectedCategory);
-	urlParams.set('primary', selectedPrimaryCategory);
-	urlParams.set('military', selectedMilitaryCategory);
-	urlParams.set('magic', selectedMagicCategory);
-	urlParams.set('support', selectedSupportCategory);
-    urlParams.set('heroes', selectedHeroesCategory);
+	urlParams.set('page', selectedPage);
+
 	history.replaceState(null, null, "?" + urlParams.toString());
 };
 
@@ -7270,230 +7259,236 @@ function createButtonListeners() {
 
 	buttons.primary.selector.addEventListener("click", () => {
 		selectedCategory = "primary";
+        selectedPage = "dartMonkey";
 		changeCategoryButtons();
 	})
 
 	buttons.military.selector.addEventListener("click", () => {
-		selectedCategory = "military"
+		selectedCategory = "military";
+        selectedPage = "sniperMonkey";
 		changeCategoryButtons();
 	})
 
 	buttons.magic.selector.addEventListener("click", () => {
-		selectedCategory = "magic"
+		selectedCategory = "magic";
+        selectedPage = "wizardMonkey";
 		changeCategoryButtons();
+
 	})
 
 	buttons.support.selector.addEventListener("click", () => {
-		selectedCategory = "support"
+		selectedCategory = "support";
+        selectedPage = "monkeyVillage";
 		changeCategoryButtons();
 	})
 
     buttons.heroes.selector.addEventListener("click", () => {
         selectedCategory = "heroes"
+        selectedPage = "quincy";
         changeCategoryButtons();
     })
 
 	//Primary Button Listeners
 	dartMonkeyButton.addEventListener("click", () => {
-		selectedPrimaryCategory = "dartMonkey";
+		selectedPage = "dartMonkey";
 		changeCategoryButtons();
 	})
 
 	boomerangMonkeyButton.addEventListener("click", () => {
-		selectedPrimaryCategory = "boomerangMonkey";
+		selectedPage = "boomerangMonkey";
 		changeCategoryButtons();
 	})
 
 	bombShooterButton.addEventListener("click", () => {
-		selectedPrimaryCategory = "bombShooter";
+		selectedPage = "bombShooter";
 		changeCategoryButtons();
 	})
 
 	tackShooterButton.addEventListener("click", () => {
-		selectedPrimaryCategory = "tackShooter";
+		selectedPage = "tackShooter";
 		changeCategoryButtons();
 	})
 
 	iceMonkeyButton.addEventListener("click", () => {
-		selectedPrimaryCategory = "iceMonkey";
+		selectedPage = "iceMonkey";
 		changeCategoryButtons();
 	})
 
 	glueGunnerButton.addEventListener("click", () => {
-		selectedPrimaryCategory = "glueGunner";
+		selectedPage = "glueGunner";
 		changeCategoryButtons();
 	})
 
 	//Military Button Listeners
 	sniperMonkeyButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "sniperMonkey";
+		selectedPage = "sniperMonkey";
 		changeCategoryButtons();
 	})
 
 	monkeySubButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "monkeySub";
+		selectedPage = "monkeySub";
 		changeCategoryButtons();
 	})
 
 	monkeyBuccaneerButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "monkeyBuccaneer";
+		selectedPage = "monkeyBuccaneer";
 		changeCategoryButtons();
 	})
 
 	monkeyAceButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "monkeyAce";
+		selectedPage = "monkeyAce";
 		changeCategoryButtons();
 	})
 
 	heliPilotButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "heliPilot";
+		selectedPage = "heliPilot";
 		changeCategoryButtons();
 	})
 
 	mortarMonkeyButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "mortarMonkey";
+		selectedPage = "mortarMonkey";
 		changeCategoryButtons();
 	})
 
 	dartlingGunnerButton.addEventListener("click", () => {
-		selectedMilitaryCategory = "dartlingGunner";
+		selectedPage = "dartlingGunner";
 		changeCategoryButtons();
 	})
 
 	//Magic Button Listeners
 	wizardMonkeyButton.addEventListener("click", () => {
-		selectedMagicCategory = "wizardMonkey";
+		selectedPage = "wizardMonkey";
 		changeCategoryButtons();
 	})
 
 	superMonkeyButton.addEventListener("click", () => {
-		selectedMagicCategory = "superMonkey";
+		selectedPage = "superMonkey";
 		changeCategoryButtons();
 	})
 
 	ninjaMonkeyButton.addEventListener("click", () => {
-		selectedMagicCategory = "ninjaMonkey";
+		selectedPage = "ninjaMonkey";
 		changeCategoryButtons();
 	})
 
 	alchemistButton.addEventListener("click", () => {
-		selectedMagicCategory = "alchemist";
+		selectedPage = "alchemist";
 		changeCategoryButtons();
 	})
 
 	druidButton.addEventListener("click", () => {
-		selectedMagicCategory = "druid";
+		selectedPage = "druid";
 		changeCategoryButtons();
 	})
 
 	//Support Button Listeners
 	monkeyVillageButton.addEventListener("click", () => {
-		selectedSupportCategory = "monkeyVillage";
+		selectedPage = "monkeyVillage";
 		changeCategoryButtons();
 	})
 
 	bananaFarmButton.addEventListener("click", () => {
-		selectedSupportCategory = "bananaFarm";
+		selectedPage = "bananaFarm";
 		changeCategoryButtons();
 	})
 
 	spikeFactoryButton.addEventListener("click", () => {
-		selectedSupportCategory = "spikeFactory";
+		selectedPage = "spikeFactory";
 		changeCategoryButtons();
 	})
 
 	engineerMonkeyButton.addEventListener("click", () => {
-		selectedSupportCategory = "engineerMonkey";
+		selectedPage = "engineerMonkey";
 		changeCategoryButtons();
 	})
 
     quincyButton.addEventListener("click", () => {
-        selectedHeroesCategory = "quincy";
+        selectedPage = "quincy";
         changeCategoryButtons();
     })
 
     cyberQuincyButton.addEventListener("click", () => {
-        selectedHeroesCategory = "cyberQuincy";
+        selectedPage = "cyberQuincy";
         changeCategoryButtons();
     })
 
     gwendolynButton.addEventListener("click", () => {
-        selectedHeroesCategory = "gwendolyn";
+        selectedPage = "gwendolyn";
         changeCategoryButtons();
     })
 
     scientistGwendolynButton.addEventListener("click", () => {
-        selectedHeroesCategory = "scientistGwendolyn";
+        selectedPage = "scientistGwendolyn";
         changeCategoryButtons();
     })
 
     obynButton.addEventListener("click", () => {
-        selectedHeroesCategory = "obyn";
+        selectedPage = "obyn";
         changeCategoryButtons();
     })
 
     oceanObynButton.addEventListener("click", () => {
-        selectedHeroesCategory = "oceanObyn";
+        selectedPage = "oceanObyn";
         changeCategoryButtons();
     })
 
     strikerJonesButton.addEventListener("click", () => {
-        selectedHeroesCategory = "strikerJones";
+        selectedPage = "strikerJones";
         changeCategoryButtons();
     })
 
     bikerBonesButton.addEventListener("click", () => {
-        selectedHeroesCategory = "bikerBones";
+        selectedPage = "bikerBones";
         changeCategoryButtons();
     })
 
     captainChurchillButton.addEventListener("click", () => {
-        selectedHeroesCategory = "captainChurchill";
+        selectedPage = "captainChurchill";
         changeCategoryButtons();
     })
 
     sentaiChurchillButton.addEventListener("click", () => {
-        selectedHeroesCategory = "sentaiChurchill";
+        selectedPage = "sentaiChurchill";
         changeCategoryButtons();
     })
 
     benjaminButton.addEventListener("click", () => {
-        selectedHeroesCategory = "benjamin";
+        selectedPage = "benjamin";
         changeCategoryButtons();
     })
 
     djBenjamminButton.addEventListener("click", () => {
-        selectedHeroesCategory = "djBenjammin";
+        selectedPage = "djBenjammin";
         changeCategoryButtons();
     })
 
     eziliButton.addEventListener("click", () => {
-        selectedHeroesCategory = "ezili";
+        selectedPage = "ezili";
         changeCategoryButtons();
     })
 
     smudgeCattEziliButton.addEventListener("click", () => {
-        selectedHeroesCategory = "smudgeCattEzili";
+        selectedPage = "smudgeCattEzili";
         changeCategoryButtons();
     })
 
     patFustyButton.addEventListener("click", () => {
-        selectedHeroesCategory = "patFusty";
+        selectedPage = "patFusty";
         changeCategoryButtons();
     })
 
     fustyTheSnowmanButton.addEventListener("click", () => {
-        selectedHeroesCategory = "fustyTheSnowman";
+        selectedPage = "fustyTheSnowman";
         changeCategoryButtons();
     })
 
     agentJerichoButton.addEventListener("click", () => {
-        selectedHeroesCategory = "agentJericho";
+        selectedPage = "agentJericho";
         changeCategoryButtons();
     })
 
     highwaymanJerichoButton.addEventListener("click", () => {
-        selectedHeroesCategory = "highwaymanJericho";
+        selectedPage = "highwaymanJericho";
         changeCategoryButtons();
     })
 };
@@ -7501,30 +7496,14 @@ function createButtonListeners() {
 async function main() {
 	//Get Values
 	urlSection = urlParams.get('section')
-	urlPrimary = urlParams.get('primary')
-	urlMilitary = urlParams.get('military')
-	urlMagic = urlParams.get('magic')
-	urlSupport = urlParams.get('support')
-    urlHeroes = urlParams.get('heroes')
+	urlPage = urlParams.get('page')
 
 	if (urlSection != null) {
 		selectedCategory = urlSection;
 	}
-	if (urlPrimary != null) {
-		selectedPrimaryCategory = urlPrimary;
+	if (urlPage != null) {
+		selectedPage = urlPage;
 	}
-	if (urlMilitary != null) {
-		selectedMilitaryCategory = urlMilitary;
-	}
-	if (urlMagic != null) {
-		selectedMagicCategory = urlMagic;
-	}
-	if (urlSupport != null) {
-		selectedSupportCategory = urlSupport;
-	}
-    if (urlHeroes != null) {
-        selectedHeroesCategory = urlHeroes;
-    }
 
 	await getDataJSON();
 
