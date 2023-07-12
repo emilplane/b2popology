@@ -5,7 +5,7 @@
             "dartMonkey": {
                 "name": "Dart Monkey",
                 "data": {
-                    "base": `
+                    "base": "
                         <ul>
                             <li>$200 (0 MM)</li>
                             <li>size: 6 radius</li>
@@ -16,7 +16,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    `,
+                    ",
                     "topPath": {
                         "1": {
                             "name": "100 - Sharp Shots - $100",
