@@ -28,7 +28,7 @@ let events = [
         "links": [
             {
                 "name": "Start Here",
-                "link": "https://github.com/redlaserbmBTD/BTDB2_SIMULATOR/tree/main/examples"
+                "link": "https://github.com/redlaserbmBTD/BTDB2_SIMULATOR/tree/main/tutorials"
             },
             {
                 "name": "GitHub",
