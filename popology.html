@@ -83,8 +83,58 @@
                     <button class="button heroButtonStyle highwaymanJerichoButton"><h6>     Highwayman</h6></button>
                 </div>
             </section>
-            <section id="statsSection">
-                
+            <section id="statsSection"></section>
+            <section>
+                <div style="height:10px"></div>
+                <h2>Terminology</h2>
+                <div class="primarySection">
+                    <h4>Damage (d)</h4>
+                    <p>The amount of layers or health an attack removes. Some towers do extra damage to certain bloon types:</p>
+                    <ul>
+                        <li>MOAB damage: md</li>
+                        <li>Fortified damage: fd</li>
+                        <li>Fortified MOAB damage: fmd</li>
+                        <li>Ceramic damage: cd</li>
+                        <li>Lead damage: ld</li>
+                        <li>Camo damage: cad</li>
+                        <li>Frozen damage: frd</li>
+                        <li>Stunned bloon damage: sd</li>
+                    </ul>
+                    <h4>Pierce (p)</h4>
+                    <p>The amount of bloons that an attack can pop.</p>
+                    <h4>Impact (i)</h4>
+                    <p>Impact is like pierce, but it cannot be buffed by a normal pierce buff. For example, if a base sniper has 1i, that means
+                    it will not hit 2 bloons when affected by the brew of a 3xx <a href="https://b2popology.com/popology.html?section=magic&page=alchemist">
+                    Alchemist</a>, or another buff that gives more pierce.</p>
+                    <h4>Range (r)</h4>
+                    <h4>Projectiles (j)</h4>
+                    <p>If there is spread mentioned after the projectile count (like “4j 180° spread”), then the projectiles are evenly
+                    distributed across that spread. If there is nothing mentioned, then the projectiles shoot parallel to each other, at a
+                    certain distance apart that is not implemented here yet.</p>
+                    <h4>Attack Cooldown (s)</h4>
+                    <p>The time between attacks. This is commonly confused with attack speed, which refers to attacks per second. For example, if a tower shoots a 
+                    projectile every quarter second, then it has 4 attack speed, but 0.25 attack cooldown, which is what is used here. 
+                    <ul>
+                        <li>0.95s means the time between each attack is 0.95 seconds</li>
+                    </ul>
+                    <p>Attack cooldown buffs (i.e. 75%s) decrease the time between attacks</p>
+                    <ul>
+                        <li>75%s on a 1s attack would become 0.75s, because 75% of 1s is 0.75s</li>
+                    </ul>
+                    <h4>Initial</h4>
+                    <p>The initial cooldown on an ability when you first buy the upgrade</p>
+                    <ul>
+                        <li>x5x 
+                            <a href="https://b2popology.com/popology.html?section=support&page=bananaFarm">
+                                Banana Farm</a> has an initial cooldown of 20 seconds, so "20s initial"
+                        </li>
+                        <li>If an ability has no initial cooldown, like the x5x 
+                            <a href="https://b2popology.com/popology.html?section=military&page=monkeyBuccaneer">
+                                Monkey Buccaneer</a>, then it is instead called "battle ready"
+                        </li>
+                    </ul>
+                    </p>
+                </div>
             </section>
         </main>
         <footer class="flex">
