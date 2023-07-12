@@ -115,6 +115,7 @@ footer {
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 ul {
@@ -402,27 +403,24 @@ ul {
 .towerPortraitContainer {
 	height: 150px;
 	width: 200px;
-	display: none;
+	display: flex;
 	justify-content: center;
-	@media screen and (min-width: 900px) {
-			display: flex;
-        }
 }
 
 .towerPortrait {
-	height: 200px;
-	max-width: 200px;
+	height: auto;
+	width: auto;
 	object-fit: scale-down;
 	/*object-fit: contain;*/
 	margin: 0 auto;
 	position: relative;
-	top: -25px;
-	display: none;
-	@media screen and (min-width: 900px) {
-			display: block;
-        }
+	display: flex;
 }
-
+@media screen and (max-width: 650px) {
+	.towerPortraitContainer {
+		display: none;
+	}
+}
 .statHeader {
 	margin-top: 5px;
 	align-items: end;
