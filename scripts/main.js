@@ -3080,7 +3080,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - MOAB Shove - $3,50",
+                            "name": "003 - MOAB Shove - $3,500",
                             "content": `
                                 <ul>
                                     <li>gains shove attack
