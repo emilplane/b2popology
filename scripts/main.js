@@ -6958,7 +6958,7 @@ let data = {
                     "1": `<ul>
                     <li>$700</li>
                     <li>Leveling Rate: 1.0x</li>
-                    <li>Unlock Cost: Complete Training Camp</li>
+                    <li>Unlock Cost: 2,000 MM + 40,000 Gwendolin Points</li>
                     <li>size: 7 radius</li>
                     <li>placeable on: land</li>
                     <li>fire attack
