@@ -6580,76 +6580,580 @@ let data = {
             "cyberQuincy": { 
                 "name": "Cyber Quincy",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                        <li>$450</li>
+                        <li>Leveling Rate: 1.0x</li>
+                        <li>Unlock Cost: 2,000 MM + 40,000 Quincy Points</li>
+                        <li>size: 7 radius</li>
+                        <li>placeable on: land</li>
+                        <li>arrow attack
+                            <ul>
+                                <li>1d, 4p, 50r, 0.95s, sharp type</li>
+                                <li>jumps to nearby (50 units) targets</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "2": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+2p (6p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "3": `<ul>
+                        <li>gains cyber-shot ability (45s cooldown, 5s duration, 11.25s initial)
+                            <ul>
+                                <li>+15p (21p), +5r (55r)</li>
+                                <li>duration increases 0.5s per level (5 + 0.5 level)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "4": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+2r (52)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "5": `<ul>
+                        <li>gains camo detection</li>
+                    </ul>`,
+                    "6": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+1j (2j 10&deg spread)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "7": `<ul>
+                        <li>every third arrow replaced by bomb-arrow
+                            <ul>
+                                <li>same stats as arrow</li>
+                                <li>on first hit: emp-blast
+                                    <ul>
+                                        <li>1d, 10p, 25.7r blast, plasma type</li>
+                                        <li>note: bloons can be hit by both the arrow and the emp-blast</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "8": `<ul>
+                        <li>all attacks buffed
+                            <ul>
+                                <li>+2md (3ms)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "9": `<ul>
+                        <li>arrow and bomb-arrow buffed
+                            <ul>
+                                <li>+2p (8p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "10": `<ul>
+                        <li>gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)
+                            <ul>
+                                <li>25d, 25md (12), &#8734;p, 50r zone, 0.05s, plasma type</li>
+                                <li>7.5% chance of hitting (per frame)</li>
+                                <li>can rehit after 0.05s</li>
+                                <li>centered according to Quincy's targeting when activated</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "11": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>0.6s</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "12": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+1p (9p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "13": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+2r (54r)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "14": `<ul>
+                        <li>all attacks buffed
+                            <ul>
+                                <li>+2md (5md)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "15": `<ul>
+                        <li>cyber-shot buffed
+                            <ul>
+                                <li>35s cooldown, is now a +30p (39) buff to arrow and a +4d (5d) buff to emp-blast</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "16": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>0.4s</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "17": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+25% lifetime</li>
+                            </ul>
+                        </li>
+                        <li>emp-arrow buffed
+                            <ul>
+                                <li>every other arrow is replaced by emp-arrow</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "18": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>0.25s</li>
+                            </ul>
+                        </li>
+                        <li>cyber-storm buffed
+                            <ul>
+                                <li>50s cooldown</li>
+                                <li>+10d (35), +10md (70)</li>
+                                <li>10% chance to hit</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "19": `<ul>
+                        <li>arrow buffed
+                            <ul>
+                                <li>+1j (3j), +2p (11p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                    "20": `<ul>
+                        <li>arrow buffed: 0.2s</li>
+                        <li>cyber-storm buffed
+                            <ul>
+                                <li>+25d (60d), +25md (120md)</li>
+                                <li>15% chance to hit</li>
+                            </ul>
+                        </li>
+                    </ul>`
                 }
             },
             "gwendolyn": {
-                "name": "gwendolyn",
+                "name": "Gwendolyn",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$700</li>
+                    <li>Leveling Rate: 1.0x</li>
+                    <li>Unlock Cost: Complete Training Camp</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>fire attack
+                        <ul>
+                            <li>1d, 4p, 38r, 0.5s, fire type</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "2": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1p (5p)</li>
+                        </ul>
+                    </ul>`,
+                    "3": `<ul>
+                    <li>gains cocktail-of-fire ability (30s cooldown, 7.5s initial)
+                        <ul>
+                            <li>can see past obstacles</li>
+                            <li>places wall-of-fire on the track, targetable manually anywhere within range
+                                <ul>
+                                    <li>1d, 40p, 15r zone, 0.2s, fire type, camo</li>
+                                    <li>12s lifetime</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "4": `<ul>
+                    <li>gains heat-it-up attack
+                        <ul>
+                            <li>3d, ∞p, 38r blast, fire type</li>
+                            <li>triggered by either the 32nd shot or any shot after 4.5s (whichever takes longer)</li>
+                            <li>applies heat-it-up buff to towers in range
+                                <ul>
+                                    <li>8s duration, +1p, lead popping</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "5": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+2p (7p)</li>
+                        </ul>
+                    </li>
+                    <li>grants pyro-expert buff
+                        <ul>
+                            <li>affects all 4xx+ tack, xx3+ mortar, and x3x+ wizard</li>
+                            <li>+10%r, 90%s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "6": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>applies burn status
+                                <ul>
+                                    <li>1d/1.5s, fire type, 3.05s duration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "7": `<ul>
+                    <li>heat-it-up buffed
+                        <ul>
+                            <li>+5r (43r)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "8": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1j (2j)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "9": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "10": `<ul>
+                    <li>gains firestorm ability (60s cooldown, battle ready)
+                        <ul>
+                            <li>5d, 20md, ∞p, ∞r, fire type</li>
+                            <li>applies burn status
+                                <ul>
+                                    <li>1d/0.5s or 15md/1s, fire type, 8s duration</li>
+                                </ul>
+                            </li>
+                            <li>applies extra-heat-it-up buff to all towers on screen</li>
+                                <ul>
+                                    <li>+1d, +1p, lead popping for 8s</li>
+                                </ul>
+                            </li>
+                        </ul
+                    </li>
+                    </ul>`,
+                    "11": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+3r (41r)</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up buffed
+                        <ul>
+                            <li>+3r (46r)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "12": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>0.4s</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up now triggered by 34 shots</li>
+                    </ul>`,
+                    "13": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+3p (10p), increased projectile speed</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "14": `<ul>
+                    <li>wall-of-fire buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                            <li>applies burn status to blimps
+                                <ul>
+                                    <li>5md/1s, 10s duration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "15": `<ul>
+                    <li>fire buffed</li>
+                        <ul>
+                            <li>0.3s</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up now triggered by 40 shots</li>
+                    </ul>`,
+                    "16": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>normal type</li>
+                        </ul>
+                    </li>
+                    <li>firestorm burn buffed
+                        <ul>
+                            <li>10s duration</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "17": `<ul>
+                    <li>heat-it-up buffed</li>
+                        <ul>
+                            <li>+1d, +1ld (2ld)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "18": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>0.15s</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up now triggered by 64 shots</li>
+                    <li>pyro-expert buffed
+                        <ul>
+                            <li>+20%r, 20%s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "19": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1j (3j)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "20": `<ul>
+                    <li>firestorm buffed
+                        <ul>
+                            <li>+5d (10d), +40md (50md); burn 2d/0.5s, 50md/1s</li>
+                        </ul>
+                    </li>
+                    </ul>`
                 }
             },
             "scientistGwendolyn": {
                 "name": "Scientist Gwendolyn",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$700</li>
+                    <li>Leveling Rate: 1.0x</li>
+                    <li>Unlock Cost: Complete Training Camp</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>fire attack
+                        <ul>
+                            <li>1d, 1ld (2ld), 1frd (2frd), 4p, 38r, 0.5s, fire type</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "2": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1p (5p)</li>
+                        </ul>
+                    </ul>`,
+                    "3": `<ul>
+                    <li>gains chemical-cocktail ability (30s cooldown, 7.5s initial)
+                        <ul>
+                            <li>can see past obstacles</li>
+                            <li>places wall-of-fire on the track, targetable manually anywhere within range
+                                <ul>
+                                    <li>1d, +1ld (2ld), +1 frd (2frd), 60p, 15r zone, 0.15s, fire type, camo</li>
+                                    <li>8s lifetime</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "4": `<ul>
+                    <li>gains heat-it-up attack
+                        <ul>
+                            <li>3d, ∞p, 38r blast, fire type</li>
+                            <li>triggered by either the 40th shot or any shot after 4.5s (whichever takes longer)</li>
+                            <li>applies heat-it-up buff to towers in range
+                                <ul>
+                                    <li>8s duration, +1p, lead popping, +1ld, +1frd</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "5": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+2p (7p)</li>
+                        </ul>
+                    </li>
+                    <li>grants pyro-expert buff
+                        <ul>
+                            <li>affects all 4xx+ tack, xx3+ mortar, and x3x+ wizard</li>
+                            <li>+10%r, 90%s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "6": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>applies burn status
+                                <ul>
+                                    <li>1d/1.5s, fire type, 3.05s duration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "7": `<ul>
+                    <li>heat-it-up buffed
+                        <ul>
+                            <li>+5r (43r)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "8": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1j (2j)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "9": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "10": `<ul>
+                    <li>gains science-storm ability (60s cooldown, battle ready)
+                        <ul>
+                            <li>5d, 20md, ∞p, ∞r, fire type</li>
+                            <li>applies burn status
+                                <ul>
+                                    <li>1d/0.25s or 15md/0.5s, fire type, 3.5s duration</li>
+                                </ul>
+                            </li>
+                            <li>applies extra-heat-it-up buff to all towers on screen</li>
+                                <ul>
+                                    <li>+1d, +1ld (+2ld), +1frd (+2frd), +1p, lead popping for 8s</li>
+                                </ul>
+                            </li>
+                        </ul
+                    </li>
+                    </ul>`,
+                    "11": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+3r (41r)</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up buffed
+                        <ul>
+                            <li>+3r (46r)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "12": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>0.4s</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up now triggered by 48 shots</li>
+                    </ul>`,
+                    "13": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+3p (10p), increased projectile speed</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "14": `<ul>
+                    <li>wall-of-fire buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                            <li>applies burn status to blimps
+                                <ul>
+                                    <li>5md/0.5s, 5s duration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "15": `<ul>
+                    <li>fire buffed</li>
+                        <ul>
+                            <li>0.3s</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up now triggered by 64 shots</li>
+                    </ul>`,
+                    "16": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>normal type</li>
+                        </ul>
+                    </li>
+                    <li>firestorm burn buffed
+                        <ul>
+                            <li>5s duration</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "17": `<ul>
+                    <li>heat-it-up buffed</li>
+                        <ul>
+                            <li>+1d, +1ld (+2ld), +1frd (+2frd)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "18": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>0.15s</li>
+                        </ul>
+                    </li>
+                    <li>heat-it-up now triggered by 70 shots</li>
+                    <li>pyro-expert buffed
+                        <ul>
+                            <li>+20%r, 20%s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "19": `<ul>
+                    <li>fire buffed
+                        <ul>
+                            <li>+1j (3j)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "20": `<ul>
+                    <li>firestorm buffed
+                        <ul>
+                            <li>+5d (10d), +40md (50md); burn 2d/0.25s, 50md/0.5s</li>                            </li>
+                        </ul>
+                    </li>
+                    </ul>`
                 }
             },
             "obyn": {
