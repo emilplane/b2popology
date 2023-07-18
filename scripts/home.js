@@ -8,6 +8,17 @@ function resolveAfter2Seconds() {
 
 let events = [
     {
+        "name": "Battles 2 Update 2.0.4",
+        "startDate": "2023-07-18T09:40:00",
+        "content": null,
+        "links": [
+            {
+                "name": "Patch Notes",
+                "link": "https://www.reddit.com/r/battles2/comments/152t5pn/update_204_is_rolling_out_now_patch_notes/"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 Popology Website Announcement",
         "startDate": "2023-07-11T17:37:44",
         "content": "Hey wait a minute, you're already here!",
