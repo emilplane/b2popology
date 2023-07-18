@@ -9,7 +9,7 @@ function resolveAfter2Seconds() {
 let events = [
     {
         "name": "Battles 2 Update 2.0.4",
-        "startDate": "2023-07-18T09:40:00",
+        "startDate": "2023-07-18T11:40:00",
         "content": null,
         "links": [
             {
