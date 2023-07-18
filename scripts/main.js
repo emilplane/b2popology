@@ -48,7 +48,7 @@ let data = {
                                 <ul>
                                     <li>dart attack replaced by spikeball
                                         <ul>
-                                            <li>1d, 1cd (2cd), 22p, 32r, 1.15s, shatter type</li>
+                                            <li>1d, 1cd (2cd), 22p, 36.8r, 1.15s, shatter type</li>
                                             <li>can rebound off of walls</li>
                                         </ul>
                                     </li>
@@ -914,13 +914,13 @@ let data = {
                                 <ul>
                                     <li>tacks replaced by ring-of-fire
                                         <ul>
-                                            <li>3d, 60p, 23r zone, 0.47s, fire type</li>
+                                            <li>3d, 45p, 23r zone, 0.47s, fire type</li>
                                         </ul>
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>410: +10p (70p)</li>
-                                            <li>420: +10p (80p)</li>
+                                            <li>410: +10p (55p)</li>
+                                            <li>420: +10p (60p)</li>
                                             <li>401: +1d (4d)</li>
                                             <li>402: +1d (5d)</li>
                                         </ul>
@@ -1076,7 +1076,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Overdrive - $3,200",
+                            "name": "004 - Overdrive - $3,400",
                             "content": `
                                 <ul>
                                     <li>tacks attack buffed
@@ -1771,7 +1771,7 @@ let data = {
                                 <ul>
                                     <li>bullet buffed
                                         <ul>
-                                            <li>+50d (80d, 95cd)</li>
+                                            <li>+250d (280d, 95cd)</li>
                                         </ul>
                                     </li>
                                     <li>stun duration buffed
@@ -1913,7 +1913,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Semi-Automatic - $3,000",
+                            "name": "003 - Semi-Automatic - $2,700",
                             "content": `
                                 <ul>
                                     <li>bullet buffed
@@ -2308,7 +2308,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Aircraft Carrier - $7,200",
+                            "name": "400 - Aircraft Carrier - $6,800",
                             "content": `
                                 <ul>
                                     <li>spawns three permanent plane subtowers
@@ -2364,7 +2364,7 @@ let data = {
                                     </li>
                                     <li>plane radial-dart buffed
                                         <ul>
-                                            <li>+1d (2d), +3cd (5cd), +5p (14p), normal type</li>
+                                            <li>+2d (3d), +3cd (5cd), +5p (14p), normal type</li>
                                         </ul>
                                     </li>
                                     <li>plane moab-missile buffed
@@ -2374,7 +2374,7 @@ let data = {
                                     </li>
                                     <li>plane moab-missile explosion buffed
                                         <ul>
-                                            <li>+40d (60d), +1p (4p), normal type</li>
+                                            <li>+60d (80d), +1p (4p), normal type</li>
                                         </ul>
                                     </li>
                                     <li>gains flagship buff
