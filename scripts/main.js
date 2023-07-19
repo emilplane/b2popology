@@ -2849,7 +2849,7 @@ let data = {
                                 <ul>
                                     <li>barrage buffed
                                         <ul>
-                                            <li>66.67%s (0.025s)</li>
+                                            <li>62.5%s (0.025s)</li>
                                         </ul>
                                     </li>
                                     <li>dart buffed
@@ -4176,7 +4176,7 @@ let data = {
                             <li>placeable on: land</li>
                             <li>dart attack
                                 <ul>
-                                    <li>1d, 1p, 50r, 0.06s, sharp type</li>
+                                    <li>1d, 1p, 50r, 0.045, sharp type</li>
                                 </ul>
                             </li>
                         </ul>
@@ -4200,14 +4200,14 @@ let data = {
                                 <ul>
                                     <li>laser replaced by plasma
                                         <ul>
-                                            <li>50%s (0.03s), +1p (3p), plasma type</li>
+                                            <li>66.67%s (0.03s), +1p (3p), plasma type</li>
                                         </ul>
                                     </li>
                                 </ul>
                             `
                         },
                         "3": {
-                            "name": "300 - Sun Avatar - $13,000",
+                            "name": "300 - Sun Avatar - $11,000",
                             "content": `
                                 <ul>
                                     <li>plasma replaced by sunbeam
@@ -4733,7 +4733,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Berserker Brew - $1,500",
+                            "name": "300 - Berserker Brew - $1,650",
                             "content": `
                                 <ul>
                                     <li>gains brew attack
@@ -5061,7 +5061,7 @@ let data = {
                             `
                         },
                         "5": {
-                            "name": "500 - Superstorm - $65,000",
+                            "name": "500 - Superstorm - $60,000",
                             "content": `
                                 <ul>
                                     <li>gains camo detection</li>
@@ -5236,7 +5236,7 @@ let data = {
                                 <ul>
                                     <li>gains poplust buff
                                         <ul>
-                                            <li>affects druids in range, excluding self</li>
+                                            <li>affects druids in range, including self</li>
                                             <li>+15%p, +15% speed</li>
                                             <li>can stack (additively) up to 5 times total</li>
                                             <li>note that this is yet another speed buff, which also stacks multiplicatively with tiers 2 and 3</li>
@@ -5271,7 +5271,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$1,200 (1,000 MM)</li>
+                            <li>$1,000 (1,000 MM)</li>
                             <li>size: 11 radius</li>
                             <li>placeable on: land</li>
                             <li>40r</li>
