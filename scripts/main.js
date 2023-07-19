@@ -6040,7 +6040,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$450 (1,000 MM)</li>
+                            <li>$400 (1,000 MM)</li>
                             <li>size: 7 radius</li>
                             <li>placeable on: land</li>
                             <li>nail attack
@@ -6195,7 +6195,7 @@ let data = {
                                         <ul>
                                             <li>plasma attack
                                                 <ul>
-                                                    <li>2d, 5p, 50r, 0.044s, plasma type</li>
+                                                    <li>2d, 5p, 50r, 0.035, plasma type</li>
                                                     <li>on expire: selfdestruct attack
                                                         <ul>
                                                             <li>200d, 100p, 45r blast, plasma type</li>
@@ -6343,12 +6343,12 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Double Gun - $500",
+                            "name": "003 - Double Gun - $450",
                             "content": `
                                 <ul>
                                     <li>nail buffed
                                         <ul>
-                                            <li>50%s (0.35s), -3p (5p) [BUG]</li>
+                                            <li>50%s (0.35s)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -8127,7 +8127,6 @@ let data = {
                                     <li>on damage: applies shock effect
                                         <ul>
                                             <li>1d/1s, lasts for 1s</li>
-                                            <li>removed in 2.0</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -9631,9 +9630,9 @@ let data = {
                     "3": `<ul>
                     <li>stand-and-deliver ability (100s cooldown, ? initial cooldown)
                         <ul>
-                            <li>takes $250 from the opponent
+                            <li>takes $200 from the opponent
                                 <ul>
-                                    <li>if the opponent does not have $250, their cheapest tower that can pay back the debt is sold for 100% sellback to pay</li>
+                                    <li>if the opponent does not have $200, their cheapest tower that can pay back the debt is sold for 100% sellback to pay</li>
                                 </ul>
                             </li>
                         </ul>
