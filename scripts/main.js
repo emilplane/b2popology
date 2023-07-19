@@ -2599,7 +2599,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Lots More Darts - $650",
+                            "name": "200 - Lots More Darts - $600",
                             "content": `
                                 <ul>
                                     <li>radial-dart buffed
@@ -2812,7 +2812,7 @@ let data = {
                                 <ul>
                                     <li>radial-dart replaced by barrage
                                         <ul>
-                                            <li>&#8734;r, 0.05s</li>
+                                            <li>&#8734;r, 0.04s</li>
                                             <li>always targets first</li>
                                             <li>alternately fires dart and bomb</li>
                                         </ul>
@@ -2849,7 +2849,7 @@ let data = {
                                 <ul>
                                     <li>barrage buffed
                                         <ul>
-                                            <li>60%s (0.03s)</li>
+                                            <li>66.67%s (0.025s)</li>
                                         </ul>
                                     </li>
                                     <li>dart buffed
@@ -2896,7 +2896,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Pursuit - $400",
+                            "name": "200 - Pursuit - $250",
                             "content": `
                                 <ul>
                                     <li>gains pursuit targeting option
@@ -2908,7 +2908,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Razor Rotors - $1,750",
+                            "name": "300 - Razor Rotors - $1,900",
                             "content": `
                                 <ul>
                                     <li>gains rotor attack
@@ -2971,7 +2971,7 @@ let data = {
                     },
                     "middlePath": {
                         "1": {
-                            "name": "010 - Bigger Jets - $300",
+                            "name": "010 - Bigger Jets - $200",
                             "content": `
                                 <ul>
                                     <li>flies faster</li>
@@ -2979,7 +2979,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "020 - IFR - $450",
+                            "name": "020 - IFR - $350",
                             "content": `
                                 <ul>
                                     <li>gains camo detection</li>
@@ -3056,7 +3056,7 @@ let data = {
                     },
                     "bottomPath": {
                         "1": {
-                            "name": "001 - Faster Darts - $250",
+                            "name": "001 - Faster Darts - $150",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -3068,7 +3068,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "002 - Faster Firing - $350",
+                            "name": "002 - Faster Firing - $250",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -3080,7 +3080,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - MOAB Shove - $3,500",
+                            "name": "003 - MOAB Shove - $3,700",
                             "content": `
                                 <ul>
                                     <li>gains shove attack
@@ -3156,6 +3156,11 @@ let data = {
                                             <li>&#8734; lifetime, all 3 mini-comanche subtowers are summoned, +1d</li>
                                         </ul>
                                     </li>
+                                    <li>rocket buffed
+                                        <ul>
+                                            <li>+12d (15d), +6md (23md)</li>
+                                        </ul>
+                                    </li>   
                                 </ul>
                             `
                         }
