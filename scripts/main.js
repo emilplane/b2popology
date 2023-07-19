@@ -9423,7 +9423,7 @@ let data = {
                     <li>placeable on: land</li>
                     <li>bullet attack
                         <ul>
-                            <li>3d, 1i, 0.9s, ?r, ? type</li>
+                            <li>3d, 1i, 0.9s, ?r, sharp type</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9612,7 +9612,7 @@ let data = {
                     <li>placeable on: land</li>
                     <li>bullet attack
                         <ul>
-                            <li>3d, 1i, 0.9s, ?r, ? type</li>
+                            <li>3d, 1i, 0.9s, ?r, sharp type</li>
                         </ul>
                     </li>
                 </ul>`,
