@@ -7159,351 +7159,2633 @@ let data = {
             "obyn": {
                 "name": "Obyn Greenfoot",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$650</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 3,000 MM</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>spirit attack
+                        <ul>
+                            <li>2d, 4p, 43r, 1.35s, plasma type</li>
+                            <li>moderate homing (360 turn rate)</li>
+                            <li>can see past obstacles</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "2": `<ul>
+                    <li>gains natures-wrath buff
+                        <ul>
+                            <li>affects druids in range</li>
+                            <li>+1p</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "3": `<ul>
+                    <li>gains brambles ability (35s cooldown, 10s initial)
+                        <ul>
+                            <li>places brambles on the track
+                                <ul>
+                                    <li>manually placed anywhere within range or defaulting to close</li>
+                                    <li>1d, 40p, sharp type</li>
+                                    <li>95s lifetime</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "4": `<ul>
+                    <li>gains natures-ward attack
+                        <ul>
+                            <li>18s</li>
+                            <li>places on closest part of the track</li>
+                            <li>places a ward-totem on the track
+                                <ul>
+                                    <li>28r, 25% slow / 12.5% for blimps, 15s lifetime</li>
+                                    <li>note: camos can be slowed, but the totem does not allow camos in range to be targeted by subs</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "5": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>1.1s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "6": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+5p (9p), increased projectile speed</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "7": `<ul>
+                    <li>brambles buffed
+                        <ul>
+                            <li>+40p (80p)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "8": `<ul>
+                    <li>ward-totem buffed
+                        <ul>
+                            <li>35% slow / 17.5% for blimps</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "9": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+2d (4d)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "10": `<ul>
+                    <li>gains wall-of-trees ability (90s cooldown, battle ready)
+                        <ul>
+                            <li>places a tree on the track
+                                <ul>
+                                    <li>manually placed anywhere within range or defaulting to close</li>
+                                    <li>2,000p</li>
+                                    <li>pops anything up to its pierce limit and grants ($2 x natural bloon RBE eaten) split across 10 bananas once full</li>
+                                    <li>note: blimps can only be captured if their remaining RBE doesn't exceed the tree's remaining pierce, however bloons can bypass this</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "11": `<ul>
+                    <li>natures-wrath buffed
+                        <ul>
+                            <li>affects magic towers in range</li>
+                            <li>+2p, +5r</li>
+                            <li>note: stacks with the existing +1p for druids</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "12": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>0.8s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "13": ` <ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+5p (14p), increased projectile speed</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "14": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+2d (6d)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "15": `<ul>
+                    <li>natures-ward buffed
+                        <ul>
+                            <li>12s</li>
+                        </ul>
+                    </li>
+                    <li>ward-totem buffed
+                        <ul>
+                            <li>34r, 50% slow / 25% for blimps</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "16": `<ul>
+                    <li>brambles buffed
+                        <ul>
+                            <li>+420p (500p), normal type</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "17": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>0.5s</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "18": `<ul>
+                    <li>gains improved-wrath buff
+                        <ul>
+                            <li>affects all xx3+ druids</li>
+                            <li>whenever a round starts, wrath counter is set to the maximum 200 pops for +100% speed</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "19": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+2d (8d)</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "20": `<ul>
+                    <li>tree buffed
+                        <ul>
+                            <li>+3,000p (5,000p)</li>
+                        </ul>
+                    </li>
+                    </ul>`
                 }
             },
             "oceanObyn": {
                 "name": "Ocean Obyn",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$650</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 2,000 MM + 40,000 Obyn Greenfoot Points</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land and water</li>
+                    <li>spirit attack
+                        <ul>
+                            <li>2d, 4p, 43r, 1.35s, plasma type</li>
+                            <li>moderate homing (360 turn rate)</li>
+                            <li>can see past obstacles</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "2": `<ul>
+                    <li>gains wrath-of-the-sea buff
+                        <ul>
+                            <li>affects magic monkeys in range</li>
+                            <li>+1p</li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "3": `<ul>
+                    <li>gains living-coral ability (35s cooldown, 10s initial)
+                        <ul>
+                            <li>Places living-coral on the track
+                                <ul>
+                                    <li>manually placed anywhere within range or defaulting to close</li>
+                                    <li>1d, 20p, sharp type</li>
+                                    <li>can regenerate
+                                        <ul>
+                                            <li>+10p/10s, max 100p</li>
+                                        </ul>
+                                    </li>
+                                    <li>95s lifetime</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>gains oceans-ward attack
+                        <ul>
+                            <li>18s</li>
+                            <li>places on closest part of the track</li>
+                            <li>places a ward-totem on the track
+                                <ul>
+                                    <li>32r, every 4th unique bloon that passes over is knocked back 50-300 units, 15s lifetime</li>
+                                    <li>note: camos can be knocked back, but the totem does not allow camos in range to be targeted by subs</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>1.1s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+5p (9p), increased projectile speed</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>living-coral buffed
+                        <ul>
+                            <li>+20p (40p)</li>
+                        </ul>
+                    </li>
+                    <li>regenerate buffed
+                        <ul>
+                            <li>+20p/10s, max 200p</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>ward-totem buffed
+                        <ul>
+                            <li>knocks back every 3rd bloon</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+2d (4d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains unleash-the-krakens ability (90s cooldown, battle ready)
+                        <ul>
+                            <li>places 2 krakens randomly on the track
+                                <ul>
+                                    <li>one kraken favors opponent bloons and one favors natural bloons when it comes to targeting</li>
+                                </ul>
+                            </li>
+                            <li>1,000p each</li>
+                            <li>pops anything up to its pierce limit and grants ($2 x natural bloon RBE eaten) split across 10 bananas once full</li>
+                            <li>note: blimps can only be captured if their remaining RBE doesn't exceed the kraken's remaining pierce, however bloons can bypass this</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>wrath-of-the-sea buffed
+                        <ul>
+                            <li>affects magic towers in range except druids</li>
+                            <li>+1p, +5r</li>
+                            <li>note: stacks with the existing +1p for magic monkeys</li>
+                            <li>note: this means that druids still only get +1p</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>0.8s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+5p (14p), increased projectile speed</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+2d (6d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>oceans-ward buffed:
+                        <ul>
+                            <li>12s</li>
+                        </ul>
+                    </li>
+                    <li>ward-totem buffed
+                        <ul>
+                            <li>knocks back every other bloon</li>
+                            <li>stuns every 4th blimp for 0.5s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>living-coral buffed
+                        <ul>
+                            <li>+160p (200p), normal type</li>
+                        </ul>
+                    </li>
+                    <li>regenerate buffed
+                        <ul>
+                            <li>+100p/10s, max 800p</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>0.5s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>gains crystal-clarity buff
+                        <ul>
+                            <li>affects all magic monkeys</li>
+                            <li>90%s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>spirit buffed
+                        <ul>
+                            <li>+2d (8d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>unleash-the-krakens buffed
+                        <ul>
+                            <li>+1,500p (2,500p)</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "strikerJones": {
                 "name": "Striker Jones",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$750</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 3,000 MM</li>
+                    <li>size: 6 radius</li>
+                    <li>placeable on: land</li>
+                    <li>gains bomb attack
+                        <ul>
+                            <li>55r, 1.2s</li>
+                            <li>on contact: explosion
+                                <ul>
+                                    <li>1d, 10p, 15r blast, explosion type</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "2": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+4r</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>gains concussive-shell ability (16s cooldown, 5s initial)
+                        <ul>
+                            <li>&#8734;r, strong priority</li>
+                            <li>can see past obstacles</li>
+                            <li>on contact: explosion
+                                <ul>
+                                    <li>2d, 48p, 27r blast, normal type, 1s stun</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>gains explosive-expert buff
+                        <ul>
+                            <li>affects all bomb and mortar towers 90%s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>applies blast-weakness status to all bloons
+                        <ul>
+                            <li>black property has a 50% chance of being ignored by explosions</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+10p (20p), +50%r (28.5r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                    <li>gains mortar-expert buff
+                        <ul>
+                            <li>affects all mortars</li>
+                            <li>+10% blast radius</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>gains bomb-expert buff
+                        <ul>
+                            <li>affects bomb towers in range</li>
+                            <li>+25%p, +5%r</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.9s</li>
+                        </ul>
+                    </li>
+                    <li>concussive-shell buffed
+                        <ul>
+                            <li>+10d (12d) +10p (58p)</li>
+                            <li>stuns bloons for 5s and blimps for 3s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains artillery-command ability (30s cooldown, battle ready)
+                        <ul>
+                            <li>every bomb and mortar ability is immediately ready to use</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>`,
+                    "11": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.65s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>+1d (3d), +3r (58r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.5s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>concussive-shell buffed
+                        <ul>
+                            <li>+50%r (40.5r)</li>
+                            <li>50% longer stun (7.5s on bloons, 4.5s on blimps)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>concussive-shell buffed
+                        <ul>
+                            <li>11s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.35s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>+1d (4d), +2r (60r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>explosive-expert buffed
+                        <ul>
+                            <li>81%s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.2s</li>
+                        </ul>
+                    </li>
+                    <li>blast-weakness buffed
+                        <ul>
+                            <li>black property is always ignored by explosives</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>artillery-command buffed
+                        <ul>
+                            <li>for the next 10s, every bomb and mortar has double damage and double pierce</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "bikerBones": {
                 "name": "Biker Bones",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$750</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 2,000 MM + 40,000 Striker Jones Points</li>
+                    <li>size: 6 radius</li>
+                    <li>placeable on: land</li>
+                    <li>gains bomb attack
+                        <ul>
+                            <li>55r, 1.2s</li>
+                            <li>on contact: explosion
+                                <ul>
+                                    <li>1d, 10p, 15r blast, explosion type</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    </ul>`,
+                    "2": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+4r</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>gains concussive-fire ability (24s cooldown, 7.5s initial)
+                        <ul>
+                            <li>&#8734;r, strong priority</li>
+                            <li>can see past obstacles</li>
+                            <li>on contact: explosion
+                                <ul>
+                                    <li>3d, 48p, 27r blast, normal type, 1s stun</li>
+                                    <li>on damage: applies burn status
+                                        <ul>
+                                            <li>2d/1.5s, lasts for 4s</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>gains explosive-expert buff
+                        <ul>
+                            <li>affects all bomb and mortar towers</li>
+                            <li>90%s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>applies blast-weakness status to all bloons
+                        <ul>
+                            <li>black property has a 50% chance of being ignored by explosions</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+10p (20), +50%r (28.5)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                    <li>gains mortar-expert buff
+                        <ul>
+                            <li>affects all mortars</li>
+                            <li>+10% blast radius</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>gains bomb-expert buff
+                        <ul>
+                            <li>affects bomb towers in range</li>
+                            <li>+25%p, +5%r</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.9s</li>
+                        </ul>
+                    </li>
+                    <li>concussive-fire buffed
+                        <ul>
+                            <li>+17d (20d), +10p (58p)</li>
+                            <li>stuns bloons for 5s and blimps for 3s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains artillery-fire ability (60s cooldown, 7s duration, battle ready)
+                        <ul>
+                            <li>every bomb and mortar has double damage and applies burn status
+                                <ul>
+                                    <li>2d/1.5s, lasts for 4s</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.65s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>+1d (3), +3r (58)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.5s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>concussive-fire buffed
+                        <ul>
+                            <li>+50%r (40.5r)</li>
+                            <li>50% longer stun (7.5s on bloons, 4.5s on blimps)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>concussive-fire buffed
+                        <ul>
+                            <li>16s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.35s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>+1d (4d), +2r (60r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>explosive-expert buffed
+                        <ul>
+                            <li>81%s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>bomb buffed
+                        <ul>
+                            <li>0.2s</li>
+                        </ul>
+                    </li>
+                    <li>blast-weakness buffed
+                        <ul>
+                            <li>black property is always ignored by explosives</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>artillery-fire buffed
+                        <ul>
+                            <li>now triples damage and pierce of all bombs and mortars</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "captainChurchill": {
                 "name": "Captain Churchill",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$1500</li>
+                    <li>Leveling Rate: 1.5x</li>
+                    <li>Unlock Cost: 4,000 MM</li>
+                    <li>size: 8 radius</li>
+                    <li>placeable on: land</li>
+                    <li>shell attack
+                        <ul>
+                            <li>3i, 63r, 0.7s</li>
+                            <li>on contact: explosion
+                                <ul>
+                                    <li>1d, 15p, 18r blast, explosion type</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+3p (18)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>gains armor-piercing-shells ability (35s cooldown, 9s duration, battle ready)
+                        <ul>
+                            <li>all attacks have normal type</li>
+                            <li>buffs shell
+                                <ul>
+                                    <li>+2i (5i)</li>
+                                </ul>
+                            </li>
+                            <li>buffs explosion
+                                <ul>
+                                    <li>+3cd (4cd), +3md (4md)</li>
+                                </ul>
+                            </li>
+                            <li>duration increases 0.5s per level (7.5 + 0.5 level)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+3r (66r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>gains machine-gun attack
+                        <ul>
+                            <li>1d, 1p, 66r, 0.1s, sharp type, targets first always</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>gains camo detection</li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1i (4i)</li>
+                        </ul>
+                    </li>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (2)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>0.5s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+1i (5i)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains moab-barrage ability (60s cooldown, battle ready)
+                        <ul>
+                            <li>gains up to 10 barrage attacks, one for each of the 10 strongest blimps
+                                <ul>
+                                    <li>250d, 0.5s, normal type</li>
+                                    <li>attacks up to 16 times, or until target pops</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>explosion buffed: +5p (23p)</li>
+                </ul>`,
+                    "12": ` <ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+1i (6i)</li>
+                        </ul>
+                    </li>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (3d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>armor-piercing-shells buffed
+                        <ul>
+                            <li>buffs explosion
+                                <ul>
+                                    <li>+1d (4d), +7cd (11cd), +7md (11md)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (4d)</li>
+                        </ul>
+                    </li>
+                    <li>machine-gun buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1fd</li>
+                        </ul>
+                    </li>
+                    <li>machine-gun buffed
+                        <ul>
+                            <li>+1fd</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>0.3s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>armor-piercing-shells buffed
+                        <ul>
+                            <li>buffs explosion
+                                <ul>
+                                    <li>+2d (6d), +12cd (18cd), +12md (18md)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (5d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>shell buffed: +1i (7i)</li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>moab-barrage buffed
+                        <ul>
+                            <li>30s cooldown</li>
+                            <li>buffs explosion
+                                <ul>
+                                    <li>+3d (8d)</li>
+                                </ul>
+                            </li>
+                            <li>barrage buffed
+                                <ul>
+                                    <li>800d</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "sentaiChurchill": {
                 "name": "Sentai Churchill",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$1500</li>
+                    <li>Leveling Rate: 1.5x</li>
+                    <li>Unlock Cost: 2,000 MM + 40,000 Captain Churchill Points</li>
+                    <li>size: 8 radius</li>
+                    <li>placeable on: land</li>
+                    <li>shell attack
+                        <ul>
+                            <li>3i, 63r, 0.7s</li>
+                            <li>shell uses up all impacts upon hitting a purple bloon</li>
+                            <li>on contact: explosion
+                                <ul>
+                                    <li>1d, 5p, 18r blast, explosion type</li>
+                                    <li>on damage: applies shock effect
+                                        <ul>
+                                            <li>1d/1s, lasts for 1s</li>
+                                            <li>removed in 2.0</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>on damage: applies shock effect
+                                <ul>
+                                    <li>1d/1s, lasts for 1s</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+2p (7p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>gains high-energy-shells ability (45s cooldown, 9s duration, battle ready)
+                        <ul>
+                            <li>all attacks have normal type</li>
+                            <li>buffs shell: 55%s ? (0.385s ?)</li>
+                            <li>buffs shock: 1d/0.5s, lasts for 1.5s</li>
+                            <li>duration increases 0.5s per level (7.5 + 0.5 level)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+3r (66r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>gains machine-gun attack
+                        <ul>
+                            <li>1d, 1p, 66r, 0.1s, sharp type, targets first always</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>gains camo detection</li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+1i (4i)</li>
+                        </ul>
+                    </li>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>0.5s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+1i (5i)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains orbital-barrage ability (60s cooldown, battle ready)
+                        <ul>
+                            <li>gains up to 5 barrage attacks, one for each of the 5 strongest blimps
+                                <ul>
+                                    <li>90d, 0.1s, normal type</li>
+                                    <li>attacks up to 64 times, and attacks the target's children with remaining shells</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+2p (9p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+1i (6i)</li>
+                        </ul>
+                    </li>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (3d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>high-energy-shells buffed
+                        <ul>
+                            <li>buffs shock
+                                <ul>
+                                    <li>3d/0.5s</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (4d)</li>
+                        </ul>
+                    </li>
+                    <li>machine-gun buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1fd</li>
+                        </ul>
+                    </li>
+                    <li>machine-gun buffed
+                        <ul>
+                            <li>+1fd</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>0.3s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>high-energy-shells buffed
+                        <ul>
+                            <li>buffs shock
+                                <ul>
+                                    <li>6d/0.5s</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>explosion buffed
+                        <ul>
+                            <li>+1d (5d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>shell buffed
+                        <ul>
+                            <li>+1i (7i)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>orbital-barrage buffed
+                        <ul>
+                            <li>30s cooldown</li>
+                            <li>buffs explosion
+                                <ul>
+                                    <li>+3d (8d)</li>
+                                </ul>
+                            </li>
+                            <li>buffs machine-gun
+                                <ul>
+                                    <li>+3d (5d)</li>
+                                </ul>
+                            </li>
+                            <li>barrage buffed
+                                <ul>
+                                    <li>300d</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "benjamin": {
                 "name": "Benjamin",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$1000</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 5,000 MM</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>20r</li>
+                    <li>$100 end of round income</li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>+$50 end of round income ($150)</li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>gains biohack ability (45s cooldown, 11.25s initial)
+                        <ul>
+                            <li>applies hacked buff to the nearest 4 towers
+                                <ul>
+                                    <li>6s duration, +1d</li>
+                                    <li>cannot attack for 2s after the buff expires</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>gains skimming
+                        <ul>
+                            <li>+$1 income for each new natural bloon that spawns</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>gains bank-hack buff
+                        <ul>
+                            <li>affects all x3+x farms</li>
+                            <li>+8% income during the round</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>+5 end of round lives
+                        <ul>
+                            <li>note: cannot go above 150 lives</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>gains trojan attack
+                        <ul>
+                            <li>&#8734;r, 5s-7s randomly</li>
+                            <li>targets a random bloon with 2+ children up to MOAB</li>
+                            <li>affected bloon spawns no children</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>+$250 end of round income ($400)</li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>bank-hack buffed
+                        <ul>
+                            <li>now +14%</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains syphon-funding ability (65s cooldown, 17s duration, battle ready)
+                        <ul>
+                            <li>all new spawns below a DDT or BAD are downgraded by one layer</li>
+                            <li>can only downgrade up to 10 ZOMGs in an ability, but still continues to downgrade other bloons after this threshold is reached</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>+$200 end of round income ($600)</li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>skimming buffed
+                        <ul>
+                            <li>+$2 income</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>biohack buffed
+                        <ul>
+                            <li>affects 6 towers, 35s cooldown</li>
+                        </ul>
+                    </li>
+                    <li>hacked buffed
+                        <ul>
+                            <li>now +2d, 8s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>+5 end of round lives (10)</li>
+                    <li>can heal to 250 lives</li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>+$400 end of round income ($1000)</li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>trojan buffed
+                        <ul>
+                            <li>3s-4s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>+$1000 end of round income ($2000)</li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>gains camo detection</li>
+                    <li>trojan buffed
+                        <ul>
+                            <li>can now target BFBs and DDTs</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>hacked buffed
+                        <ul>
+                            <li>now +3d, 9s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>syphon-funding buffed
+                        <ul>
+                            <li>can affect DDTs</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "djBenjammin": {
                 "name": "DJ Benjammin'",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$1000</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 2,000 MM + 40,000 Benjamin Points</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>20r</li>
+                    <li>+$75 end of round income</li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>+$37 end of round income ($112)</li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>gains good-vibes ability (45s cooldown, 11.25s initial)</li>
+                    <li>applies party-time buff to the nearest 5 towers
+                        <ul>
+                            <li>6s duration, +1d</li>
+                            <li>cannot attack for 1s after the buff expires</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>gains skimming
+                        <ul>
+                            <li>+$1 income for each new natural bloon that spawns</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>gains bank-hack buff
+                        <ul>
+                            <li>affects all x3+x farms</li>
+                            <li>+8% income during the round</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>+5 end of round lives
+                        <ul>
+                            <li>note: cannot go above 150 lives</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>gains trojan attack
+                        <ul>
+                            <li>&#8734;r, 5s-7s randomly</li>
+                            <li>targets a random bloon with 2+ children to MOAB</li>
+                            <li>affected bloon spawns no children</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>+$188 end of round income ($300)</li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>bank-hack buffed
+                        <ul>
+                            <li>now +14%</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>gains beatdown ability (65s cooldown, battle ready)
+                        <ul>
+                            <li>10 strongest bloons on screen up to a BFB are downgraded by 1 layer</li>
+                            <li>can only downgrade up to 2 &#8594; 3 BFBs in an ability, but can still downgrade other bloons if this threshold is reached</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>+$300 end of round income ($600)</li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>skimming buffed
+                        <ul>
+                            <li>+$2 income</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>good-vibes buffed
+                        <ul>
+                            <li>affects 7 towers, 35s cooldown</li>
+                        </ul>
+                    </li>
+                    <li>party-time buffed
+                        <ul>
+                            <li>now +2d, 8s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>+5 end of round healing (10)</li>
+                    <li>can heal to 250 lives</li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>+$150 end of round income (+$750)</li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>trojan buffed: 3s-4s</li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>+$750 end of round income ($1,500)</li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>gains camo detection</li>
+                    <li>trojan buffed
+                        <ul>
+                            <li>can now target BFBs and DDTs</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>good-vibes buffed
+                        <ul>
+                            <li>affects 8 towers</li>
+                        </ul>
+                    </li>
+                    <li>party-time buffed
+                        <ul>
+                            <li>now +3d, 15s duration, towers now aren't disabled after buff expires</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>beatdown buffed
+                        <ul>
+                            <li>can affect DDTs</li>
+                            <li>can affect up to 10 BFBs</li>
+                            <li>can affect up to 2 ZOMGs</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "ezili": {
                 "name": "Ezili",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$600</li>
+                    <li>Leveling Rate: 2.37695294x</li>
+                    <li>Unlock Cost: 5,000 MM</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>gains camo detection</li>
+                    <li>curse attack
+                        <ul>
+                            <li>1d, 1i, 40r, 1.2s, plasma type</li>
+                            <li>can see past obstacles</li>
+                            <li>applies cursed status
+                                <ul>
+                                    <li>1d/2.5s, 2.6s duration</li>
+                                    <li>if the target is already cursed, its duration is refreshed</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>splash attack
+                        <ul>
+                            <li>1d, 5p, 8r blast, plasma type</li>
+                            <li>note: does not affect original target</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>+3r (43r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>heartstopper ability
+                        <ul>
+                            <li>45s cooldown, 10s duration</li>
+                            <li>&#8734;p, &#8734;r, 0.1s</li>
+                            <li>applies heartstop status: all bloons on screen cannot regrow and lose purple immunities for 10s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>splash buffed
+                        <ul>
+                            <li>applies cursed status</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>1s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>1d/1.8s, 5.5s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>sacrifice ability
+                        <ul>
+                            <li>90s cooldown</li>
+                            <li>costs 10 lives</li>
+                            <li>places sacrificial-totem at selected point</li>
+                            <li>note: sacrificing lives does trigger effects based on losing lives (xx5 bomb, xx5 sniper, xx2+ druid)</li>
+                        </ul>
+                    </li>
+                    <li>sacrificial-totem subtower
+                        <ul>
+                            <li>30s lifetime</li>
+                            <li>78r</li>
+                            <li>grants support buff
+                                <ul>
+                                    <li>affects all towers in range</li>
+                                    <li>+1p, +20%r, 85%s, camo detection, increased projectile speed
+                                        <ul>
+                                            <li>wizards instead get +2p, +20%r, 66%s, camo detection, increased projectile speed</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>+19md</li>
+                        </ul>
+                    </li>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>2d/1.8s, 30md/1.8s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>on damage: decamo, degrow, and defortify bloons (not blimps)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>moab-hex ability (60s cooldown, 8.5s duration, battle ready)
+                        <ul>
+                            <li>targets one blimp, excluding BADs, according to current priority</li>
+                            <li>applies hex status
+                                <ul>
+                                    <li>(4%+1)d/1s</li>
+                                    <li>spawns no children</li>
+                                    <li>transfers to the next target if it pops with time remaining</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>curse attack buffed
+                        <ul>
+                            <li>+2r (45r)</li>
+                        </ul>
+                    </li>
+                    <li>gains buff for all xx4+ wizards: zombloon +1p, zmoab +10p</li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>all attacks buffed: +10md</li>
+                    <li>heartstopper ability buffed
+                        <ul>
+                            <li>40s cooldown, 15s duration</li>
+                            <li>heartstop status buffed: 15s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>splash buffed
+                        <ul>
+                            <li>+10p (15p), +3r (11r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>2d/1s, 30md/1s, 4.05s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>+2r (47r)</li>
+                        </ul>
+                    </li>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>6.05s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>sacrifice ability buffed
+                        <ul>
+                            <li>costs 1 life</li>
+                        </ul>
+                    </li>
+                    <li>sacrificial-totem subtower buffed
+                        <ul>
+                            <li>60s lifetime</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>splash buffed
+                        <ul>
+                            <li>+10p (25p), +2r (13r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>0.8s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>3d/1s, 31md/1s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>+20md</li>
+                        </ul>
+                    </li>
+                    <li>moab-hex ability buffed
+                        <ul>
+                            <li>40s cooldown</li>
+                        </ul>
+                    </li>
+                    <li>hex status buffed
+                        <ul>
+                            <li>(5%+1)d/1s, can affect BADs</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "smudgeCattEzili": {
                 "name": "Smudge Catt Ezili",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$600</li>
+                    <li>Leveling Rate: 2.37695294x</li>
+                    <li>Unlock Cost: 2,000 MM + 40,000 Ezili Points</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>gains camo detection</li>
+                    <li>curse attack
+                        <ul>
+                            <li>1d, 1i, 40r, 1.2s, plasma type</li>
+                            <li>can see past obstacles</li>
+                            <li>applies cursed status
+                                <ul>
+                                    <li>1d/2.5s, 2.6s duration</li>
+                                    <li>if the target is already cursed, its duration is refreshed</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>splash attack
+                        <ul>
+                            <li>1d, 5p, 8r blast, plasma type</li>
+                            <li>note: does not affect original target</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>curse buffed: +3r (43r)</li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>screech ability
+                        <ul>
+                            <li>45s cooldown</li>
+                            <li>&#8734;p, &#8734;r</li>
+                            <li>all regrow bloons on screen instantly lose the regrow property</li>
+                            <li>all purple bloons on screen instantly lose the purple property</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>splash buffed
+                        <ul>
+                            <li>applies cursed status</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>1s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>1d/1.8s, 5.5s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>scratch ability
+                        <ul>
+                            <li>90s cooldown</li>
+                            <li>costs 5 lives</li>
+                            <li>places sacrificial-totem at selected point</li>
+                            <li>note: sacrificing lives does trigger effects based on losing lives (xx5 bomb, xx5 sniper, xx2+ druid)</li>
+                        </ul>
+                    </li>
+                    <li>scratching-post subtower
+                        <ul>
+                            <li>30s lifetime</li>
+                            <li>78r</li>
+                            <li>grants support buff
+                                <ul>
+                                    <li>affects all towers in range</li>
+                                    <li>+1p, +20%r, 85%s, camo detection, increased projectile speed
+                                        <ul>
+                                            <li>ezili gets an additional 66%s (56.1%s total) and +35md</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>+19md</li>
+                        </ul>
+                    </li>
+                    <li>cursed buffed
+                        <ul>
+                            <li>2d/1.8s, 30md/1.8s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>on damage: decamo, degrow, and defortify bloons (not blimps)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>go-smudge-go ability (60s cooldown, 5s duration, battle ready)
+                        <ul>
+                            <li>targets the three strongest blimps, excluding BADs</li>
+                            <li>applies clawed status
+                                <ul>
+                                    <li>(4%+1)d/1s</li>
+                                    <li>spawns no children</li>
+                                    <li>transfers to the next target if it pops with time remaining</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>+2r (45r)</li>
+                        </ul>
+                    </li>
+                    <li>+9 end of round lives (does not go above starting lives)</li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>+10md</li>
+                        </ul>
+                    </li>
+                    <li>screech ability buffed
+                        <ul>
+                            <li>40s cooldown, 15s duration</li>
+                            <li>additionally removes the camo property and all immunities for Bloons on screen</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>splash buffed
+                        <ul>
+                            <li>+10p (15p), +3r (11r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>2d/1s, 30md/1s, 4.05s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>curse buffed
+                        <ul>
+                            <li>+2r (47r)</li>
+                        </ul>
+                    </li>
+                    <li>cursed status buffed
+                        <ul>
+                            <li>6.05s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>scratch ability buffed: costs 1 life</li>
+                    <li>scratching-post subtower buffed
+                        <ul>
+                            <li>60s lifetime</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>splash buffed: +10p (25p), +2r (13r)</li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>curse buffed: 0.8s</li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>cursed status buffed: 3d/1s, 31md/1s</li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>all attacks buffed
+                        <ul>
+                            <li>+20md</li>
+                        </ul>
+                    </li>
+                    <li>go-smudge-go ability buffed
+                        <ul>
+                            <li>40s cooldown</li>
+                            <li>clawed status buffed: (5%+1)d/1s, can affect BADs</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "patFusty": {
                 "name": "Pat Fusty",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$950</li>
+                    <li>Leveling Rate: 1.15x</li>
+                    <li>Unlock Cost: 5,000 MM</li>
+                    <li>size: 8 radius</li>
+                    <li>placeable on: land and water</li>
+                    <li>slam attack
+                        <ul>
+                            <li>does 3d, +2cd (5), 1i, 24r, 1.1s, normal type</li>
+                            <li>on contact: aoe</li>
+                        </ul>
+                    </li>
+                    <li>aoe attack
+                        <ul>
+                            <li>2d, +2cd (4cd), 7p, 8r blast, 1.1s, normal, 8r blast</li>
+                            <li>note: can affect the original target</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+5 blast radius (13 blast radius)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>rallying-roar ability (50s cooldown, 7s duration, 12s initial)
+                        <ul>
+                            <li>buffs himself and Ice Monkeys in 30r</li>
+                            <li>+1d, ?%s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>slam buffed: 81.82%s (0.9s)</li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>every 5 attacks replaced by slap
+                                <ul>
+                                    <li>7p</li>
+                                    <li>cannot affect BFBs or higher</li>
+                                    <li>applies knockback status
+                                        <ul>
+                                            <li>move backwards at 2x normal speed, 1s duration</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>all normal Bloons are stunned for 0.3s when attacked</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+7r blast (15r blast)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+1d (4d)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+1d (3d), +4p (11p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+3r (27r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>83.33%s (0.75s)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>big-squeeze ability (30s cooldown, 5s duration, battle ready)
+                        <ul>
+                            <li>grabs the strongest MOAB-class non-BAD bloon in range and spends 4s popping it </li>
+                            <li>Pat cannot attack during the ability duration</li>
+                            <li>Pat cannot activate rallying-roar during the ability duration</li>
+                            <li>once popped, stuns the children for 2s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+1d (5d)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+1d (4d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>86.67%s (0.65s)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>stuns MOABs for 0.2s</li>
+                            <li>+0.1s stun duration (0.4s stun duration)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>rallying-roar ability buffed: 
+                        <ul>
+                            <li>50s cooldown</li>
+                            <li>9s duration</li>
+                            <li>+10r</li>
+                            <li>gives +3d instead of +1</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>slap buffed
+                        <ul>
+                            <li>+7p (14p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+2r, +5cd (12cd)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed</li>
+                    <li>+6cd (12cd)</li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>slam buffed</li>
+                    <li>84.62%s (0.55s)</li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>aoe buffed</li>
+                    <li>+10p (21p)</li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+5d (10d)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+5d (9d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>big-squeeze buffed:
+                        <ul>
+                            <li>2.5s duration</li>
+                            <li>affects 4 eligible bloons instead of 1</li>
+                            <li>spends 2 seconds to pop the bloons instead of 4</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "fustyTheSnowman": {
                 "name": "Fusty The Snowman",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$950</li>
+                    <li>Leveling Rate: 1.15x</li>
+                    <li>Unlock Cost: 5,000 MM + 40,000 Fusty Points</li>
+                    <li>size: 8 radius</li>
+                    <li>placeable on: land and water</li>
+                    <li>slam attack
+                        <ul>
+                            <li>does 3d, +2cd (5), 1i, 24r, 1.1s, normal type</li>
+                            <li>on contact: aoe</li>
+                        </ul>
+                    </li>
+                    <li>aoe attack
+                        <ul>
+                            <li>2d, +2cd (4cd), 7p, 8r blast, 1.1s, normal, 8r blast</li>
+                            <li>note: can affect the original target</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+5 blast radius (13 blast radius)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>chilling-cheer ability (50s cooldown, 7s duration, 12s initial)
+                        <ul>
+                            <li>buffs Ice Monkeys and self in 60r, including self</li>
+                            <li>+1d</li>
+                            <li>-15% attack cooldown  </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>slam buffed: 81.82%s (0.9s)</li>
+                </ul>`,
+                    "5": ` <ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>every 5 attacks replaced by slap
+                                <ul>
+                                    <li>7p</li>
+                                    <li>cannot affect BFBs or higher</li>
+                                    <li>applies knockback status
+                                        <ul>
+                                            <li>move backwards at 2x normal speed, 1s duration</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": ` <ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>all normal Bloons are frozen for 0.7s when attacked</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+7r blast (15r blast)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+1d (4d)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+1d (3d), +4p (11p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+3r (27r)</li>
+                        </ul>
+                    </li>
+                    <li>chilling-cheer buffed
+                        <ul>
+                            <li>Ice Monkeys can now target and inflict 2x damage to MOAB-class bloons but without associated slowing status effects.</li>
+                            <li>Ice Monkey's Arctic Wind slow attack can affect all non-BAD MOAB-class bloons</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>83.33%s (0.75s)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>crushing-ice ability (30s cooldown, 5s duration, battle ready)
+                        <ul>
+                            <li>grabs the strongest MOAB-class non-BAD bloon in range and spends 4s popping it </li>
+                            <li>Pat cannot attack during the ability duration</li>
+                            <li>Pat cannot activate rallying-roar during the ability duration</li>
+                            <li>once popped, creates freeze-bomb
+                                <ul>
+                                    <li>50r blast</li>
+                                    <li>freezes bloons for 4s, or 2s for non-BAD MOAB-class bloons</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>`,
+                    "11": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+1d (5d)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+1d (4d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": ` <ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>86.67%s (0.65s)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>freezes MOABs for ?s</li>
+                            <li>+?s freeze duration (?s freeze duration)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>chilling-cheer ability buffed: 
+                        <ul>
+                            <li>9s duration</li>
+                            <li>+10r</li>
+                            <li>gives +3d instead of +1</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>slap buffed
+                        <ul>
+                            <li>+7p (14p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+2r, +5cd (12cd)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed</li>
+                    <li>+6cd (12cd)</li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>slam buffed</li>
+                    <li>84.62%s (0.55s)</li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>aoe buffed</li>
+                    <li>+10p (21p)</li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>slam buffed
+                        <ul>
+                            <li>+5d (10d)</li>
+                        </ul>
+                    </li>
+                    <li>aoe buffed
+                        <ul>
+                            <li>+5d (9d)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>crushing-ice buffed:
+                        <ul>
+                            <li>affects 4 eligible bloons instead of 1</li>
+                        </ul>
+                    </li>
+                    <li>freeze-bomb buffed
+                        <ul>
+                            <li>50d, +50md (100md), +40r blast (90r blast)</li>
+                            <li>freezes bloons for 10s, or 5s for non-BAD MOAB-class bloons</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "agentJericho": {
                 "name": "Agent Jericho",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$750</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 5,000 MM</li>
+                    <li>size: ? radius</li>
+                    <li>placeable on: land</li>
+                    <li>bullet attack
+                        <ul>
+                            <li>3d, 1i, 0.9s, ?r, ? type</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>bloon-adjustment passive ability
+                        <ul>
+                            <li>every 4th bloon, gives a natural bloon on the opponent's side an extra layer
+                                <ul>
+                                    <li>note: cannot upgrade to a MOAB-class bloon</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>seize-assets ability (60s &#8594; 70s cooldown, 10s duration, 15s initial cooldown)
+                        <ul>
+                            <li>takes $25 from the opponent every 1s
+                                <ul>
+                                    <li>note: if the opponent does not have enough money, they do not go into debt</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>adjusted bloons will randomly be either camo, fortified, or regrow
+                                <ul>
+                                    <li>note: can apply fortified property to opponent's natural blimps</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>regrow bloon modifier buffed
+                        <ul>
+                            <li>$-0.3x ($1.3x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.45s)</li>
+                        </ul>
+                    </li>
+                    <li>seize-assets buffed
+                        <ul>
+                            <li>now takes $65/1s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+2d (5), +?r (?), camo</li>
+                        </ul>
+                    </li>
+                    <li>camo bloon modifier buffed
+                        <ul>
+                            <li>-$0.5x ($1.5x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>Now applies every other bloon spawned naturally</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>seize-assets buffed
+                        <ul>
+                            <li>now takes $100/1s</li>
+                        </ul>
+                    </li>
+                    <li>fortified bloon modifier buffed
+                        <ul>
+                            <li>$-0.4x ($1.6x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>decoy ability (90s cooldown, battle ready)
+                        <ul>
+                            <li>spawns a decoy-moab on the opponent's track
+                                <ul>
+                                    <li>same properties as a normal MOAB, but with infinite health</li>
+                                    <li>does not get affected by speed ramping from rounds 25+</li>
+                                    <li>consumes all pierce on projectiles that hit it</li>
+                                    <li>disappears when it has reached 66.67% of the track</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>seize-assets buffed
+                        <ul>
+                            <li>now takes $130/1s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.225s)</li>
+                        </ul>
+                    </li>
+                    <li>decoy-moab buffed
+                        <ul>
+                            <li>now has the same properties as a BFB</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>applies more modifiers to adjusted bloons</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>seize-assets buffed
+                        <ul>
+                            <li>now takes $250/1s </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>affects your bloon sends as well </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>66.67%s (0.15), +??d (??)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>decoy-moab buffed
+                        <ul>
+                            <li>now has the same properties as a ZOMG</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>seize-assets buffed
+                        <ul>
+                            <li>15s duration</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+??d (??)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>decoy ability buffed
+                        <ul>
+                            <li>??s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             },
             "highwaymanJericho": {
                 "name": "Highwayman Jericho",
                 "data": {
-                    "1": undefined,
-                    "2": ``,
-                    "3": ``,
-                    "4": ``,
-                    "5": ``,
-                    "6": ``,
-                    "7": ``,
-                    "8": ``,
-                    "9": ``,
-                    "10": ``,
-                    "11": ``,
-                    "12": ``,
-                    "13": ``,
-                    "14": ``,
-                    "15": ``,
-                    "16": ``,
-                    "17": ``,
-                    "18": ``,
-                    "19": ``,
-                    "20": ``
+                    "1": `<ul>
+                    <li>$750</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points</li>
+                    <li>size: ? radius</li>
+                    <li>placeable on: land</li>
+                    <li>bullet attack
+                        <ul>
+                            <li>3d, 1i, 0.9s, ?r, ? type</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>bloon-adjustment passive ability
+                        <ul>
+                            <li>every 4th bloon, gives a natural bloon on the opponent's side an extra layer
+                                <ul>
+                                    <li>note: cannot upgrade to a MOAB-class bloon</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>stand-and-deliver ability (100s cooldown, ? initial cooldown)
+                        <ul>
+                            <li>takes $250 from the opponent
+                                <ul>
+                                    <li>if the opponent does not have $250, their cheapest tower that can pay back the debt is sold for 100% sellback to pay</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>adjusted bloons will randomly be either camo, fortified, or regrow
+                                <ul>
+                                    <li>note: can apply fortified property to opponent's natural blimps</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>regrow bloon modifier buffed
+                        <ul>
+                            <li>$-0.3x ($1.3x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.45s)</li>
+                        </ul>
+                    </li>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>now takes $650</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+2d (5), +?r (?), camo</li>
+                        </ul>
+                    </li>
+                    <li>camo bloon modifier buffed
+                        <ul>
+                            <li>-$0.5x ($1.5x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>Now applies every other bloon spawned naturally</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>fortified bloon modifier buffed
+                        <ul>
+                            <li>$-0.3x ($1.7x)</li>
+                        </ul>
+                    </li>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>now takes $1,000</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>misdirection ability (? cooldown, ? initial cooldown)
+                        <ul>
+                            <li>takes the strongest MOAB-class bloon up to a BFB and puts it at the opponent's entrance 
+                                <ul>
+                                    <li>bloon health is retained</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>now takes $1,300</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.225s)</li>
+                        </ul>
+                    </li>
+                    <li>misdirection buffed
+                        <ul>
+                            <li>now affects DDTs</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>applies more modifiers to adjusted bloons</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>now takes $2500</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>affects your bloon sends as well </li>
+                        </ul>
+                    </li>
+                    <li>misdirection buffed
+                        <ul>
+                            <li>affects ZOMGs</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>66.67%s (0.15), +??d (??)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>misdirection buffed
+                        <ul>
+                            <li>fully heals the affected bloon</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>??s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+??d (??)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>misdirection ability buffed
+                        <ul>
+                            <li>??s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`
                 }
             }
         }
