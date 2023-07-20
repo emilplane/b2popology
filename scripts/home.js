@@ -38,8 +38,8 @@ let events = [
             improving player game sense and leading to more optimal play. The code is relatively easy to use and does not require prior coding experience to effectively operate.`,
         "links": [
             {
-                "name": "Start Here",
-                "link": "https://github.com/redlaserbmBTD/BTDB2_SIMULATOR/tree/main/tutorials"
+                "name": "Tutorial",
+                "link": "https://www.youtube.com/watch?v=kvGkgIr-ts8"
             },
             {
                 "name": "GitHub",
