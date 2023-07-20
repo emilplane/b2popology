@@ -2944,7 +2944,7 @@ let data = {
                                             <li>moderate homing (? turn rate)</li>
                                             <li>on contact: explosion
                                                 <ul>
-                                                    <li>2d, 3cd (5cd), 3md (5cd), 40p, 25r blast, explosion type</li>
+                                                    <li>2d, 3cd (5cd), 3md (5md), 40p, 25r blast, explosion type</li>
                                                 </ul>
                                             </li>
                                         </ul>
