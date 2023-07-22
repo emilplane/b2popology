@@ -3538,6 +3538,7 @@ let data = {
                                 <ul>
                                     <li>dart buffed
                                         <ul>
+                                        <li>+1 shocked1 damage (2 shocked1 damage)</li>
                                             <li>applies shocked1 status
                                                 <ul>
                                                     <li>1d/0.95s, 1s duration</li>
@@ -3554,7 +3555,7 @@ let data = {
                                 <ul>
                                     <li>dart replaced by laser
                                         <ul>
-                                            <li>2d, 1 shocked2 damage (2 shocked2 damage), 5p, 0.2s passive, plasma type</li>
+                                            <li>2d, 1 shocked2 damage (3 shocked2 damage), 5p, 0.2s passive, plasma type</li>
                                             <li>applies shocked2 status
                                                 <ul>
                                                     <li>1d/0.95s, 2s duration</li>
