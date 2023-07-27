@@ -6363,7 +6363,7 @@ let data = {
                                         <ul>
                                             <li>places a trap on the closest point of track in range
                                                 <ul>
-                                                    <li>1200p, 9.0s</li>
+                                                    <li>500p, 9.0s</li>
                                                     <li>can only place a trap after a deploy time of 2.1s of collecting the previous trap
                                                         <ul>
                                                             <li>note: the first trap is placed immediately</li>

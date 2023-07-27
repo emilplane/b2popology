@@ -196,7 +196,6 @@ ul {
 }
 
 @media (hover: hover) {
-	/* when hover is supported */
 	button:hover {
 		color: rgb(0, 0, 0);
 		background: rgb(255, 255, 255);
