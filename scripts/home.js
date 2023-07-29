@@ -160,7 +160,7 @@ for (const event of events) {
         if (linkString != undefined) {
             linkString = linkString + `
                 <a target='blank' href="${event.links[link].link}">
-                    <button class="button primaryButtonStyle3">
+                    <button class="button">
                         <h6>${event.links[link].name}</h6>
                     </button>
                 </a>
@@ -168,7 +168,7 @@ for (const event of events) {
         } else {
             linkString = `
                 <a target='blank' href="${event.links[link].link}">
-                    <button class="button primaryButtonStyle3">
+                    <button class="button">
                         <h6>${event.links[link].name}</h6>
                     </button>
                 </a>

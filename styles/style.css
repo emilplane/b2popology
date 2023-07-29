@@ -165,7 +165,7 @@ ul {
 }
 
 .button {
-	background-color: rgb(225 225 225);
+	background-color: var(--primaryColorLight1);
 	border-radius: 10px;
 	width: max-content;
 	flex-shrink: 0;

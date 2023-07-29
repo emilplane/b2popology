@@ -3567,7 +3567,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Plasma Accelerator - $11,000",
+                            "name": "400 - Plasma Accelerator - $12,000",
                             "content": `
                                 <ul>
                                     <li>laser replaced with beam
@@ -3642,7 +3642,7 @@ let data = {
                                     <li>dart replaced by rocket
                                         <ul>
                                             <li>7p, 0.132s</li>
-                                            <li>uses 2 pierce per hit (4 total explosions)</li>
+                                            <li>uses 2 impacts per hit (4 total explosions)</li>
                                             <li>on contact: explosion
                                                 <ul>
                                                     <li>1d, 6p, 8r blast, normal type</li>
@@ -5885,13 +5885,12 @@ let data = {
                                             </li>
                                             <li>places storm-spikes randomly on track
                                                 <ul>
-                                                    <li>1d, 4md (5md), 5p, sharp type
+                                                    <li>1d, 4md (5md), 5i, sharp type
                                                         <ul>
                                                             <li>total: 25md per spike</li>
                                                         </ul>
                                                     </li>
                                                     <li>10-13s lifetime</li>
-                                                    <li>not affected by external pierce buffs</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -6363,16 +6362,19 @@ let data = {
                                         <ul>
                                             <li>places a trap on the closest point of track in range
                                                 <ul>
-                                                    <li>500p, 9.0s</li>
+                                                    <li>500i, 9.0s</li>
                                                     <li>can only place a trap after a deploy time of 2.1s of collecting the previous trap
                                                         <ul>
                                                             <li>note: the first trap is placed immediately</li>
                                                         </ul>
                                                     </li>
-                                                    <li>pops any visible non-MOAB-class bloon up to its pierce limit</li>
+                                                    <li>pops any visible non-MOAB-class bloon up to its impact limit</li>
                                                     <li>once full, can be collected manually (100r) or automatically (5s)
                                                         <ul>
                                                             <li>when collected, gives $2 times the amount of natural RBE collected</li>
+                                                            <ul>
+                                                                <li>does not give money for bloons captured over the impact limit</li>
+                                                            </ul>
                                                         </ul>
                                                     </li>
                                                     <li>attack rate and deploy time can't be buffed</li>
@@ -6395,7 +6397,7 @@ let data = {
                                 <ul>
                                     <li>trap buffed
                                         <ul>
-                                            <li>10,000p, 1.5s</li>
+                                            <li>10,000i, 1.5s</li>
                                             <li>deploy time 1.5s</li>
                                             <li>cash per trap increased to natural bloon RBE captured*0.75</li>
                                             <li>can trap blimps other than BAD</li>
