@@ -3533,7 +3533,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Laser Shock - $750",
+                            "name": "200 - Laser Shock - 600",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -9055,7 +9055,7 @@ let data = {
                     "3": `<ul>
                     <li>rallying-roar ability (50s cooldown, 7s duration, 12s initial)
                         <ul>
-                            <li>buffs himself and Ice Monkeys in 30r</li>
+                            <li>buffs himself and towers in 30r</li>
                             <li>+1d, ?%s</li>
                         </ul>
                     </li>
