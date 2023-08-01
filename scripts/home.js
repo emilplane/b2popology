@@ -208,13 +208,19 @@ async function updateLeaderboard() {
     await getNkapiLeaderboard(nkapiHoms.body[0].leaderboard);
     const leaderboardLoop = 10;
     for (let i = 0; i < leaderboardLoop; i++) {
+        // init all of leaderboard with insert except for user
+        // prevent html injects
         document.getElementById("leaderboard").insertAdjacentHTML("beforeend", 
         `
             <div class="flex alignMid gap">
                 <h4>${i + 1}</h4>
-                <p class="push"><a class="blackLinks" href="https://b2.lol/playerInfo/playerInfo.html?${nkapiLeaderboard.body[i].profile}"><u>${nkapiLeaderboard.body[i].displayName} | ${nkapiLeaderboard.body[i].score}</u></a></p>
+                <p class="push playerName"><a class="blackLinks" href="https://b2.lol/playerInfo/playerInfo.html?${nkapiLeaderboard.body[i].profile}"></a></p>
             </div>
         `)
+        const leaderboardLink = document.getElementsByClassName("playerName")[i].firstChild
+        const leaderboardPlayer = document.createElement("u")
+        leaderboardPlayer.innerText = `${nkapiLeaderboard.body[i].displayName} | ${nkapiLeaderboard.body[i].score}`
+        leaderboardLink.appendChild(leaderboardPlayer)
     }
     document.getElementById("b2lol").insertAdjacentHTML("beforeend",
         `
