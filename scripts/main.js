@@ -2238,7 +2238,7 @@ let data = {
                                     </li>
                                     <li>gains command buff
                                         <ul>
-                                            <li>affects subs in range, including self</li>
+                                            <li>affects all subs, including self</li>
                                             <li>+20r</li>
                                             <li>double damage and +6p to all attacks except for first-strike ability</li>
                                         </ul>
@@ -3885,7 +3885,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>510: fireball 50%s (1.3s), +6d (9d), +9md (18md)</li>
+                                            <li>510: fireball 50%s (1.3s), +7d (9d), +9md (18md)</li>
                                             <li>520: wall-of-fire 50%s (2.75s), +1md (2md)</li>
                                         </ul>
                                     </li>
@@ -3946,7 +3946,7 @@ let data = {
                                 <ul>
                                     <li>fireball buffed
                                         <ul>
-                                            <li>explosion +6d (9d)</li>
+                                            <li>explosion +7d (9d)</li>
                                         </ul>
                                     </li>
                                     <li>place-fire buffed
