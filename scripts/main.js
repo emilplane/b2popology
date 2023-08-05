@@ -3907,7 +3907,7 @@ let data = {
                                     <li>gains fireball attack
                                         <ul>
                                             <li>2.6s</li>
-                                            <li>on damage: explosion
+                                            <li>on contact: explosion
                                                 <ul>
                                                     <li>2d, 15p, 20r blast, explosion type</li>
                                                 </ul>
@@ -3952,7 +3952,7 @@ let data = {
                                 <ul>
                                     <li>fireball buffed
                                         <ul>
-                                            <li>explosion +6d (9d)</li>
+                                            <li>explosion +6d (8d)</li>
                                         </ul>
                                     </li>
                                     <li>place-fire buffed
@@ -9894,16 +9894,7 @@ let selectedButtons = {};
 let selectedCategory = "primary";
 let selectedPage ="dartMonkey"
 
-let initialized = false;
-
 let urlSection; let urlEntry;
-
-const towerAttributeNames = {
-	unlockCost: "Unlock Cost",
-	towerCost: "Tower Cost", 
-	placements: "Placeable on",
-	footprint: "Tower Footprint"
-}
 
 let nkapiHoms;
 async function getNkapiHomsJSON() {

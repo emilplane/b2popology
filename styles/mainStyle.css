@@ -1,0 +1,177 @@
+:root {
+    --primary1: #E6F3EF; 
+    --primary2: #DAF3EA;
+    --primary3: #C2F3E2;
+    --primary4: #92F3D3;
+
+    --primary5: #00F3A3;
+
+    --primary6: #3DCC9D;
+    --primary7: #267F62;
+    --primary8: #134032;
+
+    --secondary1: #FFFFFF;
+    --secondary2: #F2F2F2; 
+    --secondary3: #E6E6E6;
+    --secondary4: #D8D8D8;
+    --secondary5: #B3B3B3;
+    --secondary6: #7F7F7F;
+    --secondary7: #404040;
+    --secondary8: #000000;
+
+    --primaryTower1: #E6EEF2;
+    --primaryTower3: #C1E2F2;
+    --primaryTower5: #49B9F2;
+    --primaryTower6: #3688B3;
+    --primaryTower7: #26607F;
+
+    --militaryTower1: #DFE6DB;
+    --militaryTower3: #C7E6B8;
+    --militaryTower5: #7BE646;
+    --militaryTower7: #447F27;
+
+    --magicTower1: #EBE8F3;
+    --magicTower3: #D3C2F3;
+    --magicTower5: #9160F3;
+    --magicTower7: #4C337F;
+    --magicTower8: #261A40;
+
+    --supportTower1: #E6E6DB;
+    --supportTower3: #E6E6B8;
+    --supportTower5: #E6E644;
+    --supportTower7: #7F7F26;
+}
+
+html {
+	font-family: "Roboto";
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6, p, button {
+    margin: 0;
+}
+
+h1, h2, h3, button {
+    font-family: "Luckiest Guy";
+    font-weight: 100;
+    color: var(--secondary8);
+}
+
+h4, h5, h6, p {
+    font-family: "Roboto";
+    font-weight: 100;
+    padding: 4px;
+}
+
+h4, h5, h6 {
+    color: var(--secondary8);
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+h5 {
+	font-size: 16px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+p {
+	font-size: 14px;
+    color: var(--secondary7)
+}
+
+button {
+    background-color: var(--primary5);
+	border-radius: 8px;
+	border: 0;
+	cursor: pointer;
+    font-size: 16px;
+    transition-duration: 0.3s;
+}
+button:hover, button:focus {
+    background: var(--primary3);
+    color: var(--secondary7);
+    transition-duration: 0.3s;
+}
+
+.lighterText {
+    color: var(--secondary7)
+}
+
+.highlightText {
+    color: var(--primary7)
+}
+
+.primaryTowerButton {
+    background-color: var(--primaryTower5);
+}
+.primaryTowerButton:hover, .primaryTowerButton:focus {
+    background: var(--primaryTower3);
+}
+
+.militaryTowerButton {
+    background-color: var(--militaryTower5);
+}
+.militaryTowerButton:hover, .militaryTowerButton:focus {
+    background: var(--militaryTower3);
+}
+
+.magicTowerButton {
+    background-color: var(--magicTower5);
+    color: var(--secondary2);
+}
+.magicTowerButton:hover, .magicTowerButton:focus {
+    background: var(--magicTower3);
+}
+
+.supportTowerButton {
+    background-color: var(--supportTower5);
+}
+.supportTowerButton:hover, .supportTowerButton:focus {
+    background: var(--supportTower3);
+}
+
+.roundedBox {
+    background-color: var(--secondary2);
+    border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+}
+
+.verticalLine {
+    width: 1px;
+    background-color: var(--secondary4);
+}
+
+.flexItems1 {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flexItems1 > * {
+    flex: 2;
+    flex-basis: 300px;
+}
