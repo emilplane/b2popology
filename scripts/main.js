@@ -2238,7 +2238,7 @@ let data = {
                                     </li>
                                     <li>gains command buff
                                         <ul>
-                                            <li>affects subs in range, including self</li>
+                                            <li>affects all sub on screen, including self</li>
                                             <li>+20r</li>
                                             <li>double damage and +6p to all attacks except for first-strike ability</li>
                                         </ul>
@@ -3642,7 +3642,7 @@ let data = {
                                     <li>dart replaced by rocket
                                         <ul>
                                             <li>7p, 0.132s</li>
-                                            <li>uses 2 impacts per hit (4 total explosions)</li>
+                                            <li>uses 2 impacts per hit (3 total explosions)</li>
                                             <li>on contact: explosion
                                                 <ul>
                                                     <li>1d, 6p, 8r blast, normal type</li>
@@ -3652,7 +3652,7 @@ let data = {
                                     </li>
                                     <li>crosspath:
                                         <ul>
-                                            <li>032: rocket gets +3p (5 total explosions), explosion gets +3p (9p)</li>
+                                            <li>032: rocket gets +3i (5 total explosions), explosion gets +3p (9p)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3891,7 +3891,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>510: fireball 50%s (1.3s), +6d (9d), +9md (18md)</li>
+                                            <li>510: fireball 50%s (1.3s), +7d (9d), +9md (18md)</li>
                                             <li>520: wall-of-fire 50%s (2.75s), +1md (2md)</li>
                                         </ul>
                                     </li>
@@ -3952,7 +3952,7 @@ let data = {
                                 <ul>
                                     <li>fireball buffed
                                         <ul>
-                                            <li>explosion +6d (8d)</li>
+                                            <li>explosion +7d (9d)</li>
                                         </ul>
                                     </li>
                                     <li>place-fire buffed
@@ -9509,7 +9509,7 @@ let data = {
                     </li>
                     <li>fortified bloon modifier buffed
                         <ul>
-                            <li>$-0.4x ($1.6x)</li>
+                            <li>$-0.3x ($1.7x)</li>
                         </ul>
                     </li>
                 </ul>`,
