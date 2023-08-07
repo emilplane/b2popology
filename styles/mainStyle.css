@@ -40,6 +40,9 @@
     --supportTower3: #E6E6B8;
     --supportTower5: #E6E644;
     --supportTower7: #7F7F26;
+
+    --heroes5: #F3AB48;
+    --heroes3: #F3DEC2;
 }
 
 html {
@@ -57,19 +60,19 @@ h1, h2, h3, h4, h5, h6, p, button {
     margin: 0;
 }
 
-h1, h2, h3, button {
+h1, h2, h3, h4, button {
     font-family: "Luckiest Guy";
     font-weight: 100;
     color: var(--secondary8);
 }
 
-h4, h5, h6, p {
+h5, h6, p {
     font-family: "Roboto";
     font-weight: 100;
     padding: 4px;
 }
 
-h4, h5, h6 {
+h5, h6 {
     color: var(--secondary8);
 }
 
@@ -86,7 +89,7 @@ h3 {
 }
 
 h4 {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 h5 {
@@ -153,11 +156,31 @@ button:hover, button:focus {
     background: var(--supportTower3);
 }
 
+.heroesButton {
+    background-color: var(--heroes5);
+}
+.heroesButton:hover, .heroesButton:focus {
+    background: var(--heroes3);
+}
+.discordButton {
+    background-color: rgb(104, 66, 229);
+    color: var(--secondary2);
+}
+.discordButton:hover, .discordButton:focus {
+    background-color: rgb(255, 255, 255);
+}
+
 .roundedBox {
     background-color: var(--secondary2);
     border-radius: 8px;
     margin: 8px;
     padding: 8px;
+}
+
+.horizontalLine {
+    height: 1px;
+    margin: 0 0 8px 0;
+    background-color: var(--secondary4);
 }
 
 .verticalLine {
