@@ -56,17 +56,17 @@ body {
 	flex-direction: column;
 }
 
-h1, h2, h3, h4, h5, h6, p, button {
+h1, h2, h3, h4, h5, h6, p, ul, button {
     margin: 0;
 }
 
-h1, h2, h3, h4, button {
+h1, h2, h3, h4, h5, button {
     font-family: "Luckiest Guy";
     font-weight: 100;
     color: var(--secondary8);
 }
 
-h5, h6, p {
+h6, p, ul {
     font-family: "Roboto";
     font-weight: 100;
     padding: 4px;
@@ -100,9 +100,13 @@ h6 {
 	font-size: 14px;
 }
 
-p {
+p, ul {
 	font-size: 14px;
     color: var(--secondary7)
+}
+
+ul {
+    padding-left: 20px;
 }
 
 button {

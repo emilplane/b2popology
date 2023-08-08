@@ -1,9 +1,15 @@
-h1, h2, h3, h4, button, .luckiestGuy {
-    font-family: 'Luckiest Guy'; 
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+.luckiestGuy {
+    font-family: 'Luckiest Guy';
     padding: 4px;
 }
 
 button {
-    font-family: 'Luckiest Guy'; 
+    font-family: 'Luckiest Guy';
     padding: 4px 8px;
 }
