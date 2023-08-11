@@ -69,6 +69,34 @@ let wizardMonkey = {
                 "type": "attack",
                 "state": "buff",
                 "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 1
+                        }
+                    }
+                }
+            },
+            {
+                "name": "test-attack-3",
+                "type": "attack",
+                "state": "buff",
+                "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 1
+                        }
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "name": "magic-bolt",
+                "type": "attack",
+                "state": "buff",
+                "properties": {
                     "homing": {
                         "turnRate": 360
                     }
@@ -345,68 +373,171 @@ let damageBonuses = [
     
 ]
 
-function getStats(tower, path1, path2, path3) {
-    if (path1 == 0 && path2 == 0 && path3 == 0) {
-        for (position in tower.base) {
-            let attack = tower.base[position]
-            let standardStatsString;
-
-            function insertComma() {
-                if (standardStatsString != undefined) {
-                    standardStatsString = `${standardStatsString}, `
-                } else {
-                    standardStatsString = ``
-                }
-            }
-
-            if (attack.properties.damage != undefined) {
-                insertComma();
-                if (attack.properties.damage.base != undefined) {
-                    standardStatsString = `${standardStatsString}${attack.properties.damage.base}d`
-                }
-                for (type in damageBonuses) {
-                    let bonusName = damageBonuses[type].name
-                    let bonusAbbreviation = damageBonuses[type].abbreviation
-                    
-                    if (attack.properties.damage[bonusName] != undefined) {
-                        insertComma();
-                        standardStatsString = `${standardStatsString}+${attack.properties.damage[bonusName]}${bonusAbbreviation} (${attack.properties.damage.base+attack.properties.damage[bonusName]}${bonusAbbreviation})`
-                    }
-                }
-            };
-
-            if (attack.properties.pierce != undefined) {
-                insertComma();
-                let pierceAbbreviation = "p";
-                if (attack.properties.pierce.impact == true) {
-                    pierceAbbreviation = "i"
-                }
-                standardStatsString = `${standardStatsString}${attack.properties.pierce.value}${pierceAbbreviation}`
-            }
-
-            if (attack.properties.range != undefined) {
-                insertComma();
-                let zone = "";
-                if (attack.properties.range.zone == true) {
-                    zone = "zone"
-                }
-                standardStatsString = `${standardStatsString}${attack.properties.range.value}r ${zone}`
-            }
-
-            if (standardStatsString == undefined) {
-                standardStatsString = ``;
+function getStats(tower, top, middle, bottom, type, action, location) {
+    function standardStats(attack) {
+        let string;
+        function insertComma() {
+            if (string != undefined) {
+                string = `${string}, `
             } else {
-                standardStatsString = `<li>${standardStatsString}</li>`;
+                string = ``
             }
-            document.getElementById("wizardMonkeyStats").insertAdjacentHTML("beforeend", `
-                <h4 id="attackName">${attack.name}</h4>
+        }
+
+        if (attack.properties.damage != undefined) {
+            insertComma();
+            if (attack.properties.damage.base != undefined) {
+                string = `${string}${attack.properties.damage.base}d`
+            }
+            for (type in damageBonuses) {
+                let bonusName = damageBonuses[type].name
+                let bonusAbbreviation = damageBonuses[type].abbreviation
+                
+                if (attack.properties.damage[bonusName] != undefined) {
+                    insertComma();
+                    string = `${string}+${attack.properties.damage[bonusName]}${bonusAbbreviation} (${attack.properties.damage.base+attack.properties.damage[bonusName]}${bonusAbbreviation})`
+                }
+            }
+        };
+
+        if (attack.properties.pierce != undefined) {
+            insertComma();
+            let pierceAbbreviation = "p";
+            if (attack.properties.pierce.impact == true) {
+                pierceAbbreviation = "i"
+            }
+            string = `${string}${attack.properties.pierce.value}${pierceAbbreviation}`
+        }
+
+        if (attack.properties.range != undefined) {
+            insertComma();
+            let zone = "";
+            if (attack.properties.range.zone == true) {
+                zone = " zone"
+            }
+            string = `${string}${attack.properties.range.value}r${zone}`
+        }
+
+        if (attack.properties.attackCooldown != undefined) {
+            insertComma();
+            string = `${string}${attack.properties.attackCooldown.value}s`
+        }
+
+        if (attack.properties.attackType != undefined) {
+            insertComma();
+            string = `${string}${attack.properties.attackType} type`
+        }
+
+        if (string == undefined) {
+            string = ``;
+        } else {
+            string = `<li>${string}</li>`;
+        }
+        return string
+    }
+
+    if (top == 0 && middle == 0 && bottom == 0) {
+        for (position in tower.base) {
+            let standardStatsString = standardStats(tower.base[position])
+            document.getElementById(location).insertAdjacentHTML("beforeend", `
+                <h4 id="attackName">${tower.base[position].name}</h4>
                 <div class="horizontalLine"></div>
                 <ul>
                     ${standardStatsString}
                 </ul>
             `)
         }
+    } else if (type == "upgrade") {
+        let mainPath;
+        let upgradeCounter;
+        if(top >= middle && top >= bottom) {
+            mainPath = "top";
+            upgradeCounter = top
+        }
+        else if (middle >= top && middle >= bottom) {
+            mainPath = "middle";
+            upgradeCounter = middle
+        }
+        else {
+            mainPath = "bottom";
+            upgradeCounter = bottom
+        }
+
+        let towerString = tower.base;
+
+        console.log(towerString)
+
+        console.log(towerString)
     }
 }
 
-getStats(wizardMonkey, 0, 0, 0)
+getStats(wizardMonkey, 0, 0, 0, "upgrade", "insert", "wizardMonkeyStats1")
+getStats(wizardMonkey, 0, 0, 0, "upgrade", "insert", "wizardMonkeyStats2")
+
+let emilplaneTower = [
+    {
+        "name": "emildart",
+        "type": "attack",
+        "state": "new",
+        "properties": {
+            "damage": {
+                "base": 50,
+                "moab": 200,
+                "lead": 50,
+                "stunned": 25
+            },
+            "pierce": {
+                "value": 10
+            },
+            "range": {
+                "value": 80,
+                "zone": true
+            },
+            "attackCooldown": {
+                "value": 0.5
+            },
+            "attackType": "explosive"
+        }
+    },
+]
+
+let emilplaneUpgrade = [
+    {
+        "name": "emildart",
+        "type": "attack",
+        "state": "buff",
+        "properties": {
+            "damage": {
+                "base": {
+                    "type": "addative",
+                    "value": 2
+                },
+                "camo": {
+                    "type": "additive",
+                    "value": 2
+                },
+                "stunned": {
+                    "type": "additive",
+                    "value": 2
+                },
+            },
+            "pierce": {
+                "value": {
+                    "type": "additive",
+                    "value": 100
+                },
+            },
+            "attackCooldown": {
+                "value": {
+                    "type": "multiplicative",
+                    "value": 2
+                },
+            },
+            "attackType": "normal"
+        }
+    },
+]
+
+let result = emilplaneTower
+
+console.log(result)

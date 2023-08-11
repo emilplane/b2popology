@@ -1,46 +1,38 @@
 let events = [
     {
-        "name": "Battles 2 Update 2.0.4",
-        "startDate": "2023-07-18T11:40:00",
-        "content": null,
+        "name": "Battles 2 Update 2.1 Announced!",
+        "startDate": "2023-08-11T12:44:47Z",
+        "content": `
+            <p>"Update 2.1 is coming soon to Battles 2! Show off your passion for popping with Monkey Prestige, set sail on an epic new map Pirate Cove and more!"</p>
+        `,
         "links": [
             {
                 "name": "Patch Notes",
+                "link": "https://www.reddit.com/r/battles2/comments/15o7yan/update_21_coming_soon_update_notes/"
+            },
+            {
+                "name": "Update Video",
+                "link": "https://youtu.be/tCa4IQfsq-w"
+            }
+        ]
+    },
+    {
+        "name": "Star Captain Map Design Competition",
+        "startDate": "2023-08-10T02:09:57Z",
+        "endDate": "2023-08-20T22:59:59Z",
+        "content": `
+            <p>"Have you ever fancied trying your hand at designing a map for Battles 2? Well, now is your chance! With work on Star Captain Jericho well underway and looking good for launch in update 2.2, we wanted to give you all the chance to design a map to go with him!" Click "learn more" to find out more about this competition!</p>
+            <p>Ninja Kiwi Terms apply.</p>
+        `,
+        "links": [
+            {
+                "name": "Learn more",
                 "link": "https://www.reddit.com/r/battles2/comments/152t5pn/update_204_is_rolling_out_now_patch_notes/"
-            }
-        ]
-    },
-    {
-        "name": "Battles 2 Eco Simulator Now Available",
-        "startDate": "2023-07-10T20:01:30+0000",
-        "content": `<p>The b2sim Python library is an extensive feature-rich library for simulating flowcharts within battles 2. 
-            Simulating essential aspects of battles 2's income sources with virtually 100% accuracy, the library is a must-use tool for 
-            optimizing eco'ing and farming with any flowchart. Results from the simulator can be used to better inform practical decisions made during games, 
-            improving player game sense and leading to more optimal play. The code is relatively easy to use and does not require prior coding experience to effectively operate.</p>`,
-        "links": [
-            {
-                "name": "Tutorial",
-                "link": "https://www.youtube.com/watch?v=kvGkgIr-ts8"
             },
             {
-                "name": "GitHub",
-                "link": "https://github.com/redlaserbmBTD/BTDB2_SIMULATOR"
+                "name": "Ninja Kiwi Terms & Conditions",
+                "link": "https://ninjakiwi.com/terms"
             },
-            {
-                "name": "PyPI",
-                "link": "https://pypi.org/project/b2sim/"
-            }
-        ]
-    },
-    {
-        "name": "Battles 2 Update 2.0.3",
-        "startDate": "2023-06-30T08:51:33",
-        "content": null,
-        "links": [
-            {
-                "name": "Patch Notes",
-                "link": "https://reddit.com/r/battles2/comments/14muyub/update_203_is_rolling_out_now_patch_notes/"
-            }
         ]
     }
 ]
@@ -57,6 +49,7 @@ async function getNkapiHomsJSON() {
 function setStats() {
     let seasonString = nkapiHoms.body[0].name
     document.getElementById("seasonNumber").innerHTML = seasonString[7]+seasonString[8];
+    document.getElementById("seasonNumber").innerHTML = 13;
     let start = new Date(nkapiHoms.body[0].start)
     let end = new Date(nkapiHoms.body[0].end)
     let timeLeft = end-start
@@ -147,8 +140,13 @@ function updateEvents () {
                     <h4>${event.name}</h4>
                     <p class="push" id="eventDate${eventCounter}">Loading Date...</p>
                 </div>
-                ${content}
-                ${linkString}
+                <div>
+                    ${content}
+                </div>
+                <div class="gap"></div>
+                <div>
+                    ${linkString}
+                </div>
             </div>
         `)
     }
