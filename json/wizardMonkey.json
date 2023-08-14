@@ -265,5 +265,250 @@
                 }
             }
         ]
+    ],
+    "middle": [
+        [
+            {
+                "name": "fireball",
+                "type": "attack",
+                "state": "new",
+                "properties": {
+                    "homing": {
+                        "turnRate": 360
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "name": "magic-bolt",
+                "type": "attack",
+                "state": "buff",
+                "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 1
+                        }
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "name": "magic-bolt",
+                "type": "attack",
+                "state": "buff",
+                "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 1
+                        }
+                    },
+                    "pierce": {
+                        "value": {
+                            "type": "additive",
+                            "value": 4
+                        }
+                    },
+                    "range": {
+                        "value": {
+                            "type": "additive",
+                            "value": 20
+                        }
+                    },
+                    "attackCooldown": {
+                        "value": {
+                            "type": "multiplicative",
+                            "value": 0.5
+                        }
+                    },
+                    "attackType": "plasma"
+                }
+            }
+        ],
+        [
+            {
+                "name": "magic-bolt",
+                "type": "attack",
+                "state": "buff",
+                "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 5
+                        },
+                        "moab": {
+                            "type": "additive",
+                            "value": 10
+                        },
+                        "lead": {
+                            "type": "additive",
+                            "value": 4
+                        }
+                    },
+                    "attackCooldown": {
+                        "value": {
+                            "type": "multiplicative",
+                            "value": 0.5
+                        }
+                    }
+                }
+            }
+        ],
+        [
+            {
+                "name": "magic-bolt",
+                "type": "attack",
+                "state": "buff",
+                "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 2
+                        },
+                        "moab": {
+                            "type": "additive",
+                            "value": 15
+                        },
+                        "lead": {
+                            "type": "additive",
+                            "value": 4
+                        }
+                    },
+                    "pierce": {
+                        "value": {
+                            "type": "additive",
+                            "value": 4
+                        }
+                    },
+                    "attackCooldown": {
+                        "value": {
+                            "type": "multiplicative",
+                            "value": 0.5
+                        }
+                    }
+                }
+            },
+            {
+                "name": "archmage-shimmer",
+                "type": "attack",
+                "state": "new",
+                "properties": {
+                    "pierce": {
+                        "value": 200
+                    },
+                    "range": {
+                        "value": 40,
+                        "zone": true
+                    },
+                    "attackCooldown": {
+                        "value": 1.25
+                    },
+                    "camo": true,
+                    "obstacles": {
+                        "seeThrough": true,
+                        "passThrough": true
+                    },
+                    "effects": {
+                        "decamo": true
+                    }
+                }
+            },
+            {
+                "name": "archmage-flame",
+                "type": "attack",
+                "state": "new",
+                "properties": {
+                    "damage": {
+                        "base": 1,
+                        "ceramic": {
+                            "type": "additive",
+                            "value": 1
+                        },
+                        "moab": {
+                            "type": "additive",
+                            "value": 1
+                        }
+                    },
+                    "pierce": {
+                        "value": 4
+                    },
+                    "range": {
+                        "value": 70
+                    },
+                    "attackCooldown": {
+                        "value": 0.05
+                    },
+                    "attackType": "fire",
+                    "obstacles": {
+                        "seeThrough": true,
+                        "passThrough": false
+                    },
+                    "status": {
+                        "name": "archmage-burn"
+                    }
+                }
+            },
+            {
+                "name": "archmage-burn",
+                "type": "status",
+                "state": "new",
+                "properties": {
+                    "damage": {
+                        "base": 1
+                    },
+                    "tick": 1.5,
+                    "attackType": "fire",
+                    "duration": 3.1
+                }
+            },
+            {
+                "name": "fireball",
+                "type": "attack",
+                "state": "buff",
+                "crosspath": [5, 1, 0],
+                "properties": {
+                    "damage": {
+                        "base": {
+                            "type": "additive",
+                            "value": 6
+                        },
+                        "moab": {
+                            "type": "additive",
+                            "value": 9
+                        }
+                    },
+                    "attackCooldown": {
+                        "value": {
+                            "type": "multiplicative",
+                            "value": 0.5
+                        }
+                    },
+                    "attackType": "plasma"
+                }
+            },
+            {
+                "name": "wall-of-fire",
+                "type": "attack",
+                "state": "buff",
+                "crosspath": [5, 2, 0],
+                "properties": {
+                    "damage": {
+                        "moab": {
+                            "type": "additive",
+                            "value": 1
+                        }
+                    },
+                    "attackCooldown": {
+                        "value": {
+                            "type": "multiplicative",
+                            "value": 0.5
+                        }
+                    }
+                }
+            }
+        ]
     ]
 }

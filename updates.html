@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="styles/mainStyle.css"/>
+        <link id="luckiestGuyFix" rel="stylesheet" href="styles/luckiestGuyChanged.css"/>
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,129 +14,133 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="pageHeader flexWrap alignMid gap">
-                <a href="index.html"><h1 class="blackLinks" style="margin:0">Battles 2 Popology</h1></a>
-                <div class="flexWrap gap push">
-                    <a href="index.html"><button class="button primaryButtonStyle2 push"><h4>Home</h4></button></a>
-                    <a href="popology.html"><button class="button primaryButtonStyle2"><h4>Popology</h4></button></a>
-                    <a href="https://b2.lol/"><button class="button primaryButtonStyle2"><h4>b2.lol</h4></button></a>
+        <header style="display: flex; justify-content: center; background-color: var(--primary2)">
+            <div style="flex: 1; display: flex; padding: 8px; max-width: 1000px; flex-wrap: wrap;">
+                <h1 class="blackLinks" style="margin:0">Battles 2 Popology</h1>
+                <div style="display: flex; margin-left: auto;align-items: center; gap: 8px;">
+                    <a href="index.html"><button style="background-color:transparent">Home</button></a>
+                    <a href="popology.html"><button class="button primaryButtonStyle2">Popology</button></a>
+                    <a href="https://b2.lol/"><button class="button primaryButtonStyle2">b2.lol</button></a>
+                    <a href="https://www.reddit.com/r/btd6/comments/b6dudv/advanced_popology_vol_3_magic_towers/"><button class="button primaryButtonStyle2">BTD6 Popology</button></a>
                 </div>
             </div>
         </header>
-        <main style="align-items:center;justify-content:center;margin:10px">
-            <section>
-                <h1>Updates</h1>
-                <div style="flex:2;min-width:100px" class="primarySection">
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.9.2 - 8/8/2023</h4>
-                        <p>Fixed incorrect season info</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.9.1 - 8/8/2023</h4>
-                        <p>Added a max width to the homepage</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.9 - 8/7/2023</h4>
-                        <p>Updated home page</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.8.5 - 8/6/2023</h4>
-                        <p>Changed Level 9 Highwayman Jericho's fortified Bloon modifier from -$0.4x to -$0.3x (ertos-accounter)</p>
-                        <p>Changed xx5 Monkey Sub to affect all towers on the map (vtri)</p>
-                        <p>Changed x3x Monkey Wizard fireball from 8d to 9d (vtri)</p>
-                        <p>Changed x3x Dartling Gunner total explosions from 4 to 3 (ertos-accounter)</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.8.4 - 8/5/2023</h4>
-                        <p>Changed x1x Monkey Wizard fireball from on damage to on contact</p>
-                        <p>Changed x3x Monkey Wizard fireball damage from 9 to 8 (theoneandonlyghast, ertos-accounter)</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.8.3 - 7/29/2023</h4>
-                        <p>Changed 2xx Dartling Gunner price from $750 to $600 (ertos-accounter)</p>
-                        <p>Changed Pat Fusty Level 3 to buff all towers in 30r, not just ice towers (NioMastr 2.0#2166)</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.8.2 - 7/29/2023</h4>
-                        <p>Changed 4xx Dartling Gunner price from $11,000 to $12,000 (ertos-accounter)</p>
-                        <p>Changed x4x Spike Factory ability spikes from pierce to impact</p>
-                        <p>Changed xx4 and xx5 Engineer monkey trap pierce to impact</p>
-                        <p>Added a note to xx4 Engineer Monkey that extra money is not earned from bloons that exceed the impact limit</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.8.1 - 7/27/2023</h4>
-                        <p>Changed xx4 Monkey Engineer trap pierce from 1200p to 500p (david_thesuperior)</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.8 - 7/26/2023</h4>
-                        <p>Fixed the Luckiest Guy font looking so dang terrible on most devices</p>
-                        <p>Added a simple hover effect to buttons</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.7 - 7/19/2023</h4>
-                        <p>Added Battles 2 2.0.4 data</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.6 - 7/19/2023</h4>
-                        <p>Added all remaining hero data (Vuldo)</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.5.1 - 7/18/2023</h4>
-                        <p>Changed Scientist Gwendolyn's unlock requirements from “Complete Training Camp” to “2,000 MM + 40,000 Gwendolyn Points”</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.5 - 7/18/2023</h4>
-                        <p>Added Cyber Quincy, Gwendolyn, and Scientist Gwendolyn data (Vuldo)</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.4.3 - 7/12/2023</h4>
-                        <p>Fixed <a href="https://github.com/emilplane/b2popology/pull/4">typos</a> (vTri)</p>
-                        <p>Fixed updates page scaling on mobile</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.4.2 - 7/11/2023</h4>
-                        <p>Added an updates page</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.4.1 - 7/11/2023</h4>
-                        <p>Fixed links appearing black</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.4 - 7/11/2023</h4>
-                        <p>Added <a href="https://github.com/emilplane/b2popology/pull/3">shortened urls for Popology data</a> (vTri)</p>
-                        <p>Added a Terminology section at the bottom of Popology entries</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.3.2 - 7/11/2023</h4>
-                        <p>Added blank sections for all heroes</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.3.1 - 7/10/2023</h4>
-                        <p>Added blank sections for Gwendolyn, Scientist Gwendolyn, Obyn, and Ocean Obyn</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.3 - 7/10/2023</h4>
-                        <p>Added a other resources section to the home screen</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.2.9 - 7/9/2023</h4>
-                        <p>Added Quincy data</p>
-                        <p>Added a heroes home screen button</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.2.8 - 7/9/2023</h4>
-                        <p>Removed button redirects to the original document for Heli Pilot, Mortar Monkey, and Dartling Gunner</p>
-                    </div>
-                    <div class="primaryInfoCard">
-                        <h4>Website 0.2.7 - 7/9/2023</h4>
-                        <p>Added <a href="https://github.com/emilplane/b2popology/pull/1">better interactivity</a> (vTri)</p>
-                        <p>Javascript for Popology section reduced significantly</p>
-                        <p>Added Heli Pilot, Mortar Monkey, and Dartling Gunner data</p>
-                    </div>
-                </div>
+        <main>
+            <section style="height:8px"></section>
+            <section class="sectionStyle">
+                <h2>Updates</h2>
             </section>
+            <section class="roundedBox">
+                <h4>Website 0.9.3 - 8/14/2023</h4>
+                <p>Adapted new design to updates page</p>
+                <p>Changed x3x Heli Pilot price from $3,000 to $3,200 (ertos-accounter)</p>
+                </section> 
+                <section class="roundedBox">
+                    <h4>Website 0.9.2 - 8/8/2023</h4>
+                    <p>Fixed incorrect season info</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.9.1 - 8/8/2023</h4>
+                    <p>Added a max width to the homepage</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.9 - 8/7/2023</h4>
+                    <p>Updated home page</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.8.5 - 8/6/2023</h4>
+                    <p>Changed Level 9 Highwayman Jericho's fortified Bloon modifier from -$0.4x to -$0.3x (ertos-accounter)</p>
+                    <p>Changed xx5 Monkey Sub to affect all towers on the map (vtri)</p>
+                    <p>Changed x3x Monkey Wizard fireball from 8d to 9d (vtri)</p>
+                    <p>Changed x3x Dartling Gunner total explosions from 4 to 3 (ertos-accounter)</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.8.4 - 8/5/2023</h4>
+                    <p>Changed x1x Monkey Wizard fireball from on damage to on contact</p>
+                    <p>Changed x3x Monkey Wizard fireball damage from 9 to 8 (theoneandonlyghast, ertos-accounter)</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.8.3 - 7/29/2023</h4>
+                    <p>Changed 2xx Dartling Gunner price from $750 to $600 (ertos-accounter)</p>
+                    <p>Changed Pat Fusty Level 3 to buff all towers in 30r, not just ice towers (NioMastr 2.0#2166)</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.8.2 - 7/29/2023</h4>
+                    <p>Changed 4xx Dartling Gunner price from $11,000 to $12,000 (ertos-accounter)</p>
+                    <p>Changed x4x Spike Factory ability spikes from pierce to impact</p>
+                    <p>Changed xx4 and xx5 Engineer monkey trap pierce to impact</p>
+                    <p>Added a note to xx4 Engineer Monkey that extra money is not earned from bloons that exceed the impact limit</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.8.1 - 7/27/2023</h4>
+                    <p>Changed xx4 Monkey Engineer trap pierce from 1200p to 500p (david_thesuperior)</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.8 - 7/26/2023</h4>
+                    <p>Fixed the Luckiest Guy font looking so dang terrible on most devices</p>
+                    <p>Added a simple hover effect to buttons</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.7 - 7/19/2023</h4>
+                    <p>Added Battles 2 2.0.4 data</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.6 - 7/19/2023</h4>
+                    <p>Added all remaining hero data (Vuldo)</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.5.1 - 7/18/2023</h4>
+                    <p>Changed Scientist Gwendolyn's unlock requirements from “Complete Training Camp” to “2,000 MM + 40,000 Gwendolyn Points”</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.5 - 7/18/2023</h4>
+                    <p>Added Cyber Quincy, Gwendolyn, and Scientist Gwendolyn data (Vuldo)</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.4.3 - 7/12/2023</h4>
+                    <p>Fixed <a href="https://github.com/emilplane/b2popology/pull/4">typos</a> (vTri)</p>
+                    <p>Fixed updates page scaling on mobile</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.4.2 - 7/11/2023</h4>
+                    <p>Added an updates page</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.4.1 - 7/11/2023</h4>
+                    <p>Fixed links appearing black</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.4 - 7/11/2023</h4>
+                    <p>Added <a href="https://github.com/emilplane/b2popology/pull/3">shortened urls for Popology data</a> (vTri)</p>
+                    <p>Added a Terminology section at the bottom of Popology entries</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.3.2 - 7/11/2023</h4>
+                    <p>Added blank sections for all heroes</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.3.1 - 7/10/2023</h4>
+                    <p>Added blank sections for Gwendolyn, Scientist Gwendolyn, Obyn, and Ocean Obyn</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.3 - 7/10/2023</h4>
+                    <p>Added a other resources section to the home screen</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.2.9 - 7/9/2023</h4>
+                    <p>Added Quincy data</p>
+                    <p>Added a heroes home screen button</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.2.8 - 7/9/2023</h4>
+                    <p>Removed button redirects to the original document for Heli Pilot, Mortar Monkey, and Dartling Gunner</p>
+                </section>
+                <section class="roundedBox">
+                    <h4>Website 0.2.7 - 7/9/2023</h4>
+                    <p>Added <a href="https://github.com/emilplane/b2popology/pull/1">better interactivity</a> (vTri)</p>
+                    <p>Javascript for Popology section reduced significantly</p>
+                    <p>Added Heli Pilot, Mortar Monkey, and Dartling Gunner data</p>
+                </section>
         </main>
-        <script src="scripts/guides.js"></script>
     </body>
 </html>

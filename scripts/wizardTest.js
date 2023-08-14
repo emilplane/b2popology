@@ -448,6 +448,40 @@ let emilplaneUpgrade = [
             },
             "attackType": "normal"
         }
+    },
+    {
+        "name": "emildart",
+        "type": "attackBuff",
+        "properties": {
+            "damage": {
+                "base": {
+                    "type": "additive",
+                    "value": 20
+                },
+                "camo": {
+                    "type": "additive",
+                    "value": 20
+                },
+                "stunned": {
+                    "type": "additive",
+                    "value": 20
+                },
+            },
+            "pierce": {
+                "value": {
+                    "type": "multiplicative",
+                    "value": 3
+                },
+                "impact": true
+            },
+            "attackCooldown": {
+                "value": {
+                    "type": "multiplicative",
+                    "value": 0.25
+                },
+            },
+            "attackType": "normal"
+        }
     }
 ]
 
@@ -507,5 +541,3 @@ function numberChange(initial, buff) {
 }
 
 console.log(buffAttack(emilplaneTower, emilplaneUpgrade[0]));
-
-console.log(buffAttack(wizardMonkey.base, emilplaneUpgrade[0]));

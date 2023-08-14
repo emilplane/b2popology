@@ -2987,7 +2987,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "030 - Downdraft - $3,000",
+                            "name": "030 - Downdraft - $3,200",
                             "content": `
                                 <ul>
                                     <li>gains downdraft attack
@@ -9946,8 +9946,6 @@ function generateHTMLFromData() {
                                 <div>${data[section].entries[entry].data.base}</div>
                             </div>
                             <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
-                                <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
-                                    src='media/Tower Portraits/${entry}/base/${entry}Portrait.png'>
                             </div>
                         </div>
                         ${tierHTML}

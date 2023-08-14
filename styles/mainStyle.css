@@ -109,7 +109,7 @@ ul {
     padding-left: 20px;
 }
 
-button {
+button, select {
     background-color: var(--primary5);
 	border-radius: 8px;
 	border: 0;
@@ -181,6 +181,17 @@ button:hover, button:focus {
     padding: 8px;
 }
 
+.roundedSubBox {
+    background-color: var(--secondary3);
+    border-radius: 8px;
+    margin: 4px;
+    padding: 4px;
+}
+
+.sectionStyle {
+    margin: 8px;
+}
+
 .horizontalLine {
     height: 1px;
     margin: 0 0 8px 0;
@@ -205,4 +216,13 @@ button:hover, button:focus {
 .flexItems1 > * {
     flex: 2;
     flex-basis: 300px;
+}
+
+main {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
 }

@@ -4,12 +4,14 @@ h3,
 h4,
 h5,
 button,
+select,
 .luckiestGuy {
     font-family: 'Luckiest Guy';
     padding: 4px;
 }
 
-button {
+button,
+select {
     font-family: 'Luckiest Guy';
     padding: 4px 8px;
 }
