@@ -4369,7 +4369,7 @@ let data = {
                                 <ul>
                                     <li>dart replaced by monkeyrang
                                         <ul>
-                                            <li>1d, 2md (3md), 5p, 53r, 0.06s, sharp type</li>
+                                            <li>1d, 2md (3md), 5p, 53r, 0.045s, sharp type</li>
                                         </ul>
                                     </li>
                                     <li>knockback buffed
@@ -4391,7 +4391,7 @@ let data = {
                                 <ul>
                                     <li>monkeyrang buffed
                                         <ul>
-                                            <li>+1d (2d), +2cd (4cd), +1md (5md), +2p (7p), 50%s (0.03s), normal type</li>
+                                            <li>+1d (2d), +2cd (4cd), +1md (5md), +2p (7p), 50%s (0.0225), normal type</li>
                                         </ul>
                                     </li>
                                     <li>darkshift buffed
@@ -9986,10 +9986,6 @@ function generateHTMLFromData() {
                             <div style='flex-basis:200px;flex-grow:1'>
                                 <div>${firstLevelHTML}</div>
                             </div>
-                            <div class='towerPortraitContainer' id='${entry}item2' class='towerPortrait' style='flex-grow:0;padding:0 20px'>
-                                <input class='towerPortrait' type='image' alt='${data[section]["entries"][entry]["name"]} Image' 
-                                    src='media/Placeholder/placeholder.png'>
-                            </div>
                         </div>
                         ${tierHTML}
                     `)
@@ -10000,35 +9996,46 @@ function generateHTMLFromData() {
 }
 
 function changeCategoryButtons() {
+    //document.getElementById("categorySelect").innerHTML = 
+    let categorySelectorHTML = ``;
     for (category in data) {
-        buttons[category].selector.setAttribute("style", buttons[category].defaultStyle)
-        buttons[category].towerBar.setAttribute("style", "display:none");
-        for (tower in data[category].entries) {
-            document.querySelector(`.${tower}Button`).setAttribute("style", buttons[category].defaultStyle);
+        let selected = ``;
+        if (category == selectedCategory) {
+            selected = ` selected`
         }
+        categorySelectorHTML = categorySelectorHTML + `
+            <option value="${category}"${selected}>
+                ${category}
+            </option>
+        `
     }
-
+    
+    document.getElementById("categorySelect").innerHTML = categorySelectorHTML
+    let towerSelectorHTML = ``;
+    for (tower in data[selectedCategory].entries) {
+        let selected = ``;
+        if (tower == selectedPage) {
+            selected = ` selected`
+        };
+        towerSelectorHTML = towerSelectorHTML + `
+            <option value="${tower}"${selected}>
+                ${data[selectedCategory].entries[tower].name}
+            </option>
+        `
+    };
+    document.getElementById("towerSelect").innerHTML = towerSelectorHTML
+    
 	for (const section in data) {
 		for (const entry in data[section]["entries"]) {
 			document.getElementById(entry + "Stats").style.display = "none";
 		}
 	}
 
-	let element = document.querySelector(".categoryBar");
-	element.setAttribute("style", "display:flex");
-	element = document.querySelector(".selectTower");
-	element.setAttribute("style", "display:flex");
-
-
-    buttons[selectedCategory].selector.setAttribute("style", buttons[selectedCategory].selectedStyle);
-    buttons[selectedCategory].towerBar.setAttribute("style", "display:flex");
     
 
     element = document.getElementById(selectedPage + "Stats");
     element.style.display = "block";
 
-    selectedButton = document.querySelector(`.${selectedPage}Button`);
-    selectedButton.setAttribute("style", buttons[selectedCategory].selectedStyle)
 
 	urlParams.set('section', selectedCategory);
 	urlParams.set('page', selectedPage);
@@ -10037,242 +10044,32 @@ function changeCategoryButtons() {
 };
 
 function createButtonListeners() {
-	//Tower Category Button Listeners
-
-	buttons.primary.selector.addEventListener("click", () => {
-		selectedCategory = "primary";
-        selectedPage = "dartMonkey";
-		changeCategoryButtons();
-	})
-
-	buttons.military.selector.addEventListener("click", () => {
-		selectedCategory = "military";
-        selectedPage = "sniperMonkey";
-		changeCategoryButtons();
-	})
-
-	buttons.magic.selector.addEventListener("click", () => {
-		selectedCategory = "magic";
-        selectedPage = "wizardMonkey";
-		changeCategoryButtons();
-
-	})
-
-	buttons.support.selector.addEventListener("click", () => {
-		selectedCategory = "support";
-        selectedPage = "monkeyVillage";
-		changeCategoryButtons();
-	})
-
-    buttons.heroes.selector.addEventListener("click", () => {
-        selectedCategory = "heroes"
-        selectedPage = "quincy";
+	document.getElementById("categorySelect").addEventListener("change", (x) => {
+        selectedCategory = x.target.value;
+        switch (x.target.value) {
+            case "primary": 
+                selectedPage = "dartMonkey";
+                break;
+            case "military": 
+                selectedPage = "sniperMonkey";
+                break;
+            case "magic": 
+                selectedPage = "wizardMonkey";
+                break;
+            case "support": 
+                selectedPage = "monkeyVillage";
+                break;
+            case "heroes": 
+                selectedPage = "quincy";
+                break;
+        }
         changeCategoryButtons();
-    })
+    });
 
-	//Primary Button Listeners
-	dartMonkeyButton.addEventListener("click", () => {
-		selectedPage = "dartMonkey";
-		changeCategoryButtons();
-	})
-
-	boomerangMonkeyButton.addEventListener("click", () => {
-		selectedPage = "boomerangMonkey";
-		changeCategoryButtons();
-	})
-
-	bombShooterButton.addEventListener("click", () => {
-		selectedPage = "bombShooter";
-		changeCategoryButtons();
-	})
-
-	tackShooterButton.addEventListener("click", () => {
-		selectedPage = "tackShooter";
-		changeCategoryButtons();
-	})
-
-	iceMonkeyButton.addEventListener("click", () => {
-		selectedPage = "iceMonkey";
-		changeCategoryButtons();
-	})
-
-	glueGunnerButton.addEventListener("click", () => {
-		selectedPage = "glueGunner";
-		changeCategoryButtons();
-	})
-
-	//Military Button Listeners
-	sniperMonkeyButton.addEventListener("click", () => {
-		selectedPage = "sniperMonkey";
-		changeCategoryButtons();
-	})
-
-	monkeySubButton.addEventListener("click", () => {
-		selectedPage = "monkeySub";
-		changeCategoryButtons();
-	})
-
-	monkeyBuccaneerButton.addEventListener("click", () => {
-		selectedPage = "monkeyBuccaneer";
-		changeCategoryButtons();
-	})
-
-	monkeyAceButton.addEventListener("click", () => {
-		selectedPage = "monkeyAce";
-		changeCategoryButtons();
-	})
-
-	heliPilotButton.addEventListener("click", () => {
-		selectedPage = "heliPilot";
-		changeCategoryButtons();
-	})
-
-	mortarMonkeyButton.addEventListener("click", () => {
-		selectedPage = "mortarMonkey";
-		changeCategoryButtons();
-	})
-
-	dartlingGunnerButton.addEventListener("click", () => {
-		selectedPage = "dartlingGunner";
-		changeCategoryButtons();
-	})
-
-	//Magic Button Listeners
-	wizardMonkeyButton.addEventListener("click", () => {
-		selectedPage = "wizardMonkey";
-		changeCategoryButtons();
-	})
-
-	superMonkeyButton.addEventListener("click", () => {
-		selectedPage = "superMonkey";
-		changeCategoryButtons();
-	})
-
-	ninjaMonkeyButton.addEventListener("click", () => {
-		selectedPage = "ninjaMonkey";
-		changeCategoryButtons();
-	})
-
-	alchemistButton.addEventListener("click", () => {
-		selectedPage = "alchemist";
-		changeCategoryButtons();
-	})
-
-	druidButton.addEventListener("click", () => {
-		selectedPage = "druid";
-		changeCategoryButtons();
-	})
-
-	//Support Button Listeners
-	monkeyVillageButton.addEventListener("click", () => {
-		selectedPage = "monkeyVillage";
-		changeCategoryButtons();
-	})
-
-	bananaFarmButton.addEventListener("click", () => {
-		selectedPage = "bananaFarm";
-		changeCategoryButtons();
-	})
-
-	spikeFactoryButton.addEventListener("click", () => {
-		selectedPage = "spikeFactory";
-		changeCategoryButtons();
-	})
-
-	engineerMonkeyButton.addEventListener("click", () => {
-		selectedPage = "engineerMonkey";
-		changeCategoryButtons();
-	})
-
-    quincyButton.addEventListener("click", () => {
-        selectedPage = "quincy";
+    document.getElementById("towerSelect").addEventListener("change", (x) => {
+        selectedPage = x.target.value;
         changeCategoryButtons();
-    })
-
-    cyberQuincyButton.addEventListener("click", () => {
-        selectedPage = "cyberQuincy";
-        changeCategoryButtons();
-    })
-
-    gwendolynButton.addEventListener("click", () => {
-        selectedPage = "gwendolyn";
-        changeCategoryButtons();
-    })
-
-    scientistGwendolynButton.addEventListener("click", () => {
-        selectedPage = "scientistGwendolyn";
-        changeCategoryButtons();
-    })
-
-    obynButton.addEventListener("click", () => {
-        selectedPage = "obyn";
-        changeCategoryButtons();
-    })
-
-    oceanObynButton.addEventListener("click", () => {
-        selectedPage = "oceanObyn";
-        changeCategoryButtons();
-    })
-
-    strikerJonesButton.addEventListener("click", () => {
-        selectedPage = "strikerJones";
-        changeCategoryButtons();
-    })
-
-    bikerBonesButton.addEventListener("click", () => {
-        selectedPage = "bikerBones";
-        changeCategoryButtons();
-    })
-
-    captainChurchillButton.addEventListener("click", () => {
-        selectedPage = "captainChurchill";
-        changeCategoryButtons();
-    })
-
-    sentaiChurchillButton.addEventListener("click", () => {
-        selectedPage = "sentaiChurchill";
-        changeCategoryButtons();
-    })
-
-    benjaminButton.addEventListener("click", () => {
-        selectedPage = "benjamin";
-        changeCategoryButtons();
-    })
-
-    djBenjamminButton.addEventListener("click", () => {
-        selectedPage = "djBenjammin";
-        changeCategoryButtons();
-    })
-
-    eziliButton.addEventListener("click", () => {
-        selectedPage = "ezili";
-        changeCategoryButtons();
-    })
-
-    smudgeCattEziliButton.addEventListener("click", () => {
-        selectedPage = "smudgeCattEzili";
-        changeCategoryButtons();
-    })
-
-    patFustyButton.addEventListener("click", () => {
-        selectedPage = "patFusty";
-        changeCategoryButtons();
-    })
-
-    fustyTheSnowmanButton.addEventListener("click", () => {
-        selectedPage = "fustyTheSnowman";
-        changeCategoryButtons();
-    })
-
-    agentJerichoButton.addEventListener("click", () => {
-        selectedPage = "agentJericho";
-        changeCategoryButtons();
-    })
-
-    highwaymanJerichoButton.addEventListener("click", () => {
-        selectedPage = "highwaymanJericho";
-        changeCategoryButtons();
-    })
+    });
 };
 
 async function main() {

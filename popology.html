@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="styles/mainStyle.css"/>
+        <link id="luckiestGuyFix" rel="stylesheet" href="styles/luckiestGuyChanged.css"/>
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,78 +14,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="pageHeader flexWrap alignMid gap">
-                <a href="index.html"><h1 class="blackLinks" style="margin:0">Battles 2 Popology</h1></a>
-                <div class="flexWrap gap push">
-                    <a href="index.html"><button class="button primaryButtonStyle2 push"><h4>Home</h4></button></a>
-                    <a href="popology.html"><button class="button primaryButtonStyle2" style="color:white; background-color:var(--primaryColorMain)"><h4>Popology</h4></button></a>
-                    <a href="https://b2.lol/"><button class="button primaryButtonStyle2"><h4>b2.lol</h4></button></a>
+        <header style="display: flex; justify-content: center; background-color: var(--primary2)">
+            <div style="flex: 1; display: flex; padding: 8px; max-width: 1000px; flex-wrap: wrap;">
+                <h1 class="blackLinks" style="margin:0">Battles 2 Popology</h1>
+                <div style="display: flex; margin-left: auto;align-items: center; gap: 8px;">
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="popology.html"><button style="background-color:transparent">Popology</button></a>
+                    <a href="https://b2.lol/"><button>b2.lol</button></a>
+                    <a href="https://www.reddit.com/r/btd6/comments/b6dudv/advanced_popology_vol_3_magic_towers/"><button class="button primaryButtonStyle2">BTD6 Popology</button></a>
                 </div>
             </div>
         </header>
-        <main style="align-items:center;justify-content:center;margin:10px">
-            <section class="categoryBar buttonContainer">
-                <button class="button primaryButton"><h6>       Primary</h6></button>
-                <button class="button militaryButton"><h6>      Military</h6></button>
-                <button class="button magicButton"><h6>         Magic</h6></button>
-                <button class="button supportButton"><h6>       Support</h6></button>
-                <button class="button heroesButton"><h6>        Heroes</h6></button>
+        <main>
+            <section class="sectionStyle">
+                <select id="categorySelect">
+                    <option value="primary">Primary</option>
+                    <option value="military">Military</option>
+                    <option value="magic">Magic</option>
+                    <option value="support">Support</option>
+                    <option value="heroes">Heroes</option>
+                </select>
+                <select id="towerSelect"></select>
             </section>
-            <section class="selectTower">
-                <div class="primaryTowerBar buttonContainer">
-                    <button class="button primaryButtonStyle dartMonkeyButton"><h6>         Dart Monkey</h6></button>
-                    <button class="button primaryButtonStyle boomerangMonkeyButton"><h6>    Boomerang Monkey</h6></button>
-                    <button class="button primaryButtonStyle bombShooterButton"><h6>        Bomb Shooter</h6></button>
-                    <button class="button primaryButtonStyle tackShooterButton"><h6>        Tack Shooter</h6></button>
-                    <button class="button primaryButtonStyle iceMonkeyButton"><h6>          Ice Monkey</h6></button>
-                    <button class="button primaryButtonStyle glueGunnerButton"><h6>         Glue Gunner</h6></button>
-                </div>
-                <div class="militaryTowerBar buttonContainer">
-                    <button class="button militaryButtonStyle sniperMonkeyButton"><h6>      Sniper Monkey</h6></button>
-                    <button class="button militaryButtonStyle monkeySubButton"><h6>         Monkey Sub</h6></button>
-                    <button class="button militaryButtonStyle monkeyBuccaneerButton"><h6>   Monkey Buccaneer</h6></button>
-                    <button class="button militaryButtonStyle monkeyAceButton"><h6>         Monkey Ace</h6></button>
-                    <button class="button militaryButtonStyle heliPilotButton"><h6>         Heli Pilot</h6></button>
-                    <button class="button militaryButtonStyle mortarMonkeyButton"><h6>      Mortar Monkey</h6></button>
-                    <button class="button militaryButtonStyle dartlingGunnerButton"><h6>    Dartling Gunner</h6></button>
-                </div>
-                <div class="magicTowerBar buttonContainer">
-                    <button class="button magicButtonStyle wizardMonkeyButton"><h6>         Wizard Monkey</h6></button>
-                    <button class="button magicButtonStyle superMonkeyButton"><h6>          Super Monkey</h6></button>
-                    <button class="button magicButtonStyle ninjaMonkeyButton"><h6>          Ninja Monkey</h6></button>
-                    <button class="button magicButtonStyle alchemistButton"><h6>            Alchemist</h6></button>
-                    <button class="button magicButtonStyle druidButton"><h6>                Druid</h6></button>
-                </div>
-                <div class="supportTowerBar buttonContainer">
-                    <button class="button supportButtonStyle monkeyVillageButton"><h6>      Monkey Village</h6></button>
-                    <button class="button supportButtonStyle bananaFarmButton"><h6>         Banana Farm</h6></button>
-                    <button class="button supportButtonStyle spikeFactoryButton"><h6>       Spike Factory</h6></button>
-                    <button class="button supportButtonStyle engineerMonkeyButton"><h6>     Engineer Monkey</h6></button>
-                </div>
-                <div class="heroesTowerBar buttonContainer">
-                    <button class="button heroButtonStyle quincyButton"><h6>                Quincy</h6></button>
-                    <button class="button heroButtonStyle cyberQuincyButton"><h6>           CQuincy</h6></button>
-                    <button class="button heroButtonStyle gwendolynButton"><h6>             Gwen</h6></button>
-                    <button class="button heroButtonStyle scientistGwendolynButton"><h6>    Sci Gwen</h6></button>
-                    <button class="button heroButtonStyle obynButton"><h6>                  Obyn</h6></button>
-                    <button class="button heroButtonStyle oceanObynButton"><h6>             Ocyn</h6></button>
-                    <button class="button heroButtonStyle strikerJonesButton"><h6>          Striker</h6></button>
-                    <button class="button heroButtonStyle bikerBonesButton"><h6>            Biker</h6></button>
-                    <button class="button heroButtonStyle captainChurchillButton"><h6>      Churchill</h6></button>
-                    <button class="button heroButtonStyle sentaiChurchillButton"><h6>       Sentai</h6></button>
-                    <button class="button heroButtonStyle benjaminButton"><h6>              Benjamin</h6></button>
-                    <button class="button heroButtonStyle djBenjamminButton"><h6>           DJ Ben</h6></button>
-                    <button class="button heroButtonStyle eziliButton"><h6>                 Ezili</h6></button>
-                    <button class="button heroButtonStyle smudgeCattEziliButton"><h6>       Smudge</h6></button>
-                    <button class="button heroButtonStyle patFustyButton"><h6>              Pat Fusty</h6></button>
-                    <button class="button heroButtonStyle fustyTheSnowmanButton"><h6>       Snowman</h6></button>
-                    <button class="button heroButtonStyle agentJerichoButton"><h6>          Jericho</h6></button>
-                    <button class="button heroButtonStyle highwaymanJerichoButton"><h6>     Highwayman</h6></button>
-                </div>
-            </section>
-            <section id="statsSection"></section>
-            <section>
+            <section id="statsSection" class="roundedBox"></section>
+            <section class="roundedBox">
                 <div style="height:10px"></div>
                 <h2>Terminology</h2>
                 <div class="primarySection">
@@ -137,13 +90,6 @@
                 </div>
             </section>
         </main>
-        <footer class="flex">
-            <h6><a href="https://discord.com/invite/F48THzCSu5">Discord</a> | <a
-                    href="https://docs.google.com/document/d/1F2PwRxST2Y4YoHFOGBlWo5yby-qQD53dQqjpItxaAS4/edit">Original
-                    Document</a></h6>
-            <h6 class="push" id="version">Loading Version...</h6>
-        </footer>
         <script src="scripts/main.js"></script>
-        <script src="scripts/version.js"></script>
     </body>
 </html>
