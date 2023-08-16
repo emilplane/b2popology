@@ -3179,7 +3179,7 @@ let data = {
                             <li>shell attack
                                 <ul>
                                     <li>2.0s passive</li>
-                                    <li>targets randomly within 18 units of selected point</li>
+                                    <li>[BUG] targets randomly within 0 units of selected point instead of 18 units</li>
                                     <li>on expire (0.5s): explosion
                                         <ul>
                                             <li>1d, 40p, 20r blast, explosion type</li>
@@ -3385,7 +3385,7 @@ let data = {
                                 <ul>
                                     <li>shell buffed
                                         <ul>
-                                            <li>8 units random target variance</li>
+                                            <li>[BUG] 0 units random target variance instead of 8</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -9809,6 +9809,632 @@ let data = {
                 }
             }
         }
+    },
+    "accolades": {
+        "type": "legacy-accolades",
+        "entries": {
+            "winsWithTowerCategory": {
+                "name": "Wins with a tower category",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 25 games with (primary/military/magic/support) towers</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winsWithTower": {
+                "name": "Wins with a tower",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 50 games with (x) tower</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 250 games with (x) tower</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 500 games with (x) tower</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "reach1kEco": {
+                "name": "Reach 1k Eco",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Reached 1k eco in 100 games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Reached 1k eco in 500 games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Reached 1k eco in 1000 games</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "completeEvent": {
+                "name": "Complete Events",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Complete (event) 3 times</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winEventGames": {
+                "name": "Win Event Games",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win a total of 50 (event) games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win a total of 100 (event) games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win a total of 500 (event) games</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "collectFromBananaFarms": {
+                "name": "Collect Money From Farms",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Collect $1,000,000 from banana farms</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Collect $10,000,000 from banana farms</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Collect $100,000,000 from banana farms</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winWithFirstBlood": {
+                "name": "Win With First Blood",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 50 games with first blood</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 100 games with first blood</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 500 games with first blood</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win 1000 games with first blood</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winWithNoLivesLost": {
+                "name": "Win with no lives lost",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 25 games with no lives lost</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 50 games with no lives lost</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 250 games with no lives lost</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win 500 games with no lives lost</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "firstBloodWinstreak": {
+                "name": "First Blood Winstreak",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 5 games in a row with first blood</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 10 games in a row with first blood</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 20 games in a row with first blood</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "noLivesLostWinstreak": {
+                "name": "No Lives Lost Winstreak",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 5 games in a row with no lives lost</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 10 games in a row with no lives lost</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 20 games in a row with no lives lost</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "heroToLevel20": {
+                "name": "Upgrade Hero to Level 20",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Upgrade (hero) to level 20 50 times</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winGamesWithHero": {
+                "name": "Win games with a hero",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win a total of 50 games with (hero)</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win a total of 100 games with (hero)</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win a total of 500 games with (hero)</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win a total of 1000 games with (hero)</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winGamesWithTower": {
+                "name": "Win games with a tower",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win a total of 100 games with (tower)</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win a total of 500 games with (hero)</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win a total of 1000 games with (hero)</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winOnMap": {
+                "name": "Win on a Map",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win a total of 50 games on (map)</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win a total of 100 games on (map)</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "playEveryDay": {
+                "name": "Play Every Day",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Play a game every day for 30 days in a row</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Play a game every day for 90 days in a row</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "noPainNoGain10Lives": {
+                "name": "Win No Pain No Gain with 10 or fewer lives",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win a total of 10 no pain no gain games with 10 or lower lives remaining</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win a total of 20 no pain no gain games with 10 or lower lives remaining</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win a total of 50 no pain no gain games with 10 or lower lives remaining</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "sendBloons": {
+                "name": "Send Bloons",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Send 50,000 bloons at your opponent</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Send 100,000 bloons at your opponent</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Send 500,000 bloons at your opponent</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Send 1,000,000 bloons at your opponent</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "sendMobes": {
+                "name": "Send MOABs",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Send 100 (moab-class bloon) at your opponent</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Send 200 (moab-class bloon) at your opponent</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Send 1000 (moab-class bloon) at your opponent</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Send 2000 (moab-class bloon) at your opponent</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "sacrificeMonkeys": {
+                "name": "Sacrifice Monkeys for Temple",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Sacrifice 100 monkeys to a temple</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Sacrifice 200 monkeys to a temple</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Sacrifice 1000 monkeys to a temple</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Sacrifice 2000 monkeys to a temple</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "upgradeToT5": {
+                "name": "Upgrade to Tier 5",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Upgrade (tower) to (5th tier upgrade) 10 times</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Upgrade (tower) to (5th tier upgrade) 50 times</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Upgrade (tower) to (5th tier upgrade) 100 times</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Upgrade (tower) to (5th tier upgrade) 200 times</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winCasualGames": {
+                "name": "Win Casual Games",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 50 casual games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 100 casual games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 500 casual games</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winRankedGames": {
+                "name": "Win Ranked Games",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 50 ranked games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 100 ranked games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win 500 ranked games</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win 1000 ranked games</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "winStreak": {
+                "name": "Get a Win Streak",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Get a win streak of 5</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Get a win streak of 10</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Get a win streak of 20</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "prestigeLevel1": {
+                "name": "Prestige Level 1",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Reach prestige level 1 with 3 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Reach prestige level 1 with 11 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Reach prestige level 1 with 22 monkeys</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "prestigeLevel2": {
+                "name": "Prestige Level 2",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Reach prestige level 2 with 3 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Reach prestige level 2 with 11 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Reach prestige level 2 with 22 monkeys</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "prestigeLevel3": {
+                "name": "Prestige Level 3",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Reach prestige level 3 with 3 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Reach prestige level 3 with 11 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Reach prestige level 3 with 22 monkeys</li>
+                        </ul>
+                    </ul>
+                `
+            },
+            "prestigeLevel4": {
+                "name": "Prestige Level 4",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Reach prestige level 4 with 3 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Reach prestige level 4 with 11 monkeys</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Reach prestige level 4 with 22 monkeys</li>
+                        </ul>
+                    </ul>
+                `
+            }
+        }
     }
 };
 
@@ -9822,87 +10448,6 @@ async function getDataJSON() {
 };
 
 let urlParams = new URLSearchParams(window.location.search);
-
-const buttons = {
-    "primary": {
-        "selector": document.querySelector(".primaryButton"),
-        "defaultStyle": "color:black; background-color:var(--primaryColorLight3);",
-        "selectedStyle": "color:white; background-color:var(--primaryColorMain);",
-        "towerBar": document.querySelector(".primaryTowerBar"),
-    },
-    "military": {
-        "selector": document.querySelector(".militaryButton"),
-        "defaultStyle": "color:black; background-color:var(--militaryColorLight3);",
-        "selectedStyle": "color:white; background-color:var(--militaryColorMain);",
-        "towerBar": document.querySelector(".militaryTowerBar"),
-    },
-    "magic": {
-        "selector": document.querySelector(".magicButton"),
-        "defaultStyle": "color:black; background-color:var(--magicColorLight3);",
-        "selectedStyle": "color:white; background-color:var(--magicColorMain);",
-        "towerBar": document.querySelector(".magicTowerBar"),
-    },
-    "support": {
-        "selector": document.querySelector(".supportButton"),
-        "defaultStyle": "color:black; background-color:var(--supportColorLight3);",
-        "selectedStyle": "color:white; background-color:var(--supportColorMain);",
-        "towerBar": document.querySelector(".supportTowerBar"),
-    },
-    "heroes": {
-        "selector": document.querySelector(".heroesButton"),
-        "defaultStyle": "color:black; background-color:var(--heroesColorLight3);",
-        "selectedStyle": "color:white; background-color:var(--heroesColorMain);",
-        "towerBar": document.querySelector(".heroesTowerBar"),
-    }
-}
-
-//Tower Buttons
-const dartMonkeyButton = document.querySelector(".dartMonkeyButton")
-const boomerangMonkeyButton = document.querySelector(".boomerangMonkeyButton")
-const bombShooterButton = document.querySelector(".bombShooterButton")
-const tackShooterButton = document.querySelector(".tackShooterButton")
-const iceMonkeyButton = document.querySelector(".iceMonkeyButton")
-const glueGunnerButton = document.querySelector(".glueGunnerButton")
-
-const sniperMonkeyButton = document.querySelector(".sniperMonkeyButton")
-const monkeySubButton = document.querySelector(".monkeySubButton")
-const monkeyBuccaneerButton = document.querySelector(".monkeyBuccaneerButton")
-const monkeyAceButton = document.querySelector(".monkeyAceButton")
-const heliPilotButton = document.querySelector(".heliPilotButton")
-const mortarMonkeyButton = document.querySelector(".mortarMonkeyButton")
-const dartlingGunnerButton = document.querySelector(".dartlingGunnerButton")
-
-const wizardMonkeyButton = document.querySelector(".wizardMonkeyButton")
-const superMonkeyButton = document.querySelector(".superMonkeyButton")
-const ninjaMonkeyButton = document.querySelector(".ninjaMonkeyButton")
-const alchemistButton = document.querySelector(".alchemistButton")
-const druidButton = document.querySelector(".druidButton")
-
-const monkeyVillageButton = document.querySelector(".monkeyVillageButton")
-const bananaFarmButton = document.querySelector(".bananaFarmButton")
-const spikeFactoryButton = document.querySelector(".spikeFactoryButton")
-const engineerMonkeyButton = document.querySelector(".engineerMonkeyButton")
-
-const quincyButton = document.querySelector(".quincyButton")
-const cyberQuincyButton = document.querySelector(".cyberQuincyButton")
-const gwendolynButton = document.querySelector(".gwendolynButton")
-const scientistGwendolynButton = document.querySelector(".scientistGwendolynButton")
-const obynButton = document.querySelector(".obynButton")
-const oceanObynButton = document.querySelector(".oceanObynButton")
-const strikerJonesButton = document.querySelector(".strikerJonesButton")
-const bikerBonesButton = document.querySelector(".bikerBonesButton")
-const captainChurchillButton = document.querySelector(".captainChurchillButton")
-const sentaiChurchillButton = document.querySelector(".sentaiChurchillButton")
-const benjaminButton = document.querySelector(".benjaminButton")
-const djBenjamminButton = document.querySelector(".djBenjamminButton")
-const eziliButton = document.querySelector(".eziliButton")
-const smudgeCattEziliButton = document.querySelector(".smudgeCattEziliButton")
-const patFustyButton = document.querySelector(".patFustyButton")
-const fustyTheSnowmanButton = document.querySelector(".fustyTheSnowmanButton")
-const agentJerichoButton = document.querySelector(".agentJerichoButton")
-const highwaymanJerichoButton = document.querySelector(".highwaymanJerichoButton")
-
-let selectedButtons = {};
 
 let selectedCategory = "primary";
 let selectedPage ="dartMonkey"
@@ -10003,6 +10548,14 @@ function generateHTMLFromData() {
                         ${tierHTML}
                     `)
                     break;
+                case "legacy-accolades":
+                    document.getElementById(IDName).insertAdjacentHTML("beforeend", `
+                        <h1>${data[section]["entries"][entry]["name"]}</h1>
+                        <div class='${section}Section'>
+                            ${data[section].entries[entry].data}
+                        </div>
+                    `)
+                    break;
             }
 		}
 	}
@@ -10049,7 +10602,6 @@ function changeCategoryButtons() {
     element = document.getElementById(selectedPage + "Stats");
     element.style.display = "block";
 
-
 	urlParams.set('section', selectedCategory);
 	urlParams.set('page', selectedPage);
 
@@ -10074,6 +10626,9 @@ function createButtonListeners() {
                 break;
             case "heroes": 
                 selectedPage = "quincy";
+                break;
+            case "accolades": 
+                selectedPage = "winsWithTowerCategory";
                 break;
         }
         changeCategoryButtons();
