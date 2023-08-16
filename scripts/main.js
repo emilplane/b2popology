@@ -5227,6 +5227,7 @@ let data = {
                                         <ul>
                                             <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
                                             <li>note again that this is a speed buff, and that it stacks multiplicatively with any buff gained from tier 2</li>
+                                            <li>[BUG] sometimes the speed buff does not apply</li>
                                         </ul>
                                     </li>
                                 </ul>
