@@ -1165,7 +1165,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Embrittlement - $3,000",
+                            "name": "400 - Embrittlement - $2,700",
                             "content": `
                                 <ul>
                                     <li>freeze buffed
@@ -1925,7 +1925,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Full Auto Rifle - $4,600",
+                            "name": "004 - Full Auto Rifle - $4,200",
                             "content": `
                                 <ul>
                                     <li>bullet buffed
@@ -2072,7 +2072,7 @@ let data = {
                     },
                     "middlePath": {
                         "1": {
-                            "name": "010 - Barbed Darts - $450",
+                            "name": "010 - Barbed Darts - $300",
                             "content": `
                                 <ul>
                                     <li>dart attack
@@ -2174,7 +2174,7 @@ let data = {
                     },
                     "bottomPath": {
                         "1": {
-                            "name": "001 - Twin Guns - $350",
+                            "name": "001 - Twin Guns - $300",
                             "content": `
                                 <ul>
                                     <li>dart attack
@@ -2186,7 +2186,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "002 - Airburst Darts - $800",
+                            "name": "002 - Airburst Darts - $700",
                             "content": `
                                 <ul>
                                     <li>dart replaced by airburst
@@ -3342,14 +3342,13 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "040 - Artillery Battery - $7.300",
+                            "name": "040 - Artillery Battery - $7,600",
                             "content": `
                                 <ul>
                                     <li>25%s (0.27s), +4 BAD damage (6 BAD damage)</li>
                                     <li>gains bombardment ability (60s cooldown, 8s duration, battle ready)
                                         <ul>
                                             <li>25%s (0.0675)</li>
-                                            <li>explosion +15%r (23)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3393,7 +3392,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "002 - Burny Stuff - $500",
+                            "name": "002 - Burny Stuff - $600",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
@@ -3572,7 +3571,7 @@ let data = {
                                 <ul>
                                     <li>laser replaced with beam
                                         <ul>
-                                            <li>1d, +1 shocked3 damage (2 shocked3 damage), 50p, 0.2s passive, plasma type</li>
+                                            <li>1d, +1 shocked3 damage (2 shocked3 damage), 40p, 0.2s passive, plasma type</li>
                                             <li>one solid beam from the tower to the target (or an obstacle on the way)</li>
                                             <li>applies shocked3 status
                                                 <ul>
@@ -3589,7 +3588,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>402: +25p (75p)</li>
+                                            <li>402: +30p (70p)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4610,8 +4609,8 @@ let data = {
                                 <ul>
                                     <li>every 4th shuriken replaced by flash-bomb
                                         <ul>
-                                            <li>1d, 60p, 40r blast, normal type</li>
-                                            <li>applies stun (1s duration) to bloons</li>
+                                            <li>1d, 75p, 40r blast, normal type</li>
+                                            <li>applies stun (1.3s duration) to bloons</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -5032,14 +5031,15 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Druid of the Storm - $1,650",
+                            "name": "300 - Druid of the Storm - $1,500",
                             "content": `
                                 <ul>
                                     <li>gains tornado attack
                                         <ul>
                                             <li>0d, 30p, 2.5s, normal type</li>
+                                            <li>has homing</li>
                                             <li>cannot target blimps or lead</li>
-                                            <li>sends back 100-200 units</li>
+                                            <li>sends back 250 units</li>
                                             <li>removes glue and frozen status</li>
                                             <li>note: damage can be buffed</li>
                                         </ul>
@@ -5048,7 +5048,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Ball Lightning - $4,500",
+                            "name": "400 - Ball Lightning - $4,300",
                             "content": `
                                 <ul>
                                     <li>gains lightball attack
@@ -5079,6 +5079,7 @@ let data = {
                                     <li>gains superstorm attack
                                         <ul>
                                             <li>12d, 150p, 4.0s</li>
+                                            <li>has homing</li>
                                             <li>cannot target BADs</li>
                                             <li>MOABs use 5p, BFBs 20p, ZOMGs 50p, and DDTs 30p</li>
                                             <li>5.7s lifetime</li>
@@ -5117,7 +5118,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "030 - Druid of the Jungle - $850",
+                            "name": "030 - Druid of the Jungle - $750",
                             "content": `
                                 <ul>
                                     <li>gains vine-grab attack
@@ -5126,7 +5127,7 @@ let data = {
                                             <li>can see past obstacles</li>
                                             <li>applies snared status
                                                 <ul>
-                                                    <li>1d + 13%d per 0.2s</li>
+                                                    <li>1d + 13%d per 0.15s</li>
                                                     <li>fully pops the bloon</li>
                                                 </ul>
                                             </li>
@@ -5976,7 +5977,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Long Life Spikes - $1,000",
+                            "name": "003 - Long Life Spikes - $600",
                             "content": `
                                 <ul>
                                     <li>spikes buffed
@@ -6794,10 +6795,10 @@ let data = {
                     <li>gains heat-it-up attack
                         <ul>
                             <li>3d, ∞p, 38r blast, fire type</li>
-                            <li>triggered by either the 32nd shot or any shot after 4.5s (whichever takes longer)</li>
+                            <li>triggered by either the 28th shot or any shot after 4.5s (whichever takes longer)</li>
                             <li>applies heat-it-up buff to towers in range
                                 <ul>
-                                    <li>8s duration, +1p, lead popping</li>
+                                    <li>10s duration, +1p, lead popping</li>
                                 </ul>
                             </li>
                         </ul>
@@ -6998,7 +6999,7 @@ let data = {
                     <li>gains heat-it-up attack
                         <ul>
                             <li>3d, ∞p, 38r blast, fire type</li>
-                            <li>triggered by either the 40th shot or any shot after 4.5s (whichever takes longer)</li>
+                            <li>triggered by either the 36th shot or any shot after 4.5s (whichever takes longer)</li>
                             <li>applies heat-it-up buff to towers in range
                                 <ul>
                                     <li>8s duration, +1p, lead popping, +1ld, +1frd</li>
@@ -7699,7 +7700,7 @@ let data = {
                     "18": `<ul>
                     <li>explosive-expert buffed
                         <ul>
-                            <li>81%s</li>
+                            <li>75%s</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -7947,7 +7948,7 @@ let data = {
                             <li>all attacks have normal type</li>
                             <li>buffs shell
                                 <ul>
-                                    <li>+2i (5i)</li>
+                                    <li>+4i (7i)</li>
                                 </ul>
                             </li>
                             <li>buffs explosion
@@ -8401,7 +8402,7 @@ let data = {
                     </li>
                 </ul>`,
                     "11": `<ul>
-                    <li>+$200 end of round income ($600)</li>
+                    <li>+$400 end of round income ($800)</li>
                 </ul>`,
                     "12": `<ul>
                     <li>skimming buffed
@@ -8427,7 +8428,7 @@ let data = {
                     <li>can heal to 250 lives</li>
                 </ul>`,
                     "15": `<ul>
-                    <li>+$400 end of round income ($1000)</li>
+                    <li>+$600 end of round income ($1400)</li>
                 </ul>`,
                     "16": `<ul>
                     <li>trojan buffed
@@ -8437,7 +8438,7 @@ let data = {
                     </li>
                 </ul>`,
                     "17": `<ul>
-                    <li>+$1000 end of round income ($2000)</li>
+                    <li>+$1100 end of round income ($2500)</li>
                 </ul>`,
                     "18": `<ul>
                     <li>gains camo detection</li>
@@ -8563,13 +8564,13 @@ let data = {
                     <li>can heal to 250 lives</li>
                 </ul>`,
                     "15": `<ul>
-                    <li>+$150 end of round income (+$750)</li>
+                    <li>+$450 end of round income (+$1050)</li>
                 </ul>`,
                     "16": `<ul>
                     <li>trojan buffed: 3s-4s</li>
                 </ul>`,
                     "17": `<ul>
-                    <li>+$750 end of round income ($1,500)</li>
+                    <li>+$825 end of round income ($1875)</li>
                 </ul>`,
                     "18": `<ul>
                     <li>gains camo detection</li>
@@ -8607,7 +8608,7 @@ let data = {
                 "data": {
                     "1": `<ul>
                     <li>$600</li>
-                    <li>Leveling Rate: 2.37695294x</li>
+                    <li>Leveling Rate: 1.5x</li>
                     <li>Unlock Cost: 5,000 MM</li>
                     <li>size: 7 radius</li>
                     <li>placeable on: land</li>
@@ -8827,7 +8828,7 @@ let data = {
                 "data": {
                     "1": `<ul>
                     <li>$600</li>
-                    <li>Leveling Rate: 2.37695294x</li>
+                    <li>Leveling Rate: 1.5x</li>
                     <li>Unlock Cost: 2,000 MM + 40,000 Ezili Points</li>
                     <li>size: 7 radius</li>
                     <li>placeable on: land</li>
@@ -9027,7 +9028,7 @@ let data = {
                 "name": "Pat Fusty",
                 "data": {
                     "1": `<ul>
-                    <li>$950</li>
+                    <li>$900</li>
                     <li>Leveling Rate: 1.15x</li>
                     <li>Unlock Cost: 5,000 MM</li>
                     <li>size: 8 radius</li>
@@ -9040,7 +9041,7 @@ let data = {
                     </li>
                     <li>aoe attack
                         <ul>
-                            <li>2d, +2cd (4cd), 7p, 8r blast, 1.1s, normal, 8r blast</li>
+                            <li>2d, +2cd (4cd), 8p, 10r blast, 1.1s, normal</li>
                             <li>note: can affect the original target</li>
                         </ul>
                     </li>
@@ -9088,7 +9089,7 @@ let data = {
                     </li>
                     <li>aoe buffed
                         <ul>
-                            <li>+7r blast (15r blast)</li>
+                            <li>+9r blast (19r blast)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9100,7 +9101,7 @@ let data = {
                     </li>
                     <li>aoe buffed
                         <ul>
-                            <li>+1d (3d), +4p (11p)</li>
+                            <li>+1d (3d), +4p (12p)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9179,15 +9180,21 @@ let data = {
                         </ul>
                     </li>
                     <li>aoe buffed</li>
-                    <li>+6cd (12cd)</li>
+                    <ul>
+                        <li>+6cd (12cd)</li>
+                    <ul>
                 </ul>`,
                     "17": `<ul>
                     <li>slam buffed</li>
-                    <li>84.62%s (0.55s)</li>
+                    <ul>
+                        <li>84.62%s (0.55s)</li>
+                    </ul>
                 </ul>`,
                     "18": `<ul>
                     <li>aoe buffed</li>
-                    <li>+10p (21p)</li>
+                    <ul>
+                        <li>+10p (22p)</li>
+                    </ul>
                 </ul>`,
                     "19": `<ul>
                     <li>slam buffed
@@ -9229,7 +9236,7 @@ let data = {
                     </li>
                     <li>aoe attack
                         <ul>
-                            <li>2d, +2cd (4cd), 7p, 8r blast, 1.1s, normal, 8r blast</li>
+                            <li>2d, +2cd (4cd), 8p, 10r blast, 1.1s, normal</li>
                             <li>note: can affect the original target</li>
                         </ul>
                     </li>
@@ -9278,7 +9285,7 @@ let data = {
                     </li>
                     <li>aoe buffed
                         <ul>
-                            <li>+7r blast (15r blast)</li>
+                            <li>+9r blast (19r blast)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9290,7 +9297,7 @@ let data = {
                     </li>
                     <li>aoe buffed
                         <ul>
-                            <li>+1d (3d), +4p (11p)</li>
+                            <li>+1d (3d), +4p (12p)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9378,15 +9385,21 @@ let data = {
                         </ul>
                     </li>
                     <li>aoe buffed</li>
-                    <li>+6cd (12cd)</li>
+                    <ul>
+                        <li>+6cd (12cd)</li>
+                    <ul>
                 </ul>`,
                     "17": `<ul>
                     <li>slam buffed</li>
-                    <li>84.62%s (0.55s)</li>
+                    <ul>
+                        <li>84.62%s (0.55s)</li>
+                    </ul>
                 </ul>`,
                     "18": `<ul>
                     <li>aoe buffed</li>
-                    <li>+10p (21p)</li>
+                    <ul>
+                        <li>+10p (22p)</li>
+                    </ul>
                 </ul>`,
                     "19": `<ul>
                     <li>slam buffed
@@ -9453,6 +9466,13 @@ let data = {
                     </li>
                 </ul>`,
                     "4": `<ul>
+                    <li>regrow bloon modifier buffed
+                        <ul>
+                            <li>$-0.2x ($1.4x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
                     <li>bloon-adjustment buffed
                         <ul>
                             <li>adjusted bloons will randomly be either camo, fortified, or regrow
@@ -9460,13 +9480,6 @@ let data = {
                                     <li>note: can apply fortified property to opponent's natural blimps</li>
                                 </ul>
                             </li>
-                        </ul>
-                    </li>
-                </ul>`,
-                    "5": `<ul>
-                    <li>regrow bloon modifier buffed
-                        <ul>
-                            <li>$-0.3x ($1.3x)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9490,7 +9503,7 @@ let data = {
                     </li>
                     <li>camo bloon modifier buffed
                         <ul>
-                            <li>-$0.5x ($1.5x)</li>
+                            <li>-$0.4x ($1.6x)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9642,6 +9655,13 @@ let data = {
                     </li>
                 </ul>`,
                     "4": `<ul>
+                    <li>regrow bloon modifier buffed
+                        <ul>
+                            <li>$-0.2x ($1.4x)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
                     <li>bloon-adjustment buffed
                         <ul>
                             <li>adjusted bloons will randomly be either camo, fortified, or regrow
@@ -9649,13 +9669,6 @@ let data = {
                                     <li>note: can apply fortified property to opponent's natural blimps</li>
                                 </ul>
                             </li>
-                        </ul>
-                    </li>
-                </ul>`,
-                    "5": `<ul>
-                    <li>regrow bloon modifier buffed
-                        <ul>
-                            <li>$-0.3x ($1.3x)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9679,7 +9692,7 @@ let data = {
                     </li>
                     <li>camo bloon modifier buffed
                         <ul>
-                            <li>-$0.5x ($1.5x)</li>
+                            <li>-$0.4x ($1.6x)</li>
                         </ul>
                     </li>
                 </ul>`,
