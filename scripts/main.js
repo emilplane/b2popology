@@ -2065,7 +2065,7 @@ let data = {
                                     </li>
                                     <li>while submerged, abilities of water towers in range have -50% cooldown time, all other abilities have -20% cooldown time</li>
                                     <li>hero in range gains +75% XP</li>
-                                    <li>hero upgrade cost reduced by ?</li>
+                                    <li>hero upgrade cost reduced by 42.8571%</li>
                                 </ul>
                             `
                         }

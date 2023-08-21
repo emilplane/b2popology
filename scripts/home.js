@@ -143,7 +143,6 @@ function updateEvents () {
                 <div>
                     ${content}
                 </div>
-                <div class="gap"></div>
                 <div>
                     ${linkString}
                 </div>
