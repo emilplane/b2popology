@@ -267,11 +267,15 @@
                 },
                 {
                     "name": "supply-drop",
-                    "type": "ability",
+                    "type": "income",
+                    "ability": {
+                        "initialCooldown": 20,
+                        "cooldown": 40,
+                        "duration": 0,
+                        "type": "active"
+                    },
                     "properties": {
-                        "crate": {
-                            "income": 2000
-                        }
+                        "income": 2000
                     }
                 },
                 {
@@ -301,30 +305,156 @@
                     "name": "elite",
                     "type": "buff",
                     "properties": {
+                        "buff": {
+                            "self": false,
+                            "external": {
+                                "range": "map",
+                                "filter": ["sniperMonkey"]
+                            }
+                        },
                         "notes": [
                             "Affects all snipers, excluding self",
                             "Enables elite targeting for all snipers",
                             "Prioritizes First if bloons are past 75% of the track, then Ceramics if there are any, otherwise Strong"
                         ]
                     }
+                },
+                {
+                    "name": "elite-supplies",
+                    "type": "income",
+                    "replacement": "supply-drop",
+                    "ability": {
+                        "initialCooldown": 20,
+                        "cooldown": 40,
+                        "duration": 0,
+                        "type": "active"
+                    },
+                    "properties": {
+                        "income": 5000
+                    }
                 }
             ]
         ],
         "bottom": [
             [
-
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "properties": {
+                        "attackCooldown": {
+                            "value": 0.7,
+                            "type": "multiplicative"
+                        }
+                    }
+                }
             ],
             [
-
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "properties": {
+                        "attackCooldown": {
+                            "value": 0.7,
+                            "type": "multiplicative"
+                        }
+                    }
+                }
             ],
             [
-
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "properties": {
+                        "attackCooldown": {
+                            "value": 0.3333,
+                            "type": "multiplicative"
+                        }
+                    }
+                }
             ],
             [
-
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "properties": {
+                        "damage": {
+                            "moab": {
+                                "value": 2,
+                                "type": "additive"
+                            }
+                        },
+                        "attackCooldown": {
+                            "value": 0.5,
+                            "type": "multiplicative"
+                        },
+                        "attackType": "normal"
+                    }
+                },
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "crosspath": [1, 0, 4],
+                    "properties": {
+                        "damage": {
+                            "moab": {
+                                "value": 1,
+                                "type": "additive"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "crosspath": [2, 0, 4],
+                    "properties": {
+                        "damage": {
+                            "moab": {
+                                "value": 1,
+                                "type": "additive"
+                            }
+                        }
+                    }
+                }
             ],
             [
-
+                {
+                    "name": "bullet",
+                    "type": "attackBuff",
+                    "properties": {
+                        "attackCooldown": {
+                            "value": 0.5,
+                            "type": "multiplicative"
+                        },
+                        "notes": [
+                            "Shoots x% faster, where x% is how far along the track the furthest forward bloon is"
+                        ]
+                    }
+                },
+                {
+                    "name": "retaliation",
+                    "type": "buff",
+                    "ability": {
+                        "initialCooldown": 0,
+                        "cooldown": 10,
+                        "duration": 7,
+                        "type": "passive",
+                        "trigger": "leak"
+                    },
+                    "properties": {
+                        "buff": {
+                            "self": false,
+                            "external": {
+                                "range": "map",
+                                "filter": ["sniperMonkey"]
+                            }
+                        },
+                        "attackCooldown": {
+                            "value": 0.25,
+                            "type": "multiplicative"
+                        }
+                    }
+                }
             ]
         ]
     }
