@@ -10439,6 +10439,149 @@ let data = {
     }
 };
 
+let prices = {
+    "primary": {
+        "dartMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "boomerangMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "bombShooter": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "tackShooter": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "iceMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "glueGunner": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        }
+    },
+    "military": {
+        "sniperMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "monkeySub": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "monkeyBuccaneer": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "monkeyAce": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "heliPilot": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "mortarMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "dartlingGunner": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        }
+    },
+    "magic": {
+        "wizardMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "superMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "ninjaMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "alchemist": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "druid": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        }
+    },
+    "support": {
+        "monkeyVillage": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "bananaFarm": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "spikeFactory": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        },
+        "engineerMonkey": {
+            "base": 100,
+            "top": [250, 500, 1000, 2000, 25750],
+            "middle": [250, 500, 1000, 2000, 25750],
+            "bottom": [250, 500, 1000, 2000, 25750]
+        }
+    }
+}
+
 async function getDataJSON() {
     /*const requestURL =
     "https://raw.githubusercontent.com/emilplane/b2popology/main/json/data.json";
@@ -10466,7 +10609,20 @@ async function getNkapiHomsJSON() {
 
 let HTMLLocation; let IDName;
 
-
+let popupData = {
+    "popupActive": false,
+    "popupTitle": "Very very very very very very very long title",
+    "popupHTML": `
+        <h5>Base Cost</h5>
+        <p>$1</p>
+        <p>$1</p>
+        <p>$1</p>
+        <p>$1</p>
+        <p>$1</p>
+        <p>$1</p>
+        <p>$1</p>
+    `
+}
 
 function generateHTMLFromData() {
 	for (const section in data) {
@@ -10499,7 +10655,10 @@ function generateHTMLFromData() {
                         }
                     
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
-                        <h1>${data[section]["entries"][entry]["name"]}</h1>
+                        <div style="display: flex; flex-wrap: wrap; align-items: start;">
+                            <h1>${data[section]["entries"][entry]["name"]}</h1>
+                            <button class="${section}TowerButton" style="margin-left: auto" id="${entry}towerCostButton">View tower costs (incomplete)</button>
+                        </div>
                         <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
                             <div style='flex-basis:200px;flex-grow:1'>
                                 <div>${data[section].entries[entry].data.base}</div>
@@ -10533,12 +10692,7 @@ function generateHTMLFromData() {
                     if (tierHTML == undefined) {
                         tierHTML = ``
                     }
-                    let firstLevelHTML;
-                    if (data[section].entries[entry].data[1] == undefined) {
-                        firstLevelHTML = `<h4>Coming Soon!</h4>`
-                    } else {
-                        firstLevelHTML = data[section].entries[entry].data[1]
-                    }
+                    let firstLevelHTML = data[section].entries[entry].data[1]
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                         <h1>${data[section]["entries"][entry]["name"]}</h1>
                         <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
@@ -10639,7 +10793,130 @@ function createButtonListeners() {
         selectedPage = x.target.value;
         changeCategoryButtons();
     });
+
+    document.getElementById("popupClose").addEventListener("click", () => {
+        popupData.popupActive = false;
+        popup()
+    });
+
+    for (const section in prices) {
+		for (const entry in prices[section]) {
+            document.getElementById(`${entry}towerCostButton`).addEventListener("click", () => {
+                popupData.popupTitle = `${data[section].entries[entry].name} Preview Tower Costs`;
+                let top = `
+
+                `;
+                for (number in prices[section][entry].top) {
+                    let tier = number + 1
+                    let sum = prices[section][entry].base;
+                    for (number2 in prices[section][entry].top) {
+                        if (number2 < tier) {
+                            sum = sum + prices[section][entry].top[number2]
+                        }
+                    }
+                    top = `${top}
+                        <h5>${data[section].entries[entry].data.topPath[parseInt(number)+1].name}</h5>
+                        <p>Total Cost: $${sum}<p>
+                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                            <p>Total x10: $${sum+prices[section][entry].middle[0]}<p>
+                            <p>Total x20: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
+                            <p>Total x01: $${sum+prices[section][entry].bottom[0]}<p>
+                            <p>Total x02: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
+                        </div>
+                        <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
+                        <div style="display:flex;flex-wrap:wrap">
+                            <p>Sell x10: $${Math.round(sum+prices[section][entry].middle[0])*0.7} | -$${Math.round(sum+prices[section][entry].middle[0])*0.3}<p>
+                            <p>Sell x20: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3}<p>
+                            <p>Sell x01: $${Math.round(sum+prices[section][entry].bottom[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
+                            <p>Sell x02: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.3}<p>
+                        </div>
+                    `
+                }
+                let middle = `
+
+                `;
+                for (number in prices[section][entry].middle) {
+                    let tier = number + 1
+                    let sum = prices[section][entry].base;
+                    for (number2 in prices[section][entry].middle) {
+                        if (number2 < tier) {
+                            sum = sum + prices[section][entry].middle[number2]
+                        }
+                    }
+                    middle = `${middle}
+                        <h5>${data[section].entries[entry].data.middlePath[parseInt(number)+1].name}</h5>
+                        <p>Total Cost: $${sum}<p>
+                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                            <p>Total 1x0: $${sum+prices[section][entry].top[0]}<p>
+                            <p>Total 2x0: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                            <p>Total 0x1: $${sum+prices[section][entry].bottom[0]}<p>
+                            <p>Total 0x2: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
+                        </div>
+                        <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
+                        <div style="display:flex;flex-wrap:wrap">
+                            <p>Sell 1x0: $${Math.round(sum+prices[section][entry].top[0])*0.7} | -$${Math.round(sum+prices[section][entry].top[0])*0.3}<p>
+                            <p>Sell 2x0: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3}<p>
+                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
+                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.3}<p>
+                        </div>
+                    `
+                }
+                let bottom = `
+
+                `;
+                for (number in prices[section][entry].bottom) {
+                    let tier = number + 1
+                    let sum = prices[section][entry].base;
+                    for (number2 in prices[section][entry].bottom) {
+                        if (number2 < tier) {
+                            sum = sum + prices[section][entry].bottom[number2]
+                        }
+                    }
+                    bottom = `${bottom}
+                        <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
+                        <p>Total Cost: $${sum}<p>
+                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                            <p>Total x10: $${sum+prices[section][entry].top[0]}<p>
+                            <p>Total x20: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                            <p>Total x01: $${sum+prices[section][entry].top[0]}<p>
+                            <p>Total x02: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                        </div>
+                        <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
+                        <div style="display:flex;flex-wrap:wrap">
+                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0])*0.7} | -$${Math.round(sum+prices[section][entry].top[0])*0.3}<p>
+                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3}<p>
+                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
+                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3}<p>
+                        </div>
+                    `
+                }
+                popupData.popupHTML = `
+                    <h5 style="color:red">Warning: This feature is currently only for preview. The following numbers are not accurate and for testing purposes only.</h5>
+                    <h5>Base Cost</h5>
+                    <p>$${prices[section][entry].base}</p>
+                    <h4>Top Path</h4>
+                    ${top}
+                    <h4>Middle Path</h4>
+                    ${middle}
+                    <h4>Bottom Path</h4>
+                    ${bottom}
+                `
+                popupData.popupActive = true;
+                popup()
+            });
+        }
+    }
 };
+
+function popup() {
+    if (popupData.popupActive === true) {
+        document.getElementById("popupDiv").style.display = "flex";
+    } else if (popupData.popupActive === false) {
+        document.getElementById("popupDiv").style.display = "none";
+    }
+    document.getElementById("popupContent").innerHTML = popupData.popupHTML
+    document.getElementById("popupTitle").innerHTML = popupData.popupTitle
+}
 
 async function main() {
 	//Get Values
@@ -10662,6 +10939,8 @@ async function main() {
 	createButtonListeners();
 
 	await getNkapiHomsJSON();
+
+    popup()
 };
 
 main();

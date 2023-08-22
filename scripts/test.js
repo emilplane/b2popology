@@ -486,8 +486,18 @@ const a = [
             "pierce": {
                 "value": 1
             },
-            "attackCooldown": 1,
+            "attackCooldown": 2,
             "attackType": "plasma"
+        }
+    },
+    {
+        "name": "testAttack3",
+        "type": "attack",
+        "properties": {
+            "pierce": {
+                "value": 1
+            },
+            "attackCooldown": 1
         }
     }
 ]
@@ -498,7 +508,7 @@ const b = [
         "properties": {
             "damage": {
                 "base": {
-                    "value": 2,
+                    "number": 2,
                     "type": "additive"
                 }
             },
@@ -510,65 +520,87 @@ const b = [
         "type": "attackBuff",
         "properties": {
             "attackCooldown": {
-                "value": 0.25,
+                "number": 0.25,
                 "type": "multiplicative"
             },
             "pierce": {
                 "value": {
-                    "value": 1,
+                    "number": 1,
                     "type": "additive"
                 }
             },
             "range": {
-                "value": 40
+                "value": {
+                    "number": 40,
+                    "type": "additive"
+                },
+                "zone": true
             }
         }
     }
 ]
 
 function buffTower (initial, buff) {
-    for (buffSectionNumber in buff) {
-        for (initialSectionNumber in initial) {
+    let output = []
+    for (initialSectionNumber in initial) {
+        let isBuffed = false;
+        let result = undefined;
+        for (buffSectionNumber in buff) {
             if (initial[initialSectionNumber].name == buff[buffSectionNumber].name) {
-                
+
+                isBuffed = true;
                 let initialSection = initial[initialSectionNumber]; let buffSection = buff[buffSectionNumber]
+
                 for (propertyName in buffSection.properties) {
-                    if (initialSection.properties[propertyName] === undefined) {
-                        console.log("noProperty")
+                    let initProp = initialSection.properties[propertyName]; let buffProp = buffSection.properties[propertyName];
+                    if (initProp === undefined) {
+                        switch (propertyName) {
+                            case "range": 
+                                initProp = buffProp
+                                break;
+                        }
                     } else {
                         switch (propertyName) {
                             case "damage": 
-                                initialSection.properties[propertyName].base = buffStat(initialSection.properties[propertyName].base, buffSection.properties[propertyName].base)
+                                initProp.base = buffStat(initProp.base, buffProp.base)
                                 break;
                             case "pierce": 
-                                initialSection.properties[propertyName].value = buffStat(initialSection.properties[propertyName].value, buffSection.properties[propertyName].value)
+                                initProp.value = buffStat(initProp.value, buffProp.value)
                                 break;
                             case "attackCooldown":
-                                initialSection.properties[propertyName] = buffStat(initialSection.properties[propertyName], buffSection.properties[propertyName])
+                                initProp = buffStat(initProp, buffProp)
                                 break;
                             case "attackType":
-                                initialSection.properties[propertyName] = buffSection.properties[propertyName]
+                                initProp = buffProp
                                 break;
                         }
                     }
+                    initialSection.properties[propertyName] = initProp; buffSection.properties[propertyName] = buffProp
                 }
-                console.log(initialSection)
+                
+                result = initialSection
             }
         }
+        if (isBuffed == true) {
+            output.push(result)
+        } else (
+            output.push(initial[initialSectionNumber])
+        )
     }
+    return output
 }
 
 function buffStat (initial, buff) {
     if (initial === undefined) {
-        return buff.value
+        return buff.number
     }
     switch (buff.type) {
         case "additive": 
-            return initial + buff.value
+            return initial + buff.number
         case "multiplicative": 
-            return initial * buff.value
+            return initial * buff.number
         case "absolute": 
-            return buff.value
+            return buff.number
     }
 }
 

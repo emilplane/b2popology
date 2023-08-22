@@ -97,7 +97,7 @@ h5 {
 }
 
 h6 {
-	font-size: 14px;
+	font-size: 15px;
 }
 
 p, ul {
@@ -173,6 +173,44 @@ button:hover, button:focus {
 }
 .discordButton:hover, .discordButton:focus {
     background-color: rgb(255, 255, 255);
+}
+
+.popup {
+    background-color: var(--secondary2);
+    border-radius: 8px;
+    margin: 8px;
+    max-width: 600px;
+    flex: 1
+}
+
+.popupHeader {
+    background-color: var(--primary5);
+    padding: 8px;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+    display: flex; align-items: center;
+}
+
+.popupTitle {
+    display: flex; justify-content: center; 
+    margin-right: auto; margin-left: auto;
+}
+
+.popupContent {
+    padding: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.popupDiv {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
 .roundedBox {
