@@ -5243,7 +5243,7 @@ let data = {
                                             <li>+15%p, +15% speed</li>
                                             <li>can stack (additively) up to 5 times total</li>
                                             <li>note that this is yet another speed buff, which also stacks multiplicatively with tiers 2 and 3</li>
-                                            <li>[BUG] all attacks buffed</li>
+                                            <li>[BUG] buffs druids in range, excluding self</li>
                                             <ul>
                                                 <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
                                                 <li>note again that this is a speed buff, and that it stacks multiplicatively with any buff gained from tier 2</li>
