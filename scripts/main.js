@@ -6758,8 +6758,8 @@ let data = {
                     </ul>`
                 }
             },
-            "gwendolyn": {
-                "name": "Gwendolyn",
+            "Gwendolin": {
+                "name": "Gwendolin",
                 "data": {
                     "1": `<ul>
                     <li>$700</li>
@@ -6962,8 +6962,8 @@ let data = {
                     </ul>`
                 }
             },
-            "scientistGwendolyn": {
-                "name": "Scientist Gwendolyn",
+            "scientistGwendolin": {
+                "name": "Scientist Gwendolin",
                 "data": {
                     "1": `<ul>
                     <li>$700</li>
