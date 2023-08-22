@@ -9129,6 +9129,7 @@ let data = {
                     "10": `<ul>
                     <li>big-squeeze ability (30s cooldown, 5s duration, battle ready)
                         <ul>
+                            <li>[BUG] this ability does not do anything</li>
                             <li>grabs the strongest MOAB-class non-BAD bloon in range and spends 4s popping it </li>
                             <li>Pat cannot attack during the ability duration</li>
                             <li>Pat cannot activate rallying-roar during the ability duration</li>
