@@ -3509,7 +3509,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$800 (500 MM</li>
+                            <li>$800 (500 MM)</li>
                             <li>size: 7 radius</li>
                             <li>placeable on: land</li>
                             <li>20r</li>
@@ -3532,7 +3532,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Laser Shock - 600",
+                            "name": "200 - Laser Shock - $600",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -5243,12 +5243,17 @@ let data = {
                                             <li>+15%p, +15% speed</li>
                                             <li>can stack (additively) up to 5 times total</li>
                                             <li>note that this is yet another speed buff, which also stacks multiplicatively with tiers 2 and 3</li>
-                                            <li>[BUG] buffs druids in range, excluding self</li>
-                                            <ul>
-                                                <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
-                                                <li>note again that this is a speed buff, and that it stacks multiplicatively with any buff gained from tier 2</li>
-                                                <li>[BUG] sometimes the speed buff does not apply</li>
-                                            </ul>
+                                        </ul>
+                                    </li>
+                                    <li>[BUG] gains poplust-druid-of-wrath-bugged buff
+                                        <ul>
+                                            <li>affects druids in range, excluding self</li>
+                                            <li>all attacks buffed (on target druid)
+                                                <ul>
+                                                    <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
+                                                    <li>note again that this is a speed buff, and that it stacks multiplicatively with any buff gained from tier 2</li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -10505,86 +10510,86 @@ let prices = {
             "bottom": [300, 400, 1600, 5400, 19000]
         },
         "monkeyAce": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 700,
+            "top": [550, 600, 1000, 3000, 40000],
+            "middle": [200, 350, 900, 14000, 30000],
+            "bottom": [450, 300, 2200, 20000, 75000]
         },
         "heliPilot": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 900,
+            "top": [600, 250, 1900, 19600, 45000],
+            "middle": [200, 350, 3200, 7500, 30000],
+            "bottom": [150, 250, 3700, 8500, 35000]
         },
         "mortarMonkey": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 700,
+            "top": [350, 500, 950, 7500, 28000],
+            "middle": [300, 500, 900, 7600, 27000],
+            "bottom": [200, 600, 700, 8500, 40000]
         },
         "dartlingGunner": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 800,
+            "top": [250, 600, 3000, 12000, 80000],
+            "middle": [250, 500, 5600, 5100, 68000],
+            "bottom": [150, 800, 3400, 14500, 53000]
         }
     },
     "magic": {
         "wizardMonkey": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 400,
+            "top": [150, 300, 1200, 9000, 32000],
+            "middle": [300, 900, 3000, 4000, 50000],
+            "bottom": [300, 300, 1500, 2800, 24000]
         },
         "superMonkey": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 2100,
+            "top": [2300, 4500, 11000, 10000, 40000],
+            "middle": [1000, 1400, 7000, 20000, 90000],
+            "bottom": [3000, 1200, 5600, 55000, 240000]
         },
         "ninjaMonkey": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 450,
+            "top": [250, 300, 650, 2750, 35000],
+            "middle": [300, 375, 2000, 4500, 25000],
+            "bottom": [200, 300, 2000, 4500, 40000]
         },
         "alchemist": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 550,
+            "top": [250, 350, 1650, 2800, 55000],
+            "middle": [250, 475, 4000, 4500, 45000],
+            "bottom": [550, 450, 1000, 2500, 40000]
         },
         "druid": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 425,
+            "top": [250, 1000, 1500, 4300, 60000],
+            "middle": [250, 350, 750, 2800, 35000],
+            "bottom": [100, 400, 750, 2500, 45000]
         }
     },
     "support": {
         "monkeyVillage": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 1000,
+            "top": [400, 1500, 800, 2500, 25000],
+            "middle": [250, 1700, 7000, 21500, 45000],
+            "bottom": [500, 500, 5000, 7000, 20000]
         },
         "bananaFarm": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 1000,
+            "top": [550, 550, 2600, 16000, 66000],
+            "middle": [200, 700, 5100, 7500, 45000],
+            "bottom": [250, 200, 2800, 13000, 46000]
         },
         "spikeFactory": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 800,
+            "top": [700, 600, 2500, 9500, 110000],
+            "middle": [600, 700, 2500, 5000, 40000],
+            "bottom": [150, 600, 3500, 30000]
         },
         "engineerMonkey": {
-            "base": 100,
-            "top": [],
-            "middle": [],
-            "bottom": []
+            "base": 400,
+            "top": [500, 400, 525, 2500, 32000],
+            "middle": [250, 350, 800, 13500, 100000],
+            "bottom": [450, 220, 450, 3500, 54000]
         }
     }
 }
@@ -10664,7 +10669,7 @@ function generateHTMLFromData() {
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                         <div style="display: flex; flex-wrap: wrap; align-items: start;">
                             <h1>${data[section]["entries"][entry]["name"]}</h1>
-                            <button class="${section}TowerButton" style="margin-left: auto" id="${entry}towerCostButton">View tower costs (incomplete)</button>
+                            <button class="${section}TowerButton" style="margin-left: auto" id="${entry}towerCostButton">View tower costs</button>
                         </div>
                         <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
                             <div style='flex-basis:200px;flex-grow:1'>
@@ -10809,7 +10814,7 @@ function createButtonListeners() {
     for (const section in prices) {
 		for (const entry in prices[section]) {
             document.getElementById(`${entry}towerCostButton`).addEventListener("click", () => {
-                popupData.popupTitle = `${data[section].entries[entry].name} Preview Tower Costs`;
+                popupData.popupTitle = `${data[section].entries[entry].name} Tower Costs`;
                 let top = `
 
                 `;
@@ -10879,6 +10884,26 @@ function createButtonListeners() {
                             sum = sum + prices[section][entry].bottom[number2]
                         }
                     }
+                    console.log(data[section].entries[entry].data.bottomPath[parseInt(number)+1].name)
+                    if (data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `004 - Favored Trades - $5,400` || data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `005 - Trade Empire - $19,000`) {
+                        bottom = `${bottom}
+                        <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
+                        <p>Total Cost: $${sum}<p>
+                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                            <p>Total x10: $${sum+prices[section][entry].top[0]}<p>
+                            <p>Total x20: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                            <p>Total x01: $${sum+prices[section][entry].top[0]}<p>
+                            <p>Total x02: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                        </div>
+                        <p>Sell Cost (accounts for 80% sellback): $${Math.round(sum*0.8)} | -$${Math.round(sum*0.2)}<p>
+                        <div style="display:flex;flex-wrap:wrap">
+                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0])*0.8} | -$${Math.round(sum+prices[section][entry].top[0])*0.3}<p>
+                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.8} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.2}<p>
+                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0])*0.8} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
+                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.8} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.2}<p>
+                        </div>
+                    `
+                    } else
                     bottom = `${bottom}
                         <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
                         <p>Total Cost: $${sum}<p>
@@ -10898,7 +10923,7 @@ function createButtonListeners() {
                     `
                 }
                 popupData.popupHTML = `
-                    <h5 style="color:red">Warning: This feature is currently only for preview. The following numbers are not accurate and for testing purposes only.</h5>
+                    <h6>Note: this feature is new so data may be slightly inaccurate</h6>
                     <h5>Base Cost</h5>
                     <p>$${prices[section][entry].base}</p>
                     <h4>Top Path</h4>
