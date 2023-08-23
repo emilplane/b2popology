@@ -1,3 +1,46 @@
+const damageBonuses = [
+    {
+        "name": "moab",
+        "displayName": "MOAB",
+        "abbreviation": "md"
+    },
+    {
+        "name": "fortified",
+        "displayName": "Fortified",
+        "abbreviation": "fd"
+    },
+    {
+        "name": "fortifiedMoab",
+        "displayName": "Fortified MOAB",
+        "abbreviation": "fmd"
+    },
+    {
+        "name": "ceramic",
+        "displayName": "Ceramic",
+        "abbreviation": "cd"
+    },
+    {
+        "name": "lead",
+        "displayName": "Lead",
+        "abbreviation": "ld"
+    },
+    {
+        "name": "camo",
+        "displayName": "Camo",
+        "abbreviation": "cad"
+    },
+    {
+        "name": "frozen",
+        "displayName": "Frozen",
+        "abbreviation": "frd"
+    },
+    {
+        "name": "stunned",
+        "displayName": "Stunned",
+        "abbreviation": "sd"
+    }
+]
+
 const sniperMonkey = {
     "upgrades": {
         "base": [
@@ -6,7 +49,7 @@ const sniperMonkey = {
                 "type": "attack",
                 "properties": {
                     "damage": {
-                        "base": 2
+                        "base": 3
                     },
                     "pierce": {
                         "value": 1,
@@ -460,85 +503,34 @@ const sniperMonkey = {
     }
 };
 
-const a = [
-    {
-        "name": "testAttack1",
-        "type": "attack",
-        "properties": {
-            "damage": {
-                "base": 5,
-                "moab": 2
-            },
-            "pierce": {
-                "value": 1
-            },
-            "attackCooldown": 2,
-            "attackType": "sharp"
-        }
-    },
-    {
-        "name": "testAttack2",
-        "type": "attack",
-        "properties": {
-            "damage": {
-                "base": 1
-            },
-            "pierce": {
-                "value": 1
-            },
-            "attackCooldown": 2,
-            "attackType": "plasma"
-        }
-    },
-    {
-        "name": "testAttack3",
-        "type": "attack",
-        "properties": {
-            "pierce": {
-                "value": 1
-            },
-            "attackCooldown": 1
-        }
+function getTowerObject (tower, crosspath) {
+    if (crosspath[0] == 0 && crosspath[1] == 0 && crosspath[2] == 0) {
+        return tower.upgrades.base
     }
-]
-const b = [
-    {
-        "name": "testAttack1",
-        "type": "attackBuff",
-        "properties": {
-            "damage": {
-                "base": {
-                    "number": 2,
-                    "type": "additive"
-                }
-            },
-            "attackType": "normal"
-        }
-    },
-    {
-        "name": "testAttack2",
-        "type": "attackBuff",
-        "properties": {
-            "attackCooldown": {
-                "number": 0.25,
-                "type": "multiplicative"
-            },
-            "pierce": {
-                "value": {
-                    "number": 1,
-                    "type": "additive"
-                }
-            },
-            "range": {
-                "value": {
-                    "number": 40,
-                    "type": "additive"
-                },
-                "zone": true
-            }
-        }
+
+    let output = tower.upgrades.base
+
+    let mainCrosspath;
+    let mainCrosspathNumber;
+    if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
+        mainCrosspath = "top";
+        mainCrosspathNumber = 0;
+    } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
+        mainCrosspath = "middle";
+        mainCrosspathNumber = 1;
+    } else {
+        mainCrosspath = "bottom";
+        mainCrosspathNumber = 2;
     }
-]
+
+    const upgradeCounter = crosspath[mainCrosspathNumber];
+    for (let i = 0; i < upgradeCounter; i++) {
+        console.log(output);
+        buffTower(output, tower.upgrades[mainCrosspath][i])
+    }
+
+    return output
+}
 
 function buffTower (initial, buff) {
     let output = []
@@ -561,8 +553,19 @@ function buffTower (initial, buff) {
                         }
                     } else {
                         switch (propertyName) {
-                            case "damage": 
-                                initProp.base = buffStat(initProp.base, buffProp.base)
+                            case "damage":
+                                base = initProp.base
+                                base = buffStat(base, buffProp.base.value)
+                                for (bonusNumber in damageBonuses) {
+                                    let bonus = damageBonuses[bonusNumber].name
+                                    if (buffProp[bonus] != undefined) {
+                                        if (initProp[bonus] != undefined) { 
+                                            initProp[bonus] = buffStat(initProp[bonus], buffProp[bonus])
+                                        } else {
+                                            initProp[bonus] = buffProp[bonus].number
+                                        }
+                                    }
+                                }
                                 break;
                             case "pierce": 
                                 initProp.value = buffStat(initProp.value, buffProp.value)
@@ -604,4 +607,6 @@ function buffStat (initial, buff) {
     }
 }
 
-console.log(buffTower(a, b))
+console.log(getTowerObject(sniperMonkey, [0, 0, 0]))
+console.log(getTowerObject(sniperMonkey, [3, 0, 0]))
+console.log(sniperMonkey)
