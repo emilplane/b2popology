@@ -10838,10 +10838,10 @@ function createButtonListeners() {
                         </div>
                         <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
                         <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell x10: $${Math.round(sum+prices[section][entry].middle[0])*0.7} | -$${Math.round(sum+prices[section][entry].middle[0])*0.3}<p>
-                            <p>Sell x20: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3}<p>
-                            <p>Sell x01: $${Math.round(sum+prices[section][entry].bottom[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
-                            <p>Sell x02: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.3}<p>
+                            <p>Sell x10: $${Math.round(sum+prices[section][entry].middle[0]*0.7)} | -$${Math.round(sum+prices[section][entry].middle[0]*0.3)}<p>
+                            <p>Sell x20: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.7)} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.3)}<p>
+                            <p>Sell x01: $${Math.round(sum+prices[section][entry].bottom[0]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.3)}<p>
+                            <p>Sell x02: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.3)}<p>
                         </div>
                     `
                 }
@@ -10867,10 +10867,10 @@ function createButtonListeners() {
                         </div>
                         <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
                         <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell 1x0: $${Math.round(sum+prices[section][entry].top[0])*0.7} | -$${Math.round(sum+prices[section][entry].top[0])*0.3}<p>
-                            <p>Sell 2x0: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3}<p>
-                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
-                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.3}<p>
+                            <p>Sell 1x0: $${Math.round(sum+prices[section][entry].top[0]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]*0.3)}<p>
+                            <p>Sell 2x0: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.3)}<p>
+                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.3)}<p>
+                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.3)}<p>
                         </div>
                     `
                 }
@@ -10898,10 +10898,10 @@ function createButtonListeners() {
                         </div>
                         <p>Sell Cost (accounts for 80% sellback): $${Math.round(sum*0.8)} | -$${Math.round(sum*0.2)}<p>
                         <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0])*0.8} | -$${Math.round(sum+prices[section][entry].top[0])*0.3}<p>
-                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.8} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.2}<p>
-                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0])*0.8} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
-                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.8} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.2}<p>
+                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0]*0.8)} | -$${Math.round(sum+prices[section][entry].top[0]*0.2)}<p>
+                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.8)} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.2)}<p>
+                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0]*0.8)} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.2)}<p>
+                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.8)} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.2)}<p>
                         </div>
                     `
                     } else
@@ -10916,10 +10916,10 @@ function createButtonListeners() {
                         </div>
                         <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
                         <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0])*0.7} | -$${Math.round(sum+prices[section][entry].top[0])*0.3}<p>
-                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3}<p>
-                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0])*0.3}<p>
-                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3}<p>
+                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]*0.3)}<p>
+                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.3)}<p>
+                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.3)}<p>
+                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.7)} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.3)}<p>
                         </div>
                     `
                 }
