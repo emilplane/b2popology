@@ -5248,6 +5248,7 @@ let data = {
                                     <li>[BUG] gains poplust-druid-of-wrath-bugged buff
                                         <ul>
                                             <li>affects druids in range, excluding self</li>
+                                            <li>can stack (additively?) up to 5 times total</li>
                                             <li>all attacks buffed (on target druid)
                                                 <ul>
                                                     <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
