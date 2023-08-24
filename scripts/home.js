@@ -1,5 +1,54 @@
 let events = [
     {
+        "name": "Battles 2 2.1 Update Survey by thewarrior71",
+        "startDate": "2023-08-24T10:00:00Z",
+        "endDate": "2023-08-31T10:00:00Z",
+        "content": `
+
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/15zycv4/battles_2_update_21_balance_survey/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/15zycv4/battles_2_update_21_balance_survey/"
+            },
+            {
+                "name": "Survey Link",
+                "link": "https://forms.gle/jVGfk1LCQn6Artei9"
+            },
+            {
+                "name": "Survey Results",
+                "link": "https://docs.google.com/spreadsheets/d/1Xe-KM6HUQVZc7icpdzrnEH9ck84B7JA6D2W214jL44g/edit?usp=sharing"
+            }
+        ]
+    },
+    {
+        "name": "300k Celebration and Avatar Competition",
+        "startDate": "2023-08-23T15:00:35Z",
+        "endDate": "2023-09-07T06:59:00Z",
+        "content": `
+            <p>"Every time we hit a milestone like this, our team is blown away with this community's excitement, engagement and passion for our game. You have all made the game better, giving us feedback, suggestions and your own art and designs! In line with celebrating that and all 300k of you, we are running another avatar competition!" Click "learn more" to find out more about this competition!</p>
+            <p>Ninja Kiwi Terms apply.</p>
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/btd6/comments/15zpjcm/300k_celebration_and_avatar_competition/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/btd6/comments/15zpjcm/300k_celebration_and_avatar_competition/"
+            },
+            {
+                "name": "Ninja Kiwi Terms & Conditions",
+                "link": "https://ninjakiwi.com/terms"
+            },
+        ]
+    },
+    {
         "name": "Battles 2 Update 2.1 Announced!",
         "startDate": "2023-08-11T12:44:47Z",
         "content": `
@@ -7,8 +56,12 @@ let events = [
         `,
         "links": [
             {
-                "name": "Patch Notes",
+                "name": "Open in Reddit",
                 "link": "https://www.reddit.com/r/battles2/comments/15o7yan/update_21_coming_soon_update_notes/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/15o7yan/update_21_coming_soon_update_notes/"
             },
             {
                 "name": "Update Video",
@@ -19,20 +72,19 @@ let events = [
     {
         "name": "Star Captain Map Design Competition",
         "startDate": "2023-08-10T02:09:57Z",
-        "endDate": "2023-08-20T22:59:59Z",
+        "endDate": "2023-08-20T22:59:00Z",
         "content": `
-            <p>"Have you ever fancied trying your hand at designing a map for Battles 2? Well, now is your chance! With work on Star Captain Jericho well underway and looking good for launch in update 2.2, we wanted to give you all the chance to design a map to go with him!" Click "learn more" to find out more about this competition!</p>
-            <p>Ninja Kiwi Terms apply.</p>
+            <p>"Have you ever fancied trying your hand at designing a map for Battles 2? Well, now is your chance! With work on Star Captain Jericho well underway and looking good for launch in update 2.2, we wanted to give you all the chance to design a map to go with him!"</p>
         `,
         "links": [
             {
-                "name": "Learn more",
+                "name": "Learn more on Reddit",
                 "link": "https://www.reddit.com/r/battles2/comments/152t5pn/update_204_is_rolling_out_now_patch_notes/"
             },
             {
-                "name": "Ninja Kiwi Terms & Conditions",
-                "link": "https://ninjakiwi.com/terms"
-            },
+                "name": "Learn more on Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/152t5pn/update_204_is_rolling_out_now_patch_notes/"
+            }
         ]
     }
 ]
