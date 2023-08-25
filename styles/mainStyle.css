@@ -54,6 +54,9 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary8);
+    }
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {
@@ -64,6 +67,9 @@ h1, h2, h3, h4, h5, button {
     font-family: "Luckiest Guy";
     font-weight: 100;
     color: var(--secondary8);
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary1);
+    }
 }
 
 h6, p, ul {
@@ -74,6 +80,9 @@ h6, p, ul {
 
 h5, h6 {
     color: var(--secondary8);
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary1);
+    }
 }
 
 h1 {
@@ -102,7 +111,10 @@ h6 {
 
 p, ul {
 	font-size: 14px;
-    color: var(--secondary7)
+    color: var(--secondary7);
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary2);
+    }
 }
 
 ul {
@@ -111,6 +123,9 @@ ul {
 
 button, select {
     background-color: var(--primary5);
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary8);
+    };
 	border-radius: 8px;
 	border: 0;
 	cursor: pointer;
@@ -131,6 +146,30 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
+}
+
+header {
+    display: flex; 
+    justify-content: center; 
+    background-color: var(--primary2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primary8);
+    };
+}
+
+.headerDiv {
+    flex: 1; 
+    display: flex; 
+    padding: 8px; 
+    max-width: 1000px; 
+    flex-wrap: wrap;
+}
+
+.selectedButton {
+    background-color: transparent;
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary1);
+    };
 }
 
 .lighterText {
@@ -203,12 +242,18 @@ main {
 .popupTitle {
     display: flex; justify-content: center; 
     margin-right: auto; margin-left: auto;
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary8);
+    }
 }
 
 .popupContent {
     padding: 8px;
     max-height: 400px;
     overflow-y: auto;
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary8);
+    }
 }
 
 .popupDiv {
@@ -224,6 +269,9 @@ main {
 
 .roundedBox {
     background-color: var(--secondary2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary7);
+    }
     border-radius: 8px;
     margin: 8px;
     padding: 8px;
@@ -280,5 +328,12 @@ main {
 @media (min-width: 600px) {
     .normalBanner {
         display: none
+    }
+}
+
+.discordSection {
+    background-color: rgb(218, 209, 248);
+    @media (prefers-color-scheme: dark) {
+        background-color: rgb(80, 68, 118);
     }
 }
