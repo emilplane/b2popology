@@ -10827,23 +10827,43 @@ function createButtonListeners() {
                             sum = sum + prices[section][entry].top[number2]
                         }
                     }
-                    top = `${top}
-                        <h5>${data[section].entries[entry].data.topPath[parseInt(number)+1].name}</h5>
-                        <p>Total Cost: $${sum}<p>
-                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
-                            <p>Total x10: $${sum+prices[section][entry].middle[0]}<p>
-                            <p>Total x20: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
-                            <p>Total x01: $${sum+prices[section][entry].bottom[0]}<p>
-                            <p>Total x02: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
-                        </div>
-                        <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
-                        <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell x10: $${Math.round(sum+prices[section][entry].middle[0]*0.7)} | -$${Math.round(sum+prices[section][entry].middle[0]*0.3)}<p>
-                            <p>Sell x20: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.7)} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.3)}<p>
-                            <p>Sell x01: $${Math.round(sum+prices[section][entry].bottom[0]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.3)}<p>
-                            <p>Sell x02: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.3)}<p>
-                        </div>
-                    `
+                    if (entry == "bananaFarm") {
+                        top = `${top}
+                            <h5>${data[section].entries[entry].data.topPath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total x10: $${sum+prices[section][entry].middle[0]}<p>
+                                <p>Total x20: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
+                                <p>Total x01: $${sum+prices[section][entry].bottom[0]}<p>
+                                <p>Total x02: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
+                            </div>
+                            <p>Sell Cost: $${Math.round(100*sum*0.7)*0.01} | -$${Math.round(100*sum*0.3)*0.01}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell x10: $${Math.round(100*(sum+prices[section][entry].middle[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0])*0.3)*0.01}<p>
+                                <p>Sell x20: $${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3)*0.01}<p>
+                                <p>Sell x01: $${Math.round(100*(sum+prices[section][entry].bottom[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.3)*0.01}<p>
+                                <p>Sell x02 (accounts for 80% sellback): $${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.2)*0.01}<p>
+                            </div>
+                        `
+                    } else {
+                        top = `${top}
+                            <h5>${data[section].entries[entry].data.topPath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total x10: $${sum+prices[section][entry].middle[0]}<p>
+                                <p>Total x20: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
+                                <p>Total x01: $${sum+prices[section][entry].bottom[0]}<p>
+                                <p>Total x02: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
+                            </div>
+                            <p>Sell Cost: $${Math.round(100*sum*0.7)*0.01} | -$${Math.round(100*sum*0.3)*0.01}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell x10: $${Math.round(100*(sum+prices[section][entry].middle[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0])*0.3)*0.01}<p>
+                                <p>Sell x20: $${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3)*0.01}<p>
+                                <p>Sell x01: $${Math.round(100*(sum+prices[section][entry].bottom[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.3)*0.01}<p>
+                                <p>Sell x02: $${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.3)*0.01}<p>
+                            </div>
+                        `
+                    }
                 }
                 let middle = `
 
@@ -10856,23 +10876,43 @@ function createButtonListeners() {
                             sum = sum + prices[section][entry].middle[number2]
                         }
                     }
-                    middle = `${middle}
-                        <h5>${data[section].entries[entry].data.middlePath[parseInt(number)+1].name}</h5>
-                        <p>Total Cost: $${sum}<p>
-                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
-                            <p>Total 1x0: $${sum+prices[section][entry].top[0]}<p>
-                            <p>Total 2x0: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
-                            <p>Total 0x1: $${sum+prices[section][entry].bottom[0]}<p>
-                            <p>Total 0x2: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
-                        </div>
-                        <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
-                        <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell 1x0: $${Math.round(sum+prices[section][entry].top[0]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]*0.3)}<p>
-                            <p>Sell 2x0: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.3)}<p>
-                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.3)}<p>
-                            <p>Sell 0x2: $${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.7)} | -$${Math.round(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]*0.3)}<p>
-                        </div>
-                    `
+                    if (entry == "bananaFarm") {
+                        middle = `${middle}
+                            <h5>${data[section].entries[entry].data.middlePath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total 1x0: $${sum+prices[section][entry].top[0]}<p>
+                                <p>Total 2x0: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                                <p>Total 0x1: $${sum+prices[section][entry].bottom[0]}<p>
+                                <p>Total 0x2: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
+                            </div>
+                            <p>Sell Cost: $${Math.round(100*sum*0.7)*0.01} | -$${Math.round(100*sum*0.3)*0.01}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell 1x0: $${Math.round(100*(sum+prices[section][entry].top[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0])*0.3)*0.01}<p>
+                                <p>Sell 2x0: $${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3)*0.01}<p>
+                                <p>Sell 0x1: $${Math.round(100*(sum+prices[section][entry].bottom[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.3)*0.01}<p>
+                                <p>Sell 0x2 (accounts for 80% sellback): $${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.2)*0.01}<p>
+                            </div>
+                        `
+                    } else {
+                        middle = `${middle}
+                            <h5>${data[section].entries[entry].data.middlePath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total 1x0: $${sum+prices[section][entry].top[0]}<p>
+                                <p>Total 2x0: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
+                                <p>Total 0x1: $${sum+prices[section][entry].bottom[0]}<p>
+                                <p>Total 0x2: $${sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1]}<p>
+                            </div>
+                            <p>Sell Cost: $${Math.round(100*sum*0.7)*0.01} | -$${Math.round(100*sum*0.3)*0.01}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell 1x0: $${Math.round(100*(sum+prices[section][entry].top[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0])*0.3)*0.01}<p>
+                                <p>Sell 2x0: $${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3)*0.01}<p>
+                                <p>Sell 0x1: $${Math.round(100*(sum+prices[section][entry].bottom[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.3)*0.01}<p>
+                                <p>Sell 0x2: $${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0]+prices[section][entry].bottom[1])*0.3)*0.01}<p>
+                            </div>
+                        `
+                    }
                 }
                 let bottom = `
 
@@ -10885,43 +10925,61 @@ function createButtonListeners() {
                             sum = sum + prices[section][entry].bottom[number2]
                         }
                     }
-                    console.log(data[section].entries[entry].data.bottomPath[parseInt(number)+1].name)
                     if (data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `004 - Favored Trades - $5,400` || data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `005 - Trade Empire - $19,000`) {
                         bottom = `${bottom}
-                        <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
-                        <p>Total Cost: $${sum}<p>
-                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
-                            <p>Total x10: $${sum+prices[section][entry].top[0]}<p>
-                            <p>Total x20: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
-                            <p>Total x01: $${sum+prices[section][entry].top[0]}<p>
-                            <p>Total x02: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
-                        </div>
-                        <p>Sell Cost (accounts for 80% sellback): $${Math.round(sum*0.8)} | -$${Math.round(sum*0.2)}<p>
-                        <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0]*0.8)} | -$${Math.round(sum+prices[section][entry].top[0]*0.2)}<p>
-                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.8)} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.2)}<p>
-                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0]*0.8)} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.2)}<p>
-                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.8)} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.2)}<p>
-                        </div>
-                    `
-                    } else
-                    bottom = `${bottom}
-                        <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
-                        <p>Total Cost: $${sum}<p>
-                        <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
-                            <p>Total x10: $${sum+prices[section][entry].top[0]}<p>
-                            <p>Total x20: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
-                            <p>Total x01: $${sum+prices[section][entry].top[0]}<p>
-                            <p>Total x02: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
-                        </div>
-                        <p>Sell Cost: $${Math.round(sum*0.7)} | -$${Math.round(sum*0.3)}<p>
-                        <div style="display:flex;flex-wrap:wrap">
-                            <p>Sell x10: $${Math.round(sum+prices[section][entry].top[0]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]*0.3)}<p>
-                            <p>Sell x20: $${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.7)} | -$${Math.round(sum+prices[section][entry].top[0]+prices[section][entry].top[1]*0.3)}<p>
-                            <p>Sell x01: $${Math.round(sum+prices[section][entry].middle[0])*0.7} | -$${Math.round(sum+prices[section][entry].bottom[0]*0.3)}<p>
-                            <p>Sell x02: $${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.7)} | -$${Math.round(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]*0.3)}<p>
-                        </div>
-                    `
+                            <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total 10x: $${sum+prices[section][entry].top[0]}<p>
+                                <p>Total 20x: $${sum+prices[section][entry].top[0]+prices[section][entry].middle[1]}<p>
+                                <p>Total 01x: $${sum+prices[section][entry].middle[0]}<p>
+                                <p>Total 02x: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
+                            </div>
+                            <p>Sell Cost (accounts for 80% sellback): $${Math.round(sum*0.8)} | -$${Math.round(sum*0.2)}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell 10x: $${Math.round(100*(sum+prices[section][entry].top[0])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0])*0.2)*0.01}<p>
+                                <p>Sell 20x: $${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.2)*0.01}<p>
+                                <p>Sell 01x: $${Math.round(100*(sum+prices[section][entry].middle[0])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.2)*0.01}<p>
+                                <p>Sell 02x: $${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.2)*0.01}<p>
+                            </div>
+                        `
+                    } else if (data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `002 - Banana Salvage - $200` || data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `003 - Marketplace - $2,800` || data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `004 - Central Market - $13,000` || data[section].entries[entry].data.bottomPath[parseInt(number)+1].name == `005 - Monkey Wall Street - $46,000`) {
+                        bottom = `${bottom}
+                            <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total 10x: $${sum+prices[section][entry].top[0]}<p>
+                                <p>Total 20x: $${sum+prices[section][entry].top[0]+prices[section][entry].middle[1]}<p>
+                                <p>Total 01x: $${sum+prices[section][entry].middle[0]}<p>
+                                <p>Total 02x: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
+                            </div>
+                            <p>Sell Cost (accounts for 80% sellback): $${Math.round(sum*0.8)} | -$${Math.round(sum*0.2)}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell 10x: $${Math.round(100*(sum+prices[section][entry].top[0])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0])*0.2)*0.01}<p>
+                                <p>Sell 20x: $${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.2)*0.01}<p>
+                                <p>Sell 01x: $${Math.round(100*(sum+prices[section][entry].middle[0])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.2)*0.01}<p>
+                                <p>Sell 02x: $${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.8)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.2)*0.01}<p>
+                            </div>
+                        `
+                    } else {
+                        bottom = `${bottom}
+                            <h5>${data[section].entries[entry].data.bottomPath[parseInt(number)+1].name}</h5>
+                            <p>Total Cost: $${sum}<p>
+                            <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
+                                <p>Total 10x: $${sum+prices[section][entry].top[0]}<p>
+                                <p>Total 20x: $${sum+prices[section][entry].top[0]+prices[section][entry].middle[1]}<p>
+                                <p>Total 01x: $${sum+prices[section][entry].middle[0]}<p>
+                                <p>Total 02x: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
+                            </div>
+                            <p>Sell Cost: $${Math.round(100*sum*0.7)*0.01} | -$${Math.round(100*sum*0.3)*0.01}<p>
+                            <div style="display:flex;flex-wrap:wrap">
+                                <p>Sell 10x: $${Math.round(100*(sum+prices[section][entry].top[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0])*0.3)*0.01}<p>
+                                <p>Sell 20x: $${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].top[0]+prices[section][entry].top[1])*0.3)*0.01}<p>
+                                <p>Sell 01x: $${Math.round(100*(sum+prices[section][entry].middle[0])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].bottom[0])*0.3)*0.01}<p>
+                                <p>Sell 02x: $${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3)*0.01}<p>
+                            </div>
+                        `
+                    }
                 }
                 popupData.popupHTML = `
                     <h6>Note: this feature is new so data may be slightly inaccurate</h6>
