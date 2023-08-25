@@ -331,6 +331,12 @@ header {
     }
 }
 
+@media (width: 600px) {
+    .wideBanner {
+        display: block
+    }
+}
+
 .discordSection {
     background-color: rgb(218, 209, 248);
     @media (prefers-color-scheme: dark) {
