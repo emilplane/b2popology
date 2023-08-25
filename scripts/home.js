@@ -1,5 +1,18 @@
 let events = [
     {
+        "name": "Battles 2 Update 2.1.1 is out!",
+        "startDate": "2023-08-25T12:44:47Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "View Patch Notes",
+                "link": "battles2_version_2_1_1.html"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 2.1 Update Survey by thewarrior71",
         "startDate": "2023-08-24T10:00:00Z",
         "endDate": "2023-08-31T10:00:00Z",

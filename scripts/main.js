@@ -5227,7 +5227,6 @@ let data = {
                                         <ul>
                                             <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
                                             <li>note again that this is a speed buff, and that it stacks multiplicatively with any buff gained from tier 2</li>
-                                            <li>[BUG] sometimes the speed buff does not apply</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -5243,18 +5242,6 @@ let data = {
                                             <li>+15%p, +15% speed</li>
                                             <li>can stack (additively) up to 5 times total</li>
                                             <li>note that this is yet another speed buff, which also stacks multiplicatively with tiers 2 and 3</li>
-                                        </ul>
-                                    </li>
-                                    <li>[BUG] gains poplust-druid-of-wrath-bugged buff
-                                        <ul>
-                                            <li>affects druids in range, excluding self</li>
-                                            <li>can stack (multiplicatively?) up to 5 times total</li>
-                                            <li>all attacks buffed (on target druid)
-                                                <ul>
-                                                    <li>+5% speed per 10 damage dealt, capped at +100%, reset if this druid is idle for 2s</li>
-                                                    <li>note again that this is a speed buff, and that it stacks multiplicatively with any buff gained from tier 2</li>
-                                                </ul>
-                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
