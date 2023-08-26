@@ -49,7 +49,7 @@ const sniperMonkey = {
                 "type": "attack",
                 "properties": {
                     "damage": {
-                        "base": 3
+                        "base": 2
                     },
                     "pierce": {
                         "value": 1,
@@ -71,7 +71,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 2,
+                                "number": 2,
                                 "type": "additive"
                             }
                         },
@@ -86,7 +86,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 3,
+                                "number": 3,
                                 "type": "additive"
                             }
                         }
@@ -100,11 +100,11 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 13,
+                                "number": 13,
                                 "type": "additive"
                             },
                             "ceramic": {
-                                "value": 15,
+                                "number": 15,
                                 "type": "additive"
                             }
                         }
@@ -118,7 +118,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 10,
+                                "number": 10,
                                 "type": "additive"
                             }
                         },
@@ -162,7 +162,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 250,
+                                "number": 250,
                                 "type": "additive"
                             }
                         }
@@ -242,7 +242,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "camo": {
-                                "value": 2,
+                                "number": 2,
                                 "type": "additive"
                             }
                         }
@@ -289,8 +289,8 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "pierce": {
-                            "value": {
-                                "value": 4,
+                            "number": {
+                                "number": 4,
                                 "type": "absolute"
                             }
                         },
@@ -326,7 +326,7 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "pierce": {
-                            "value": 1,
+                            "number": 1,
                             "type": "additive"
                         }
                     }
@@ -339,7 +339,7 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.4,
+                            "number": 0.4,
                             "type": "multiplicative"
                         }
                     }
@@ -385,7 +385,7 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.7,
+                            "number": 0.7,
                             "type": "multiplicative"
                         }
                     }
@@ -397,7 +397,7 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.7,
+                            "number": 0.7,
                             "type": "multiplicative"
                         }
                     }
@@ -409,7 +409,7 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.3333,
+                            "number": 0.3333,
                             "type": "multiplicative"
                         }
                     }
@@ -422,12 +422,12 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "moab": {
-                                "value": 2,
+                                "number": 2,
                                 "type": "additive"
                             }
                         },
                         "attackCooldown": {
-                            "value": 0.5,
+                            "number": 0.5,
                             "type": "multiplicative"
                         },
                         "attackType": "normal"
@@ -440,7 +440,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "moab": {
-                                "value": 1,
+                                "number": 1,
                                 "type": "additive"
                             }
                         }
@@ -453,7 +453,7 @@ const sniperMonkey = {
                     "properties": {
                         "damage": {
                             "moab": {
-                                "value": 1,
+                                "number": 1,
                                 "type": "additive"
                             }
                         }
@@ -466,7 +466,7 @@ const sniperMonkey = {
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.5,
+                            "number": 0.5,
                             "type": "multiplicative"
                         },
                         "notes": [
@@ -493,7 +493,7 @@ const sniperMonkey = {
                             }
                         },
                         "attackCooldown": {
-                            "value": 0.25,
+                            "number": 0.25,
                             "type": "multiplicative"
                         }
                     }
@@ -502,6 +502,109 @@ const sniperMonkey = {
         ]
     }
 };
+
+const a = [
+    {
+        "name": "bullet",
+        "type": "attack",
+        "properties": {
+            "damage": {
+                "base": 3
+            },
+            "pierce": {
+                "number": 1,
+                "impact": true
+            },
+            "range": {
+                "number": "infinity"
+            },
+            "attackCooldown": 1.59,
+            "attackType": "sharp"
+        }
+    },
+    {
+        "name": "bullet2",
+        "type": "attack",
+        "properties": {
+            "damage": {
+                "base": 3
+            },
+            "pierce": {
+                "number": 1,
+                "impact": true
+            },
+            "range": {
+                "number": "infinity"
+            },
+            "attackCooldown": 1.59,
+            "attackType": "sharp"
+        }
+    },
+    {
+        "name": "bullet3",
+        "type": "attack",
+        "properties": {
+            "pierce": {
+                "number": 1,
+                "impact": true
+            },
+            "range": {
+                "number": "infinity"
+            },
+            "attackCooldown": 1.59,
+            "attackType": "sharp"
+        }
+    }
+];
+const b = [
+    {
+        "name": "bullet",
+        "type": "attackBuff",
+        "properties": {
+            "damage": {
+                "base": {
+                    "number": 2,
+                    "type": "additive"
+                }
+            },
+            "attackType": "normal"
+        }
+    },
+    {
+        "name": "bullet2",
+        "type": "attackBuff",
+        "properties": {
+            "damage": {
+                "base": {
+                    "number": 20,
+                    "type": "additive"
+                }
+            },
+            "attackType": "normal"
+        }
+    },
+    {
+        "name": "bullet3",
+        "type": "attackBuff",
+        "properties": {
+            "damage": {
+                "base": {
+                    "number": 200,
+                    "type": "additive"
+                },
+                "ceramic": {
+                    "number": 22,
+                    "type": "additive"
+                },
+                "stunned": {
+                    "number": 2,
+                    "type": "additive"
+                }
+            },
+            "attackType": "normal"
+        }
+    }
+]
 
 function getTowerObject (tower, crosspath) {
     if (crosspath[0] == 0 && crosspath[1] == 0 && crosspath[2] == 0) {
@@ -525,72 +628,50 @@ function getTowerObject (tower, crosspath) {
 
     const upgradeCounter = crosspath[mainCrosspathNumber];
     for (let i = 0; i < upgradeCounter; i++) {
-        console.log(output);
-        buffTower(output, tower.upgrades[mainCrosspath][i])
+        output = buffTower(output, tower.upgrades[mainCrosspath][i])
     }
 
     return output
 }
 
 function buffTower (initial, buff) {
-    let output = []
-    for (initialSectionNumber in initial) {
-        let isBuffed = false;
-        let result = undefined;
-        for (buffSectionNumber in buff) {
-            if (initial[initialSectionNumber].name == buff[buffSectionNumber].name) {
-
-                isBuffed = true;
-                let initialSection = initial[initialSectionNumber]; let buffSection = buff[buffSectionNumber]
-
-                for (propertyName in buffSection.properties) {
-                    let initProp = initialSection.properties[propertyName]; let buffProp = buffSection.properties[propertyName];
-                    if (initProp === undefined) {
-                        switch (propertyName) {
-                            case "range": 
-                                initProp = buffProp
-                                break;
-                        }
-                    } else {
-                        switch (propertyName) {
-                            case "damage":
-                                base = initProp.base
-                                base = buffStat(base, buffProp.base.value)
-                                for (bonusNumber in damageBonuses) {
-                                    let bonus = damageBonuses[bonusNumber].name
-                                    if (buffProp[bonus] != undefined) {
-                                        if (initProp[bonus] != undefined) { 
-                                            initProp[bonus] = buffStat(initProp[bonus], buffProp[bonus])
-                                        } else {
-                                            initProp[bonus] = buffProp[bonus].number
-                                        }
-                                    }
-                                }
-                                break;
-                            case "pierce": 
-                                initProp.value = buffStat(initProp.value, buffProp.value)
-                                break;
-                            case "attackCooldown":
-                                initProp = buffStat(initProp, buffProp)
-                                break;
-                            case "attackType":
-                                initProp = buffProp
-                                break;
-                        }
-                    }
-                    initialSection.properties[propertyName] = initProp; buffSection.properties[propertyName] = buffProp
-                }
-                
-                result = initialSection
+    let output = structuredClone(initial)
+    for (attackNumber in output) {
+        for (buffNumber in buff) {
+            if (output[attackNumber].name == buff[buffNumber].name) {
+                output[attackNumber] = buffAttack(output[attackNumber], buff[buffNumber])
             }
         }
-        if (isBuffed == true) {
-            output.push(result)
-        } else (
-            output.push(initial[initialSectionNumber])
-        )
     }
-    return output
+    return output;
+}
+
+function buffAttack (initial, buff) {
+    let output = structuredClone(initial)
+    for (property in buff.properties) {
+        switch (property) {
+            case "damage":
+                if (output.properties.damage == undefined) {output.properties.damage = {}}
+                if (buff.properties.damage.base != undefined) {
+                    output.properties.damage.base = buffStat(output.properties.damage.base, buff.properties.damage.base)
+                }
+                for (bonus in damageBonuses) {
+                    if (buff.properties.damage[damageBonuses[bonus].name] != undefined) {
+                        output.properties.damage[damageBonuses[bonus].name] = buffStat(output.properties.damage[damageBonuses[bonus].name], buff.properties.damage[damageBonuses[bonus].name])
+                    }
+                }
+            case "attackType":
+                if (buff.properties.attackType != undefined) {
+                    output.properties.attackType = buff.properties.attackType
+                }
+            case "attackCooldown":
+                if (output.properties.attackCooldown == undefined) {output.properties.attackCooldown = {}}
+                if (buff.properties.attackCooldown != undefined) {
+                    output.properties.attackCooldown = buffStat(output.properties.attackCooldown, buff.properties.attackCooldown)
+                }
+        }
+    }
+    return output;
 }
 
 function buffStat (initial, buff) {
@@ -607,6 +688,4 @@ function buffStat (initial, buff) {
     }
 }
 
-console.log(getTowerObject(sniperMonkey, [0, 0, 0]))
 console.log(getTowerObject(sniperMonkey, [3, 0, 0]))
-console.log(sniperMonkey)

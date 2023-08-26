@@ -28,7 +28,7 @@
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 2,
+                                "number": 2,
                                 "type": "additive"
                             }
                         },
@@ -43,7 +43,7 @@
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 3,
+                                "number": 3,
                                 "type": "additive"
                             }
                         }
@@ -57,11 +57,11 @@
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 13,
+                                "number": 13,
                                 "type": "additive"
                             },
                             "ceramic": {
-                                "value": 15,
+                                "number": 15,
                                 "type": "additive"
                             }
                         }
@@ -75,7 +75,7 @@
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 10,
+                                "number": 10,
                                 "type": "additive"
                             }
                         },
@@ -119,7 +119,7 @@
                     "properties": {
                         "damage": {
                             "base": {
-                                "value": 250,
+                                "number": 250,
                                 "type": "additive"
                             }
                         }
@@ -199,7 +199,7 @@
                     "properties": {
                         "damage": {
                             "camo": {
-                                "value": 2,
+                                "number": 2,
                                 "type": "additive"
                             }
                         }
@@ -246,8 +246,8 @@
                     "type": "attackBuff",
                     "properties": {
                         "pierce": {
-                            "value": {
-                                "value": 4,
+                            "number": {
+                                "number": 4,
                                 "type": "absolute"
                             }
                         },
@@ -283,7 +283,7 @@
                     "type": "attackBuff",
                     "properties": {
                         "pierce": {
-                            "value": 1,
+                            "number": 1,
                             "type": "additive"
                         }
                     }
@@ -296,7 +296,7 @@
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.4,
+                            "number": 0.4,
                             "type": "multiplicative"
                         }
                     }
@@ -342,7 +342,7 @@
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.7,
+                            "number": 0.7,
                             "type": "multiplicative"
                         }
                     }
@@ -354,7 +354,7 @@
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.7,
+                            "number": 0.7,
                             "type": "multiplicative"
                         }
                     }
@@ -366,7 +366,7 @@
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.3333,
+                            "number": 0.3333,
                             "type": "multiplicative"
                         }
                     }
@@ -379,12 +379,12 @@
                     "properties": {
                         "damage": {
                             "moab": {
-                                "value": 2,
+                                "number": 2,
                                 "type": "additive"
                             }
                         },
                         "attackCooldown": {
-                            "value": 0.5,
+                            "number": 0.5,
                             "type": "multiplicative"
                         },
                         "attackType": "normal"
@@ -397,7 +397,7 @@
                     "properties": {
                         "damage": {
                             "moab": {
-                                "value": 1,
+                                "number": 1,
                                 "type": "additive"
                             }
                         }
@@ -410,7 +410,7 @@
                     "properties": {
                         "damage": {
                             "moab": {
-                                "value": 1,
+                                "number": 1,
                                 "type": "additive"
                             }
                         }
@@ -423,7 +423,7 @@
                     "type": "attackBuff",
                     "properties": {
                         "attackCooldown": {
-                            "value": 0.5,
+                            "number": 0.5,
                             "type": "multiplicative"
                         },
                         "notes": [
@@ -450,7 +450,7 @@
                             }
                         },
                         "attackCooldown": {
-                            "value": 0.25,
+                            "number": 0.25,
                             "type": "multiplicative"
                         }
                     }
