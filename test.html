@@ -14,8 +14,120 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        
+        <header>
+            <div class="headerDiv">
+                <h1 style="margin:0">Battles 2 Popology</h1>
+                <div style="display: flex; margin-left: auto;align-items: center; gap: 8px;">
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="popology.html"><button>Popology</button></a>
+                    <a href="https://b2.lol/"><button>b2.lol</button></a>
+                    <a href="https://www.reddit.com/r/btd6/comments/atomg3/advanced_popology_vol_1_primary_towers/"><button>BTD6 Popology</button></a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="sectionStyle">
+                <select id="categorySelect">
+                    <option value="primary">
+                        primary
+                    </option>
+                
+                    <option value="military" selected="">
+                        military
+                    </option>
+                
+                    <option value="magic">
+                        magic
+                    </option>
+                
+                    <option value="support">
+                        support
+                    </option>
+                
+                    <option value="heroes">
+                        heroes
+                    </option>
+                
+                    <option value="accolades">
+                        accolades
+                    </option>
+                </select>
+                <select id="towerSelect">
+                    <option value="sniperMonkey">
+                        Sniper Monkey
+                    </option>
+                    <option value="monkeySub">
+                        Monkey Sub
+                    </option>
+                    <option value="monkeyBuccaneer" selected="">
+                        Monkey Buccaneer
+                    </option>
+                    <option value="monkeyAce">
+                        Monkey Ace
+                    </option>
+                    <option value="heliPilot">
+                        Heli Pilot
+                    </option>
+                    <option value="mortarMonkey">
+                        Mortar Monkey
+                    </option>
+                    <option value="dartlingGunner">
+                        Dartling Gunner
+                    </option>
+                </select>
+                <div class="horizontalLine" style="margin-top: 8px; margin-bottom: 0;"></div>
+            </section>
+            <section class="sectionStyle" style="margin-top: 0">
+                <select id="categorySelect"  style="margin-top: 0">
+                    <option value="primary">
+                        base
+                    </option>
+                    <option value="military" selected="">
+                        top
+                    </option>
+                    <option value="magic">
+                        middle
+                    </option>
+                    <option value="support">
+                        bottom
+                    </option>
+                </select>
+                <select id="towerSelect" style="color: black;margin-top: 0" >
+                    <option value="dartMonkey" >
+                        Tier 1
+                    </option>
+                    <option value="boomerangMonkey" selected="">
+                        Tier 2
+                    </option>
+                    <option value="bombShooter">
+                        Tier 3
+                    </option>
+                    <option value="tackShooter">
+                        Tier 4
+                    </option>
+                    <option value="iceMonkey">
+                        Tier 5
+                    </option>
+                </select>
+            </section>
+            <section class="sectionStyle">
+                <h4>Monkey Buccaneer</h4>
+                <h1>Destroyer</h1>
+            </section>
+            <section class="roundedBox">
+                <div style="display: flex">
+                    <div class="roundedSubBox" style="width:50%">
+                        <h4><span style="color:var(--militaryTower5)">Dart</span> attack</h4>
+                        <div class="horizontalLine"></div>
+                        <p>Damage: 1</p>
+                    </div>
+                    <div class="roundedSubBox" style="width:50%">
+                        <h4>Dart attack</h4>
+                    </div>
+                </div>
+            </section>
+        </main>
     </body>
-    <script src="scripts/test.js"></script>
     <script src="scripts/fontFix.js"></script>
+    <script src="scripts/test.js"></script>
 </html>

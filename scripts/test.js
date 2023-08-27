@@ -503,109 +503,6 @@ const sniperMonkey = {
     }
 };
 
-const a = [
-    {
-        "name": "bullet",
-        "type": "attack",
-        "properties": {
-            "damage": {
-                "base": 3
-            },
-            "pierce": {
-                "number": 1,
-                "impact": true
-            },
-            "range": {
-                "number": "infinity"
-            },
-            "attackCooldown": 1.59,
-            "attackType": "sharp"
-        }
-    },
-    {
-        "name": "bullet2",
-        "type": "attack",
-        "properties": {
-            "damage": {
-                "base": 3
-            },
-            "pierce": {
-                "number": 1,
-                "impact": true
-            },
-            "range": {
-                "number": "infinity"
-            },
-            "attackCooldown": 1.59,
-            "attackType": "sharp"
-        }
-    },
-    {
-        "name": "bullet3",
-        "type": "attack",
-        "properties": {
-            "pierce": {
-                "number": 1,
-                "impact": true
-            },
-            "range": {
-                "number": "infinity"
-            },
-            "attackCooldown": 1.59,
-            "attackType": "sharp"
-        }
-    }
-];
-const b = [
-    {
-        "name": "bullet",
-        "type": "attackBuff",
-        "properties": {
-            "damage": {
-                "base": {
-                    "number": 2,
-                    "type": "additive"
-                }
-            },
-            "attackType": "normal"
-        }
-    },
-    {
-        "name": "bullet2",
-        "type": "attackBuff",
-        "properties": {
-            "damage": {
-                "base": {
-                    "number": 20,
-                    "type": "additive"
-                }
-            },
-            "attackType": "normal"
-        }
-    },
-    {
-        "name": "bullet3",
-        "type": "attackBuff",
-        "properties": {
-            "damage": {
-                "base": {
-                    "number": 200,
-                    "type": "additive"
-                },
-                "ceramic": {
-                    "number": 22,
-                    "type": "additive"
-                },
-                "stunned": {
-                    "number": 2,
-                    "type": "additive"
-                }
-            },
-            "attackType": "normal"
-        }
-    }
-]
-
 function getTowerObject (tower, crosspath) {
     if (crosspath[0] == 0 && crosspath[1] == 0 && crosspath[2] == 0) {
         return tower.upgrades.base
@@ -636,11 +533,19 @@ function getTowerObject (tower, crosspath) {
 
 function buffTower (initial, buff) {
     let output = structuredClone(initial)
-    for (attackNumber in output) {
-        for (buffNumber in buff) {
-            if (output[attackNumber].name == buff[buffNumber].name) {
-                output[attackNumber] = buffAttack(output[attackNumber], buff[buffNumber])
-            }
+    for (buffNumber in buff) {
+        switch (buff[buffNumber].type) {
+            case "attackBuff":
+                for (attackNumber in output) {
+                    if (output[attackNumber].name == buff[buffNumber].name) {
+                        output[attackNumber] = buffAttack(output[attackNumber], buff[buffNumber])
+                    }
+                }
+                break;
+            case "attack":
+            case "status":
+                output.push(buff[buffNumber])
+                break;
         }
     }
     return output;
@@ -688,4 +593,6 @@ function buffStat (initial, buff) {
     }
 }
 
-console.log(getTowerObject(sniperMonkey, [3, 0, 0]))
+console.log(getTowerObject(sniperMonkey, [5, 0, 0]))
+console.log(getTowerObject(sniperMonkey, [0, 5, 0]))
+console.log(getTowerObject(sniperMonkey, [0, 0, 5]))

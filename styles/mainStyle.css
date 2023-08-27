@@ -15,7 +15,7 @@
     --secondary3: #E6E6E6;
     --secondary4: #D8D8D8;
     --secondary5: #B3B3B3;
-    --secondary6: #7F7F7F;
+    --secondary6: #696969;
     --secondary7: #404040;
     --secondary8: #000000;
 
@@ -279,6 +279,9 @@ header {
 
 .roundedSubBox {
     background-color: var(--secondary3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary6);
+    }
     border-radius: 8px;
     margin: 4px;
     padding: 4px;
