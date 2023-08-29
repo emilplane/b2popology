@@ -8939,7 +8939,6 @@ let data = {
                                 <ul>
                                     <li>(4%+1)d/1s</li>
                                     <li>spawns no children</li>
-                                    <li>transfers to the next target if it pops with time remaining</li>
                                 </ul>
                             </li>
                         </ul>
