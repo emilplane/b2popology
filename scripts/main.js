@@ -3416,7 +3416,7 @@ let data = {
                                         <ul>
                                             <li>on expire: flare
                                                 <ul>
-                                                    <li>80p, 50r blast</li>
+                                                    <li>0d, 80p, 50r blast</li>
                                                     <li>on hit: decamo bloons including DDTs</li>
                                                 </ul>
                                             </li>
