@@ -267,6 +267,15 @@ header {
     display: none;
 }
 
+.borderBox {
+    border-radius: 8px;
+    border-color: var(--secondary2);
+    border-width: 1px;
+    margin: 8px;
+    padding: 8px;
+    border-style: solid;
+}
+
 .roundedBox {
     background-color: var(--secondary2);
     @media (prefers-color-scheme: dark) {
@@ -274,6 +283,15 @@ header {
     }
     border-radius: 8px;
     margin: 8px;
+    padding: 8px;
+}
+
+.roundedBoxCompact {
+    background-color: var(--secondary2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary7);
+    }
+    border-radius: 8px;
     padding: 8px;
 }
 
