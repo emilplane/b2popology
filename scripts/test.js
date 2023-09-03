@@ -569,6 +569,10 @@ function buffAttack (initial, buff) {
                 if (buff.properties.attackType != undefined) {
                     output.properties.attackType = buff.properties.attackType
                 }
+            case "effects":
+                if (buff.properties.effects != undefined) {
+                    output.properties.effects = buff.properties.effects
+                }
             case "attackCooldown":
                 if (output.properties.attackCooldown == undefined) {output.properties.attackCooldown = {}}
                 if (buff.properties.attackCooldown != undefined) {
@@ -593,6 +597,4 @@ function buffStat (initial, buff) {
     }
 }
 
-console.log(getTowerObject(sniperMonkey, [5, 0, 0]))
-console.log(getTowerObject(sniperMonkey, [0, 5, 0]))
-console.log(getTowerObject(sniperMonkey, [0, 0, 5]))
+console.log(getTowerObject(sniperMonkey, [4, 0, 0]))

@@ -276,6 +276,14 @@ header {
     border-style: solid;
 }
 
+.borderBoxCompact {
+    border-radius: 8px;
+    border-color: var(--secondary5);
+    border-width: 1px;
+    padding: 4px;
+    border-style: solid;
+}
+
 .roundedBox {
     background-color: var(--secondary2);
     @media (prefers-color-scheme: dark) {
@@ -293,16 +301,6 @@ header {
     }
     border-radius: 8px;
     padding: 8px;
-}
-
-.roundedSubBox {
-    background-color: var(--secondary3);
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--secondary6);
-    }
-    border-radius: 8px;
-    margin: 4px;
-    padding: 4px;
 }
 
 .sectionStyle {
@@ -363,4 +361,11 @@ header {
     @media (prefers-color-scheme: dark) {
         background-color: rgb(80, 68, 118);
     }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin: 0px;
 }
