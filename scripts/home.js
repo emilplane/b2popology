@@ -1,5 +1,22 @@
 let events = [
     {
+        "name": "Map Competition Winner Announced!",
+        "startDate": "2023-08-29T13:57:19Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/164j87q/the_map_competition_winner_is/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/164j87q/the_map_competition_winner_is/"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 Update 2.1.1 is out!",
         "startDate": "2023-08-25T12:44:47Z",
         "content": `
@@ -79,24 +96,6 @@ let events = [
             {
                 "name": "Update Video",
                 "link": "https://youtu.be/tCa4IQfsq-w"
-            }
-        ]
-    },
-    {
-        "name": "Star Captain Map Design Competition",
-        "startDate": "2023-08-10T02:09:57Z",
-        "endDate": "2023-08-20T22:59:00Z",
-        "content": `
-            <p>"Have you ever fancied trying your hand at designing a map for Battles 2? Well, now is your chance! With work on Star Captain Jericho well underway and looking good for launch in update 2.2, we wanted to give you all the chance to design a map to go with him!"</p>
-        `,
-        "links": [
-            {
-                "name": "Learn more on Reddit",
-                "link": "https://www.reddit.com/r/battles2/comments/152t5pn/update_204_is_rolling_out_now_patch_notes/"
-            },
-            {
-                "name": "Learn more on Old Reddit",
-                "link": "https://old.reddit.com/r/battles2/comments/152t5pn/update_204_is_rolling_out_now_patch_notes/"
             }
         ]
     }

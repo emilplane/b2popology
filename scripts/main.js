@@ -3416,7 +3416,7 @@ let data = {
                                         <ul>
                                             <li>on expire: flare
                                                 <ul>
-                                                    <li>80p, 50r blast</li>
+                                                    <li>0d, 80p, 50r blast</li>
                                                     <li>on hit: decamo bloons including DDTs</li>
                                                 </ul>
                                             </li>
@@ -8939,7 +8939,6 @@ let data = {
                                 <ul>
                                     <li>(4%+1)d/1s</li>
                                     <li>spawns no children</li>
-                                    <li>transfers to the next target if it pops with time remaining</li>
                                 </ul>
                             </li>
                         </ul>
