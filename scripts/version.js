@@ -19,4 +19,4 @@ if (version.patch == 0) {
     versionString = `${version.major}.${version.minor}.${version.patch}`
 }
 
-document.getElementById("version").innerHTML = versionString;
+document.getElementById("version").innerHTML = versionString
