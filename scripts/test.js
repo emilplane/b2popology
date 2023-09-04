@@ -510,22 +510,55 @@ function getTowerObject (tower, crosspath) {
 
     let output = tower.upgrades.base
 
-    let mainCrosspath;
-    let mainCrosspathNumber;
+    let mainPath; let mainPathNumber;
     if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
-        mainCrosspath = "top";
-        mainCrosspathNumber = 0;
+        mainPath = "top";
+        mainPathNumber = 0;
     } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
-        mainCrosspath = "middle";
-        mainCrosspathNumber = 1;
+        mainPath = "middle";
+        mainPathNumber = 1;
     } else {
-        mainCrosspath = "bottom";
-        mainCrosspathNumber = 2;
+        mainPath = "bottom";
+        mainPathNumber = 2;
+    }
+    
+    let crosspathName; let crosspathNumber;
+    if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
+        if (crosspath[1] >= crosspath[2]) {
+            crosspathName = "middle";
+            crosspathNumber = 1;
+        } else {
+            crosspathName = "bottom";
+            crosspathNumber = 2;
+        }
+    } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
+        if (crosspath[0] >= crosspath[2]) {
+            crosspathName = "top";
+            crosspathNumber = 0;
+        } else {
+            crosspathName = "bottom";
+            crosspathNumber = 2;
+        }
+    } else {
+        if (crosspath[1] >= crosspath[2]) {
+            crosspathName = "middle";
+            crosspathNumber = 1;
+        } else {
+            crosspathName = "bottom";
+            crosspathNumber = 2;
+        }
+    }
+    
+    const upgradeCounter = crosspath[mainPathNumber];
+    for (let i = 0; i < upgradeCounter; i++) {
+        output = buffTower(output, tower.upgrades[mainPath][i])
     }
 
-    const upgradeCounter = crosspath[mainCrosspathNumber];
-    for (let i = 0; i < upgradeCounter; i++) {
-        output = buffTower(output, tower.upgrades[mainCrosspath][i])
+    if (crosspath[crosspathNumber] != 0) {
+        const upgradeCounter = crosspath[crosspathNumber];
+        for (let i = 0; i < upgradeCounter; i++) {
+            output = buffTower(output, tower.upgrades[crosspathName][i])
+        }
     }
 
     return output
@@ -597,4 +630,4 @@ function buffStat (initial, buff) {
     }
 }
 
-console.log(getTowerObject(sniperMonkey, [4, 0, 0]))
+console.log(getTowerObject(sniperMonkey, [5, 0, 2]))

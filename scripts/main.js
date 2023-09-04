@@ -4302,7 +4302,7 @@ let data = {
                                 <ul>
                                     <li>dart replaced by plasma
                                         <ul>
-                                            <li>1d, 9p, 72r, 0.048s, plasma type</li>
+                                            <li>1d, 9p, 72r, 80%s (0.036s), plasma type</li>
                                         </ul>
                                     </li>
                                     <li>gains annihilate ability (45s cooldown, battle ready)
