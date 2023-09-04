@@ -4132,7 +4132,7 @@ let data = {
                                     </li>
                                     <li>shimmer buffed
                                         <ul>
-                                            <li>50%s (1.25s)</li>
+                                            <li>50%s (0.75s)</li>
                                         </ul>
                                     </li>
                                     <li>graveyard buffed
@@ -8950,7 +8950,10 @@ let data = {
                             <li>+2r (45r)</li>
                         </ul>
                     </li>
-                    <li>+9 end of round lives (does not go above starting lives)</li>
+                    <li>+9 end of round lives every other round (does not go above starting lives)</li>
+                        <ul>
+                            <li>the first set of lives is given immediately</li>
+                        </ul>
                 </ul>`,
                     "12": `<ul>
                     <li>all attacks buffed
