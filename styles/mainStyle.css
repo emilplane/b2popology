@@ -369,3 +369,8 @@ header {
     object-fit: contain;
     margin: 0px;
 }
+
+.new {
+    font-size: 10px;
+    color: var(--secondary1);
+} 
