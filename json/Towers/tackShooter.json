@@ -1,0 +1,128 @@
+{
+    "upgrades": {
+        "base": [
+            {
+                "name": "tacks",
+                "type": "attack",
+                "properties": {
+                    "damage": {
+                        "base": 1
+                    },
+                    "projectiles": {
+                        "value": 8,
+                        "spread": 360
+                    },
+                    "pierce": {
+                        "value": 1
+                    },
+                    "range": {
+                        "value": 23
+                    },
+                    "attackCooldown": 1.4,
+                    "attackType": "sharp"
+                }
+            }
+        ],
+        "top": [
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ]
+        ],
+        "middle": [
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ]
+        ],
+        "bottom": [
+            [
+                {
+                    "name": "tacks",
+                    "type": "attackBuff",
+                    "properties": {
+                        "attackCooldown": {
+                            "number": 0.75,
+                            "type": "multiplicative"
+                        }
+                    }
+                }
+            ],
+            [
+                {
+                    "name": "tacks",
+                    "type": "attackBuff",
+                    "properties": {
+                        "attackCooldown": {
+                            "number": 0.6,
+                            "type": "multiplicative"
+                        }
+                    }
+                }
+            ],
+            [
+                {
+                    "name": "tacks",
+                    "type": "attackBuff",
+                    "properties": {
+                        "damage": {
+                            "number": 1,
+                            "type": "additive"
+                        },
+                        "attackType": "normal"
+                    }
+                }
+            ],
+            [
+                {
+                    "name": "ring-of-fire",
+                    "type": "attackReplace",
+                    "replacing": "tacks",
+                    "properties": {
+                        "damage": {
+                            "base": 3
+                        },
+                        "projectiles": {
+                            "value": 8,
+                            "spread": 360
+                        },
+                        "pierce": {
+                            "value": 45
+                        },
+                        "range": {
+                            "value": 23,
+                            "zone": true
+                        },
+                        "attackCooldown": 0.47,
+                        "attackType": "fire"
+                    }
+                }
+            ],
+            [
+
+            ]
+        ]
+    }
+}
