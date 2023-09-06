@@ -1,5 +1,22 @@
 let events = [
     {
+        "name": "BTD6 Central enters beta!",
+        "startDate": "2023-09-04T12:00:00Z",
+        "content": `
+            <p>"After lots of development time, BTD6 Central is finally ready for 'beta.'" Check out this website by Nitjus which currently shows BTD6 race and boss stats, with more coming!</p>
+        `,
+        "links": [
+            {
+                "name": "Open",
+                "link": "https://nitjus7.github.io/BTD6-Central/index.html"
+            },
+            {
+                "name": "Join the Discord",
+                "link": "https://discord.gg/HnAgEkhUYM"
+            }
+        ]
+    },
+    {
         "name": "Map Competition Winner Announced!",
         "startDate": "2023-08-29T13:57:19Z",
         "content": `
