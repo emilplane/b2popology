@@ -149,8 +149,8 @@ main {
 }
 
 header {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     background-color: var(--primary2);
     @media (prefers-color-scheme: dark) {
         background-color: var(--primary8);
@@ -158,11 +158,21 @@ header {
 }
 
 .headerDiv {
-    flex: 1; 
-    display: flex; 
-    padding: 8px; 
-    max-width: 1000px; 
+    flex: 1;
+    display: flex;
+    padding: 8px;
+    max-width: 1000px;
     flex-wrap: wrap;
+}
+
+.headerLinks {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 8px;
+    @media (max-width: 600px) {
+        display: none
+    }
 }
 
 .selectedButton {
@@ -371,6 +381,41 @@ header {
 }
 
 .new {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--secondary1);
-} 
+}
+
+.hamburgerDiv {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(0, 243, 162, 0.9)0 300px, rgba(0, 0, 0, 0) 500px);
+    @media (prefers-color-scheme: dark) {
+        background: linear-gradient(rgba(0, 243, 162, 0.863) 0 50%, rgba(0, 243, 162, 0.13) 75%)
+    };
+    display: none;
+}
+
+.hamburgerContent {
+    padding: 30px;
+}
+
+.hamburgerContent a {
+    text-decoration-line: none;
+}
+
+.hamburgerContent h1, .hamburgerContent h4 {
+    text-decoration-line: none;
+    color: var(--secondary8);
+}
+
+.menuDiv {
+    display: none;
+    @media (max-width: 600px) {
+        display: flex;
+    }
+}
+
+.noUnderline {
+    text-decoration-line: none;
+}
