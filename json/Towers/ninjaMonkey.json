@@ -1,1 +1,210 @@
+{
+    "upgrades": {
+        "base": [
+            {
+                "moduleType": ["attack", "new"],
+                "name": "shuriken",
 
+                "damage": 1, "pierce": 2, "attackCooldown": 0.7, "attackType": "sharp"
+            },
+            {
+                "moduleType": ["camo"],
+                "value": true
+            }
+        ],
+        "top": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "all",
+
+                    "attackCooldown": 0.62
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["%", 0.175]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "shuriken",
+
+                    "pierce": 2
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "shuriken",
+
+                    "projectiles": 1, "projectileSpread": 30
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "shuriken",
+
+                    "projectiles": 3, "projectileSpread": 45
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "shuriken",
+
+                    "damage": 1, "projectiles": 3, "attackCooldown": 0.5, "projectileSpread": 60
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": 10
+                }
+            ]
+        ],
+        "middle": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "all",
+
+                    "effects": [
+                        {
+                            "effectType": ["blowback", "new"],
+                            "condition": "onDamage",
+
+                            "distance": [100, 300], "probability": 0.15
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "all",
+
+                    "effects": [
+                        {
+                            "effectType": ["decamo", "new"],
+                            "condition": "onDamage"
+                        }
+                    ]
+                } 
+            ],
+            [
+                {
+                    "moduleType": ["buff", "new"],
+                    "name": "shinobi",
+
+                    "attackCooldown": 0.85, "pierce": ["%", 0.15],
+
+                    "buffTarget": {
+                        "towerType": ["ninjaMonkey"], 
+                        "range": ["towerRange"]
+                    }, 
+                    "buffStacking": [10, "multiplicative"]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "new"],
+                    "name": "bloon-sabotage",
+
+                    "ability": ["true", 60, 30, 0],
+
+                    "notes": [
+                        [
+                            "saboDescription", "All bloons and blimps move at half speed"
+                        ],
+                        [
+                            "saboChildren", "This does not affect the children of blimps, but it affects the children of bloons"
+                        ],
+                        [
+                            "saboSell", "Currently sabotaged blimps will remain slowed for the duration of the ability if this ninja is sold"
+                        ]
+                    ]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "name": "grand-sabotage", "replacing": "bloon-sabotage",
+
+                    "ability": ["true", 60, 30, 0],
+
+                    "notes": [
+                        [
+                            "gsaboDescription", "All bloons and blimps move at half speed"
+                        ],
+                        [
+                            "gsaboChildren", "This does not affect the children of blimps, but it affects the children of bloons"
+                        ],
+                        [
+                            "gsaboSell", "Currently sabotaged blimps will remain slowed for the duration of the ability if this ninja is sold"
+                        ],
+                        [
+                            "gsaboNewSpawns", "25%d to new blimps entering the map"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "bottom": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "shuriken",
+
+                    "homing": "strong"
+                }
+            ],
+            [
+                {
+                    "moduleType": ["roadItem", "new"],
+                    "name": "caltrop",
+
+                    "damage": 1, "pierce": 6, "attackType": "sharp", "lifetime": 25,
+
+                    "itemPlacement": "random"
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "name": "flash-bomb", "replacing": "shuriken", "replacementCondition": ["every-n", 4],
+
+                    "damage": 1, "pierce": 75, "range": 40, "zone": true, "attackType": "normal",
+
+                    "effects": [
+                        {
+                            "effectType": ["stun", "new"],
+                            "condition": "onDamage",
+
+                            "duration": 1.3
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "new"], 
+                    "name": "sticky-bomb", 
+
+                    "range": 60, "attackCooldown": 5, "pierce": 1, "impact": true,
+
+                    "canHit": ["blimps"],
+
+                    "effects": [
+                        {
+                            "effectType": ["apply", "new"],
+                            "effect": ["stun", 1.3]
+                        },
+                        {
+                            "effectType": ["decamo", "new"]
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+}
