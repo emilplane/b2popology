@@ -180,7 +180,8 @@
                             "effectType": ["stun", "new"],
                             "condition": "onDamage",
 
-                            "duration": 1.3
+                            "duration": 1.3,
+                            "canHit": ["bloons"]
                         }
                     ]
                 }
@@ -197,10 +198,44 @@
                     "effects": [
                         {
                             "effectType": ["apply", "new"],
-                            "effect": ["stun", 1.3]
-                        },
+                            "effect": ["module", "bombed"]
+                        }
+                    ]
+                },
+                {
+                    "moduleType": ["status", "new"], 
+                    "name": "bombed"
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "flash-bomb",
+
+                    "damage": 9,
+
+                    "effects": [
                         {
-                            "effectType": ["decamo", "new"]
+                            "effectType": ["stun", "new"],
+                            "condition": "onDamage",
+
+                            "duration": 0.25,
+                            "canHit": ["bloons"]
+                        }
+                    ]
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "sticky-bomb",
+
+                    "range": "infinity", "attackCooldown": 0.4,
+
+                    "effects": [
+                        {
+                            "effectType": ["stun", "new"],
+                            "condition": "onDamage",
+
+                            "duration": 1
                         }
                     ]
                 }
