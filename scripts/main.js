@@ -10265,7 +10265,7 @@ let data = {
                     <ul>
                         <li>Level 4</li>
                         <ul>
-                            <li>Upgrade (tower) to (5th tier upgrade) 200 times</li>
+                            <li>Upgrade (tower) to (5th tier upgrade) 500 times</li>
                         </ul>
                     </ul>
                 `
