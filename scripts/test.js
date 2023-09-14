@@ -1,28 +1,140 @@
-let initialModule = {
-    "moduleType": ["attack", "new"],
-    "name": "hit",
-    
-    "damage": 2, "pierce": 3, "attackCooldown": 1.3, "attackType": "normal",
-}
-
-let buffModule = {
-    "moduleType": ["attack", "buff"],
-    "name": "hit",
-    
-    "damage": [3, "*"], "pierce": 2, "attackCooldown": 0.8, "impact": true
+let demoTowerObject = {
+    "upgrades": {
+        "base": [
+            {
+                "moduleType": ["attack", "new"],
+                "name": "forward-energy",
+                
+                "damage": 1, "pierce": 3, "attackCooldown": 0.7, "attackType": "energy"
+            },
+        ],
+        "top": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "forward-energy",
+                    
+                    "projectiles": 2, "spread": 45
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "forward-energy",
+                    
+                    "damage": 1, "moabDamage": 2, "attackType": "normal"
+                },
+                {
+                    "moduleType": ["attack", "new"],
+                    "name": "mobe-missile",
+                    
+                    "moabDamage": 20, "pierce": 5, "attackCooldown": 2, "attackType": "explosion", "impact": true
+                }
+            ]
+        ]
+    }
 }
 
 standardProperties = [
-    ["damage", "+"],
-    ["pierce", "+"],
-    ["range", "+"],
+    ["damage", "+"], ["moabDamage", "+"], ["fortifiedDamage", "+"], ["fortifiedMoabDamage", "+"], ["ceramicDamage", "+"], ["leadDamage", "+"], ["camoDamage", "+"], ["frozenDamage", "+"], ["stunnedDamage", "+"],
+    ["projectiles", "+"], ["spread", "absolute"],
+    ["pierce", "+"], ["impact", "boolean"],
+    ["range", "+"], ["zone", "boolean"],
     ["attackCooldown", "*"],
-    ["impact", "boolean"],
+    ["attackType", "string"]
 ]
 
 class Module {
     constructor(module) {
         this.module = module
+    }
+
+    static getTowerUpgrade(tower, crosspath) {
+        if (crosspath[0] == 0 && crosspath[1] == 0 && crosspath[2] == 0) {
+            return tower.upgrades.base
+        }
+    
+        let output = tower.upgrades.base
+    
+        let mainPath; let mainPathNumber;
+        if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
+            mainPath = "top";
+            mainPathNumber = 0;
+        } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
+            mainPath = "middle";
+            mainPathNumber = 1;
+        } else {
+            mainPath = "bottom";
+            mainPathNumber = 2;
+        }
+        
+        let crosspathName; let crosspathNumber;
+        if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
+            if (crosspath[1] >= crosspath[2]) {
+                crosspathName = "middle";
+                crosspathNumber = 1;
+            } else {
+                crosspathName = "bottom";
+                crosspathNumber = 2;
+            }
+        } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
+            if (crosspath[0] >= crosspath[2]) {
+                crosspathName = "top";
+                crosspathNumber = 0;
+            } else {
+                crosspathName = "bottom";
+                crosspathNumber = 2;
+            }
+        } else {
+            if (crosspath[1] >= crosspath[2]) {
+                crosspathName = "middle";
+                crosspathNumber = 1;
+            } else {
+                crosspathName = "bottom";
+                crosspathNumber = 2;
+            }
+        }
+        
+        //output = new Module(initialModule)
+
+        const upgradeCounter = crosspath[mainPathNumber];
+        for (let i = 0; i < upgradeCounter; i++) {
+            output = Module.mergeUpgrades(output, tower.upgrades[mainPath][i])
+        }
+    
+        /*if (crosspath[crosspathNumber] != 0) {
+            const upgradeCounter = crosspath[crosspathNumber];
+            for (let i = 0; i < upgradeCounter; i++) {
+                output = buffTower(output, tower.upgrades[crosspathName][i])
+            }
+        }*/
+    
+        return output
+    }
+
+    static mergeUpgrades(initial, upgrade) {
+        let output = []
+        for (let module in initial) {
+            let moduleMatch = false
+            for (let buffModule in upgrade) {
+                
+                if (initial[module].name == upgrade[buffModule].name) {
+                    moduleMatch = true
+                    if (initial[module].moduleType[1] == "new" && upgrade[buffModule].moduleType[1] == "buff") {
+                        let initialModuleObject = new Module(initial[module]); let buffModuleObject = new Module(upgrade[buffModule])
+                        initialModuleObject.mergeModule(buffModuleObject)
+                        output.push(initialModuleObject.module)
+                    }
+                }
+                if (upgrade[buffModule].moduleType[1] == "new") {
+                    output.push(upgrade[buffModule])
+                }
+            }
+            if (moduleMatch == false) {
+                output.push(initial[module])
+            }
+        }
+        return output
     }
 
     standardPropertyNames() {
@@ -34,6 +146,7 @@ class Module {
     }
 
     switchOperator(propertyName, input, operator) {
+        if (this.module[propertyName] == undefined) {this.module[propertyName] = 0}
         switch (operator) {
             case "+":
                 this.module[propertyName] += input
@@ -46,6 +159,9 @@ class Module {
                 break;
             case "/":
                 this.module[propertyName] /= input
+                break;
+            case "absolute":
+                this.module[propertyName] = input
                 break;
         }
     }
@@ -63,7 +179,9 @@ class Module {
                 }
                 break;
             case "boolean":
-                console.log("j")
+                this.module[propertyName] = input.module[propertyName]
+                break;
+            case "string":
                 this.module[propertyName] = input.module[propertyName]
                 break;
         }
@@ -71,7 +189,6 @@ class Module {
 
     mergeModule(input) {
         for (let propertyName in input.module) {
-            console.log(propertyName)
             if (this.standardPropertyNames().includes(propertyName)){
                 this.mergeStandardProperty(propertyName, input)
             }
@@ -79,7 +196,4 @@ class Module {
     }
 }
 
-let x = new Module(initialModule)
-let y = new Module(buffModule)
-x.mergeModule(y)
-console.log(x.module)
+console.log(Module.getTowerUpgrade(demoTowerObject, [3, 0, 0]))

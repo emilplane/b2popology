@@ -10971,7 +10971,6 @@ function createButtonListeners() {
                     }
                 }
                 popupData.popupHTML = `
-                    <h6>Note: this feature is new so data may be slightly inaccurate</h6>
                     <h5>Base Cost</h5>
                     <p>$${prices[section][entry].base}</p>
                     <h4>Top Path</h4>
