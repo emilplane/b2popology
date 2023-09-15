@@ -1,5 +1,22 @@
 let events = [
     {
+        "name": "Battles 2 Update 2.1.2 is out!",
+        "startDate": "2023-09-14T13:39:34Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/16iis5j/update_212_is_rolling_out_now_patch_notes/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/16iis5j/update_212_is_rolling_out_now_patch_notes/"
+            }
+        ]
+    },
+    {
         "name": "BTD6 Central enters beta!",
         "startDate": "2023-09-04T12:00:00Z",
         "content": `
@@ -41,8 +58,12 @@ let events = [
         `,
         "links": [
             {
-                "name": "View Patch Notes",
-                "link": "battles2_version_2_1_1.html"
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/160yu5e/update_211_is_rolling_out_now_patch_notes/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/160yu5e/update_211_is_rolling_out_now_patch_notes/"
             }
         ]
     },

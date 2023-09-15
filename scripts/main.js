@@ -409,7 +409,7 @@ let data = {
                             "name": "040 - Turbo Charge - $4,350",
                             "content": `
                                 <ul>
-                                    <li>gains turbocharge ability (45s cooldown, 10s duration, battle ready)
+                                    <li>gains turbocharge ability (45s cooldown, 8s duration, battle ready)
                                         <ul>
                                             <li>+1d, 14.2857%s (0.034s)</li>
                                         </ul>
@@ -1242,11 +1242,12 @@ let data = {
                                 <ul>
                                     <li>freeze attack buffed
                                         <ul>
-                                            <li>+60p (100p)</li>
+                                            <li>+60p (100p), +10r (30r)</li>
                                         </ul>
                                     </li>
                                     <li>gains slow attack
                                         <ul>
+                                            <li>35r</li>
                                             <li>60% slow, cannot affect white/lead/blimp</li>
                                             <li>land towers are placeable on any water in range</li>
                                         </ul>
@@ -1263,11 +1264,6 @@ let data = {
                             "name": "040 - Snowstorm - $3,000",
                             "content": `
                                 <ul>
-                                    <li>freeze attack buffed
-                                        <ul>
-                                            <li>+10r (30r)</li>
-                                        </ul>
-                                    </li>
                                     <li>frozen status buffed
                                         <ul>
                                             <li>3s duration</li>
@@ -1633,7 +1629,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Relentless Glue - $2,400",
+                            "name": "004 - Relentless Glue - $2,000",
                             "content": `
                                 <ul>
                                     <li>gains camo detection</li>
@@ -1913,7 +1909,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Semi-Automatic - $2,700",
+                            "name": "003 - Semi-Automatic - $2,500",
                             "content": `
                                 <ul>
                                     <li>bullet buffed
@@ -1925,7 +1921,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Full Auto Rifle - $4,200",
+                            "name": "004 - Full Auto Rifle - $3,800",
                             "content": `
                                 <ul>
                                     <li>bullet buffed
@@ -2039,16 +2035,16 @@ let data = {
                                     </li>
                                     <li>while submerged, gains radioactive attack
                                         <ul>
-                                            <li>1d, 26p, 52r zone, 0.4s passive, shatter type</li>
+                                            <li>1d, 30p, 52r zone, 0.4s passive, shatter type</li>
                                         </ul>
                                     </li>
                                     <li>while submerged, abilities of water towers in range -15% cooldown time</li>
                                     <li>crosspath
                                         <ul>
-                                            <li>410: radioactive +9p (35p)</li>
+                                            <li>410: radioactive +5p (35p)</li>
                                             <li>420: radioactive +1ld, +15p (50), normal type</li>
-                                            <li>401: radioactive 85%s (0.34s)</li>
-                                            <li>402: radioactive 75%s (0.255s)</li>
+                                            <li>401: radioactive 75%s (0.3s)</li>
+                                            <li>402: radioactive 66.66%s (0.2s)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -2308,7 +2304,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Aircraft Carrier - $6,800",
+                            "name": "400 - Aircraft Carrier - $6,400",
                             "content": `
                                 <ul>
                                     <li>spawns three permanent plane subtowers
@@ -2641,7 +2637,7 @@ let data = {
                                 <ul>
                                     <li>radial-dart buffed
                                         <ul>
-                                            <li>+4j (16j), +2p (7p), 48%s (0.54s)</li>
+                                            <li>+4j (16j), +4p (9p), 48%s (0.54s)</li>
                                         </ul>
                                     </li>
                                     <li>moab-missile buffed:
@@ -2663,7 +2659,7 @@ let data = {
                                 <ul>
                                     <li>radial-dart buffed
                                         <ul>
-                                            <li>+2d (3d), +2cd (5cd), +16j (32j), +3p (10p), 50%s (0.27s), normal type</li>
+                                            <li>+2d (3d), +2cd (5cd), +16j (32j), +3p (12p), 50%s (0.27s), normal type</li>
                                             <li>much faster projectile speed</li>
                                         </ul>
                                     </li>
@@ -2849,7 +2845,7 @@ let data = {
                                 <ul>
                                     <li>barrage buffed
                                         <ul>
-                                            <li>62.5%s (0.025s)</li>
+                                            <li>75%s (0.03s)</li>
                                         </ul>
                                     </li>
                                     <li>dart buffed
@@ -2920,7 +2916,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Apache Dartship - $19,600",
+                            "name": "400 - Apache Dartship - $17,500",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -3229,7 +3225,7 @@ let data = {
                                                 <ul>
                                                     <li>45p, 19r blast</li>
                                                     <li>cannot affect black, zebra, or blimps</li>
-                                                    <li>applies stun status: 0.5s duration</li>
+                                                    <li>applies stun status: 0.4s duration</li>
                                                 </ul>
                                             </li>
                                             <li>on expire: shockwave
@@ -3342,11 +3338,11 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "040 - Artillery Battery - $7,600",
+                            "name": "040 - Artillery Battery - $8,000",
                             "content": `
                                 <ul>
                                     <li>25%s (0.27s), +4 BAD damage (6 BAD damage)</li>
-                                    <li>gains bombardment ability (60s cooldown, 8s duration, battle ready)
+                                    <li>gains bombardment ability (60s cooldown, 7s duration, battle ready)
                                         <ul>
                                             <li>25%s (0.0675)</li>
                                         </ul>
@@ -4309,6 +4305,7 @@ let data = {
                                         <ul>
                                             <li>2500d, 2000p, 70r blast, normal type, camo</li>
                                             <li>penetrates blimp layers</li>
+                                            <li>surviving targets are knocked back by ? units</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4324,10 +4321,11 @@ let data = {
                                             <li>50d crit every 13-17 shots</li>
                                         </ul>
                                     </li>
-                                    <li>annihilate replaced by anti-bloon (45s cooldown, battle ready)
+                                    <li>annihilate replaced by anti-bloon (30s cooldown, battle ready)
                                         <ul>
                                             <li>5000d, 10000p, 120r blast, normal type, camo</li>
                                             <li>penetrates blimp layers</li>
+                                            <li>surviving targets are knocked back by ? units</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -5595,7 +5593,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "030 - Monkey Bank - $5,100",
+                            "name": "030 - Monkey Bank - $4,600",
                             "content": `
                                 <ul>
                                     <li>banana attack buffed
@@ -5622,7 +5620,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "040 - IMF loan - $7,500",
+                            "name": "040 - IMF loan - $8,000",
                             "content": `
                                 <ul>
                                     <li>banana attack buffed
@@ -5994,7 +5992,7 @@ let data = {
                                 <ul>
                                     <li>spikes buffed
                                         <ul>
-                                            <li>+1d (2d), 240s lifetime
+                                            <li>+2d (3d), 240s lifetime
                                                 <ul>
                                                     <li>total: 10 damage per spike
                                                         <ul>
@@ -6014,9 +6012,9 @@ let data = {
                                 <ul>
                                     <li>spikes buffed
                                         <ul>
-                                            <li>+8d (10d), +45p (50p), 3.0s, 300s lifetime
+                                            <li>+8d (11d), +45p (50p), 3.0s, 300s lifetime
                                                 <ul>
-                                                    <li>total: 500 damage per spike</li>
+                                                    <li>total: 550 damage per spike</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -6025,7 +6023,7 @@ let data = {
                                         <ul>
                                             <li>105: +40p (90p)
                                                 <ul>
-                                                    <li>total: 900 damage per spike</li>
+                                                    <li>total: 990 damage per spike</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -6612,7 +6610,7 @@ let data = {
                     "3": `<ul>
                         <li>gains cyber-shot ability (45s cooldown, 5s duration, 11.25s initial)
                             <ul>
-                                <li>+15p (21p), +5r (55r)</li>
+                                <li>+15p (21p), +5r (55r)</li>, 84.75%s?
                                 <li>duration increases 0.5s per level (5 + 0.5 level)</li>
                             </ul>
                         </li>
@@ -7451,7 +7449,7 @@ let data = {
                                     <li>one kraken favors opponent bloons and one favors natural bloons when it comes to targeting</li>
                                 </ul>
                             </li>
-                            <li>1,000p each</li>
+                            <li>1,200p each</li>
                             <li>pops anything up to its pierce limit and grants ($2 x natural bloon RBE eaten) split across 10 bananas once full</li>
                             <li>note: blimps can only be captured if their remaining RBE doesn't exceed the kraken's remaining pierce, however bloons can bypass this</li>
                         </ul>
@@ -7497,7 +7495,7 @@ let data = {
                     <li>ward-totem buffed
                         <ul>
                             <li>knocks back every other bloon</li>
-                            <li>stuns every 4th blimp for 0.5s</li>
+                            <li>stuns every 3th blimp for 0.5s</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9435,7 +9433,7 @@ let data = {
                 "name": "Agent Jericho",
                 "data": {
                     "1": `<ul>
-                    <li>$750</li>
+                    <li>$850</li>
                     <li>Leveling Rate: 1.58823529x</li>
                     <li>Unlock Cost: 5,000 MM</li>
                     <li>size: ? radius</li>
@@ -9540,6 +9538,7 @@ let data = {
                                     <li>disappears when it has reached 66.67% of the track</li>
                                 </ul>
                             </li>
+                            <li>cooldown persists after selling</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9624,7 +9623,7 @@ let data = {
                 "name": "Highwayman Jericho",
                 "data": {
                     "1": `<ul>
-                    <li>$750</li>
+                    <li>$850</li>
                     <li>Leveling Rate: 1.58823529x</li>
                     <li>Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points</li>
                     <li>size: ? radius</li>
