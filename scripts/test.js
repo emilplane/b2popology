@@ -3,7 +3,7 @@ let demoTowerObject = {
         "base": [
             {
                 "moduleType": ["attack", "new"],
-                "name": "forward-energy",
+                "name": "forward-energy", "mainAttack": true,
                 
                 "damage": 1, "pierce": 3, "attackCooldown": 0.7, "attackType": "energy"
             },
@@ -28,7 +28,7 @@ let demoTowerObject = {
                     "moduleType": ["attack", "new"],
                     "name": "mobe-missile",
                     
-                    "moabDamage": 20, "pierce": 5, "attackCooldown": 2, "attackType": "explosion", "impact": true
+                    "damage": 3, "moabDamage": 20, "pierce": 5, "attackCooldown": 2, "attackType": "explosion", "impact": true
                 }
             ]
         ]
@@ -41,8 +41,36 @@ standardProperties = [
     ["pierce", "+"], ["impact", "boolean"],
     ["range", "+"], ["zone", "boolean"],
     ["attackCooldown", "*"],
-    ["attackType", "string"]
+    ["attackType", "string"],
+    ["mainAttack", "boolean"]
 ]
+
+damageBonuses = {
+    "moabDamage": {
+        "name": "MOAB"
+    },
+    "fortifiedDamage": {
+        "name": "Fortified"
+    },
+    "fortifiedMoabDamage": {
+        "name": "Fortified MOAB"
+    },
+    "ceramicDamage": {
+        "name": "Ceramic"
+    },
+    "leadDamage": {
+        "name": "Lead"
+    },
+    "camoDamage": {
+        "name": "Camo"
+    },
+    "frozenDamage": {
+        "name": "Frozen"
+    },
+    "stunnedDamage": {
+        "name": "Stunned"
+    }
+}
 
 class Module {
     constructor(module) {
@@ -196,4 +224,44 @@ class Module {
     }
 }
 
-console.log(Module.getTowerUpgrade(demoTowerObject, [3, 0, 0]))
+const x = Module.getTowerUpgrade(demoTowerObject, [3, 0, 0])
+console.log(x)
+let modulesHTML = ``;
+for (module in x) {
+    mainAttackHTML = ``
+    if (x[module].mainAttack == true) {
+        mainAttackHTML = `<h4 style="margin-left: auto; color: var(--secondary6);">Main</h4>`
+    }
+    let mainStatsHTML = ``
+    for (property in x[module]) {
+        switch (property) {
+            case "damage":
+                for (damageBonus in damageBonuses) {
+                    
+                } 
+                mainStatsHTML = mainStatsHTML + `
+                    <div>
+                        <h5>Damage</h5>
+                        <div style="display: flex; gap: 18px; align-items: end">
+                            <p style="font-size: 20pt; padding-top: 0">${x[module].damage}</p>
+                            <p style="font-size: 20pt; padding-top: 0">+2 (4) <span style="font-size: 12pt; color:var(--secondary6)">MOAB</span></p>
+                        </div>
+                    </div>
+                `
+        }
+    }
+    modulesHTML = modulesHTML + `
+        <div style="background-color: var(--primary1); border-radius: 8px; padding: 8px">
+            <div style="display: flex; align-items: end;">
+                <h2>${x[module].name} <span style="color: var(--primary7);">attack</span></h2>
+                ${mainAttackHTML}
+            </div>
+            <div class="horizontalLine" style="background-color: var(--secondary6); height: 2px"></div>
+            <div style="display: flex; gap: 40px">
+                ${mainStatsHTML}
+            </div>
+        </div>
+    `;
+    console.log(x[module])
+}
+document.getElementById("moduleSection").insertAdjacentHTML("beforeend", modulesHTML)
