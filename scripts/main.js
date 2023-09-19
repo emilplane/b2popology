@@ -3636,7 +3636,7 @@ let data = {
                                 <ul>
                                     <li>dart replaced by rocket
                                         <ul>
-                                            <li>7p, 0.132s</li>
+                                            <li>7i, 0.132s</li>
                                             <li>uses 2 impacts per hit (3 total explosions)</li>
                                             <li>on contact: explosion
                                                 <ul>

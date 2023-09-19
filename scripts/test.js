@@ -7,6 +7,18 @@ let demoTowerObject = {
                 
                 "damage": 1, "pierce": 3, "attackCooldown": 0.7, "attackType": "energy"
             },
+            {
+                "moduleType": ["attack", "new"],
+                "name": "normal-test",
+                
+                "damage": 1, "pierce": 1, "attackCooldown": 1, "attackType": "normal"
+            },
+            {
+                "moduleType": ["attack", "new"],
+                "name": "normal-test",
+                
+                "damage": 1, "pierce": 1, "attackCooldown": 1, "attackType": "normal"
+            }
         ],
         "top": [
             [
@@ -14,7 +26,11 @@ let demoTowerObject = {
                     "moduleType": ["attack", "buff"],
                     "name": "forward-energy",
                     
-                    "projectiles": 2, "spread": 45
+                    "projectiles": 2, "projectileSpread": 10,
+
+                    "effects": [
+                        ["contact", "stun", 0.5]
+                    ]
                 }
             ],
             [
@@ -22,7 +38,7 @@ let demoTowerObject = {
                     "moduleType": ["attack", "buff"],
                     "name": "forward-energy",
                     
-                    "damage": 1, "moabDamage": 2, "attackType": "normal"
+                    "damage": 1, "fortifiedMoabDamage": 2, "camoDamage": 1, "attackType": "normal"
                 },
                 {
                     "moduleType": ["attack", "new"],
@@ -37,7 +53,7 @@ let demoTowerObject = {
 
 standardProperties = [
     ["damage", "+"], ["moabDamage", "+"], ["fortifiedDamage", "+"], ["fortifiedMoabDamage", "+"], ["ceramicDamage", "+"], ["leadDamage", "+"], ["camoDamage", "+"], ["frozenDamage", "+"], ["stunnedDamage", "+"],
-    ["projectiles", "+"], ["spread", "absolute"],
+    ["projectiles", "+"], ["projectileSpread", "absolute"],
     ["pierce", "+"], ["impact", "boolean"],
     ["range", "+"], ["zone", "boolean"],
     ["attackCooldown", "*"],
@@ -145,7 +161,6 @@ class Module {
         for (let module in initial) {
             let moduleMatch = false
             for (let buffModule in upgrade) {
-                
                 if (initial[module].name == upgrade[buffModule].name) {
                     moduleMatch = true
                     if (initial[module].moduleType[1] == "new" && upgrade[buffModule].moduleType[1] == "buff") {
@@ -155,7 +170,17 @@ class Module {
                     }
                 }
                 if (upgrade[buffModule].moduleType[1] == "new") {
-                    output.push(upgrade[buffModule])
+                    let upgradeAdded = false
+                    for (let upgradeModule in upgrade) {
+                        console.log(upgrade[upgradeModule].name)
+                        //console.log(upgrade[upgradeModule].name == upgrade[buffModule].name)
+                        //console.log(upgrade[buffModule].name)
+                        if (upgrade[upgradeModule].name == upgrade[buffModule].name) {let upgradeAdded = true}
+                    }
+                    console.log(upgradeAdded)
+                    if (upgradeAdded == false) {
+                        output.push(upgrade[buffModule])
+                    }
                 }
             }
             if (moduleMatch == false) {
@@ -228,40 +253,88 @@ const x = Module.getTowerUpgrade(demoTowerObject, [3, 0, 0])
 console.log(x)
 let modulesHTML = ``;
 for (module in x) {
-    mainAttackHTML = ``
+    mainAttackStatusHTML = ``
     if (x[module].mainAttack == true) {
-        mainAttackHTML = `<h4 style="margin-left: auto; color: var(--secondary6);">Main</h4>`
+        mainAttackStatusHTML = `<h4 style="margin-left: auto; color: var(--secondary6);">Main</h4>`
     }
     let mainStatsHTML = ``
-    for (property in x[module]) {
-        switch (property) {
-            case "damage":
-                for (damageBonus in damageBonuses) {
-                    
-                } 
-                mainStatsHTML = mainStatsHTML + `
-                    <div>
-                        <h5>Damage</h5>
-                        <div style="display: flex; gap: 18px; align-items: end">
-                            <p style="font-size: 20pt; padding-top: 0">${x[module].damage}</p>
-                            <p style="font-size: 20pt; padding-top: 0">+2 (4) <span style="font-size: 12pt; color:var(--secondary6)">MOAB</span></p>
-                        </div>
-                    </div>
+    let property;
+    if (x[module].damage != undefined) {
+        let damageBonusHTML = ``
+        for (damageBonus in damageBonuses) {
+            if (x[module][damageBonus] != undefined) {
+                damageBonusHTML = damageBonusHTML + `
+                    <p style="font-size: 20pt; padding-top: 0">
+                        <span style="font-size: 18pt; color:var(--secondary6)">+${x[module][damageBonus]} </span>
+                        (${x[module][damageBonus] + x[module].damage}) 
+                        <span style="font-size: 12pt; color:var(--secondary6)">${damageBonuses[damageBonus].name}</span>
+                    </p>
                 `
-        }
+            }
+        } 
+        mainStatsHTML = mainStatsHTML + `
+            <div>
+                <h5>damage</h5>
+                <div style="display: flex; gap: 18px; align-items: end">
+                    <p style="font-size: 20pt; padding-top: 0">${x[module].damage}</p>
+                    ${damageBonusHTML}
+                </div>
+            </div>
+        `
+    }
+    if (x[module].projectiles != undefined) {
+        let projectileSpreadHTML = ``
+        if (x[module].projectileSpread != undefined) {projectileSpreadHTML = `<span style="font-size: 12pt; color:var(--secondary6)">@ ${x[module].projectileSpread}&deg spread</span>`}
+        mainStatsHTML = mainStatsHTML + `
+            <div>
+                <h5>Projectiles </h5>
+                <div style="display: flex; gap: 18px; align-items: end">
+                    <p style="font-size: 20pt; padding-top: 0">${x[module].projectiles} ${projectileSpreadHTML}</p>
+                </div>
+            </div>
+        `
+    }
+    if (x[module].pierce != undefined) {
+        mainStatsHTML = mainStatsHTML + `
+            <div>
+                <h5>Pierce</h5>
+                <div style="display: flex; gap: 18px; align-items: end">
+                    <p style="font-size: 20pt; padding-top: 0">${x[module].pierce}</p>
+                </div>
+            </div>
+        `
+    }
+    if (x[module].attackCooldown != undefined) {
+        mainStatsHTML = mainStatsHTML + `
+            <div>
+                <h5>Attack Cooldown</h5>
+                <div style="display: flex; gap: 18px; align-items: end">
+                    <p style="font-size: 20pt; padding-top: 0">${x[module].attackCooldown} <span style="font-size: 12pt; color:var(--secondary6)">seconds</span></p>
+                </div>
+            </div>
+        `
+    }
+    if (x[module].attackType != undefined) {
+        mainStatsHTML = mainStatsHTML + `
+            <div>
+                <h5>Attack Cooldown</h5>
+                <div style="display: flex; gap: 18px; align-items: end">
+                    <p style="font-size: 16pt; padding-top: 0; margin-top: 4px;">${x[module].attackType}</p>
+                </div>
+            </div>
+        `
     }
     modulesHTML = modulesHTML + `
         <div style="background-color: var(--primary1); border-radius: 8px; padding: 8px">
             <div style="display: flex; align-items: end;">
                 <h2>${x[module].name} <span style="color: var(--primary7);">attack</span></h2>
-                ${mainAttackHTML}
+                ${mainAttackStatusHTML}
             </div>
             <div class="horizontalLine" style="background-color: var(--secondary6); height: 2px"></div>
-            <div style="display: flex; gap: 40px">
+            <div style="display: flex; gap: 8px 40px; flex-wrap: wrap">
                 ${mainStatsHTML}
             </div>
         </div>
     `;
-    console.log(x[module])
 }
 document.getElementById("moduleSection").insertAdjacentHTML("beforeend", modulesHTML)
