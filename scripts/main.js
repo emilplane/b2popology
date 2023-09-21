@@ -3636,8 +3636,7 @@ let data = {
                                 <ul>
                                     <li>dart replaced by rocket
                                         <ul>
-                                            <li>7i, 0.132s</li>
-                                            <li>uses 2 impacts per hit (3 total explosions)</li>
+                                            <li>3i, 0.132s</li>
                                             <li>on contact: explosion
                                                 <ul>
                                                     <li>1d, 6p, 8r blast, normal type</li>
@@ -3647,7 +3646,7 @@ let data = {
                                     </li>
                                     <li>crosspath:
                                         <ul>
-                                            <li>032: rocket gets +3i (5 total explosions), explosion gets +3p (9p)</li>
+                                            <li>032: rocket gets +2i, explosion gets +3p (9p)</li>
                                         </ul>
                                     </li>
                                 </ul>

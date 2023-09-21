@@ -158,6 +158,7 @@ class Module {
 
     static mergeUpgrades(initial, upgrade) {
         let output = []
+        let newUpgradesAdded = []
         for (let module in initial) {
             let moduleMatch = false
             for (let buffModule in upgrade) {
@@ -170,16 +171,15 @@ class Module {
                     }
                 }
                 if (upgrade[buffModule].moduleType[1] == "new") {
-                    let upgradeAdded = false
-                    for (let upgradeModule in upgrade) {
-                        console.log(upgrade[upgradeModule].name)
-                        //console.log(upgrade[upgradeModule].name == upgrade[buffModule].name)
-                        //console.log(upgrade[buffModule].name)
-                        if (upgrade[upgradeModule].name == upgrade[buffModule].name) {let upgradeAdded = true}
+                    let moduleAdded = false
+                    for (let moduleName in newUpgradesAdded) {
+                        if (newUpgradesAdded[moduleName] == upgrade[buffModule].name) {
+                            moduleAdded = true
+                        }
                     }
-                    console.log(upgradeAdded)
-                    if (upgradeAdded == false) {
+                    if (moduleAdded == false) {
                         output.push(upgrade[buffModule])
+                        newUpgradesAdded.push(upgrade[buffModule].name)
                     }
                 }
             }
@@ -249,92 +249,54 @@ class Module {
     }
 }
 
-const x = Module.getTowerUpgrade(demoTowerObject, [3, 0, 0])
-console.log(x)
-let modulesHTML = ``;
-for (module in x) {
-    mainAttackStatusHTML = ``
-    if (x[module].mainAttack == true) {
-        mainAttackStatusHTML = `<h4 style="margin-left: auto; color: var(--secondary6);">Main</h4>`
+function basicStatsSection (module) {
+    let output = ``
+
+    let damageBonusesHTML = ``
+    console.log(module)
+    for (bonus in damageBonuses) {
+        if (module[bonus] != undefined) {
+            console.log(module[bonus])
+            damageBonusesHTML = damageBonusesHTML + `<p style="font-size: 20pt; padding-top: 0">
+                <span style="font-size: 12pt; color:var(--secondary6)">+2</span> 4 <span style="font-size: 12pt; color:var(--secondary6)">${damageBonuses[bonus].name}</span>
+            </p>`
+        }
     }
-    let mainStatsHTML = ``
-    let property;
-    if (x[module].damage != undefined) {
-        let damageBonusHTML = ``
-        for (damageBonus in damageBonuses) {
-            if (x[module][damageBonus] != undefined) {
-                damageBonusHTML = damageBonusHTML + `
-                    <p style="font-size: 20pt; padding-top: 0">
-                        <span style="font-size: 18pt; color:var(--secondary6)">+${x[module][damageBonus]} </span>
-                        (${x[module][damageBonus] + x[module].damage}) 
-                        <span style="font-size: 12pt; color:var(--secondary6)">${damageBonuses[damageBonus].name}</span>
-                    </p>
-                `
-            }
-        } 
-        mainStatsHTML = mainStatsHTML + `
-            <div>
-                <h5>damage</h5>
-                <div style="display: flex; gap: 18px; align-items: end">
-                    <p style="font-size: 20pt; padding-top: 0">${x[module].damage}</p>
-                    ${damageBonusHTML}
-                </div>
-            </div>
-        `
-    }
-    if (x[module].projectiles != undefined) {
-        let projectileSpreadHTML = ``
-        if (x[module].projectileSpread != undefined) {projectileSpreadHTML = `<span style="font-size: 12pt; color:var(--secondary6)">@ ${x[module].projectileSpread}&deg spread</span>`}
-        mainStatsHTML = mainStatsHTML + `
-            <div>
-                <h5>Projectiles </h5>
-                <div style="display: flex; gap: 18px; align-items: end">
-                    <p style="font-size: 20pt; padding-top: 0">${x[module].projectiles} ${projectileSpreadHTML}</p>
-                </div>
-            </div>
-        `
-    }
-    if (x[module].pierce != undefined) {
-        mainStatsHTML = mainStatsHTML + `
-            <div>
-                <h5>Pierce</h5>
-                <div style="display: flex; gap: 18px; align-items: end">
-                    <p style="font-size: 20pt; padding-top: 0">${x[module].pierce}</p>
-                </div>
-            </div>
-        `
-    }
-    if (x[module].attackCooldown != undefined) {
-        mainStatsHTML = mainStatsHTML + `
-            <div>
-                <h5>Attack Cooldown</h5>
-                <div style="display: flex; gap: 18px; align-items: end">
-                    <p style="font-size: 20pt; padding-top: 0">${x[module].attackCooldown} <span style="font-size: 12pt; color:var(--secondary6)">seconds</span></p>
-                </div>
-            </div>
-        `
-    }
-    if (x[module].attackType != undefined) {
-        mainStatsHTML = mainStatsHTML + `
-            <div>
-                <h5>Attack Cooldown</h5>
-                <div style="display: flex; gap: 18px; align-items: end">
-                    <p style="font-size: 16pt; padding-top: 0; margin-top: 4px;">${x[module].attackType}</p>
-                </div>
-            </div>
-        `
-    }
-    modulesHTML = modulesHTML + `
-        <div style="background-color: var(--primary1); border-radius: 8px; padding: 8px">
-            <div style="display: flex; align-items: end;">
-                <h2>${x[module].name} <span style="color: var(--primary7);">attack</span></h2>
-                ${mainAttackStatusHTML}
-            </div>
-            <div class="horizontalLine" style="background-color: var(--secondary6); height: 2px"></div>
-            <div style="display: flex; gap: 8px 40px; flex-wrap: wrap">
-                ${mainStatsHTML}
+
+    if (module.damage != undefined) {output = output + `
+        <div>
+            <h5>Damage</h5>
+            <div style="display: flex; gap: 8px; align-items: end">
+                <p style="font-size: 20pt; padding-top: 0">2</p>
+                ${damageBonusesHTML}
             </div>
         </div>
-    `;
+    `}
+
+    return output
 }
-document.getElementById("moduleSection").insertAdjacentHTML("beforeend", modulesHTML)
+
+const x = Module.getTowerUpgrade(demoTowerObject, [3, 0, 0])
+console.log(x)
+for (module in x) {
+
+    let mainAttackHTML = ``
+    if (x[module].mainAttack == true) {mainAttackHTML = `<h4 style="margin-left: auto; color: var(--secondary6);">Main</h4>`}
+
+    let basicStatsHTML = basicStatsSection(x[module])
+
+    document.getElementById("moduleSection").insertAdjacentHTML("beforeend", `
+        <section style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="background-color: var(--primary1); border-radius: 8px; padding: 8px">
+                <div style="display: flex; align-items: end;">
+                    <h2>${x[module].name} <span style="color: var(--primary7);">attack</span></h2>
+                    ${mainAttackHTML}
+                </div>
+                <div class="horizontalLine" style="background-color: var(--secondary6); height: 2px"></div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap">
+                    ${basicStatsHTML}
+                </div>
+            </div>
+        </section>
+    `)
+}
