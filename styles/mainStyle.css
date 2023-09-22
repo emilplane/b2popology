@@ -43,6 +43,8 @@
 
     --heroes5: #F3AB48;
     --heroes3: #F3DEC2;
+
+    --red5: #f34848;
 }
 
 html {
@@ -318,7 +320,7 @@ header {
 }
 
 .horizontalLine {
-    height: 1px;
+    height: 2px;
     margin: 0 0 8px 0;
     background-color: var(--secondary4);
 }
@@ -418,4 +420,50 @@ header {
 
 .noUnderline {
     text-decoration-line: none;
+}
+
+.towerBannerStyle * {
+    text-shadow:
+    -2px -2px 0 #000,
+     0   -2px 0 #000,
+     2px -2px 0 #000,
+     2px  0   0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+    -2px  2px 0 #000,
+    -2px  0   0 #000,
+    var(--secondary6) 4px 4px 12px;
+    color: var(--secondary1);
+}
+
+.statLine {
+    background-color: var(--secondary1);
+    margin: 0 8px;
+    width: 2px
+}
+
+.shadow {
+    text-shadow: var(--secondary8) 2px 2px 36px;
+}
+
+.nameAndValue_name {
+    font-size: 14px;
+    padding-top: 0;
+}
+
+.nameAndValue_valueFlex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px
+}
+
+.unitStyle {
+    color: var(--secondary4);
+    font-size: 16px;
+}
+
+.statWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px
 }

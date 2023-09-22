@@ -996,12 +996,12 @@ let data = {
                                 <ul>
                                     <li>tacks replaced by blades 
                                         <ul>
-                                            <li>1d, 6p, 31r, 1.19s, sharp type</li>
+                                            <li>1d, +2p (4p), 31r, 1.19s, sharp type</li>
                                         </ul>
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>032: +1p (7p)</li>
+                                            <li>032: +1p (5p)</li>
                                         </ul>
                                     </li>
                                 </ul>
