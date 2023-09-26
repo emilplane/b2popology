@@ -177,6 +177,12 @@ header {
     }
 }
 
+.discordLogoButton {
+    width: 17px;
+    height: auto;
+    margin-top: 2px;
+}
+
 .selectedButton {
     background-color: transparent;
     @media (prefers-color-scheme: dark) {
@@ -228,11 +234,11 @@ header {
     background: var(--heroes3);
 }
 .discordButton {
-    background-color: rgb(104, 66, 229);
+    background-color: #5865F2;
     color: var(--secondary2);
 }
 .discordButton:hover, .discordButton:focus {
-    background-color: rgb(255, 255, 255);
+    background-color: #aeb2e6;
 }
 
 .popup {
@@ -400,6 +406,13 @@ header {
 
 .hamburgerContent {
     padding: 30px;
+}
+
+a:link, a:visited{
+    color: var(--primary7);
+    @media (prefers-color-scheme: dark) {
+        color: var(--primary5)
+    };
 }
 
 .hamburgerContent a {
