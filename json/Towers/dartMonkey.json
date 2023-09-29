@@ -1,0 +1,207 @@
+{
+    "name": "dartMonkey", "displayName": "Dart Monkey",
+    "upgradeNames": {
+        "top": [
+            {
+                "name": "sharpShots", "displayName": "Sharp Shots"
+            },
+            {
+                "name": "razorSharpShots", "displayName": "Razor Sharp Shots"
+            },
+            {
+                "name": "spikeOPult", "displayName": "Spike-o-pult"
+            },
+            {
+                "name": "juggernaut", "displayName": "Juggernaut"
+            },
+            {
+                "name": "ultraJuggernaut", "displayName": "Ultra Juggernaut"
+            }
+        ],
+        "middle": [
+            {
+                "name": "quickShots", "displayName": "Quick Shots"
+            },
+            {
+                "name": "veryQuickShots", "displayName": "Very Quick Shots"
+            },
+            {
+                "name": "tripleShot", "displayName": "Triple Shot"
+            },
+            {
+                "name": "superMonkeyFanClub", "displayName": "Super Monkey Fan Club"
+            },
+            {
+                "name": "plasmaMonkeyFanClub", "displayName": "Plasma Monkey Fan Club"
+            }
+        ],
+        "bottom": [
+            {
+                "name": "longRangeDarts", "displayName": "Long Range Darts"
+            },
+            {
+                "name": "enhancedEyesight", "displayName": "Enhanced Eyesight"
+            },
+            {
+                "name": "crossbow", "displayName": "Crossbow"
+            },
+            {
+                "name": "sharpShooter", "displayName": "Sharp Shooter"
+            },
+            {
+                "name": "crossbowMaster", "displayName": "Crossbow Master"
+            }
+        ]
+    },
+
+    "validPlacements": ["land"],
+    "range": 32, "size": ["radius", 6],
+
+    "upgrades": {
+        "base": [
+            {
+                "moduleType": ["attack", "new"],
+                "name": "dart", "mainAttack": true,
+                
+                "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
+            }
+        ],
+        "top": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "pierce": 1
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "pierce": 3
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "dart", "name": "spikeball",
+                    
+                    "damage": 1, "ceramicDamage": 1, "pierce": 22, "attackCooldown": 1.15, "attackType": "shatter",
+                    "rebounds": true
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["%", 0.15]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "spikeball", "name": "juggernaut",
+                    
+                    "damage": 2, "ceramicDamage": 4, "pierce": 50, "attackCooldown": 1, "attackType": "normal",
+                    "rebounds": true
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "juggernaut", "name": "ultrajugg",
+                    
+                    "damage": 4, "ceramicDamage": 16, "fortifiedDamage": 5, "leadDamage": ["*", 6], "pierce": 200,
+                    "rebounds": true,
+
+                    "rehit": ["rebound"],
+
+                    "effects": [
+                        {
+                            "condition": ["multiple", "whicheverFirst", 
+                                ["pierceUsed", ["%", 0.5]], 
+                                "expireNaturally"
+                            ],
+                            "result": ["module", "juggernauts"]
+                        },
+                        {
+                            "condition": ["multiple", "whicheverFirst", 
+                                ["pierceUsed", ["%", 1]], 
+                                "expireNaturally"
+                            ],
+                            "result": ["module", "juggernauts"]
+                        }
+                    ]
+                },
+                {
+                    "moduleType": ["attack", "new"],
+                    "replacingName": "juggernauts",
+                    
+                    "damage": 1, "ceramicDamage": 2, "fortifiedDamage": 2, "leadDamage": ["*", 6], "projectiles": [6, 360], "pierce": 100, "attackType": "normal",
+                    "rebounds": true,
+
+                    "rehit": ["rebound"]
+                }
+            ]
+        ],
+        "middle": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "attackCooldown": 0.85
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "attackCooldown": 0.7882
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "projectiles": [3, 30]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "attackCooldown": 0.75
+                },
+                {
+                    "moduleType": "transform", 
+                    "name": "fan-club",
+
+                    "ability": {"duration": 15, "cooldown": 50, "initialCooldown": 0, "type": "activated"}
+                }
+            ],
+            [
+
+            ]
+        ],
+        "bottom": [
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ],
+            [
+
+            ]
+        ]
+    }
+}
