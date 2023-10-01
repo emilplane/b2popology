@@ -179,7 +179,24 @@
                     "moduleType": "transform", 
                     "name": "fan-club",
 
-                    "ability": {"duration": 15, "cooldown": 50, "initialCooldown": 0, "type": "activated"}
+                    "ability": {"duration": 15, "cooldown": 50, "initialCooldown": 0, "type": "activated"},
+
+                    "target": [["dartMonkey", [2, 4, 2]]], "transform": "superfan",
+                    "count": 10, "addTargetsAfterTransform": true, "removeTransformedOnSell": false
+                },
+                {
+                    "moduleType": ["subtower", "new"],
+                    "name": "superfan",
+                    "range": 32,
+
+                    "modules": [
+                        {
+                            "moduleType": ["attack", "new"],
+                            "name": "dart", "mainAttack": true,
+                            
+                            "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
+                        }
+                    ]
                 }
             ],
             [
