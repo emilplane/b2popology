@@ -8206,7 +8206,7 @@ let data = {
                             <li>gains up to 5 barrage attacks, one for each of the 5 strongest blimps
                                 <ul>
                                     <li>90d, 0.1s, normal type</li>
-                                    <li>attacks up to 64 times, and attacks the target's children with remaining shells</li>
+                                    <li>attacks up to 50 times, and attacks the target's children with remaining shells</li>
                                 </ul>
                             </li>
                         </ul>
@@ -8738,7 +8738,7 @@ let data = {
                     <li>heartstopper ability buffed
                         <ul>
                             <li>40s cooldown, 15s duration</li>
-                            <li>heartstop status buffed: 15s duration</li>
+                            <li>heartstop status buffed: 15s duration, normal damage type to every tower</li>
                         </ul>
                     </li>
                 </ul>`,
