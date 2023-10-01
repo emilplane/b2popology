@@ -456,7 +456,7 @@ a:link, a:visited{
 }
 
 .shadow {
-    text-shadow: var(--secondary8) 2px 2px 36px;
+    text-shadow: var(--secondary8) 2px 2px 12px;
 }
 
 .nameAndValue_name {

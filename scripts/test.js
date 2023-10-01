@@ -138,8 +138,6 @@ class Module {
                 crosspathNumber = 2;
             }
         }
-        
-        //output = new Module(initialModule)
 
         const upgradeCounter = crosspath[mainPathNumber];
         for (let i = 0; i < upgradeCounter; i++) {
@@ -152,8 +150,16 @@ class Module {
                 output = buffTower(output, tower.upgrades[crosspathName][i])
             }
         }*/
-    
         return output
+    }
+
+    static retainOnReplacement(module, oldModule) {
+        delete module.replacingName
+        module.moduleType[1] = "new"
+        if (module.attackType == undefined && oldModule.attackType != undefined) { 
+            module.attackType = oldModule.attackType
+        }
+        return module
     }
 
     static mergeUpgrades(initial, upgrade) {
@@ -182,6 +188,22 @@ class Module {
                         newUpgradesAdded.push(upgrade[buffModule].name)
                     }
                 }
+                if (upgrade[buffModule].moduleType[1] == "replace") {
+                    moduleMatch = true
+                    let replacingName = upgrade[buffModule].replacingName
+                    let targetExists = false; let initialPosition;
+                    for (let replacingModule in initial) {
+                        if (initial[replacingModule].name == replacingName) {
+                            targetExists = true; initialPosition = replacingModule
+                        }
+                    }
+                    if (targetExists == true) {
+                        let replacingModule = upgrade[module]
+                        let changedModule = this.retainOnReplacement(replacingModule, initial[initialPosition])
+                        output.push(replacingModule)
+                    }
+                }
+                
             }
             if (moduleMatch == false) {
                 output.push(initial[module])
@@ -253,10 +275,8 @@ function basicStatsSection (module) {
     let output = ``
 
     let damageBonusesHTML = ``
-    console.log(module)
     for (bonus in damageBonuses) {
         if (module[bonus] != undefined) {
-            console.log(module[bonus])
             damageBonusesHTML = damageBonusesHTML + `<p style="font-size: 20pt; padding-top: 0">
                 <span style="font-size: 12pt; color:var(--secondary6)">+2</span> 4 <span style="font-size: 12pt; color:var(--secondary6)">${damageBonuses[bonus].name}</span>
             </p>`
@@ -276,27 +296,20 @@ function basicStatsSection (module) {
     return output
 }
 
-const x = Module.getTowerUpgrade(demoTowerObject, [3, 0, 0])
-console.log(x)
-for (module in x) {
+async function getDataJSON() {
+    const requestURL =
+    "https://raw.githubusercontent.com/emilplane/b2popology/main/json/Towers/dartMonkey.json";
+    const request = new Request(requestURL);
+	
+    const response = await fetch(request);
+    data = await response.json();
+};
 
-    let mainAttackHTML = ``
-    if (x[module].mainAttack == true) {mainAttackHTML = `<h4 style="margin-left: auto; color: var(--secondary6);">Main</h4>`}
+async function main() {
+    await getDataJSON()
 
-    let basicStatsHTML = basicStatsSection(x[module])
+    const x = Module.getTowerUpgrade(data, [5, 0, 0])
+    console.log(x)
+};
 
-    document.getElementById("moduleSection").insertAdjacentHTML("beforeend", `
-        <section style="display: flex; flex-direction: column; gap: 12px;">
-            <div style="background-color: var(--primary1); border-radius: 8px; padding: 8px">
-                <div style="display: flex; align-items: end;">
-                    <h2>${x[module].name} <span style="color: var(--primary7);">attack</span></h2>
-                    ${mainAttackHTML}
-                </div>
-                <div class="horizontalLine" style="background-color: var(--secondary6); height: 2px"></div>
-                <div style="display: flex; gap: 16px; flex-wrap: wrap">
-                    ${basicStatsHTML}
-                </div>
-            </div>
-        </section>
-    `)
-}
+main()
