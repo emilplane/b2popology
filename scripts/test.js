@@ -1,315 +1,369 @@
-let demoTowerObject = {
+ let dartMonkey = {
+    "name": "dartMonkey", "displayName": "Dart Monkey",
+    "upgradeNames": {
+        "top": [
+            {
+                "name": "sharpShots", "displayName": "Sharp Shots"
+            },
+            {
+                "name": "razorSharpShots", "displayName": "Razor Sharp Shots"
+            },
+            {
+                "name": "spikeOPult", "displayName": "Spike-o-pult"
+            },
+            {
+                "name": "juggernaut", "displayName": "Juggernaut"
+            },
+            {
+                "name": "ultraJuggernaut", "displayName": "Ultra Juggernaut"
+            }
+        ],
+        "middle": [
+            {
+                "name": "quickShots", "displayName": "Quick Shots"
+            },
+            {
+                "name": "veryQuickShots", "displayName": "Very Quick Shots"
+            },
+            {
+                "name": "tripleShot", "displayName": "Triple Shot"
+            },
+            {
+                "name": "superMonkeyFanClub", "displayName": "Super Monkey Fan Club"
+            },
+            {
+                "name": "plasmaMonkeyFanClub", "displayName": "Plasma Monkey Fan Club"
+            }
+        ],
+        "bottom": [
+            {
+                "name": "longRangeDarts", "displayName": "Long Range Darts"
+            },
+            {
+                "name": "enhancedEyesight", "displayName": "Enhanced Eyesight"
+            },
+            {
+                "name": "crossbow", "displayName": "Crossbow"
+            },
+            {
+                "name": "sharpShooter", "displayName": "Sharp Shooter"
+            },
+            {
+                "name": "crossbowMaster", "displayName": "Crossbow Master"
+            }
+        ]
+    },
+
+    "validPlacements": ["land"],
+    "range": 32, "size": ["radius", 6],
+
     "upgrades": {
         "base": [
             {
                 "moduleType": ["attack", "new"],
-                "name": "forward-energy", "mainAttack": true,
+                "name": "dart", "mainAttack": true,
                 
-                "damage": 1, "pierce": 3, "attackCooldown": 0.7, "attackType": "energy"
-            },
-            {
-                "moduleType": ["attack", "new"],
-                "name": "normal-test",
-                
-                "damage": 1, "pierce": 1, "attackCooldown": 1, "attackType": "normal"
-            },
-            {
-                "moduleType": ["attack", "new"],
-                "name": "normal-test",
-                
-                "damage": 1, "pierce": 1, "attackCooldown": 1, "attackType": "normal"
+                "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
             }
         ],
         "top": [
             [
                 {
                     "moduleType": ["attack", "buff"],
-                    "name": "forward-energy",
+                    "name": "dart",
                     
-                    "projectiles": 2, "projectileSpread": 10,
-
-                    "effects": [
-                        ["contact", "stun", 0.5]
-                    ]
+                    "pierce": 1
                 }
             ],
             [
                 {
                     "moduleType": ["attack", "buff"],
-                    "name": "forward-energy",
+                    "name": "dart",
                     
-                    "damage": 1, "fortifiedMoabDamage": 2, "camoDamage": 1, "attackType": "normal"
+                    "pierce": 3
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "dart", "name": "spikeball",
+                    
+                    "damage": 1, "ceramicDamage": 1, "pierce": 22, "attackCooldown": 1.15, "attackType": "shatter",
+                    "rebounds": true
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["%", 0.15]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "spikeball", "name": "juggernaut",
+                    
+                    "damage": 2, "ceramicDamage": 4, "pierce": 50, "attackCooldown": 1, "attackType": "normal",
+                    "rebounds": true
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "juggernaut", "name": "ultrajugg",
+                    
+                    "damage": 4, "ceramicDamage": 16, "fortifiedDamage": 5, "leadDamage": ["*", 6], "pierce": 200,
+                    "rebounds": true,
+
+                    "rehit": ["rebound"],
+
+                    "effects": [
+                        {
+                            "condition": ["multiple", "whicheverFirst", 
+                                ["pierceUsed", ["%", 0.5]], 
+                                "expireNaturally"
+                            ],
+                            "result": ["module", "juggernauts"]
+                        },
+                        {
+                            "condition": ["multiple", "whicheverFirst", 
+                                ["pierceUsed", ["%", 1]], 
+                                "expireNaturally"
+                            ],
+                            "result": ["module", "juggernauts"]
+                        }
+                    ]
                 },
                 {
                     "moduleType": ["attack", "new"],
-                    "name": "mobe-missile",
+                    "replacingName": "juggernauts",
                     
-                    "damage": 3, "moabDamage": 20, "pierce": 5, "attackCooldown": 2, "attackType": "explosion", "impact": true
+                    "damage": 1, "ceramicDamage": 2, "fortifiedDamage": 2, "leadDamage": ["*", 6], "projectiles": [6, 360], "pierce": 100, "attackType": "normal",
+                    "rebounds": true,
+
+                    "rehit": ["rebound"]
+                }
+            ]
+        ],
+        "middle": [
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "attackCooldown": 0.85
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "attackCooldown": 0.7882
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "projectiles": [3, 30]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "attackCooldown": 0.75
+                },
+                {
+                    "moduleType": "transform", 
+                    "name": "fan-club",
+
+                    "ability": {"duration": 15, "cooldown": 50, "initialCooldown": 0, "type": "activated"},
+
+                    "target": [["dartMonkey", [2, 4, 2]]], "transform": "superfan",
+                    "count": 10, "addTargetsAfterTransform": true, "removeTransformedOnSell": false
+                },
+                {
+                    "moduleType": ["subtower", "new"],
+                    "name": "superfan",
+                    "range": 32,
+
+                    "modules": [
+                        {
+                            "moduleType": ["attack", "new"],
+                            "name": "dart", "mainAttack": true,
+                            
+                            "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
+                        }
+                    ]
+                }
+            ],
+            [
+                
+            ]
+        ],
+        "bottom": [
+            [
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["+", 8]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "increasedProjectileSpeed": true
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["+", 8]
+                },
+                {
+                    "moduleType": ["towerCamo"],
+                    "value": true
+                }
+                
+            ],
+            [
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "dart", "name": "bolt",
+                    
+                    "damage": 3, "pierce": 6, "attackType": "sharp",
+                    "rebounds": true
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["absolute", 56]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    
+                    "damage": 3, "attackCooldown": ["absolute", 0.75], "increasedProjectileSpeed": true,
+
+                    "crit": ["50", 7]
+                }
+            ],
+            [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    
+                    "damage": 3, "pierce": 7, "attackCooldown": ["absolute", 0.13], "attackType": "normal", "increasedProjectileSpeed": true,
+
+                    "crit": ["50", 5]
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": 20
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    "crosspath": [1, 0, 5],
+                    
+                    "pierce": 6
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    "crosspath": [2, 0, 5],
+                    
+                    "pierce": 8
                 }
             ]
         ]
     }
 }
 
-standardProperties = [
-    ["damage", "+"], ["moabDamage", "+"], ["fortifiedDamage", "+"], ["fortifiedMoabDamage", "+"], ["ceramicDamage", "+"], ["leadDamage", "+"], ["camoDamage", "+"], ["frozenDamage", "+"], ["stunnedDamage", "+"],
-    ["projectiles", "+"], ["projectileSpread", "absolute"],
-    ["pierce", "+"], ["impact", "boolean"],
-    ["range", "+"], ["zone", "boolean"],
-    ["attackCooldown", "*"],
-    ["attackType", "string"],
-    ["mainAttack", "boolean"]
-]
+function getPathSignificances(path) {
+    let output = {
+        "originalValues": path
+    };
 
-damageBonuses = {
-    "moabDamage": {
-        "name": "MOAB"
-    },
-    "fortifiedDamage": {
-        "name": "Fortified"
-    },
-    "fortifiedMoabDamage": {
-        "name": "Fortified MOAB"
-    },
-    "ceramicDamage": {
-        "name": "Ceramic"
-    },
-    "leadDamage": {
-        "name": "Lead"
-    },
-    "camoDamage": {
-        "name": "Camo"
-    },
-    "frozenDamage": {
-        "name": "Frozen"
-    },
-    "stunnedDamage": {
-        "name": "Stunned"
+    if (path[0] > path[1] && path[0] > path[2]) {
+        output.mainPath = 0
+        output.mainPathName = "top"
+        output.mainPathValue = path[0]
+        if (path[1] > path[2]) {
+            output.crosspathPath = 1
+            output.crosspathPathName = "middle"
+            output.crosspathPathValue = path[1]
+        } else {
+            output.crosspathPath = 2
+            output.crosspathPathName = "bottom"
+            output.crosspathPathValue = path[2]
+        }
+    } else if (path[1] > path[2]) {
+        output.mainPath = 1
+        output.mainPathName = "middle"
+        output.mainPathValue = path[1]
+        if (path[0] > path[2]) {
+            output.crosspathPath = 0
+            output.crosspathPathName = "top"
+            output.crosspathPathValue = path[0]
+        } else {
+            output.crosspathPath = 2
+            output.crosspathPathName = "bottom"
+            output.crosspathPathValue = path[2]
+        }
+    } else {
+        output.mainPath = 2
+        output.mainPathName = "bottom"
+        output.mainPathValue = path[2]
+        if (path[0] > path[1]) {
+            output.crosspathPath = 0
+            output.crosspathPathName = "top"
+            output.crosspathPathValue = path[0]
+        } else {
+            output.crosspathPath = 1
+            output.crosspathPathName = "middle"
+            output.crosspathPathValue = path[1]
+        }
+    }
+
+    return output
+}
+
+class Tower {
+    constructor(towerObject) {
+        this.tower = towerObject;
+    }
+
+    getUpgradeData(path) {
+        let upgradeCounter = 0
+        let output = new ModuleSet(this.tower.upgrades.base)
+        Array.from({length: getPathSignificances(path).mainPathValue}, () => {
+            upgradeCounter++
+            let upgradeData = this.tower.upgrades[getPathSignificances(path).mainPathName][upgradeCounter]
+            ModuleSet.mergeModules(output, upgradeData)
+        });
+        return output
+    }
+}
+
+class ModuleSet {
+    constructor(moduleSet) {
+        this.moduleSet = moduleSet;
+    }
+
+    mergeModules(initialModuleSet, upgradeData) {
+        
     }
 }
 
 class Module {
     constructor(module) {
-        this.module = module
-    }
-
-    static getTowerUpgrade(tower, crosspath) {
-        if (crosspath[0] == 0 && crosspath[1] == 0 && crosspath[2] == 0) {
-            return tower.upgrades.base
-        }
-    
-        let output = tower.upgrades.base
-    
-        let mainPath; let mainPathNumber;
-        if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
-            mainPath = "top";
-            mainPathNumber = 0;
-        } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
-            mainPath = "middle";
-            mainPathNumber = 1;
-        } else {
-            mainPath = "bottom";
-            mainPathNumber = 2;
-        }
-        
-        let crosspathName; let crosspathNumber;
-        if (crosspath[0] >= crosspath[1] && crosspath[0] >= crosspath[2]) {
-            if (crosspath[1] >= crosspath[2]) {
-                crosspathName = "middle";
-                crosspathNumber = 1;
-            } else {
-                crosspathName = "bottom";
-                crosspathNumber = 2;
-            }
-        } else if (crosspath[1] >= crosspath[0] && crosspath[1] >= crosspath[2]) {
-            if (crosspath[0] >= crosspath[2]) {
-                crosspathName = "top";
-                crosspathNumber = 0;
-            } else {
-                crosspathName = "bottom";
-                crosspathNumber = 2;
-            }
-        } else {
-            if (crosspath[1] >= crosspath[2]) {
-                crosspathName = "middle";
-                crosspathNumber = 1;
-            } else {
-                crosspathName = "bottom";
-                crosspathNumber = 2;
-            }
-        }
-
-        const upgradeCounter = crosspath[mainPathNumber];
-        for (let i = 0; i < upgradeCounter; i++) {
-            output = Module.mergeUpgrades(output, tower.upgrades[mainPath][i])
-        }
-    
-        /*if (crosspath[crosspathNumber] != 0) {
-            const upgradeCounter = crosspath[crosspathNumber];
-            for (let i = 0; i < upgradeCounter; i++) {
-                output = buffTower(output, tower.upgrades[crosspathName][i])
-            }
-        }*/
-        return output
-    }
-
-    static retainOnReplacement(module, oldModule) {
-        delete module.replacingName
-        module.moduleType[1] = "new"
-        if (module.attackType == undefined && oldModule.attackType != undefined) { 
-            module.attackType = oldModule.attackType
-        }
-        return module
-    }
-
-    static mergeUpgrades(initial, upgrade) {
-        let output = []
-        let newUpgradesAdded = []
-        for (let module in initial) {
-            let moduleMatch = false
-            for (let buffModule in upgrade) {
-                if (initial[module].name == upgrade[buffModule].name) {
-                    moduleMatch = true
-                    if (initial[module].moduleType[1] == "new" && upgrade[buffModule].moduleType[1] == "buff") {
-                        let initialModuleObject = new Module(initial[module]); let buffModuleObject = new Module(upgrade[buffModule])
-                        initialModuleObject.mergeModule(buffModuleObject)
-                        output.push(initialModuleObject.module)
-                    }
-                }
-                if (upgrade[buffModule].moduleType[1] == "new") {
-                    let moduleAdded = false
-                    for (let moduleName in newUpgradesAdded) {
-                        if (newUpgradesAdded[moduleName] == upgrade[buffModule].name) {
-                            moduleAdded = true
-                        }
-                    }
-                    if (moduleAdded == false) {
-                        output.push(upgrade[buffModule])
-                        newUpgradesAdded.push(upgrade[buffModule].name)
-                    }
-                }
-                if (upgrade[buffModule].moduleType[1] == "replace") {
-                    moduleMatch = true
-                    let replacingName = upgrade[buffModule].replacingName
-                    let targetExists = false; let initialPosition;
-                    for (let replacingModule in initial) {
-                        if (initial[replacingModule].name == replacingName) {
-                            targetExists = true; initialPosition = replacingModule
-                        }
-                    }
-                    if (targetExists == true) {
-                        let replacingModule = upgrade[module]
-                        let changedModule = this.retainOnReplacement(replacingModule, initial[initialPosition])
-                        output.push(replacingModule)
-                    }
-                }
-                
-            }
-            if (moduleMatch == false) {
-                output.push(initial[module])
-            }
-        }
-        return output
-    }
-
-    standardPropertyNames() {
-        let result = [];
-        for (let n in standardProperties) {
-            result.push(standardProperties[n][0])
-        }
-        return result
-    }
-
-    switchOperator(propertyName, input, operator) {
-        if (this.module[propertyName] == undefined) {this.module[propertyName] = 0}
-        switch (operator) {
-            case "+":
-                this.module[propertyName] += input
-                break;
-            case "*":
-                this.module[propertyName] = (this.module[propertyName] * (10000*input))/10000
-                break;
-            case "-":
-                this.module[propertyName] -= input
-                break;
-            case "/":
-                this.module[propertyName] /= input
-                break;
-            case "absolute":
-                this.module[propertyName] = input
-                break;
-        }
-    }
-
-    mergeStandardProperty(propertyName, input) {
-        switch (typeof input.module[propertyName]) {
-            case "number":
-                let operator;
-                for (let property in standardProperties) {if (standardProperties[property][0] == propertyName) {operator = standardProperties[property][1]}}
-                this.switchOperator(propertyName, input.module[propertyName], operator)
-                break;
-            case "object":
-                if (Array.isArray(input.module[propertyName])) {
-                    this.switchOperator(propertyName, input.module[propertyName][0], input.module[propertyName][1])
-                }
-                break;
-            case "boolean":
-                this.module[propertyName] = input.module[propertyName]
-                break;
-            case "string":
-                this.module[propertyName] = input.module[propertyName]
-                break;
-        }
-    }
-
-    mergeModule(input) {
-        for (let propertyName in input.module) {
-            if (this.standardPropertyNames().includes(propertyName)){
-                this.mergeStandardProperty(propertyName, input)
-            }
-        }
+        this.module = module;
     }
 }
 
-function basicStatsSection (module) {
-    let output = ``
-
-    let damageBonusesHTML = ``
-    for (bonus in damageBonuses) {
-        if (module[bonus] != undefined) {
-            damageBonusesHTML = damageBonusesHTML + `<p style="font-size: 20pt; padding-top: 0">
-                <span style="font-size: 12pt; color:var(--secondary6)">+2</span> 4 <span style="font-size: 12pt; color:var(--secondary6)">${damageBonuses[bonus].name}</span>
-            </p>`
-        }
-    }
-
-    if (module.damage != undefined) {output = output + `
-        <div>
-            <h5>Damage</h5>
-            <div style="display: flex; gap: 8px; align-items: end">
-                <p style="font-size: 20pt; padding-top: 0">2</p>
-                ${damageBonusesHTML}
-            </div>
-        </div>
-    `}
-
-    return output
-}
-
-async function getDataJSON() {
-    const requestURL =
-    "https://raw.githubusercontent.com/emilplane/b2popology/main/json/Towers/dartMonkey.json";
-    const request = new Request(requestURL);
-	
-    const response = await fetch(request);
-    data = await response.json();
-};
-
-async function main() {
-    await getDataJSON()
-
-    const x = Module.getTowerUpgrade(data, [5, 0, 0])
-    console.log(x)
-};
-
-main()
+let x = new Tower(dartMonkey)
+console.log(x)
+console.log(x.getUpgradeData([3, 1, 2]))
