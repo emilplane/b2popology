@@ -200,24 +200,83 @@
                 }
             ],
             [
-
+                
             ]
         ],
         "bottom": [
             [
-
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["+", 8]
+                }
             ],
             [
-
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart",
+                    
+                    "increasedProjectileSpeed": true
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["+", 8]
+                },
+                {
+                    "moduleType": ["towerCamo"],
+                    "value": true
+                }
+                
             ],
             [
-
+                {
+                    "moduleType": ["attack", "replace"],
+                    "replacingName": "dart", "name": "bolt",
+                    
+                    "damage": 3, "pierce": 6, "attackType": "sharp",
+                    "rebounds": true
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": ["absolute", 56]
+                }
             ],
             [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    
+                    "damage": 3, "attackCooldown": ["absolute", 0.75], "increasedProjectileSpeed": true,
 
+                    "crit": ["50", 7]
+                }
             ],
             [
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    
+                    "damage": 3, "pierce": 7, "attackCooldown": ["absolute", 0.13], "attackType": "normal", "increasedProjectileSpeed": true,
 
+                    "crit": ["50", 5]
+                },
+                {
+                    "moduleType": ["rangeBuff"],
+                    "value": 20
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    "crosspath": [1, 0, 5],
+                    
+                    "pierce": 6
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "bolt",
+                    "crosspath": [2, 0, 5],
+                    
+                    "pierce": 8
+                }
             ]
         ]
     }
