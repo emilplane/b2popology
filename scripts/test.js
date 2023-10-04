@@ -354,15 +354,8 @@ class Tower {
         this.tower = towerObject;
     }
 
-    getUpgradeData(path) {
-        let upgradeCounter = 0
-        let output = new ModuleSet(structuredClone(this.tower.upgrades.base))
-        Array.from({length: getPathSignificances(path).mainPathValue}, () => {
-            upgradeCounter++
-            let upgradeData = this.tower.upgrades[getPathSignificances(path).mainPathName][upgradeCounter-1]
-            console.log(ModuleSet.mergeModuleSets(output, upgradeData))
-        });
-        return output
+    static function() {
+        return tower
     }
 }
 
@@ -371,50 +364,61 @@ class ModuleSet {
         this.moduleSet = moduleSet;
     }
 
-    static findModule(name, data) {
-        for (let module in data.moduleSet) {
-            if (data.moduleSet[module].name = name) {
-                return {
-                    "value": data.moduleSet[module],
-                    "success": true, "position": module
-                }
-            }
-        }
-        return {"success": false}
-    }
-
-    static mergeModuleSets(initialModuleSet, upgradeData) {
-        let output = []
-        for (let upgradeModuleNumber in upgradeData) {
-            let initialModuleData = this.findModule(upgradeData[upgradeModuleNumber].name, initialModuleSet)
-            let initialModule = initialModuleData.value; let upgradeModule = upgradeData[upgradeModuleNumber]
-            
-            if (initialModule.name == upgradeModule.name) {
-                output.push(Module.mergeModules(initialModule, upgradeModule))
-            }
-        }
-        return output
+    static function() {
+        return moduleSet
     }
 }
+
+function standardNumberBuff(initial, buff, defaultOperator) {
+    if (buff == Infinity || buff == "Infinity" || buff == "infinity") {
+        return Infinity
+    }
+    let buffValue = buff; let operator = defaultOperator
+    if (typeof buff == "object") {
+        buffValue = buff[1]; operator = buff[0]
+    }
+    switch (operator) {
+        case "+": return initial+buffValue;
+        case "-": return initial-buffValue;
+        case "*": return ((initial*1000)*buffValue)/1000;
+        case "/": return initial/buffValue;
+        case "absolute": return buffValue;
+        case Infinity: case "Infinity": case "infinity": return Infinity;
+    }
+} 
 
 class Module {
     constructor(module) {
         this.module = module;
     }
 
-    static mergeModules(initialModule, upgradeModule) {
-        return upgradeModule
-    }
-}
-
-let x = new Tower(dartMonkey)
-//console.log(x)
-console.log(x.getUpgradeData([1, 0, 0]))
-
-let demoObject = {
-    "a": {
-        "b": {
-            "c": 1
+    static mergeModules(initialModule, buffModule) {
+        let output = structuredClone(initialModule)
+        let buff = buffModule.module
+        if (buff.moduleType[1] != "buff") {
+            return undefined
         }
+        if (buff.pierce != undefined) {
+            output.module.pierce = standardNumberBuff(output.module.pierce, buff.pierce, "absolute")
+        }
+        return output
     }
 }
+
+let initialModuleObject = {
+    "moduleType": ["attack", "new"],
+    "name": "dart", "mainAttack": true,
+    
+    "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
+}
+
+let buffModuleObject = {
+    "moduleType": ["attack", "buff"],
+    "name": "dart",
+    
+    "pierce": ["/", 3]
+}
+
+let initialModule = new Module(initialModuleObject)
+let buffModule = new Module(buffModuleObject)
+console.log(Module.mergeModules(initialModule, buffModule).module.pierce)
