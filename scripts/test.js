@@ -64,6 +64,12 @@
                 "name": "dart", "mainAttack": true,
                 
                 "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
+            },
+            {
+                "moduleType": ["attack", "new"],
+                "name": "dart2", "mainAttack": true,
+                
+                "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
             }
         ],
         "top": [
@@ -73,6 +79,18 @@
                     "name": "dart",
                     
                     "pierce": 1
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "dart2",
+                    
+                    "pierce": 4
+                },
+                {
+                    "moduleType": ["attack", "buff"],
+                    "name": "shouldNotExist",
+                    
+                    "pierce": 4
                 }
             ],
             [
@@ -338,11 +356,11 @@ class Tower {
 
     getUpgradeData(path) {
         let upgradeCounter = 0
-        let output = new ModuleSet(this.tower.upgrades.base)
+        let output = new ModuleSet(structuredClone(this.tower.upgrades.base))
         Array.from({length: getPathSignificances(path).mainPathValue}, () => {
             upgradeCounter++
-            let upgradeData = this.tower.upgrades[getPathSignificances(path).mainPathName][upgradeCounter]
-            ModuleSet.mergeModules(output, upgradeData)
+            let upgradeData = this.tower.upgrades[getPathSignificances(path).mainPathName][upgradeCounter-1]
+            console.log(ModuleSet.mergeModuleSets(output, upgradeData))
         });
         return output
     }
@@ -353,8 +371,29 @@ class ModuleSet {
         this.moduleSet = moduleSet;
     }
 
-    mergeModules(initialModuleSet, upgradeData) {
-        
+    static findModule(name, data) {
+        for (let module in data.moduleSet) {
+            if (data.moduleSet[module].name = name) {
+                return {
+                    "value": data.moduleSet[module],
+                    "success": true, "position": module
+                }
+            }
+        }
+        return {"success": false}
+    }
+
+    static mergeModuleSets(initialModuleSet, upgradeData) {
+        let output = []
+        for (let upgradeModuleNumber in upgradeData) {
+            let initialModuleData = this.findModule(upgradeData[upgradeModuleNumber].name, initialModuleSet)
+            let initialModule = initialModuleData.value; let upgradeModule = upgradeData[upgradeModuleNumber]
+            
+            if (initialModule.name == upgradeModule.name) {
+                output.push(Module.mergeModules(initialModule, upgradeModule))
+            }
+        }
+        return output
     }
 }
 
@@ -362,8 +401,20 @@ class Module {
     constructor(module) {
         this.module = module;
     }
+
+    static mergeModules(initialModule, upgradeModule) {
+        return upgradeModule
+    }
 }
 
 let x = new Tower(dartMonkey)
-console.log(x)
-console.log(x.getUpgradeData([3, 1, 2]))
+//console.log(x)
+console.log(x.getUpgradeData([1, 0, 0]))
+
+let demoObject = {
+    "a": {
+        "b": {
+            "c": 1
+        }
+    }
+}
