@@ -364,8 +364,20 @@ class ModuleSet {
         this.moduleSet = moduleSet;
     }
 
-    static mergeSet(moduleSetData, buffModuleSetData) {
-        return moduleSet
+    mergeSet(buffModuleSetData) {
+        for (let buffModuleNumber in buffModuleSetData.moduleSet) {
+            for (let initialModuleNumber in this.moduleSet) {
+                if (
+                    this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name 
+                    || this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName
+                ) {
+                    let initialModule = new Module(this.moduleSet[initialModuleNumber])
+                    let buffModule = new Module(buffModuleSetData.moduleSet[buffModuleNumber])
+                    initialModule.merge(buffModule)
+                    this.moduleSet[initialModuleNumber] = initialModule.module
+                }
+            }
+        }
     }
 }
 
@@ -389,19 +401,20 @@ function simpleNumberBuff(initial, buff, defaultOperator) {
 }
 
 const properties = [
-    {"name": "damage",          "displayName": "Damage",                "type": "number",   "defaultOperator": "+"},
-    {"name": "moabDamage",      "displayName": "MOAB Damage",           "type": "number",   "defaultOperator": "+"},
-    {"name": "fortifiedDamage", "displayName": "Fortified Damage",      "type": "number",   "defaultOperator": "+"},
-    {"name": "forfifiedMoabDamage","displayName": "Fortified MOAB Damage","type": "number", "defaultOperator": "+"},
-    {"name": "ceramicDamage",   "displayName": "Ceramic Damage",        "type": "number",   "defaultOperator": "+"},
-    {"name": "leadDamage",      "displayName": "Lead Damage",           "type": "number",   "defaultOperator": "+"},
-    {"name": "camoDamage",      "displayName": "Camo Damage",           "type": "number",   "defaultOperator": "+"},
-    {"name": "frozenDamage",    "displayName": "Frozen Damage",         "type": "number",   "defaultOperator": "+"},
-    {"name": "stunnedBloonDamage","displayName": "Stunned Bloon Damage","type": "number",   "defaultOperator": "+"},
-    {"name": "projectiles",     "displayName": "Projectiles",           "type": "number",   "defaultOperator": "absolute"},
-    {"name": "spread",          "displayName": "Spread",                "type": "number",   "defaultOperator": "absolute"},
-    {"name": "pierce",          "displayName": "Pierce",                "type": "number",   "defaultOperator": "+"},
-    {"name": "impact",          "displayName": "Impact",                "type": "boolean",  "defaultValue": "false"}
+    {"name": "damage",          "displayName": "Damage",                "type": "number",   "defaultOperator": "+"          },
+    {"name": "moabDamage",      "displayName": "MOAB Damage",           "type": "number",   "defaultOperator": "+"          },
+    {"name": "fortifiedDamage", "displayName": "Fortified Damage",      "type": "number",   "defaultOperator": "+"          },
+    {"name": "forfifiedMoabDamage","displayName": "Fortified MOAB Damage","type": "number", "defaultOperator": "+"          },
+    {"name": "ceramicDamage",   "displayName": "Ceramic Damage",        "type": "number",   "defaultOperator": "+"          },
+    {"name": "leadDamage",      "displayName": "Lead Damage",           "type": "number",   "defaultOperator": "+"          },
+    {"name": "camoDamage",      "displayName": "Camo Damage",           "type": "number",   "defaultOperator": "+"          },
+    {"name": "frozenDamage",    "displayName": "Frozen Damage",         "type": "number",   "defaultOperator": "+"          },
+    {"name": "stunnedBloonDamage","displayName": "Stunned Bloon Damage","type": "number",   "defaultOperator": "+"          },
+    {"name": "projectiles",     "displayName": "Projectiles",           "type": "number",   "defaultOperator": "absolute"   },
+    {"name": "spread",          "displayName": "Spread",                "type": "number",   "defaultOperator": "absolute"   },
+    {"name": "pierce",          "displayName": "Pierce",                "type": "number",   "defaultOperator": "+"          },
+    {"name": "impact",          "displayName": "Impact",                "type": "boolean",  "defaultValue": "false"         },
+    {"name": "attackCooldown",  "displayName": "Attack Cooldown",       "type": "number",   "defaultOperator": "*"          },
 ]
 
 const propertyTypes = {
@@ -409,7 +422,10 @@ const propertyTypes = {
         main.module[property.name] = simpleNumberBuff(
             main.module[property.name],
             buff[property.name], property.defaultOperator
-        )},
+        )
+    //console.log(property.name)
+    //console.log(main.module[property.name])
+    },
     "boolean": function(main, buff, property) {
         main.module[property.name] = buff[property.name]
     }
@@ -428,13 +444,14 @@ class Module {
                     let property = properties[propertyNumber]
                     if (buff[property.name] != undefined) {
                         propertyTypes[property.type](this, buff, property)
-                    }
+                    }   
                 }
                 return this;
             case "replace":
-                let previousModule = this
+                let previousModule = this.module
                 this.module = structuredClone(buffModule.module)
                 this.module.moduleType[1] = "new"
+                delete this.module.replacingName
         }
         return undefined
     }
@@ -469,21 +486,14 @@ let buffModuleSetData = [
         "pierce": 1, "attackCooldown": 0.9
     },
     {
-        "moduleType": ["attack", "buff"],
-        "name": "bullet",
+        "moduleType": ["attack", "replace"],
+        "name": "multishot", "replacingName": "bullet",
     
-        "damage": 1
+        "damage": 1, "attackCooldown": 0.1, "impact": false
     }
 ]
 
-for (let buffModuleNumber in buffModuleSetData) {
-    for (let initialModuleNumber in moduleSetData) {
-        if (moduleSetData[initialModuleNumber].name == buffModuleSetData[buffModuleNumber].name){
-            console.log(moduleSetData[initialModuleNumber].name)
-        }
-    }
-}
-let initialModule = new Module(moduleSetData[2])
-let buffModule = new Module(buffModuleSetData[1])
-initialModule.merge(buffModule)
-console.log(initialModule)
+let initialModuleSet = new ModuleSet(moduleSetData)
+let buffModuleSet = new ModuleSet(buffModuleSetData)
+initialModuleSet.mergeSet(buffModuleSet)
+console.log(initialModuleSet)
