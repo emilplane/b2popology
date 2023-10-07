@@ -1,5 +1,18 @@
 let events = [
     {
+        "name": "Battles 2 Update 2.2 Patch Notes are available!",
+        "startDate": "2023-09-14T13:39:34Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "View",
+                "link": "https://b2popology.com/2_2.html"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 Update 2.1.2 is out!",
         "startDate": "2023-09-14T13:39:34Z",
         "content": `
