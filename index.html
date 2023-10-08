@@ -3,151 +3,27 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/mainStyle.css"/>
+        <link rel="stylesheet" href="styles/style.css"/>
         <link id="luckiestGuyFix" rel="stylesheet" href="styles/luckiestGuyChanged.css"/>
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Josefin+Sans&family=Roboto&family=Tektur&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="headerDiv">
-                <h1 style="margin:0">Battles 2 Popology</h1>
-                <div class="headerLinks">
-                    <a href="index.html"><button class="selectedButton">Home</button></a>
-                    <a href="popology.html"><button>Popology</button></a>
-                    <a href="https://b2.lol/"><button>b2.lol</button></a>
-                    <a href="https://www.reddit.com/r/btd6/comments/atomg3/advanced_popology_vol_1_primary_towers/"><button>BTD6 Popology</button></a>
-                    <a href="https://nitjus7.github.io/BTD6-Central/index.html"><button>BTD6 Central</button></a>
-                    <a href="https://discord.com/invite/9YAaxDXAYZ"><button class="discordButton"><img class="discordLogoButton" src="media/Icons/Discord Logo White.png"/></button></a>
-                </div>
-                <div style="margin-left: auto;align-items: center;" class="menuDiv">
-                    <input type="image" id="menu" class="menuIcon" alt="Menu Icon" src="media/Icons/Menu.png"
-                        style="height: 40px;aspect-ratio: 1/1; padding-bottom: 2px;"/>
-                </div>
-            </div>
-            <div class="hamburgerDiv" id="hamburgerDiv">
-                <div class="hamburgerContent">
-                    <h1 style="font-size: 44px;">Battles 2 Popology</h1>
-                    <h4 class="hamburgerClose" id="hamburgerClose">Close</h4>
-                    <div style="height: 30px"></div>
-                    <a href="index.html"><h4>Home</h4></a>
-                    <a href="popology.html"><h4>Popology</h4></a>
-                    <a href="https://b2.lol/"><h4>b2.lol</h4></a>
-                    <a href="https://www.reddit.com/r/btd6/comments/atomg3/advanced_popology_vol_1_primary_towers/"><h4>BTD6 Popology</h4></a>
-                    <a href="https://nitjus7.github.io/BTD6-Central/index.html" style="display: flex; flex-wrap: wrap;"><h4>BTD6 Central</h4></a>
-                    <a href="https://discord.com/invite/9YAaxDXAYZ"><h4>Discord Server</h4></a>
-                </div>
-            </div>
-        </header>
         <main>
-            <section class="sectionStyle">
-                <a href="https://www.reddit.com/r/bloonscardstorm/">
-                    <input type="image" alt="2.1.1 Banner" class="banner normalBanner" src="media/Graphics/BCS.jpg"/>
-                </a>
-                <a href="https://www.reddit.com/r/bloonscardstorm/">
-                    <input type="image" alt="2.1.1 Banner" class="banner wideBanner" src="media/Graphics/BCS Wide.jpg"/>
-                </a>
-            </section>
-            <section class="roundedBox" style="display: flex; gap: 8px; justify-content: center;">
+            <section style="height: 500px; display: flex; align-items: center; justify-content: center;">
                 <div>
-                    <h6 class="luckiestGuy">Version <span class="highlightText">2.1.2</span></h6>
-                </div>
-                <div class="verticalLine"></div>
-                <div>
-                    <h6 class="luckiestGuy" id="season">Season <span class="highlightText" id="seasonNumber">--</span></h6>
-                </div>
-                <div class="verticalLine"></div>
-                <div>
-                    <h6 class="luckiestGuy">Website <span class="highlightText" id="version">--</span> Beta</h6>
-                </div>
-            </section>
-            <section class="roundedBox">
-                <h2>Categories</h2>
-                <div>
-                    <a href="popology.html?section=primary&page=dartMonkey"><button class="primaryTowerButton">Primary</button></a>
-                    <a href="popology.html?section=military&page=sniperMonkey"><button class="militaryTowerButton">Military</button></a>
-                    <a href="popology.html?section=magic&page=wizardMonkey"><button class="magicTowerButton">Magic</button></a>
-                    <a href="popology.html?section=support&page=monkeyVillage"><button class="supportTowerButton">Support</button></a>
-                    <a href="popology.html?section=heroes&page=quincy"><button class="heroesButton">Heroes</button></a>
-                    <a href="popology.html?section=accolades&page=winsWithTowerCategory"><button class="accoladesButton">Accolades</button></a>
-                </div>
-            </section>
-            <section id="eventSection">
-
-            </section>
-            <section class="roundedBox">
-                <h2>Other Resources</h2>
-                <div class="horizontalLine"></div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                    <div style="flex:400px">
-                        <h4>b2.lol</h4>
-                        <p>Get stats on any player in HoM including a recent game history, and access to a full HoM leaderboard, courtesy of the
-                            <a href="https://data.ninjakiwi.com/">Ninja Kiwi API</a>.</p>
-                        <p>Preview Leaderboard not yet implemented.</p>
-                        <a href="https://discord.com/invite/F48THzCSu5">
-                            <button>
-                                b2.lol
-                            </button>
-                        </a>
-                    </div>
-                    <div style="flex:400px">
-                        <h4>Battles 2 Clans</h4>
-                        <p>Clans aren't out yet, but people are still making them! Use this document to view clan stats in the Hall of Masters!</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1qbhPzxiAjKo-WwAsOLoh5yrwGTqEZvuXXX2NmjQek2Q/edit?usp=sharing">
-                            <button>
-                                Go to resource
-                            </button>
-                        </a>
-                    </div>
-                    <div style="flex:400px">
-                        <h4>Battles 2 Data</h4>
-                        <p>Up-to-date data on eco stats and efficiency, farm efficiency, and more!</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1guVhez01z09s8LR3_GrBLlYgSRK3XF-ZLop26FMEQK4/edit#gid=1926627977">
-                            <button>
-                                Go to resource
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section class="roundedBox discordSection">
-                <h3>Battles 2 Popology Discord</h3>
-                <p>Want to report a bug, help us develop more awesome features, or just chat? Join the Discord server!</p>
-                <a href="https://discord.gg/9YAaxDXAYZ">
-                    <button class="discordButton">
-                        Discord server
-                    </button>
-                </a>
-            </section>
-            <section style="display: flex; flex-wrap: wrap;">
-                <div class="roundedBox" style="flex: 400px;">
-                    <h4>Website Updates</h4>
-                    <p>View an update history of this website.</p>
-                    <a href="updates.html">
-                        <button>
-                            Website History
-                        </button>
-                    </a>
-                </div>
-                <div class="roundedBox" style="flex: 400px;">
-                    <h4>Battles 2 Popology Google Document</h4>
-                    <p>Not all data has been transferred yet, so use this if you need something that's missing here, like accolades.</p>
-                    <a href="https://docs.google.com/document/d/1F2PwRxST2Y4YoHFOGBlWo5yby-qQD53dQqjpItxaAS4/edit">
-                        <button>
-                            Go to resource
-                        </button>
-                    </a>
+                    <h4>Search stats:</h4>
+                    <input type="text" style="border-width:0; background-color: var(--primaryLight3); font-size: 28pt; border-radius: 0px;padding:8px;"/>
+                    <div class="inputUnderline" style="height: 2px"></div>
                 </div>
             </section>
         </main>
     </body>
-    <script src="scripts/fontFix.js"></script>
-    <script src="scripts/home.js"></script>
-    <script src="scripts/version.js"></script>
-    <script src="scripts/menu.js"></script>
+    <script src="scripts/test.js"></script>
 </html>

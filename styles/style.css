@@ -1,23 +1,20 @@
 :root {
-    --primary1: #E6F3EF; 
-    --primary2: #DAF3EA;
-    --primary3: #C2F3E2;
-    --primary4: #92F3D3;
+    --primaryLight3: hsl(161, 61%, 93%);
+    --primaryLight2: hsl(160, 56%, 74%);
+    --primaryLight1: hsl(160, 61%, 64%);
+    --primary: hsl(160, 100%, 39%);
+    --primaryDark1: hsl(160, 100%, 31%);
+    --primaryDark2: hsl(160, 100%, 26%);
+    --primaryDark3: hsl(160, 100%, 10%);
 
-    --primary5: #00F3A3;
-
-    --primary6: #3DCC9D;
-    --primary7: #267F62;
-    --primary8: #134032;
-
-    --secondary1: #FFFFFF;
-    --secondary2: #F2F2F2; 
-    --secondary3: #E6E6E6;
-    --secondary4: #D8D8D8;
-    --secondary5: #B3B3B3;
-    --secondary6: #696969;
-    --secondary7: #1e1e1e;
-    --secondary8: #000000;
+    --shade1: hsl(0, 0%, 100%);
+    --shade2: hsl(0, 0%, 95%);
+    --shade3: hsl(0, 0%, 76%);
+    --shade4: hsl(0, 0%, 60%);
+    --shade5: hsl(0, 0%, 40%);
+    --shade6: hsl(0, 0%, 24%);
+    --shade7: hsl(0, 0%, 12%);
+    --shade8: hsl(0, 0%, 0%);
 
     --primaryTower1: #E6EEF2;
     --primaryTower3: #C1E2F2;
@@ -43,8 +40,6 @@
 
     --heroes5: #F3AB48;
     --heroes3: #F3DEC2;
-
-    --red5: #f34848;
 }
 
 html {
@@ -57,7 +52,7 @@ body {
 	display: flex;
 	flex-direction: column;
     @media (prefers-color-scheme: dark) {
-        background-color: var(--secondary8);
+        background-color: var(--shade8);
     }
 }
 
@@ -65,12 +60,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, button {
-    font-family: "Urbanist";
+h1, h2, h3, h4, h5, button, input {
+    font-family: "Gabarito";
     font-weight: 400;
-    color: var(--secondary8);
+    color: var(--shade8);
     @media (prefers-color-scheme: dark) {
-        color: var(--secondary1);
+        color: var(--shade1);
     }
 }
 
@@ -81,9 +76,9 @@ h6, p, ul {
 }
 
 h5, h6 {
-    color: var(--secondary8);
+    color: var(--shade8);
     @media (prefers-color-scheme: dark) {
-        color: var(--secondary1);
+        color: var(--shade1);
     }
 }
 
@@ -113,9 +108,9 @@ h6 {
 
 p, ul {
 	font-size: 14px;
-    color: var(--secondary7);
+    color: var(--shade7);
     @media (prefers-color-scheme: dark) {
-        color: var(--secondary2);
+        color: var(--shade2);
     }
 }
 
@@ -123,38 +118,21 @@ ul {
     padding-left: 20px;
 }
 
-button, select {
-    background-color: var(--primary5);
-    @media (prefers-color-scheme: dark) {
-        color: var(--secondary8);
-    };
-	border-radius: 8px;
-	border: 0;
-	cursor: pointer;
-    font-size: 16px;
-    transition-duration: 0.3s;
-    margin-top: 8px;
-}
-button:hover, button:focus {
-    background: var(--primary3);
-    color: var(--secondary7);
-    transition-duration: 0.3s;
+input {
+    outline-width: 0;
 }
 
-main {
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
+.inputUnderline {
+    background-color: var(--primary);
+    height: 100%; 
+    width: 0%;
+    margin-left: 50%;
+    margin-right: 50%;
+    transition: 0.2s;
+}
+
+input:focus + .inputUnderline {
     width: 100%;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    background-color: var(--primary2);
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--primary8);
-    };
+    margin: 0;
+    transition: 0.5s;
 }
