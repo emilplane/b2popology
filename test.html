@@ -3,139 +3,24 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/mainStyle.css"/>
+        <link rel="stylesheet" href="styles/style.css"/>
         <link id="luckiestGuyFix" rel="stylesheet" href="styles/luckiestGuyChanged.css"/>
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <h1>Battles 2 Popology</h1>
+        </header>
         <main style="display: block; max-width: 100%;">
-            <div style="background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0), var(--secondary6)),url('media/Tower Banners/monkeyBuccaneer/1.png');height: 300px;background-position: center;background-repeat: no-repeat;background-size: cover;">
-                <div style="margin: 0 16px">
-                    <div style="display: grid;flex-direction: column;align-items: center;max-width: 1000px;margin: 0 auto; padding-top: 12px">
-                        <section class="towerBannerStyle">
-                            <h1>Monkey Pirates</h1>
-                            <div style="display:flex; gap: 0 16px;">
-                                <h4>Monkey Buccaneer</h4>
-                                <h4>040</h4>
-                            </div>
-                        </section>
-                        <section style="padding: 8px;">
-                            <select id="categorySelect" style="color: black">
-                                <option value="primary">Primary</option>
-                                <option value="military">Military</option>
-                                <option value="magic">Magic</option>
-                                <option value="support">Support</option>
-                                <option value="heroes">Heroes</option>
-                            </select>
-                            </section>
-                        <section class="roundedBox shadow">
-                            <h3>Tower Cost</h3>
-                            <div class="horizontalLine"></div>
-                            <div class="statWrapper">
-                                <div>
-                                    <h3>$7,700</h3>
-                                    <h4 class="nameAndValue_name">Total Cost</h4>
-                                </div>
-                                <div>
-                                    <div class="nameAndValue_valueFlex">
-                                        <h3>$5,390</h3>
-                                        <h3 style="color: var(--red5);">-$2,310</h3>
-                                    </div>
-                                    <h4 class="nameAndValue_name">Sell Cost</h4>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="roundedBox shadow">
-                            <div style="display:grid;grid-template-columns: 200px auto 1fr">
-                                <div>
-                                    <h4>dart <span style="color:var(--primary3)">attack</span></h4>
-                                </div>
-                                <div class="statLine"></div>
-                                <div>
-                                    <div class="statWrapper">
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>1</h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Damage</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>4</h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Pierce</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>1 <span class="unitStyle">second</span></h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Attack Cooldown</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>Sharp</h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Attack Type</h4>
-                                        </div>
-                                    </div>
-                                    <p style="margin-top: 6px;">This attack is duplicated in both directions</p>
-                                </div>
-                            </div>
-                            <div style="display:grid;grid-template-columns: 200px auto 1fr; margin-top: 24px;">
-                                <div>
-                                    <h4>grape <span style="color:var(--primary3)">attack</span></h4>
-                                </div>
-                                <div class="statLine"></div>
-                                <div>
-                                    <div class="statWrapper">
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>1</h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Damage</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>5</h3>
-                                                <h3>80&deg; <span class="unitStyle">spread</span></h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Projectiles</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>1</h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Pierce</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>1.3 <span class="unitStyle">second</span></h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Attack Cooldown</h4>
-                                        </div>
-                                        <div>
-                                            <div class="nameAndValue_valueFlex">
-                                                <h3>Fire</h3>
-                                            </div>
-                                            <h4 class="nameAndValue_name">Attack Type</h4>
-                                        </div>
-                                    </div>
-                                    <p style="margin-top: 6px;">Applies burn status</p>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
+            
         </main>
     </body>
-    <script src="scripts/fontFix.js"></script>
     <script src="scripts/test.js"></script>
 </html>
