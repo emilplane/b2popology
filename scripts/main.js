@@ -9831,6 +9831,232 @@ let data = {
                     </li>
                 </ul>`
                 }
+            },
+            "starCaptainJericho": {
+                "name": "Star Captain Jericho",
+                "data": {
+                    "1": `<ul>
+                    <li>$850</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points</li>
+                    <li>size: ? radius</li>
+                    <li>placeable on: land</li>
+                    <li>bullet attack
+                        <ul>
+                            <li>1d, 1i, 0.5s, ?r, energy? type</li>
+                            <li>applies shocked status
+                                <ul>
+                                    <li>1d/0.95s, 1s duration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>bloon-adjustment passive ability
+                        <ul>
+                            <li>every 4th bloon, gives a natural bloon on the opponent's side an extra layer
+                                <ul>
+                                    <li>note: cannot upgrade to a MOAB-class bloon</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>in-it-for-the-money ability (70s cooldown, 17s initial cooldown, 6s duration)
+                        <ul>
+                            <li>applies money-trap status to up to 25 sent bloons within ability duration
+                                <ul>
+                                    <li>gives $7
+                                        <ul>
+                                            <li>gained money is paid out to the player in 1 second intervals</li>
+                                            <li>total money gain with all 25 bloons: $175</li>
+                                        </ul>
+                                    </li>
+                                    <li>opponent debt +$7
+                                        <ul>
+                                            <li>total opponent debt with all 25 bloons: +$175</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>regrow rate buffed
+                        <ul>
+                            <li>+?s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>adjusted bloons will randomly be either camo, fortified, or regrow
+                                <ul>
+                                    <li>note: can apply fortified property to opponent's natural blimps</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.45s)</li>
+                        </ul>
+                    </li>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>gives +? when stronger bloons are popped</li>
+                            <li>+? to oppoonent debt when stronger bloons are popped</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+2d (5), +?r (?), camo</li>
+                        </ul>
+                    </li>
+                    <li>player sent camo bloons buffed
+                        <ul>
+                            <li>+? speed</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>Now applies every other bloon spawned naturally</li>
+                        </ul>
+                    </li>
+                    <li>in-it-for-the-money buffed
+                        <ul>
+                            <li>+?s (?s) duration</li>
+                        </ul>
+                    </li>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>can affect 1 MOAB-class bloon instead of a normal bloon
+                                <ul>
+                                    <li>gives $300</li>
+                                    <li>opponent debt +$300</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>MOAB-class bloons sent with the ability give $600 and add +$600 to opponent debt</li>
+                        </ul>
+                    </li>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>now takes $1,000</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>smuggle-run ability (? cooldown, ? initial cooldown, 8s duration)
+                        <ul>
+                            <li>stores $5,500 worth of user sent bloons
+                                <ul>
+                                    <li>cannot store bloons over the price limit</li>
+                                    <li>cannot store BADs</li>
+                                    <li>after ability duration stored bloons are deposited ?% of the way down the opponent's player sent track</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>MOAB-class bloons sent with the ability give $1,300 and add +$1,300 to opponent debt</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.225s)</li>
+                        </ul>
+                    </li>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>$8,000 capacity</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>applies more modifiers to adjusted bloons</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>MOAB-class bloons sent with the ability give $3,000 and add +$3,000 to opponent debt</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>affects your bloon sends as well </li>
+                        </ul>
+                    </li>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>$13,000 capacity</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>66.67%s (0.15)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>$20,000 capacity</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>?s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+?d (?), shatter type</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>?s cooldown</li>
+                            <li>$20,000 capacity</li>
+                            <li>affects BAD bloons</li>
+                        </ul>
+                    </li>
+                </ul>`
+                }
             }
         }
     },
