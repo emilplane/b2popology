@@ -49,7 +49,11 @@ let data = {
                                     <li>dart attack replaced by spikeball
                                         <ul>
                                             <li>1d, 1cd (2cd), 22p, 36.8r, 1.15s, shatter type</li>
-                                            <li>can rebound off of walls</li>
+                                            <li>can rebound off of walls 
+                                                <ul>
+                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -62,7 +66,11 @@ let data = {
                                     <li>spikeball attack replaced by juggernaut
                                         <ul>
                                             <li>2d, 4cd (6cd), 50p, 36.8r, 1.0s, normal type</li>
-                                            <li>can rebound off of walls</li>
+                                            <li>can rebound off of walls 
+                                                <ul>
+                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -77,7 +85,7 @@ let data = {
                                             <li>4d, 16cd (20cd), 5fd (9fd), 6x ld (24ld), 200p, 36.8r, 1.0s, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
-                                                    <li>can rehit bloons after rebounding</li>
+                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
                                                 </ul>
                                             </li>
                                             <li>at 50%p and 100%p: emits juggernauts
@@ -92,7 +100,7 @@ let data = {
                                             <li>1d, 2cd (3cd), 6x ld (6ld), 2fd (3fd), 6j 360&deg spread, 100p, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
-                                                    <li>can rehit bloons after rebounding</li>
+                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -505,7 +513,7 @@ let data = {
                             `
                         },
                         "5": {
-                            "name": "005 - MOAB Domination - $55,000",
+                            "name": "005 - MOAB Domination - <span class='newChange'>$52,000</span>",
                             "content": `
                                 <ul>
                                     <li>kylie buffed
@@ -957,8 +965,10 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>520: meteor +1p (2p)</li>
-                                            <li>502: meteor +300d (1,000d)</li>
+                                            <li><span class="newChange">510: meteor +1p (2p)</span></lli>
+                                            <li><span class="newChange">520: meteor +1p (3p)</span></li>
+                                            <li><span class="newChange">501: meteor +300d (1,000d)</span></li>
+                                            <li><span class="newChange">502: meteor +400d (1,400d)</span></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -1015,6 +1025,11 @@ let data = {
                                         <ul>
                                             <li>1d, 2j 360&deg spread, 200p, 0.0333s, sharp type</li>
                                             <li>attack rotates clockwise at a constant speed</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="newChange">crosspath</span>
+                                        <ul>
+                                            <li><span class="newChange">041: maelstrom rotates counterclockwise at a constant speed</span></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -2229,7 +2244,7 @@ let data = {
                                <ul>
                                     <li>airburst buffed
                                         <ul>
-                                            <li>50%s (0.125625s)</li>
+                                            <li><span class="newChange">33.33%s (0.08375s)</span></li>
                                         </ul>
                                     </li>
                                     <li>gains command buff
@@ -2435,12 +2450,12 @@ let data = {
                                             <li>1.2s
                                                 <ul>
                                                     <li>on contact: explosion</li>
-                                                    <li>1d, 28p, 40r blast, explosion type</li>
+                                                    <li>1d, <span class="newChange">35p,</span> 40r blast, explosion type</li>
                                                 </ul>
                                             </li>
                                             <li>on contact: frags
                                                 <ul>
-                                                    <li>1d, 8j, 1i, sharp type</li>
+                                                    <li>1d, 8j, <span class="newChange">2i,</span> sharp type</li>
                                                     <li>damage cannot be buffed</li>
                                                 </ul>
                                             </li>
@@ -3022,9 +3037,10 @@ let data = {
                             "name": "050 - Special Poperations - $30,000",
                             "content": `
                                 <ul>
-                                    <li>supplies ability buffed
+                                    <li><span class="newChange">supplies replaced by special-supplies</span></li>
                                         <ul>
-                                            <li>$8000 and 15 lives</li>
+                                            <li>drops $8000 and 15 lives</li>
+                                            <li><span class="newChange">activates all supplies abilities</span></li>
                                         </ul>
                                     </li>
                                     <li>gains special-poperations ability (25s cooldown, battle ready)
@@ -3175,7 +3191,7 @@ let data = {
                             <li>shell attack
                                 <ul>
                                     <li>2.0s passive</li>
-                                    <li>[BUG] targets randomly within 0 units of selected point instead of 18 units</li>
+                                    <li><span class="newChange">targets randomly within 18 units of selected points</span></li>
                                     <li>on expire (0.5s): explosion
                                         <ul>
                                             <li>1d, 40p, 20r blast, explosion type</li>
@@ -3211,7 +3227,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Shell Shock - $950",
+                            "name": "300 - Shell Shock - <span class='newChange'>$1,100</span>",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
@@ -3381,14 +3397,14 @@ let data = {
                                 <ul>
                                     <li>shell buffed
                                         <ul>
-                                            <li>[BUG] 0 units random target variance instead of 8</li>
+                                            <li><span class="newChange">8 units random target variance</span></li>
                                         </ul>
                                     </li>
                                 </ul>
                             `
                         },
                         "2": {
-                            "name": "002 - Burny Stuff - $600",
+                            "name": "002 - Burny Stuff - <span class='newChange'>$700</span>",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
@@ -3597,6 +3613,7 @@ let data = {
                                     <li>beam replaced by full-beam
                                         <ul>
                                             <li>25d, +15 shocked4 damage (45 shocked4 damage), 1000p, 0.2s passive, normal type</li>
+                                            <li><span class="newChange">additional +55d to the first target</span></li>
                                             <li>one solid beam to the edge of the screen</li>
                                             <li>applies shocked4 status
                                                 <ul>
@@ -5160,7 +5177,13 @@ let data = {
                                             <li>+13d (14d)</li>
                                         </ul>
                                     </li>
-                                    <li>+$3,000 end of round income</li>
+                                    <li><span class="newChange">jungle-bounty replaced by spirit-bounty</span>
+                                        <ul>
+                                            <li><span class="newChange">gain $1,500</span></li>
+                                            <li><span class="newChange">activates all jungle-bounty abilities</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="newChange">+$2,500</span> end of round income</li>
                                     <li>vine-grab buffed
                                         <ul>
                                             <li>time between grabs 0.3s, damages per 0.15s</li>
@@ -8124,7 +8147,7 @@ let data = {
                             <li>shell uses up all impacts upon hitting a purple bloon</li>
                             <li>on contact: explosion
                                 <ul>
-                                    <li>1d, 5p, 18r blast, explosion type</li>
+                                    <li>1d, <span class="newChange">4p,</span> 18r blast, explosion type</li>
                                     <li>on damage: applies shock effect
                                         <ul>
                                             <li>1d/1s, lasts for 1s</li>
@@ -8143,7 +8166,7 @@ let data = {
                     "2": `<ul>
                     <li>explosion buffed
                         <ul>
-                            <li>+2p (7p)</li>
+                            <li>+2p <span class="newChange">(6p)</span></li>
                         </ul>
                     </li>
                 </ul>`,
@@ -8151,7 +8174,7 @@ let data = {
                     <li>gains high-energy-shells ability (45s cooldown, 9s duration, battle ready)
                         <ul>
                             <li>all attacks have normal type</li>
-                            <li>buffs shell: 55%s ? (0.385s ?)</li>
+                            <li>buffs shell: <span class="newChange">58%s (0.406s)</span></li>
                             <li>buffs shock: 1d/0.5s, lasts for 1.5s</li>
                             <li>duration increases 0.5s per level (7.5 + 0.5 level)</li>
                         </ul>
@@ -8215,7 +8238,7 @@ let data = {
                     "11": `<ul>
                     <li>explosion buffed
                         <ul>
-                            <li>+2p (9p)</li>
+                            <li>+2p <span class="newChange">(9p)</span></li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9083,7 +9106,7 @@ let data = {
                     "6": `<ul>
                     <li>slam buffed
                         <ul>
-                            <li>all normal Bloons are stunned for 0.3s when attacked</li>
+                            <li>all normal Bloons are stunned for <span class="newChange">0.45s</span> when attacked</li>
                         </ul>
                     </li>
                     <li>aoe buffed
@@ -9808,6 +9831,232 @@ let data = {
                     </li>
                 </ul>`
                 }
+            },
+            "starCaptainJericho": {
+                "name": "Star Captain Jericho",
+                "data": {
+                    "1": `<ul>
+                    <li>$850</li>
+                    <li>Leveling Rate: 1.58823529x</li>
+                    <li>Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points</li>
+                    <li>size: ? radius</li>
+                    <li>placeable on: land</li>
+                    <li>bullet attack
+                        <ul>
+                            <li>1d, 1i, 0.5s, ?r, energy? type</li>
+                            <li>applies shocked status
+                                <ul>
+                                    <li>1d/0.95s, 1s duration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>bloon-adjustment passive ability
+                        <ul>
+                            <li>every 4th bloon, gives a natural bloon on the opponent's side an extra layer
+                                <ul>
+                                    <li>note: cannot upgrade to a MOAB-class bloon</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "3": `<ul>
+                    <li>in-it-for-the-money ability (70s cooldown, 17s initial cooldown, 6s duration)
+                        <ul>
+                            <li>applies money-trap status to up to 25 sent bloons within ability duration
+                                <ul>
+                                    <li>gives $7
+                                        <ul>
+                                            <li>gained money is paid out to the player in 1 second intervals</li>
+                                            <li>total money gain with all 25 bloons: $175</li>
+                                        </ul>
+                                    </li>
+                                    <li>opponent debt +$7
+                                        <ul>
+                                            <li>total opponent debt with all 25 bloons: +$175</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>regrow rate buffed
+                        <ul>
+                            <li>+?s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>adjusted bloons will randomly be either camo, fortified, or regrow
+                                <ul>
+                                    <li>note: can apply fortified property to opponent's natural blimps</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.45s)</li>
+                        </ul>
+                    </li>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>gives +? when stronger bloons are popped</li>
+                            <li>+? to oppoonent debt when stronger bloons are popped</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+2d (5), +?r (?), camo</li>
+                        </ul>
+                    </li>
+                    <li>player sent camo bloons buffed
+                        <ul>
+                            <li>+? speed</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>Now applies every other bloon spawned naturally</li>
+                        </ul>
+                    </li>
+                    <li>in-it-for-the-money buffed
+                        <ul>
+                            <li>+?s (?s) duration</li>
+                        </ul>
+                    </li>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>can affect 1 MOAB-class bloon instead of a normal bloon
+                                <ul>
+                                    <li>gives $300</li>
+                                    <li>opponent debt +$300</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>MOAB-class bloons sent with the ability give $600 and add +$600 to opponent debt</li>
+                        </ul>
+                    </li>
+                    <li>stand-and-deliver buffed
+                        <ul>
+                            <li>now takes $1,000</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>smuggle-run ability (? cooldown, ? initial cooldown, 8s duration)
+                        <ul>
+                            <li>stores $5,500 worth of user sent bloons
+                                <ul>
+                                    <li>cannot store bloons over the price limit</li>
+                                    <li>cannot store BADs</li>
+                                    <li>after ability duration stored bloons are deposited ?% of the way down the opponent's player sent track</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>MOAB-class bloons sent with the ability give $1,300 and add +$1,300 to opponent debt</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>50%s (0.225s)</li>
+                        </ul>
+                    </li>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>$8,000 capacity</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>applies more modifiers to adjusted bloons</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>money-trap buffed
+                        <ul>
+                            <li>MOAB-class bloons sent with the ability give $3,000 and add +$3,000 to opponent debt</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>bloon-adjustment buffed
+                        <ul>
+                            <li>affects your bloon sends as well </li>
+                        </ul>
+                    </li>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>$13,000 capacity</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>66.67%s (0.15)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>$20,000 capacity</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>?s cooldown</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>bullet buffed
+                        <ul>
+                            <li>+?d (?), shatter type</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>smuggle-run buffed
+                        <ul>
+                            <li>?s cooldown</li>
+                            <li>$20,000 capacity</li>
+                            <li>affects BAD bloons</li>
+                        </ul>
+                    </li>
+                </ul>`
+                }
             }
         }
     },
@@ -10451,7 +10700,7 @@ let prices = {
             "base": 325,
             "top": [200, 280, 1300, 3400, 30000],
             "middle": [175, 250, 1100, 4350, 35000],
-            "bottom": [100, 300, 1300, 3200, 55000]
+            "bottom": [100, 300, 1300, 3200, 52000]
         },
         "bombShooter": {
             "base": 525,
@@ -10511,9 +10760,9 @@ let prices = {
         },
         "mortarMonkey": {
             "base": 700,
-            "top": [350, 500, 950, 7500, 28000],
+            "top": [350, 500, 1100, 7500, 28000],
             "middle": [300, 500, 900, 7600, 27000],
-            "bottom": [200, 600, 700, 8500, 40000]
+            "bottom": [200, 700, 700, 8500, 40000]
         },
         "dartlingGunner": {
             "base": 800,

@@ -6,7 +6,7 @@
 
     --primary5: #00F3A3;
 
-    --primary6: #3DCC9D;
+    --primary6: #2da980;
     --primary7: #267F62;
     --primary8: #134032;
 
@@ -479,4 +479,11 @@ a:link, a:visited{
     display: flex;
     flex-wrap: wrap;
     gap: 16px
+}
+
+.newChange {
+    color: var(--primary6);
+    @media (prefers-color-scheme: dark) {
+        color: var(--primary3);
+    }
 }
