@@ -1,14 +1,18 @@
 let events = [
     {
         "name": "Battles 2 Update 2.2 Patch Notes are available!",
-        "startDate": "2023-09-14T13:39:34Z",
+        "startDate": "2023-10-09T14:36:13Z",
         "content": `
             
         `,
         "links": [
             {
-                "name": "View",
-                "link": "https://b2popology.com/2_2.html"
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/173teat/update_22_is_coming_soon_update_notes/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/173teat/update_22_is_coming_soon_update_notes/"
             }
         ]
     },
@@ -77,76 +81,6 @@ let events = [
             {
                 "name": "Open in Old Reddit",
                 "link": "https://old.reddit.com/r/battles2/comments/160yu5e/update_211_is_rolling_out_now_patch_notes/"
-            }
-        ]
-    },
-    {
-        "name": "Battles 2 2.1 Update Survey by thewarrior71",
-        "startDate": "2023-08-24T10:00:00Z",
-        "endDate": "2023-08-31T10:00:00Z",
-        "content": `
-
-        `,
-        "links": [
-            {
-                "name": "Open in Reddit",
-                "link": "https://www.reddit.com/r/battles2/comments/15zycv4/battles_2_update_21_balance_survey/"
-            },
-            {
-                "name": "Open in Old Reddit",
-                "link": "https://old.reddit.com/r/battles2/comments/15zycv4/battles_2_update_21_balance_survey/"
-            },
-            {
-                "name": "Survey Link",
-                "link": "https://forms.gle/jVGfk1LCQn6Artei9"
-            },
-            {
-                "name": "Survey Results",
-                "link": "https://docs.google.com/spreadsheets/d/1Xe-KM6HUQVZc7icpdzrnEH9ck84B7JA6D2W214jL44g/edit?usp=sharing"
-            }
-        ]
-    },
-    {
-        "name": "300k Celebration and Avatar Competition",
-        "startDate": "2023-08-23T15:00:35Z",
-        "endDate": "2023-09-07T06:59:00Z",
-        "content": `
-            <p>"Every time we hit a milestone like this, our team is blown away with this community's excitement, engagement and passion for our game. You have all made the game better, giving us feedback, suggestions and your own art and designs! In line with celebrating that and all 300k of you, we are running another avatar competition!" Click "learn more" to find out more about this competition!</p>
-            <p>Ninja Kiwi Terms apply.</p>
-        `,
-        "links": [
-            {
-                "name": "Open in Reddit",
-                "link": "https://www.reddit.com/r/btd6/comments/15zpjcm/300k_celebration_and_avatar_competition/"
-            },
-            {
-                "name": "Open in Old Reddit",
-                "link": "https://old.reddit.com/r/btd6/comments/15zpjcm/300k_celebration_and_avatar_competition/"
-            },
-            {
-                "name": "Ninja Kiwi Terms & Conditions",
-                "link": "https://ninjakiwi.com/terms"
-            },
-        ]
-    },
-    {
-        "name": "Battles 2 Update 2.1 Announced!",
-        "startDate": "2023-08-11T12:44:47Z",
-        "content": `
-            <p>"Update 2.1 is coming soon to Battles 2! Show off your passion for popping with Monkey Prestige, set sail on an epic new map Pirate Cove and more!"</p>
-        `,
-        "links": [
-            {
-                "name": "Open in Reddit",
-                "link": "https://www.reddit.com/r/battles2/comments/15o7yan/update_21_coming_soon_update_notes/"
-            },
-            {
-                "name": "Open in Old Reddit",
-                "link": "https://old.reddit.com/r/battles2/comments/15o7yan/update_21_coming_soon_update_notes/"
-            },
-            {
-                "name": "Update Video",
-                "link": "https://youtu.be/tCa4IQfsq-w"
             }
         ]
     }

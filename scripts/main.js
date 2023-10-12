@@ -9912,8 +9912,24 @@ let data = {
                     </li>
                     <li>money-trap buffed
                         <ul>
-                            <li>gives +? when stronger bloons are popped</li>
-                            <li>+? to oppoonent debt when stronger bloons are popped</li>
+                            <li>gives $14 if the bloon is a purple, lead, or zebra bloon and adds +$14 to opponent debt
+                                <ul>
+                                    <li>total money gain/total debt for this type of bloon: $350</li>
+                                    <li>net difference: $700</li>
+                                </ul>
+                            </li>
+                            <li>gives $35 if the bloon is a purple, lead, or zebra bloon and adds +$35 to opponent debt
+                                <ul>
+                                    <li>total money gain/total debt for this type of bloon: $875</li>
+                                    <li>net difference: $1750</li>
+                                </ul>
+                            </li>
+                            <li>gives $60 if the bloon is a purple, lead, or zebra bloon and adds +$60 to opponent debt
+                                <ul>
+                                    <li>total money gain/total debt for this type of bloon: $1500</li>
+                                    <li>net difference: $3000</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9965,7 +9981,7 @@ let data = {
                     </li>
                 </ul>`,
                     "10": `<ul>
-                    <li>smuggle-run ability (? cooldown, ? initial cooldown, 8s duration)
+                    <li>smuggle-run ability (? cooldown, battle ready, 8s duration)
                         <ul>
                             <li>stores $5,500 worth of user sent bloons
                                 <ul>
@@ -10885,7 +10901,7 @@ function generateHTMLFromData() {
 			HTMLLocation.insertAdjacentHTML("beforeend", "<div id=" + IDName + "></div>");
 
             let tierHTML;
-			switch (data[section]["type"]) {   
+			switch (data[section].type) {   
                 case "legacy":
                     for (const path in data[section].entries[entry].data)
                         if (path != "base") {
@@ -10945,6 +10961,13 @@ function generateHTMLFromData() {
                         tierHTML = ``
                     }
                     let firstLevelHTML = data[section].entries[entry].data[1]
+                    if (entry == "starCaptainJericho") {
+                        document.getElementById(IDName).insertAdjacentHTML("beforebegin", `
+                            <h5>Notice</h5>
+                            <p>Star Captain Jericho is a new addition to the game, and we are still testing, adding, and correcting data. If you would like to help out, please join the <a href=https://discord.com/invite/9YAaxDXAYZ>discord</a>.</p>
+                            <div style="height:16px"></div>
+                        `)
+                    }
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                         <h1>${data[section]["entries"][entry]["name"]}</h1>
                         <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
