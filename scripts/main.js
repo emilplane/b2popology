@@ -9880,6 +9880,7 @@ let data = {
                                             <li>total opponent debt with all 25 bloons: +$175</li>
                                         </ul>
                                     </li>
+                                    <li>status is not removed from bloons after the in-it-for-the-money runs out</li>
                                 </ul>
                             </li>
                         </ul>
