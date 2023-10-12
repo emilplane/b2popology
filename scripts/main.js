@@ -9941,7 +9941,7 @@ let data = {
                     </li>
                     <li>player sent camo bloons buffed
                         <ul>
-                            <li>+? speed</li>
+                            <li>+15% speed</li>
                         </ul>
                     </li>
                 </ul>`,
