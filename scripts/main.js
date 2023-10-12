@@ -9918,13 +9918,13 @@ let data = {
                                     <li>net difference: $700</li>
                                 </ul>
                             </li>
-                            <li>gives $35 if the bloon is a purple, lead, or zebra bloon and adds +$35 to opponent debt
+                            <li>gives $35 if the bloon is a rainbow bloon and adds +$35 to opponent debt
                                 <ul>
                                     <li>total money gain/total debt for this type of bloon: $875</li>
                                     <li>net difference: $1750</li>
                                 </ul>
                             </li>
-                            <li>gives $60 if the bloon is a purple, lead, or zebra bloon and adds +$60 to opponent debt
+                            <li>gives $60 if the bloon is a ceramic bloon and adds +$60 to opponent debt
                                 <ul>
                                     <li>total money gain/total debt for this type of bloon: $1500</li>
                                     <li>net difference: $3000</li>
@@ -9975,7 +9975,7 @@ let data = {
                     </li>
                     <li>sent fortified bloons buffed
                         <ul>
-                            <li>+10%hp</li>
+                            <li>+12.5%hp</li>
                             <li>affects MOAB-class bloons, including BADs</li>
                         </ul>
                     </li>
