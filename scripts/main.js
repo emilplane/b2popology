@@ -2397,6 +2397,7 @@ let data = {
                                     <li>gains 2 small platforms that can be used to place towers
                                         <ul>
                                             <li>towers on a platform should see over most obstacles</li>
+                                            <li>fits up to 7r towers</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -9607,7 +9608,7 @@ let data = {
                     "16": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>66.67%s (0.15), +??d (??)</li>
+                            <li>66.67%s (0.15), +?d (?)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9628,14 +9629,14 @@ let data = {
                     "19": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>+??d (??)</li>
+                            <li>+?d (?)</li>
                         </ul>
                     </li>
                 </ul>`,
                     "20": `<ul>
                     <li>decoy ability buffed
                         <ul>
-                            <li>??s cooldown</li>
+                            <li>?s cooldown</li>
                         </ul>
                     </li>
                 </ul>`
@@ -9798,7 +9799,7 @@ let data = {
                     "16": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>66.67%s (0.15), +??d (??)</li>
+                            <li>66.67%s (0.15), +?d (?)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9812,21 +9813,21 @@ let data = {
                     "18": `<ul>
                     <li>stand-and-deliver buffed
                         <ul>
-                            <li>??s cooldown</li>
+                            <li>?s cooldown</li>
                         </ul>
                     </li>
                 </ul>`,
                     "19": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>+??d (??)</li>
+                            <li>+?d (?)</li>
                         </ul>
                     </li>
                 </ul>`,
                     "20": `<ul>
                     <li>misdirection ability buffed
                         <ul>
-                            <li>??s cooldown</li>
+                            <li>?s cooldown</li>
                         </ul>
                     </li>
                 </ul>`
@@ -9843,7 +9844,7 @@ let data = {
                     <li>placeable on: land</li>
                     <li>bullet attack
                         <ul>
-                            <li>1d, 1i, 0.5s, ?r, energy? type</li>
+                            <li>1d, 1i, 0.5s, ?r, plasma type</li>
                             <li>applies shocked status
                                 <ul>
                                     <li>1d/0.95s, 1s duration</li>
@@ -9887,7 +9888,7 @@ let data = {
                     "4": `<ul>
                     <li>regrow rate buffed
                         <ul>
-                            <li>+?s</li>
+                            <li>85%s (2.25s)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9958,6 +9959,12 @@ let data = {
                     <li>stand-and-deliver buffed
                         <ul>
                             <li>now takes $1,000</li>
+                        </ul>
+                    </li>
+                    <li>sent fortified bloons buffed
+                        <ul>
+                            <li>+15%hp</li>
+                            <li>affects MOAB-class bloons, including BADs</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -10043,7 +10050,7 @@ let data = {
                     "19": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>+?d (?), shatter type</li>
+                            <li>+?d (?), normal type</li>
                         </ul>
                     </li>
                 </ul>`,
