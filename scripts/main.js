@@ -9907,7 +9907,7 @@ let data = {
                     "6": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>50%s (0.45s)</li>
+                            <li>50%s (0.25s)</li>
                         </ul>
                     </li>
                     <li>money-trap buffed
@@ -9957,14 +9957,9 @@ let data = {
                             <li>MOAB-class bloons sent with the ability give $600 and add +$600 to opponent debt</li>
                         </ul>
                     </li>
-                    <li>stand-and-deliver buffed
-                        <ul>
-                            <li>now takes $1,000</li>
-                        </ul>
-                    </li>
                     <li>sent fortified bloons buffed
                         <ul>
-                            <li>+15%hp</li>
+                            <li>+10%hp</li>
                             <li>affects MOAB-class bloons, including BADs</li>
                         </ul>
                     </li>
@@ -9992,7 +9987,7 @@ let data = {
                     "12": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>50%s (0.225s)</li>
+                            <li>50%s (0.125s)</li>
                         </ul>
                     </li>
                     <li>smuggle-run buffed
@@ -10030,7 +10025,7 @@ let data = {
                     "16": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>66.67%s (0.15)</li>
+                            <li>66.67%s (0.0833)</li>
                         </ul>
                     </li>
                 </ul>`,
