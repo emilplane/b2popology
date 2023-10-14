@@ -56,11 +56,11 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul, select, button {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, button, input {
+h1, h2, h3, h4, h5, h6, button, input, select {
     font-family: "Gabarito";
     font-weight: 400;
     color: var(--shade8);
@@ -69,45 +69,53 @@ h1, h2, h3, h4, h5, button, input {
     }
 }
 
-h6, p, ul {
+p, ul {
     font-family: "Roboto";
     font-weight: 100;
-    padding: 4px;
+    padding: 4px 0;
 }
 
-h5, h6 {
+h5, h6, select, button {
     color: var(--shade8);
     @media (prefers-color-scheme: dark) {
         color: var(--shade1);
     }
 }
 
+.largeText2 {
+    font-size: 40pt;
+}
+
+.largeText1 {
+    font-size: 36pt;
+}
+
 h1 {
-	font-size: 36px;
+	font-size: 30pt;
 }
 
 h2 {
-	font-size: 28px;
+	font-size: 24pt;
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 22pt;
 }
 
 h4 {
-	font-size: 20px;
+	font-size: 18pt;
 }
 
 h5 {
-	font-size: 16px;
+	font-size: 16pt;
 }
 
-h6 {
-	font-size: 15px;
+h6, select, button {
+	font-size: 13pt;
 }
 
 p, ul {
-	font-size: 14px;
+	font-size: 12pt;
     color: var(--shade7);
     @media (prefers-color-scheme: dark) {
         color: var(--shade2);
@@ -118,8 +126,42 @@ ul {
     padding-left: 20px;
 }
 
+.luckiestGuy {
+    font-family: "Luckiest Guy";
+    font-weight: 400;
+}
+
+.luckiestGuyShadow {
+    @media (prefers-color-scheme: dark) {
+        text-shadow: 0 0 16px var(--shade8);
+    }
+}
+
+.slightTextEmphasis {
+    color: var(--primaryDark2);
+    @media (prefers-color-scheme: dark) {
+        color: var(--primaryLight2);
+    }
+}
+
 input {
     outline-width: 0;
+}
+
+select, button {
+    background-color: var(--primaryLight2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark2);
+    };
+    border-radius: 8px;
+    padding: 4px;
+    border: 0
+}
+
+select {
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .inputUnderline {
@@ -135,4 +177,59 @@ input:focus + .inputUnderline {
     width: 100%;
     margin: 0;
     transition: 0.5s;
+}
+
+.baseSection {
+    padding: 8px;
+}
+
+.roundedBoxSection {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--shade2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade7);
+    }
+}
+
+.coverImage {
+    opacity: .5; filter: blur(4px);
+    width: 100%; height: 500px; 
+    object-fit: cover; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+.statsPageWrapper {
+    position: absolute;
+    width: 100%; 
+    top: 0
+}
+
+.configurationBar {
+    height: 40px;
+    display: flex; 
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    gap: 32px;
+    background-color: var(--shade1);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade7);
+    }
+}
+
+.configurationBarTextSelectorWrapper {
+    display: flex; gap: 8px; align-items: center;
+}
+
+.horizontalLine {
+    height: 2px;
+    background-color: var(--shade8);
+    margin: 8px 0;
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade1);
+    };
 }

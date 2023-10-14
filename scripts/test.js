@@ -1,4 +1,73 @@
- let dartMonkey = {
+let towerDirectory = [
+    {
+        "name": "primary", 
+        "displayName": "Primary",
+        "type": "tower", 
+        "data": [
+            {
+                "name": "dartMonkey",
+                "enabled": true
+            },
+            {
+                "name": "boomerangMonkey",
+                "enabled": true
+            },
+            {
+                "name": "bombShooter",
+                "enabled": true
+            },
+            {
+                "name": "tackShooter",
+                "enabled": true
+            },
+            {
+                "name": "iceMonkey",
+                "enabled": true
+            },
+            {
+                "name": "glueGunner",
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "name": "military", 
+        "displayName": "Military",
+        "type": "tower", 
+        "data": [
+            {
+                "name": "sniperMonkey",
+                "enabled": true
+            },
+            {
+                "name": "monkeySub",
+                "enabled": true
+            },
+            {
+                "name": "monkeyBuccaneer",
+                "enabled": true
+            },
+            {
+                "name": "monkeyAce",
+                "enabled": true
+            },
+            {
+                "name": "heliPilot",
+                "enabled": true
+            },
+            {
+                "name": "mortarMonkey",
+                "enabled": true
+            },
+            {
+                "name": "dartlingGunner",
+                "enabled": true
+            }
+        ]
+    }
+]
+
+let dartMonkey = {
     "name": "dartMonkey", "displayName": "Dart Monkey",
     "upgradeNames": {
         "top": [
@@ -497,3 +566,5 @@ let initialModuleSet = new ModuleSet(moduleSetData)
 let buffModuleSet = new ModuleSet(buffModuleSetData)
 initialModuleSet.mergeSet(buffModuleSet)
 console.log(initialModuleSet)
+
+let selectedCategory = "primary"; let selectedTower = "dartMonkey"

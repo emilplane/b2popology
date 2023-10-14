@@ -10594,7 +10594,7 @@ async function getDataJSON() {
 let urlParams = new URLSearchParams(window.location.search);
 
 let selectedCategory = "primary";
-let selectedPage ="dartMonkey"
+let selectedPage = "dartMonkey"
 
 let urlSection; let urlEntry;
 
@@ -10996,8 +10996,8 @@ function popup() {
 }
 
 async function main() {
-	//Get Values
-	urlSection = urlParams.get('section')
+
+    urlSection = urlParams.get('section')
 	urlPage = urlParams.get('page')
 
 	if (urlSection != null) {
