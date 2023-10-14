@@ -2451,16 +2451,21 @@ let data = {
                                             <li>1.2s
                                                 <ul>
                                                     <li>on contact: explosion</li>
-                                                    <li>1d, <span class="newChange">35p,</span> 40r blast, explosion type</li>
+                                                    <li>1d, 25p, 40r blast, explosion type</li>
                                                 </ul>
                                             </li>
                                             <li>on contact: frags
                                                 <ul>
-                                                    <li>1d, 8j, <span class="newChange">2i,</span> sharp type</li>
+                                                    <li>1d, 8j, 1i, sharp type</li>
                                                     <li>damage cannot be buffed</li>
                                                 </ul>
                                             </li>
                                             <li>this attack is duplicated in both directions</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li><span class="newChange">031: explosion +7p (35p), frags +1i (2i)</span></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3507,7 +3512,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>105: wall-of-fire +5p (25), +6r (21)</li>
+                                            <li>105: wall-of-fire +5p (45), +6r (21)</li>
                                             <li>205: burn +50d (150d), wall-of-fire +1d (5)</li>
                                         </ul>
                                     </li>
@@ -4967,7 +4972,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>104: gold-splash +8p (23p)</li>
+                                            <li>104: gold-splash +8p (20p)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -9844,10 +9849,11 @@ let data = {
                     <li>placeable on: land</li>
                     <li>bullet attack
                         <ul>
-                            <li>1d, 1i, 0.5s, ?r, plasma type</li>
+                            <li>1d, +1 shocked damage (2d), 1i, 0.5s, ?r, plasma type</li>
                             <li>applies shocked status
                                 <ul>
                                     <li>1d/0.95s, 1s duration</li>
+                                    <li>[BUG] if a bloon with shocked status is hit it removes the status instead (but still deals the bonus damage)</li>
                                 </ul>
                             </li>
                         </ul>
@@ -9936,7 +9942,7 @@ let data = {
                     "7": `<ul>
                     <li>bullet buffed
                         <ul>
-                            <li>+2d (5), +?r (?), camo</li>
+                            <li>+2d (3), +?r (?), camo</li>
                         </ul>
                     </li>
                     <li>player sent camo bloons buffed
