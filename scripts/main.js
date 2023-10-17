@@ -11235,7 +11235,7 @@ function createButtonListeners() {
                             <p>Total Cost: $${sum}<p>
                             <div style="display:flex;flex-wrap:wrap;margin-bottom:12px">
                                 <p>Total 10x: $${sum+prices[section][entry].top[0]}<p>
-                                <p>Total 20x: $${sum+prices[section][entry].top[0]+prices[section][entry].middle[1]}<p>
+                                <p>Total 20x: $${sum+prices[section][entry].top[0]+prices[section][entry].top[1]}<p>
                                 <p>Total 01x: $${sum+prices[section][entry].middle[0]}<p>
                                 <p>Total 02x: $${sum+prices[section][entry].middle[0]+prices[section][entry].middle[1]}<p>
                             </div>
@@ -11247,6 +11247,7 @@ function createButtonListeners() {
                                 <p>Sell 02x: $${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.7)*0.01} | -$${Math.round(100*(sum+prices[section][entry].middle[0]+prices[section][entry].middle[1])*0.3)*0.01}<p>
                             </div>
                         `
+                        console.log(sum+prices[section][entry].top[0]+prices[section][entry].middle[1])
                     }
                 }
                 popupData.popupHTML = `

@@ -397,9 +397,9 @@ header {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
-    background: linear-gradient(rgba(0, 243, 162, 0.9)0 300px, rgba(0, 0, 0, 0) 500px);
+    background-color: rgba(197, 255, 237, 0.95);
     @media (prefers-color-scheme: dark) {
-        background: linear-gradient(rgba(0, 243, 162, 0.863) 0 50%, rgba(0, 243, 162, 0.13) 75%)
+        background-color: rgba(0, 41, 28, 0.95)
     };
     display: none;
 }
@@ -422,6 +422,9 @@ a:link, a:visited{
 .hamburgerContent h1, .hamburgerContent h4 {
     text-decoration-line: none;
     color: var(--secondary8);
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary2);
+    };
 }
 
 .menuDiv {
