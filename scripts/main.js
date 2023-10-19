@@ -10813,10 +10813,10 @@ let data = {
                 "name": "Pink Bloons",
                 "data": `
                     <ul>
-                        <li>Base Speed: 50 (2x)</li>
+                        <li>Base Speed: 87.5 (3.5x)</li>
                         <li>Spaced
                             <ul>
-                                <li>Rounds: 5-9</li>
+                                <li>Rounds: 4-8</li>
                                 <li>Count: 3</li>
                                 <li>Total time: 0.9s</li>
                                 <li>Eco: +$1.4</li>
@@ -10839,7 +10839,7 @@ let data = {
                 "name": "White Bloons",
                 "data": `
                     <ul>
-                        <li>Base Speed: 45 (1.8x)</li>
+                        <li>Base Speed: 50 (2x)</li>
                         <li>Spaced
                             <ul>
                                 <li>Rounds: 5-9</li>
@@ -10879,7 +10879,7 @@ let data = {
                             <ul>
                                 <li>Rounds: 10-25</li>
                                 <li>Count: 4</li>
-                                <li>Total time: 0.32</li>
+                                <li>Total time: 0.32s</li>
                                 <li>Eco: +$3.0</li>
                                 <li>Cost: $75</li>
                             </ul>
