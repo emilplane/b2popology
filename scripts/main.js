@@ -10710,6 +10710,537 @@ let data = {
                 `
             }
         }
+    },
+    "bloons": {
+        "type": "legacy-bloons",
+        "entries": {
+            "red": {
+                "name": "Red Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 25 (1.0x)</li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 1-11</li>
+                                <li>Count: 8</li>
+                                <li>Total time: 0.8s</li>
+                                <li>Eco: +$1.0</li>
+                                <li>Cost: $20</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "blue": {
+                "name": "Blue Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 35 (1.4x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 1-2</li>
+                                <li>Count: 5</li>
+                                <li>Total time: 1.5s</li>
+                                <li>Eco: +$0.8</li>
+                                <li>Cost: $15</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 3-12</li>
+                                <li>Count: 6</li>
+                                <li>Total time: 0.6s</li>
+                                <li>Eco: +$1.0</li>
+                                <li>Cost: $24</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "green": {
+                "name": "Green Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 45 (1.8x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 2-4</li>
+                                <li>Count: 5</li>
+                                <li>Total time: 1.15s</li>
+                                <li>Eco: +$0.9</li>
+                                <li>Cost: $18</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 5-16</li>
+                                <li>Count: 5</li>
+                                <li>Total time: 0.4s</li>
+                                <li>Eco: +$1.4</li>
+                                <li>Cost: $35</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "yellow": {
+                "name": "Yellow Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 80 (3.2x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 3-6</li>
+                                <li>Count: 5</li>
+                                <li>Total time: 1.15s</li>
+                                <li>Eco: +$1.2</li>
+                                <li>Cost: $24</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 7-19</li>
+                                <li>Count: 4</li>
+                                <li>Total time: 0.24s</li>
+                                <li>Eco: +$1.6</li>
+                                <li>Cost: $40</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "pink": {
+                "name": "Pink Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 50 (2x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 5-9</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.9s</li>
+                                <li>Eco: +$1.4</li>
+                                <li>Cost: $28</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 9+</li>
+                                <li>Count: 4</li>
+                                <li>Total time: 0.2s</li>
+                                <li>Eco: +$2.4</li>
+                                <li>Cost: $65</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "white": {
+                "name": "White Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 45 (1.8x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 5-9</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.84s</li>
+                                <li>Eco: +$1.5</li>
+                                <li>Cost: $30</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 10-21</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.3s</li>
+                                <li>Eco: +$2.6</li>
+                                <li>Cost: $65</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "black": {
+                "name": "Black Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 45 (1.8x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 6-9</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.75s</li>
+                                <li>Eco: +$1.6</li>
+                                <li>Cost: $33</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 10-25</li>
+                                <li>Count: 4</li>
+                                <li>Total time: 0.32</li>
+                                <li>Eco: +$3.0</li>
+                                <li>Cost: $75</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "purple": {
+                "name": "Purple Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 85 (3.4x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 8-10</li>
+                                <li>Count: 4</li>
+                                <li>Total time: 1.6s</li>
+                                <li>Eco: +$3.3</li>
+                                <li>Cost: $70</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 11+</li>
+                                <li>Count: 5</li>
+                                <li>Total time: 0.175s</li>
+                                <li>Eco: +$2.7</li>
+                                <li>Cost: $115</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "zebra": {
+                "name": "Zebra Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 75 (3.0x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 9-10</li>
+                                <li>Count: 2</li>
+                                <li>Total time: 0.6s</li>
+                                <li>Eco: +$2.7</li>
+                                <li>Cost: $60</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 11-29</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.24s</li>
+                                <li>Eco: +$3.5</li>
+                                <li>Cost: $120</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "lead": {
+                "name": "Lead Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 45 (1.8x)</li>
+                        <li>HP (fortified): 6</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 10-11</li>
+                                <li>Count: 2</li>
+                                <li>Total time: 2s</li>
+                                <li>Eco: +$2.8</li>
+                                <li>Cost: $60</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 12+</li>
+                                <li>Count: 4</li>
+                                <li>Total time: 0.6ss</li>
+                                <li>Eco: +$4.5</li>
+                                <li>Cost: $150</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "rainbow": {
+                "name": "Rainbow Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 55 (2.2x)</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 12</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 0.35s</li>
+                                <li>Eco: +$3.0</li>
+                                <li>Cost: $70</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 13+</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.4s</li>
+                                <li>Eco: +$6.0</li>
+                                <li>Cost: $250</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "ceramic": {
+                "name": "Ceramic Bloons",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 62.5 (2.5x)</li>
+                        <li>HP (regular): 10</li>
+                        <li>HP (fortified): 30</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 13-15</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 0.75s</li>
+                                <li>Eco: +$5.0</li>
+                                <li>Cost: $150</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 16-27</li>
+                                <li>Count: 2</li>
+                                <li>Total time: 0.24s</li>
+                                <li>Eco: +$1.8</li>
+                                <li>Cost: $400</li>
+                            </ul>
+                        </li>
+                        <li>Tight
+                            <ul>
+                                <li>Rounds: 28+</li>
+                                <li>Count: 40</li>
+                                <li>Total time: 0.8s</li>
+                                <li>Eco: +$0</li>
+                                <li>Cost: $4,000</li>
+                            </ul>
+                        </li>
+                        <li>Super Ceramics
+                            <ul>
+                                <li>Round: 30</li>
+                                <li>HP modifier: 6x
+                                    <ul>
+                                        <li>Regular: 60 HP</li>
+                                        <li>Fortified: 180 HP</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "moab": {
+                "name": "MOABs",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 25 (1x)</li>
+                        <li>Base HP: 200</li>
+                        <li>Base HP (fortified): 400</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 17-18</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 3s</li>
+                                <li>Eco: +$0</li>
+                                <li>Cost: $1,000</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 19+</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 0.5s</li>
+                                <li>Eco: +$0</li>
+                                <li>Cost: $1,000</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "bfb": {
+                "name": "BFBs",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 8.5 (0.34x)</li>
+                        <li>Base HP: 700</li>
+                        <li>Base HP (fortified): 1,400</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 20-21</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 3.5s</li>
+                                <li>Eco: -$25</li>
+                                <li>Cost: $1,800</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 22+</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 0.6s</li>
+                                <li>Eco: -$25</li>
+                                <li>Cost: $1,800</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "zomg": {
+                "name": "ZOMGs",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 7 (0.28x)</li>
+                        <li>Base HP: 4,000</li>
+                        <li>Base HP (fortified): 8,000</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 22-23</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 6s</li>
+                                <li>Eco: -$100</li>
+                                <li>Cost: $5,500</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 24-29</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 1s</li>
+                                <li>Eco: -$100</li>
+                                <li>Cost: $5,500</li>
+                            </ul>
+                        </li>
+                        <li>Tight
+                            <ul>
+                                <li>Rounds: 30+</li>
+                                <li>Count: 4</li>
+                                <li>Total time: 12s</li>
+                                <li>Eco: -$400</li>
+                                <li>Cost: $12,000</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "ddt": {
+                "name": "DDTs",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 68.75 (2.75x)</li>
+                        <li>Base HP: 400</li>
+                        <li>Base HP (fortified): 800</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 26-27</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 1.4s</li>
+                                <li>Eco: -$150</li>
+                                <li>Cost: $2,500</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 28+</li>
+                                <li>Count: 3</li>
+                                <li>Total time: 0.6s</li>
+                                <li>Eco: -$300</li>
+                                <li>Cost: $5,000</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "bad": {
+                "name": "BADs",
+                "data": `
+                    <ul>
+                        <li>Base Speed: 4.5 (0.18x)</li>
+                        <li>Base HP: 12,500</li>
+                        <li>Base HP (fortified): 25,000</li>
+                        <li>Spaced
+                            <ul>
+                                <li>Rounds: 30-31</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 7s</li>
+                                <li>Eco: -$400</li>
+                                <li>Cost: $15,000</li>
+                            </ul>
+                        </li>
+                        <li>Grouped
+                            <ul>
+                                <li>Rounds: 32+</li>
+                                <li>Count: 1</li>
+                                <li>Total time: 1s</li>
+                                <li>Eco: -$400</li>
+                                <li>Cost: $15,000</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "modifiers": {
+                "name": "Bloon Modifiers",
+                "data": `
+                    <ul>
+                        <li>Regrow
+                            <ul>
+                                <li>Unlocked Round 8</li>
+                                <li>Cash modifier: $1.6x</li>
+                            </ul>
+                        </li>
+                        <li>Camo
+                            <ul>
+                                <li>Unlocked Round 12</li>
+                                <li>Cash modifier: $2x</li>
+                            </ul>
+                        </li>
+                        <li>Fortified
+                            <ul>
+                                <li>Unlocked Round 18</li>
+                                <li>Cash modifier: $2x</li>
+                                <li>Eco modifier for Blimps only: 2x greater eco loss</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            "ramping": {
+                "name": "Health and Speed Ramping",
+                "data": `
+                    <ul>
+                        <li>Starting at Round 25 to Round 30
+                            <ul>
+                                <li>+20% base Blimp HP per round</li>
+                                <li>+10% base speed per round</li>
+                            </ul>
+                        </li>
+                        <li>Starting at Round 31+
+                            <ul>
+                                <li>+40% base Blimp HP per round</li>
+                                <li>+10% base speed per round</li>
+                            </ul>
+                        </li>
+                        <li>Notes
+                            <ul>
+                                <li>All of this is additive. In other words, the blimp HP/speed increases by a flat amount each round.</li>
+                                <li>Only Blimps are affected by HP scaling, however speed scaling affects all Bloons</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            }
+        }
     }
 };
 
@@ -10967,13 +11498,6 @@ function generateHTMLFromData() {
                         tierHTML = ``
                     }
                     let firstLevelHTML = data[section].entries[entry].data[1]
-                    if (entry == "starCaptainJericho") {
-                        document.getElementById(IDName).insertAdjacentHTML("beforebegin", `
-                            <h5>Notice</h5>
-                            <p>Star Captain Jericho is a new addition to the game, and we are still testing, adding, and correcting data. If you would like to help out, please join the <a href=https://discord.com/invite/9YAaxDXAYZ>discord</a>.</p>
-                            <div style="height:16px"></div>
-                        `)
-                    }
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                         <h1>${data[section]["entries"][entry]["name"]}</h1>
                         <div class='${section}Section' style='display:flex;flex-wrap:wrap'>
@@ -10985,6 +11509,7 @@ function generateHTMLFromData() {
                     `)
                     break;
                 case "legacy-accolades":
+                case "legacy-bloons":
                     document.getElementById(IDName).insertAdjacentHTML("beforeend", `
                         <h1>${data[section]["entries"][entry]["name"]}</h1>
                         <div class='${section}Section'>
@@ -11065,6 +11590,9 @@ function createButtonListeners() {
                 break;
             case "accolades": 
                 selectedPage = "winsWithTowerCategory";
+                break;
+            case "bloons": 
+                selectedPage = "red";
                 break;
         }
         changeCategoryButtons();

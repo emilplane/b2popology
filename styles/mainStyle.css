@@ -233,6 +233,14 @@ header {
 .heroesButton:hover, .heroesButton:focus {
     background: var(--heroes3);
 }
+
+.bloonsButton {
+    background-color: hsl(321, 44%, 58%);
+}
+.bloonsButton:hover, .bloonsButton:focus {
+    background-color: hsl(320, 100%, 79%);
+}
+
 .discordButton {
     background-color: #5865F2;
     color: var(--secondary2);
