@@ -10958,7 +10958,7 @@ let data = {
                             <ul>
                                 <li>Rounds: 12+</li>
                                 <li>Count: 4</li>
-                                <li>Total time: 0.6ss</li>
+                                <li>Total time: 0.6s</li>
                                 <li>Eco: +$4.5</li>
                                 <li>Cost: $150</li>
                             </ul>
