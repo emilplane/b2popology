@@ -1,4 +1,33 @@
+document.getElementById("eventSection").innerHTML =  `<h4 class="sectionStyle">Loading...</h4>`
+
 let events = [
+    {
+        "name": "Battles 2 Update 2.2 - Balance Survey!",
+        "startDate": "2023-10-19T17:00:23Z",
+        "endDate": "2023-10-26T17:00:23Z",
+        "content": `
+            <p>Thewarrior71 has made a balance survey to gather feedback for the current update. You can submit your response with the survey link, and view everyone's responses with the results link.</p>
+            <p>After one week, the surveys are closed and sent to Ninja Kiwi. If you like the surveys, share them so they can get more feedback. </p>
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/17bnx6t/battles_2_update_22_balance_survey/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/17bnx6t/battles_2_update_22_balance_survey/"
+            },
+            {
+                "name": "Survey Link",
+                "link": "https://docs.google.com/forms/d/e/1FAIpQLSc-FZu5NEXhOgNoxml4WV6_RQMUrik52MuOvQbsWA5JWhpHcw/viewform"
+            },
+            {
+                "name": "Survey Results",
+                "link": "https://docs.google.com/spreadsheets/d/1uCkDV0f-IU21Q1DRhNd-ApHkN99mLmmjgZrSIcKkUgY/edit?usp=sharing"
+            }
+        ]
+    },
     {
         "name": "Battles 2 Update 2.2 Patch Notes are available!",
         "startDate": "2023-10-09T14:36:13Z",
@@ -17,7 +46,7 @@ let events = [
         ]
     },
     {
-        "name": "Battles 2 Update 2.1.2 is out!",
+        "name": "Battles 2 Update 2.1.2 announced!",
         "startDate": "2023-09-14T13:39:34Z",
         "content": `
             
@@ -161,6 +190,7 @@ function timeString (elapsed) {
 
 function updateEvents () {
     let eventCounter = 0
+    document.getElementById("eventSection").innerHTML = ``
     for (const event of events) {
         eventCounter++
         
@@ -225,7 +255,6 @@ function showTime(selector, date) {
 
 async function main() {
     await getNkapiHomsJSON();
-    console.log(nkapiHoms);
     setStats();
     updateEvents();
     setInterval(showTime, 1);
