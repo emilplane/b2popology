@@ -51,7 +51,7 @@ let data = {
                                             <li>1d, 1cd (2cd), 22p, 36.8r, 1.15s, shatter type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
-                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
+                                                    <li>can rehit bloons after rebounding</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -68,7 +68,7 @@ let data = {
                                             <li>2d, 4cd (6cd), 50p, 36.8r, 1.0s, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
-                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
+                                                    <li>can rehit bloons after rebounding</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -85,7 +85,7 @@ let data = {
                                             <li>4d, 16cd (20cd), 5fd (9fd), 6x ld (24ld), 200p, 36.8r, 1.0s, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
-                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
+                                                    <li>can rehit bloons after rebounding</li>
                                                 </ul>
                                             </li>
                                             <li>at 50%p and 100%p: emits juggernauts
@@ -100,7 +100,7 @@ let data = {
                                             <li>1d, 2cd (3cd), 6x ld (6ld), 2fd (3fd), 6j 360&deg spread, 100p, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
-                                                    <span class="newChange"><li>can rehit bloons after rebounding</li></span>
+                                                    <li>can rehit bloons after rebounding</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -513,7 +513,7 @@ let data = {
                             `
                         },
                         "5": {
-                            "name": "005 - MOAB Domination - <span class='newChange'>$52,000</span>",
+                            "name": "005 - MOAB Domination - <span class='newChange'>$52,000",
                             "content": `
                                 <ul>
                                     <li>kylie buffed
@@ -965,10 +965,10 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li><span class="newChange">510: meteor +1p (2p)</span></lli>
-                                            <li><span class="newChange">520: meteor +1p (3p)</span></li>
-                                            <li><span class="newChange">501: meteor +300d (1,000d)</span></li>
-                                            <li><span class="newChange">502: meteor +400d (1,400d)</span></li>
+                                            <li>510: meteor +1p (2p)</lli>
+                                            <li>520: meteor +1p (3p)</li>
+                                            <li>501: meteor +300d (1,000d)</li>
+                                            <li>502: meteor +400d (1,400d)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -1027,9 +1027,9 @@ let data = {
                                             <li>attack rotates clockwise at a constant speed</li>
                                         </ul>
                                     </li>
-                                    <li><span class="newChange">crosspath</span>
+                                    <li>crosspath
                                         <ul>
-                                            <li><span class="newChange">041: maelstrom rotates counterclockwise at a constant speed</span></li>
+                                            <li>041: maelstrom rotates counterclockwise at a constant speed</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -2244,7 +2244,7 @@ let data = {
                                <ul>
                                     <li>airburst buffed
                                         <ul>
-                                            <li><span class="newChange">33.33%s (0.08375s)</span></li>
+                                            <li>33.33%s (0.08375s)</li>
                                         </ul>
                                     </li>
                                     <li>gains command buff
@@ -2465,7 +2465,7 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li><span class="newChange">031: explosion +7p (35p), frags +1i (2i)</span></li>
+                                            <li>031: explosion +7p (35p), frags +1i (2i)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3043,10 +3043,10 @@ let data = {
                             "name": "050 - Special Poperations - $30,000",
                             "content": `
                                 <ul>
-                                    <li><span class="newChange">supplies replaced by special-supplies</span></li>
+                                    <li>supplies replaced by special-supplies</li>
                                         <ul>
                                             <li>drops $8000 and 15 lives</li>
-                                            <li><span class="newChange">activates all supplies abilities</span></li>
+                                            <li>activates all supplies abilities</li>
                                         </ul>
                                     </li>
                                     <li>gains special-poperations ability (25s cooldown, battle ready)
@@ -3197,7 +3197,7 @@ let data = {
                             <li>shell attack
                                 <ul>
                                     <li>2.0s passive</li>
-                                    <li><span class="newChange">targets randomly within 18 units of selected points</span></li>
+                                    <li>targets randomly within 18 units of selected points</li>
                                     <li>on expire (0.5s): explosion
                                         <ul>
                                             <li>1d, 40p, 20r blast, explosion type</li>
@@ -3233,7 +3233,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Shell Shock - <span class='newChange'>$1,100</span>",
+                            "name": "300 - Shell Shock - <span class='newChange'>$1,100",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
@@ -3403,14 +3403,14 @@ let data = {
                                 <ul>
                                     <li>shell buffed
                                         <ul>
-                                            <li><span class="newChange">8 units random target variance</span></li>
+                                            <li>8 units random target variance</li>
                                         </ul>
                                     </li>
                                 </ul>
                             `
                         },
                         "2": {
-                            "name": "002 - Burny Stuff - <span class='newChange'>$700</span>",
+                            "name": "002 - Burny Stuff - <span class='newChange'>$700",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
@@ -3619,7 +3619,7 @@ let data = {
                                     <li>beam replaced by full-beam
                                         <ul>
                                             <li>25d, +15 shocked4 damage (45 shocked4 damage), 1000p, 0.2s passive, normal type</li>
-                                            <li><span class="newChange">additional +55d to the first target</span></li>
+                                            <li>additional +55d to the first target</li>
                                             <li>one solid beam to the edge of the screen</li>
                                             <li>applies shocked4 status
                                                 <ul>
@@ -5183,13 +5183,13 @@ let data = {
                                             <li>+13d (14d)</li>
                                         </ul>
                                     </li>
-                                    <li><span class="newChange">jungle-bounty replaced by spirit-bounty</span>
+                                    <li>jungle-bounty replaced by spirit-bounty
                                         <ul>
-                                            <li><span class="newChange">gain $1,500</span></li>
-                                            <li><span class="newChange">activates all jungle-bounty abilities</span></li>
+                                            <li>gain $1,500</li>
+                                            <li>activates all jungle-bounty abilities</li>
                                         </ul>
                                     </li>
-                                    <li><span class="newChange">+$2,500</span> end of round income</li>
+                                    <li>+$2,500 end of round income</li>
                                     <li>vine-grab buffed
                                         <ul>
                                             <li>time between grabs 0.3s, damages per 0.15s</li>
@@ -5199,20 +5199,15 @@ let data = {
                                         <ul>
                                             <li>&#8734;p, 55r zone, camo</li>
                                             <li>range increases by 6 units every 2s until the map is covered</li>
-                                            <li>anywhere in range: 2d/0.5s, 10cd/0.5s, 10md/0.5s, sharp type</li>
-                                            <li>within 100r: +1d (3d), +4cd (15cd), +4md (15md), sharp type</li>
-                                            <li>within 50r: +1d (4d), +4cd (20cd), +4md (20md), sharp type</li>
+                                            <li>anywhere in range: 2d/0.5s, 10cd/0.5s, 10md/0.5s, normal type</li>
+                                            <li>within 100r: +1d (3d), +4cd (15cd), +4md (15md)</li>
+                                            <li>within 50r: +1d (4d), +4cd (20cd), +4md (20md)</li>
                                             <li>note: as a damage-over-time, the damage cannot be buffed</li>
                                         </ul>
                                     </li>
                                     <li>gains jungle-lives ability (40s cooldown, 15s initial)
                                         <ul>
                                             <li>+25 lives</li>
-                                        </ul>
-                                    </li>
-                                    <li>crosspath
-                                        <ul>
-                                            <li>150: brambles attack becomes normal type</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -8153,7 +8148,7 @@ let data = {
                             <li>shell uses up all impacts upon hitting a purple bloon</li>
                             <li>on contact: explosion
                                 <ul>
-                                    <li>1d, <span class="newChange">4p,</span> 18r blast, explosion type</li>
+                                    <li>1d, 4p, 18r blast, explosion type</li>
                                     <li>on damage: applies shock effect
                                         <ul>
                                             <li>1d/1s, lasts for 1s</li>
@@ -8172,7 +8167,7 @@ let data = {
                     "2": `<ul>
                     <li>explosion buffed
                         <ul>
-                            <li>+2p <span class="newChange">(6p)</span></li>
+                            <li>+2p (6p)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -8180,7 +8175,7 @@ let data = {
                     <li>gains high-energy-shells ability (45s cooldown, 9s duration, battle ready)
                         <ul>
                             <li>all attacks have normal type</li>
-                            <li>buffs shell: <span class="newChange">58%s (0.406s)</span></li>
+                            <li>buffs shell: 58%s (0.406s)</li>
                             <li>buffs shock: 1d/0.5s, lasts for 1.5s</li>
                             <li>duration increases 0.5s per level (7.5 + 0.5 level)</li>
                         </ul>
@@ -8244,7 +8239,7 @@ let data = {
                     "11": `<ul>
                     <li>explosion buffed
                         <ul>
-                            <li>+2p <span class="newChange">(9p)</span></li>
+                            <li>+2p (9p)</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9112,7 +9107,7 @@ let data = {
                     "6": `<ul>
                     <li>slam buffed
                         <ul>
-                            <li>all normal Bloons are stunned for <span class="newChange">0.45s</span> when attacked</li>
+                            <li>all normal Bloons are stunned for 0.45s when attacked</li>
                         </ul>
                     </li>
                     <li>aoe buffed
@@ -9987,7 +9982,7 @@ let data = {
                     </li>
                 </ul>`,
                     "10": `<ul>
-                    <li>smuggle-run ability (? cooldown, battle ready, 8s duration)
+                    <li>smuggle-run ability (80s cooldown, battle ready, 8s duration)
                         <ul>
                             <li>stores $5,500 worth of user sent bloons
                                 <ul>
