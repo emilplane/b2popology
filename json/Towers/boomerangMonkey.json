@@ -1,5 +1,9 @@
 {
     "name": "boomerangMonkey", "displayName": "Boomerang Monkey",
+
+    "validPlacements": ["land"],
+    "range": 32, "size": ["radius", 6],
+
     "upgradeNames": {
         "top": [
             {
@@ -54,8 +58,12 @@
         ]
     },
 
-    "validPlacements": ["land"],
-    "range": 32, "size": ["radius", 6],
+    "costs": {
+        "base": 325,
+        "top": [200, 280, 1300, 3400, 30000],
+        "middle": [175, 250, 1100, 4350, 35000],
+        "bottom": [100, 300, 1300, 3200, 55000]
+    },
 
     "upgrades": {
         "base": [

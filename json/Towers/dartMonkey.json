@@ -1,5 +1,9 @@
 {
     "name": "dartMonkey", "displayName": "Dart Monkey",
+
+    "validPlacements": ["land"],
+    "range": 32, "size": ["radius", 6],
+
     "upgradeNames": {
         "top": [
             {
@@ -54,8 +58,12 @@
         ]
     },
 
-    "validPlacements": ["land"],
-    "range": 32, "size": ["radius", 6],
+    "costs": {
+        "base": 200,
+        "top": [100, 250, 300, 1800, 13500],
+        "middle": [100, 150, 300, 8000, 45000],
+        "bottom": [90, 200, 475, 2000, 25000]
+    },
 
     "upgrades": {
         "base": [
