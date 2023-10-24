@@ -118,10 +118,16 @@ function getPathingData(path) {
             output.crosspathPath = 1
             output.crosspathPathName = "middle"
             output.crosspathPathValue = path[1]
+            output.lastPath = 2
+            output.lastPathName = "bottom"
+            output.lastPathValue = path[2]
         } else {
             output.crosspathPath = 2
             output.crosspathPathName = "bottom"
             output.crosspathPathValue = path[2]
+            output.lastPath = 1
+            output.lastPathName = "middle"
+            output.lastPathValue = path[1]
         }
     } else if (path[1] > path[2]) {
         output.mainPath = 1
@@ -131,10 +137,16 @@ function getPathingData(path) {
             output.crosspathPath = 0
             output.crosspathPathName = "top"
             output.crosspathPathValue = path[0]
+            output.lastPath = 2
+            output.lastPathName = "bottom"
+            output.lastPathValue = path[2]
         } else {
             output.crosspathPath = 2
             output.crosspathPathName = "bottom"
             output.crosspathPathValue = path[2]
+            output.lastPath = 0
+            output.lastPathName = "top"
+            output.lastPathValue = path[0]
         }
     } else {
         output.mainPath = 2
@@ -144,10 +156,16 @@ function getPathingData(path) {
             output.crosspathPath = 0
             output.crosspathPathName = "top"
             output.crosspathPathValue = path[0]
+            output.lastPath = 1
+            output.lastPathName = "middle"
+            output.lastPathValue = path[1]
         } else {
             output.crosspathPath = 1
             output.crosspathPathName = "middle"
             output.crosspathPathValue = path[1]
+            output.lastPath = 0
+            output.lastPathName = "top"
+            output.lastPathValue = path[0]
         }
     }
 
@@ -163,6 +181,12 @@ function getPathingData(path) {
         output.hasCrosspath = true
     }
 
+    if (output.crosspathPathValue == 0) {
+        output.hasLastPath = false
+    } else {
+        output.hasLastPath = true
+    }
+
     return output
 }
 
@@ -176,6 +200,32 @@ function numberPathNameConversion(data) {
         if (data == 1) {return "middle"}
         if (data == 2) {return "bottom"}
     }
+}
+
+function getTowerCostData(tower, crosspath, sellModifier) {
+    let output = {};
+
+    output.upgradeCost = tower.costs[getPathingData(crosspath).mainPathName][getPathingData(crosspath).mainPathValue-1]
+    if (getPathingData(crosspath).hasMainPath == false) {
+        output.upgradeCost = tower.costs.base
+    }
+
+    output.totalCost = tower.costs.base
+    for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
+        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).mainPathName][i]
+    }
+    for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
+        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).crosspathPathName][i]
+    }
+    for (let i = 0; i < getPathingData(crosspath).lastPathValue; i++) {
+        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).lastPathName][i]
+    }
+
+    if (sellModifier == undefined) {
+        output.sellCost = (output.totalCost*100 *0.7 /100) ; output.sellCostLoss = (output.totalCost*100 *0.3 /100)
+    }
+
+    return output
 }
 
 class Tower {
@@ -313,19 +363,8 @@ function placeSkeleton() {
                     <div>
                         <h3 class="luckiestGuy">Tower Costs</h3>
                         <div class="horizontalLine"></div>
-                        <div style="display: flex; gap: 32px">
-                            <div>
-                                <h5>Upgrade Cost</h5>
-                                <p>$999,999</p>
-                            </div>
-                            <div>
-                                <h5>Total Cost</h5>
-                                <p>$999,999</p>
-                            </div>
-                            <div>
-                                <h5>Sell Cost</h5>
-                                <p>$999,999</p>
-                            </div>
+                        <div style="display: flex; gap: 32px" id="towerCosts">
+                            
                         </div>
                     </div>
                 </section>
@@ -368,6 +407,8 @@ function updatePage(change) {
 
     updateConfigurationBar()
 
+    updateCostStats()
+
     document.getElementById("categorySelect").addEventListener("change", function() {
         category = document.getElementById("categorySelect").value
         updatePage("category")
@@ -409,7 +450,6 @@ function updateTopBanner() {
         towerNameHTML = towerData[category][page].displayName
     }
 
-    console.log(crosspath)
     let crosspathHTML = `${crosspath[0]}${crosspath[1]}${crosspath[2]}`
 
     let upgradeNameHTML = `Base ${towerData[category][page].displayName}`
@@ -510,6 +550,28 @@ function updateConfigurationBar() {
     `)
 }
 
+function updateCostStats() {
+    console.log(getTowerCostData(towerData.primary[page], crosspath))
+    document.getElementById("towerCosts").innerHTML = `
+        <div>
+            <h5>Upgrade Cost</h5>
+            <p>$${getTowerCostData(towerData.primary[page], crosspath).upgradeCost}</p>
+        </div>
+        <div>
+            <h5>Total Cost</h5>
+            <p>$${getTowerCostData(towerData.primary[page], crosspath).totalCost}</p>
+        </div>
+        <div>
+            <h5>Sell Cost</h5>
+            <p>$${getTowerCostData(towerData.primary[page], crosspath).sellCost}</p>
+        </div>
+        <div>
+            <h5>Loss on Sell</h5>
+            <p>$${getTowerCostData(towerData.primary[page], crosspath).sellCostLoss}</p>
+        </div> 
+    `
+}
+
 let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]
 
 function sleep(ms) {
@@ -521,8 +583,8 @@ async function main() {
     console.log(towerData)
     let tower = new Tower(towerData.primary.dartMonkey)
     console.log(tower.getFullTower([2, 0, 0]))
-    //placeSkeleton()
-    //updatePage("initial")
+    placeSkeleton()
+    updatePage("initial")
 }
 
 main()
