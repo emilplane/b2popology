@@ -80,9 +80,44 @@ const towerDirectory = [
     }
 ]
 
+const config = {
+    "properties": [
+        {
+            "name": "damage",
+            "displayName": "Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "ceramicDamage",
+            "displayName": "Ceramic Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "moabDamage",
+            "displayName": "MOAB Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "leadDamage",
+            "displayName": "Lead Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "pierce",
+            "displayName": "Pierce", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "attackCooldown",
+            "displayName": "Attack Cooldown", 
+            "type": ["simple", "number", "*"]
+        }
+    ]
+}
+
 logErrors = false
 
-let towerData = {};
+const towerData = {};
 
 async function getTowerJSON() {
     for (towerCategory in towerDirectory) {
@@ -222,7 +257,7 @@ function getTowerCostData(tower, crosspath, sellModifier) {
     }
 
     if (sellModifier == undefined) {
-        output.sellCost = (output.totalCost*100 *0.7 /100) ; output.sellCostLoss = (output.totalCost*100 *0.3 /100)
+        output.sellCost = (output.totalCost*100 *0.7 /100); output.sellCostLoss = (output.totalCost*100 *0.3 /100)
     }
 
     return output
@@ -230,20 +265,20 @@ function getTowerCostData(tower, crosspath, sellModifier) {
 
 class Tower {
     constructor(towerObject) {
-        this.tower = towerObject;
+        this.tower = structuredClone(towerObject);
     }
 
     getFullTower(crosspath) {
-        let generatedTower = {
-            "modules": [],
-            "otherData": undefined
-        };
         let initialModuleSet = new ModuleSet(this.tower.upgrades.base)
         for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
-            initialModuleSet.mergeSet(new ModuleSet(towerData.primary.dartMonkey.upgrades.top[1]))
-            initialModuleSet.mergeSet(new ModuleSet(towerData.primary.dartMonkey.upgrades.middle[1]))
+            let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
+            initialModuleSet.mergeSet(upgradeModuleSet)
         }
-        console.log(initialModuleSet)
+        for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
+            let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
+            initialModuleSet.mergeSet(upgradeModuleSet)
+        }
+        return initialModuleSet
     }
 }
 
@@ -341,7 +376,7 @@ class Module {
                 this.module = structuredClone(buffModule.module)
                 this.module.moduleType[1] = "new"
                 delete this.module.replacingName
-        }
+        }   
         return undefined
     }
 }
@@ -358,33 +393,13 @@ function placeSkeleton() {
             <div class="configurationBar" id="configurationBar">
                 
             </div>
-            <div style="display: flex; flex-direction: column; gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 16px" id="mainStatsSection">
                 <section class="roundedBoxSection">
                     <div>
                         <h3 class="luckiestGuy">Tower Costs</h3>
                         <div class="horizontalLine"></div>
                         <div style="display: flex; gap: 32px" id="towerCosts">
                             
-                        </div>
-                    </div>
-                </section>
-                <section class="roundedBoxSection">
-                    <div>
-                        <h3 class="luckiestGuy"><span class="slightTextEmphasis">Ultrajugg</span> attack</h3>
-                        <div class="horizontalLine"></div>
-                        <div style="display: flex; gap: 32px">
-                            <div>
-                                <h5>Upgrade Cost</h5>
-                                <p>$999,999</p>
-                            </div>
-                            <div>
-                                <h5>Total Cost</h5>
-                                <p>$999,999</p>
-                            </div>
-                            <div>
-                                <h5>Sell Cost</h5>
-                                <p>$999,999</p>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -403,11 +418,15 @@ function updatePage(change) {
         }
     }
 
+    placeSkeleton()
+
     updateTopBanner()
 
     updateConfigurationBar()
 
     updateCostStats()
+
+    updateTowerStats()
 
     document.getElementById("categorySelect").addEventListener("change", function() {
         category = document.getElementById("categorySelect").value
@@ -551,7 +570,6 @@ function updateConfigurationBar() {
 }
 
 function updateCostStats() {
-    console.log(getTowerCostData(towerData.primary[page], crosspath))
     document.getElementById("towerCosts").innerHTML = `
         <div>
             <h5>Upgrade Cost</h5>
@@ -572,6 +590,40 @@ function updateCostStats() {
     `
 }
 
+function updateTowerStats() {
+    let towerObject = new Tower(towerData[category][page]).getFullTower(crosspath)
+    console.log(towerObject)
+    let statsHTML = ``
+    for (module in towerObject.moduleSet) {
+        let propertiesHTML = ``
+        for (property in config.properties) {
+            if (towerObject.moduleSet [module] [config.properties[property].name] != undefined) {
+                switch (config.properties[property].type[1]) {
+                    case "number":
+                        propertiesHTML = propertiesHTML + `
+                            <div>
+                                <h5>${config.properties[property].displayName}</h5>
+                                <p>${towerObject.moduleSet [module] [config.properties[property].name]}</p>
+                            </div>
+                        `
+                        break;
+                }
+            }
+        }
+        statsHTML = statsHTML + `
+            <section class="roundedBoxSection">
+                <h3 class="luckiestGuy"><span class="slightTextEmphasis">${towerObject.moduleSet[module].name}</span> attack</h3>
+                <div class="horizontalLine"></div>
+                <div style="display: flex; gap: 32px">
+                    ${propertiesHTML}
+                </div>
+            </section>
+        `
+    }
+
+    document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", statsHTML)
+}
+
 let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]
 
 function sleep(ms) {
@@ -581,9 +633,6 @@ function sleep(ms) {
 async function main() {
     await getTowerJSON()
     console.log(towerData)
-    let tower = new Tower(towerData.primary.dartMonkey)
-    console.log(tower.getFullTower([2, 0, 0]))
-    placeSkeleton()
     updatePage("initial")
 }
 
