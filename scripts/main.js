@@ -9954,7 +9954,7 @@ let data = {
                     </li>
                     <li>in-it-for-the-money buffed
                         <ul>
-                            <li>+?s (?s) duration</li>
+                            <li>+2s (8s) duration</li>
                         </ul>
                     </li>
                     <li>money-trap buffed
@@ -10054,7 +10054,7 @@ let data = {
                     </li>
                 </ul>`,
                     "18": `<ul>
-                    <li>smuggle-run buffed
+                    <li>money-trap buffed
                         <ul>
                             <li>?s cooldown</li>
                         </ul>
@@ -10070,7 +10070,7 @@ let data = {
                     "20": `<ul>
                     <li>smuggle-run buffed
                         <ul>
-                            <li>?s cooldown</li>
+                            <li>40s cooldown</li>
                             <li>$20,000 capacity</li>
                             <li>affects BAD bloons</li>
                         </ul>
