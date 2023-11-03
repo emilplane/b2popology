@@ -292,7 +292,7 @@ let data = {
                             <li>boomerang attack
                                 <ul>
                                     <li>1d, 4p, 43r, 1.2s, sharp type</li>
-                                    <li>follows an anticlockwise arc instead of a straight line</li>
+                                    <li>follows a counterclockwise or clockwise arc instead of a straight line, depending on targeting</li>
                                 </ul>
                             </li>
                         </ul>
@@ -330,6 +330,7 @@ let data = {
                                         <ul>
                                             <li>1d, 40p, 43r, 1.2s, sharp type</li>
                                             <li>jumps to a nearby (62.5 units) target after hitting</li>
+                                            <li>travels in a straight line</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -1782,7 +1783,7 @@ let data = {
                                 <ul>
                                     <li>bullet buffed
                                         <ul>
-                                            <li>+250d (280d, 95cd)</li>
+                                            <li>+250d (280d, 295cd)</li>
                                         </ul>
                                     </li>
                                     <li>stun duration buffed
@@ -9145,7 +9146,6 @@ let data = {
                     "10": `<ul>
                     <li>big-squeeze ability (30s cooldown, 5s duration, battle ready)
                         <ul>
-                            <li>[BUG] this ability does not do anything</li>
                             <li>grabs the strongest MOAB-class non-BAD bloon in range and spends 4s popping it </li>
                             <li>Pat cannot attack during the ability duration</li>
                             <li>Pat cannot activate rallying-roar during the ability duration</li>
@@ -10071,7 +10071,7 @@ let data = {
                     <li>smuggle-run buffed
                         <ul>
                             <li>40s cooldown</li>
-                            <li>$20,000 capacity</li>
+                            <li>$25,000 capacity</li>
                             <li>affects BAD bloons</li>
                         </ul>
                     </li>
