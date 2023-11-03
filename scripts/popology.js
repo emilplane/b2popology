@@ -290,10 +290,17 @@ class ModuleSet {
     mergeSet(buffModuleSetData) {
         for (let buffModuleNumber in buffModuleSetData.moduleSet) {
             for (let initialModuleNumber in this.moduleSet) {
-                if (
-                    this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name 
-                    || this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName
-                ) {
+                console.log(buffModuleSetData.moduleSet[buffModuleNumber])
+                console.log(this.moduleSet[initialModuleNumber])
+                let moduleMatch = false
+                if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
+                if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName) {moduleMatch = true}
+                if (!(this.moduleSet[initialModuleNumber].previousNames == [] || this.moduleSet[initialModuleNumber].previousNames == undefined)) {
+                    for (let previousName in this.moduleSet[initialModuleNumber].previousNames) {
+                        if (this.moduleSet[initialModuleNumber].previousNames[previousName] == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
+                    }
+                }   
+                if (moduleMatch == true) {
                     let initialModule = new Module(this.moduleSet[initialModuleNumber])
                     let buffModule = new Module(buffModuleSetData.moduleSet[buffModuleNumber])
                     initialModule.merge(buffModule)
@@ -368,14 +375,20 @@ class Module {
                     let property = properties[propertyNumber]
                     if (buff[property.name] != undefined) {
                         propertyTypes[property.type](this, buff, property)
-                    }   
+                    }
                 }
                 return this;
             case "replace":
-                let previousModule = this.module
+                let previousModule = structuredClone(this.module)
                 this.module = structuredClone(buffModule.module)
                 this.module.moduleType[1] = "new"
                 delete this.module.replacingName
+                if (previousModule.previousNames == undefined) {
+                    this.module.previousNames = []
+                } else {
+                    this.module.previousNames = previousModule.previousNames
+                }
+                this.module.previousNames.push(previousModule.name)
         }   
         return undefined
     }
@@ -456,9 +469,9 @@ function updateTopBanner() {
     document.getElementById("coverImageStyle").outerHTML = (`
         <style id="coverImageStyle">
             .coverImage {
-                background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('media/Tower Banners/dartMonkey/banner1Original.png');
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('media/Tower Banners/dartMonkey/banner1Original2.png');
                 @media (prefers-color-scheme: dark) {
-                    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('media/Tower Banners/dartMonkey/banner1Original.png');
+                    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('media/Tower Banners/dartMonkey/banner1Original2.png');
                 }
             }
         </style>
