@@ -266,7 +266,7 @@ function updateEvents () {
     }
 }
 
-function showTime(selector, date) {
+function showTime() {
     let counter = 0;
     for (const event of events) {
         counter++

@@ -118,7 +118,7 @@ const config = {
 logErrors = false
 
 const towerData = {};
-
+function please() {};
 async function getTowerJSON() {
     for (towerCategory in towerDirectory) {
         towerData[towerDirectory[towerCategory].name] = {}
@@ -128,14 +128,18 @@ async function getTowerJSON() {
                 const requestURL = `https://raw.githubusercontent.com/emilplane/b2popology/main/json/Towers/${towerDirectory[towerCategory].data[tower].name}.json`;
                 const request = new Request(requestURL);
                 
-                const response = await fetch(request);
+                
+                const response = await fetch(request)
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 let string = await response.json();
                 towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = string
             } catch (error) {
-                if(logErrors==true){console.log(`Data failed to load!\n\nTower: ${towerDirectory[towerCategory].data[tower].displayName}\nError: ${error}`)}
+                if(logErrors==true){console.log(`Data failed to load!\n\nTower: ${towerDirectory[towerCategory].data[tower].displayName}\n${error}`)}
                 towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = {"data": false, "reason": "data could not be fetched"}
             }
-            
         }
     }
 };
@@ -269,16 +273,33 @@ class Tower {
     }
 
     getFullTower(crosspath) {
+        let towerStats = []
         let initialModuleSet = new ModuleSet(this.tower.upgrades.base)
         for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
             let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
+            for (let dataNumber in initialModuleSet.towerStatsOut) {
+                towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
+            }
         }
         for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
+            let upgradeModuleSet = new ModuleSet(structuredClone(towerData. primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
+            for (let dataNumber in initialModuleSet.towerStatsOut) {
+                towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
+            }
         }
-        return initialModuleSet
+        let output = {
+            "range": this.tower.range,
+            "size": this.tower.size,
+            "modules": initialModuleSet.moduleSet
+        }
+        for (let dataNumber in towerStats) {
+            if (towerStats[dataNumber].moduleType[0] == "rangeBuff") {
+                console.log(towerStats[dataNumber].value)
+            }
+        }
+        return output
     }
 }
 
@@ -288,27 +309,30 @@ class ModuleSet {
     }
 
     mergeSet(buffModuleSetData) {
+        this.towerStatsOut = []
         for (let buffModuleNumber in buffModuleSetData.moduleSet) {
-            for (let initialModuleNumber in this.moduleSet) {
-                console.log(buffModuleSetData.moduleSet[buffModuleNumber])
-                console.log(this.moduleSet[initialModuleNumber])
-                let moduleMatch = false
-                if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
-                if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName) {moduleMatch = true}
-                if (!(this.moduleSet[initialModuleNumber].previousNames == [] || this.moduleSet[initialModuleNumber].previousNames == undefined)) {
-                    for (let previousName in this.moduleSet[initialModuleNumber].previousNames) {
-                        if (this.moduleSet[initialModuleNumber].previousNames[previousName] == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
+            if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[0] == "rangeBuff") {
+                this.towerStatsOut.push(buffModuleSetData.moduleSet[buffModuleNumber])
+            } else {
+                for (let initialModuleNumber in this.moduleSet) {
+                    let moduleMatch = false
+                    if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
+                    if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName) {moduleMatch = true}
+                    if (!(this.moduleSet[initialModuleNumber].previousNames == [] || this.moduleSet[initialModuleNumber].previousNames == undefined)) {
+                        for (let previousName in this.moduleSet[initialModuleNumber].previousNames) {
+                            if (this.moduleSet[initialModuleNumber].previousNames[previousName] == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
+                        }
+                    }  
+                    if (moduleMatch == true) {  
+                        let initialModule = new Module(this.moduleSet[initialModuleNumber])
+                        let buffModule = new Module(buffModuleSetData.moduleSet[buffModuleNumber])
+                        initialModule.merge(buffModule)
+                        this.moduleSet[initialModuleNumber] = initialModule.module
                     }
                 }   
-                if (moduleMatch == true) {
-                    let initialModule = new Module(this.moduleSet[initialModuleNumber])
-                    let buffModule = new Module(buffModuleSetData.moduleSet[buffModuleNumber])
-                    initialModule.merge(buffModule)
-                    this.moduleSet[initialModuleNumber] = initialModule.module
+                if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[1] == "new") {
+                    this.moduleSet.push(buffModuleSetData.moduleSet[buffModuleNumber])
                 }
-            }
-            if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[1] == "new") {
-                this.moduleSet.push(buffModuleSetData.moduleSet[buffModuleNumber])
             }
         }
     }
@@ -605,18 +629,45 @@ function updateCostStats() {
 
 function updateTowerStats() {
     let towerObject = new Tower(towerData[category][page]).getFullTower(crosspath)
-    console.log(towerObject)
+    let moduleSet = towerObject.modules
+    let towerStatsHTML = ``
+    let propertiesHTML = ``
+    if (towerObject.range != undefined) {
+        propertiesHTML = propertiesHTML + `
+            <div>
+                <h5>Tower Range</h5>
+                <p>${towerObject.range}</p>
+            </div>
+        `
+    }
+    if (towerObject.size[0] == "radius") {
+        propertiesHTML = propertiesHTML + `
+            <div>
+                <h5>Tower Size</h5>
+                <p>${towerObject.size[1]}r</p>
+            </div>
+        `
+    }
+    towerStatsHTML = `
+        <section class="roundedBoxSection">
+            <h3 class="luckiestGuy"><span>Tower Stats</h3>
+            <div class="horizontalLine"></div>
+            <div style="display: flex; gap: 32px">
+                ${propertiesHTML}
+            </div>
+        </section>
+    `
     let statsHTML = ``
-    for (module in towerObject.moduleSet) {
+    for (module in moduleSet) {
         let propertiesHTML = ``
         for (property in config.properties) {
-            if (towerObject.moduleSet [module] [config.properties[property].name] != undefined) {
+            if (moduleSet [module] [config.properties[property].name] != undefined) {
                 switch (config.properties[property].type[1]) {
                     case "number":
                         propertiesHTML = propertiesHTML + `
                             <div>
                                 <h5>${config.properties[property].displayName}</h5>
-                                <p>${towerObject.moduleSet [module] [config.properties[property].name]}</p>
+                                <p>${moduleSet [module] [config.properties[property].name]}</p>
                             </div>
                         `
                         break;
@@ -625,7 +676,7 @@ function updateTowerStats() {
         }
         statsHTML = statsHTML + `
             <section class="roundedBoxSection">
-                <h3 class="luckiestGuy"><span class="slightTextEmphasis">${towerObject.moduleSet[module].name}</span> attack</h3>
+                <h3 class="luckiestGuy"><span class="slightTextEmphasis">${moduleSet[module].name}</span> attack</h3>
                 <div class="horizontalLine"></div>
                 <div style="display: flex; gap: 32px">
                     ${propertiesHTML}
@@ -634,7 +685,7 @@ function updateTowerStats() {
         `
     }
 
-    document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", statsHTML)
+    document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", towerStatsHTML + statsHTML)
 }
 
 let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]

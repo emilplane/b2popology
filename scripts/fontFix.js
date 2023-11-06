@@ -5,4 +5,4 @@
 
 if (navigator.appVersion.indexOf("Win")!=-1) {
     document.getElementById("luckiestGuyFix").setAttribute("href", "styles/luckiestGuyNormal.css");
-}
+}   
