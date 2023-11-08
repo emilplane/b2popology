@@ -1,5 +1,5 @@
 {
-    "name": "dartMonkey", "displayName": "Dart Monkey",
+    "name": "boomerangMonkey", "displayName": "Boomerang Monkey",
 
     "validPlacements": ["land"],
     "range": 32, "size": ["radius", 6],
@@ -7,62 +7,62 @@
     "upgradeNames": {
         "top": [
             {
-                "name": "sharpShots", "displayName": "Sharp Shots"
+                "name": "improvedRangs", "displayName": "Improved Rangs"
             },
             {
-                "name": "razorSharpShots", "displayName": "Razor Sharp Shots"
+                "name": "glaives", "displayName": "Glaives"
             },
             {
-                "name": "spikeOPult", "displayName": "Spike-o-pult"
+                "name": "glaiveRicochet", "displayName": "Glaive Ricochet"
             },
             {
-                "name": "juggernaut", "displayName": "Juggernaut"
+                "name": "moarGlaives", "displayName": "M.O.A.R. Glaives"
             },
             {
-                "name": "ultraJuggernaut", "displayName": "Ultra Juggernaut"
+                "name": "glaiveLord", "displayName": "Glaive Lord"
             }
         ],
         "middle": [
             {
-                "name": "quickShots", "displayName": "Quick Shots"
+                "name": "fasterThrowing", "displayName": "Faster Throwing"
             },
             {
-                "name": "veryQuickShots", "displayName": "Very Quick Shots"
+                "name": "fasterRangs", "displayName": "Faster Rangs"
             },
             {
-                "name": "tripleShot", "displayName": "Triple Shot"
+                "name": "bionicBoomerang", "displayName": "Bionic Boomerang"
             },
             {
-                "name": "superMonkeyFanClub", "displayName": "Super Monkey Fan Club"
+                "name": "turboCharge", "displayName": "Turbo Charge"
             },
             {
-                "name": "plasmaMonkeyFanClub", "displayName": "Plasma Monkey Fan Club"
+                "name": "permaCharge", "displayName": "Perma Charge"
             }
         ],
         "bottom": [
             {
-                "name": "longRangeDarts", "displayName": "Long Range Darts"
+                "name": "longRangeRangs", "displayName": "Long Range Rangs"
             },
             {
-                "name": "enhancedEyesight", "displayName": "Enhanced Eyesight"
+                "name": "redHotRangs", "displayName": "Red Hot Rangs"
             },
             {
-                "name": "crossbow", "displayName": "Crossbow"
+                "name": "kylieBoomerang", "displayName": "Kylie Boomerang"
             },
             {
-                "name": "sharpShooter", "displayName": "Sharp Shooter"
+                "name": "moabPress", "displayName": "MOAB Press"
             },
             {
-                "name": "crossbowMaster", "displayName": "Crossbow Master"
+                "name": "moabDomination", "displayName": "MOAB Domination"
             }
         ]
     },
 
     "costs": {
-        "base": 200,
-        "top": [100, 250, 300, 1800, 13500],
-        "middle": [100, 150, 300, 8000, 45000],
-        "bottom": [90, 200, 475, 2000, 25000]
+        "base": 325,
+        "top": [200, 280, 1300, 3400, 30000],
+        "middle": [175, 250, 1100, 4350, 35000],
+        "bottom": [100, 300, 1300, 3200, 55000]
     },
 
     "upgrades": {
@@ -142,7 +142,7 @@
                 },
                 {
                     "moduleType": ["attack", "new"],
-                    "name": "juggernauts",
+                    "replacingName": "juggernauts",
                     
                     "damage": 1, "ceramicDamage": 2, "fortifiedDamage": 2, "leadDamage": ["*", 6], "projectiles": [6, 360], "pierce": 100, "attackType": "normal",
                     "rebounds": true,

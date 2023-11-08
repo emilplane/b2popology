@@ -233,3 +233,7 @@ input:focus + .inputUnderline {
         background-color: var(--shade1);
     };
 }
+
+py-l {
+    display: none
+}

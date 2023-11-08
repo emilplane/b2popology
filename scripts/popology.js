@@ -1,3 +1,6 @@
+import { Module } from "./popology/moduleSystem.js"
+import { getPathingData, numberPathNameConversion } from "./popology/conversions.js"
+
 const towerDirectory = [
     {
         "name": "primary", 
@@ -114,18 +117,15 @@ const config = {
         }
     ]
 }
-
-logErrors = false
-
+const logErrors = false
 const towerData = {};
-function please() {};
 async function getTowerJSON() {
-    for (towerCategory in towerDirectory) {
+    for (let towerCategory in towerDirectory) {
         towerData[towerDirectory[towerCategory].name] = {}
-        for (tower in towerDirectory[towerCategory].data) {
+        for (let tower in towerDirectory[towerCategory].data) {
             towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = {"data": false, "reason": "data not recieved"}
             try {
-                const requestURL = `https://raw.githubusercontent.com/emilplane/b2popology/main/json/Towers/${towerDirectory[towerCategory].data[tower].name}.json`;
+                const requestURL = `https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/Towers/${towerDirectory[towerCategory].data[tower].name}.json`;
                 const request = new Request(requestURL);
                 
                 
@@ -144,103 +144,6 @@ async function getTowerJSON() {
     }
 };
 
-function getPathingData(path) {
-    let output = {
-        "originalValues": path
-    };
-
-    if (path[0] > path[1] && path[0] > path[2]) {
-        output.mainPath = 0
-        output.mainPathName = "top"
-        output.mainPathValue = path[0]
-        if (path[1] > path[2]) {
-            output.crosspathPath = 1
-            output.crosspathPathName = "middle"
-            output.crosspathPathValue = path[1]
-            output.lastPath = 2
-            output.lastPathName = "bottom"
-            output.lastPathValue = path[2]
-        } else {
-            output.crosspathPath = 2
-            output.crosspathPathName = "bottom"
-            output.crosspathPathValue = path[2]
-            output.lastPath = 1
-            output.lastPathName = "middle"
-            output.lastPathValue = path[1]
-        }
-    } else if (path[1] > path[2]) {
-        output.mainPath = 1
-        output.mainPathName = "middle"
-        output.mainPathValue = path[1]
-        if (path[0] > path[2]) {
-            output.crosspathPath = 0
-            output.crosspathPathName = "top"
-            output.crosspathPathValue = path[0]
-            output.lastPath = 2
-            output.lastPathName = "bottom"
-            output.lastPathValue = path[2]
-        } else {
-            output.crosspathPath = 2
-            output.crosspathPathName = "bottom"
-            output.crosspathPathValue = path[2]
-            output.lastPath = 0
-            output.lastPathName = "top"
-            output.lastPathValue = path[0]
-        }
-    } else {
-        output.mainPath = 2
-        output.mainPathName = "bottom"
-        output.mainPathValue = path[2]
-        if (path[0] > path[1]) {
-            output.crosspathPath = 0
-            output.crosspathPathName = "top"
-            output.crosspathPathValue = path[0]
-            output.lastPath = 1
-            output.lastPathName = "middle"
-            output.lastPathValue = path[1]
-        } else {
-            output.crosspathPath = 1
-            output.crosspathPathName = "middle"
-            output.crosspathPathValue = path[1]
-            output.lastPath = 0
-            output.lastPathName = "top"
-            output.lastPathValue = path[0]
-        }
-    }
-
-    if (output.mainPathValue == 0) {
-        output.hasMainPath = false
-    } else {
-        output.hasMainPath = true
-    }
-
-    if (output.crosspathPathValue == 0) {
-        output.hasCrosspath = false
-    } else {
-        output.hasCrosspath = true
-    }
-
-    if (output.crosspathPathValue == 0) {
-        output.hasLastPath = false
-    } else {
-        output.hasLastPath = true
-    }
-
-    return output
-}
-
-function numberPathNameConversion(data) {
-    if (typeof data == "string") {
-        if (data == "top") {return 0}
-        if (data == "middle") {return 1}
-        if (data == "bottom") {return 2}
-    } else {
-        if (data == 0) {return "top"}
-        if (data == 1) {return "middle"}
-        if (data == 2) {return "bottom"}
-    }
-}
-
 function getTowerCostData(tower, crosspath, sellModifier) {
     let output = {};
 
@@ -250,13 +153,13 @@ function getTowerCostData(tower, crosspath, sellModifier) {
     }
 
     output.totalCost = tower.costs.base
-    for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
+    for (let  i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
         output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).mainPathName][i]
     }
-    for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
+    for (let  i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
         output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).crosspathPathName][i]
     }
-    for (let i = 0; i < getPathingData(crosspath).lastPathValue; i++) {
+    for (let  i = 0; i < getPathingData(crosspath).lastPathValue; i++) {
         output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).lastPathName][i]
     }
 
@@ -275,17 +178,17 @@ class Tower {
     getFullTower(crosspath) {
         let towerStats = []
         let initialModuleSet = new ModuleSet(this.tower.upgrades.base)
-        for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
+        for (let  i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
             let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
-            for (let dataNumber in initialModuleSet.towerStatsOut) {
+            for (let  dataNumber in initialModuleSet.towerStatsOut) {
                 towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
             }
         }
-        for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
+        for (let  i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
             let upgradeModuleSet = new ModuleSet(structuredClone(towerData. primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
-            for (let dataNumber in initialModuleSet.towerStatsOut) {
+            for (let  dataNumber in initialModuleSet.towerStatsOut) {
                 towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
             }
         }
@@ -294,7 +197,7 @@ class Tower {
             "size": this.tower.size,
             "modules": initialModuleSet.moduleSet
         }
-        for (let dataNumber in towerStats) {
+        for (let  dataNumber in towerStats) {
             if (towerStats[dataNumber].moduleType[0] == "rangeBuff") {
                 console.log(towerStats[dataNumber].value)
             }
@@ -310,16 +213,16 @@ class ModuleSet {
 
     mergeSet(buffModuleSetData) {
         this.towerStatsOut = []
-        for (let buffModuleNumber in buffModuleSetData.moduleSet) {
+        for (let  buffModuleNumber in buffModuleSetData.moduleSet) {
             if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[0] == "rangeBuff") {
                 this.towerStatsOut.push(buffModuleSetData.moduleSet[buffModuleNumber])
             } else {
-                for (let initialModuleNumber in this.moduleSet) {
+                for (let  initialModuleNumber in this.moduleSet) {
                     let moduleMatch = false
                     if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
                     if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName) {moduleMatch = true}
                     if (!(this.moduleSet[initialModuleNumber].previousNames == [] || this.moduleSet[initialModuleNumber].previousNames == undefined)) {
-                        for (let previousName in this.moduleSet[initialModuleNumber].previousNames) {
+                        for (let  previousName in this.moduleSet[initialModuleNumber].previousNames) {
                             if (this.moduleSet[initialModuleNumber].previousNames[previousName] == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
                         }
                     }  
@@ -335,86 +238,6 @@ class ModuleSet {
                 }
             }
         }
-    }
-}
-
-function simpleNumberBuff(initial, buff, defaultOperator) {
-    if (initial == undefined) {initial = 0}
-    if (buff == Infinity || buff == "Infinity" || buff == "infinity") {
-        return Infinity
-    }
-    let buffValue = buff; let operator = defaultOperator
-    if (typeof buff == "object") {
-        buffValue = buff[1]; operator = buff[0]
-    }
-    switch (operator) {
-        case "+": return initial+buffValue;
-        case "-": return initial-buffValue;
-        case "*": return ((initial*1000)*buffValue)/1000;
-        case "/": if(buffValue==0){return 0}; return initial/buffValue;
-        case "absolute": return buffValue;
-        case Infinity: case "Infinity": case "infinity": return Infinity;
-    }
-}
-
-const properties = [
-    {"name": "damage",          "displayName": "Damage",                "type": "number",   "defaultOperator": "+"          },
-    {"name": "moabDamage",      "displayName": "MOAB Damage",           "type": "number",   "defaultOperator": "+"          },
-    {"name": "fortifiedDamage", "displayName": "Fortified Damage",      "type": "number",   "defaultOperator": "+"          },
-    {"name": "forfifiedMoabDamage","displayName": "Fortified MOAB Damage","type": "number", "defaultOperator": "+"          },
-    {"name": "ceramicDamage",   "displayName": "Ceramic Damage",        "type": "number",   "defaultOperator": "+"          },
-    {"name": "leadDamage",      "displayName": "Lead Damage",           "type": "number",   "defaultOperator": "+"          },
-    {"name": "camoDamage",      "displayName": "Camo Damage",           "type": "number",   "defaultOperator": "+"          },
-    {"name": "frozenDamage",    "displayName": "Frozen Damage",         "type": "number",   "defaultOperator": "+"          },
-    {"name": "stunnedBloonDamage","displayName": "Stunned Bloon Damage","type": "number",   "defaultOperator": "+"          },
-    {"name": "projectiles",     "displayName": "Projectiles",           "type": "number",   "defaultOperator": "absolute"   },
-    {"name": "spread",          "displayName": "Spread",                "type": "number",   "defaultOperator": "absolute"   },
-    {"name": "pierce",          "displayName": "Pierce",                "type": "number",   "defaultOperator": "+"          },
-    {"name": "impact",          "displayName": "Impact",                "type": "boolean",  "defaultValue": "false"         },
-    {"name": "attackCooldown",  "displayName": "Attack Cooldown",       "type": "number",   "defaultOperator": "*"          },
-]
-
-const propertyTypes = {
-    "number": function(main, buff, property) {
-        main.module[property.name] = simpleNumberBuff(
-            main.module[property.name],
-            buff[property.name], property.defaultOperator
-        )
-    },
-    "boolean": function(main, buff, property) {
-        main.module[property.name] = buff[property.name]
-    }
-}
-
-class Module {
-    constructor(module) {
-        this.module = module;
-    }
-
-    merge(buffModule) {
-        let buff = buffModule.module
-        switch (buff.moduleType[1]) {
-            case "buff":
-                for (let propertyNumber in properties) {
-                    let property = properties[propertyNumber]
-                    if (buff[property.name] != undefined) {
-                        propertyTypes[property.type](this, buff, property)
-                    }
-                }
-                return this;
-            case "replace":
-                let previousModule = structuredClone(this.module)
-                this.module = structuredClone(buffModule.module)
-                this.module.moduleType[1] = "new"
-                delete this.module.replacingName
-                if (previousModule.previousNames == undefined) {
-                    this.module.previousNames = []
-                } else {
-                    this.module.previousNames = previousModule.previousNames
-                }
-                this.module.previousNames.push(previousModule.name)
-        }   
-        return undefined
     }
 }
 
@@ -448,7 +271,7 @@ function placeSkeleton() {
 
 function updatePage(change) {
     if (change == "category") {
-        for (categoryNumber in towerDirectory) {
+        for (let categoryNumber in towerDirectory) {
             if (category == towerDirectory[categoryNumber].name) {
                 page = towerDirectory[categoryNumber].data[0].name
             }
@@ -536,7 +359,7 @@ function updateTopBanner() {
 function updateConfigurationBar() {
     let categoryHTML = ``
     let categoryPosition
-    for (categoryNumber in towerDirectory) {
+    for (let categoryNumber in towerDirectory) {
         if (category == towerDirectory[categoryNumber].name) {
             categoryPosition = categoryNumber
             categoryHTML = categoryHTML + `<option value="${towerDirectory[categoryNumber].name}" selected>${towerDirectory[categoryNumber].displayName}</option>`
@@ -546,7 +369,7 @@ function updateConfigurationBar() {
     }
 
     let towerHTML = ``
-    for (towerNumber in towerDirectory[categoryPosition].data) {
+    for (let towerNumber in towerDirectory[categoryPosition].data) {
         if (page == towerDirectory[categoryPosition].data[towerNumber].name) {
             towerHTML = towerHTML + `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" selected>${towerDirectory[categoryPosition].data[towerNumber].displayName}</option>`
         } else {
@@ -557,7 +380,7 @@ function updateConfigurationBar() {
     let pathSelectHTML = `<h5>No Path Data</h5>`;
     if (towerData[category][page].data != false) {
         pathSelectHTML = `<h5>Path:</h5><select id="topPathSelect"><option value="0">0</option>`
-        for (upgrade in towerData[category][page].upgrades.top) {
+        for (let upgrade in towerData[category][page].upgrades.top) {
             if (crosspath[0] == Number(upgrade)+1) {
                 pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
             } else {
@@ -565,7 +388,7 @@ function updateConfigurationBar() {
             }
         }
         pathSelectHTML = pathSelectHTML + `</select><select id="middlePathSelect"><option value="0">0</option>`
-        for (upgrade in towerData[category][page].upgrades.middle) {
+        for (let upgrade in towerData[category][page].upgrades.middle) {
             if (crosspath[1] == Number(upgrade)+1) {
                 pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
             } else {
@@ -573,7 +396,7 @@ function updateConfigurationBar() {
             }
         }
         pathSelectHTML = pathSelectHTML + `</select><select id="bottomPathSelect"><option value="0">0</option>`
-        for (upgrade in towerData[category][page].upgrades.bottom) {
+        for (let upgrade in towerData[category][page].upgrades.bottom) {
             if (crosspath[2] == Number(upgrade)+1) {
                 pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
             } else {
@@ -658,9 +481,9 @@ function updateTowerStats() {
         </section>
     `
     let statsHTML = ``
-    for (module in moduleSet) {
+    for (let module in moduleSet) {
         let propertiesHTML = ``
-        for (property in config.properties) {
+        for (let property in config.properties) {
             if (moduleSet [module] [config.properties[property].name] != undefined) {
                 switch (config.properties[property].type[1]) {
                     case "number":
