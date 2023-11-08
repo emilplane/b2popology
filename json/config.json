@@ -1,0 +1,37 @@
+{
+    "console": {
+        "errors": true
+    },
+    "properties": [
+        {
+            "name": "damage",
+            "displayName": "Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "ceramicDamage",
+            "displayName": "Ceramic Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "moabDamage",
+            "displayName": "MOAB Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "leadDamage",
+            "displayName": "Lead Damage", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "pierce",
+            "displayName": "Pierce", 
+            "type": ["simple", "number", "+"]
+        },
+        {
+            "name": "attackCooldown",
+            "displayName": "Attack Cooldown", 
+            "type": ["simple", "number", "*"]
+        }
+    ]
+}

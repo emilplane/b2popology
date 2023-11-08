@@ -94,3 +94,29 @@ export function numberPathNameConversion(data) {
         if (data == 2) {return "bottom"}
     }
 }
+
+export function getTowerCostData(tower, crosspath, sellModifier) {
+    let output = {};
+
+    output.upgradeCost = tower.costs[getPathingData(crosspath).mainPathName][getPathingData(crosspath).mainPathValue-1]
+    if (getPathingData(crosspath).hasMainPath == false) {
+        output.upgradeCost = tower.costs.base
+    }
+
+    output.totalCost = tower.costs.base
+    for (let  i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
+        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).mainPathName][i]
+    }
+    for (let  i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
+        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).crosspathPathName][i]
+    }
+    for (let  i = 0; i < getPathingData(crosspath).lastPathValue; i++) {
+        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).lastPathName][i]
+    }
+
+    if (sellModifier == undefined) {
+        output.sellCost = (output.totalCost*100 *0.7 /100); output.sellCostLoss = (output.totalCost*100 *0.3 /100)
+    }
+
+    return output
+}

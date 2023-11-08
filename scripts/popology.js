@@ -1,5 +1,9 @@
-import { Module } from "./popology/moduleSystem.js"
-import { getPathingData, numberPathNameConversion } from "./popology/conversions.js"
+import { Tower } from "/scripts/popology/moduleSystem.js"
+import { getPathingData, numberPathNameConversion, getTowerCostData } from "./popology/conversions.js"
+
+const logErrors = false
+
+const towerData = {};
 
 const towerDirectory = [
     {
@@ -117,8 +121,7 @@ const config = {
         }
     ]
 }
-const logErrors = false
-const towerData = {};
+
 async function getTowerJSON() {
     for (let towerCategory in towerDirectory) {
         towerData[towerDirectory[towerCategory].name] = {}
@@ -127,7 +130,6 @@ async function getTowerJSON() {
             try {
                 const requestURL = `https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/Towers/${towerDirectory[towerCategory].data[tower].name}.json`;
                 const request = new Request(requestURL);
-                
                 
                 const response = await fetch(request)
 
@@ -143,103 +145,6 @@ async function getTowerJSON() {
         }
     }
 };
-
-function getTowerCostData(tower, crosspath, sellModifier) {
-    let output = {};
-
-    output.upgradeCost = tower.costs[getPathingData(crosspath).mainPathName][getPathingData(crosspath).mainPathValue-1]
-    if (getPathingData(crosspath).hasMainPath == false) {
-        output.upgradeCost = tower.costs.base
-    }
-
-    output.totalCost = tower.costs.base
-    for (let  i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
-        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).mainPathName][i]
-    }
-    for (let  i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
-        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).crosspathPathName][i]
-    }
-    for (let  i = 0; i < getPathingData(crosspath).lastPathValue; i++) {
-        output.totalCost = output.totalCost + tower.costs[getPathingData(crosspath).lastPathName][i]
-    }
-
-    if (sellModifier == undefined) {
-        output.sellCost = (output.totalCost*100 *0.7 /100); output.sellCostLoss = (output.totalCost*100 *0.3 /100)
-    }
-
-    return output
-}
-
-class Tower {
-    constructor(towerObject) {
-        this.tower = structuredClone(towerObject);
-    }
-
-    getFullTower(crosspath) {
-        let towerStats = []
-        let initialModuleSet = new ModuleSet(this.tower.upgrades.base)
-        for (let  i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
-            initialModuleSet.mergeSet(upgradeModuleSet)
-            for (let  dataNumber in initialModuleSet.towerStatsOut) {
-                towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
-            }
-        }
-        for (let  i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(towerData. primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
-            initialModuleSet.mergeSet(upgradeModuleSet)
-            for (let  dataNumber in initialModuleSet.towerStatsOut) {
-                towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
-            }
-        }
-        let output = {
-            "range": this.tower.range,
-            "size": this.tower.size,
-            "modules": initialModuleSet.moduleSet
-        }
-        for (let  dataNumber in towerStats) {
-            if (towerStats[dataNumber].moduleType[0] == "rangeBuff") {
-                console.log(towerStats[dataNumber].value)
-            }
-        }
-        return output
-    }
-}
-
-class ModuleSet {
-    constructor(moduleSet) {
-        this.moduleSet = moduleSet;
-    }
-
-    mergeSet(buffModuleSetData) {
-        this.towerStatsOut = []
-        for (let  buffModuleNumber in buffModuleSetData.moduleSet) {
-            if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[0] == "rangeBuff") {
-                this.towerStatsOut.push(buffModuleSetData.moduleSet[buffModuleNumber])
-            } else {
-                for (let  initialModuleNumber in this.moduleSet) {
-                    let moduleMatch = false
-                    if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
-                    if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName) {moduleMatch = true}
-                    if (!(this.moduleSet[initialModuleNumber].previousNames == [] || this.moduleSet[initialModuleNumber].previousNames == undefined)) {
-                        for (let  previousName in this.moduleSet[initialModuleNumber].previousNames) {
-                            if (this.moduleSet[initialModuleNumber].previousNames[previousName] == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
-                        }
-                    }  
-                    if (moduleMatch == true) {  
-                        let initialModule = new Module(this.moduleSet[initialModuleNumber])
-                        let buffModule = new Module(buffModuleSetData.moduleSet[buffModuleNumber])
-                        initialModule.merge(buffModule)
-                        this.moduleSet[initialModuleNumber] = initialModule.module
-                    }
-                }   
-                if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[1] == "new") {
-                    this.moduleSet.push(buffModuleSetData.moduleSet[buffModuleNumber])
-                }
-            }
-        }
-    }
-}
 
 function placeSkeleton() {
     document.getElementById("main").innerHTML = `
