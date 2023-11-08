@@ -35,6 +35,7 @@ function simpleNumberBuff(initial, buff, defaultOperator) {
         return Infinity
     }
     let buffValue = buff; let operator = defaultOperator
+    if (defaultOperator == undefined) {defaultOperator = "absolute"}
     if (typeof buff == "object") {
         buffValue = buff[1]; operator = buff[0]
     }
@@ -42,6 +43,7 @@ function simpleNumberBuff(initial, buff, defaultOperator) {
         case "+": return initial+buffValue;
         case "-": return initial-buffValue;
         case "*": return ((initial*1000)*buffValue)/1000;
+        case "%": return ((initial*1000)*(buffValue+1))/1000;
         case "/": if(buffValue==0){return 0}; return initial/buffValue;
         case "absolute": return buffValue;
         case Infinity: case "Infinity": case "infinity": return Infinity;
@@ -53,20 +55,21 @@ export class Tower {
         this.tower = structuredClone(towerObject);
     }
 
-    getFullTower(crosspath) {
+    getFullTower(crosspath, fullTowerSet) {
+        if (this.tower.error) {return {"error": true}}
         let towerStats = []
         let initialModuleSet = new ModuleSet(this.tower.upgrades.base)
-        for (let  i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(towerData.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
+        for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
+            let upgradeModuleSet = new ModuleSet(structuredClone(fullTowerSet.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
-            for (let  dataNumber in initialModuleSet.towerStatsOut) {
+            for (let dataNumber in initialModuleSet.towerStatsOut) {
                 towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
             }
         }
-        for (let  i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(towerData. primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
+        for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
+            let upgradeModuleSet = new ModuleSet(structuredClone(fullTowerSet.primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
-            for (let  dataNumber in initialModuleSet.towerStatsOut) {
+            for (let dataNumber in initialModuleSet.towerStatsOut) {
                 towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
             }
         }
@@ -75,9 +78,9 @@ export class Tower {
             "size": this.tower.size,
             "modules": initialModuleSet.moduleSet
         }
-        for (let  dataNumber in towerStats) {
+        for (let dataNumber in towerStats) {
             if (towerStats[dataNumber].moduleType[0] == "rangeBuff") {
-                console.log(towerStats[dataNumber].value)
+                output.range = simpleNumberBuff(output.range, towerStats[dataNumber].value)
             }
         }
         return output
@@ -91,16 +94,16 @@ export class ModuleSet {
 
     mergeSet(buffModuleSetData) {
         this.towerStatsOut = []
-        for (let  buffModuleNumber in buffModuleSetData.moduleSet) {
+        for (let buffModuleNumber in buffModuleSetData.moduleSet) {
             if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[0] == "rangeBuff") {
                 this.towerStatsOut.push(buffModuleSetData.moduleSet[buffModuleNumber])
             } else {
-                for (let  initialModuleNumber in this.moduleSet) {
+                for (let initialModuleNumber in this.moduleSet) {
                     let moduleMatch = false
                     if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
                     if (this.moduleSet[initialModuleNumber].name == buffModuleSetData.moduleSet[buffModuleNumber].replacingName) {moduleMatch = true}
                     if (!(this.moduleSet[initialModuleNumber].previousNames == [] || this.moduleSet[initialModuleNumber].previousNames == undefined)) {
-                        for (let  previousName in this.moduleSet[initialModuleNumber].previousNames) {
+                        for (let previousName in this.moduleSet[initialModuleNumber].previousNames) {
                             if (this.moduleSet[initialModuleNumber].previousNames[previousName] == buffModuleSetData.moduleSet[buffModuleNumber].name) {moduleMatch = true}
                         }
                     }  
@@ -113,6 +116,7 @@ export class ModuleSet {
                 }   
                 if (buffModuleSetData.moduleSet[buffModuleNumber].moduleType[1] == "new") {
                     this.moduleSet.push(buffModuleSetData.moduleSet[buffModuleNumber])
+                    console.log(buffModuleSetData.moduleSet[buffModuleNumber])
                 }
             }
         }

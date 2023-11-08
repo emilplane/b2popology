@@ -96,6 +96,7 @@ export function numberPathNameConversion(data) {
 }
 
 export function getTowerCostData(tower, crosspath, sellModifier) {
+    if (tower.error) {return undefined}
     let output = {};
 
     output.upgradeCost = tower.costs[getPathingData(crosspath).mainPathName][getPathingData(crosspath).mainPathValue-1]

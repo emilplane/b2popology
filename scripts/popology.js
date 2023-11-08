@@ -1,125 +1,23 @@
 import { Tower } from "/scripts/popology/moduleSystem.js"
 import { getPathingData, numberPathNameConversion, getTowerCostData } from "./popology/conversions.js"
+import { getData } from "./request.js"
 
-const logErrors = false
+let towerData = {};
+let config;
+let towerDirectory;
 
-const towerData = {};
-
-const towerDirectory = [
-    {
-        "name": "primary", 
-        "displayName": "Primary",
-        "type": "tower", 
-        "data": [
-            {
-                "name": "dartMonkey", 
-                "displayName": "Dart Monkey",
-                "enabled": true
-            },
-            {
-                "name": "boomerangMonkey",
-                "displayName": "Boomerang Monkey",
-                "enabled": true
-            },
-            {
-                "name": "bombShooter",
-                "displayName": "Bomb Shooter",
-                "enabled": true
-            },
-            {
-                "name": "tackShooter",
-                "displayName": "Tack Shooter",
-                "enabled": true
-            },
-            {
-                "name": "iceMonkey",
-                "displayName": "Ice Monkey",
-                "enabled": true
-            },
-            {
-                "name": "glueGunner",
-                "displayName": "Glue Gunner",
-                "enabled": true
-            }
-        ]
-    },
-    {
-        "name": "military", 
-        "displayName": "Military",
-        "type": "tower", 
-        "data": [
-            {
-                "name": "sniperMonkey",
-                "displayName": "Sniper Monkey",
-                "enabled": true
-            },
-            {
-                "name": "monkeySub",
-                "displayName": "Monkey Sub",
-                "enabled": true
-            },
-            {
-                "name": "monkeyBuccaneer",
-                "displayName": "Monkey Buccaneer",
-                "enabled": true
-            },
-            {
-                "name": "monkeyAce",
-                "displayName": "Monkey Ace",
-                "enabled": true
-            },
-            {
-                "name": "heliPilot",
-                "displayName": "Heli Pilot",
-                "enabled": true
-            },
-            {
-                "name": "mortarMonkey",
-                "displayName": "Mortar Monkey",
-                "enabled": true
-            },
-            {
-                "name": "dartlingGunner",
-                "displayName": "Dartling Gunner",
-                "enabled": true
-            }
-        ]
+async function getConfigJSON() {
+    let data = await getData(`https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/config.json`)
+    if (data.error == false) {
+        config = data.data
     }
-]
+}
 
-const config = {
-    "properties": [
-        {
-            "name": "damage",
-            "displayName": "Damage", 
-            "type": ["simple", "number", "+"]
-        },
-        {
-            "name": "ceramicDamage",
-            "displayName": "Ceramic Damage", 
-            "type": ["simple", "number", "+"]
-        },
-        {
-            "name": "moabDamage",
-            "displayName": "MOAB Damage", 
-            "type": ["simple", "number", "+"]
-        },
-        {
-            "name": "leadDamage",
-            "displayName": "Lead Damage", 
-            "type": ["simple", "number", "+"]
-        },
-        {
-            "name": "pierce",
-            "displayName": "Pierce", 
-            "type": ["simple", "number", "+"]
-        },
-        {
-            "name": "attackCooldown",
-            "displayName": "Attack Cooldown", 
-            "type": ["simple", "number", "*"]
-        }
-    ]
+async function getTowerDirectoryJSON() {
+    let data = await getData(`https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/towerDirectory.json`)
+    if (data.error == false) {
+        towerDirectory = data.data
+    }
 }
 
 async function getTowerJSON() {
@@ -127,20 +25,13 @@ async function getTowerJSON() {
         towerData[towerDirectory[towerCategory].name] = {}
         for (let tower in towerDirectory[towerCategory].data) {
             towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = {"data": false, "reason": "data not recieved"}
-            try {
-                const requestURL = `https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/Towers/${towerDirectory[towerCategory].data[tower].name}.json`;
-                const request = new Request(requestURL);
-                
-                const response = await fetch(request)
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                let string = await response.json();
-                towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = string
-            } catch (error) {
-                if(logErrors==true){console.log(`Data failed to load!\n\nTower: ${towerDirectory[towerCategory].data[tower].displayName}\n${error}`)}
-                towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = {"data": false, "reason": "data could not be fetched"}
+            let data = await getData(`https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/Towers/${towerDirectory[towerCategory].data[tower].name}.json`)
+            if (data.error == false) {
+                towerData [towerDirectory[towerCategory].name] [towerDirectory[towerCategory].data[tower].name] = data.data
+                towerData [towerDirectory[towerCategory].name] [towerDirectory[towerCategory].data[tower].name].error = false
+            } else {
+                towerData[towerDirectory[towerCategory].name][towerDirectory[towerCategory].data[tower].name] = {"error": true, "displayName": towerDirectory[towerCategory].data[tower].name, "reason": "data could not be fetched"}
+                if(config.console.errors==true){console.log(`Data failed to load!\n\nTower: ${towerDirectory[towerCategory].data[tower].displayName}\nStatus code: ${data.status}`)}
             }
         }
     }
@@ -189,9 +80,10 @@ function updatePage(change) {
 
     updateConfigurationBar()
 
-    updateCostStats()
-
-    updateTowerStats()
+    if (!towerData[category][page].error) {
+        updateCostStats()
+        updateTowerStats()
+    }
 
     document.getElementById("categorySelect").addEventListener("change", function() {
         category = document.getElementById("categorySelect").value
@@ -201,7 +93,8 @@ function updatePage(change) {
         page = document.getElementById("pageSelect").value
         updatePage("page")
     });
-    if (towerData[category][page].data != false) {
+    if (towerData[category][page].data != false && !towerData[category][page].error) {
+        console.log(document.getElementById("topPathSelect"))
         document.getElementById("topPathSelect").addEventListener("change", function() {
             crosspath[0] = Number(document.getElementById("topPathSelect").value)
             updatePage("crosspath")
@@ -218,6 +111,9 @@ function updatePage(change) {
 };
 
 function updateTopBanner() {
+    if (towerData[category][page].error == true) {
+        return
+    }
     document.getElementById("coverImageStyle").outerHTML = (`
         <style id="coverImageStyle">
             .coverImage {
@@ -275,15 +171,22 @@ function updateConfigurationBar() {
 
     let towerHTML = ``
     for (let towerNumber in towerDirectory[categoryPosition].data) {
+        let selectedString = ``;
         if (page == towerDirectory[categoryPosition].data[towerNumber].name) {
-            towerHTML = towerHTML + `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" selected>${towerDirectory[categoryPosition].data[towerNumber].displayName}</option>`
-        } else {
-            towerHTML = towerHTML + `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}">${towerDirectory[categoryPosition].data[towerNumber].displayName}</option>`
+            selectedString = "selected"
         }
+        let displayNameString = ``
+        let displayNameData = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
+        if (displayNameData == undefined) {
+            displayNameString = towerDirectory[categoryPosition].data[towerNumber].name
+        } else {
+            displayNameString = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
+        }
+        towerHTML = towerHTML + `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" ${selectedString}>${displayNameString}</option>`
     }
 
     let pathSelectHTML = `<h5>No Path Data</h5>`;
-    if (towerData[category][page].data != false) {
+    if (towerData[category][page].error == false) {
         pathSelectHTML = `<h5>Path:</h5><select id="topPathSelect"><option value="0">0</option>`
         for (let upgrade in towerData[category][page].upgrades.top) {
             if (crosspath[0] == Number(upgrade)+1) {
@@ -310,7 +213,7 @@ function updateConfigurationBar() {
         }
         pathSelectHTML = pathSelectHTML + `</select>`
     }
-    
+
     document.getElementById("configurationBar").innerHTML = (`
         <div class="configurationBarTextSelectorWrapper">
             <h5>Category:</h5>
@@ -335,28 +238,36 @@ function updateConfigurationBar() {
 }
 
 function updateCostStats() {
-    document.getElementById("towerCosts").innerHTML = `
-        <div>
-            <h5>Upgrade Cost</h5>
-            <p>$${getTowerCostData(towerData.primary[page], crosspath).upgradeCost}</p>
-        </div>
-        <div>
-            <h5>Total Cost</h5>
-            <p>$${getTowerCostData(towerData.primary[page], crosspath).totalCost}</p>
-        </div>
-        <div>
-            <h5>Sell Cost</h5>
-            <p>$${getTowerCostData(towerData.primary[page], crosspath).sellCost}</p>
-        </div>
-        <div>
-            <h5>Loss on Sell</h5>
-            <p>$${getTowerCostData(towerData.primary[page], crosspath).sellCostLoss}</p>
-        </div> 
-    `
+    let towerCostData = getTowerCostData(towerData[category][page], crosspath)
+    if (towerCostData != undefined) {
+        document.getElementById("towerCosts").innerHTML = `
+            <div>
+                <h5>Upgrade Cost</h5>
+                <p>$${towerCostData.upgradeCost}</p>
+            </div>
+            <div>
+                <h5>Total Cost</h5>
+                <p>$${towerCostData.totalCost}</p>
+            </div>
+            <div>
+                <h5>Sell Cost</h5>
+                <p>$${towerCostData.sellCost}</p>
+            </div>
+            <div>
+                <h5>Loss on Sell</h5>
+                <p>$${towerCostData.sellCostLoss}</p>
+            </div> 
+        `
+    } else {
+        document.getElementById("towerCosts").innerHTML = `
+            <h6>Failed to load data!</h6>
+        `
+    }
+    
 }
 
 function updateTowerStats() {
-    let towerObject = new Tower(towerData[category][page]).getFullTower(crosspath)
+    let towerObject = new Tower(towerData[category][page]).getFullTower(crosspath, towerData)
     let moduleSet = towerObject.modules
     let towerStatsHTML = ``
     let propertiesHTML = ``
@@ -364,7 +275,7 @@ function updateTowerStats() {
         propertiesHTML = propertiesHTML + `
             <div>
                 <h5>Tower Range</h5>
-                <p>${towerObject.range}</p>
+                <p>${towerObject.range}r</p>
             </div>
         `
     }
@@ -423,6 +334,8 @@ function sleep(ms) {
 }
 
 async function main() {
+    await getConfigJSON()
+    await getTowerDirectoryJSON()
     await getTowerJSON()
     console.log(towerData)
     updatePage("initial")
