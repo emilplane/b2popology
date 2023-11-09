@@ -1,6 +1,6 @@
 import { Tower } from "/scripts/popology/moduleSystem.js"
 import { getPathingData, numberPathNameConversion, getTowerCostData } from "./popology/conversions.js"
-import { getData } from "./request.js"
+import getData from "./request.js"
 
 let towerData = {};
 let config;

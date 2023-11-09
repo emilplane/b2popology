@@ -1,4 +1,7 @@
 import { getPathingData } from "/scripts/popology/conversions.js"
+import getData from "/scripts/request.js"
+
+
 
 const properties = [
     {"name": "damage",          "displayName": "Damage",                "type": "number",   "defaultOperator": "+"          },

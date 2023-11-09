@@ -1,4 +1,4 @@
-export async function getData(url) {
+export default async function getData(url) {
     let output = {
         "error": true
     }
