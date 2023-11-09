@@ -267,7 +267,7 @@ function updateCostStats() {
 }
 
 function updateTowerStats() {
-    let towerObject = new Tower(towerData[category][page]).getFullTower(crosspath, towerData)
+    let towerObject = new Tower(towerData, category, page).getFullTower(crosspath, towerData)
     let moduleSet = towerObject.modules
     let towerStatsHTML = ``
     let propertiesHTML = ``

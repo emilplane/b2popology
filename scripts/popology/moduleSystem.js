@@ -1,7 +1,12 @@
 import { getPathingData } from "/scripts/popology/conversions.js"
 import getData from "/scripts/request.js"
 
-
+async function getConfigJSON() {
+    let data = await getData(`https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/config.json`)
+    if (data.error == false) {
+        config = data.data
+    }
+}
 
 const properties = [
     {"name": "damage",          "displayName": "Damage",                "type": "number",   "defaultOperator": "+"          },
@@ -54,8 +59,10 @@ function simpleNumberBuff(initial, buff, defaultOperator) {
 }
 
 export class Tower {
-    constructor(towerObject) {
-        this.tower = structuredClone(towerObject);
+    constructor(allTowersData, category, page) {
+        this.allTowersData = structuredClone(allTowersData);
+        this.tower = structuredClone(allTowersData[category][page]);
+        this.category = category; this.page = page
     }
 
     getFullTower(crosspath, fullTowerSet) {
@@ -63,14 +70,14 @@ export class Tower {
         let towerStats = []
         let initialModuleSet = new ModuleSet(this.tower.upgrades.base)
         for (let i = 0; i < getPathingData(crosspath).mainPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(fullTowerSet.primary.dartMonkey.upgrades[getPathingData(crosspath).mainPathName][i]))
+            let upgradeModuleSet = new ModuleSet(structuredClone(fullTowerSet[this.category][this.page].upgrades[getPathingData(crosspath).mainPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
             for (let dataNumber in initialModuleSet.towerStatsOut) {
                 towerStats.push(initialModuleSet.towerStatsOut[dataNumber])
             }
         }
         for (let i = 0; i < getPathingData(crosspath).crosspathPathValue; i++) {
-            let upgradeModuleSet = new ModuleSet(structuredClone(fullTowerSet.primary.dartMonkey.upgrades[getPathingData(crosspath).crosspathPathName][i]))
+            let upgradeModuleSet = new ModuleSet(structuredClone(fullTowerSet[this.category][this.page].upgrades[getPathingData(crosspath).crosspathPathName][i]))
             initialModuleSet.mergeSet(upgradeModuleSet)
             for (let dataNumber in initialModuleSet.towerStatsOut) {
                 towerStats.push(initialModuleSet.towerStatsOut[dataNumber])

@@ -2,6 +2,9 @@
     "console": {
         "errors": true
     },
+    "towerProperties": [
+
+    ],
     "properties": [
         {
             "name": "damage", "displayName": "Damage", 
@@ -25,7 +28,32 @@
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
+                    "name": "fortifiedDamage", "displayName": "Fortified Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "fortifiedMoabDamage", "displayName": "Fortified MOAB Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
                     "name": "leadDamage", "displayName": "Lead Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "camoDamage", "displayName": "Camo Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "frozenDamage", "displayName": "Frozen Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "stunnedDamage", "displayName": "Stunned Damage",
                     "type": "simpleValue", 
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 }

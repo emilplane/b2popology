@@ -1,9 +1,6 @@
 {
     "name": "boomerangMonkey", "displayName": "Boomerang Monkey",
 
-    "validPlacements": ["land"],
-    "range": 32, "size": ["radius", 6],
-
     "upgradeNames": {
         "top": [
             {
@@ -65,52 +62,50 @@
         "bottom": [100, 300, 1300, 3200, 55000]
     },
 
+    "validPlacements": ["land"],
+    "range": 43, "size": ["radius", 6],
+
     "upgrades": {
         "base": [
             {
                 "moduleType": ["attack", "new"],
-                "name": "dart", "mainAttack": true,
+                "name": "boomerang", "mainAttack": true,
                 
-                "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
+                "damage": 1, "pierce": 4, "attackCooldown": 1.2, "attackType": "sharp"
             }
         ],
         "top": [
             [
                 {
                     "moduleType": ["attack", "buff"],
-                    "name": "dart",
+                    "name": "boomerang",
                     
-                    "pierce": 1
+                    "pierce": 4
                 }
             ],
             [
                 {
                     "moduleType": ["attack", "buff"],
-                    "name": "dart",
+                    "name": "boomerang",
                     
-                    "pierce": 3
+                    "pierce": 5
                 }
             ],
             [
                 {
                     "moduleType": ["attack", "replace"],
-                    "replacingName": "dart", "name": "spikeball",
+                    "replacingName": "boomerang", "name": "glaive",
                     
-                    "damage": 1, "ceramicDamage": 1, "pierce": 22, "attackCooldown": 1.15, "attackType": "shatter",
+                    "damage": 1, "pierce": 40, "attackCooldown": 1.15, "attackType": "sharp",
                     "rebounds": true
-                },
-                {
-                    "moduleType": ["rangeBuff"],
-                    "value": ["%", 0.15]
                 }
             ],
             [
                 {
-                    "moduleType": ["attack", "replace"],
-                    "replacingName": "spikeball", "name": "juggernaut",
+                    "moduleType": ["attack", "buff"],
+                    "name": "glaive",
                     
-                    "damage": 2, "ceramicDamage": 4, "pierce": 50, "attackCooldown": 1, "attackType": "normal",
-                    "rebounds": true
+                    "pierce": 40, "attackCooldown": 0.5
                 }
             ],
             [
