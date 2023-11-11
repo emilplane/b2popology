@@ -1007,7 +1007,7 @@ let data = {
                                 <ul>
                                     <li>tacks replaced by blades 
                                         <ul>
-                                            <li>1d, +2p (4p), 31r, 1.19s, sharp type</li>
+                                            <li>1d, +2p (4p), 31r, 1.19s, sharp type, increased projectile size</li>
                                         </ul>
                                     </li>
                                     <li>crosspath
@@ -1287,7 +1287,8 @@ let data = {
                                     </li>
                                     <li>gains snowstorm ability (30s cooldown, battle ready)
                                         <ul>
-                                            <li>1d, &#8734;p, &#8734;r, shatter type, camo applies frozen status (6s duration, or 3s for camo/white/blimp)</li>
+                                            <li>1d, &#8734;p, &#8734;r, shatter type, camo</li>
+                                            <li>applies frozen status (6s duration, or 3s for camo/white/blimp)</li>
                                         </ul>
                                     </li>
                                     <li>crosspath
@@ -1320,7 +1321,8 @@ let data = {
                                     <li>blimps can be targeted: they will take damage, but cannot be frozen</li>
                                     <li>snowstorm replaced by absolute-zero (20s cooldown, battle ready)
                                         <ul>
-                                            <li>1d, &#8734;p, &#8734;r, normal type, camo applies frozen status (10s duration) all ice towers gain 66.66%s buff for 10s</li>
+                                            <li>1d, &#8734;p, &#8734;r, normal type, camo</li>
+                                            <li>applies frozen status (10s duration) all ice towers gain 66.66%s buff for 10s</li>
                                         </ul>
                                     </li>
                                     <li>crosspath
@@ -1815,7 +1817,7 @@ let data = {
                                     <li>gains camo detection</li>
                                     <li>bullet buffed
                                         <ul>
-                                            <li>+2cmd</li>
+                                            <li>+2cad</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3686,7 +3688,7 @@ let data = {
                                             <li>120&deg random spread</li>
                                             <li>on contact: explosion
                                                 <ul>
-                                                    <li>4d, 6p, 8r blast, normal type</li>
+                                                    <li>4d, 8p, 8r blast, normal type</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -6634,7 +6636,7 @@ let data = {
                     "3": `<ul>
                         <li>gains cyber-shot ability (45s cooldown, 5s duration, 11.25s initial)
                             <ul>
-                                <li>+15p (21p), +5r (55r)</li>, 84.75%s?
+                                <li>+15p (21p), +5r (55r)</li>, 84.75%s?</li>
                                 <li>duration increases 0.5s per level (5 + 0.5 level)</li>
                             </ul>
                         </li>
@@ -8555,7 +8557,7 @@ let data = {
                     <li>gains beatdown ability (65s cooldown, battle ready)
                         <ul>
                             <li>10 strongest bloons on screen up to a BFB are downgraded by 1 layer</li>
-                            <li>can only downgrade up to 2 &#8594; 3 BFBs in an ability, but can still downgrade other bloons if this threshold is reached</li>
+                            <li>can only downgrade up to 3 BFBs in an ability, but can still downgrade other bloons if this threshold is reached</li>
                         </ul>
                     </li>
                 </ul>`,
@@ -9479,7 +9481,7 @@ let data = {
                     </li>
                 </ul>`,
                     "3": `<ul>
-                    <li>seize-assets ability (60s &#8594; 70s cooldown, 10s duration, 15s initial cooldown)
+                    <li>seize-assets ability (70s cooldown, 10s duration, 15s initial cooldown)
                         <ul>
                             <li>takes $25 from the opponent every 1s
                                 <ul>

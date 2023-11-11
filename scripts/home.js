@@ -2,6 +2,73 @@ document.getElementById("eventSection").innerHTML =  `<h4 class="sectionStyle">L
 
 let events = [
     {
+        "name": "PuniEsports Battles 2 Tournament #1",
+        "startDate": "2023-11-11T17:00:00Z",
+        "content": `
+            <p>PuniEsports is hosting a their first free entry Battles 2 Tournament! Learn more with the links below</p>
+        `,
+        "links": [
+            {
+                "name": "Learn more on Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/173vx97/battles_2_tournament_incoming/"
+            },
+            {
+                "name": "Learn more on Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/173vx97/battles_2_tournament_incoming/"
+            },
+            {
+                "name": "Tournament Page",
+                "link": "https://www.start.gg/tournament/puniesports-bloons-td-battles-2-tournaments/events"
+            },
+            {
+                "name": "Discord Server",
+                "link": "https://discord.gg/BzDM556Unu"
+            },
+            {
+                "name": "Twitch Channel",
+                "link": "https://twitch.tv/PuniEsports"
+            },
+            {
+                "name": "Announcement Video",
+                "link": "https://www.youtube.com/watch?v=foy_V6nTlMY&feature=youtu.be"
+            }
+        ]
+    },
+    {
+        "name": "Battles 2 Midseason Patch Update",
+        "startDate": "2023-11-10T14:15:44Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/17s4wwj/where_are_the_midseason_balance_changes/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/17s4wwj/where_are_the_midseason_balance_changes/"
+            }
+        ]
+    },
+    {
+        "name": "Battles 2 Clan Preview",
+        "startDate": "2023-11-10T14:37:00Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "Open here",
+                "link": "/clanpreview.html"
+            },
+            {
+                "name": "Open on X, formerly Twitter",
+                "link": "https://twitter.com/btdbattles2/status/1722986780729745560"
+            }
+        ]
+    },
+    {
         "name": "Battles 2 Update 2.2 - Balance Survey!",
         "startDate": "2023-10-19T17:00:23Z",
         "endDate": "2023-10-26T17:00:23Z",
