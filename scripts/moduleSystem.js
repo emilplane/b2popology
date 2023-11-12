@@ -202,6 +202,18 @@ const config = {
                 "defaultState": null
             },
             "subvalues": []
+        },
+        {
+            "name": "money", "displayName": "Money", 
+            
+            "modules": ["income"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "number", 
+                "defaultOperator": "+",
+                "defaultState": null
+            },
+            "subvalues": []
         }
     ]
 }
@@ -301,6 +313,12 @@ const dartMonkey = {
                     "name": "parallel-attack",
                     
                     "damage": 2, "leadDamage": ["+", 5], "attackCooldown": 0.8, "projectiles": 2, "attackType": "normal"
+                },
+                {
+                    "moduleType": ["income", "new"],
+                    "name": "tower-income",
+                    
+                    "money": 30
                 }
             ],
             [
@@ -309,6 +327,12 @@ const dartMonkey = {
                     "name": "dart",
                     
                     "pierce": 3
+                },
+                {
+                    "moduleType": ["income", "buff"],
+                    "name": "tower-income",
+                    
+                    "money": 100
                 }
             ],
             [
@@ -525,7 +549,6 @@ class Tower {
 
     buffWithUpgrades(pathSet) {
         let pathData = getPathingData(pathSet)
-        //console.log(pathData)
         for (let i = 0; i < pathData.mainPathValue; i++) {
             this.addUpgrade(this.fullTowerData.upgrades[pathData.mainPathName][i])
         }
@@ -541,6 +564,10 @@ class Tower {
     }
 
     addModule(module) {
+        if (module.moduleType[1] == "new") {
+            this.#addNewModule(module)
+            return true
+        }
         let matchModuleNumber;
         for (let moduleNumber in this.modules) {
             if (this.modules[moduleNumber].name == module.name) {
@@ -549,29 +576,39 @@ class Tower {
         }
         let initialModule = this.modules[matchModuleNumber]
         if (matchModuleNumber == undefined) {return false}
-
         for (let propertyNumber in config.properties) {
             let propertyData = config.properties[propertyNumber]
-            switch (propertyData.type) {
-                case "simpleValue":
-                    if (module[propertyData.name] != undefined) {
-                        this.#simpleValueSwitch(initialModule, module, propertyData, propertyData.valueData.defaultOperator)
-                    }
-                    break;
+            let moduleTypeMatch = false;
+            for (let moduleTypeNumber in propertyData.modules) {
+                if (initialModule.moduleType[0] == propertyData.modules[moduleTypeNumber]) {moduleTypeMatch = true}
             }
-            for (let subpropertyNumber in propertyData.subvalues) {
-                let subpropertyData = propertyData.subvalues[subpropertyNumber]
-                switch (subpropertyData.type) {
+            
+            if (moduleTypeMatch) {
+                switch (propertyData.type) {
                     case "simpleValue":
-                        if (module[subpropertyData.name] != undefined) {
-                            this.#simpleValueSwitch(initialModule, module, subpropertyData, subpropertyData.valueData.defaultOperator)
+                        if (module[propertyData.name] != undefined) {
+                            this.#simpleValueSwitch(initialModule, module, propertyData, propertyData.valueData.defaultOperator)
                         }
                         break;
                 }
-                
+                for (let subpropertyNumber in propertyData.subvalues) {
+                    let subpropertyData = propertyData.subvalues[subpropertyNumber]
+                    switch (subpropertyData.type) {
+                        case "simpleValue":
+                            if (module[subpropertyData.name] != undefined) {
+                                this.#simpleValueSwitch(initialModule, module, subpropertyData, subpropertyData.valueData.defaultOperator)
+                            }
+                            break;
+                    }
+                    
+                }
             }
         }
         return true
+    }
+
+    #addNewModule(module) {
+        this.modules.push(module)
     }
 
     #simpleValueSwitch(initialModule, buffModule, propertyData, defaultOperator) {
@@ -632,4 +669,4 @@ class Tower {
 
 let tower1 = new Tower(dartMonkey, [0, 0, 0])
 tower1.buffWithUpgrades([2, 1, 0])
-console.log(tower1)
+console.log(tower1.modules) 
