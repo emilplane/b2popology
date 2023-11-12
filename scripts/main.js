@@ -514,7 +514,7 @@ let data = {
                             `
                         },
                         "5": {
-                            "name": "005 - MOAB Domination - <span class='newChange'>$52,000",
+                            "name": "005 - MOAB Domination - $52,000",
                             "content": `
                                 <ul>
                                     <li>kylie buffed
@@ -3236,7 +3236,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Shell Shock - <span class='newChange'>$1,100",
+                            "name": "300 - Shell Shock - $1,100",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
@@ -3413,7 +3413,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "002 - Burny Stuff - <span class='newChange'>$700",
+                            "name": "002 - Burny Stuff - $700",
                             "content": `
                                 <ul>
                                     <li>explosion buffed
