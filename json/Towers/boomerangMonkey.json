@@ -110,13 +110,10 @@
             ],
             [
                 {
-                    "moduleType": ["attack", "replace"],
-                    "replacingName": "juggernaut", "name": "ultrajugg",
+                    "moduleType": ["attack", "buff"],
+                    "name": "glaive",
                     
-                    "damage": 4, "ceramicDamage": 16, "fortifiedDamage": 5, "leadDamage": ["*", 6], "pierce": 200,
-                    "rebounds": true,
-
-                    "rehit": ["rebound"],
+                    "damage": 7,
 
                     "effects": [
                         {
@@ -125,24 +122,8 @@
                                 "expireNaturally"
                             ],
                             "result": ["module", "juggernauts"]
-                        },
-                        {
-                            "condition": ["multiple", "whicheverFirst", 
-                                ["pierceUsed", ["%", 1]], 
-                                "expireNaturally"
-                            ],
-                            "result": ["module", "juggernauts"]
                         }
                     ]
-                },
-                {
-                    "moduleType": ["attack", "new"],
-                    "replacingName": "juggernauts",
-                    
-                    "damage": 1, "ceramicDamage": 2, "fortifiedDamage": 2, "leadDamage": ["*", 6], "projectiles": [6, 360], "pierce": 100, "attackType": "normal",
-                    "rebounds": true,
-
-                    "rehit": ["rebound"]
                 }
             ]
         ],

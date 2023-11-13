@@ -125,18 +125,22 @@
 
                     "effects": [
                         {
-                            "condition": ["multiple", "whicheverFirst", 
-                                ["pierceUsed", ["%", 0.5]], 
-                                "expireNaturally"
-                            ],
-                            "result": ["module", "juggernauts"]
+                            "condition": {
+                                "data": [
+                                    ["pierceUsed", ["%", 1]],
+                                    "expire"
+                                ]
+                            },
+                            "result": ["projectile", "juggernauts"]
                         },
                         {
-                            "condition": ["multiple", "whicheverFirst", 
-                                ["pierceUsed", ["%", 1]], 
-                                "expireNaturally"
-                            ],
-                            "result": ["module", "juggernauts"]
+                            "condition": {
+                                "data": [
+                                    ["pierceUsed", ["%", 1]],
+                                    "expire"
+                                ]
+                            },
+                            "result": ["projectile", "juggernauts"]
                         }
                     ]
                 },
