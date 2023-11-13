@@ -13,11 +13,38 @@
         <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     </head>
     <body>
         <main id="main">
             
         </main>
     </body>
-    <script type="module" src="scripts/popology.js"></script>
+    <script type="module" src="scripts/ecosim.js"></script>
+    <py-env>
+        - b2sim
+    </py-env>
+    <py-script>
+import b2sim as b2
+rounds = b2.Rounds(0.1)
+farms = [
+    b2.initFarm(purchase_time=rounds.getTimeFromRound(7), upgrades=(3,2,0)),
+    b2.initFarm(purchase_time=rounds.getTimeFromRound(13.9), upgrades=(3,2,0))
+]
+initial_state_game = {
+    'Cash': 0,
+    'Eco': 800,
+    'Eco Send': b2.ecoSend(send_name = 'Grouped Blacks'),
+    'Rounds': rounds, 
+    'Farms': farms, 
+    'Game Round': 13.99 
+}
+game_state = b2.GameState(initial_state_game)
+game_state.fastForward(target_round = 17)
+print("The current cash and eco are (%s,%s)"%(game_state.cash, game_state.eco))
+print(game_state.cash_states)
+print(game_state.eco_states)
+print(game_state.time_states)
+    </py-script>
 </html>

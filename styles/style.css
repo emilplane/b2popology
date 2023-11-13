@@ -234,6 +234,13 @@ input:focus + .inputUnderline {
     };
 }
 
-py-l {
+py-loader {
     display: none
+}
+
+py-script {
+    color: var(--shade8);
+    @media (prefers-color-scheme: dark) {
+        color: var(--shade1);
+    };
 }
