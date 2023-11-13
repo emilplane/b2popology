@@ -43,22 +43,39 @@ function placeSkeleton() {
     <style id="coverImageStyle"></style>
     <div class="statsPageWrapper">
         <div style="max-width: 1500px; margin: 0 auto; padding: 16px;">
+            <div class="headerStyle">
+                <h4 class="luckiestGuy">Battles 2 Popology</h4>
+                <div style="display: flex; gap: 16px; margin-left: auto">
+                    <h5>Home</h5>
+                    <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Popology</h5>
+                    <h5>Eco Sim</h5>
+                    <h5>Credits</h5>
+                </div>
+            </div>
+            <div class="headerStyle configurationBar" id="configurationBar">
+                
+            </div>
             <section class="baseSection" id="baseSection">
                 
             </section>
-            <div class="configurationBar" id="configurationBar">
-                
-            </div>
+            
             <div style="display: flex; flex-direction: column; gap: 16px" id="mainStatsSection">
-                <section class="roundedBoxSection">
-                    <div>
-                        <h3 class="luckiestGuy">Tower Costs</h3>
-                        <div class="horizontalLine"></div>
-                        <div style="display: flex; gap: 32px" id="towerCosts">
-                            
+                <div style="display:flex; gap: 12px">
+                    <section class="roundedBoxSection" style="flex:1">
+                        <div>
+                            <h4>Prices</h4>
+                            <div class="horizontalLine"></div>
+                            <div style="display: flex; gap: 8px" id="towerCosts">
+                                
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <section class="roundedBoxSection" style="width:150px">
+                        <div style="aspect-ratio:1; width:100%"; >
+                            <img style="object-fit: contain;width: 100%; max-height: 100%;position:relative;top:-80px" src="/media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png"/>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
@@ -186,7 +203,7 @@ function updateConfigurationBar() {
 
     let pathSelectHTML = `<h5>No Path Data</h5>`;
     if (towerData[category][page].error == false) {
-        pathSelectHTML = `<h5>Path:</h5><select id="topPathSelect"><option value="0">0</option>`
+        pathSelectHTML = `<select id="topPathSelect"><option value="0">0</option>`
         for (let upgrade in towerData[category][page].upgrades.top) {
             if (crosspath[0] == Number(upgrade)+1) {
                 pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
@@ -215,23 +232,26 @@ function updateConfigurationBar() {
 
     document.getElementById("configurationBar").innerHTML = (`
         <div class="configurationBarTextSelectorWrapper">
-            <h5>Category:</h5>
+            <h6>Category</h6>
             <select id="categorySelect">
                 ${categoryHTML}
             </select>
         </div>
         <div class="configurationBarTextSelectorWrapper">
-            <h5>Tower:</h5>
+            <h6>Tower</h6>
             <select id="pageSelect">
                 ${towerHTML}
             </select>
         </div>
         <div class="configurationBarTextSelectorWrapper">
-            <h5>Type:</h5>
-            <button>Upgrade Info</button>
+            <h6>Type</h6>
+            <button>Full Tower</button>
         </div>
         <div class="configurationBarTextSelectorWrapper">
-            ${pathSelectHTML}
+            <h6>Path</h6>
+            <div style="display:flex;gap:4px">
+                ${pathSelectHTML}
+            </div>
         </div>
     `)
 }
@@ -240,20 +260,20 @@ function updateCostStats() {
     let towerCostData = getTowerCostData(towerData[category][page], crosspath)
     if (towerCostData != undefined) {
         document.getElementById("towerCosts").innerHTML = `
-            <div>
-                <h5>Upgrade Cost</h5>
+            <div class="infoBox">
+                <h6>Upgrade Cost</h6>
                 <p>$${towerCostData.upgradeCost}</p>
             </div>
-            <div>
-                <h5>Total Cost</h5>
+            <div class="infoBox">
+                <h6>Total Cost</h6>
                 <p>$${towerCostData.totalCost}</p>
             </div>
-            <div>
-                <h5>Sell Cost</h5>
+            <div class="infoBox">
+                <h6>Sell Cost</h6>
                 <p>$${towerCostData.sellCost}</p>
             </div>
-            <div>
-                <h5>Loss on Sell</h5>
+            <div class="infoBox">
+                <h6>Loss on Sell</h6>
                 <p>$${towerCostData.sellCostLoss}</p>
             </div> 
         `
@@ -301,7 +321,7 @@ function updateTowerStats() {
         let propertiesHTML = ``
         for (let property in config.properties) {
             if (moduleSet [module] [config.properties[property].name] != undefined) {
-                switch (config.properties[property].type[1]) {
+                switch (config.properties[property].valueData.valueType) {
                     case "number":
                         propertiesHTML = propertiesHTML + `
                             <div>
@@ -315,7 +335,7 @@ function updateTowerStats() {
         }
         statsHTML = statsHTML + `
             <section class="roundedBoxSection">
-                <h3 class="luckiestGuy"><span class="slightTextEmphasis">${moduleSet[module].name}</span> attack</h3>
+                <h3 class="luckiestGuy"><span class="slightTextEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}</h3>
                 <div class="horizontalLine"></div>
                 <div style="display: flex; gap: 32px">
                     ${propertiesHTML}
@@ -323,7 +343,6 @@ function updateTowerStats() {
             </section>
         `
     }
-
     document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", towerStatsHTML + statsHTML)
 }
 

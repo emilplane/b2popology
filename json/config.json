@@ -21,9 +21,9 @@
             "name": "damage", "displayName": "Damage", 
             
             "modules": ["attack"],
-            "type": "simpleValue", 
+            "type": "simpleValue",
             "valueData": {
-                "valueType": "number", 
+                "valueType": "number",
                 "defaultOperator": "+",
                 "defaultState": null
             },

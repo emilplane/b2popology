@@ -1,19 +1,22 @@
 :root {
-    --primaryLight3: hsl(161, 61%, 93%);
+    --primaryLight3: hsl(161, 61%, 82%);
     --primaryLight2: hsl(160, 56%, 74%);
     --primaryLight1: hsl(160, 61%, 64%);
     --primary: hsl(160, 100%, 39%);
     --primaryDark1: hsl(160, 100%, 31%);
     --primaryDark2: hsl(160, 100%, 26%);
-    --primaryDark3: hsl(160, 100%, 10%);
+    --primaryDark3: hsl(160, 100%, 15%);
 
     --shade1: hsl(0, 0%, 100%);
     --shade2: hsl(0, 0%, 95%);
+    --shade2_5: hsl(0, 0%, 85%);
     --shade3: hsl(0, 0%, 76%);
     --shade4: hsl(0, 0%, 60%);
     --shade5: hsl(0, 0%, 40%);
     --shade6: hsl(0, 0%, 24%);
-    --shade7: hsl(0, 0%, 12%);
+    --shade6_5: hsl(0, 0%, 16%);
+    --shade7: hsl(0, 0%, 10%);
+    --shade7_5: hsl(0, 0%, 6%);
     --shade8: hsl(0, 0%, 0%);
 
     --primaryTower1: #E6EEF2;
@@ -72,7 +75,7 @@ h1, h2, h3, h4, h5, h6, button, input, select {
 p, ul {
     font-family: "Roboto";
     font-weight: 100;
-    padding: 4px 0;
+    padding: 0px 0;
 }
 
 h5, h6, select, button {
@@ -114,8 +117,12 @@ h6, select, button {
 	font-size: 13pt;
 }
 
+.smallText {
+    font-size: 10pt;
+}
+
 p, ul {
-	font-size: 12pt;
+	font-size: 11pt;
     color: var(--shade7);
     @media (prefers-color-scheme: dark) {
         color: var(--shade2);
@@ -179,12 +186,21 @@ input:focus + .inputUnderline {
     transition: 0.5s;
 }
 
+.headerStyle {
+    background-color: hsla(160 100% 15% / 80%);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap
+}
+
 .baseSection {
     padding: 8px;
 }
 
 .roundedBoxSection {
-    padding: 16px;
+    padding: 12px;
     border-radius: 8px;
     background-color: var(--shade2);
     @media (prefers-color-scheme: dark) {
@@ -208,29 +224,23 @@ input:focus + .inputUnderline {
 }
 
 .configurationBar {
-    height: 40px;
     display: flex; 
     align-items: center;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 16px;
+    padding: 8px 12px;
     gap: 32px;
-    background-color: var(--shade1);
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--shade7);
-    }
 }
 
 .configurationBarTextSelectorWrapper {
-    display: flex; gap: 8px; align-items: center;
+    display: flex; flex-direction: column; 
+    gap: 4px; align-items: flex-start;
 }
 
 .horizontalLine {
-    height: 2px;
-    background-color: var(--shade8);
-    margin: 8px 0;
+    height: 1px;
+    background-color: var(--shade3);
+    margin-bottom: 8px;
     @media (prefers-color-scheme: dark) {
-        background-color: var(--shade1);
+        background-color: var(--shade6);
     };
 }
 
@@ -243,4 +253,21 @@ py-script {
     @media (prefers-color-scheme: dark) {
         color: var(--shade1);
     };
+}
+
+.infoBox {
+    background-color: var(--shade2_5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade6_5);
+    };
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.infoBox:hover {
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+    transition: 0.5s;
 }
