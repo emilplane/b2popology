@@ -94,7 +94,6 @@ function updatePage(change) {
         updatePage("page")
     });
     if (towerData[category][page].data != false && !towerData[category][page].error) {
-        console.log(document.getElementById("topPathSelect"))
         document.getElementById("topPathSelect").addEventListener("change", function() {
             crosspath[0] = Number(document.getElementById("topPathSelect").value)
             updatePage("crosspath")
@@ -267,23 +266,24 @@ function updateCostStats() {
 }
 
 function updateTowerStats() {
-    let towerObject = new Tower(towerData, category, page).getFullTower(crosspath, towerData)
+    let towerObject = new Tower(towerData[category][page], crosspath)
+    console.log(towerObject)
     let moduleSet = towerObject.modules
     let towerStatsHTML = ``
     let propertiesHTML = ``
-    if (towerObject.range != undefined) {
+    if (towerObject.towerStats.range != undefined) {
         propertiesHTML = propertiesHTML + `
             <div>
-                <h5>Tower Range</h5>
-                <p>${towerObject.range}r</p>
+                <h5>Tower Range</h5>    
+                <p>${towerObject.towerStats.range}r</p>
             </div>
         `
     }
-    if (towerObject.size[0] == "radius") {
+    if (towerObject.towerStats.size[0] == "radius") {
         propertiesHTML = propertiesHTML + `
             <div>
                 <h5>Tower Size</h5>
-                <p>${towerObject.size[1]}r</p>
+                <p>${towerObject.towerStats.size[1]}r</p>
             </div>
         `
     }

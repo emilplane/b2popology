@@ -2,37 +2,132 @@
     "console": {
         "errors": true
     },
+    "towerProperties": [
+
+    ],
     "properties": [
         {
-            "name": "damage",
-            "displayName": "Damage", 
-            "type": ["simple", "number", "+"]
+            "name": "mainAttack", "displayName": "Main Attack", 
+            
+            "modules": ["attack"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "boolean", 
+                "defaultState": false
+            },
+            "subvalues": []
         },
         {
-            "name": "ceramicDamage",
-            "displayName": "Ceramic Damage", 
-            "type": ["simple", "number", "+"]
+            "name": "damage", "displayName": "Damage", 
+            
+            "modules": ["attack"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "number", 
+                "defaultOperator": "+",
+                "defaultState": null
+            },
+            "subvalues": [
+                {
+                    "name": "ceramicDamage", "displayName": "Ceramic Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "moabDamage", "displayName": "MOAB Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "fortifiedDamage", "displayName": "Fortified Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "fortifiedMoabDamage", "displayName": "Fortified MOAB Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "leadDamage", "displayName": "Lead Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "camoDamage", "displayName": "Camo Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "frozenDamage", "displayName": "Frozen Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                },
+                {
+                    "name": "stunnedDamage", "displayName": "Stunned Damage",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
+                }
+            ]
         },
         {
-            "name": "moabDamage",
-            "displayName": "MOAB Damage", 
-            "type": ["simple", "number", "+"]
+            "name": "projectiles", "displayName": "Projectiles", 
+            
+            "modules": ["attack"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "number", 
+                "defaultOperator": "absolute",
+                "defaultState": 1
+            },
+            "subvalues": [
+                {
+                    "name": "spread", "displayName": "Spread",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "number", "defaultState": null}
+                }
+            ]
         },
         {
-            "name": "leadDamage",
-            "displayName": "Lead Damage", 
-            "type": ["simple", "number", "+"]
+            "name": "pierce", "displayName": "Pierce", 
+            
+            "modules": ["attack"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "number", 
+                "defaultOperator": "+",
+                "defaultState": null
+            },
+            "subvalues": [
+                {
+                    "name": "impact", "displayName": "Impact",
+                    "type": "simpleValue", 
+                    "valueData": {"valueType": "boolean", "defaultState": false}
+                }
+            ]
         },
         {
-            "name": "pierce",
-            "displayName": "Pierce", 
-            "type": ["simple", "number", "+"]
+            "name": "attackCooldown", "displayName": "Attack Cooldown", 
+            
+            "modules": ["attack"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "number", 
+                "defaultOperator": "*",
+                "defaultState": null
+            },
+            "subvalues": []
         },
         {
-            "name": "attackCooldown",
-            "displayName": "Attack Cooldown", 
-            "type": ["simple", "number", "*"]
+            "name": "money", "displayName": "Money", 
+            
+            "modules": ["income"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "number", 
+                "defaultOperator": "+",
+                "defaultState": null
+            }
         }
     ]
 }
-
