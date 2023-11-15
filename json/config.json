@@ -32,49 +32,49 @@
                 {
                     "name": "ceramicDamage", "displayName": "Ceramic Damage",
                     "type": "simpleValue",
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "moabDamage", "displayName": "MOAB Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "fortifiedDamage", "displayName": "Fortified Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "fortifiedMoabDamage", "displayName": "Fortified MOAB Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "leadDamage", "displayName": "Lead Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "camoDamage", "displayName": "Camo Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "frozenDamage", "displayName": "Frozen Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 },
                 {
                     "name": "stunnedDamage", "displayName": "Stunned Damage",
                     "type": "simpleValue", 
-                    "addsToMain": true,
+                    "relationshipToMain": [true, "+"],
                     "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
                 }
             ]
