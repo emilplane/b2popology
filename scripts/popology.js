@@ -10,6 +10,7 @@ async function getConfigJSON() {
     let data = await getData(`https://raw.githubusercontent.com/emilplane/b2popology/newpopology/json/config.json`)
     if (data.error == false) {
         config = data.data
+        console.log(config)
     }
 }
 
@@ -286,6 +287,34 @@ function updateCostStats() {
     
 }
 
+function getSimplePropertyHTML(propertyData, module) {
+    switch (propertyData.valueData.valueType) {
+        case "number":
+            return `
+                <div class="infoBox">
+                    <h6>${propertyData.displayName}</h6>
+                    <p>${module [propertyData.name]}</p>
+                </div>
+            `
+        case "string": 
+            return `
+                <div class="infoBox">
+                    <h6>${propertyData.displayName}</h6>
+                    <p>${module [propertyData.name]}</p>
+                </div>
+            `
+        case "boolean": 
+            return `
+                <div class="infoBox">
+                    <h6>${propertyData.displayName}</h6>
+                    <p>${module [propertyData.name]}</p>
+                </div>
+            `
+        case "default": 
+            return ``
+    }
+}
+
 function updateTowerStats() {
     let towerObject = new Tower(towerData[category][page], crosspath)
     console.log(towerObject)
@@ -322,36 +351,13 @@ function updateTowerStats() {
         let propertiesHTML = ``
         for (let property in config.properties) {
             if (moduleSet [module] [config.properties[property].name] != undefined) {
-                switch (config.properties[property].valueData.valueType) {
-                    case "number":
-                        propertiesHTML = propertiesHTML + `
-                            <div class="infoBox">
-                                <h6>${config.properties[property].displayName}</h6>
-                                <p>${moduleSet [module] [config.properties[property].name]}</p>
-                            </div>
-                        `
-                        break;
-                }
+                propertiesHTML = propertiesHTML + getSimplePropertyHTML(config.properties[property], moduleSet[module])
                 for (let subvalueNumber in config.properties[property].subvalues) {
                     if (moduleSet [module] [config.properties[property].subvalues[subvalueNumber].name] != undefined) {
-                        switch (config.properties[property].valueData.valueType) {
-                            case "number":
-                                propertiesHTML = propertiesHTML + `
-                                    <div class="infoBox">
-                                        <h6>${config.properties[property].subvalues[subvalueNumber].displayName}</h6>
-                                        <p>${moduleSet [module] [config.properties[property].name]}</p>
-                                    </div>
-                                `
-                                break;
-                            case "string": 
-                                propertiesHTML = propertiesHTML + `
-                                    <div class="infoBox">
-                                        <h6>${config.properties[property].subvalues[subvalueNumber].displayName}</h6>
-                                        <p>${moduleSet [module] [config.properties[property].name]}</p>
-                                    </div>
-                                `
-                                break;
-                        }
+                        propertiesHTML = propertiesHTML + getSimplePropertyHTML(
+                            config.properties[property].subvalues[subvalueNumber],
+                            moduleSet[module]
+                        )
                     }
                 }
             }

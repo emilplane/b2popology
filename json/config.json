@@ -10,7 +10,8 @@
             "name": "mainAttack", "displayName": "Main Attack", 
             
             "modules": ["attack"],
-            "type": "simpleValue", 
+            "type": "simpleValue",
+            "automatic-inherit": true,
             "valueData": {
                 "valueType": "boolean", 
                 "defaultState": false
