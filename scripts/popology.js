@@ -343,6 +343,14 @@ function updateTowerStats() {
                                     </div>
                                 `
                                 break;
+                            case "string": 
+                                propertiesHTML = propertiesHTML + `
+                                    <div class="infoBox">
+                                        <h6>${config.properties[property].subvalues[subvalueNumber].displayName}</h6>
+                                        <p>${moduleSet [module] [config.properties[property].name]}</p>
+                                    </div>
+                                `
+                                break;
                         }
                     }
                 }

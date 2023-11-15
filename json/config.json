@@ -136,6 +136,16 @@
                 "defaultOperator": "+",
                 "defaultState": null
             }
+        },
+        {
+            "name": "attackType", "displayName": "Attack Type", 
+            
+            "modules": ["attack"],
+            "type": "simpleValue", 
+            "valueData": {
+                "valueType": "string",
+                "defaultState": null
+            }
         }
     ]
 }
