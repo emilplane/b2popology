@@ -256,7 +256,16 @@ export class Tower {
             return true
         }
         if (module.moduleType[1] == "replace") {
-            console.log(module)
+            for (let moduleNumber in this.modules) {
+                if (this.modules[moduleNumber].name == module.replacingName) {
+                    let previousModule = structuredClone(this.modules[moduleNumber])
+                    delete this.modules[moduleNumber]
+                    let newModule = module
+                    delete newModule.replacingName
+                    this.modules.push(newModule)
+                    return true
+                }
+            }
         }
         let matchModuleNumber;
         for (let moduleNumber in this.modules) {

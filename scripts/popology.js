@@ -58,21 +58,22 @@ function placeSkeleton() {
             <section class="baseSection" id="baseSection">
                 
             </section>
-            
             <div style="display: flex; flex-direction: column; gap: 16px" id="mainStatsSection">
-                <div style="display:flex; gap: 12px">
-                    <section class="roundedBoxSection" style="flex:1">
-                        <div>
+                <div style="display:flex; gap: 12px; align-items:start">
+                    <div class="coreTowerSection" id="coreTowerStats">
+                        <section class="roundedBoxSection">
                             <h4>Prices</h4>
                             <div class="horizontalLine"></div>
-                            <div style="display: flex; gap: 8px" id="towerCosts">
-                                
-                            </div>
+                            <div class="standardTowerStatsContainer" id="towerCosts"></div>
+                        </section>
+                    </div>
+                    <section class="roundedBoxSection towerSidebar">
+                        <div class="towerPortraitWrapper">
+                            <img class="towerPortrait" src="/media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png"/>
                         </div>
-                    </section>
-                    <section class="roundedBoxSection" style="width:150px">
-                        <div style="aspect-ratio:1; width:100%"; >
-                            <img style="object-fit: contain;width: 100%; max-height: 100%;position:relative;top:-80px" src="/media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png"/>
+                        <div class="towerSidebarContent">
+                            <div class="horizontalLine"></div>
+                            <p>Last updated: 11/14/2023</p>
                         </div>
                     </section>
                 </div>
@@ -293,25 +294,25 @@ function updateTowerStats() {
     let propertiesHTML = ``
     if (towerObject.towerStats.range != undefined) {
         propertiesHTML = propertiesHTML + `
-            <div>
-                <h5>Tower Range</h5>    
+            <div class="infoBox">
+                <h6>Tower Range</h6>    
                 <p>${towerObject.towerStats.range}r</p>
             </div>
         `
     }
     if (towerObject.towerStats.size[0] == "radius") {
         propertiesHTML = propertiesHTML + `
-            <div>
-                <h5>Tower Size</h5>
+            <div class="infoBox">
+                <h6>Tower Size</h6>
                 <p>${towerObject.towerStats.size[1]}r</p>
             </div>
         `
     }
     towerStatsHTML = `
         <section class="roundedBoxSection">
-            <h3 class="luckiestGuy"><span>Tower Stats</h3>
+            <h4>Tower Stats</h4>
             <div class="horizontalLine"></div>
-            <div style="display: flex; gap: 32px">
+            <div class="standardTowerStatsContainer">
                 ${propertiesHTML}
             </div>
         </section>
@@ -324,26 +325,41 @@ function updateTowerStats() {
                 switch (config.properties[property].valueData.valueType) {
                     case "number":
                         propertiesHTML = propertiesHTML + `
-                            <div>
-                                <h5>${config.properties[property].displayName}</h5>
+                            <div class="infoBox">
+                                <h6>${config.properties[property].displayName}</h6>
                                 <p>${moduleSet [module] [config.properties[property].name]}</p>
                             </div>
                         `
                         break;
                 }
+                for (let subvalueNumber in config.properties[property].subvalues) {
+                    if (moduleSet [module] [config.properties[property].subvalues[subvalueNumber].name] != undefined) {
+                        switch (config.properties[property].valueData.valueType) {
+                            case "number":
+                                propertiesHTML = propertiesHTML + `
+                                    <div class="infoBox">
+                                        <h6>${config.properties[property].subvalues[subvalueNumber].displayName}</h6>
+                                        <p>${moduleSet [module] [config.properties[property].name]}</p>
+                                    </div>
+                                `
+                                break;
+                        }
+                    }
+                }
             }
         }
         statsHTML = statsHTML + `
             <section class="roundedBoxSection">
-                <h3 class="luckiestGuy"><span class="slightTextEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}</h3>
+                <h4><span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}</h4>
                 <div class="horizontalLine"></div>
-                <div style="display: flex; gap: 32px">
+                <div class="standardTowerStatsContainer">
                     ${propertiesHTML}
                 </div>
             </section>
         `
     }
-    document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", towerStatsHTML + statsHTML)
+    document.getElementById("coreTowerStats").insertAdjacentHTML("beforeend", towerStatsHTML)
+    document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", statsHTML)
 }
 
 let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]
