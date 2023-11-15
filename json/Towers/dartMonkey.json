@@ -177,7 +177,7 @@
                     "moduleType": ["attack", "buff"],
                     "name": "dart",
                     
-                    "projectiles": [3, 30]
+                    "projectiles": 3, "spread": 30
                 }
             ],
             [

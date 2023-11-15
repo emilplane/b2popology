@@ -265,6 +265,11 @@ export class Tower {
                     else {newModule.previousNames = previousModule.previousNames}
                     newModule.previousNames.push(newModule.replacingName)
                     delete newModule.replacingName
+                    for (let property in previousModule) {
+                        if (newModule[property] == "inherit") {
+                            newModule[property] = previousModule[property]
+                        }
+                    }
                     this.modules.push(newModule)
                     return true
                 }
