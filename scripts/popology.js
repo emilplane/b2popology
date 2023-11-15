@@ -287,9 +287,25 @@ function updateCostStats() {
     
 }
 
-function getSimplePropertyHTML(propertyData, module) {
+function getSimplePropertyHTML(propertyData, module, parentPropertyData) {
     switch (propertyData.valueData.valueType) {
         case "number":
+            if (propertyData.relationshipToMain != undefined) { if (propertyData.relationshipToMain[0] == true) {
+                let buffString = 
+                    Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).operator
+                    + Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).buffValue
+                let totalString = 
+                    Tower.calculateNumbers(module [parentPropertyData.name], module [propertyData.name], propertyData.relationshipToMain[1])
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>
+                            ${buffString}
+                            (${totalString})
+                        </p>
+                    </div>
+                `
+            }}
             return `
                 <div class="infoBox">
                     <h6>${propertyData.displayName}</h6>
@@ -356,7 +372,8 @@ function updateTowerStats() {
                     if (moduleSet [module] [config.properties[property].subvalues[subvalueNumber].name] != undefined) {
                         propertiesHTML = propertiesHTML + getSimplePropertyHTML(
                             config.properties[property].subvalues[subvalueNumber],
-                            moduleSet[module]
+                            moduleSet[module],
+                            config.properties[property]
                         )
                     }
                 }

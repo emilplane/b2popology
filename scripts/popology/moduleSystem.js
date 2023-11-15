@@ -366,6 +366,20 @@ export class Tower {
         }
     }
 
+    static getNumberData(initial, buff, defaultOperator) {
+        let operator = defaultOperator;
+        let buffValue = buff;
+        if (typeof buff == "object") {
+            operator = buff[0];
+            buffValue = buff[1];
+        }
+        return {
+            "calculateNumbers": Tower.calculateNumbers(initial, buff, defaultOperator),
+            "initial": initial, "buff": buff,
+            "operator": operator, "buffValue": buffValue
+        }
+    }
+
     static booleanBuff(initialModule, propertyName, buff) {
         if (typeof buff == "boolean") {
             initialModule[propertyName] = buff

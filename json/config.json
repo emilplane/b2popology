@@ -93,7 +93,7 @@
                 {
                     "name": "spread", "displayName": "Spread",
                     "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultState": null}
+                    "valueData": {"valueType": "number", "defaultOperator": "absolute", "defaultState": null}
                 }
             ]
         },
