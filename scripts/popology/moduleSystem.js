@@ -261,6 +261,9 @@ export class Tower {
                     let previousModule = structuredClone(this.modules[moduleNumber])
                     delete this.modules[moduleNumber]
                     let newModule = module
+                    if (previousModule.previousNames == undefined) {newModule.previousNames = []} 
+                    else {newModule.previousNames = previousModule.previousNames}
+                    newModule.previousNames.push(newModule.replacingName)
                     delete newModule.replacingName
                     this.modules.push(newModule)
                     return true
@@ -271,6 +274,11 @@ export class Tower {
         for (let moduleNumber in this.modules) {
             if (this.modules[moduleNumber].name == module.name) {
                 matchModuleNumber = moduleNumber
+            }
+            for (let nameNumber in this.modules[moduleNumber].previousNames) {
+                if (this.modules[moduleNumber].previousNames[nameNumber] == module.name) {
+                    matchModuleNumber = moduleNumber
+                }
             }
         }
         let initialModule = this.modules[matchModuleNumber]

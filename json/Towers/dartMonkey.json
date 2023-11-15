@@ -148,7 +148,7 @@
                     "moduleType": ["attack", "new"],
                     "name": "juggernauts",
                     
-                    "damage": 1, "ceramicDamage": 2, "fortifiedDamage": 2, "leadDamage": ["*", 6], "projectiles": [6, 360], "pierce": 100, "attackType": "normal",
+                    "damage": 1, "ceramicDamage": 2, "fortifiedDamage": 2, "leadDamage": ["*", 6], "projectiles": 6, "spread": 360, "pierce": 100, "attackType": "normal",
                     "rebounds": true,
 
                     "rehit": ["rebound"]
