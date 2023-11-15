@@ -83,144 +83,10 @@ function getPathingData(path) {
     return output
 }
 
-const config = {
-    "console": {
-        "errors": true
-    },
-    "towerProperties": [
-
-    ],
-    "properties": [
-        {
-            "name": "mainAttack", "displayName": "Main Attack", 
-            
-            "modules": ["attack"],
-            "type": "simpleValue", 
-            "valueData": {
-                "valueType": "boolean", 
-                "defaultState": false
-            },
-            "subvalues": []
-        },
-        {
-            "name": "damage", "displayName": "Damage", 
-            
-            "modules": ["attack"],
-            "type": "simpleValue", 
-            "valueData": {
-                "valueType": "number", 
-                "defaultOperator": "+",
-                "defaultState": null
-            },
-            "subvalues": [
-                {
-                    "name": "ceramicDamage", "displayName": "Ceramic Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "moabDamage", "displayName": "MOAB Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "fortifiedDamage", "displayName": "Fortified Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "fortifiedMoabDamage", "displayName": "Fortified MOAB Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "leadDamage", "displayName": "Lead Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "camoDamage", "displayName": "Camo Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "frozenDamage", "displayName": "Frozen Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                },
-                {
-                    "name": "stunnedDamage", "displayName": "Stunned Damage",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultOperator": "+", "defaultState": null}
-                }
-            ]
-        },
-        {
-            "name": "projectiles", "displayName": "Projectiles", 
-            
-            "modules": ["attack"],
-            "type": "simpleValue", 
-            "valueData": {
-                "valueType": "number", 
-                "defaultOperator": "absolute",
-                "defaultState": 1
-            },
-            "subvalues": [
-                {
-                    "name": "spread", "displayName": "Spread",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "number", "defaultState": null}
-                }
-            ]
-        },
-        {
-            "name": "pierce", "displayName": "Pierce", 
-            
-            "modules": ["attack"],
-            "type": "simpleValue", 
-            "valueData": {
-                "valueType": "number", 
-                "defaultOperator": "+",
-                "defaultState": null
-            },
-            "subvalues": [
-                {
-                    "name": "impact", "displayName": "Impact",
-                    "type": "simpleValue", 
-                    "valueData": {"valueType": "boolean", "defaultState": false}
-                }
-            ]
-        },
-        {
-            "name": "attackCooldown", "displayName": "Attack Cooldown", 
-            
-            "modules": ["attack"],
-            "type": "simpleValue", 
-            "valueData": {
-                "valueType": "number", 
-                "defaultOperator": "*",
-                "defaultState": null
-            },
-            "subvalues": []
-        },
-        {
-            "name": "money", "displayName": "Money", 
-            
-            "modules": ["income"],
-            "type": "simpleValue", 
-            "valueData": {
-                "valueType": "number", 
-                "defaultOperator": "+",
-                "defaultState": null
-            }
-        }
-    ]
-}
-
 export class Tower {
-    constructor(fullTowerData, pathSet) {
+    constructor(fullTowerData, pathSet, config) {
         this.fullTowerData = structuredClone(fullTowerData);
-        this.pathSet = pathSet
+        this.pathSet = pathSet; this.config = config
         this.modules = this.fullTowerData.upgrades.base
         this.name = {"main": undefined, "secondary": undefined}
         this.buffWithUpgrades(this.pathSet)
@@ -269,6 +135,15 @@ export class Tower {
                         if (newModule[property] == "inherit") {
                             newModule[property] = previousModule[property]
                         }
+                        for (let propertyNumber in this.config.properties) {
+                            if (
+                                this.config.properties[propertyNumber]["automatic-inherit"] != undefined 
+                                && this.config.properties[propertyNumber]["automatic-inherit"] == true
+                                && newModule[this.config.properties[propertyNumber].name] == undefined
+                            ) {
+                                newModule[this.config.properties[propertyNumber].name] = previousModule[this.config.properties[propertyNumber].name]
+                            }
+                        }
                     }
                     this.modules.push(newModule)
                     return true
@@ -288,8 +163,8 @@ export class Tower {
         }
         let initialModule = this.modules[matchModuleNumber]
         if (matchModuleNumber == undefined) {return false}
-        for (let propertyNumber in config.properties) {
-            let propertyData = config.properties[propertyNumber]
+        for (let propertyNumber in this.config.properties) {
+            let propertyData = this.config.properties[propertyNumber]
             let moduleTypeMatch = false;
             for (let moduleTypeNumber in propertyData.modules) {
                 if (initialModule.moduleType[0] == propertyData.modules[moduleTypeNumber]) {moduleTypeMatch = true}

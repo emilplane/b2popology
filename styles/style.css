@@ -259,6 +259,12 @@ py-script {
     };
 }
 
+.mainStatsSection {
+    display: flex; 
+    flex-direction: column;
+    gap: 16px;
+}
+
 .towerSidebar {
     width: 200px
 }
@@ -289,7 +295,8 @@ py-script {
 }
 
 .standardTowerStatsContainer {
-    display: flex; 
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px
 }
 

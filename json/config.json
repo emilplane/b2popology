@@ -2,6 +2,11 @@
     "console": {
         "errors": true
     },
+    "pathConfig": {
+        "paths": 3,
+        "pathNames": ["top", "middle", "bottom"],
+        "upgrades": 5
+    },
     "towerProperties": [
 
     ],
@@ -13,7 +18,7 @@
             "type": "simpleValue",
             "automatic-inherit": true,
             "valueData": {
-                "valueType": "boolean", 
+                "valueType": "boolean",
                 "defaultState": false
             },
             "subvalues": []

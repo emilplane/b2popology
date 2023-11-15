@@ -59,7 +59,7 @@ function placeSkeleton() {
             <section class="baseSection" id="baseSection">
                 
             </section>
-            <div style="display: flex; flex-direction: column; gap: 16px" id="mainStatsSection">
+            <div class="mainStatsSection" id="mainStatsSection">
                 <div style="display:flex; gap: 12px; align-items:start">
                     <div class="coreTowerSection" id="coreTowerStats">
                         <section class="roundedBoxSection">
@@ -130,7 +130,7 @@ function updatePage(change) {
 
 function updateTopBanner() {
     if (towerData[category][page].error == true) {
-        return
+        return false
     }
     document.getElementById("coverImageStyle").outerHTML = (`
         <style id="coverImageStyle">
@@ -332,7 +332,7 @@ function getSimplePropertyHTML(propertyData, module, parentPropertyData) {
 }
 
 function updateTowerStats() {
-    let towerObject = new Tower(towerData[category][page], crosspath)
+    let towerObject = new Tower(towerData[category][page], crosspath, config)
     console.log(towerObject)
     let moduleSet = towerObject.modules
     let towerStatsHTML = ``
