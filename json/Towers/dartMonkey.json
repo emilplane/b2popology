@@ -244,7 +244,7 @@
                     "moduleType": ["attack", "replace"],
                     "replacingName": "dart", "name": "bolt",
                     
-                    "damage": 3, "pierce": 6, "attackType": "sharp",
+                    "damage": 3, "pierce": 6, "attackCooldown": "inherit", "attackType": "sharp",
                     "rebounds": true
                 },
                 {
