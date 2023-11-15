@@ -118,7 +118,7 @@
                     "moduleType": ["attack", "replace"],
                     "replacingName": "juggernaut", "name": "ultrajugg",
                     
-                    "damage": 4, "ceramicDamage": 16, "fortifiedDamage": 5, "leadDamage": ["*", 6], "pierce": 200,
+                    "damage": 4, "ceramicDamage": 16, "fortifiedDamage": 5, "leadDamage": ["*", 6], "pierce": 200, "attackCooldown": "inherit",
                     "rebounds": true,
 
                     "rehit": ["rebound"],
