@@ -1,0 +1,126 @@
+{
+    "name": "____", "displayName": "____",
+    "category": "military",
+
+    "upgradeNames": {
+        "top": [
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            }
+        ],
+        "middle": [
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            }
+        ],
+        "bottom": [
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            },
+            {
+                "name": "____", "displayName": "____"
+            }
+        ]
+    },
+
+    "costs": {
+        "base": 100,
+        "top": [100, 100, 100, 100, 100],
+        "middle": [100, 100, 100, 100, 100],
+        "bottom": [100, 100, 100, 100, 100]
+    },
+
+    "validPlacements": ["land"],
+    "range": 0, "size": ["radius", 0],
+
+    "upgrades": {
+        "base": [
+            
+        ],
+        "top": [
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ]
+        ],
+        "middle": [
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ]
+        ],
+        "bottom": [
+            [
+                
+            ],
+            [
+                
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+
+            ]
+        ]
+    }
+}

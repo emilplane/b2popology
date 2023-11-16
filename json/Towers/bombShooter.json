@@ -1,0 +1,126 @@
+{
+    "name": "bombShooter", "displayName": "Bomb Shooter",
+    "category": "primary",
+
+    "upgradeNames": {
+        "top": [
+            {
+                "name": "biggerBombs", "displayName": "Bigger Bombs"
+            },
+            {
+                "name": "heavyBombs", "displayName": "Heavy Bombs"
+            },
+            {
+                "name": "reallyBigBombs", "displayName": "Really Big Bombs"
+            },
+            {
+                "name": "bloonImpact", "displayName": "Bloon Impact"
+            },
+            {
+                "name": "bloonCrush", "displayName": "Bloon Crush"
+            }
+        ],
+        "middle": [
+            {
+                "name": "fasterReload", "displayName": "Faster Reload"
+            },
+            {
+                "name": "missileLauncher", "displayName": "Missile Launcher"
+            },
+            {
+                "name": "moabMauler", "displayName": "MOAB Mauler"
+            },
+            {
+                "name": "moabAssassin", "displayName": "MOAB Assassin"
+            },
+            {
+                "name": "moabElimitator", "displayName": "MOAB Eliminator"
+            }
+        ],
+        "bottom": [
+            {
+                "name": "extraRange", "displayName": "Extra Range"
+            },
+            {
+                "name": "fragBombs", "displayName": "Frag Bombs"
+            },
+            {
+                "name": "clusterBombs", "displayName": "Cluster Bombs"
+            },
+            {
+                "name": "recursiveCluster", "displayName": "Recursive Cluster"
+            },
+            {
+                "name": "bombBlitz", "displayName": "Bomb Blitz"
+            }
+        ]
+    },
+
+    "costs": {
+        "base": 525,
+        "top": [350, 650, 1200, 3600, 55000],
+        "middle": [250, 400, 900, 3200, 25000],
+        "bottom": [200, 300, 900, 3200, 35000]
+    },
+
+    "validPlacements": ["land"],
+    "range": 40, "size": ["radius", 6],
+
+    "upgrades": {
+        "base": [
+            
+        ],
+        "top": [
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ]
+        ],
+        "middle": [
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ]
+        ],
+        "bottom": [
+            [
+                
+            ],
+            [
+                
+                
+            ],
+            [
+                
+            ],
+            [
+                
+            ],
+            [
+
+            ]
+        ]
+    }
+}

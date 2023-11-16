@@ -1,5 +1,6 @@
 {
     "name": "boomerangMonkey", "displayName": "Boomerang Monkey",
+    "category": "primary",
 
     "upgradeNames": {
         "top": [
@@ -113,75 +114,22 @@
                     "moduleType": ["attack", "buff"],
                     "name": "glaive",
                     
-                    "damage": 7,
-
-                    "effects": [
-                        {
-                            "condition": ["multiple", "whicheverFirst", 
-                                ["pierceUsed", ["%", 0.5]], 
-                                "expireNaturally"
-                            ],
-                            "result": ["module", "juggernauts"]
-                        }
-                    ]
+                    "damage": 7
                 }
             ]
         ],
         "middle": [
             [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "dart",
-                    
-                    "attackCooldown": 0.85
-                }
+                
             ],
             [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "dart",
-                    
-                    "attackCooldown": 0.7882
-                }
+                
             ],
             [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "dart",
-                    
-                    "projectiles": [3, 30]
-                }
+                
             ],
             [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "dart",
-                    
-                    "attackCooldown": 0.75
-                },
-                {
-                    "moduleType": "transform", 
-                    "name": "fan-club",
-
-                    "ability": {"duration": 15, "cooldown": 50, "initialCooldown": 0, "type": "activated"},
-
-                    "target": [["dartMonkey", [2, 4, 2]]], "transform": "superfan",
-                    "count": 10, "addTargetsAfterTransform": true, "removeTransformedOnSell": false
-                },
-                {
-                    "moduleType": ["subtower", "new"],
-                    "name": "superfan",
-                    "range": 32,
-
-                    "modules": [
-                        {
-                            "moduleType": ["attack", "new"],
-                            "name": "dart", "mainAttack": true,
-                            
-                            "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
-                        }
-                    ]
-                }
+                
             ],
             [
                 
@@ -189,78 +137,20 @@
         ],
         "bottom": [
             [
-                {
-                    "moduleType": ["rangeBuff"],
-                    "value": ["+", 8]
-                }
-            ],
-            [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "dart",
-                    
-                    "increasedProjectileSpeed": true
-                },
-                {
-                    "moduleType": ["rangeBuff"],
-                    "value": ["+", 8]
-                },
-                {
-                    "moduleType": ["towerCamo"],
-                    "value": true
-                }
                 
             ],
             [
-                {
-                    "moduleType": ["attack", "replace"],
-                    "replacingName": "dart", "name": "bolt",
-                    
-                    "damage": 3, "pierce": 6, "attackType": "sharp",
-                    "rebounds": true
-                },
-                {
-                    "moduleType": ["rangeBuff"],
-                    "value": ["absolute", 56]
-                }
+                
+                
             ],
             [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "bolt",
-                    
-                    "damage": 3, "attackCooldown": ["absolute", 0.75], "increasedProjectileSpeed": true,
-
-                    "crit": ["50", 7]
-                }
+                
             ],
             [
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "bolt",
-                    
-                    "damage": 3, "pierce": 7, "attackCooldown": ["absolute", 0.13], "attackType": "normal", "increasedProjectileSpeed": true,
+                
+            ],
+            [
 
-                    "crit": ["50", 5]
-                },
-                {
-                    "moduleType": ["rangeBuff"],
-                    "value": 20
-                },
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "bolt",
-                    "crosspath": [1, 0, 5],
-                    
-                    "pierce": 6
-                },
-                {
-                    "moduleType": ["attack", "buff"],
-                    "name": "bolt",
-                    "crosspath": [2, 0, 5],
-                    
-                    "pierce": 8
-                }
             ]
         ]
     }
