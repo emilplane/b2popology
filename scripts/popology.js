@@ -42,7 +42,7 @@ class PopologyHTML {
             ${PopologyHTML.getStatSectionHTML(
                 "Prices",
                 [],
-                `<h6>heli ice</h6>`,
+                ``,
                 [["id", "towerCosts"]]
             )}
         </div>
@@ -78,6 +78,106 @@ class PopologyHTML {
         `
     }
 
+    static configurationBarItem(title, content) {
+        return `
+            <div class="configurationBarTextSelectorWrapper">
+                <h6>${title}</h6>
+                ${content}
+            </div>
+        `
+    }
+    static addToConfigurationBar(data) {
+        let configurationBarHTML = ``
+        for (let dataPoint in data) {
+            configurationBarHTML += PopologyHTML.configurationBarItem(data[dataPoint][0], data[dataPoint][1])
+        }
+        document.getElementById("configurationBar").innerHTML = configurationBarHTML
+    }
+
+    static generateSelectContents(data) {
+        let output = ``
+        for (let optionNumber in data) {
+            let selectedString = ``
+            if (data[optionNumber][2] == true) {selectedString = ` selected`}
+            output += `<option value="${data[optionNumber][1]}"${selectedString}>${data[optionNumber][0]}</option>`
+        }
+        return output
+    }
+
+    static updateConfigurationBar_J() {
+        let categoryHTML = ``
+        let categoryPosition
+        for (let categoryNumber in towerDirectory) {
+            if (category == towerDirectory[categoryNumber].name) {
+                categoryPosition = categoryNumber
+                categoryHTML += `<option value="${towerDirectory[categoryNumber].name}" selected>${towerDirectory[categoryNumber].displayName}</option>`
+            } else {
+                categoryHTML += `<option value="${towerDirectory[categoryNumber].name}">${towerDirectory[categoryNumber].displayName}</option>`
+            }
+        }
+
+        let towerHTML = ``
+        for (let towerNumber in towerDirectory[categoryPosition].data) {
+            let selectedString = ``;
+            if (page == towerDirectory[categoryPosition].data[towerNumber].name) {
+                selectedString = "selected"
+            }
+            let displayNameString = ``
+            let displayNameData = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
+            if (displayNameData == undefined) {
+                displayNameString = towerDirectory[categoryPosition].data[towerNumber].name
+            } else {
+                displayNameString = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
+            }
+            towerHTML += `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" ${selectedString}>${displayNameString}</option>`
+        }
+
+        let pathSelectHTML = `<h5>No Path Data</h5>`;
+        if (towerData[category][page].error == false) {
+            pathSelectHTML = ``
+            for (let pathNumber in config.pathConfig.pathNames) {
+                let pathName = config.pathConfig.pathNames[pathNumber]
+                
+                pathSelectHTML += `<select id="${pathName}PathSelect">`
+                let optionArray = []
+                for (let upgrade in towerData[category][page].upgrades[pathName]) {
+                    if (crosspath[0] == Number(upgrade)+1) {
+                        optionArray.push([Number(upgrade)+1, Number(upgrade)+1, true])
+                    } else {
+                        optionArray.push([Number(upgrade)+1, Number(upgrade)+1, false])
+                    }
+                }
+                optionArray.unshift([0, 0, false])
+                pathSelectHTML += PopologyHTML.generateSelectContents(optionArray)
+                pathSelectHTML += `</select>`
+            }
+            console.log(pathSelectHTML)
+        }
+
+        PopologyHTML.addToConfigurationBar(
+            [
+                ["Category",
+                    `<select id="categorySelect">
+                        ${categoryHTML}
+                    </select>`
+                ],
+                ["Tower",
+                    `<select id="pageSelect">
+                        ${towerHTML}
+                    </select>`
+                ],
+                ["Type",
+                    `<button>Full Tower</button>`
+                ],
+                ["Path",
+                    `<div style="display:flex;gap:4px">
+                        ${pathSelectHTML}
+                    </div>`
+                ]
+            ]
+        )
+    }
+
     static setInnerHTML(name, id) {
         document.getElementById(id).innerHTML = PopologyHTML[name]
     }
@@ -92,7 +192,7 @@ class PopologyHTML {
         }
     }
 
-    static addBasics() {
+    static addContent() {
         PopologyHTML.setInnerHTML("skeletonHTML", "main")
         PopologyHTML.insertAdjacent(
             ["navigationHTML", "configurationBarHTML", "titleSectionHTML", "mainStatsSectionHTML"],
@@ -102,6 +202,8 @@ class PopologyHTML {
             ["coreTowerHTML", "towerSidebarHTML"],
             "mainStatsFlex"
         )
+
+        PopologyHTML.updateConfigurationBar_J()
     }
 }
 
@@ -150,11 +252,9 @@ function updatePage(change) {
         }
     }
 
-    PopologyHTML.addBasics()
+    PopologyHTML.addContent()
 
     updateTopBanner()
-
-    updateConfigurationBar()
 
     if (!towerData[category][page].error) {
         updateCostStats()
@@ -230,89 +330,6 @@ function updateTopBanner() {
             <h3 class="luckiestGuy luckiestGuyShadow">${crosspathHTML}</h3>
         </div>
     `
-}
-
-function updateConfigurationBar() {
-    let categoryHTML = ``
-    let categoryPosition
-    for (let categoryNumber in towerDirectory) {
-        if (category == towerDirectory[categoryNumber].name) {
-            categoryPosition = categoryNumber
-            categoryHTML = categoryHTML + `<option value="${towerDirectory[categoryNumber].name}" selected>${towerDirectory[categoryNumber].displayName}</option>`
-        } else {
-            categoryHTML = categoryHTML + `<option value="${towerDirectory[categoryNumber].name}">${towerDirectory[categoryNumber].displayName}</option>`
-        }
-    }
-
-    let towerHTML = ``
-    for (let towerNumber in towerDirectory[categoryPosition].data) {
-        let selectedString = ``;
-        if (page == towerDirectory[categoryPosition].data[towerNumber].name) {
-            selectedString = "selected"
-        }
-        let displayNameString = ``
-        let displayNameData = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
-        if (displayNameData == undefined) {
-            displayNameString = towerDirectory[categoryPosition].data[towerNumber].name
-        } else {
-            displayNameString = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
-        }
-        towerHTML = towerHTML + `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" ${selectedString}>${displayNameString}</option>`
-    }
-
-    let pathSelectHTML = `<h5>No Path Data</h5>`;
-    if (towerData[category][page].error == false) {
-        pathSelectHTML = `<select id="topPathSelect"><option value="0">0</option>`
-        for (let upgrade in towerData[category][page].upgrades.top) {
-            if (crosspath[0] == Number(upgrade)+1) {
-                pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
-            } else {
-                pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}">${Number(upgrade)+1}</option>`
-            }
-        }
-        pathSelectHTML = pathSelectHTML + `</select><select id="middlePathSelect"><option value="0">0</option>`
-        for (let upgrade in towerData[category][page].upgrades.middle) {
-            if (crosspath[1] == Number(upgrade)+1) {
-                pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
-            } else {
-                pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}">${Number(upgrade)+1}</option>`
-            }
-        }
-        pathSelectHTML = pathSelectHTML + `</select><select id="bottomPathSelect"><option value="0">0</option>`
-        for (let upgrade in towerData[category][page].upgrades.bottom) {
-            if (crosspath[2] == Number(upgrade)+1) {
-                pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}" selected>${Number(upgrade)+1}</option>`
-            } else {
-                pathSelectHTML = pathSelectHTML + `<option value="${Number(upgrade)+1}">${Number(upgrade)+1}</option>`
-            }
-        }
-        pathSelectHTML = pathSelectHTML + `</select>`
-    }
-
-    document.getElementById("configurationBar").innerHTML = (`
-        <div class="configurationBarTextSelectorWrapper">
-            <h6>Category</h6>
-            <select id="categorySelect">
-                ${categoryHTML}
-            </select>
-        </div>
-        <div class="configurationBarTextSelectorWrapper">
-            <h6>Tower</h6>
-            <select id="pageSelect">
-                ${towerHTML}
-            </select>
-        </div>
-        <div class="configurationBarTextSelectorWrapper">
-            <h6>Type</h6>
-            <button>Full Tower</button>
-        </div>
-        <div class="configurationBarTextSelectorWrapper">
-            <h6>Path</h6>
-            <div style="display:flex;gap:4px">
-                ${pathSelectHTML}
-            </div>
-        </div>
-    `)
 }
 
 function updateCostStats() {
@@ -443,10 +460,6 @@ function updateTowerStats() {
 }
 
 let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 async function main() {
     await getConfigJSON()
