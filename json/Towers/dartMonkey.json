@@ -124,15 +124,15 @@
 
                     "rehit": ["rebound"],
 
-                    "effects": [
+                    "releaseProjectiles": [
                         {
                             "condition": {
                                 "data": [
-                                    ["pierceUsed", ["%", 1]],
+                                    ["pierceUsed", ["%", 0.5]],
                                     "expire"
                                 ]
                             },
-                            "result": ["projectile", "juggernauts"]
+                            "result": "juggernauts"
                         },
                         {
                             "condition": {
@@ -141,7 +141,7 @@
                                     "expire"
                                 ]
                             },
-                            "result": ["projectile", "juggernauts"]
+                            "result": "juggernauts"
                         }
                     ]
                 },

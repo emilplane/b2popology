@@ -104,7 +104,7 @@ class PopologyHTML {
         return output
     }
 
-    static updateConfigurationBar_J() {
+    static updateConfigurationBar() {
         let categoryHTML = ``
         let categoryPosition
         for (let categoryNumber in towerDirectory) {
@@ -137,19 +137,13 @@ class PopologyHTML {
             pathSelectHTML = ``
             for (let pathNumber in config.pathConfig.pathNames) {
                 let pathName = config.pathConfig.pathNames[pathNumber]
-                
                 pathSelectHTML += `<select id="${pathName}PathSelect">`
                 let optionArray = []
                 for (let upgrade in towerData[category][page].upgrades[pathName]) {
-                    if (crosspath[0] == Number(upgrade)+1) {
-                        optionArray.push([Number(upgrade)+1, Number(upgrade)+1, true])
-                    } else {
-                        optionArray.push([Number(upgrade)+1, Number(upgrade)+1, false])
-                    }
+                    optionArray.push([Number(upgrade)+1, Number(upgrade)+1, (crosspath[0] == Number(upgrade)+1)])
                 }
                 optionArray.unshift([0, 0, false])
-                pathSelectHTML += PopologyHTML.generateSelectContents(optionArray)
-                pathSelectHTML += `</select>`
+                pathSelectHTML += PopologyHTML.generateSelectContents(optionArray) + `</select>`
             }
             console.log(pathSelectHTML)
         }
@@ -203,7 +197,7 @@ class PopologyHTML {
             "mainStatsFlex"
         )
 
-        PopologyHTML.updateConfigurationBar_J()
+        PopologyHTML.updateConfigurationBar()
     }
 }
 
