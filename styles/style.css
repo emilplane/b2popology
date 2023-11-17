@@ -199,7 +199,7 @@ input:focus + .inputUnderline {
     flex-wrap: wrap
 }
 
-.baseSection {
+.titleSection {
     padding: 8px;
 }
 
@@ -219,6 +219,10 @@ input:focus + .inputUnderline {
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center;
+}
+
+.statsPageBody {
+    max-width: 1500px; margin: 0 auto; padding: 16px;
 }
 
 .statsPageWrapper {
@@ -263,6 +267,12 @@ py-script {
     display: flex; 
     flex-direction: column;
     gap: 16px;
+}
+
+.mainStatsFlex {
+    display: flex;
+    gap: 12px;
+    align-items: start;
 }
 
 .towerSidebar {

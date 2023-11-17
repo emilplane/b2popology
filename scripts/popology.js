@@ -2,6 +2,109 @@ import { Tower } from "/scripts/popology/moduleSystem.js"
 import { getPathingData, numberPathNameConversion, getTowerCostData } from "./popology/conversions.js"
 import getData from "./request.js"
 
+class PopologyHTML {
+    static skeletonHTML = `
+    <div class="coverImage" id="coverImage"></div>
+    <style id="coverImageStyle"></style>
+    <div class="statsPageWrapper">
+        <div class="statsPageBody" id="statsPageBody">
+
+        </div>
+    </div>
+    `
+
+    static navigationHTML = `
+        <div class="headerStyle" id="header">
+            <h4 class="luckiestGuy">Battles 2 Popology</h4>
+            <div style="display: flex; gap: 16px; margin-left: auto">
+                <h5>Home</h5>
+                <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Popology</h5>
+                <h5>Eco Sim</h5>
+                <h5>Credits</h5>
+            </div>
+        </div>
+    `
+
+    static configurationBarHTML = `<div class="headerStyle configurationBar" id="configurationBar"></div>`
+
+    static titleSectionHTML = `<section class="titleSection" id="titleSection"></section>`
+
+    static mainStatsSectionHTML = `
+        <div class="mainStatsSection" id="mainStatsSection">
+            <div class="mainStatsFlex" id="mainStatsFlex">
+                
+            </div>
+        </div>
+    `
+
+    static coreTowerHTML = `
+        <div class="coreTowerSection" id="coreTowerStats">
+            ${PopologyHTML.getStatSectionHTML(
+                "Prices",
+                [],
+                `<h6>heli ice</h6>`,
+                [["id", "towerCosts"]]
+            )}
+        </div>
+    `
+
+    static towerSidebarHTML = `
+        <section class="roundedBoxSection towerSidebar">
+            <div class="towerPortraitWrapper">
+                <img class="towerPortrait" src="/media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png"/>
+            </div>
+            <div class="towerSidebarContent">
+                <div class="horizontalLine"></div>
+                <p>Last updated: 11/14/2023</p>
+            </div>
+        </section>
+    `
+
+    static getStatSectionHTML(title, sectionGlobalAttributes, contentHTML, mainGlobalAttributes) {
+        let sectionGlobalAttributesString = ``
+        for (let attributeNumber in sectionGlobalAttributes) {
+            sectionGlobalAttributesString += ` ${sectionGlobalAttributes[attributeNumber][0]}="${sectionGlobalAttributes[attributeNumber][1]}"`
+        }
+        let mainGlobalAttributesString = ``
+        for (let attributeNumber in mainGlobalAttributes) {
+            mainGlobalAttributesString += ` ${mainGlobalAttributes[attributeNumber][0]}="${mainGlobalAttributes[attributeNumber][1]}"`
+        }
+        return `
+            <section class="roundedBoxSection" ${sectionGlobalAttributesString}>
+                <h4>${title}</h4>
+                <div class="horizontalLine"></div>
+                <div class="standardTowerStatsContainer" ${mainGlobalAttributesString}>${contentHTML}</div>
+            </section>
+        `
+    }
+
+    static setInnerHTML(name, id) {
+        document.getElementById(id).innerHTML = PopologyHTML[name]
+    }
+
+    static insertAdjacent(name, id) {
+        if (typeof name == "string") {
+            document.getElementById(id).insertAdjacentHTML("beforeend", PopologyHTML[name])
+        } else {
+            for (let item in name) {
+                document.getElementById(id).insertAdjacentHTML("beforeend", PopologyHTML[name[item]])
+            }
+        }
+    }
+
+    static addBasics() {
+        PopologyHTML.setInnerHTML("skeletonHTML", "main")
+        PopologyHTML.insertAdjacent(
+            ["navigationHTML", "configurationBarHTML", "titleSectionHTML", "mainStatsSectionHTML"],
+            "statsPageBody"
+        )
+        PopologyHTML.insertAdjacent(
+            ["coreTowerHTML", "towerSidebarHTML"],
+            "mainStatsFlex"
+        )
+    }
+}
+
 let towerData = {};
 let config;
 let towerDirectory;
@@ -38,52 +141,6 @@ async function getTowerJSON() {
     }
 };
 
-function placeSkeleton() {
-    document.getElementById("main").innerHTML = `
-    <div class="coverImage" id="coverImage"></div>
-    <style id="coverImageStyle"></style>
-    <div class="statsPageWrapper">
-        <div style="max-width: 1500px; margin: 0 auto; padding: 16px;">
-            <div class="headerStyle">
-                <h4 class="luckiestGuy">Battles 2 Popology</h4>
-                <div style="display: flex; gap: 16px; margin-left: auto">
-                    <h5>Home</h5>
-                    <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Popology</h5>
-                    <h5>Eco Sim</h5>
-                    <h5>Credits</h5>
-                </div>
-            </div>
-            <div class="headerStyle configurationBar" id="configurationBar">
-                
-            </div>
-            <section class="baseSection" id="baseSection">
-                
-            </section>
-            <div class="mainStatsSection" id="mainStatsSection">
-                <div style="display:flex; gap: 12px; align-items:start">
-                    <div class="coreTowerSection" id="coreTowerStats">
-                        <section class="roundedBoxSection">
-                            <h4>Prices</h4>
-                            <div class="horizontalLine"></div>
-                            <div class="standardTowerStatsContainer" id="towerCosts"></div>
-                        </section>
-                    </div>
-                    <section class="roundedBoxSection towerSidebar">
-                        <div class="towerPortraitWrapper">
-                            <img class="towerPortrait" src="/media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png"/>
-                        </div>
-                        <div class="towerSidebarContent">
-                            <div class="horizontalLine"></div>
-                            <p>Last updated: 11/14/2023</p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    `
-}
-
 function updatePage(change) {
     if (change == "category") {
         for (let categoryNumber in towerDirectory) {
@@ -93,7 +150,7 @@ function updatePage(change) {
         }
     }
 
-    placeSkeleton()
+    PopologyHTML.addBasics()
 
     updateTopBanner()
 
@@ -163,7 +220,7 @@ function updateTopBanner() {
         `
     }
 
-    document.getElementById("baseSection").innerHTML = `
+    document.getElementById("titleSection").innerHTML = `
         <div style="display: flex; gap: 32px; align-items: end;">
             <h1 class="luckiestGuy luckiestGuyShadow largeText2">${upgradeNameHTML}</h1>
             ${crosspathNameHTML}
@@ -353,15 +410,7 @@ function updateTowerStats() {
             </div>
         `
     }
-    towerStatsHTML = `
-        <section class="roundedBoxSection">
-            <h4>Tower Stats</h4>
-            <div class="horizontalLine"></div>
-            <div class="standardTowerStatsContainer">
-                ${propertiesHTML}
-            </div>
-        </section>
-    `
+    towerStatsHTML = PopologyHTML.getStatSectionHTML("Tower Stats", [], propertiesHTML, [])
     let statsHTML = ``
     for (let module in moduleSet) {
         let propertiesHTML = ``
