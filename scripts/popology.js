@@ -145,7 +145,6 @@ class PopologyHTML {
                 optionArray.unshift([0, 0, false])
                 pathSelectHTML += PopologyHTML.generateSelectContents(optionArray) + `</select>`
             }
-            console.log(pathSelectHTML)
         }
 
         PopologyHTML.addToConfigurationBar(
@@ -171,6 +170,74 @@ class PopologyHTML {
             ]
         )
     }
+    static addConfigurationBarEventListeners() {
+        document.getElementById("categorySelect").addEventListener("change", function() {
+            category = document.getElementById("categorySelect").value
+            updatePage("category")
+        });
+        document.getElementById("pageSelect").addEventListener("change", function() {
+            page = document.getElementById("pageSelect").value
+            updatePage("page")
+        });
+        if (towerData[category][page].data != false && !towerData[category][page].error) {
+            document.getElementById("topPathSelect").addEventListener("change", function() {
+                crosspath[0] = Number(document.getElementById("topPathSelect").value)
+                updatePage("crosspath")
+            });
+            document.getElementById("middlePathSelect").addEventListener("change", function() {
+                crosspath[1] = Number(document.getElementById("middlePathSelect").value)
+                updatePage("crosspath")
+            });
+            document.getElementById("bottomPathSelect").addEventListener("change", function() {
+                crosspath[2] = Number(document.getElementById("bottomPathSelect").value)
+                updatePage("crosspath")
+            });
+        }
+    }
+
+    static getSimplePropertyHTML(propertyData, module, parentPropertyData) {
+        switch (propertyData.valueData.valueType) {
+            case "number":
+                if (propertyData.relationshipToMain != undefined) { if (propertyData.relationshipToMain[0] == true) {
+                    let buffString = 
+                        Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).operator
+                        + Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).buffValue
+                    let totalString = 
+                        Tower.calculateNumbers(module [parentPropertyData.name], module [propertyData.name], propertyData.relationshipToMain[1])
+                    return `
+                        <div class="infoBox">
+                            <h6>${propertyData.displayName}</h6>
+                            <p>
+                                ${buffString}
+                                (${totalString})
+                            </p>
+                        </div>
+                    `
+                }}
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>${module [propertyData.name]}</p>
+                    </div>
+                `
+            case "string": 
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>${module [propertyData.name]}</p>
+                    </div>
+                `
+            case "boolean": 
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>${module [propertyData.name]}</p>
+                    </div>
+                `
+            case "default": 
+                return ``
+        }
+    }    
 
     static setInnerHTML(name, id) {
         document.getElementById(id).innerHTML = PopologyHTML[name]
@@ -184,20 +251,6 @@ class PopologyHTML {
                 document.getElementById(id).insertAdjacentHTML("beforeend", PopologyHTML[name[item]])
             }
         }
-    }
-
-    static addContent() {
-        PopologyHTML.setInnerHTML("skeletonHTML", "main")
-        PopologyHTML.insertAdjacent(
-            ["navigationHTML", "configurationBarHTML", "titleSectionHTML", "mainStatsSectionHTML"],
-            "statsPageBody"
-        )
-        PopologyHTML.insertAdjacent(
-            ["coreTowerHTML", "towerSidebarHTML"],
-            "mainStatsFlex"
-        )
-
-        PopologyHTML.updateConfigurationBar()
     }
 }
 
@@ -246,7 +299,17 @@ function updatePage(change) {
         }
     }
 
-    PopologyHTML.addContent()
+    PopologyHTML.setInnerHTML("skeletonHTML", "main")
+    PopologyHTML.insertAdjacent(
+        ["navigationHTML", "configurationBarHTML", "titleSectionHTML", "mainStatsSectionHTML"],
+        "statsPageBody"
+    )
+    PopologyHTML.insertAdjacent(
+        ["coreTowerHTML", "towerSidebarHTML"],
+        "mainStatsFlex"
+    )
+
+    PopologyHTML.updateConfigurationBar()
 
     updateTopBanner()
 
@@ -255,28 +318,7 @@ function updatePage(change) {
         updateTowerStats()
     }
 
-    document.getElementById("categorySelect").addEventListener("change", function() {
-        category = document.getElementById("categorySelect").value
-        updatePage("category")
-    });
-    document.getElementById("pageSelect").addEventListener("change", function() {
-        page = document.getElementById("pageSelect").value
-        updatePage("page")
-    });
-    if (towerData[category][page].data != false && !towerData[category][page].error) {
-        document.getElementById("topPathSelect").addEventListener("change", function() {
-            crosspath[0] = Number(document.getElementById("topPathSelect").value)
-            updatePage("crosspath")
-        });
-        document.getElementById("middlePathSelect").addEventListener("change", function() {
-            crosspath[1] = Number(document.getElementById("middlePathSelect").value)
-            updatePage("crosspath")
-        });
-        document.getElementById("bottomPathSelect").addEventListener("change", function() {
-            crosspath[2] = Number(document.getElementById("bottomPathSelect").value)
-            updatePage("crosspath")
-        });
-    }
+    PopologyHTML.addConfigurationBarEventListeners()
 };
 
 function updateTopBanner() {
@@ -355,50 +397,6 @@ function updateCostStats() {
     
 }
 
-function getSimplePropertyHTML(propertyData, module, parentPropertyData) {
-    switch (propertyData.valueData.valueType) {
-        case "number":
-            if (propertyData.relationshipToMain != undefined) { if (propertyData.relationshipToMain[0] == true) {
-                let buffString = 
-                    Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).operator
-                    + Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).buffValue
-                let totalString = 
-                    Tower.calculateNumbers(module [parentPropertyData.name], module [propertyData.name], propertyData.relationshipToMain[1])
-                return `
-                    <div class="infoBox">
-                        <h6>${propertyData.displayName}</h6>
-                        <p>
-                            ${buffString}
-                            (${totalString})
-                        </p>
-                    </div>
-                `
-            }}
-            return `
-                <div class="infoBox">
-                    <h6>${propertyData.displayName}</h6>
-                    <p>${module [propertyData.name]}</p>
-                </div>
-            `
-        case "string": 
-            return `
-                <div class="infoBox">
-                    <h6>${propertyData.displayName}</h6>
-                    <p>${module [propertyData.name]}</p>
-                </div>
-            `
-        case "boolean": 
-            return `
-                <div class="infoBox">
-                    <h6>${propertyData.displayName}</h6>
-                    <p>${module [propertyData.name]}</p>
-                </div>
-            `
-        case "default": 
-            return ``
-    }
-}
-
 function updateTowerStats() {
     let towerObject = new Tower(towerData[category][page], crosspath, config)
     console.log(towerObject)
@@ -427,15 +425,19 @@ function updateTowerStats() {
         let propertiesHTML = ``
         for (let property in config.properties) {
             if (moduleSet [module] [config.properties[property].name] != undefined) {
-                propertiesHTML = propertiesHTML + getSimplePropertyHTML(config.properties[property], moduleSet[module])
-                for (let subvalueNumber in config.properties[property].subvalues) {
-                    if (moduleSet [module] [config.properties[property].subvalues[subvalueNumber].name] != undefined) {
-                        propertiesHTML = propertiesHTML + getSimplePropertyHTML(
-                            config.properties[property].subvalues[subvalueNumber],
-                            moduleSet[module],
-                            config.properties[property]
-                        )
-                    }
+                switch (config.properties[property].type) {
+                    case "simpleValue":
+                        propertiesHTML = propertiesHTML + PopologyHTML.getSimplePropertyHTML(config.properties[property], moduleSet[module])
+                        for (let subvalueNumber in config.properties[property].subvalues) {
+                            if (moduleSet [module] [config.properties[property].subvalues[subvalueNumber].name] != undefined) {
+                                propertiesHTML = propertiesHTML + PopologyHTML.getSimplePropertyHTML(
+                                    config.properties[property].subvalues[subvalueNumber],
+                                    moduleSet[module],
+                                    config.properties[property]
+                                )
+                            }
+                        }
+                        break
                 }
             }
         }

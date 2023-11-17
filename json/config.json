@@ -10,6 +10,18 @@
     "towerProperties": [
 
     ],
+    "HTMLGroups": ["simple", "effects"],
+    "propertyTypes": {
+        "simpleValue": {
+            "HTMLGroup": "simple"
+        },
+        "effect": {
+            "HTMLGroup": "effects"
+        },
+        "note": {
+            "HTMLGroup": "notes"
+        }
+    },
     "properties": [
         {
             "name": "mainAttack", "displayName": "Main Attack", 
