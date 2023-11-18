@@ -10,7 +10,7 @@
     "towerProperties": [
 
     ],
-    "HTMLGroups": ["simple", "effects"],
+    "HTMLGroups": ["simple", "effects", "notes"],
     "propertyTypes": {
         "simpleValue": {
             "HTMLGroup": "simple"

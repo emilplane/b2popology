@@ -406,7 +406,7 @@ function updateTowerStats() {
     if (towerObject.towerStats.range != undefined) {
         propertiesHTML = propertiesHTML + `
             <div class="infoBox">
-                <h6>Tower Range</h6>    
+                <h6>Tower Range</h6>
                 <p>${towerObject.towerStats.range}r</p>
             </div>
         `
@@ -423,6 +423,11 @@ function updateTowerStats() {
     let statsHTML = ``
     for (let module in moduleSet) {
         let propertiesHTML = ``
+        let propertyTypesHTML = {}
+        for (let groupNumber in config.HTMLGroups) {
+            propertyTypesHTML[config.HTMLGroups[groupNumber]] = ``
+        }
+        console.log(propertyTypesHTML)
         for (let property in config.properties) {
             if (moduleSet [module] [config.properties[property].name] != undefined) {
                 switch (config.properties[property].type) {
@@ -435,6 +440,7 @@ function updateTowerStats() {
                                     moduleSet[module],
                                     config.properties[property]
                                 )
+                                propertyTypesHTML
                             }
                         }
                         break
