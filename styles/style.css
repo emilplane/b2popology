@@ -537,8 +537,8 @@ dialog {
     display: inline-block;
     width: 20px;
     aspect-ratio: 1;
-  }
-  .lds-dual-ring:after {
+}
+.lds-dual-ring:after {
     content: " ";
     display: block;
     width: 16px;
@@ -546,18 +546,14 @@ dialog {
     margin: 0;
     border-radius: 50%;
     animation: lds-dual-ring 0.5s linear infinite;
-    border: 6px solid var(--shade8);
-    border-color: var(--shade8) var(--shade8) transparent transparent;
-    @media (prefers-color-scheme: dark) {
-        border: 6px solid var(--shade1);
-        border-color: var(--shade1) var(--shade1) transparent transparent;
-    }
-  }
-  @keyframes lds-dual-ring {
+    border: 6px solid var(--shade5);
+    border-color: var(--shade5) var(--shade5) transparent transparent;
+}
+@keyframes lds-dual-ring {
     0% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
     }
-  }
+}

@@ -11,7 +11,8 @@ const playerAPILinks = {
     "Data": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
     "Pugmaster706": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
     "Isaac": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
-    "Ava": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b"
+    "Ava": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+    //"luc1aonstation": 
 }
 
 const playerRoster = [
