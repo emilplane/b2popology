@@ -17,7 +17,8 @@ const playerAPILinks = {
     "Fishylol": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
     "TheOneAndOnlyGhast": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
     "Mathlord": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
-    "Waby": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b"
+    "Waby": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+    "Cogareen": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e"
 }
 
 const playerRoster = [
