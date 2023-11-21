@@ -13,6 +13,9 @@ const playerAPILinks = {
     "Isaac": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
     "Ava": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
     //"luc1aonstation": 
+    "JazzyJonah": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+    "Fishylol": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
+    "TheOneAndOnlyGhast": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c"
 }
 
 const playerRoster = [
@@ -24,12 +27,17 @@ const playerRoster = [
     {
         "name": "DestructivForce",
         "dateJoined": "11/20/2023",
-        "rank": "Member"
+        "rank": "Officer"
     },
     {
         "name": "Vuldora",
         "dateJoined": "11/20/2023",
-        "rank": "Member"
+        "rank": "Officer"
+    },
+    {
+        "name": "JazzyJonah",
+        "dateJoined": "11/20/2023",
+        "rank": "Officer"
     },
     {
         "name": "redlaserbm",
@@ -82,11 +90,6 @@ const playerRoster = [
         "rank": "Member"
     },
     {
-        "name": "JazzyJonah",
-        "dateJoined": "11/20/2023",
-        "rank": "Member"
-    },
-    {
         "name": "Ecolisz",
         "dateJoined": "11/20/2023",
         "rank": "Member"
@@ -133,12 +136,12 @@ const playerRoster = [
     },
     {
         "name": "Windwire",
-        "dateJoined": "11/20/2023",
+        "dateJoined": "11/21/2023",
         "rank": "Member"
     },
     {
         "name": "Mathlord",
-        "dateJoined": "11/20/2023",
+        "dateJoined": "11/21/2023",
         "rank": "Member"
     }
 ]
@@ -283,6 +286,11 @@ async function updatePlayerWindow(playerNumber) {
                 matchHTML += `<div class="playerDataBox"><h6>vs. ${opponentName}</h6><p>${winString} on ${getOptimizedName(playerMatchData.body[i].map)}</p></div>`
             }
         } catch {}
+    }
+    if (playerMatchData.body.length == 0) {
+        document.getElementById("recentMatchesText").innerText = ""
+    } else {
+        document.getElementById("recentMatchesText").innerText = "Recent Matches"
     }
     document.getElementById("matches").innerHTML = matchHTML
     /*let towersHTML = ``

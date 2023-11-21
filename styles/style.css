@@ -249,10 +249,10 @@ input:focus + .inputUnderline {
 }
 a {
     text-decoration: underline 2px var(--primaryDark2);
-    color: var(--shade8);
+    color: var(--primaryDark2);
     @media (prefers-color-scheme: dark) {
         text-decoration: underline 2px var(--primaryLight2);
-        color: var(--shade1)
+        color: var(--primaryLight2)
     };
 }
 .headerContent > a {
