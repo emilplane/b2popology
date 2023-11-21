@@ -5498,7 +5498,7 @@ let data = {
                                     <li>farms in range are sacrificed to the village when upgraded</li>
                                     <li>gains income
                                         <ul>
-                                            <li>$2400 + $600 per $2,000 spent on sacrifices per round</li>
+                                            <li>$3600 base + $600 per $2,000 spent on sacrifices per round</li>
                                             <li>divided throughout the round into at most 10 crates, but at least 6 crates</li>
                                         </ul>
                                     </li>
