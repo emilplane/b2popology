@@ -15,7 +15,8 @@ const playerAPILinks = {
     //"luc1aonstation": 
     "JazzyJonah": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
     "Fishylol": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
-    "TheOneAndOnlyGhast": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c"
+    "TheOneAndOnlyGhast": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+    "Mathlord": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69"
 }
 
 const playerRoster = [
@@ -211,6 +212,25 @@ const optimizedNames = [
     ["Jericho_StarCaptain", "Star Captain Jericho"]
 ]
 
+function createStyleElement(id, content) {
+    var style = document.createElement("style");
+    style.type = "text/css";
+    style.id = id;
+    if (style.styleSheet) {
+        style.styleSheet.cssText = content;
+    } else {
+        style.appendChild(document.createTextNode(content));
+    }
+    return style;
+ }
+
+function appendStyleSheet(id, content) {
+    if (!document.querySelector("#" + id)) {
+        var head = document.head || document.getElementsByTagName("head")[0];
+        head.appendChild(createStyleElement(id, content));
+    }
+ }
+
 function getOptimizedName(name) {
     for (let number in optimizedNames) {
         if (optimizedNames[number][0] == name) {return optimizedNames[number][1]}
@@ -228,7 +248,7 @@ async function getPlayerHOMData(playerNumber) {
 async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data)
+    //console.log(data)
     return data
 }
 
@@ -298,6 +318,17 @@ async function updatePlayerWindow(playerNumber) {
         towersHTML += `<div class="playerDataBox"><h6>${getOptimizedName(playerData.body._towers[towerNumber].type)}</h6><p>${playerData.body._towers[towerNumber].used} used</p></div>`
     }
     document.getElementById("towers").innerHTML = towersHTML*/
+    let playerBannerStyle = `
+        <style>
+            .playerCoverImage {
+                background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('${playerData.body.equippedBannerURL}');
+                @media (prefers-color-scheme: dark) {
+                    background-image: linear-gradient(to top, rgb(29, 29, 29) 10%, rgba(0, 0, 0, 0)), url('${playerData.body.equippedBannerURL}');
+                }
+            }
+        </style>
+    `
+    document.getElementById("playerBannerStyle").innerHTML = playerBannerStyle
 }
 
 document.getElementById("closeButton").addEventListener("click", () => {

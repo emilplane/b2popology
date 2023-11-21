@@ -298,6 +298,15 @@ a {
     background-position: center;
 }
 
+.playerCoverImage {
+    opacity: .5; filter: blur(4px);
+    width: 100%; height: 200px;
+    object-fit: cover; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
 .statsPageBody {
     max-width: 1500px; margin: 0 auto; padding: 16px;
 }
@@ -322,10 +331,17 @@ a {
 
 .horizontalLine {
     height: 1px;
-    background-color: var(--shade3);
     margin-bottom: 8px;
+    background-color: var(--shade3);
     @media (prefers-color-scheme: dark) {
         background-color: var(--shade6);
+    };
+}
+
+.strongLineStyle {
+    background-color: var(--shade6);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade3);
     };
 }
 
@@ -456,6 +472,18 @@ dialog {
     @media (prefers-color-scheme: dark) {
         background-color: var(--shade7);
     };
+}
+
+.playerDataWindow {
+    padding: 0;
+    height: calc(100vh - 88px);
+    width: calc(100vw - 88px);
+}
+
+.playerDataContent {
+    padding: 16px;
+    position: relative;
+    top: -200px;
 }
 
 .playerDataWindowHeader {
