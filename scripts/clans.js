@@ -131,6 +131,16 @@ const playerRoster = [
         "dateJoined": "11/20/2023",
         "rank": "Member"
     },
+    {
+        "name": "Windwire",
+        "dateJoined": "11/20/2023",
+        "rank": "Member"
+    },
+    {
+        "name": "Mathlord",
+        "dateJoined": "11/20/2023",
+        "rank": "Member"
+    }
 ]
 
 const optimizedNames = [
