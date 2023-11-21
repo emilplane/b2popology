@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"/>
+        <title>Battles 2 Popology</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="styles/style.css"/>
+    </head>
+    <body>
+        <main id="main">
+            <div class="coverImage" id="coverImage"></div>
+            <div class="statsPageWrapper">
+                <div class="statsPageBody" id="statsPageBody">
+                    <div class="headerStyle" id="header">
+                        <h4 class="luckiestGuy title">Battles 2 Popology</h4>
+                        <div class="headerContent">
+                            <a href="index.html"><h5>Home</h5></a>
+                            <a href="popology.html"><h5>Popology</h5></a>
+                            <a href="clans.html"><h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Clan</h5></a>
+                            <a href="https://b2.lol/"><h5>B2.lol</h5></a>
+                            <a href="https://bloonstar.com/"><h5>Bloonstar</h5></a>
+                            <a href="https://nitjus7.github.io/BTD6-Central/index.html"><h5>BTD6 Central</h5></a>
+                            <a href="https://discord.com/invite/9YAaxDXAYZ"><h5>Discord</h5></a>
+                        </div>
+                        <div class="menuIcon" id="menuIcon">
+                            <span class="material-symbols-outlined menuIcon">menu</span>
+                        </div>
+                    </div>
+                    <div></div>
+                    <section>
+                        <h1 class="luckiestGuy luckiestGuyShadow titleSection">Popology Battles 2 Clan</h1>
+                    </section>
+                    <div class="clanPageContainer">
+                        <section class="roundedBoxSection">
+                            <p>Notice: This page is still under construction.</p>
+                        </section>
+                        <section class="roundedBoxSection">
+                            <h4 class="luckiestGuy">About</h4>
+                            <p>This is the official Popology Battles 2 clan! To learn more, join the <a href="https://discord.com/invite/9YAaxDXAYZ">Discord server</a>.</p>
+                        </section>
+                        <section class="roundedBoxSection">
+                            <h2 class="luckiestGuy">Team Roster</h2>
+                            <div class="horizontalLine"></div>
+                            <div class="clanRosterList" id="clanRosterList">
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <dialog class="playerDataWindow" id="playerDataWindow">
+            <div class="playerDataWindowHeader">
+                <div id="avatar">
+
+                </div>
+                <div class="playerDataNameContainer">
+                    <h3 class="luckiestGuy" id="playerDataWindowName">apiName</h3>
+                    <h6 id="playerDataWindowOfficialName">officialName</h6>
+                </div>
+                <div class="closeButtonContainer" id="closeButton">
+                    <span class="material-symbols-outlined closeButton">close</span>
+                </div>
+            </div>
+            <div class="horizontalLine"></div>
+            <div class="mainPlayerContent">
+                <section class="simplePlayerDataContainer">
+                    <div>
+                        <h6>Date Joined</h6>
+                        <p id="dateJoined"></p>
+                    </div>
+                    <div>
+                        <h6>Rank</h6>
+                        <p id="rank"></p>
+                    </div>
+                    <div class="b2lolButtonContainer">
+                        <button class="b2lolButton" id="b2lolButton"><div>View on b2.lol</div><span class="material-symbols-outlined">arrow_outward</span></button>
+                    </div>
+                </section>
+                <section>
+                    <h5>Recent Matches</h5>
+                    <div class="matches" id="matches">
+
+                    </div>
+                </section>
+                <!--<section>
+                    <h5>Towers</h5>
+                    <div class="towers" id="towers">
+
+                    </div>
+                </section>-->
+            </div>
+        </dialog>
+        <dialog class="menu" id="menu">
+            <div class="menuHeader">
+                <h2 class="luckiestGuy">Battles 2 Popology</h2>
+                <span class="material-symbols-outlined menuClose" id="menuCloseButton">close</span>
+            </div>
+            <a href="index.html"><h3>Home</h3></a>
+            <a href="popology.html"><h3>Popology</h3></a>
+            <a href="clans.html"><h3>Clan</h3></a>
+            <a href="https://b2.lol/"><h3>b2.lol</h3></a>
+            <a href="https://nitjus7.github.io/BTD6-Central/index.html"><h3>BTD6 Central</h3></a>
+            <a href="https://bloonstar.com/"><h3>Bloonstar</h3></a>
+            <a href="https://discord.com/invite/9YAaxDXAYZ"><h3>Discord Server</h3></a>
+        </dialog>
+    </body>
+    <script type="module" src="scripts/clans.js"></script>
+    <style id="coverImageStyle">
+        .coverImage {
+            background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('media/clan-banner.jpg');
+            @media (prefers-color-scheme: dark) {
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('media/clan-banner.jpg');
+            }
+        }
+    </style>
+</html>

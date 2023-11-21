@@ -194,7 +194,7 @@ async function getNkapiHomsJSON() {
 function setStats() {
     let seasonString = nkapiHoms.body[0].name
     document.getElementById("seasonNumber").innerHTML = seasonString[7]+seasonString[8];
-    document.getElementById("seasonNumber").innerHTML = 14;
+    if (seasonString[7]+seasonString[8] == undefined) {document.getElementById("seasonNumber").innerHTML = 15}
     let start = new Date(nkapiHoms.body[0].start)
     let end = new Date(nkapiHoms.body[0].end)
     let timeLeft = end-start
