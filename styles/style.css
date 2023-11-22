@@ -287,6 +287,7 @@ input:focus + .inputUnderline {
     @media (prefers-color-scheme: dark) {
         color: var(--shade1);
     };
+    font-size: 15pt;
 }
 
 .horizontalLine {

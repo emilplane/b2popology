@@ -175,20 +175,38 @@ class PopologyHTML {
             towerHTML += `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" ${selectedString}>${displayNameString}</option>`
         }
 
-        let pathSelectHTML = `<h5>No Path Data</h5>`;
-        if (towerData[category][page].error == false) {
-            pathSelectHTML = ``
-            for (let pathNumber in config.pathConfig.pathNames) {
-                let pathName = config.pathConfig.pathNames[pathNumber]
-                pathSelectHTML += `<select id="${pathName}PathSelect">`
-                let optionArray = []
-                for (let upgrade in towerData[category][page].upgrades[pathName]) {
-                    optionArray.push([Number(upgrade)+1, Number(upgrade)+1, (crosspath[pathNumber] == Number(upgrade)+1)])
+        let pathSelectHTML = `<div class="configPathContainer">`;
+        for (let pathNumber in config.pathConfig.pathNames) {
+            let pathName = config.pathConfig.pathNames[pathNumber]
+            pathSelectHTML += `<div class="configSinglePathContainer">`
+            for (let i = 0; i <= config.pathConfig.upgrades; i++) {
+                switch (i) {
+                    case 0: 
+                        pathSelectHTML += `
+                            <button class="pathStart" id="${pathName}Path${i}">
+                                <h6>${i}</h6>
+                            </button>
+                        `
+                        break;
+                    case config.pathConfig.upgrades: 
+                        pathSelectHTML += `
+                            <button class="pathEnd" id="${pathName}Path${i}">
+                                <h6>${i}</h6>
+                            </button>
+                        `
+                        break;
+                    default:
+                        pathSelectHTML += `
+                            <button id="${pathName}Path${i}">
+                                <h6>${i}</h6>
+                            </button>
+                        `
+                        break;
                 }
-                optionArray.unshift([0, 0, false])
-                pathSelectHTML += PopologyHTML.generateSelectContents(optionArray) + `</select>`
             }
+            pathSelectHTML += `</div>`
         }
+        pathSelectHTML += `</div>`
 
         PopologyHTML.addToConfigurationBar(
             [
@@ -205,80 +223,15 @@ class PopologyHTML {
                 ["Type",
                     `<button>Full Tower</button>`
                 ],
-                ["Path",
-                    `<div style="display:flex;gap:4px">
-                        ${pathSelectHTML}
-                    </div>`
-                ],
-                ["Path",
-                    `<div style="display:flex;gap:4px">
-                        <div class="configPathContainer">
-                            <div class="configSinglePathContainer">
-                                <button class="pathStart selected" id="topPath0">
-                                    <h6>0</h6>
-                                </button>
-                                <button id="topPath1">
-                                    <h6>1</h6>
-                                </button>
-                                <button id="topPath2">
-                                    <h6>2</h6>
-                                </button>
-                                <button id="topPath3">
-                                    <h6>3</h6>
-                                </button>
-                                <button id="topPath4">
-                                    <h6>4</h6>
-                                </button>
-                                <button class="pathEnd" id="topPath5">
-                                    <h6>5</h6>
-                                </button>
-                            </div>
-                            <div class="configSinglePathContainer">
-                                <button class="pathStart" id="topPath0">
-                                    <h6>0</h6>
-                                </button>
-                                <button id="topPath1">
-                                    <h6>1</h6>
-                                </button>
-                                <button id="topPath2">
-                                    <h6>2</h6>
-                                </button>
-                                <button class="selected" id="topPath3">
-                                    <h6>3</h6>
-                                </button>
-                                <button id="topPath4">
-                                    <h6>4</h6>
-                                </button>
-                                <button class="pathEnd" id="topPath5">
-                                    <h6>5</h6>
-                                </button>
-                            </div>
-                            <div class="configSinglePathContainer">
-                                <button class="pathStart selected" id="topPath0">
-                                    <h6>0</h6>
-                                </button>
-                                <button id="topPath1">
-                                    <h6>1</h6>
-                                </button>
-                                <button id="topPath2">
-                                    <h6>2</h6>
-                                </button>
-                                <button id="topPath3">
-                                    <h6>3</h6>
-                                </button>
-                                <button id="topPath4">
-                                    <h6>4</h6>
-                                </button>
-                                <button class="pathEnd" id="topPath5">
-                                    <h6>5</h6>
-                                </button>
-                            </div>
-                        </div>
-                    </div>`
-                ]
+                ["Path", `${pathSelectHTML}`]
             ]
         )
+        for (let pathNumber in config.pathConfig.pathNames) {
+            let pathName = config.pathConfig.pathNames[pathNumber]
+            document.getElementById(`${pathName}Path${crosspath[pathNumber]}`).classList.add("selected")
+        }
     }
+    
     static addConfigurationBarEventListeners() {
         document.getElementById("categorySelect").addEventListener("change", function() {
             category = document.getElementById("categorySelect").value
@@ -289,18 +242,15 @@ class PopologyHTML {
             updatePage("page")
         });
         if (towerData[category][page].data != false && !towerData[category][page].error) {
-            document.getElementById("topPathSelect").addEventListener("change", function() {
-                crosspath[0] = Number(document.getElementById("topPathSelect").value)
-                updatePage("crosspath")
-            });
-            document.getElementById("middlePathSelect").addEventListener("change", function() {
-                crosspath[1] = Number(document.getElementById("middlePathSelect").value)
-                updatePage("crosspath")
-            });
-            document.getElementById("bottomPathSelect").addEventListener("change", function() {
-                crosspath[2] = Number(document.getElementById("bottomPathSelect").value)
-                updatePage("crosspath")
-            });
+            for (let pathNumber in config.pathConfig.pathNames) {
+                let pathName = config.pathConfig.pathNames[pathNumber]
+                for (let i = 0; i <= config.pathConfig.upgrades; i++) {
+                    document.getElementById(`${pathName}Path${i}`).addEventListener("click", function() {
+                        crosspath[pathNumber] = i
+                        updatePage("crosspath")
+                    });
+                }
+            }
         }
     }
 
