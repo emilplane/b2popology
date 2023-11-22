@@ -18,7 +18,8 @@ const playerAPILinks = {
     "TheOneAndOnlyGhast": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
     "Mathlord": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
     "Waby": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
-    "Cogareen": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e"
+    "Cogareen": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+    "Ecolisz": "https://data.ninjakiwi.com/battles2/users/9ceb148d8d93fda51a168a4d5d73e624ce5614ee9d158c3e"
 }
 
 const playerRoster = [
@@ -118,11 +119,6 @@ const playerRoster = [
         "rank": "Member"
     },
     {
-        "name": "Tigerz72",
-        "dateJoined": "11/20/2023",
-        "rank": "Member"
-    },
-    {
         "name": "luc1aonstation",
         "dateJoined": "11/20/2023",
         "rank": "Member"
@@ -146,6 +142,17 @@ const playerRoster = [
         "name": "Mathlord",
         "dateJoined": "11/21/2023",
         "rank": "Member"
+    },
+    {
+        "name": "Tigerz72",
+        "dateJoined": "11/21/2023",
+        "rank": "Member",
+        "banned": true
+    },
+    {
+        "name": "Krunker Prime",
+        "dateJoined": "11/21/2023",
+        "rank": "Backup Member"
     }
 ]
 
@@ -175,6 +182,7 @@ const optimizedNames = [
 
     ["banana_depot_scene", "Banana Depot"],
     ["basalt_columns", "Basalt Columns"],
+    ["bloontonium_mines", "Bloontonium Mines"],
     ["building_site_scene", "Building Site"],
     ["bloon_bot_factory", "Bloon Bot Factory"],
     ["basalt_columns", "Basalt Columns"],
@@ -186,9 +194,11 @@ const optimizedNames = [
     ["inflection", "Inflection"],
     ["koru", "Koru"],
     ["oasis", "Oasis"],
+    ["off_tide", "Offtide"],
     ["ports", "Ports"],
     ["sands_of_time", "Sands Of Time"],
     ["star", "Star"],
+    ["thin_ice", "Thin Ice"],
     ["pirate_cove", "Pirate Cove"],
     ["precious_space", "Precious Space"],
 
@@ -211,7 +221,9 @@ const optimizedNames = [
     ["Jericho", "Agent Jericho"],
     ["Agent_Jericho", "Agent Jericho"],
     ["Jericho_Highwayman", "Highwayman Jericho"],
-    ["Jericho_StarCaptain", "Star Captain Jericho"]
+    ["Jericho_StarCaptain", "Star Captain Jericho"],
+
+    ["GuildWar", "Clan War"]
 ]
 
 function createStyleElement(id, content) {
@@ -250,13 +262,17 @@ async function getPlayerHOMData(playerNumber) {
 async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
-    //console.log(data)
+    console.log(data)
     return data
 }
 
 async function clanMemberHTML(playerNumber) {
     let playerMoreInfoButtonHTML = ``
     let playerPFPHTML = ``
+    let bannedHTML = ``
+    if (playerRoster[playerNumber].banned) {
+        bannedHTML = `<h6 class="redText">Banned</h6>`
+    }
     if (playerAPILinks[playerRoster[playerNumber].name] != undefined) {
         let playerData = await getPlayerHOMData(playerNumber)
         playerMoreInfoButtonHTML = `<span class="material-symbols-outlined" id="${playerNumber}PlayerButton">arrow_outward</span>`
@@ -266,6 +282,7 @@ async function clanMemberHTML(playerNumber) {
         <div style="display: flex; align-items: center; gap: 12px;">
             ${playerPFPHTML}
             <h5>${playerRoster[playerNumber].name}</h5>
+            ${bannedHTML}
             ${playerMoreInfoButtonHTML}
             <div id="player${playerNumber}Loading"></div>
         </div>
@@ -280,6 +297,18 @@ async function updatePlayerWindow(playerNumber) {
     document.getElementById("rank").innerText = playerRoster[playerNumber].rank
     document.getElementById("b2lolButton").setAttribute("onclick", "window.open('https://b2.lol/playerInfo/playerInfo.html?" + playerAPILinks[playerRoster[playerNumber].name] + "', '_blank');");
     document.getElementById("avatar").innerHTML = `<div class="bigPlayerPFP" style="background-image:url(${playerData.body.equippedAvatarURL})"></div>`
+    document.getElementById("trophies").innerText = playerData.body.currentSeason_trophies
+    document.getElementById("clubMember").innerText = playerData.body.is_club_member
+    let badgeHTML = ``
+    for (let badgeNumber in playerData.body.badges_all) {
+        badgeHTML += `
+            <div class="playerDataBox badgeBox">
+                <h6>Season ${playerData.body.badges_all[badgeNumber].season}</h6>
+                <img src="${playerData.body.badges_all[badgeNumber].iconURL}"></img>
+            </div>
+        `
+    }
+    document.getElementById("badges").innerHTML = badgeHTML
     let playerMatchData = await getData(playerData.body.matches)
     let matchHTML = ``
     for (let i = 0; i < 5; i++) {
@@ -305,7 +334,13 @@ async function updatePlayerWindow(playerNumber) {
                 } else {
                     winString = "Unknown"
                 }
-                matchHTML += `<div class="playerDataBox"><h6>vs. ${opponentName}</h6><p>${winString} on ${getOptimizedName(playerMatchData.body[i].map)}</p></div>`
+                matchHTML += `
+                    <div class="playerDataBox">
+                        <h6>vs. ${opponentName}</h6>
+                        <p>${getOptimizedName(playerMatchData.body[i].gametype)} Match</p>
+                        <p>${winString} on ${getOptimizedName(playerMatchData.body[i].map)}</p>
+                    </div>
+                `
             }
         } catch {}
     }
@@ -338,9 +373,13 @@ document.getElementById("closeButton").addEventListener("click", () => {
 });
 
 async function main() {
-    for (let playerNumber in playerRoster) {await clanMemberHTML(playerNumber)}
+    //for (let playerNumber in playerRoster) {await clanMemberHTML(playerNumber)}
     for (let playerNumber in playerRoster) {
-        document.getElementById("clanRosterList").insertAdjacentHTML("beforeend", await clanMemberHTML(playerNumber))
+        if (playerRoster[playerNumber].rank == "Backup Member") {
+            document.getElementById("backupList").insertAdjacentHTML("beforeend", await clanMemberHTML(playerNumber))
+        } else {
+            document.getElementById("clanRosterList").insertAdjacentHTML("beforeend", await clanMemberHTML(playerNumber))
+        }
         if (document.getElementById(`${playerNumber}PlayerButton`) != undefined) {
             async function playerEventListenerFunction() {
                 document.getElementById(`player${playerNumber}Loading`).innerHTML = `<div class="lds-dual-ring"></div>`

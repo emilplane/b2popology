@@ -447,13 +447,17 @@ py-script {
     margin-bottom: 12px;
 }
 
+.clanGridContainer {
+    margin: 8px 0
+}
+
 .clanRosterList {
     display: grid;
     grid-template-columns: 1fr 1fr;
     @media screen and (max-width: 600px) {
         grid-template-columns: 1fr;
     }
-    gap: 8px
+    gap: 8px;
 }
 
 ::backdrop {
@@ -537,13 +541,25 @@ dialog {
     background-size: contain;
     margin-right: 8px;
 }
-.matches, .towers {
+.matches, .towers, .badges {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     overflow: auto;
-
 }
+
+.badgeBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 80px
+}
+.badgeBox > img {
+    height: 64px
+}
+
 .matches > *, .playerDataBox {
     border-radius: 8px;
 }
@@ -555,10 +571,10 @@ dialog {
         background-color: var(--shade6_5);
     };
 }
-.win {
+.greenText {
     color: var(--winColor)
 }
-.lose {
+.redText {
     color: var(--lossColor)
 }
 .lds-dual-ring {
