@@ -77,6 +77,49 @@ class PopologyHTML {
             </section>
         `
     }
+    static getSimplePropertyHTML(propertyData, module, parentPropertyData) {
+        switch (propertyData.valueData.valueType) {
+            case "number":
+                if (propertyData.relationshipToMain != undefined) { if (propertyData.relationshipToMain[0] == true) {
+                    let buffString = 
+                        Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).operator
+                        + Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).buffValue
+                    let totalString = 
+                        Tower.calculateNumbers(module [parentPropertyData.name], module [propertyData.name], propertyData.relationshipToMain[1])
+                    return `
+                        <div class="infoBox">
+                            <h6>${propertyData.displayName}</h6>
+                            <p>
+                                ${buffString}
+                                (${totalString})
+                            </p>
+                        </div>
+                    `
+                }}
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>${module [propertyData.name]}</p>
+                    </div>
+                `
+            case "string": 
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>${module [propertyData.name]}</p>
+                    </div>
+                `
+            case "boolean": 
+                return `
+                    <div class="infoBox">
+                        <h6>${propertyData.displayName}</h6>
+                        <p>${module [propertyData.name]}</p>
+                    </div>
+                `
+            case "default": 
+                return ``
+        }
+    }   
 
     static configurationBarItem(title, content) {
         return `
@@ -140,7 +183,7 @@ class PopologyHTML {
                 pathSelectHTML += `<select id="${pathName}PathSelect">`
                 let optionArray = []
                 for (let upgrade in towerData[category][page].upgrades[pathName]) {
-                    optionArray.push([Number(upgrade)+1, Number(upgrade)+1, (crosspath[0] == Number(upgrade)+1)])
+                    optionArray.push([Number(upgrade)+1, Number(upgrade)+1, (crosspath[pathNumber] == Number(upgrade)+1)])
                 }
                 optionArray.unshift([0, 0, false])
                 pathSelectHTML += PopologyHTML.generateSelectContents(optionArray) + `</select>`
@@ -165,6 +208,72 @@ class PopologyHTML {
                 ["Path",
                     `<div style="display:flex;gap:4px">
                         ${pathSelectHTML}
+                    </div>`
+                ],
+                ["Path",
+                    `<div style="display:flex;gap:4px">
+                        <div class="configPathContainer">
+                            <div class="configSinglePathContainer">
+                                <button class="pathStart selected" id="topPath0">
+                                    <h6>0</h6>
+                                </button>
+                                <button id="topPath1">
+                                    <h6>1</h6>
+                                </button>
+                                <button id="topPath2">
+                                    <h6>2</h6>
+                                </button>
+                                <button id="topPath3">
+                                    <h6>3</h6>
+                                </button>
+                                <button id="topPath4">
+                                    <h6>4</h6>
+                                </button>
+                                <button class="pathEnd" id="topPath5">
+                                    <h6>5</h6>
+                                </button>
+                            </div>
+                            <div class="configSinglePathContainer">
+                                <button class="pathStart" id="topPath0">
+                                    <h6>0</h6>
+                                </button>
+                                <button id="topPath1">
+                                    <h6>1</h6>
+                                </button>
+                                <button id="topPath2">
+                                    <h6>2</h6>
+                                </button>
+                                <button class="selected" id="topPath3">
+                                    <h6>3</h6>
+                                </button>
+                                <button id="topPath4">
+                                    <h6>4</h6>
+                                </button>
+                                <button class="pathEnd" id="topPath5">
+                                    <h6>5</h6>
+                                </button>
+                            </div>
+                            <div class="configSinglePathContainer">
+                                <button class="pathStart selected" id="topPath0">
+                                    <h6>0</h6>
+                                </button>
+                                <button id="topPath1">
+                                    <h6>1</h6>
+                                </button>
+                                <button id="topPath2">
+                                    <h6>2</h6>
+                                </button>
+                                <button id="topPath3">
+                                    <h6>3</h6>
+                                </button>
+                                <button id="topPath4">
+                                    <h6>4</h6>
+                                </button>
+                                <button class="pathEnd" id="topPath5">
+                                    <h6>5</h6>
+                                </button>
+                            </div>
+                        </div>
                     </div>`
                 ]
             ]
@@ -195,49 +304,71 @@ class PopologyHTML {
         }
     }
 
-    static getSimplePropertyHTML(propertyData, module, parentPropertyData) {
-        switch (propertyData.valueData.valueType) {
-            case "number":
-                if (propertyData.relationshipToMain != undefined) { if (propertyData.relationshipToMain[0] == true) {
-                    let buffString = 
-                        Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).operator
-                        + Tower.getNumberData(null, module [propertyData.name], propertyData.relationshipToMain[1]).buffValue
-                    let totalString = 
-                        Tower.calculateNumbers(module [parentPropertyData.name], module [propertyData.name], propertyData.relationshipToMain[1])
-                    return `
-                        <div class="infoBox">
-                            <h6>${propertyData.displayName}</h6>
-                            <p>
-                                ${buffString}
-                                (${totalString})
-                            </p>
-                        </div>
-                    `
-                }}
-                return `
-                    <div class="infoBox">
-                        <h6>${propertyData.displayName}</h6>
-                        <p>${module [propertyData.name]}</p>
-                    </div>
-                `
-            case "string": 
-                return `
-                    <div class="infoBox">
-                        <h6>${propertyData.displayName}</h6>
-                        <p>${module [propertyData.name]}</p>
-                    </div>
-                `
-            case "boolean": 
-                return `
-                    <div class="infoBox">
-                        <h6>${propertyData.displayName}</h6>
-                        <p>${module [propertyData.name]}</p>
-                    </div>
-                `
-            case "default": 
-                return ``
+    static updateTowerStats() {
+        let towerObject = new Tower(towerData[category][page], crosspath, config)
+        console.log(towerObject)
+        let moduleSet = towerObject.modules
+        let towerStatsHTML = ``
+        let propertiesHTML = ``
+        if (towerObject.towerStats.range != undefined) {
+            propertiesHTML = propertiesHTML + `
+                <div class="infoBox">
+                    <h6>Tower Range</h6>
+                    <p>${towerObject.towerStats.range}r</p>
+                </div>
+            `
         }
-    }    
+        if (towerObject.towerStats.size[0] == "radius") {
+            propertiesHTML = propertiesHTML + `
+                <div class="infoBox">
+                    <h6>Tower Size</h6>
+                    <p>${towerObject.towerStats.size[1]}r</p>
+                </div>
+            `
+        }
+        towerStatsHTML = PopologyHTML.getStatSectionHTML("Tower Stats", [], propertiesHTML, [])
+        let statsHTML = ``
+        for (let module in moduleSet) {
+            let propertyTypesHTMLData = {}
+            for (let groupNumber in config.HTMLGroups) {
+                propertyTypesHTMLData[config.HTMLGroups[groupNumber]] = ``
+            }
+            for (let property in config.properties) {
+                if (moduleSet [module] [config.properties[property].name] != undefined) {
+                    PopologyHTML.propertyTypeSwitch(moduleSet, module, config.properties[property], propertyTypesHTMLData)
+                }
+            }
+            for (let HTMLGroupName in propertyTypesHTMLData) {
+                switch (HTMLGroupName) {
+                    case "simple":
+                        propertyTypesHTMLData[HTMLGroupName] = propertyTypesHTMLData[HTMLGroupName]
+                        break
+                }
+            }
+            statsHTML = PopologyHTML.getStatSectionHTML(`<span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}`, [], propertyTypesHTMLData.simple, [])
+        }
+        document.getElementById("coreTowerStats").insertAdjacentHTML("beforeend", towerStatsHTML)
+        document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", statsHTML)
+    }
+    static propertyTypeSwitch(moduleSet, module, propertydata, propertyTypesHTMLData) {
+        switch (propertydata.type) {
+            case "simpleValue":
+                propertyTypesHTMLData.simple += PopologyHTML.getSimplePropertyHTML(propertydata, moduleSet[module])
+                for (let subvalueNumber in propertydata.subvalues) {
+                    if (moduleSet [module] [propertydata.subvalues[subvalueNumber].name] != undefined) {
+                        propertyTypesHTMLData.simple += PopologyHTML.getSimplePropertyHTML(
+                            propertydata.subvalues[subvalueNumber],
+                            moduleSet[module],
+                            propertydata
+                        )
+                    }
+                }
+                break
+            case "effect":
+                console.log(propertyTypesHTMLData.effects)
+                break
+        }
+    }
 
     static setInnerHTML(name, id) {
         document.getElementById(id).innerHTML = PopologyHTML[name]
@@ -315,7 +446,7 @@ function updatePage(change) {
 
     if (!towerData[category][page].error) {
         updateCostStats()
-        updateTowerStats()
+        PopologyHTML.updateTowerStats()
     }
 
     PopologyHTML.addConfigurationBarEventListeners()
@@ -395,70 +526,6 @@ function updateCostStats() {
         `
     }
     
-}
-
-function updateTowerStats() {
-    let towerObject = new Tower(towerData[category][page], crosspath, config)
-    console.log(towerObject)
-    let moduleSet = towerObject.modules
-    let towerStatsHTML = ``
-    let propertiesHTML = ``
-    if (towerObject.towerStats.range != undefined) {
-        propertiesHTML = propertiesHTML + `
-            <div class="infoBox">
-                <h6>Tower Range</h6>
-                <p>${towerObject.towerStats.range}r</p>
-            </div>
-        `
-    }
-    if (towerObject.towerStats.size[0] == "radius") {
-        propertiesHTML = propertiesHTML + `
-            <div class="infoBox">
-                <h6>Tower Size</h6>
-                <p>${towerObject.towerStats.size[1]}r</p>
-            </div>
-        `
-    }
-    towerStatsHTML = PopologyHTML.getStatSectionHTML("Tower Stats", [], propertiesHTML, [])
-    let statsHTML = ``
-    for (let module in moduleSet) {
-        let propertiesHTML = ``
-        let propertyTypesHTML = {}
-        for (let groupNumber in config.HTMLGroups) {
-            propertyTypesHTML[config.HTMLGroups[groupNumber]] = ``
-        }
-        console.log(propertyTypesHTML)
-        for (let property in config.properties) {
-            if (moduleSet [module] [config.properties[property].name] != undefined) {
-                switch (config.properties[property].type) {
-                    case "simpleValue":
-                        propertiesHTML = propertiesHTML + PopologyHTML.getSimplePropertyHTML(config.properties[property], moduleSet[module])
-                        for (let subvalueNumber in config.properties[property].subvalues) {
-                            if (moduleSet [module] [config.properties[property].subvalues[subvalueNumber].name] != undefined) {
-                                propertiesHTML = propertiesHTML + PopologyHTML.getSimplePropertyHTML(
-                                    config.properties[property].subvalues[subvalueNumber],
-                                    moduleSet[module],
-                                    config.properties[property]
-                                )
-                                propertyTypesHTML
-                            }
-                        }
-                        break
-                }
-            }
-        }
-        statsHTML = statsHTML + `
-            <section class="roundedBoxSection">
-                <h4><span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}</h4>
-                <div class="horizontalLine"></div>
-                <div class="standardTowerStatsContainer">
-                    ${propertiesHTML}
-                </div>
-            </section>
-        `
-    }
-    document.getElementById("coreTowerStats").insertAdjacentHTML("beforeend", towerStatsHTML)
-    document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", statsHTML)
 }
 
 let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]

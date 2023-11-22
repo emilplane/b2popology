@@ -1,10 +1,12 @@
 :root {
     --primaryLight3: hsl(161, 61%, 82%);
+    --primaryLight2_5: hsl(160, 56%, 78%);
     --primaryLight2: hsl(160, 56%, 74%);
     --primaryLight1: hsl(160, 61%, 64%);
     --primary: hsl(160, 100%, 39%);
     --primaryDark1: hsl(160, 100%, 31%);
     --primaryDark2: hsl(160, 100%, 26%);
+    --primaryDark2_5: hsl(160, 100%, 20%);
     --primaryDark3: hsl(160, 100%, 15%);
 
     --shade1: hsl(0, 0%, 100%);
@@ -13,6 +15,7 @@
     --shade3: hsl(0, 0%, 76%);
     --shade4: hsl(0, 0%, 60%);
     --shade5: hsl(0, 0%, 40%);
+    --shade5_5: hsl(0, 0%, 30%);
     --shade6: hsl(0, 0%, 24%);
     --shade6_5: hsl(0, 0%, 16%);
     --shade7: hsl(0, 0%, 10%);
@@ -191,7 +194,10 @@ input:focus + .inputUnderline {
 }
 
 .headerStyle {
-    background-color: hsla(160 100% 15% / 80%);
+    background-color: hsla(159, 100%, 88%, 0.8);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsla(160 100% 12% / 80%);
+    }
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 8px;
@@ -233,7 +239,7 @@ input:focus + .inputUnderline {
 
 .configurationBar {
     display: flex; 
-    align-items: center;
+    align-items: start;
     padding: 8px 12px;
     gap: 32px;
 }
@@ -241,6 +247,46 @@ input:focus + .inputUnderline {
 .configurationBarTextSelectorWrapper {
     display: flex; flex-direction: column; 
     gap: 4px; align-items: flex-start;
+}
+
+.configPathContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+}
+.configSinglePathContainer {
+    display: flex;
+    align-items: center;
+}
+.configSinglePathContainer > * {
+    padding: 2px 4px;
+    border-radius: 0;
+}
+.configSinglePathContainer > * > * {
+    color: var(--shade5_5);
+    @media (prefers-color-scheme: dark) {
+        color: var(--shade2_5);
+    }
+    width: 12px;
+}
+.pathStart {
+    border-radius: 8px 0 0 8px;
+}
+.pathEnd {
+    border-radius: 0 8px 8px 0;
+}
+.selected {
+    background-color: var(--primaryLight1);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark2_5);
+    };
+    height: 32px;
+}
+.selected > * {
+    color: var(--shade8);
+    @media (prefers-color-scheme: dark) {
+        color: var(--shade1);
+    };
 }
 
 .horizontalLine {
