@@ -18,7 +18,8 @@ const playerAPILinks = {
     "Mathlord": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
     "Waby": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
     "Cogareen": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
-    "Ecolisz": "https://data.ninjakiwi.com/battles2/users/9ceb148d8d93fda51a168a4d5d73e624ce5614ee9d158c3e"
+    "Ecolisz": "https://data.ninjakiwi.com/battles2/users/9ceb148d8d93fda51a168a4d5d73e624ce5614ee9d158c3e",
+    "Krunker Prime": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d"
 }
 
 const playerRoster = [
@@ -143,15 +144,9 @@ const playerRoster = [
         "rank": "Member"
     },
     {
-        "name": "Tigerz72",
-        "dateJoined": "11/21/2023",
-        "rank": "Member",
-        "banned": true
-    },
-    {
         "name": "Krunker Prime",
         "dateJoined": "11/21/2023",
-        "rank": "Backup Member"
+        "rank": "Member"
     }
 ]
 
@@ -375,6 +370,7 @@ async function main() {
     //for (let playerNumber in playerRoster) {await clanMemberHTML(playerNumber)}
     for (let playerNumber in playerRoster) {
         if (playerRoster[playerNumber].rank == "Backup Member") {
+            document.getElementById("backupMembersTitle").innerText = "Backup Members"
             document.getElementById("backupList").insertAdjacentHTML("beforeend", await clanMemberHTML(playerNumber))
         } else {
             document.getElementById("clanRosterList").insertAdjacentHTML("beforeend", await clanMemberHTML(playerNumber))
