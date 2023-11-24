@@ -20,7 +20,8 @@ const playerAPILinks = {
     "Cogareen": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
     "Ecolisz": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
     "Krunker Prime": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
-    "Onion": "https://data.ninjakiwi.com/battles2/users/9fbe468d8e95aaad4911dc190b7ae376cc514fef99188b31"
+    "Onion": "https://data.ninjakiwi.com/battles2/users/9fbe468d8e95aaad4911dc190b7ae376cc514fef99188b31",
+    "Coolix": "https://data.ninjakiwi.com/battles2/users/9cea178adbc7f8a71a478e4e5820e7729f501defcb15da3d"
 }
 
 const playerRoster = [
