@@ -21,7 +21,8 @@ const playerAPILinks = {
     "Ecolisz": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
     "Krunker Prime": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
     "Onion": "https://data.ninjakiwi.com/battles2/users/9fbe468d8e95aaad4911dc190b7ae376cc514fef99188b31",
-    "Coolix": "https://data.ninjakiwi.com/battles2/users/9cea178adbc7f8a71a478e4e5820e7729f501defcb15da3d"
+    "Coolix": "https://data.ninjakiwi.com/battles2/users/9cea178adbc7f8a71a478e4e5820e7729f501defcb15da3d",
+    "luc1aonstation": "https://data.ninjakiwi.com/battles2/users/9ced16d88a96fff11140da1d5b26e326ce5715be96458b3f"
 }
 
 const playerRoster = [
