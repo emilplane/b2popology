@@ -19,7 +19,8 @@ const playerAPILinks = {
     "Waby": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
     "Cogareen": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
     "Ecolisz": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
-    "Krunker Prime": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d"
+    "Krunker Prime": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+    "Onion": "https://data.ninjakiwi.com/battles2/users/9fbe468d8e95aaad4911dc190b7ae376cc514fef99188b31"
 }
 
 const playerRoster = [
@@ -147,6 +148,11 @@ const playerRoster = [
         "name": "Krunker Prime",
         "dateJoined": "11/21/2023",
         "rank": "Member"
+    },
+    {
+        "name": "Onion",
+        "dateJoined": "11/23/2023",
+        "rank": "Backup Member"
     }
 ]
 
