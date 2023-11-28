@@ -20,8 +20,12 @@ class b2sim {
         await micropip.install('b2sim');
         pyodide.runPython(`
             import js
+        `)
+        console.log("Importing b2sim into python")
+        pyodide.runPython(`
             import b2sim as b2
         `)
+        console.log("Imported b2sim into python")
         b2simLoadTime = new Date-start
         console.log(`Loaded b2sim in ${(b2simLoadTime)/1000}s`)
     }
@@ -43,9 +47,9 @@ class b2sim {
                 'Cash': ${this.configData.cash},
                 'Eco': ${this.configData.eco},
                 'Eco Send': b2.ecoSend(send_name = '${this.configData.ecoSend}'),
-                'Rounds': rounds, 
-                'Farms': farms, 
-                'Game Round': 13.99 
+                'Rounds': rounds,
+                'Farms': farms,
+                'Game Round': 13.99
             }
             game_state = b2.GameState(initial_state_game)
             game_state.fastForward(target_round = 17)
@@ -58,8 +62,11 @@ class b2sim {
 
     async getCash() {
         this.runSim()
-        let cash = pyodide.pyimport("simData");
-        return cash;
+        pyodide.runPython(`
+            js.cash = game_state.cash
+            js.eco = game_state.eco
+        `)
+        return `Cash: $${cash}, Eco: ${eco}`;
     }
 }
 
