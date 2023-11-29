@@ -4,26 +4,57 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="styles/style.css"/>
-        <link id="luckiestGuyFix" rel="stylesheet" href="styles/luckiestGuyChanged.css"/>
+        <link rel="stylesheet" href="styles/homePageStyle.css"/>
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Josefin+Sans&family=Roboto&family=Tektur&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
     </head>
     <body>
         <main>
-            <section style="height: 500px; display: flex; align-items: center; justify-content: center;">
-                <div>
-                    <h4>Search stats:</h4>
-                    <input type="text" style="border-width:0; background-color: var(--primaryLight3); font-size: 28pt; border-radius: 0px;padding:8px;"/>
-                    <div class="inputUnderline" style="height: 2px"></div>
+            <header class="headerStyle" id="header">
+                <h4 class="luckiestGuy">Battles 2 Popology</h4>
+                <div class="subHeaderStyle">
+                    <h5>Home</h5>
+                    <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Popology</h5>
+                    <h5>Eco Sim</h5>
+                    <h5>Credits</h5>
                 </div>
-            </section>
+            </header>
+            <body>
+                <section class="roundedBoxSection landingPageMain">
+                    <div class="landingPageMainLeft">
+                        <div class="landingPageMainLeftGrid">
+                            <div>
+                                <h5>Search</h5>
+                                <input class="landingPageSearch" type="text"/>
+                            </div>
+                            <div class="landingPageMainSeperator"></div>
+                            <div>
+                                <div>
+                                    <button style="background-color: var(--primaryDark1); color: white">Popology</button>
+                                    <button>Eco Simulator</button>
+                                    <button>b2.lol</button>
+                                    <button>Bloonstar</button>
+                                </div>
+                                <div>
+                                    <button>Primary</button>
+                                    <button>Military</button>
+                                    <button>Magic</button>
+                                    <button>Support</button>
+                                    <button>Heroes</button>
+                                    <button>Bloons</button>
+                                    <button>Accolades</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </body>
         </main>
     </body>
-    <script src="scripts/test.js"></script>
 </html>

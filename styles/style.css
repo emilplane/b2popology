@@ -184,13 +184,13 @@ select {
     width: 0%;
     margin-left: 50%;
     margin-right: 50%;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 input:focus + .inputUnderline {
     width: 100%;
     margin: 0;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 
 .headerStyle {
@@ -203,6 +203,12 @@ input:focus + .inputUnderline {
     margin-bottom: 8px;
     display: flex;
     flex-wrap: wrap
+}
+
+.subHeaderStyle {
+    display: flex;
+    gap: 16px;
+    margin-left: auto
 }
 
 .titleSection {
