@@ -13,22 +13,22 @@ let score;
 let originalScore;
 async function main() {
     let url = window.location.toString().replace(/^[^?]*/, '').replace(/^\?/, '');
-    // let userData = (await getData(`https://data.ninjakiwi.com/battles2/users/9cb81682dc96aaa61b47871e5d22b426cb561bbf9d138c6e`))
-    let userData = (await getData(url))
-    // let userData = (await getData(`https://data.ninjakiwi.com/battles2/users/9fbe16898e95f1f34a448b490a27e575cc001aba9f16dd6b`, true))
-    // let userData = (await getData(`https://data.ninjakiwi.com/battles2/users/9fbe458d8bc2acf01c4286190b73e272c80119e99619df3e`, true))
-    // let userData = (await getData(`https://data.ninjakiwi.com/battles2/users/9fbf438edcc4fcf64a42da4b5a71e77e990148b498428a31`))
+
+    let userData = await getData(url, true)
     let user = userData.data.body
+    console.log("User Data")
     console.log(user)
 
     let guildURL = userData.data.body.guild
-    let guildData = (await getData(guildURL, true))
+    let guildData = await getData(guildURL, true)
     let guild = guildData.data.body
+    console.log("Clan Data")
     console.log(guild)
 
     let homsURL = userData.data.body.homs
-    let homsData = (await getData(homsURL, true))
+    let homsData = await getData(homsURL, true)
     let homs = homsData.data.body
+    console.log("User HoM Data")
     console.log(homs)
 
     setBanner(user.equippedBannerURL)
@@ -36,12 +36,40 @@ async function main() {
     document.getElementById("playerName").innerText = user.displayName
     document.getElementById("clanName").innerText = guild.name
 
-    if (homs[0].score > score) {
+    let allHomData = await getData(`https://data.ninjakiwi.com/battles2/homs`, true)
+    let seasonHomURL = allHomData.data.body[0].leaderboard
+    let seasonHomData = await getData(seasonHomURL, true)
+    let seasonHomPage1 = seasonHomData.data
+    let leaderboard = []
+    let leaderboardUser;
+    let leaderboardUserIndex;
+    async function logLeaderboard(leaderboardData) {
+        for (let userNumber in leaderboardData.body) {
+            leaderboard.push(leaderboardData.body[userNumber])
+            if (leaderboardData.body[userNumber].profile == url) {
+                leaderboardUser = leaderboardData.body[userNumber]
+                leaderboardUserIndex = leaderboard.length
+            }
+        }
+        if (typeof leaderboardData.next == "string") {
+            let nextPageData = await getData(leaderboardData.next)
+            let nextPage = nextPageData.data
+            logLeaderboard(nextPage)
+        }
+    }
+    await logLeaderboard(seasonHomPage1)
+    console.log("Leaderboard")
+    console.log(leaderboard)
+    console.log("Leaderboard User Data")
+    console.log(leaderboardUser)
+    console.log(`Leaderboard Index: ${leaderboardUserIndex}`)
+
+    if (leaderboardUser.score > score) {
         gamesWon++
-    } else if (homs[0].score < score) {
+    } else if (leaderboardUser.score < score) {
         gamesLost++
     }
-    score = homs[0].score
+    score = leaderboardUser.score
     if (originalScore == undefined) {
         originalScore = score
     }
@@ -55,7 +83,9 @@ async function main() {
 
     document.getElementById("wonLost").innerText = `${gamesWon} - ${gamesLost}`
     
-    document.getElementById("place").innerText = `Rank ${homs[0].rank}`
+    document.getElementById("place").innerText = `Rank ${leaderboardUserIndex}`
+
+    
 }
 
 main()
