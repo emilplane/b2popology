@@ -2,6 +2,23 @@ document.getElementById("eventSection").innerHTML =  `<h4 class="sectionStyle">L
 
 let events = [
     {
+        "name": "Battles 2 Update 3.1 Announced",
+        "startDate": "2023-12-01T13:45:07Z",
+        "content": `
+            
+        `,
+        "links": [
+            {
+                "name": "Open in Reddit",
+                "link": "https://www.reddit.com/r/battles2/comments/188c7o1/update_31_coming_soon_update_notes/"
+            },
+            {
+                "name": "Open in Old Reddit",
+                "link": "https://old.reddit.com/r/battles2/comments/188c7o1/update_31_coming_soon_update_notes/"
+            }
+        ]
+    },
+    {
         "name": "PuniEsports Battles 2 Tournament #1",
         "startDate": "2023-11-11T17:00:00Z",
         "content": `

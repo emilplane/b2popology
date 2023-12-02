@@ -4391,7 +4391,7 @@ let data = {
                                 <ul>
                                     <li>dart replaced by monkeyrang
                                         <ul>
-                                            <li>1d, 2md (3md), 5p, 53r, 0.045s, sharp type</li>
+                                            <li>1d, 3md (4md), 5p, 53r, 0.045s, sharp type</li>
                                         </ul>
                                     </li>
                                     <li>knockback buffed
@@ -4413,7 +4413,7 @@ let data = {
                                 <ul>
                                     <li>monkeyrang buffed
                                         <ul>
-                                            <li>+1d (2d), +2cd (4cd), +1md (5md), +2p (7p), 50%s (0.0225), normal type</li>
+                                            <li>+1d (2d), +2cd (4cd), +5md (7md), +4p (9p), 50%s (0.0225), normal type</li>
                                         </ul>
                                     </li>
                                     <li>darkshift buffed
@@ -4430,7 +4430,7 @@ let data = {
                                 <ul>
                                     <li>monkeyrang buffed
                                         <ul>
-                                            <li>+8d (10), +4cd (16), +5md (18md), +15p (22p), +4r (57r)</li>
+                                            <li>+8d (10d), +4cd (16cd), +3md (18md), +15p (24p), +4r (57r)</li>
                                         </ul>
                                     </li>
                                     <li>gains black-hole ability (120s cooldown, 8s duration, battle ready, triggered by something about to leak)
@@ -6504,7 +6504,7 @@ let data = {
                     "8": `<ul>
                         <li>all attacks buffed
                             <ul>
-                                <li>+2md (3ms)</li>
+                                <li>+2md (3md)</li>
                             </ul>
                         </li>
                     </ul>`,
