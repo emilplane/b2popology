@@ -5,11 +5,12 @@ export default async function getData(url, noCache) {
     let status;
     try {
         const requestURL = url;
-        let cacheBuster = ``
+        let request = ``
         if (noCache) {
-            cacheBuster = '?t=' + new Date().getTime();
+            request = new Request(requestURL + '?cacheBust=' + Date.now());
+        } else {
+            request = new Request(requestURL);
         }
-        const request = new Request(requestURL + cacheBuster);
         const response = await fetch(request)
         status = response.status
         if (!response.ok) {

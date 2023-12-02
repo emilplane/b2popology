@@ -14,19 +14,19 @@ let originalScore;
 async function main() {
     let url = window.location.toString().replace(/^[^?]*/, '').replace(/^\?/, '');
 
-    let userData = await getData(url, true)
+    let userData = await getData(url)
     let user = userData.data.body
     console.log("User Data")
     console.log(user)
 
     let guildURL = userData.data.body.guild
-    let guildData = await getData(guildURL, true)
+    let guildData = await getData(guildURL)
     let guild = guildData.data.body
     console.log("Clan Data")
     console.log(guild)
 
     let homsURL = userData.data.body.homs
-    let homsData = await getData(homsURL, true)
+    let homsData = await getData(homsURL)
     let homs = homsData.data.body
     console.log("User HoM Data")
     console.log(homs)
@@ -36,9 +36,9 @@ async function main() {
     document.getElementById("playerName").innerText = user.displayName
     document.getElementById("clanName").innerText = guild.name
 
-    let allHomData = await getData(`https://data.ninjakiwi.com/battles2/homs`, true)
+    let allHomData = await getData(`https://data.ninjakiwi.com/battles2/homs`)
     let seasonHomURL = allHomData.data.body[0].leaderboard
-    let seasonHomData = await getData(seasonHomURL, true)
+    let seasonHomData = await getData(seasonHomURL)
     let seasonHomPage1 = seasonHomData.data
     let leaderboard = []
     let leaderboardUser;
