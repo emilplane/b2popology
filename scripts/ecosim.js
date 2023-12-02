@@ -33,15 +33,14 @@ class b2sim {
     startingPythonCode() {
         let farms = [];
         for (let farmNumber in this.farms) {
-            farms.push(`b2.initFarm(purchase_time=rounds.getTimeFromRound(${this.farms[farmNumber].purchase}), upgrades=(3,2,0))`)
+            farms.push(`b2.initFarm(purchase_time=rounds.getTimeFromRound(${this.farms[farmNumber].purchase}), upgrades=(${this.farms[farmNumber].crosspath}))`)
         }
         return `
             class simData:
                 x = [1, 2, 3, 4]
             rounds = b2.Rounds(${this.configData.rounds})
             farms = [
-                b2.initFarm(purchase_time=rounds.getTimeFromRound(7), upgrades=(3,2,0)),
-                b2.initFarm(purchase_time=rounds.getTimeFromRound(13.9), upgrades=(3,2,0))
+                ${farms}
             ]
             initial_state_game = {
                 'Cash': ${this.configData.cash},
@@ -74,16 +73,12 @@ async function main() {
     await b2sim.initPython()
     let sim = new b2sim(
         {
-            "cash": 600, "eco": 600, "ecoSend": "Grouped Blacks",
+            "cash": 0, "eco": 1200, "ecoSend": "Grouped Blacks",
             "rounds": 0.1, "gameRound": 13.99, "targetRound": 17,
             "farms": [
                 {
                     "purchase": 7,
-                    "crosspath": [3, 2, 0]
-                },
-                {
-                    "purchase": 13.9,
-                    "crosspath": [3, 2, 0]
+                    "crosspath": [2, 2, 0]
                 }
             ]
         }
@@ -96,10 +91,6 @@ async function main() {
             "farms": [
                 {
                     "purchase": 7,
-                    "crosspath": [3, 2, 0]
-                },
-                {
-                    "purchase": 13.9,
                     "crosspath": [3, 2, 0]
                 }
             ]
