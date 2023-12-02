@@ -1,11 +1,15 @@
-export default async function getData(url) {
+export default async function getData(url, noCache) {
     let output = {
         "error": true
     }
     let status;
     try {
         const requestURL = url;
-        const request = new Request(requestURL);
+        let cacheBuster = ``
+        if (noCache) {
+            cacheBuster = '?t=' + new Date().getTime();
+        }
+        const request = new Request(requestURL + cacheBuster);
         const response = await fetch(request)
         status = response.status
         if (!response.ok) {

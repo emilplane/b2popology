@@ -1,5 +1,5 @@
 import { Tower } from "/scripts/popology/moduleSystem.js"
-import { getPathingData, numberPathNameConversion, getTowerCostData } from "./popology/conversions.js"
+import { getPathingData, numberPathNameConversion, getTowerCostData} from "./popology/conversions.js"
 import getData from "./request.js"
 
 class PopologyHTML {
@@ -40,10 +40,10 @@ class PopologyHTML {
     static coreTowerHTML = `
         <div class="coreTowerSection" id="coreTowerStats">
             ${PopologyHTML.getStatSectionHTML(
-                "Prices",
-                [],
-                ``,
-                [["id", "towerCosts"]]
+                {
+                    "title": "Prices",
+                    "mainGlobalAttributes": [["class", "standardTowerStatsContainer"], ["id", "towerCosts"]]
+                }
             )}
         </div>
     `
@@ -55,12 +55,18 @@ class PopologyHTML {
             </div>
             <div class="towerSidebarContent">
                 <div class="horizontalLine"></div>
-                <p>Last updated: 11/14/2023</p>
+                <p>Last updated: 11/24/2023</p>
             </div>
         </section>
     `
 
-    static getStatSectionHTML(title, sectionGlobalAttributes, contentHTML, mainGlobalAttributes) {
+    static getStatSectionHTML(sectionConfig) {
+
+        let title = sectionConfig.title
+        let sectionGlobalAttributes = sectionConfig.sectionGlobalAttributes
+        let contentHTML = sectionConfig.contentHTML
+        let mainGlobalAttributes = sectionConfig.mainGlobalAttributes
+
         let sectionGlobalAttributesString = ``
         for (let attributeNumber in sectionGlobalAttributes) {
             sectionGlobalAttributesString += ` ${sectionGlobalAttributes[attributeNumber][0]}="${sectionGlobalAttributes[attributeNumber][1]}"`
@@ -71,12 +77,15 @@ class PopologyHTML {
         }
         return `
             <section class="roundedBoxSection" ${sectionGlobalAttributesString}>
-                <h4>${title}</h4>
+                <div>
+                    <h4>${title}</h4>
+                </div>
                 <div class="horizontalLine"></div>
-                <div class="standardTowerStatsContainer" ${mainGlobalAttributesString}>${contentHTML}</div>
+                <div ${mainGlobalAttributesString}>${contentHTML}</div>
             </section>
         `
     }
+
     static getSimplePropertyHTML(propertyData, module, parentPropertyData) {
         switch (propertyData.valueData.valueType) {
             case "number":
@@ -276,7 +285,14 @@ class PopologyHTML {
                 </div>
             `
         }
-        towerStatsHTML = PopologyHTML.getStatSectionHTML("Tower Stats", [], propertiesHTML, [])
+        towerStatsHTML = PopologyHTML.getStatSectionHTML(
+            {
+                "title": "Tower Stats",
+                "contentHTML": propertiesHTML,
+                "mainGlobalAttributes": [["class", "standardTowerStatsContainer"]]
+            }
+        )
+        
         let statsHTML = ``
         for (let module in moduleSet) {
             let propertyTypesHTMLData = {}
@@ -290,32 +306,74 @@ class PopologyHTML {
             }
             for (let HTMLGroupName in propertyTypesHTMLData) {
                 switch (HTMLGroupName) {
-                    case "simple":
+                    default:
                         propertyTypesHTMLData[HTMLGroupName] = propertyTypesHTMLData[HTMLGroupName]
                         break
                 }
             }
-            statsHTML = PopologyHTML.getStatSectionHTML(`<span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}`, [], propertyTypesHTMLData.simple, [])
+            
+            let contentHTML = ``
+            for (let key in propertyTypesHTMLData) {
+                if (propertyTypesHTMLData[key] != ``) {
+                    contentHTML += `<div class="standardTowerStatsContainer">${propertyTypesHTMLData[key]}</div>`
+                }
+            }
+            
+            statsHTML += PopologyHTML.getStatSectionHTML(
+                {
+                    "title": `<span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}`,
+                    "contentHTML": contentHTML,
+                    "mainGlobalAttributes": [["class", "moduleTowerStats"]]
+                }
+            )
         }
         document.getElementById("coreTowerStats").insertAdjacentHTML("beforeend", towerStatsHTML)
         document.getElementById("mainStatsSection").insertAdjacentHTML("beforeend", statsHTML)
     }
-    static propertyTypeSwitch(moduleSet, module, propertydata, propertyTypesHTMLData) {
-        switch (propertydata.type) {
+
+    static conditionString(condition) {
+        if (typeof condition == "object") {
+            switch (condition[0]) {
+                case "pierceUsed": return `${Tower.sayCalculation(condition[1])} pierce used`
+            }
+        }
+        switch (condition) {
+            case "expire": return condition
+        }
+    }
+
+    static propertyTypeSwitch(moduleSet, module, propertyData, propertyTypesHTMLData) {
+        switch (propertyData.type) {
             case "simpleValue":
-                propertyTypesHTMLData.simple += PopologyHTML.getSimplePropertyHTML(propertydata, moduleSet[module])
-                for (let subvalueNumber in propertydata.subvalues) {
-                    if (moduleSet [module] [propertydata.subvalues[subvalueNumber].name] != undefined) {
+                propertyTypesHTMLData.simple += PopologyHTML.getSimplePropertyHTML(propertyData, moduleSet[module])
+                for (let subvalueNumber in propertyData.subvalues) {
+                    if (moduleSet [module] [propertyData.subvalues[subvalueNumber].name] != undefined) {
                         propertyTypesHTMLData.simple += PopologyHTML.getSimplePropertyHTML(
-                            propertydata.subvalues[subvalueNumber],
+                            propertyData.subvalues[subvalueNumber],
                             moduleSet[module],
-                            propertydata
+                            propertyData
                         )
                     }
                 }
                 break
             case "effect":
-                console.log(propertyTypesHTMLData.effects)
+                for (let effectNumber in moduleSet [module] [propertyData.name]) {
+                    let conditionString = ``
+                    for (let conditionNumber in moduleSet [module] [propertyData.name][effectNumber].condition.data) {
+                        if (conditionString == ``) {
+                            conditionString += PopologyHTML.conditionString(moduleSet [module] [propertyData.name][effectNumber].condition.data[conditionNumber])
+                        } else {
+                            conditionString += " or " + PopologyHTML.conditionString(moduleSet [module] [propertyData.name][effectNumber].condition.data[conditionNumber])
+                        }
+                    }
+                    let emittedProjectileString = moduleSet [module] [propertyData.name][effectNumber].result
+                    propertyTypesHTMLData.effects += `
+                        <div class="infoBox">
+                            <p>On ${conditionString}:</p>
+                            <h6>emit <span class="slightTextEmphasis italicEmphasis">${emittedProjectileString}</span></h6>
+                        </div>
+                    `
+                }
                 break
         }
     }

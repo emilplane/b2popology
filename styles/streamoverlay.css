@@ -1,0 +1,181 @@
+:root {
+    --primaryLight3: hsl(161, 61%, 82%);
+    --primaryLight2_5: hsl(160, 56%, 78%);
+    --primaryLight2: hsl(160, 56%, 74%);
+    --primaryLight1: hsl(160, 61%, 64%);
+    --primary: hsl(160, 100%, 39%);
+    --primaryDark1: hsl(160, 100%, 31%);
+    --primaryDark2: hsl(160, 100%, 26%);
+    --primaryDark2_5: hsl(160, 100%, 20%);
+    --primaryDark3: hsl(160, 100%, 15%);
+
+    --shade1: hsl(0, 0%, 100%);
+    --shade2: hsl(0, 0%, 95%);
+    --shade2_5: hsl(0, 0%, 85%);
+    --shade3: hsl(0, 0%, 76%);
+    --shade4: hsl(0, 0%, 60%);
+    --shade5: hsl(0, 0%, 40%);
+    --shade5_5: hsl(0, 0%, 30%);
+    --shade6: hsl(0, 0%, 24%);
+    --shade6_5: hsl(0, 0%, 16%);
+    --shade7: hsl(0, 0%, 10%);
+    --shade7_5: hsl(0, 0%, 6%);
+    --shade8: hsl(0, 0%, 0%);
+
+    --primaryTower1: #E6EEF2;
+    --primaryTower3: #C1E2F2;
+    --primaryTower5: #49B9F2;
+    --primaryTower6: #3688B3;
+    --primaryTower7: #26607F;
+
+    --militaryTower1: #DFE6DB;
+    --militaryTower3: #C7E6B8;
+    --militaryTower5: #7BE646;
+    --militaryTower7: #447F27;
+
+    --magicTower1: #EBE8F3;
+    --magicTower3: #D3C2F3;
+    --magicTower5: #9160F3;
+    --magicTower7: #4C337F;
+    --magicTower8: #261A40;
+
+    --supportTower1: #E6E6DB;
+    --supportTower3: #E6E6B8;
+    --supportTower5: #E6E644;
+    --supportTower7: #7F7F26;
+
+    --heroes5: #F3AB48;
+    --heroes3: #F3DEC2;
+}
+
+html {
+	font-family: "Roboto";
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+    background-color: rgba(0, 0, 0, 0); 
+    margin: 0px auto; 
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, select, button {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, button, input, select {
+    font-family: "Gabarito";
+    font-weight: 400;
+    color: var(--shade1);
+}
+
+p, ul {
+    font-family: "Roboto";
+    font-weight: 100;
+    padding: 0px 0;
+}
+
+h1 {
+	font-size: 60pt;
+}
+
+h2 {
+	font-size: 44pt;
+}
+
+h3 {
+	font-size: 26pt;
+}
+
+h4 {
+	font-size: 24pt;
+}
+
+h5 {
+	font-size: 20pt;
+}
+
+h6, select, button {
+	font-size: 16pt;
+}
+
+p {
+	font-size: 14pt;
+    color: var(--shade2);
+}
+
+.luckiestGuy {
+    font-family: "Luckiest Guy";
+    font-weight: 400;
+}
+
+.slightTextEmphasis {
+    color: var(--primaryDark2);
+}
+
+.italicEmphasis {
+    font-style: italic;
+}
+
+.horizontalLine {
+    height: 2px;
+    background-color: var(--shade1);
+    margin: 2px 0;
+}
+
+.banner {
+    opacity: 0.95; filter: blur(4px);
+    object-fit: cover; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 180px; width: 780px;
+    margin: 10px;
+    border-radius: 16px;
+}
+.bannerContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 30px;
+    width: 740px
+}
+
+.topText {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    height: 100px
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.wonLost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.place {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.scoreContainer {
+    display: flex;
+    gap: 8px
+}

@@ -362,6 +362,11 @@ py-script {
     flex-wrap: wrap;
     gap: 8px
 }
+.moduleTowerStats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
 
 .infoBox {
     background-color: var(--shade2_5);

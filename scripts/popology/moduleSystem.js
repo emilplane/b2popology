@@ -241,6 +241,13 @@ export class Tower {
         }
     }
 
+    static sayCalculation(data) {
+        switch (data[0]) {
+            case "%": return `${data[1]*100}%`
+            case "*": return `${data[1]}x`
+        }
+    }
+
     static getNumberData(initial, buff, defaultOperator) {
         let operator = defaultOperator;
         let buffValue = buff;
