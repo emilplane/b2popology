@@ -7,7 +7,7 @@ export default async function getData(url, noCache) {
         const requestURL = url;
         let request = ``
         if (noCache) {
-            request = new Request(requestURL + '?cacheBust=' + Date.now());
+            request = new Request(requestURL);
         } else {
             request = new Request(requestURL);
         }

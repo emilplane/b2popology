@@ -2,7 +2,7 @@ import getData from "./request.js"
 function setBanner(URL) {
     document.getElementById("bannerContainer").innerHTML = `
         <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${URL}');">
-                        
+
         </div>
     `
 }
@@ -54,7 +54,7 @@ async function main() {
         if (typeof leaderboardData.next == "string") {
             let nextPageData = await getData(leaderboardData.next)
             let nextPage = nextPageData.data
-            logLeaderboard(nextPage)
+            await logLeaderboard(nextPage)
         }
     }
     await logLeaderboard(seasonHomPage1)
@@ -82,10 +82,8 @@ async function main() {
     document.getElementById("scoreChange").innerText = `(${scoreChange})`
 
     document.getElementById("wonLost").innerText = `${gamesWon} - ${gamesLost}`
-    
-    document.getElementById("place").innerText = `Rank ${leaderboardUserIndex}`
 
-    
+    document.getElementById("place").innerText = `Rank ${leaderboardUserIndex}`
 }
 
 main()
