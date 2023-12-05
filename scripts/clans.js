@@ -22,7 +22,8 @@ const playerAPILinks = {
     "Krunker Prime": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
     "Onion": "https://data.ninjakiwi.com/battles2/users/9fbe468d8e95aaad4911dc190b7ae376cc514fef99188b31",
     "Coolix": "https://data.ninjakiwi.com/battles2/users/9cea178adbc7f8a71a478e4e5820e7729f501defcb15da3d",
-    "luc1aonstation": "https://data.ninjakiwi.com/battles2/users/9ced16d88a96fff11140da1d5b26e326ce5715be96458b3f"
+    "luc1aonstation": "https://data.ninjakiwi.com/battles2/users/9ced16d88a96fff11140da1d5b26e326ce5715be96458b3f",
+    "LockableTiger": "https://data.ninjakiwi.com/battles2/users/9fbe16898e95f1f34a448b490a27e575cc001aba9f16dd6b"
 }
 
 const playerRoster = [
@@ -37,14 +38,14 @@ const playerRoster = [
         "rank": "Officer"
     },
     {
-        "name": "Vuldora",
+        "name": "JazzyJonah",
         "dateJoined": "11/20/2023",
         "rank": "Officer"
     },
     {
-        "name": "JazzyJonah",
+        "name": "Vuldora",
         "dateJoined": "11/20/2023",
-        "rank": "Officer"
+        "rank": "Member"
     },
     {
         "name": "redlaserbm",
@@ -122,11 +123,6 @@ const playerRoster = [
         "rank": "Member"
     },
     {
-        "name": "luc1aonstation",
-        "dateJoined": "11/20/2023",
-        "rank": "Member"
-    },
-    {
         "name": "Ava",
         "dateJoined": "11/20/2023",
         "rank": "Member"
@@ -152,10 +148,20 @@ const playerRoster = [
         "rank": "Member"
     },
     {
+        "name": "LockableTiger",
+        "dateJoined": "11/21/2023",
+        "rank": "Member"
+    },
+    {
         "name": "Onion",
         "dateJoined": "11/23/2023",
         "rank": "Backup Member"
-    }
+    },
+    {
+        "name": "luc1aonstation",
+        "dateJoined": "11/20/2023",
+        "rank": "Backup Member"
+    },
 ]
 
 const optimizedNames = [
