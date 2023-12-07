@@ -31,7 +31,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Razor Sharp Shots - $250",
+                            "name": "200 - Razor Sharp Shots - $150",
                             "content": `
                                 <ul>
                                     <li>dart attack buffed
@@ -43,7 +43,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Spike-o-pult - $300",
+                            "name": "300 - Spike-o-pult - $400",
                             "content": `
                                 <ul>
                                     <li>dart attack replaced by spikeball
@@ -82,7 +82,7 @@ let data = {
                                 <ul>
                                     <li>juggernaut attack replaced by ultrajugg
                                         <ul>
-                                            <li>4d, 16cd (20cd), 5fd (9fd), 6x ld (24ld), 200p, 36.8r, 1.0s, normal type</li>
+                                            <li>5d, 16cd (21cd), 5fd (11fd), 600% ld (30ld), 200p, 36.8r, 1.0s, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
                                                     <li>can rehit bloons after rebounding</li>
@@ -97,7 +97,7 @@ let data = {
                                     </li>
                                     <li>juggernauts attack
                                         <ul>
-                                            <li>1d, 2cd (3cd), 6x ld (6ld), 2fd (3fd), 6j 360&deg spread, 100p, normal type</li>
+                                            <li>1d, 2cd (3cd), 600% ld (6ld), 2fd (3fd), 6j 360&deg spread, 100p, normal type</li>
                                             <li>can rebound off of walls 
                                                 <ul>
                                                     <li>can rehit bloons after rebounding</li>
@@ -254,6 +254,7 @@ let data = {
                                         <ul>
                                             <li>+3d (6d), 0.75s, increased projectile speed</li>
                                             <li>50d crit every 7 shots</li>
+                                            <li>first attack will always crit</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -943,7 +944,7 @@ let data = {
                                 <ul>
                                     <li>ring-of-fire buffed
                                         <ul>
-                                            <li>+5d (8d), +4md (12md), +11.5r (34.5r), 0.1s</li>
+                                            <li>+5d (8d), +7md (15md), +11.5r (34.5r), 0.1s</li>
                                         </ul>
                                     </li>
                                     <li>gains meteor attack
@@ -953,13 +954,12 @@ let data = {
                                             <li>weak homing (100 turn rate)</li>
                                             <li>applies burn status 
                                                 <ul>
-                                                    <li>50d/1.0s, fire type, 4.1s duration</li>
+                                                    <li>150d/1.0s, fire type, 4.1s duration</li>
                                                 </ul>
                                             </li>
                                             <li>on contact: explosion
                                                 <ul>
-                                                    <li>50d single-layer, 10p, 18r blast, explosion type</li>
-                                                    <li>note: no camo</li>
+                                                    <li>150d single-layer, 10p, 18r blast, explosion type, no camo</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -1002,7 +1002,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "030 - Blade Shooter - $700",
+                            "name": "030 - Blade Shooter - $750",
                             "content": `
                                 <ul>
                                     <li>tacks replaced by blades 
@@ -1503,7 +1503,7 @@ let data = {
                                     </li>
                                     <li>glued status buffed
                                         <ul>
-                                            <li>6cd/0.1s, 9md/0.1s</li>
+                                            <li>6cd/0.1s, 10md/0.1s</li>
                                             <li>does single-layer damage to ceramics</li>
                                         </ul>
                                     </li>
@@ -1892,7 +1892,7 @@ let data = {
                                             <li>prioritizes First if bloons are past 75% of the track, then Ceramics if there are any, otherwise Strong</li>
                                         </ul>
                                     </li>
-                                    <li>supply-drop replaced by elite-supplies (40s cooldown, 20s initial)
+                                    <li>supply-drop replaced by elite-supplies (40s cooldown, inherit cooldown)
                                         <ul>
                                             <li>drops a crate worth $5000</li>
                                         </ul>
@@ -2139,7 +2139,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "040 - First Strike Capability - $14,000",
+                            "name": "040 - First Strike Capability - $15,000",
                             "content": `
                                 <ul>
                                     <li>gains first-strike ability (60s cooldown, battle ready)
@@ -2158,7 +2158,7 @@ let data = {
                             `
                         },
                         "5": {
-                            "name": "050 - Pre-emptive Strike - $32,000",
+                            "name": "050 - Pre-emptive Strike - $30,000",
                             "content": `
                                 <ul>
                                     <li>missile buffed
@@ -2468,7 +2468,8 @@ let data = {
                                     </li>
                                     <li>crosspath
                                         <ul>
-                                            <li>031: explosion +7p (35p), frags +1i (2i)</li>
+                                            <li>130: cannonball 75%s (0.9s)</li>
+                                            <li>031: explosion +7p (35p)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -2796,7 +2797,7 @@ let data = {
                                 <ul>
                                     <li>radial-dart buffed
                                         <ul>
-                                            <li>+3p (8p)</li>
+                                            <li>+4p (9p)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -2820,7 +2821,7 @@ let data = {
                                <ul>
                                     <li>radial-dart buffed
                                         <ul>
-                                            <li>+4p (12p), moderate homing (360 turn rate), increased projectile speed</li>
+                                            <li>+4p (13p), moderate homing (360 turn rate), increased projectile speed</li>
                                         </ul>
                                     </li>
                                 </ul> 
@@ -3420,7 +3421,7 @@ let data = {
                                         <ul>
                                             <li>on contact: applies burn status
                                                 <ul>
-                                                    <li>1d/1.25s, fire type, 3.75s duration</li>
+                                                    <li>1d/1.4s, fire type, 4.2s duration</li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -3817,7 +3818,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$400 (750 MM)</li>
+                            <li>$300 (750 MM)</li>
                             <li>size: 7 radius</li>
                             <li>placeable on: land</li>
                             <li>magic-bolt attack
@@ -3842,7 +3843,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Arcane Blast - $350",
+                            "name": "200 - Arcane Blast - $250",
                             "content": `
                                 <ul>
                                     <li>magic-bolt buffed
@@ -3854,7 +3855,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Arcane Mastery - $1,200",
+                            "name": "300 - Arcane Mastery - $1,400",
                             "content": `
                                 <ul>
                                     <li>magic-bolt buffed
@@ -3943,7 +3944,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "020 - Wall of Fire - $900",
+                            "name": "020 - Wall of Fire - $1,000",
                             "content": `
                                 <ul>
                                     <li>gains place-fire attack
@@ -4095,7 +4096,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Shimmer - $1,500",
+                            "name": "003 - Shimmer - $1,600",
                             "content": `
                                 <ul>
                                     <li>gains shimmer attack
@@ -4192,7 +4193,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$2,100 (750 MM)</li>
+                            <li>$1,800 (750 MM)</li>
                             <li>size: 8 radius</li>
                             <li>placeable on: land</li>
                             <li>dart attack
@@ -4204,7 +4205,7 @@ let data = {
                     `,
                     "topPath": {
                         "1": {
-                            "name": "100 - Laser Blasts - $2,300",
+                            "name": "100 - Laser Blasts - $1,400",
                             "content": `
                                 <ul>
                                     <li>dart replaced by laser
@@ -4216,7 +4217,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "200 - Plasma Blasts - $4,500",
+                            "name": "200 - Plasma Blasts - $3,000",
                             "content": `
                                 <ul>
                                     <li>laser replaced by plasma
@@ -4240,13 +4241,13 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "400 - Sun Temple - $100,000",
+                            "name": "400 - Sun Temple - $80,000",
                             "content": `
                                 <ul>
                                     <li>size: 20 radius</li>
                                     <li>sunbeam replaced by sunblast
                                         <ul>
-                                            <li>6d, 30p, 65r, 0.06s, normal type</li>
+                                            <li>9d, 30p, 65r, 0.06s, normal type</li>
                                             <li>cannot see past obstacles unlike its BTD6 counterpart</li>
                                         </ul>
                                     </li>
@@ -4254,25 +4255,25 @@ let data = {
                                         <ul>
                                             <li>all towers in range are sacrificed to the temple</li>
                                             <li>gains buffs and additional attacks from up to three categories of tower, depending on the total cost (amount spent) of the sacrifices</li>
-                                            <li>NOTE: $20,000 spent in each category gives the max temple</li>
-                                            <li>detailed sacrifice info is unavailable</li>
+                                            <li>note: $15,000 spent in each category gives the max temple</li>
+                                            <li>detailed sacrifice info is unconfirmed</li>
                                         </ul>
                                     </li>
                                 </ul>
                             `
                         },
                         "5": {
-                            "name": "500 - True Sun God - $400,000",
+                            "name": "500 - True Sun God - $200,000",
                             "content": `
                                 <ul>
                                     <li>size: 25 radius</li>
                                     <li>sunblast buffed
                                         <ul>
-                                            <li>+14d (20d)</li>
+                                            <li>+24d (30d)</li>
                                         </ul>
                                     </li>
-                                    <li>when upgraded, absorbs all towers in range for even more power (same $20,000 threshold as the Sun Temple)</li>
-                                    <li>detailed sacrifice info is unavailable</li>
+                                    <li>when upgraded, absorbs all towers in range for even more power (same $15,000 threshold as the Sun Temple)</li>
+                                    <li>detailed sacrifice info is unconfirmed</li>
                                 </ul>
                             `
                         }
@@ -4291,7 +4292,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "020 - Epic Range - $1,400",
+                            "name": "020 - Epic Range - $1,000",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -4303,7 +4304,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "030 - Robo Monkey - $7,000",
+                            "name": "030 - Robo Monkey - $10,000",
                             "content": `
                                 <ul>
                                     <li>dart buffed
@@ -4330,7 +4331,11 @@ let data = {
                                         <ul>
                                             <li>2500d, 2000p, 70r blast, normal type, camo</li>
                                             <li>penetrates blimp layers</li>
-                                            <li>surviving targets are knocked back by ? units</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>041: surviving targets move backwards at 18x speed for ?s</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4350,7 +4355,11 @@ let data = {
                                         <ul>
                                             <li>5000d, 10000p, 120r blast, normal type, camo</li>
                                             <li>penetrates blimp layers</li>
-                                            <li>surviving targets are knocked back by ? units</li>
+                                        </ul>
+                                    </li>
+                                    <li>crosspath
+                                        <ul>
+                                            <li>051: surviving targets move backwards at ?x speed for ?s</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4386,12 +4395,12 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Dark Knight - $5,600",
+                            "name": "003 - Dark Knight - $4,000",
                             "content": `
                                 <ul>
                                     <li>dart replaced by monkeyrang
                                         <ul>
-                                            <li>1d, 3md (4md), 5p, 53r, 0.045s, sharp type</li>
+                                            <li>1d, +2md (3md), 5p, 53r, 0.045s, sharp type</li>
                                         </ul>
                                     </li>
                                     <li>knockback buffed
@@ -4408,12 +4417,12 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Dark Champion - $55,000",
+                            "name": "004 - Dark Champion - $30,000",
                             "content": `
                                 <ul>
                                     <li>monkeyrang buffed
                                         <ul>
-                                            <li>+1d (2d), +2cd (4cd), +5md (7md), +4p (9p), 50%s (0.0225), normal type</li>
+                                            <li>+1d (2d), +2cd (4cd), +2md (4md), +2p (7p), 50%s (0.0225), normal type</li>
                                         </ul>
                                     </li>
                                     <li>darkshift buffed
@@ -4425,20 +4434,21 @@ let data = {
                             `
                         },
                         "5": {
-                            "name": "005 - Legend of the Night - $240,000",
+                            "name": "005 - Legend of the Night - $100,000",
                             "content": `
                                 <ul>
                                     <li>monkeyrang buffed
                                         <ul>
-                                            <li>+8d (10d), +4cd (16cd), +3md (18md), +15p (24p), +4r (57r)</li>
+                                            <li>+4d (6d), +4cd (16cd), +4md (10md), +8p (17p), +4r (57r)</li>
                                         </ul>
                                     </li>
-                                    <li>gains black-hole ability (120s cooldown, 8s duration, battle ready, triggered by something about to leak)
+                                    <li>gains black-hole ability (120s cooldown, 4s duration, battle ready, triggered by something about to leak)
                                         <ul>
                                             <li>anything about to leak is deleted instead</li>
                                             <li>deleted bloons give no cash and do not add to any damage counter</li>
                                             <li>cooldown persists after selling</li>
                                             <li>does not work during sudden death</li>
+                                            <li>ability ends immediately if a BAD is absorbed</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4452,7 +4462,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$450 (750 MM)</li>
+                            <li>$400 (750 MM)</li>
                             <li>size: 6 radius</li>
                             <li>placeable on: land</li>
                             <li>gains camo detection</li>
@@ -4465,7 +4475,7 @@ let data = {
                     `,
                     "topPath": {
                         "1": {
-                            "name": "100 - Ninja Discipline - $250",
+                            "name": "100 - Ninja Discipline - $150",
                             "content": `
                                 <ul>
                                     <li>all attacks buffed
@@ -4527,12 +4537,12 @@ let data = {
                     },
                     "middlePath": {
                         "1": {
-                            "name": "010 - Distraction - $300",
+                            "name": "010 - Distraction - $200",
                             "content": `
                                 <ul>
                                     <li>all attacks buffed
                                         <ul>
-                                            <li>on damage: 15% chance to send bloons 10-300 units back</li>
+                                            <li>on damage: 25% chance to send bloons 100-150 units back</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4551,7 +4561,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "030 - Shinobi Tactics - $2,000",
+                            "name": "030 - Shinobi Tactics - $2,100",
                             "content": `
                                 <ul>
                                     <li>gains shinobi buff
@@ -4611,7 +4621,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "002 - Caltrops - $300",
+                            "name": "002 - Caltrops - $250",
                             "content": `
                                 <ul>
                                     <li>gains caltrop attack
@@ -4627,7 +4637,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Flash Bomb - $2,000",
+                            "name": "003 - Flash Bomb - $1,800",
                             "content": `
                                 <ul>
                                     <li>every 4th shuriken replaced by flash-bomb
@@ -4640,7 +4650,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Sticky Bomb - $4,500",
+                            "name": "004 - Sticky Bomb - $4,900",
                             "content": `
                                 <ul>
                                     <li>gains sticky-bomb attack
@@ -5754,7 +5764,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$800 (1,000 MM)</li>
+                            <li>$600 (1,000 MM)</li>
                             <li>size: 8 radius</li>
                             <li>placeable on: land</li>
                             <li>spikes attack
@@ -5795,7 +5805,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "300 - Spiked Balls - $2,500",
+                            "name": "300 - Spiked Balls - $2,700",
                             "content": `
                                 <ul>
                                     <li>spikes buffed
@@ -5975,7 +5985,7 @@ let data = {
                                 <ul>
                                     <li>spikes buffed
                                         <ul>
-                                            <li>+8r (42r), 100s lifetime</li>
+                                            <li>+8r (42r), 75s lifetime</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -6013,7 +6023,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Deadly Spikes - $3,500",
+                            "name": "004 - Deadly Spikes - $3,300",
                             "content": `
                                 <ul>
                                     <li>spikes buffed
@@ -6065,7 +6075,7 @@ let data = {
                 "data": {
                     "base": `
                         <ul>
-                            <li>$400 (1,000 MM)</li>
+                            <li>$350 (1,000 MM)</li>
                             <li>size: 7 radius</li>
                             <li>placeable on: land</li>
                             <li>nail attack
@@ -6368,7 +6378,7 @@ let data = {
                             `
                         },
                         "3": {
-                            "name": "003 - Double Gun - $450",
+                            "name": "003 - Double Gun - $350",
                             "content": `
                                 <ul>
                                     <li>nail buffed
@@ -6380,7 +6390,7 @@ let data = {
                             `
                         },
                         "4": {
-                            "name": "004 - Bloon Trap - $3,500",
+                            "name": "004 - Bloon Trap - $3,600",
                             "content": `
                                 <ul>
                                     <li>gains build-trap attack
@@ -7183,7 +7193,7 @@ let data = {
                     "20": `<ul>
                     <li>firestorm buffed
                         <ul>
-                            <li>+5d (10d), +40md (50md); burn 2d/0.25s, 50md/0.5s</li>                            </li>
+                            <li>+5d (10d), +40md (50md); burn 2d/0.25s, 50md/0.5s</li>
                         </ul>
                     </li>
                     </ul>`
@@ -7357,14 +7367,14 @@ let data = {
                     "19": `<ul>
                     <li>spirit buffed
                         <ul>
-                            <li>+2d (8d)</li>
+                            <li>+4d (10d)</li>
                         </ul>
                     </li>
                     </ul>`,
                     "20": `<ul>
                     <li>tree buffed
                         <ul>
-                            <li>+3,000p (5,000p)</li>
+                            <li>+6,000p (8,000p)</li>
                         </ul>
                     </li>
                     </ul>`
@@ -7548,21 +7558,21 @@ let data = {
                     <li>gains crystal-clarity buff
                         <ul>
                             <li>affects all magic monkeys</li>
-                            <li>90%s</li>
+                            <li>85%s</li>
                         </ul>
                     </li>
                 </ul>`,
                     "19": `<ul>
                     <li>spirit buffed
                         <ul>
-                            <li>+2d (8d)</li>
+                            <li>+4d (10d)</li>
                         </ul>
                     </li>
                 </ul>`,
                     "20": `<ul>
                     <li>unleash-the-krakens buffed
                         <ul>
-                            <li>+1,500p (2,500p)</li>
+                            <li>+3,000p (4,000p)</li>
                         </ul>
                     </li>
                 </ul>`
@@ -9671,7 +9681,7 @@ let data = {
                     </li>
                 </ul>`,
                     "3": `<ul>
-                    <li>stand-and-deliver ability (100s cooldown, ? initial cooldown)
+                    <li>stand-and-deliver ability (100s cooldown, 33.3s initial cooldown)
                         <ul>
                             <li>takes $200 from the opponent
                                 <ul>
@@ -9921,10 +9931,10 @@ let data = {
                                     <li>net difference: $700</li>
                                 </ul>
                             </li>
-                            <li>gives $35 if the bloon is a rainbow bloon and adds +$35 to opponent debt
+                            <li>gives $31 if the bloon is a rainbow bloon and adds +$31 to opponent debt
                                 <ul>
-                                    <li>total money gain/total debt for this type of bloon: $875</li>
-                                    <li>net difference: $1750</li>
+                                    <li>total money gain/total debt for this type of bloon: $775</li>
+                                    <li>net difference: $1550</li>
                                 </ul>
                             </li>
                             <li>gives $60 if the bloon is a ceramic bloon and adds +$60 to opponent debt
@@ -10084,7 +10094,7 @@ let data = {
                 "name": "Adora",
                 "data": {
                     "1": `<ul>
-                    <li>$1000</li>
+                    <li>$850</li>
                     <li>Leveling Rate: ?x</li>
                     <li>Unlock Cost: 5,000 MM</li>
                     <li>size: 7 radius</li>
@@ -10102,9 +10112,14 @@ let data = {
                     <ul>
                         <li>+4r (49r)</li>
                     </ul>
+                    <li>super-support buff</li>
+                    <ul>
+                        <li>+1p, +15%r to super monkeys in range</li>
+                        <li>does not stack with other buffs</li>
+                    </ul>
                 </ul>`,
                     "3": `<ul>
-                    <li>long-arm-of-light ability (35s cooldown, 10s duration, ?s initial)
+                    <li>long-arm-of-light ability (35s cooldown, 10s duration)
                         <ul>
                             <li>buffs sun-bolt</li>
                             <ul>
@@ -10135,14 +10150,26 @@ let data = {
                     </li>
                 </ul>`,
                     "7": `<ul>
-                    <li>blood-sacrifice ability (60s cooldown, 12s duration)
+                    <li>blood-sacrifice ability (10s cooldown, 10s duration, targets a tower)
                         <ul>
-                            <li>ability initialized by selecting a tower
+                            <li>selected tower gains sacrifice buff
                                 <ul>
-                                    <li>tower gains sacrifice buff
+                                    <li>0.2?%s for 4 seconds</li>
+                                    <li>when buff ends
                                         <ul>
-                                            <li>?%s</li>
-                                            <li>tower sold for $0 at the end of ability duration</li>
+                                            <li>tower is sold for $0</li>
+                                            <li>temporary-blood</li>
+                                            <li>grants $(4*dollars sacrificed) XP</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>temporary-blood buff
+                                <ul>
+                                    <li>+(10+x)%r, (90-x)%s
+                                        <ul>
+                                            <li>where x = dollars sacrificed / 100, and x may not exceed 40</li>
+                                            <li>this means that the max buff is +50%r, 50%s</li>                                            
                                         </ul>
                                     </li>
                                 </ul>
@@ -10160,12 +10187,12 @@ let data = {
                     "9": `<ul>
                     <li>sun-bolt buffed
                         <ul>
-                            <li>+1fd (2fd), +5r (45r)</li>
+                            <li>+1fd (2fd), +5r (54r)</li>
                         </ul>
                     </li>
                 </ul>`,
                     "10": `<ul>
-                    <li>ball-of-light ability (?s cooldown, ?s duration)
+                    <li>ball-of-light ability (60s cooldown, 12s duration)
                         <ul>
                             <li>gains beam attack</li>
                             <ul>
@@ -10188,11 +10215,15 @@ let data = {
                             <li>+1j (5j)</li>
                         </ul>
                     </li>
+                    <li>super-support buffed</li>
+                    <ul>
+                        <li>+1p (+2p)</li>
+                    </ul>
                 </ul>`,
                     "13": `<ul>
                     <li>sun-bolt buffed
                         <ul>
-                            <li>+1fd (3fd), +5p (13p)</li>
+                            <li>+1fd (3fd), +3p (11p)</li>
                         </ul>
                     </li>
                     <li>beam attack buffed
@@ -10224,8 +10255,12 @@ let data = {
                     <li>long-arm-of-light buffed
                         <ul>
                             <li>15s duration</li>
-                            <li>grants +2d</li>
                         </ul>
+                        <li>sun-avatar buff
+                            <ul>
+                                <li>+2d to 3xx Super Monkeys in range</li>
+                            </ul>
+                        </li>
                     </li>
                 </ul>`,
                     "17": `<ul>
@@ -10255,6 +10290,11 @@ let data = {
                             <li>60s duration</li>
                         </ul>
                     </li>
+                    <li>temporary-blood buffed
+                        <ul>
+                            <li>x = dollars sacrificed / 50</li>
+                        </ul>
+                    </li>
                     <li>ball-of-light buffed
                         <ul>
                             <li>20s duration</li>
@@ -10263,6 +10303,11 @@ let data = {
                     <li>beam buffed
                         <ul>
                             <li>20d, +20fd (40fd), normal type</li>
+                        </ul>
+                    </li>
+                    <li>if a 5xx Super Monkey is purchased with Adora in range, Adora merges with that Super Monkey to form the True Sun Goddess
+                        <ul>
+                            <li>specifics unconfirmed</li>
                         </ul>
                     </li>
                 </ul>`
@@ -11266,7 +11311,7 @@ let data = {
                                 <li>Count: 1</li>
                                 <li>Total time: 3.5s</li>
                                 <li>Eco: -$25</li>
-                                <li>Cost: $1,800</li>
+                                <li>Cost: $1,600</li>
                             </ul>
                         </li>
                         <li>Grouped
@@ -11275,7 +11320,7 @@ let data = {
                                 <li>Count: 1</li>
                                 <li>Total time: 0.6s</li>
                                 <li>Eco: -$25</li>
-                                <li>Cost: $1,800</li>
+                                <li>Cost: $1,600</li>
                             </ul>
                         </li>
                     </ul>
@@ -11433,7 +11478,7 @@ let prices = {
     "primary": {
         "dartMonkey": {
             "base": 200,
-            "top": [100, 250, 300, 1800, 13500],
+            "top": [100, 150, 400, 1800, 13500],
             "middle": [100, 150, 300, 8000, 45000],
             "bottom": [90, 200, 475, 2000, 25000]
         },
@@ -11452,7 +11497,7 @@ let prices = {
         "tackShooter": {
             "base": 280,
             "top": [150, 400, 600, 3300, 45500],
-            "middle": [100, 225, 700, 3000, 15000],
+            "middle": [100, 225, 750, 3000, 15000],
             "bottom": [100, 100, 450, 3400, 24000]
         },
         "iceMonkey": {
@@ -11478,7 +11523,7 @@ let prices = {
         "monkeySub": {
             "base": 350,
             "top": [130, 500, 950, 2600, 32000],
-            "middle": [300, 300, 1600, 14000, 32000],
+            "middle": [300, 300, 1600, 15000, 30000],
             "bottom": [300, 700, 800, 2800, 25000]
         },
         "monkeyBuccaneer": {
@@ -11514,10 +11559,10 @@ let prices = {
     },
     "magic": {
         "wizardMonkey": {
-            "base": 400,
-            "top": [150, 300, 1200, 9000, 32000],
-            "middle": [300, 900, 3000, 4000, 50000],
-            "bottom": [300, 300, 1500, 2800, 24000]
+            "base": 300,
+            "top": [150, 250, 1400, 9000, 32000],
+            "middle": [300, 1000, 3000, 4000, 50000],
+            "bottom": [300, 300, 1600, 2800, 24000]
         },
         "superMonkey": {
             "base": 2100,
@@ -11526,10 +11571,10 @@ let prices = {
             "bottom": [3000, 1200, 5600, 55000, 240000]
         },
         "ninjaMonkey": {
-            "base": 450,
-            "top": [250, 300, 650, 2750, 35000],
-            "middle": [300, 375, 2000, 4500, 25000],
-            "bottom": [200, 300, 2000, 4500, 40000]
+            "base": 400,
+            "top": [150, 300, 650, 2750, 35000],
+            "middle": [200, 375, 2100, 4500, 25000],
+            "bottom": [200, 250, 1800, 4900, 40000]
         },
         "alchemist": {
             "base": 550,
@@ -11558,16 +11603,16 @@ let prices = {
             "bottom": [250, 200, 2800, 13000, 46000]
         },
         "spikeFactory": {
-            "base": 800,
-            "top": [700, 600, 2500, 9500, 110000],
+            "base": 600,
+            "top": [700, 600, 2700, 9500, 110000],
             "middle": [600, 700, 2500, 5000, 40000],
-            "bottom": [150, 600, 3500, 30000]
+            "bottom": [150, 600, 3300, 30000]
         },
         "engineerMonkey": {
             "base": 400,
             "top": [500, 400, 525, 2500, 32000],
             "middle": [250, 350, 800, 13500, 100000],
-            "bottom": [450, 220, 450, 3500, 54000]
+            "bottom": [450, 220, 350, 3600, 54000]
         }
     }
 }
