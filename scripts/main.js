@@ -10079,6 +10079,194 @@ let data = {
                     </li>
                 </ul>`
                 }
+            },
+            "adora": {
+                "name": "Adora",
+                "data": {
+                    "1": `<ul>
+                    <li>$1000</li>
+                    <li>Leveling Rate: ?x</li>
+                    <li>Unlock Cost: 5,000 MM</li>
+                    <li>size: 7 radius</li>
+                    <li>placeable on: land</li>
+                    <li>sun-bolt attack
+                        <ul>
+                            <li>1d, 5p, 45r, 1s, plasma type</li>
+                            <li>can see past obstacles</li>
+                            <li>homing</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "2": `<ul>
+                    <li>sun-bolt buffed</li>
+                    <ul>
+                        <li>+4r (49r)</li>
+                    </ul>
+                </ul>`,
+                    "3": `<ul>
+                    <li>long-arm-of-light ability (35s cooldown, 10s duration, ?s initial)
+                        <ul>
+                            <li>buffs sun-bolt</li>
+                            <ul>
+                                <li>+200%r, +200%p</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "4": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1j (2j 30&deg spread)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "5": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+3p (8p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "6": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1j (3j)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "7": `<ul>
+                    <li>blood-sacrifice ability (60s cooldown, 12s duration)
+                        <ul>
+                            <li>ability initialized by selecting a tower
+                                <ul>
+                                    <li>tower gains sacrifice buff
+                                        <ul>
+                                            <li>?%s</li>
+                                            <li>tower sold for $0 at the end of ability duration</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "8": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1j (4j)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "9": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1fd (2fd), +5r (45r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "10": `<ul>
+                    <li>ball-of-light ability (?s cooldown, ?s duration)
+                        <ul>
+                            <li>gains beam attack</li>
+                            <ul>
+                                <li>3d, +3fd (6fd), 8p, &infin;r, 0.05s, plasma type</li>
+                                <li>can see past obstacles</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "11": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>0.8s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "12": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1j (5j)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "13": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1fd (3fd), +5p (13p)</li>
+                        </ul>
+                    </li>
+                    <li>beam attack buffed
+                        <ul>
+                            <li>+5p (13p)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "14": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1j (6j)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "15": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1d (2d)</li>
+                        </ul>
+                    </li>
+                    <li>beam attack buffed
+                        <ul>
+                            <li>+2d (5d), +2fd (10fd)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "16": `<ul>
+                    <li>long-arm-of-light buffed
+                        <ul>
+                            <li>15s duration</li>
+                            <li>grants +2d</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "17": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>0.6s</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "18": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+2j (8j)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "19": `<ul>
+                    <li>sun-bolt buffed
+                        <ul>
+                            <li>+1fd (5fd), +5r (59r)</li>
+                        </ul>
+                    </li>
+                </ul>`,
+                    "20": `<ul>
+                    <li>blood-sacrifice ability buffed
+                        <ul>
+                            <li>60s duration</li>
+                        </ul>
+                    </li>
+                    <li>ball-of-light buffed
+                        <ul>
+                            <li>20s duration</li>
+                        </ul>
+                    </li>
+                    <li>beam buffed
+                        <ul>
+                            <li>20d, +20fd (40fd), normal type</li>
+                        </ul>
+                    </li>
+                </ul>`
+                }
             }
         }
     },
