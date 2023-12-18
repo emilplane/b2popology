@@ -17,5 +17,14 @@ async function main() {
 function warsHTML() {
     for (let warIndex in teamData.wars) {
         console.log(teamData.wars[warIndex])
+        document.getElementById("clanWarsContainer").insertAdjacentHTML("afterbegin", `
+            <section class="roundedBoxSection">
+                <h2 class="luckiestGuy">Clan War ${Number(warIndex)+1}</h2>
+                <div class="horizontalLine"></div>
+                <div class="warSummaryBottom">
+                    <button>See more</button>
+                </div>
+            </section>
+        `)
     }
 }

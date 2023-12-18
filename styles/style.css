@@ -601,3 +601,17 @@ dialog {
       transform: rotate(360deg);
     }
 }
+
+.clanWarsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.warSummaryBottom {
+    width: 100px
+}
+
+.warSummaryBottom > button {
+    margin-left: auto
+}
