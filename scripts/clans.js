@@ -399,6 +399,10 @@ async function main() {
             document.getElementById(`${playerNumber}PlayerButton`).addEventListener("click", playerEventListenerFunction);
         }
     }
+
+    let clanData = await getData("https://data.ninjakiwi.com/battles2/guild/9fba12d9d792fba01a13de430a71e421c45215b99d178a3d")
+    let clanWars = await getData(clanData.body.wars)
+    console.log(clanWars)
 }
 
 main()
