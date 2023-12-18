@@ -5,6 +5,18 @@
             "roster": [
                 "emilplane", "JazzyJonah", "DestructivForce"
             ]
+        },
+        {
+            "league": "Silver",
+            "roster": [
+                "emilplane", "JazzyJonah", "DestructivForce, Vuldora"
+            ]
+        },
+        {
+            "league": "Gold",
+            "roster": [
+                "emilplane", "JazzyJonah", "DestructivForce"
+            ]
         }
     ],
     "players": [
