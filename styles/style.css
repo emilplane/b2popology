@@ -172,6 +172,11 @@ select, button {
     border: 0
 }
 
+.iconButton {
+    display: flex;
+    justify-content: center;
+}
+
 select {
     background-image: none;
     -webkit-appearance: none;
@@ -224,6 +229,15 @@ input:focus + .inputUnderline {
     }
 }
 
+.roundedBoxSectionTitleBar {
+    display: flex;
+    align-items: end;
+}
+
+.rightSidePush {
+    margin-left: auto;
+}
+
 .coverImage {
     opacity: .5; filter: blur(4px);
     width: 100%; height: 500px; 
@@ -274,6 +288,9 @@ input:focus + .inputUnderline {
         color: var(--shade2_5);
     }
     width: 12px;
+}
+.configBarPush {
+    margin-left: auto;
 }
 .pathStart {
     border-radius: 8px 0 0 8px;
@@ -376,6 +393,7 @@ py-script {
     padding: 8px;
     border-radius: 8px;
     transition: 0.5s;
+    cursor: pointer;
 }
 .infoBox:hover {
     background-color: var(--primaryLight3);

@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="styles/settings.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +19,27 @@
         <main id="main">
             
         </main>
+        <div>
+            <dialog class="settingsDialog" id="settingsDialog">
+                <div class="settingsContainer">
+                    <div class="settingsSidebar">
+                        <h4>Settings</h4>
+                        <div class="settingsCategories">
+                            <button class="settingsCategoryButton settingsSelected" id="settingsGeneral">General</button>
+                            <button class="settingsCategoryButton" id="settingsGeneral">About</button>
+                        </div>
+                    </div>
+                    <div class="settingsDivide"></div>
+                    <div class="settingsMain">
+                        <div>
+                            <button id="settingsClose" class="settingsClose iconButton">
+                                <span class="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        </div>
     </body>
     <script type="module" src="scripts/popology.js"></script>
 </html>

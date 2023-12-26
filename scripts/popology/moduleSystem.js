@@ -117,6 +117,11 @@ export class Tower {
     }
 
     addModule(module) {
+        console.log(module)
+        if (module.moduleType == "rangeBuff") {
+            this.fullTowerData.range = Tower.calculateNumbers(this.fullTowerData.range, module.value, "+")
+            return true
+        }
         if (module.moduleType[1] == "new") {
             this.#addNewModule(module)
             return true

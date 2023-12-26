@@ -70,7 +70,7 @@
         "base": [
             {
                 "moduleType": ["attack", "new"],
-                "name": "dart", "mainAttack": true,
+                "name": "dart", "mainAttack": true, "fromTower": true,
                 
                 "damage": 1, "pierce": 2, "attackCooldown": 0.95, "attackType": "sharp"
             }
@@ -189,7 +189,7 @@
                     "attackCooldown": 0.75
                 },
                 {
-                    "moduleType": "transform", 
+                    "moduleType": ["transform", "new"],
                     "name": "fan-club",
 
                     "ability": {"duration": 15, "cooldown": 50, "initialCooldown": 0, "type": "activated"},

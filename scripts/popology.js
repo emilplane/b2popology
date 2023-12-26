@@ -1,5 +1,5 @@
 import { Tower } from "/scripts/popology/moduleSystem.js"
-import { getPathingData, numberPathNameConversion, getTowerCostData} from "./popology/conversions.js"
+import { getPathingData, numberPathNameConversion, getTowerCostData } from "./popology/conversions.js"
 import getData from "./request.js"
 
 class PopologyHTML {
@@ -60,9 +60,58 @@ class PopologyHTML {
         </section>
     `
 
-    static getStatSectionHTML(sectionConfig) {
+    static updateTopBanner() {
+        if (towerData[category][page].error == true) {
+            return false
+        }
+        document.getElementById("coverImageStyle").outerHTML = (`
+            <style id="coverImageStyle">
+                .coverImage {
+                    background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('media/Tower Banners/dartMonkey/banner1Original2.png');
+                    @media (prefers-color-scheme: dark) {
+                        background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('media/Tower Banners/dartMonkey/banner1Original2.png');
+                    }
+                }
+            </style>
+        `)
+    
+        let towerNameHTML = `No Tower Name`
+        if (towerData[category][page].data != false && typeof towerData[category][page].displayName == "string") {
+            towerNameHTML = towerData[category][page].displayName
+        }
+    
+        let crosspathHTML = `${crosspath[0]}${crosspath[1]}${crosspath[2]}`
+    
+        let upgradeNameHTML = `Base ${towerData[category][page].displayName}`
+        if (getPathingData(crosspath).hasMainPath == true) {
+            upgradeNameHTML = towerData [category] [page] .upgradeNames [numberPathNameConversion([getPathingData(crosspath).mainPath])] [getPathingData(crosspath).mainPathValue - 1] .displayName
+        }
+        let crosspathNameHTML = ``
+        if (getPathingData(crosspath).hasCrosspath == true) {
+            crosspathNameHTML = `
+                <h4 class="luckiestGuy luckiestGuyShadow" style="padding-bottom: 4px;">
+                    w/${towerData [category] [page] .upgradeNames [numberPathNameConversion([getPathingData(crosspath).crosspathPath])] [getPathingData(crosspath).crosspathPathValue - 1] .displayName}
+                </h4>
+            `
+        }
+    
+        document.getElementById("titleSection").innerHTML = `
+            <div style="display: flex; gap: 32px; align-items: end;">
+                <h1 class="luckiestGuy luckiestGuyShadow largeText2">${upgradeNameHTML}</h1>
+                ${crosspathNameHTML}
+            </div>
+            <div style="display: flex; gap: 32px">
+                <h3 class="luckiestGuy luckiestGuyShadow">${towerNameHTML}</h3>
+                <h3 class="luckiestGuy luckiestGuyShadow">${crosspathHTML}</h3>
+            </div>
+        `
+    }
 
+    static getStatSectionHTML(sectionConfig) {
         let title = sectionConfig.title
+        let details;
+        if (sectionConfig.details==undefined) {details=""}
+        else {details = `<div class="rightSidePush">${sectionConfig.details}</div>`}
         let sectionGlobalAttributes = sectionConfig.sectionGlobalAttributes
         let contentHTML = sectionConfig.contentHTML
         let mainGlobalAttributes = sectionConfig.mainGlobalAttributes
@@ -77,8 +126,9 @@ class PopologyHTML {
         }
         return `
             <section class="roundedBoxSection" ${sectionGlobalAttributesString}>
-                <div>
+                <div class="roundedBoxSectionTitleBar">
                     <h4>${title}</h4>
+                    ${details}
                 </div>
                 <div class="horizontalLine"></div>
                 <div ${mainGlobalAttributesString}>${contentHTML}</div>
@@ -130,42 +180,57 @@ class PopologyHTML {
         }
     }   
 
-    static configurationBarItem(title, content) {
-        return `
-            <div class="configurationBarTextSelectorWrapper">
-                <h6>${title}</h6>
-                ${content}
-            </div>
-        `
-    }
     static addToConfigurationBar(data) {
-        let configurationBarHTML = ``
         for (let dataPoint in data) {
-            configurationBarHTML += PopologyHTML.configurationBarItem(data[dataPoint][0], data[dataPoint][1])
+            let configurationBarItem = document.createElement("div")
+            configurationBarItem.classList.add("configurationBarTextSelectorWrapper")
+            let itemTitle = document.createElement("h6")
+            itemTitle.textContent = data[dataPoint][0]
+            configurationBarItem.insertAdjacentElement("beforeend", itemTitle)
+            configurationBarItem.insertAdjacentElement("beforeend", data[dataPoint][1])
+            if (data[dataPoint][2] == "push") {
+                configurationBarItem.classList.add("configBarPush")
+            }
+            document.getElementById("configurationBar").insertAdjacentElement("beforeend", configurationBarItem)
         }
-        document.getElementById("configurationBar").innerHTML = configurationBarHTML
-    }
-
-    static generateSelectContents(data) {
-        let output = ``
-        for (let optionNumber in data) {
-            let selectedString = ``
-            if (data[optionNumber][2] == true) {selectedString = ` selected`}
-            output += `<option value="${data[optionNumber][1]}"${selectedString}>${data[optionNumber][0]}</option>`
-        }
-        return output
     }
 
     static updateConfigurationBar() {
-        let categoryHTML = ``
         let categoryPosition
+        let categoryOptions = []
         for (let categoryNumber in towerDirectory) {
+            let option = document.createElement("option")
+            option.textContent = towerDirectory[categoryNumber].displayName
+            categoryOptions.push(option)
             if (category == towerDirectory[categoryNumber].name) {
                 categoryPosition = categoryNumber
-                categoryHTML += `<option value="${towerDirectory[categoryNumber].name}" selected>${towerDirectory[categoryNumber].displayName}</option>`
-            } else {
-                categoryHTML += `<option value="${towerDirectory[categoryNumber].name}">${towerDirectory[categoryNumber].displayName}</option>`
+                option.value = "selected"
             }
+        }
+        let categoryElement = document.createElement("select")
+        categoryElement.id = "categorySelect"
+        for (let objectIndex in categoryOptions) {
+            categoryElement.insertAdjacentElement("beforeend", categoryOptions[objectIndex])
+        }
+
+        let towerOptions = []
+        for (let towerNumber in towerDirectory[categoryPosition].data) {
+            let option = document.createElement("option")
+            let displayName = towerData[category][towerDirectory[categoryPosition].data[towerNumber].name].displayName
+            option.textContent = displayName
+            if (displayName == undefined) {
+                option.textContent = towerDirectory[categoryPosition].data[towerNumber].name
+            }
+            towerOptions.push(option)
+            if (category == towerDirectory[categoryPosition].data[towerNumber].name) {
+                categoryPosition = categoryNumber
+                option.value = "selected"
+            }
+        }
+        let towerElement = document.createElement("select")
+        towerElement.id = "pageSelect"
+        for (let objectIndex in towerOptions) {
+            towerElement.insertAdjacentElement("beforeend", towerOptions[objectIndex])
         }
 
         let towerHTML = ``
@@ -184,55 +249,41 @@ class PopologyHTML {
             towerHTML += `<option value="${towerDirectory[categoryPosition].data[towerNumber].name}" ${selectedString}>${displayNameString}</option>`
         }
 
-        let pathSelectHTML = `<div class="configPathContainer">`;
+        let pathSelectElement = document.createElement("div")
+        pathSelectElement.classList.add("configPathContainer")
         for (let pathNumber in config.pathConfig.pathNames) {
             let pathName = config.pathConfig.pathNames[pathNumber]
-            pathSelectHTML += `<div class="configSinglePathContainer">`
+            let thisPathElement = document.createElement("div")
+            thisPathElement.classList.add("configSinglePathContainer")
             for (let i = 0; i <= config.pathConfig.upgrades; i++) {
+                let thisButton = document.createElement("button")
                 switch (i) {
-                    case 0: 
-                        pathSelectHTML += `
-                            <button class="pathStart" id="${pathName}Path${i}">
-                                <h6>${i}</h6>
-                            </button>
-                        `
-                        break;
-                    case config.pathConfig.upgrades: 
-                        pathSelectHTML += `
-                            <button class="pathEnd" id="${pathName}Path${i}">
-                                <h6>${i}</h6>
-                            </button>
-                        `
-                        break;
-                    default:
-                        pathSelectHTML += `
-                            <button id="${pathName}Path${i}">
-                                <h6>${i}</h6>
-                            </button>
-                        `
-                        break;
+                    case 0:                             thisButton.classList.add("pathStart");  break
+                    case config.pathConfig.upgrades:    thisButton.classList.add("pathEnd");    break
                 }
+                thisButton.id = `${pathName}Path${i}`
+                let thisText = document.createElement("h6")
+                thisText.textContent = i
+                thisButton.insertAdjacentElement("beforeend", thisText)
+                thisPathElement.insertAdjacentElement("beforeend", thisButton)
             }
-            pathSelectHTML += `</div>`
+            pathSelectElement.insertAdjacentElement("beforeend", thisPathElement)
         }
-        pathSelectHTML += `</div>`
+
+        let settingsButton = document.createElement("button")
+        settingsButton.id = "settings"
+        settingsButton.classList.add("iconButton")
+        let settingsIcon = document.createElement("span")
+        settingsIcon.classList.add("material-symbols-outlined")
+        settingsIcon.textContent = "tune"
+        settingsButton.insertAdjacentElement("beforeend", settingsIcon)
 
         PopologyHTML.addToConfigurationBar(
             [
-                ["Category",
-                    `<select id="categorySelect">
-                        ${categoryHTML}
-                    </select>`
-                ],
-                ["Tower",
-                    `<select id="pageSelect">
-                        ${towerHTML}
-                    </select>`
-                ],
-                ["Type",
-                    `<button>Full Tower</button>`
-                ],
-                ["Path", `${pathSelectHTML}`]
+                ["Category", categoryElement],
+                ["Tower", towerElement],
+                ["Path", pathSelectElement],
+                [null, settingsButton, "push"],
             ]
         )
         for (let pathNumber in config.pathConfig.pathNames) {
@@ -245,11 +296,11 @@ class PopologyHTML {
         document.getElementById("categorySelect").addEventListener("change", function() {
             category = document.getElementById("categorySelect").value
             updatePage("category")
-        });
+        })
         document.getElementById("pageSelect").addEventListener("change", function() {
             page = document.getElementById("pageSelect").value
             updatePage("page")
-        });
+        })
         if (towerData[category][page].data != false && !towerData[category][page].error) {
             for (let pathNumber in config.pathConfig.pathNames) {
                 let pathName = config.pathConfig.pathNames[pathNumber]
@@ -257,10 +308,44 @@ class PopologyHTML {
                     document.getElementById(`${pathName}Path${i}`).addEventListener("click", function() {
                         crosspath[pathNumber] = i
                         updatePage("crosspath")
-                    });
+                    })
                 }
             }
         }
+        document.getElementById("settings").addEventListener("click", function() {
+            document.getElementById("settingsDialog").showModal()
+        })
+        document.getElementById("settingsClose").addEventListener("click", function() {
+            document.getElementById("settingsDialog").close()
+        })
+    }
+    static updateCostStats() {
+        let towerCostData = getTowerCostData(towerData[category][page], crosspath)
+        if (towerCostData != undefined) {
+            document.getElementById("towerCosts").innerHTML = `
+                <div class="infoBox">
+                    <h6>Upgrade Cost</h6>
+                    <p>$${towerCostData.upgradeCost}</p>
+                </div>
+                <div class="infoBox">
+                    <h6>Total Cost</h6>
+                    <p>$${towerCostData.totalCost}</p>
+                </div>
+                <div class="infoBox">
+                    <h6>Sell Cost</h6>
+                    <p>$${towerCostData.sellCost}</p>
+                </div>
+                <div class="infoBox">
+                    <h6>Loss on Sell</h6>
+                    <p>$${towerCostData.sellCostLoss}</p>
+                </div> 
+            `
+        } else {
+            document.getElementById("towerCosts").innerHTML = `
+                <h6>Failed to load data!</h6>
+            `
+        }
+        
     }
 
     static updateTowerStats() {
@@ -296,12 +381,19 @@ class PopologyHTML {
         let statsHTML = ``
         for (let module in moduleSet) {
             let propertyTypesHTMLData = {}
+            let details = ""
+
             for (let groupNumber in config.HTMLGroups) {
                 propertyTypesHTMLData[config.HTMLGroups[groupNumber]] = ``
             }
             for (let property in config.properties) {
-                if (moduleSet [module] [config.properties[property].name] != undefined) {
-                    PopologyHTML.propertyTypeSwitch(moduleSet, module, config.properties[property], propertyTypesHTMLData)
+                if (config.properties[property].name == "mainAttack" && moduleSet [module] [config.properties[property].name] == true) {
+                    console.log(moduleSet [module] [config.properties[property].name])
+                    details = "<h6>main attack</h6>"
+                } else {
+                    if (moduleSet [module] [config.properties[property].name] != undefined) {
+                        PopologyHTML.propertyTypeSwitch(moduleSet, module, config.properties[property], propertyTypesHTMLData)
+                    }
                 }
             }
             for (let HTMLGroupName in propertyTypesHTMLData) {
@@ -322,6 +414,7 @@ class PopologyHTML {
             statsHTML += PopologyHTML.getStatSectionHTML(
                 {
                     "title": `<span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}`,
+                    "details": details,
                     "contentHTML": contentHTML,
                     "mainGlobalAttributes": [["class", "moduleTowerStats"]]
                 }
@@ -427,7 +520,7 @@ async function getTowerJSON() {
             }
         }
     }
-};
+}
 
 function updatePage(change) {
     if (change == "category") {
@@ -450,93 +543,17 @@ function updatePage(change) {
 
     PopologyHTML.updateConfigurationBar()
 
-    updateTopBanner()
+    PopologyHTML.updateTopBanner()
 
     if (!towerData[category][page].error) {
-        updateCostStats()
+        PopologyHTML.updateCostStats()
         PopologyHTML.updateTowerStats()
     }
 
     PopologyHTML.addConfigurationBarEventListeners()
-};
-
-function updateTopBanner() {
-    if (towerData[category][page].error == true) {
-        return false
-    }
-    document.getElementById("coverImageStyle").outerHTML = (`
-        <style id="coverImageStyle">
-            .coverImage {
-                background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)), url('media/Tower Banners/dartMonkey/banner1Original2.png');
-                @media (prefers-color-scheme: dark) {
-                    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('media/Tower Banners/dartMonkey/banner1Original2.png');
-                }
-            }
-        </style>
-    `)
-
-    let towerNameHTML = `No Tower Name`
-    if (towerData[category][page].data != false && typeof towerData[category][page].displayName == "string") {
-        towerNameHTML = towerData[category][page].displayName
-    }
-
-    let crosspathHTML = `${crosspath[0]}${crosspath[1]}${crosspath[2]}`
-
-    let upgradeNameHTML = `Base ${towerData[category][page].displayName}`
-    if (getPathingData(crosspath).hasMainPath == true) {
-        upgradeNameHTML = towerData [category] [page] .upgradeNames [numberPathNameConversion([getPathingData(crosspath).mainPath])] [getPathingData(crosspath).mainPathValue - 1] .displayName
-    }
-    let crosspathNameHTML = ``
-    if (getPathingData(crosspath).hasCrosspath == true) {
-        crosspathNameHTML = `
-            <h4 class="luckiestGuy luckiestGuyShadow" style="padding-bottom: 4px;">
-                w/${towerData [category] [page] .upgradeNames [numberPathNameConversion([getPathingData(crosspath).crosspathPath])] [getPathingData(crosspath).crosspathPathValue - 1] .displayName}
-            </h4>
-        `
-    }
-
-    document.getElementById("titleSection").innerHTML = `
-        <div style="display: flex; gap: 32px; align-items: end;">
-            <h1 class="luckiestGuy luckiestGuyShadow largeText2">${upgradeNameHTML}</h1>
-            ${crosspathNameHTML}
-        </div>
-        <div style="display: flex; gap: 32px">
-            <h3 class="luckiestGuy luckiestGuyShadow">${towerNameHTML}</h3>
-            <h3 class="luckiestGuy luckiestGuyShadow">${crosspathHTML}</h3>
-        </div>
-    `
 }
 
-function updateCostStats() {
-    let towerCostData = getTowerCostData(towerData[category][page], crosspath)
-    if (towerCostData != undefined) {
-        document.getElementById("towerCosts").innerHTML = `
-            <div class="infoBox">
-                <h6>Upgrade Cost</h6>
-                <p>$${towerCostData.upgradeCost}</p>
-            </div>
-            <div class="infoBox">
-                <h6>Total Cost</h6>
-                <p>$${towerCostData.totalCost}</p>
-            </div>
-            <div class="infoBox">
-                <h6>Sell Cost</h6>
-                <p>$${towerCostData.sellCost}</p>
-            </div>
-            <div class="infoBox">
-                <h6>Loss on Sell</h6>
-                <p>$${towerCostData.sellCostLoss}</p>
-            </div> 
-        `
-    } else {
-        document.getElementById("towerCosts").innerHTML = `
-            <h6>Failed to load data!</h6>
-        `
-    }
-    
-}
-
-let category = "primary"; let page = "dartMonkey"; let type = "fullTower"; let crosspath = [0, 0, 0]
+let category = "primary"; let page = "dartMonkey"; let crosspath = [0, 0, 0]
 
 async function main() {
     await getConfigJSON()
