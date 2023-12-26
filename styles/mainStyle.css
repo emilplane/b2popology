@@ -515,3 +515,23 @@ i {
         color: var(--primary3);
     }
 }
+
+.versionPageTitle {
+    display: flex;
+    align-items: end;
+}
+
+.versionText {
+    color: var(--primary5);
+    @media (prefers-color-scheme: dark) {
+        color: var(--primary4);
+    }
+}
+
+.minorVersions {
+    font-size: 14pt;
+    color: var(--secondary8);
+    @media (prefers-color-scheme: dark) {
+        color: var(--secondary1);
+    }
+}
