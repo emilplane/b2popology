@@ -339,6 +339,15 @@ header {
     background-color: var(--secondary4);
 }
 
+.slightHorizontalLine {
+    height: 1px;
+    margin: 8px 0;
+    background-color: var(--secondary3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary6);
+    }
+}
+
 .verticalLine {
     width: 1px;
     background-color: var(--secondary4);
