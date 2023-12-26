@@ -1,0 +1,59 @@
+.settingsDialog {
+    border: none;
+    border-radius: 8px;
+    width: calc(100vw - 96px);
+    max-width: 1800px;
+    position: fixed;
+    height: calc(100vh - 96px);
+    max-height: 1000px;
+    background-color: var(--shade2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade7);
+    };
+}
+
+.settingsDialog:focus {
+    outline: none;
+}
+
+.settingsContainer {
+    display: grid;
+    grid-template-columns: 1fr 34px 4fr;
+    height: 100%
+}
+
+.settingsSidebar {
+    min-width: 200px;
+}
+
+.settingsDivide {
+    background-color: var(--shade6_5);
+    margin: 0 16px
+}
+
+.settingsCategories {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.settingsCategoryButton {
+    background-color: var(--shade6);
+    transition: 0.5s;
+}
+.settingsCategoryButton:focus {
+    outline: none;
+}
+.settingsCategoryButton:hover {
+    background-color: var(--primaryDark2);
+    transition: 0.5s;
+}
+
+.settingsSelected {
+    background-color: var(--primaryDark3);
+}
+
+.settingsClose {
+    margin-left: auto;
+}
