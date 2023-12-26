@@ -10329,27 +10329,22 @@ let data = {
                             <li>Win 25 games with (primary/military/magic/support) towers</li>
                         </ul>
                     </ul>
-                `
-            },
-            "winsWithTower": {
-                "name": "Wins with a tower",
-                "data": `
-                    <ul>
-                        <li>Level 1</li>
-                        <ul>
-                            <li>Win 50 games with (x) tower</li>
-                        </ul>
-                    </ul>
-                    <ul>
+		    <ul>
                         <li>Level 2</li>
                         <ul>
-                            <li>Win 250 games with (x) tower</li>
+                            <li>Win 50 games with (primary/military/magic/support) towers</li>
                         </ul>
                     </ul>
-                    <ul>
+		    <ul>
                         <li>Level 3</li>
                         <ul>
-                            <li>Win 500 games with (x) tower</li>
+                            <li>Win 250 games with (primary/military/magic/support) towers</li>
+                        </ul>
+                    </ul>
+		    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win 500 games with (primary/military/magic/support) towers</li>
                         </ul>
                     </ul>
                 `
@@ -10386,6 +10381,12 @@ let data = {
                             <li>Complete (event) 3 times</li>
                         </ul>
                     </ul>
+		    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Complete (event) 10 times</li>
+                        </ul>
+                    </ul>
                 `
             },
             "winEventGames": {
@@ -10409,6 +10410,12 @@ let data = {
                             <li>Win a total of 500 (event) games</li>
                         </ul>
                     </ul>
+		    <ul>
+                        <li>Level 3</li>
+                        <ul>
+                            <li>Win a total of 1000 (event) games</li>
+                        </ul>
+                    </ul>
                 `
             },
             "collectFromBananaFarms": {
@@ -10430,6 +10437,12 @@ let data = {
                         <li>Level 3</li>
                         <ul>
                             <li>Collect $100,000,000 from banana farms</li>
+                        </ul>
+                    </ul>
+		    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Collect $1,000,000,000 from banana farms</li>
                         </ul>
                     </ul>
                 `
@@ -10581,22 +10594,28 @@ let data = {
             "winGamesWithTower": {
                 "name": "Win games with a tower",
                 "data": `
-                    <ul>
+		    <ul>
                         <li>Level 1</li>
                         <ul>
-                            <li>Win a total of 100 games with (tower)</li>
+                            <li>Win 50 games with (x) tower</li>
                         </ul>
                     </ul>
                     <ul>
                         <li>Level 2</li>
                         <ul>
-                            <li>Win a total of 500 games with (hero)</li>
+                            <li>Win 250 games with (x) tower</li>
                         </ul>
                     </ul>
                     <ul>
                         <li>Level 3</li>
                         <ul>
-                            <li>Win a total of 1000 games with (hero)</li>
+                            <li>Win 500 games with (x) tower</li>
+                        </ul>
+                    </ul>
+		    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win 1000 games with (x) tower</li>
                         </ul>
                     </ul>
                 `
@@ -10795,6 +10814,12 @@ let data = {
                             <li>Win 500 casual games</li>
                         </ul>
                     </ul>
+		    <ul>
+                        <li>Level 4</li>
+                        <ul>
+                            <li>Win 1000 casual games</li>
+                        </ul>
+                    </ul>
                 `
             },
             "winRankedGames": {
@@ -10940,7 +10965,7 @@ let data = {
                         </ul>
                     </ul>
                 `
-            }
+	    }
         }
     },
     "bloons": {
