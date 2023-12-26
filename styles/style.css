@@ -136,13 +136,7 @@ ul {
 }
 
 table {
-    padding: 8px;
-    border-radius: 8px;
-    background-color: var(--primaryLight3);
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--primaryDark3);
-    };
-    
+    padding: 0;
 }
 
 td {
@@ -186,7 +180,8 @@ select, button {
     };
     border-radius: 8px;
     padding: 4px;
-    border: 0
+    border: 0;
+    cursor: pointer;
 }
 
 select {
@@ -502,6 +497,7 @@ dialog {
 }
 .closeButton, .menuClose {
     font-size: 36px;
+    cursor: pointer;
 }
 .closeButtonContainer {
     margin-left: auto;
@@ -553,8 +549,14 @@ dialog {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
     aspect-ratio: 1;
-    width: 80px
+    padding: 8px;
+    width: 100px;
+    background-color: var(--shade2_5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade6_5);
+    };
 }
 .badgeBox > img {
     height: 64px
@@ -614,4 +616,67 @@ dialog {
 
 .warSummaryBottom > button {
     margin-left: auto
+}
+
+.warSummaryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+    gap: 16px;
+}
+
+.warSummaryContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summaryLeaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.leaderboardRow {
+    display: grid;
+    grid-template-columns: 25px 1fr 1fr;
+}
+
+.clickableRow {
+    cursor: pointer;
+}
+
+.noDataRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaderboardRow, .noDataRow {
+    gap: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+}
+
+.highlightedRow {
+    background-color: var(--primaryLight1);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark1);
+    };
+}
+
+.leaderboardRow > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.leaderboardRow > .right {
+    align-items: end;
 }

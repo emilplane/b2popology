@@ -2883,7 +2883,7 @@ let data = {
                                             <li>+3d (6d), normal type</li>
                                         </ul>
                                     </li>
-                                    <li>gains 2 more copies of barrage, which target last and close</li>
+                                    <li>gains 2 more copies of barrage, which target last and strong</li>
                                 </ul>
                             `
                         }
@@ -3467,9 +3467,10 @@ let data = {
                                                 <ul>
                                                     <li>40p, 20r blast</li>
                                                     <li>cannot affect ZOMG or BAD</li>
-                                                    <li>on hit: degrow, defortify, removes lead from DDTs
+                                                    <li>on hit
                                                         <ul>
-                                                            <li>note: cannot defortify DDTs</li>
+                                                            <li>degrow and defortify, besides DDTs</li>
+                                                            <li>delead</li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -3511,13 +3512,14 @@ let data = {
                                     </li>
                                     <li>strip buffed
                                         <ul>
-                                            <li>can affect DDTs and ZOMGs</li>
+                                            <li>can affect ZOMGs</li>
+                                            <li>degrow and defortify can affect DDTs</li>
                                         </ul>
                                     </li>
                                     <li>crosspath
                                         <ul>
                                             <li>105: wall-of-fire +5p (45), +6r (21)</li>
-                                            <li>205: burn +50d (150d), wall-of-fire +1d (5)</li>
+                                            <li>205: burn +3d (8d), +50md (150md), wall-of-fire +1d (5)</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -4248,7 +4250,7 @@ let data = {
                                     <li>sunbeam replaced by sunblast
                                         <ul>
                                             <li>9d, 30p, 65r, 0.06s, normal type</li>
-                                            <li>cannot see past obstacles unlike its BTD6 counterpart</li>
+                                            <li>can see past obstacles</li>
                                         </ul>
                                     </li>
                                     <li>when upgraded
@@ -5810,7 +5812,7 @@ let data = {
                                 <ul>
                                     <li>spikes buffed
                                         <ul>
-                                            <li>+1d (2d), +6cd (8cd), +1fd (+3fd), +4p (14p)
+                                            <li>+1d (2d), +6cd (8cd), +1fd (3fd), +4p (14p)
                                                 <ul>
                                                     <li>total: 28 damage per spike, 112 ceramic, 42 fortified</li>
                                                 </ul>
@@ -5964,9 +5966,9 @@ let data = {
                                         <ul>
                                             <li>+5d (6d), +2md (8md)
                                                 <ul>
-                                                    <li>total: 30 damage per spike, 45 moab
+                                                    <li>total: 30 damage per spike, 40 moab
                                                         <ul>
-                                                            <li>150: 60 damage per spike, 80 moab</li>
+                                                            <li>150: 60 damage per spike, 70 moab</li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -11566,7 +11568,7 @@ let prices = {
         },
         "superMonkey": {
             "base": 2100,
-            "top": [2300, 4500, 11000, 10000, 40000],
+            "top": [2300, 4500, 11000, 80000, 200000],
             "middle": [1000, 1400, 7000, 20000, 90000],
             "bottom": [3000, 1200, 5600, 55000, 240000]
         },
@@ -11606,7 +11608,7 @@ let prices = {
             "base": 600,
             "top": [700, 600, 2700, 9500, 110000],
             "middle": [600, 700, 2500, 5000, 40000],
-            "bottom": [150, 600, 3300, 30000]
+            "bottom": [150, 400, 600, 3300, 30000]
         },
         "engineerMonkey": {
             "base": 400,
