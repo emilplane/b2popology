@@ -403,6 +403,20 @@ class PopologyHTML {
                         break
                 }
             }
+
+            let typeString
+            if (moduleSet[module].ability != undefined) {
+                switch (moduleSet[module].moduleType[0]) {
+                    case "transform": 
+                        typeString = `${moduleSet[module].moduleType[0]} ability`
+                        break
+                    default:
+                        typeString = "ability"
+                        break
+                }
+            } else {
+                typeString = moduleSet[module].moduleType[0]
+            }
             
             let contentHTML = ``
             for (let key in propertyTypesHTMLData) {
@@ -413,7 +427,7 @@ class PopologyHTML {
             
             statsHTML += PopologyHTML.getStatSectionHTML(
                 {
-                    "title": `<span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${moduleSet[module].moduleType[0]}`,
+                    "title": `<span class="slightTextEmphasis italicEmphasis">${moduleSet[module].name}</span> ${typeString}`,
                     "details": details,
                     "contentHTML": contentHTML,
                     "mainGlobalAttributes": [["class", "moduleTowerStats"]]
