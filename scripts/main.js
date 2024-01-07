@@ -3624,7 +3624,7 @@ let data = {
                                 <ul>
                                     <li>beam replaced by full-beam
                                         <ul>
-                                            <li>25d, +15 shocked4 damage (45 shocked4 damage), 1000p, 0.2s passive, normal type</li>
+                                            <li>30d, +20 shocked4 damage (50 shocked4 damage), 1000p, 0.2s passive, normal type</li>
                                             <li>additional +55d to the first target</li>
                                             <li>one solid beam to the edge of the screen</li>
                                             <li>applies shocked4 status
@@ -7574,7 +7574,7 @@ let data = {
                     "20": `<ul>
                     <li>unleash-the-krakens buffed
                         <ul>
-                            <li>+3,000p (4,000p)</li>
+                            <li>+2,800p (4,000p)</li>
                         </ul>
                     </li>
                 </ul>`

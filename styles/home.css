@@ -1,0 +1,161 @@
+.categoryButtonContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media screen and (max-width: 700px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    grid-gap: 16px;
+}
+
+.categoryButton {
+    background-color: var(--shade2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade7);
+    }
+    border-radius: 8px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.categoryButton:hover {
+    background-color: var(--shade4);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade5);
+    }
+    transition: 0.5s;
+}
+.categoryButton > * {
+    transition: 0.5s;
+}
+.categoryButton:hover > * {
+    color: var(--shade8);
+    transition: 0.5s;
+}
+
+.primaryCategoryButton {
+    background-color: var(--primaryTower3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryTower7);
+    }
+}
+.primaryCategoryButton:hover {
+    background-color: var(--primaryTower5);
+}
+
+.militaryCategoryButton {
+    background-color: var(--militaryTower3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--militaryTower7);
+    }
+}
+.militaryCategoryButton:hover {
+    background-color: var(--militaryTower5);
+}
+
+.magicCategoryButton {
+    background-color: var(--magicTower3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--magicTower7);
+    }
+}
+.magicCategoryButton:hover {
+    background-color: var(--magicTower5);
+}
+
+.supportCategoryButton {
+    background-color: var(--supportTower3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--supportTower7);
+    }
+}
+.supportCategoryButton:hover {
+    background-color: var(--supportTower5);
+}
+
+.heroesCategoryButton {
+    background-color: var(--heroes3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--heroes7);
+    }
+}
+.heroesCategoryButton:hover {
+    background-color: var(--heroes5);
+}
+
+.resourcesSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media screen and (max-width: 700px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    grid-gap: 16px;
+}
+
+.resourceButton {
+    margin-top: 12px;
+}
+
+.linkToExternalButton {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+}
+
+.linkToExternal {
+    aspect-ratio: 1;
+    height: 18px;
+    margin-left: 4px;
+}
+
+.resourceTitleContainer {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+}
+
+.discordSection {
+    background-color: rgb(211, 203, 247);
+    @media (prefers-color-scheme: dark) {
+        background-color: rgb(49, 11, 119);
+    }
+}
+
+.discordButton {
+    background-color: rgb(185, 169, 247);
+    @media (prefers-color-scheme: dark) {
+        background-color: rgb(96, 40, 201);
+    }
+}
+
+.discordButton:hover {
+    background-color: rgb(156, 114, 235);
+    @media (prefers-color-scheme: dark) {
+        background-color: rgb(124, 79, 207);
+    }
+}
+
+.welcomeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    height: 15vh;
+    max-height: 500px;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.versionHistoryContainer {
+    display: flex;
+    align-items: center;
+}
+
+.versionHistoryPush {
+    margin-left: auto;
+}
