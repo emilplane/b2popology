@@ -7,6 +7,8 @@
     --primaryDark2: hsl(160, 100%, 26%);
     --primaryDark3: hsl(160, 100%, 15%);
 
+
+
     --shade1: hsl(0, 0%, 100%);
     --shade2: hsl(0, 0%, 95%);
     --shade2_5: hsl(0, 0%, 85%);
@@ -711,4 +713,32 @@ dialog {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    padding: 2px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 8px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: var(--primaryLight3);
+    border-radius: 8px;
+    margin: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primaryLight2);
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+        background: var(--primaryDark3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primaryDark2);
+    }
 }

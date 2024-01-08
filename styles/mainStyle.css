@@ -535,3 +535,31 @@ i {
         color: var(--secondary1);
     }
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+    padding: 2px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 8px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: var(--primary5);
+    border-radius: 8px;
+    margin: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary6);
+}
+
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary7);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary5);
+    }
+}
