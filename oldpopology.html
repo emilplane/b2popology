@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/mainStyle.css"/>
+        <link id="luckiestGuyFix" rel="stylesheet" href="styles/luckiestGuyChanged.css"/>
+        <title>Battles 2 Popology</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="headerDiv">
+                <h1 style="margin:0">Battles 2 Popology</h1>
+                <div class="headerLinks">
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="popology.html"><button class="selectedButton">Popology</button></a>
+                    <a href="clans.html"><button>Clan</button></a>
+                    <a href="https://b2.lol/"><button>b2.lol</button></a>
+                    <a href="https://bloonstar.com/"><button>Bloonstar</button></a>
+                    <a href="https://nitjus7.github.io/BTD6-Central/index.html"><button>BTD6 Central</button></a>
+                    <a href="https://discord.com/invite/9YAaxDXAYZ"><button class="discordButton"><img class="discordLogoButton" src="media/Icons/Discord Logo White.png"/></button></a>
+                </div>
+                <div style="margin-left: auto;align-items: center;" class="menuDiv">
+                    <input type="image" id="menu" class="menuIcon" alt="Menu Icon" src="media/Icons/Menu.png"
+                        style="height: 40px;aspect-ratio: 1/1; padding-bottom: 2px;"/>
+                </div>
+            </div>
+            <div class="hamburgerDiv" id="hamburgerDiv">
+                <div class="hamburgerContent">
+                    <h1 style="font-size: 44px;">Battles 2 Popology</h1>
+                    <h4 class="hamburgerClose" id="hamburgerClose">Close</h4>
+                    <div style="height: 30px"></div>
+                    <a href="index.html"><h4>Home</h4></a>
+                    <a href="popology.html"><h4>Popology</h4></a>
+                    <a href="clans.html"><h4>Clan</h4></a>
+                    <a href="https://b2.lol/"><h4>b2.lol</h4></a>
+                    <a href="https://nitjus7.github.io/BTD6-Central/index.html"><h4>BTD6 Central</h4></a>
+                    <a href="https://bloonstar.com/"><h4>Bloonstar</h4></a>
+                    <a href="https://discord.com/invite/9YAaxDXAYZ"><h4>Discord Server</h4></a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!--<section class="sectionStyle">
+                <a href="https://www.reddit.com/r/bloonscardstorm/">
+                    <input type="image" alt="2.1.1 Banner" class="banner normalBanner" src="media/Graphics/BCS.jpg"/>
+                </a>
+                <a href="https://www.reddit.com/r/bloonscardstorm/">
+                    <input type="image" alt="2.1.1 Banner" class="banner wideBanner" src="media/Graphics/BCS Wide.jpg"/>
+                </a>
+            </section>-->
+            <section class="sectionStyle">
+                <select id="categorySelect" style="color: black">
+                    
+                </select>
+                <select id="towerSelect" style="color: black"></select>
+            </section>
+            <section id="statsSection" class="roundedBox" style="color: black"></section>
+            <section class="roundedBox">
+                <div style="height:10px"></div>
+                <h2>Terminology</h2>
+                <div class="primarySection">
+                    <h4>Damage (d)</h4>
+                    <p>The amount of layers or health an attack removes. Some towers do extra damage to certain bloon types:</p>
+                    <ul>
+                        <li>MOAB damage: md</li>
+                        <li>Fortified damage: fd</li>
+                        <li>Fortified MOAB damage: fmd</li>
+                        <li>Ceramic damage: cd</li>
+                        <li>Lead damage: ld</li>
+                        <li>Camo damage: cad</li>
+                        <li>Frozen damage: frd</li>
+                        <li>Stunned bloon damage: sd</li>
+                    </ul>
+                    <h4>Pierce (p)</h4>
+                    <p>The amount of bloons that an attack can pop.</p>
+                    <h4>Impact (i)</h4>
+                    <p>Impact is like pierce, but it cannot be buffed by a normal pierce buff. For example, if a base sniper has 1i, that means
+                    it will not hit 2 bloons when affected by the brew of a 3xx <a href="https://b2popology.com/popology.html?section=magic&page=alchemist">
+                    Alchemist</a>, or another buff that gives more pierce.</p>
+                    <h4>Range (r)</h4>
+                    <h4>Projectiles (j)</h4>
+                    <p>If there is spread mentioned after the projectile count (like “4j 180° spread”), then the projectiles are evenly
+                    distributed across that spread. If there is nothing mentioned, then the projectiles shoot parallel to each other, at a
+                    certain distance apart that is not implemented here yet.</p>
+                    <h4>Attack Cooldown (s)</h4>
+                    <p>The time between attacks. This is commonly confused with attack speed, which refers to attacks per second. For example, if a tower shoots a 
+                    projectile every quarter second, then it has 4 attack speed, but 0.25 attack cooldown, which is what is used here. 
+                    <ul>
+                        <li>0.95s means the time between each attack is 0.95 seconds</li>
+                    </ul>
+                    <p>Attack cooldown buffs (i.e. 75%s) decrease the time between attacks</p>
+                    <ul>
+                        <li>75%s on a 1s attack would become 0.75s, because 75% of 1s is 0.75s</li>
+                    </ul>
+                    <h4>Initial</h4>
+                    <p>The initial cooldown on an ability when you first buy the upgrade</p>
+                    <ul>
+                        <li>x5x 
+                            <a href="https://b2popology.com/popology.html?section=support&page=bananaFarm">
+                                Banana Farm</a> has an initial cooldown of 20 seconds, so "20s initial"
+                        </li>
+                        <li>If an ability has no initial cooldown, like the x5x 
+                            <a href="https://b2popology.com/popology.html?section=military&page=monkeyBuccaneer">
+                                Monkey Buccaneer</a>, then it is instead called "battle ready"
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </section>
+            <div class="popupDiv" id="popupDiv">
+                <div class="popup">
+                    <div class="popupHeader">
+                        <h3 class="popupTitle" id="popupTitle">Title</h3>
+                        <input type="image" id="popupClose" alt="Close Icon" src="media/Icons/Close.png" 
+                            style="width:30px; aspect-ratio: 1/1; padding-bottom: 2px;"/>
+                    </div>
+                    <div class="popupContent" id="popupContent">
+                        <p>Content</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="scripts/fontFix.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/menu.js"></script>
+    </body>
+</html>

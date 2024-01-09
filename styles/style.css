@@ -48,7 +48,8 @@
     --heroes7: #ac6e17;
 
     --winColor: hsl(128, 56%, 45%);
-    --lossColor: hsl(0, 100%, 50%);
+    --lossColorDark: hsl(0, 100%, 34%);
+    --lossColorLight: hsl(0, 100%, 67%);
 }
 
 html {
@@ -287,7 +288,11 @@ a {
     margin-left: auto;
 }
 
-
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;   
+}
 
 .titleSection {
     padding: 8px;
@@ -717,6 +722,7 @@ dialog {
 
 ::-webkit-scrollbar {
     width: 12px;
+    height: 12px;
     padding: 2px;
 }
  
