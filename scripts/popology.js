@@ -1,5 +1,14 @@
 import popologyData from "/scripts/popologyData.js"
 
+const buffData = {
+    "favoredTrades": ["sellback", 0.1, 5],
+    "monkeyBusiness": ["discount", 0.1, 3],
+    "monkeyCommerce1": ["discount", 0.05, 3],
+    "monkeyCommerce2": ["discount", 0.05, 3],
+    "monkeyCommerce3": ["discount", 0.05, 3],
+    "bananaSalvage": ["sellback", 0.1, 5]
+}
+
 let compareOn = false
 
 let urlParams = new URLSearchParams(window.location.search);
@@ -10,8 +19,6 @@ runPopology()
 if (compareOn) {
     runPopology(true)
 }
-
-
 
 // document.getElementById("compareButtonDialog").show()
 
@@ -37,6 +44,8 @@ function runPopology(compare) {
 	}
 
     let selectedPathForPrice = [0, 0, 0]
+
+    let priceBuffs;
 
     let styledCategories = ["primary"]
     
@@ -69,13 +78,22 @@ function runPopology(compare) {
 
         addContent()
 
+        priceBuffs = {
+            "favoredTrades": false,
+            "monkeyBusiness": false,
+            "monkeyCommerce1": false,
+            "monkeyCommerce2": false,
+            "monkeyCommerce3": false
+        }
+
         if (
             !(selectedCategory == "heroes" || 
             selectedCategory == "bloons" || 
             selectedCategory == "accolades")
         ) {
-        selectedPathForPrice = [0, 0, 0]
-        updateCost()
+            selectedPathForPrice = [0, 0, 0]
+           
+            updateCost()
         }
 
         urlParams.set('section', selectedCategory);
@@ -221,56 +239,78 @@ function runPopology(compare) {
     }
 
     function updateCost() {
+        let forceBuffs = []
+        if (selectedPage == "monkeyBuccaneer" && selectedPathForPrice[2] >= 4) {
+            forceBuffs.push("favoredTrades")
+        }
+        if (selectedPage == "bananaFarm" && selectedPathForPrice[2] >= 2) {
+            forceBuffs.push("bananaSalvage")
+        }
+
         document.getElementById("towerCostContent").innerHTML = ""
 
         document.getElementById("towerCostContent").innerHTML = `
-            <div class="configurationBarTextSelectorWrapper">
-                <div class="configPathContainer">
-                    <div class="configSinglePathContainer">
-                        <button class="pathStart" id="topPath0">
-                            <h6>0</h6>
-                        </button>
-                        <button id="topPath1">
-                            <h6>1</h6>
-                        </button><button id="topPath2">
-                            <h6>2</h6>
-                        </button><button id="topPath3">
-                            <h6>3</h6>
-                        </button><button id="topPath4">
-                            <h6>4</h6>
-                        </button><button class="pathEnd" id="topPath5">
-                            <h6>5</h6>
-                        </button>
+            <div>
+                <h6>Tower Path</h6>
+                <div class="configurationBarTextSelectorWrapper">
+                    <div class="configPathContainer">
+                        <div class="configSinglePathContainer">
+                            <button class="pathStart" id="topPath0">
+                                <h6>0</h6>
+                            </button>
+                            <button id="topPath1">
+                                <h6>1</h6>
+                            </button><button id="topPath2">
+                                <h6>2</h6>
+                            </button><button id="topPath3">
+                                <h6>3</h6>
+                            </button><button id="topPath4">
+                                <h6>4</h6>
+                            </button><button class="pathEnd" id="topPath5">
+                                <h6>5</h6>
+                            </button>
+                        </div>
+                        <div class="configSinglePathContainer"><button class="pathStart"
+                                id="middlePath0">
+                                <h6>0</h6>
+                            </button><button id="middlePath1">
+                                <h6>1</h6>
+                            </button><button id="middlePath2">
+                                <h6>2</h6>
+                            </button><button id="middlePath3">
+                                <h6>3</h6>
+                            </button><button id="middlePath4">
+                                <h6>4</h6>
+                            </button><button class="pathEnd" id="middlePath5">
+                                <h6>5</h6>
+                            </button>
+                        </div>
+                        <div class="configSinglePathContainer"><button class="pathStart"
+                                id="bottomPath0">
+                                <h6>0</h6>
+                            </button><button id="bottomPath1">
+                                <h6>1</h6>
+                            </button><button id="bottomPath2">
+                                <h6>2</h6>
+                            </button><button id="bottomPath3">
+                                <h6>3</h6>
+                            </button><button id="bottomPath4">
+                                <h6>4</h6>
+                            </button><button class="pathEnd" id="bottomPath5">
+                                <h6>5</h6>
+                            </button>
+                        </div>
                     </div>
-                    <div class="configSinglePathContainer"><button class="pathStart"
-                            id="middlePath0">
-                            <h6>0</h6>
-                        </button><button id="middlePath1">
-                            <h6>1</h6>
-                        </button><button id="middlePath2">
-                            <h6>2</h6>
-                        </button><button id="middlePath3">
-                            <h6>3</h6>
-                        </button><button id="middlePath4">
-                            <h6>4</h6>
-                        </button><button class="pathEnd" id="middlePath5">
-                            <h6>5</h6>
-                        </button>
+                </div>
+            </div>
+            <div>
+                <h6 class="buffText">Buffs</h6>
+                <div class="buffIconContainer">
+                    <div class="buffIconRow" id="buffs">
+
                     </div>
-                    <div class="configSinglePathContainer"><button class="pathStart"
-                            id="bottomPath0">
-                            <h6>0</h6>
-                        </button><button id="bottomPath1">
-                            <h6>1</h6>
-                        </button><button id="bottomPath2">
-                            <h6>2</h6>
-                        </button><button id="bottomPath3">
-                            <h6>3</h6>
-                        </button><button id="bottomPath4">
-                            <h6>4</h6>
-                        </button><button class="pathEnd" id="bottomPath5">
-                            <h6>5</h6>
-                        </button>
+                    <div class="buffIconRow requiredBuffs" id="requiredBuffs">
+                        
                     </div>
                 </div>
             </div>
@@ -288,6 +328,87 @@ function runPopology(compare) {
             </div>
         `
 
+        for (let buff in priceBuffs) {
+            let src;
+            switch (buff) {
+                case "favoredTrades":   src = "/media/Tower Portraits/monkeyBuccaneer/bottom/monkeyBuccaneer004Portrait.png";   break
+                case "monkeyBusiness":  src = "/media/Tower Portraits/monkeyVillage/bottom/monkeyVillage001Portrait.webp";      break
+                case "monkeyCommerce1": case "monkeyCommerce2": case "monkeyCommerce3": 
+                                        src = "/media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp";      break
+            }
+            let required = false
+            for (let requiredBuff in forceBuffs) {
+                if (forceBuffs[requiredBuff] == buff) {
+                    required = true
+                }
+            }
+            if (required) {
+                document.getElementById("requiredBuffs").insertAdjacentHTML("beforeend", `
+                    <div class="buffIcon" id="${buff}">
+                        <img class="buffIconImage" src="${src}" />
+                    </div>
+                `)
+            } else {
+                document.getElementById("buffs").insertAdjacentHTML("beforeend", `
+                    <div class="buffIcon" id="${buff}">
+                        <img class="buffIconImage" src="${src}" />
+                    </div>
+                `)
+
+                if (priceBuffs[buff]) {
+                    document.getElementById(buff).classList.add("buffIconSelected")
+                }
+    
+                document.getElementById(buff).addEventListener("click", () => {
+                    priceBuffs[buff] = !priceBuffs[buff]
+                    switch (buff) {
+                        case "monkeyBusiness":
+                            if (!priceBuffs[buff]) {
+                                priceBuffs.monkeyCommerce1 = false
+                                priceBuffs.monkeyCommerce2 = false
+                                priceBuffs.monkeyCommerce3 = false
+                            }
+                            break
+                        case "monkeyCommerce1":
+                            if (priceBuffs[buff]) {
+                                priceBuffs.monkeyBusiness = true
+                            } else {
+                                priceBuffs.monkeyCommerce2 = false
+                                priceBuffs.monkeyCommerce3 = false
+                            }
+                            break
+                        case "monkeyCommerce2":
+                            if (priceBuffs[buff]) {
+                                priceBuffs.monkeyBusiness = true
+                                priceBuffs.monkeyCommerce1 = true
+                            } else {
+                                priceBuffs.monkeyCommerce3 = false
+                            }
+                            break
+                        case "monkeyCommerce3":
+                            if (priceBuffs[buff]) {
+                                priceBuffs.monkeyBusiness = true
+                                priceBuffs.monkeyCommerce1 = true
+                                priceBuffs.monkeyCommerce2 = true
+                            }
+                            break
+                    }
+                    updateCost()
+                })
+            }
+        }
+
+        for (let requiredBuff in forceBuffs) {
+            let src = "/media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp"
+            if (forceBuffs[requiredBuff] == "bananaSalvage") {
+                document.getElementById("requiredBuffs").insertAdjacentHTML("beforeend", `
+                    <div class="buffIcon" id="bananaSalvage">
+                        <img class="buffIconImage" src="${src}" />
+                    </div>
+                `)
+            }
+        }
+        
         for (let pathIndex in selectedPathForPrice) {
             for (let i=0; i<=5; i++) {
                 let button = document.getElementById(`${numberPathNameConversion(Number(pathIndex))}Path${i}`)
@@ -303,25 +424,43 @@ function runPopology(compare) {
                 .classList.add("selected")
         }
         let costData = popologyData.prices[selectedCategory][selectedPage]
-        let price = costData.base
+
+        function discountForTier(tier) {
+            let discount = 1
+            for (let buff in buffData) {
+                if (priceBuffs[buff] == true && buffData[buff][0] == "discount" && buffData[buff][2] >= tier) {
+                    discount -= buffData[buff][1]
+                }
+            }
+            return discount;
+        }
+
+        function sellbackBonusForTier(tier) {
+            let sellbackBonus = 0
+            for (let buff in buffData) {
+                let required = false;
+                for (let index in forceBuffs) {
+                    if (buff == forceBuffs[index])
+                    required = true
+                }
+                if ((required || priceBuffs[buff] == true) && buffData[buff][0] == "sellback" && buffData[buff][2] >= tier) {
+                    sellbackBonus += buffData[buff][1]
+                }
+            }
+            return sellbackBonus;
+        }
+
+        let price = (costData.base*(discountForTier(0)))
         for (let path in selectedPathForPrice) {
             for (let i=0; i<5; i++) {
                 if (selectedPathForPrice[path] > i) {
-                    price += popologyData.prices[selectedCategory][selectedPage][numberPathNameConversion(Number(path))][i]
+                    price += (popologyData.prices[selectedCategory][selectedPage][numberPathNameConversion(Number(path))][i])*(discountForTier(i+1))
                 }
             }
         }
         document.getElementById("totalCost").innerText = `$${price.toLocaleString()}`
-        if (
-            (selectedPage == "monkeyBuccaneer" && selectedPathForPrice[2] >= 4) || 
-            (selectedPage == "bananaFarm" && selectedPathForPrice[2] >= 2)
-        ) {
-            document.getElementById("sellCost").innerText = `$${(price*0.8).toLocaleString()}`
-            document.getElementById("sellLoss").innerText = `-$${(price*0.2).toLocaleString()}`
-        } else {
-            document.getElementById("sellCost").innerText = `$${(price*0.7).toLocaleString()}`
-            document.getElementById("sellLoss").innerText = `-$${(price*0.3).toLocaleString()}`
-        }
+        document.getElementById("sellCost").innerText = `$${(price*(0.7+sellbackBonusForTier(5))).toLocaleString()}`
+        document.getElementById("sellLoss").innerText = `-$${(price*(1-(0.7+sellbackBonusForTier(5)))).toLocaleString()}`
     }
 
     initializeCategoryButtons()

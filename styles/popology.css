@@ -219,12 +219,12 @@
         background-color: var(--primaryDark3);
     }
     gap: 80px;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1100px) {
         gap: 24px;
     }
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 900px) {
         flex-direction: column;
     }
 }
@@ -291,4 +291,49 @@
 
 .hide {
     display: none;
+}
+
+.buffText {
+    margin-bottom: 4px;
+}
+
+.buffIconContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.buffIconRow {
+    display: flex;
+    gap: 4px;
+}
+
+.buffIcon {
+    background-color: var(--shade4);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade4);
+    };
+    border-radius: 8px;
+    height: 40px; width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buffIconSelected {
+    background-color: var(--primaryLight2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark2);
+    };
+}
+
+.buffIconImage {
+    height: 35px;
+}
+
+.requiredBuffs > * {
+    background-color: var(--primaryTower3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryTower7);
+    };
 }
