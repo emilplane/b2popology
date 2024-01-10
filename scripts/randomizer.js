@@ -191,7 +191,13 @@ function generateRandomTowers(towerWeightInput) {
         "towers": []
     }
     for (let i = 0; i < 3; i++) {
-        randomLoadout.towers.push(weightedRandom(towerList, towerWeights))
+        let selectedTower = weightedRandom(towerList, towerWeights)
+        for (let index in randomLoadout.towers) {
+            while (randomLoadout.towers[index] == selectedTower) {
+                selectedTower = weightedRandom(towerList, towerWeights)
+            }
+        }
+        randomLoadout.towers.push(selectedTower)
     }
     randomLoadout.hero = weightedRandom(heroList, heroWeights)
 
@@ -212,7 +218,7 @@ function findDisplayName(input) {
 
 
 function putRandomTowers() {
-    let randomLoadout = generateRandomTowers([["bananaFarm", 40], ["dartMonkey", 20], ["quincy", 100]])
+    let randomLoadout = generateRandomTowers([["bananaFarm", 1000]])
 
     document.getElementById("outputHero").innerText = findDisplayName(randomLoadout.hero)
     let i = 0
