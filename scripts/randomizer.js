@@ -216,6 +216,7 @@ function putRandomTowers() {
 
     document.getElementById("outputHero").innerText = findDisplayName(randomLoadout.hero)
     let i = 0
+    document.getElementById("outputTowers").innerText = ""
     for (let tower in randomLoadout.towers) {
         let afterString = ","
         if (i++ > 2) {
