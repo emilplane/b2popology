@@ -218,7 +218,7 @@ function findDisplayName(input) {
 
 
 function putRandomTowers() {
-    let randomLoadout = generateRandomTowers([["bananaFarm", 100]])
+    let randomLoadout = generateRandomTowers([["bananaFarm", 40]])
 
     document.getElementById("outputHero").innerText = findDisplayName(randomLoadout.hero)
     let i = 0
