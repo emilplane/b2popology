@@ -3956,6 +3956,7 @@ const data = {
                                                 <li>places wall-of-fire on the closest track
                                                     <ul>
                                                         <li>1d, 15p, 15r zone, 0.15s, fire type</li>
+                                                        <li>100 lifetime pierce</li>
                                                         <li>4.5s lifetime</li>
                                                     </ul>
                                                 </li>
@@ -10604,7 +10605,7 @@ const data = {
                         <ul>
                             <li>Level 2</li>
                             <ul>
-                                <li>Win 250 games with (x) tower</li>
+                                <li>Win 100 games with (x) tower</li>
                             </ul>
                         </ul>
                         <ul>
