@@ -129,6 +129,7 @@ async function loadDialog(url) {
     `
     document.getElementById("trophies").innerText = data.currentSeason_trophies
     document.getElementById("clubMember").innerText = data.is_club_member
+    document.getElementById("badges").innerHTML = ""
     for (let badgeIndex in data.badges_all) {
         document.getElementById("badges").insertAdjacentHTML("beforeend", `
             <div class="badgeBox">
