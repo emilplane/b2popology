@@ -607,4 +607,4 @@ class Tower {
 
 let tower1 = new Tower(dartMonkey, config)
 tower1.setUpgrade([5, 2, 0])
-console.log(tower1)
+console.log(tower1.modules)

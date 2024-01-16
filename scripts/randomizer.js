@@ -231,7 +231,6 @@ function putRandomTowers() {
         document.getElementById("outputTowers").innerText += ` ${findDisplayName(randomLoadout.towers[tower])}${afterString}`
         i++
     }
-    
 }
 
 document.getElementById("button").addEventListener("click", () => {
