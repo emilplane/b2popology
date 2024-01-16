@@ -1,4 +1,5 @@
 {
+    "storedJSONs": ["data1"],
     "wars": [
         {
             "league": "Bronze",
