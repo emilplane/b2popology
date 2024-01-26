@@ -23,7 +23,7 @@ let teamURL = "https://data.ninjakiwi.com/battles2/guild/9fba12d9d792fba01a13de4
 
 let teamData;
 let apiData;
-let apiWarsData
+let apiWarsData;
 
 main()
 
@@ -60,14 +60,35 @@ function warsHTML() {
                 </div>
             </section>
         `)
-        //memberContributionsLeaderboard
+
         let warLeaderboard = apiWarsData.body[apiWarsData.body.length-warIndex-1].groupGuildLeaderboard;
         if (warLeaderboard.length == 0) {
-            document.getElementById(`warLeaderboard${warIndex}`).insertAdjacentHTML("beforeend", `
-                <div class="noDataRow">
-                    <h5>No data was found.</h5>
-                </div>
-            `)
+            let dataExists = false; let data;
+            for (let i in teamData.storedJSONs) {
+                
+            }
+            if (dataExists) {
+                if (teamIndex<12) {
+                    let highlightedString = "";
+                    if (warLeaderboard[teamIndex].url == teamURL) {
+                        highlightedString = " highlightedRow";
+                    }
+                    document.getElementById(`warLeaderboard${warIndex}`).insertAdjacentHTML("beforeend", `
+                        <div class="leaderboardRow${highlightedString}">
+                            <h5 class="luckiestGuy">${Number(teamIndex)+1}</h5>
+                            <h5 id="war${warIndex}clan${teamIndex}">Team ${Number(teamIndex)+1}</h5>
+                            <h5 class="right">${warLeaderboard[teamIndex].score.toLocaleString() }</h5>
+                        </div>
+                    `)
+                }
+                putName(warLeaderboard[teamIndex].url, warIndex, "clan", teamIndex)
+            } else {
+                document.getElementById(`warLeaderboard${warIndex}`).insertAdjacentHTML("beforeend", `
+                    <div class="noDataRow">
+                        <h5>No data was found.</h5>
+                    </div>
+                `)
+            }
         } else {
             for (let teamIndex in warLeaderboard) {if(teamIndex<12){
                 let highlightedString = "";

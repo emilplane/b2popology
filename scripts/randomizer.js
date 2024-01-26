@@ -165,6 +165,12 @@ function generateRandomTowers(towerWeightInput) {
     let heroList = []
     let heroWeights = []
 
+    let includeHero = false
+
+    if (Math.random()*4 < 1) {
+        includeHero = true
+    }
+
     for (let category in towers.towers) {
         for (let tower in towers.towers[category]) {
             towerList.push(tower)
@@ -188,9 +194,18 @@ function generateRandomTowers(towerWeightInput) {
     }
 
     let randomLoadout = {
-        "towers": []
+        "towers": [],
+        "heroes": []
     }
-    for (let i = 0; i < 3; i++) {
+
+    addTower()
+    if (includeHero) {
+        addHero()
+    } else {
+        addTower()
+    }
+
+    function addTower() {
         let selectedTower = weightedRandom(towerList, towerWeights)
         for (let index in randomLoadout.towers) {
             while (randomLoadout.towers[index] == selectedTower) {
@@ -199,7 +214,16 @@ function generateRandomTowers(towerWeightInput) {
         }
         randomLoadout.towers.push(selectedTower)
     }
-    randomLoadout.hero = weightedRandom(heroList, heroWeights)
+
+    function addHero() {
+        let selectedHero = weightedRandom(heroList, heroWeights)
+        for (let index in randomLoadout.towers) {
+            while (randomLoadout.heroes[index] == selectedHero) {
+                selectedHero = weightedRandom(heroList, heroWeights)
+            }
+        }
+        randomLoadout.heroes.push(selectedHero)
+    }
 
     return randomLoadout
 }
@@ -216,19 +240,26 @@ function findDisplayName(input) {
     return input
 }
 
+console.log(generateRandomTowers([["bananaFarm", 40]]))
 
 function putRandomTowers() {
     let randomLoadout = generateRandomTowers([["bananaFarm", 40]])
 
-    document.getElementById("outputHero").innerText = findDisplayName(randomLoadout.hero)
     let i = 0
     document.getElementById("outputTowers").innerText = ""
+    let outputList = []
+    for (let hero in randomLoadout.heroes) {
+        outputList.push(randomLoadout.heroes[hero])
+    }
     for (let tower in randomLoadout.towers) {
+        outputList.push(randomLoadout.towers[tower])
+    }
+    for (let entry in outputList) {
         let afterString = ","
-        if (i++ > 2) {
+        if (i++ > 1) {
             afterString = ""
         }
-        document.getElementById("outputTowers").innerText += ` ${findDisplayName(randomLoadout.towers[tower])}${afterString}`
+        document.getElementById("outputTowers").innerText += ` ${findDisplayName(outputList[entry])}${afterString}`
         i++
     }
 }
