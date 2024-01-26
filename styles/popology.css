@@ -92,10 +92,11 @@
 
 .pageButtonContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
-    overflow-x: auto;
-    height: 100px;
+    /* height: 100px; */
     align-items: center;
+    width: calc(100%);
 }
 
 .pageButton {
@@ -121,6 +122,12 @@
 .pageButton:hover > .pageButtonImage, .pageButtonSelected > .pageButtonImage {
     height: 85px;
     transition: 0.5s
+}
+
+.contentSubconatiner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 /* .primaryTowerPageButton {
@@ -168,7 +175,7 @@
 }
 
 .statsContainer {
-    display: block;
+    display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
 }
@@ -336,4 +343,20 @@
     @media (prefers-color-scheme: dark) {
         background-color: var(--primaryTower7);
     };
+}
+
+.compareButton {
+    position: fixed;
+    width: 180px; height: 40px;
+    background-color: var(--primaryDark1);
+    left: calc(100% - 200px);
+    top: calc(100% - 60px);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
 }

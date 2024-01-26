@@ -34,14 +34,47 @@ if (compareOn) {
     runPopology(true)
 }
 
-// document.getElementById("compareButtonDialog").show()
+const compareButton = document.getElementById('compareButton');
+
+compareButton.addEventListener('click', function() {
+    compareOn = !compareOn;
+    runPopology()
+    if (compareOn) {
+        runPopology(true)
+    }
+});
 
 function runPopology(compare) {
     let compareID
     if (compare) {
         compareID = "Compare"
+        document.getElementById("compareStyle").innerHTML = `
+            .contentSubconatiner {
+                height: calc(100vh - 95px);
+                overflow-y: scroll;
+            }
+            .categoryButtonContainer {
+                grid-template-columns: repeat(4, 1fr);
+                @media screen and (max-width: 900px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            .towerCostSection {
+                gap: 24px;
+                @media screen and (max-width: 1400px) {
+                    flex-direction: column;
+                }
+            }
+            .compareStats {
+                display: block;
+            }
+            .statsContainer {
+                grid-template-columns: 1fr 1fr;
+            }
+        `
     } else {
         compareID = ""
+        document.getElementById("compareStyle").innerHTML = ""
     }
 
     let selectedCategory = "primary"
@@ -63,8 +96,12 @@ function runPopology(compare) {
 
     let styledCategories = ["primary"]
     
+    document.getElementById("towerCostButtonContainer" + compareID).innerHTML = `
+        <button id="towerCostButton${compareID}" class="towerCostButton">Calculate Tower Cost</button>
+    `
 
     document.getElementById("towerCostButton" + compareID).addEventListener("click", () => {
+        console.log("j")
         if (document.getElementById("towerCostContent" + compareID).classList.contains("showCost")) {
             document.getElementById("towerCostContent" + compareID).classList.remove("showCost")
         } else {
@@ -84,7 +121,7 @@ function runPopology(compare) {
             
         } else {
             document.getElementById("towerCostButton" + compareID).classList.remove("hide")
-            document.getElementById("towerCostContent").classList.remove("showCost")
+            document.getElementById("towerCostContent" + compareID).classList.remove("showCost")
 
         }
 
@@ -125,7 +162,7 @@ function runPopology(compare) {
             }
         }
         for (let category in popologyData.stats) {
-            if (document.getElementById(category) != undefined) {
+            if (document.getElementById(category + compareID) != undefined) {
                 function selectButton() {
                     document.getElementById(category + compareID).classList.add(`categoryButtonSelected`)
                     document.getElementById(category + compareID).classList.add(`${category}CategoryButtonSelected`)
@@ -155,7 +192,7 @@ function runPopology(compare) {
                     document.getElementById("pageButtonContainer" + compareID).innerHTML = `
                         <div>
                             <h5>Select Page</h5>
-                            <select id="pageSelect"></select>
+                            <select id="pageSelect${compareID}"></select>
                         </div>
                     `
                     // for (let level in popologyData.stats[selectedCategory].entries[selectedPage].data) {
@@ -168,7 +205,7 @@ function runPopology(compare) {
                             <option value="${hero}"${selectedString}>${popologyData.stats[selectedCategory].entries[hero].name}</option>
                         `)
                     }
-                    document.getElementById("pageSelect").addEventListener("change", (x) => {
+                    document.getElementById("pageSelect" + compareID).addEventListener("change", (x) => {
                         selectedPage = x.target.value
                         update()
                     })
@@ -261,56 +298,56 @@ function runPopology(compare) {
             forceBuffs.push("bananaSalvage")
         }
 
-        document.getElementById("towerCostContent").innerHTML = ""
+        document.getElementById("towerCostContent" + compareID).innerHTML = ""
 
-        document.getElementById("towerCostContent").innerHTML = `
+        document.getElementById("towerCostContent" + compareID).innerHTML = `
             <div>
                 <h6>Tower Path</h6>
                 <div class="configurationBarTextSelectorWrapper">
                     <div class="configPathContainer">
                         <div class="configSinglePathContainer">
-                            <button class="pathStart" id="topPath0">
+                            <button class="pathStart" id="topPath0${compareID}">
                                 <h6>0</h6>
                             </button>
-                            <button id="topPath1">
+                            <button id="topPath1${compareID}">
                                 <h6>1</h6>
-                            </button><button id="topPath2">
+                            </button><button id="topPath2${compareID}">
                                 <h6>2</h6>
-                            </button><button id="topPath3">
+                            </button><button id="topPath3${compareID}">
                                 <h6>3</h6>
-                            </button><button id="topPath4">
+                            </button><button id="topPath4${compareID}">
                                 <h6>4</h6>
-                            </button><button class="pathEnd" id="topPath5">
+                            </button><button class="pathEnd" id="topPath5${compareID}">
                                 <h6>5</h6>
                             </button>
                         </div>
                         <div class="configSinglePathContainer"><button class="pathStart"
-                                id="middlePath0">
+                                id="middlePath0${compareID}">
                                 <h6>0</h6>
-                            </button><button id="middlePath1">
+                            </button><button id="middlePath1${compareID}">
                                 <h6>1</h6>
-                            </button><button id="middlePath2">
+                            </button><button id="middlePath2${compareID}">
                                 <h6>2</h6>
-                            </button><button id="middlePath3">
+                            </button><button id="middlePath3${compareID}">
                                 <h6>3</h6>
-                            </button><button id="middlePath4">
+                            </button><button id="middlePath4${compareID}">
                                 <h6>4</h6>
-                            </button><button class="pathEnd" id="middlePath5">
+                            </button><button class="pathEnd" id="middlePath5${compareID}">
                                 <h6>5</h6>
                             </button>
                         </div>
                         <div class="configSinglePathContainer"><button class="pathStart"
-                                id="bottomPath0">
+                                id="bottomPath0${compareID}">
                                 <h6>0</h6>
-                            </button><button id="bottomPath1">
+                            </button><button id="bottomPath1${compareID}">
                                 <h6>1</h6>
-                            </button><button id="bottomPath2">
+                            </button><button id="bottomPath2${compareID}">
                                 <h6>2</h6>
-                            </button><button id="bottomPath3">
+                            </button><button id="bottomPath3${compareID}">
                                 <h6>3</h6>
-                            </button><button id="bottomPath4">
+                            </button><button id="bottomPath4${compareID}">
                                 <h6>4</h6>
-                            </button><button class="pathEnd" id="bottomPath5">
+                            </button><button class="pathEnd" id="bottomPath5${compareID}">
                                 <h6>5</h6>
                             </button>
                         </div>
@@ -320,25 +357,25 @@ function runPopology(compare) {
             <div>
                 <h6 class="buffText">Buffs</h6>
                 <div class="buffIconContainer">
-                    <div class="buffIconRow" id="buffs">
+                    <div class="buffIconRow" id="buffs${compareID}">
 
                     </div>
-                    <div class="buffIconRow requiredBuffs" id="requiredBuffs">
+                    <div class="buffIconRow requiredBuffs" id="requiredBuffs${compareID}">
                         
                     </div>
                 </div>
             </div>
             <div>
                 <h6>Total Cost</h6>
-                <h2 id="totalCost"></h2>
+                <h2 id="totalCost${compareID}"></h2>
             </div>
             <div>
                 <h6>Sellback</h6>
-                <h2 id="sellCost"></h2>
+                <h2 id="sellCost${compareID}"></h2>
             </div>
             <div>
                 <h6>Loss on Sell</h6>
-                <h2 class="sellLossText" id="sellLoss"></h2>
+                <h2 class="sellLossText" id="sellLoss${compareID}"></h2>
             </div>
         `
 
@@ -357,23 +394,23 @@ function runPopology(compare) {
                 }
             }
             if (required) {
-                document.getElementById("requiredBuffs").insertAdjacentHTML("beforeend", `
-                    <div class="buffIcon" id="${buff}">
+                document.getElementById("requiredBuffs" + compareID).insertAdjacentHTML("beforeend", `
+                    <div class="buffIcon" id="${buff}${compareID}">
                         <img class="buffIconImage" src="${src}" />
                     </div>
                 `)
             } else {
-                document.getElementById("buffs").insertAdjacentHTML("beforeend", `
-                    <div class="buffIcon" id="${buff}">
+                document.getElementById("buffs" + compareID).insertAdjacentHTML("beforeend", `
+                    <div class="buffIcon" id="${buff}${compareID}">
                         <img class="buffIconImage" src="${src}" />
                     </div>
                 `)
 
                 if (priceBuffs[buff]) {
-                    document.getElementById(buff).classList.add("buffIconSelected")
+                    document.getElementById(buff + compareID).classList.add("buffIconSelected")
                 }
     
-                document.getElementById(buff).addEventListener("click", () => {
+                document.getElementById(buff + compareID).addEventListener("click", () => {
                     priceBuffs[buff] = !priceBuffs[buff]
                     switch (buff) {
                         case "monkeyBusiness":
@@ -415,8 +452,8 @@ function runPopology(compare) {
         for (let requiredBuff in forceBuffs) {
             let src = "/media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp"
             if (forceBuffs[requiredBuff] == "bananaSalvage") {
-                document.getElementById("requiredBuffs").insertAdjacentHTML("beforeend", `
-                    <div class="buffIcon" id="bananaSalvage">
+                document.getElementById("requiredBuffs" + compareID).insertAdjacentHTML("beforeend", `
+                    <div class="buffIcon" id="bananaSalvage${compareID}">
                         <img class="buffIconImage" src="${src}" />
                     </div>
                 `)
@@ -425,7 +462,7 @@ function runPopology(compare) {
         
         for (let pathIndex in selectedPathForPrice) {
             for (let i=0; i<=5; i++) {
-                let button = document.getElementById(`${numberPathNameConversion(Number(pathIndex))}Path${i}`)
+                let button = document.getElementById(`${numberPathNameConversion(Number(pathIndex))}Path${i}` + compareID)
                 button.classList.remove("selected")
                 button.addEventListener("click", () => {
                     selectedPathForPrice[pathIndex] = i
@@ -434,7 +471,7 @@ function runPopology(compare) {
             }
         }
         for (let pathIndex in selectedPathForPrice) {
-            document.getElementById(`${numberPathNameConversion(Number(pathIndex))}Path${selectedPathForPrice[pathIndex]}`)
+            document.getElementById(`${numberPathNameConversion(Number(pathIndex))}Path${selectedPathForPrice[pathIndex]}` + compareID)
                 .classList.add("selected")
         }
         let costData = popologyData.prices[selectedCategory][selectedPage]
@@ -472,9 +509,9 @@ function runPopology(compare) {
                 }
             }
         }
-        document.getElementById("totalCost").innerText = `$${price.toLocaleString()}`
-        document.getElementById("sellCost").innerText = `$${(price*(0.7+sellbackBonusForTier(5))).toLocaleString()}`
-        document.getElementById("sellLoss").innerText = `-$${(price*(1-(0.7+sellbackBonusForTier(5)))).toLocaleString()}`
+        document.getElementById("totalCost" + compareID).innerText = `$${price.toLocaleString()}`
+        document.getElementById("sellCost" + compareID).innerText = `$${(price*(0.7+sellbackBonusForTier(5))).toLocaleString()}`
+        document.getElementById("sellLoss" + compareID).innerText = `-$${(price*(1-(0.7+sellbackBonusForTier(5)))).toLocaleString()}`
     }
 
     initializeCategoryButtons()
