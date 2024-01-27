@@ -240,10 +240,8 @@ function findDisplayName(input) {
     return input
 }
 
-console.log(generateRandomTowers([["bananaFarm", 40]]))
-
 function putRandomTowers() {
-    let randomLoadout = generateRandomTowers([["bananaFarm", 40]])
+    let randomLoadout = generateRandomTowers([["monkeyVillage", 5]])
 
     let i = 0
     document.getElementById("outputTowers").innerText = ""
