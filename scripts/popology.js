@@ -60,10 +60,7 @@ function runPopology(compare) {
                 }
             }
             .towerCostSection {
-                gap: 24px;
-                @media screen and (max-width: 1400px) {
-                    flex-direction: column;
-                }
+                flex-direction: column;
             }
             .compareStats {
                 display: block;
