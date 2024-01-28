@@ -27,6 +27,7 @@ class b2sim {
         const micropip = pyodide.pyimport("micropip");
         messageLoadStatus("installb2sim")
         await micropip.install('b2sim');
+        messageLoadStatus("importjs")
         pyodide.runPython(`
             import js
         `)

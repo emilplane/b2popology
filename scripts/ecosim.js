@@ -13,13 +13,17 @@ if (window.Worker) {
                     case "loading": 
                         loadingBar.style.opacity = "1"
                         statusLightClasses.add("loadingLight")
-                        statusText.innerText = "Loading b2sim"
+                        function updateStatusElements(loadingBarWidth, loadingText) {
+                            loadingBar.style.width = `${loadingBarWidth}%`
+                            statusText.innerText = loadingText
+                        }
                         switch (e.data.loadingState) {
-                            case "pyodideInit":     loadingBar.style.width = `${5}%`;   break
-                            case "micropip":        loadingBar.style.width = `${15}%`;  break
-                            case "installb2sim":    loadingBar.style.width = `${30}%`;  break
-                            case "importb2sim":     loadingBar.style.width = `${50}%`;  break
-                            default:                loadingBar.style.width = `${0}%`;   break
+                            case "pyodideInit":     updateStatusElements(5, "Loading pyodide and python libraries"); break
+                            case "micropip":        updateStatusElements(15, "Loading pyodide and python libraries"); break
+                            case "installb2sim":    updateStatusElements(20, "Loading pyodide and python libraries"); break
+                            case "importjs":        updateStatusElements(35, "Loading b2sim"); break
+                            case "importb2sim":     updateStatusElements(40, "Loading b2sim"); break
+                            default:                updateStatusElements(0, "Loading"); break
                         }
                         break;
                     case "ready": 
