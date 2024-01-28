@@ -1,0 +1,84 @@
+:root {
+    --loadingColorMain: hsl(61, 100%, 50%);
+    --loadingColorFaded: hsl(61, 71%, 35%);
+    --statusReady: hsl(103, 81%, 49%);
+}
+
+.statsPageBody {
+    max-width: 2000px;
+}
+
+.menuBar {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menuBarContent {
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+    border-radius: 8px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menuBarButton {
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.menuBarButton:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba(255, 255, 255, 0.15);
+    };
+    transition: 0.25s;
+}
+
+.simStatusContainer {
+    margin-left: auto;
+    margin-right: 6px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.statusLight {
+    background-color: var(--shade4);
+    height: 15px; aspect-ratio: 1;
+    border-radius: 7.5px;
+}
+
+.loadingLight {
+    background-color: var(--loadingColorFaded);
+    animation: loadingAnimation 1s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {background-color: var(--loadingColorFaded);}
+    50% {background-color: var(--loadingColorMain);}
+    100% {background-color: var(--loadingColorFaded);}
+}
+
+.readyLight {
+    background-color: var(--statusReady);
+}
+
+.loadingBarContainer {
+    height: 0px;
+}
+
+.loadingBar {
+    position: relative;
+    top: -2px;
+    height: 2px;
+    width: 0%;
+    background-color: var(--primaryLight1);
+    transition: 0.25s;
+}
+
