@@ -77,10 +77,21 @@ h1, h2, h3, h4, h5, h6, p, ul, select, button, table, thead, tbody, td {
 h1, h2, h3, h4, h5, h6, button, input, select, thead, .tableHead {
     font-family: "Gabarito";
     font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, button, select, thead, .tableHead {
     color: var(--shade8);
     @media (prefers-color-scheme: dark) {
         color: var(--shade1);
     }
+}
+
+input {
+    color: var(--shade8);
+    outline-width: 0;
+    border-radius: 8px;
+    font-size: 14pt;
+    border: none;
 }
 
 p, ul, td, th {
@@ -137,6 +148,10 @@ ul {
     padding-left: 20px;
 }
 
+.chartCanvas {
+    font-family: "Gabarito";
+}
+
 table {
     padding: 0;
 }
@@ -169,10 +184,6 @@ td {
 
 .italicEmphasis {
     font-style: italic;
-}
-
-input {
-    outline-width: 0;
 }
 
 select, button {

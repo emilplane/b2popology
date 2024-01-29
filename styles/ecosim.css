@@ -82,3 +82,52 @@
     transition: 0.25s;
 }
 
+.mainContent {
+    margin-top: 8px;
+    gap: 8px;
+}
+
+.configureSim {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.simOutputContainer {
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+    border-radius: 8px;
+    padding: 8px;
+    height: 500px;
+}
+
+.simSettingsContainer {
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.simSettingsList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.simSetting {
+    display: flex;
+    align-items: center;
+}
+
+.settingInput {
+    margin-left: auto;
+}
+
+input.settingInput {
+    width: 100px;
+}

@@ -64,10 +64,10 @@ class b2sim {
                 'Eco Send': b2.ecoSend(send_name = '${this.configData.ecoSend}'),
                 'Rounds': rounds,
                 'Farms': farms,
-                'Game Round': 13.99
+                'Game Round': ${this.configData.gameRound}
             }
             game_state = b2.GameState(initial_state_game)
-            game_state.fastForward(target_round = 17)
+            game_state.fastForward(target_round = ${this.configData.targetRound})
         `
     }
 
@@ -75,43 +75,51 @@ class b2sim {
         await pyodide.runPython(this.startingPythonCode());
     };
 
-    async getCash() {
+    async getData() {
         this.runSim();
         pyodide.runPython(`
             js.cash = game_state.cash
             js.eco = game_state.eco
+            js.cashStates = game_state.cash_states
+            js.ecoStates = game_state.eco_states
+            js.timeStates = game_state.time_states
         `);
-        return `Cash: $${cash}, Eco: ${eco}`;
+        function roundArray(array, places) {
+            let arrayRounded = []
+            for (let i in array) {
+                arrayRounded.push(parseFloat(array[i].toFixed(places)))
+            }
+            return arrayRounded
+        }
+        cashStates = cashStates.toJs()
+        cashStates = roundArray(cashStates, 1)
+        ecoStates = ecoStates.toJs()
+        ecoStates = roundArray(ecoStates, 1)
+        timeStates = timeStates.toJs()
+        timeStates = roundArray(timeStates, 3)
+        return {
+            "cash": cash, "eco": eco,
+            "cashStates": cashStates,
+            "ecoStates": ecoStates,
+            "timeStates": timeStates
+        }
     };
 };
 
 async function main() {
     await b2sim.initPython();
-    let sim = new b2sim(
-        {
-            "cash": 0, "eco": 1200, "ecoSend": "Grouped Blacks",
-            "rounds": 0.1, "gameRound": 13.99, "targetRound": 17,
-            "farms": [
-                {
-                    "purchase": 7,
-                    "crosspath": [2, 2, 0]
-                }
-            ]
-        }
-    );
-    console.log(await sim.getCash());
-    let sim2 = new b2sim(
-        {
-            "cash": 0, "eco": 1200, "ecoSend": "Grouped Blacks",
-            "rounds": 0.1, "gameRound": 13.99, "targetRound": 17,
-            "farms": [
-                {
-                    "purchase": 7,
-                    "crosspath": [3, 2, 0]
-                }
-            ]
-        }
-    );
-    console.log(await sim2.getCash());
 }
 main();
+
+onmessage = async function (e) {
+    switch(e.data.type) {
+        case "requestData":
+            let sim = new b2sim(e.data.config)
+            let data = await sim.getData()
+            postMessage({
+                "type": "returnData",
+                "data": data
+            })
+            break
+    }
+}

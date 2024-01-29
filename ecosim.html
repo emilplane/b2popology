@@ -18,6 +18,7 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
         <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
         <main id="main">
@@ -65,7 +66,48 @@
                         </div>
                     </div>
                     <div class="mainContent">
-                        
+                        <div class="simOutputContainer">
+                            <div id="chartContainer" style="height: 480px; width: 100%">
+                                
+                            </div>
+                        </div>
+                        <div class="configureSim">
+                            <div class="simSettingsContainer">
+                                <h4>Initial Game State</h4>
+                                <div class="simSettingsList">
+                                    <div class="simSetting">
+                                        <h6>Stall Factor</h6>
+                                        <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
+                                    </div>
+                                    
+                                    <div class="simSetting">
+                                        <h6>Initial Cash</h6>
+                                        <input id="cash" class="settingInput" type="number" min="0" step="25" value="0" />
+                                    </div>
+                                    <div class="simSetting">
+                                        <h6>Initial Eco</h6>
+                                        <input id="eco" class="settingInput" type="number" min="0" step="10" value="250" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="simSettingsContainer">
+                                <div class="simSettingsList">
+                                    
+                                </div>
+                            </div>
+                            <div class="simSettingsContainer">
+                                <div class="simSettingsList">
+                                    <div class="simSetting">
+                                        <h6>Start Round</h6>
+                                        <input id="gameRound" class="settingInput" type="number" min="10" step="1" value="10" />
+                                    </div>
+                                    <div class="simSetting">
+                                        <h6>End Round</h6>
+                                        <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="11" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
