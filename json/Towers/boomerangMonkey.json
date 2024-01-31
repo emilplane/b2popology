@@ -1,5 +1,6 @@
 {
     "name": "boomerangMonkey", "displayName": "Boomerang Monkey",
+    "aliases": ["boomer", "boomerange"],
 
     "validPlacements": ["land"],
     "range": 32, "size": ["radius", 6],
@@ -7,53 +8,53 @@
     "upgradeNames": {
         "top": [
             {
-                "name": "improvedRangs", "displayName": "Improved Rangs"
+                "name": "improvedRangs", "displayName": "Improved Rangs", "aliases": []
             },
             {
-                "name": "glaives", "displayName": "Glaives"
+                "name": "glaives", "displayName": "Glaives", "aliases": []
             },
             {
-                "name": "glaiveRicochet", "displayName": "Glaive Ricochet"
+                "name": "glaiveRicochet", "displayName": "Glaive Ricochet", "aliases": []
             },
             {
-                "name": "moarGlaives", "displayName": "M.O.A.R. Glaives"
+                "name": "moarGlaives", "displayName": "M.O.A.R. Glaives", "aliases": []
             },
             {
-                "name": "glaiveLord", "displayName": "Glaive Lord"
+                "name": "glaiveLord", "displayName": "Glaive Lord", "aliases": ["glord"]
             }
         ],
         "middle": [
             {
-                "name": "fasterThrowing", "displayName": "Faster Throwing"
+                "name": "fasterThrowing", "displayName": "Faster Throwing", "aliases": []
             },
             {
-                "name": "fasterRangs", "displayName": "Faster Rangs"
+                "name": "fasterRangs", "displayName": "Faster Rangs", "aliases": []
             },
             {
-                "name": "bionicBoomerang", "displayName": "Bionic Boomerang"
+                "name": "bionicBoomerang", "displayName": "Bionic Boomerang", "aliases": ["bioboomer"]
             },
             {
-                "name": "turboCharge", "displayName": "Turbo Charge"
+                "name": "turboCharge", "displayName": "Turbo Charge", "aliases": ["tcharge"]
             },
             {
-                "name": "permaCharge", "displayName": "Perma Charge"
+                "name": "permaCharge", "displayName": "Perma Charge", "aliases": ["pcharge"]
             }
         ],
         "bottom": [
             {
-                "name": "longRangeRangs", "displayName": "Long Range Rangs"
+                "name": "longRangeRangs", "displayName": "Long Range Rangs", "aliases": []
             },
             {
-                "name": "redHotRangs", "displayName": "Red Hot Rangs"
+                "name": "redHotRangs", "displayName": "Red Hot Rangs", "aliases": []
             },
             {
-                "name": "kylieBoomerang", "displayName": "Kylie Boomerang"
+                "name": "kylieBoomerang", "displayName": "Kylie Boomerang", "aliases": []
             },
             {
-                "name": "moabPress", "displayName": "MOAB Press"
+                "name": "moabPress", "displayName": "MOAB Press", "aliases": ["press"]
             },
             {
-                "name": "moabDomination", "displayName": "MOAB Domination"
+                "name": "moabDomination", "displayName": "MOAB Domination", "aliases": ["moab dom"]
             }
         ]
     },
