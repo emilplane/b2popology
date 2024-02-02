@@ -68,6 +68,21 @@ function runPopology(compare) {
             .statsContainer {
                 grid-template-columns: 1fr 1fr;
             }
+            .towerCostSection {
+                gap: 24px;
+            }
+            .costsContainer {
+                gap: 36px;
+                @media screen and (max-width: 1100px) {
+                    flex-direction: column;
+                    gap: 8px;
+                }
+            }
+            .costsContainer > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         `
     } else {
         compareID = ""
@@ -362,17 +377,19 @@ function runPopology(compare) {
                     </div>
                 </div>
             </div>
-            <div>
-                <h6>Total Cost</h6>
-                <h2 id="totalCost${compareID}"></h2>
-            </div>
-            <div>
-                <h6>Sellback</h6>
-                <h2 id="sellCost${compareID}"></h2>
-            </div>
-            <div>
-                <h6>Loss on Sell</h6>
-                <h2 class="sellLossText" id="sellLoss${compareID}"></h2>
+            <div class="costsContainer">
+                <div>
+                    <h6>Total Cost</h6>
+                    <h2 id="totalCost${compareID}"></h2>
+                </div>
+                <div>
+                    <h6>Sellback</h6>
+                    <h2 id="sellCost${compareID}"></h2>
+                </div>
+                <div>
+                    <h6>Loss on Sell</h6>
+                    <h2 class="sellLossText" id="sellLoss${compareID}"></h2>
+                </div>
             </div>
         `
 

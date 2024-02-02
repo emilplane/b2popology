@@ -1,11 +1,30 @@
 if (window.Worker) {
+    let statusLightClasses = document.getElementById("statusLight").classList
+    let statusText = document.getElementById("statusText")
+    let currentlySimulating = false
+
     document.querySelectorAll(".settingInput").forEach((input) => {
         input.addEventListener("change", () => {
             sendUpdatedValues()
+            loadingSim()
         })
     })
 
     const ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
+
+    function loadingSim() {
+        statusLightClasses.add("loadingLight")
+        statusLightClasses.remove("readyLight")
+        statusText.innerText = "Simulating"
+        currentlySimulating = true
+    }
+
+    function simulationFinished() {
+        statusLightClasses.remove("loadingLight")
+        statusLightClasses.add("readyLight")
+        statusText.innerText = ""
+        currentlySimulating = false
+    }
 
     function sendUpdatedValues() {
         const parameters = ["cash", "eco", "rounds", "gameRound", "targetRound"]
@@ -16,28 +35,15 @@ if (window.Worker) {
         config.ecoSend = "Grouped Blacks"
         console.log(config)
         ecosimWorker.postMessage({
-            // "config": config,
             "type": "requestData",
-            "config": config,
-            // "config": {
-                // "cash": 0, "eco": 1200, "ecoSend": "Grouped Blacks",
-                // "rounds": 0.1, "gameRound": 13.99, "targetRound": 17,
-                // "farms": [
-                //     {
-                //         "purchase": 7,
-                //         "crosspath": [3, 2, 0]
-                //     }
-                // ]
-            // }
+            "config": config
         })
     }
 
     ecosimWorker.onmessage = (e) => {
         switch (e.data.type) {
             case "initStatus": 
-                let statusLightClasses = document.getElementById("statusLight").classList
                 statusLightClasses.remove("loadingLight", "readyLight")
-                let statusText = document.getElementById("statusText")
                 statusText.innerText = ""
                 let loadingBar = document.getElementById("loadingBar")
                 switch (e.data.state) {
@@ -68,6 +74,7 @@ if (window.Worker) {
                             statusText.innerText = ""
                         }, 5000)
                         sendUpdatedValues()
+                        loadingSim()
                         break
                 }
                 break
@@ -121,6 +128,7 @@ if (window.Worker) {
                         }
                     }
                 });
+                simulationFinished()
                 break
         }
     }

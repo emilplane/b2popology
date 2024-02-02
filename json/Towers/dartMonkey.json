@@ -7,53 +7,53 @@
     "upgradeNames": {
         "top": [
             {
-                "name": "sharpShots", "displayName": "Sharp Shots"
+                "name": "sharpShots", "displayName": "Sharp Shots", "aliases": []
             },
             {
-                "name": "razorSharpShots", "displayName": "Razor Sharp Shots"
+                "name": "razorSharpShots", "displayName": "Razor Sharp Shots", "aliases": []
             },
             {
-                "name": "spikeOPult", "displayName": "Spike-o-pult"
+                "name": "spikeOPult", "displayName": "Spike-o-pult", "aliases": ["spult"]
             },
             {
-                "name": "juggernaut", "displayName": "Juggernaut"
+                "name": "juggernaut", "displayName": "Juggernaut", "aliases": []
             },
             {
-                "name": "ultraJuggernaut", "displayName": "Ultra Juggernaut"
+                "name": "ultraJuggernaut", "displayName": "Ultra Juggernaut", "aliases": ["ujugg", "ujug", "ultrajug", "ultrajugg"]
             }
         ],
         "middle": [
             {
-                "name": "quickShots", "displayName": "Quick Shots"
+                "name": "quickShots", "displayName": "Quick Shots", "aliases": []
             },
             {
-                "name": "veryQuickShots", "displayName": "Very Quick Shots"
+                "name": "veryQuickShots", "displayName": "Very Quick Shots", "aliases": []
             },
             {
-                "name": "tripleShot", "displayName": "Triple Shot"
+                "name": "tripleShot", "displayName": "Triple Shot", "aliases": []
             },
             {
-                "name": "superMonkeyFanClub", "displayName": "Super Monkey Fan Club"
+                "name": "superMonkeyFanClub", "displayName": "Super Monkey Fan Club", "aliases": ["smfc"]
             },
             {
-                "name": "plasmaMonkeyFanClub", "displayName": "Plasma Monkey Fan Club"
+                "name": "plasmaMonkeyFanClub", "displayName": "Plasma Monkey Fan Club", "aliases": ["pmfc"]
             }
         ],
         "bottom": [
             {
-                "name": "longRangeDarts", "displayName": "Long Range Darts"
+                "name": "longRangeDarts", "displayName": "Long Range Darts", "aliases": []
             },
             {
-                "name": "enhancedEyesight", "displayName": "Enhanced Eyesight"
+                "name": "enhancedEyesight", "displayName": "Enhanced Eyesight", "aliases": []
             },
             {
-                "name": "crossbow", "displayName": "Crossbow"
+                "name": "crossbow", "displayName": "Crossbow", "aliases": ["xbow"]
             },
             {
-                "name": "sharpShooter", "displayName": "Sharp Shooter"
+                "name": "sharpShooter", "displayName": "Sharp Shooter", "aliases": []
             },
             {
-                "name": "crossbowMaster", "displayName": "Crossbow Master"
+                "name": "crossbowMaster", "displayName": "Crossbow Master", "aliases": ["xbm"]
             }
         ]
     },

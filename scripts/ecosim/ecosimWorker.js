@@ -83,7 +83,9 @@ class b2sim {
             js.cashStates = game_state.cash_states
             js.ecoStates = game_state.eco_states
             js.timeStates = game_state.time_states
+            js.roundStarts = rounds.round_starts
         `);
+        console.log(roundStarts.toJs())
         function roundArray(array, places) {
             let arrayRounded = []
             for (let i in array) {
