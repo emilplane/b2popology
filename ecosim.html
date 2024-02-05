@@ -82,17 +82,22 @@
                                     
                                     <div class="simSetting">
                                         <h6>Initial Cash</h6>
-                                        <input id="cash" class="settingInput" type="number" min="0" step="25" value="0" />
+                                        <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
                                     </div>
                                     <div class="simSetting">
                                         <h6>Initial Eco</h6>
-                                        <input id="eco" class="settingInput" type="number" min="0" step="10" value="250" />
+                                        <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
                                     </div>
                                 </div>
                             </div>
                             <div class="simSettingsContainer">
                                 <div class="simSettingsList">
-                                    <h6>Sim currently locked to constant grouped black bloons</h6>
+                                    <div class="simSetting">
+                                        <h6>Starting Bloon Send</h6>
+                                        <select id="startingBloonSend" class="settingInput">
+                                            <option value="Grouped Blacks">Grouped Blacks</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="simSettingsContainer">
@@ -103,7 +108,7 @@
                                     </div>
                                     <div class="simSetting">
                                         <h6>End Round</h6>
-                                        <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="11" />
+                                        <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
                                     </div>
                                 </div>
                             </div>

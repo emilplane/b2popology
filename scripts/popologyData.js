@@ -4585,8 +4585,8 @@ const data = {
                                             <ul>
                                                 <li>affects ninjas in range</li>
                                                 <li>stacks up to 10 times</li>
-                                                <li>85%s, stacking multiplicatively</li>
-                                                <li>+15%p, stacking multiplicatively</li>
+                                                <li>85%s</li>
+                                                <li>+15%p, stacking additively</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -6500,7 +6500,7 @@ const data = {
                             </li>
                         </ul>`,
                         "3": `<ul>
-                            <li>gains rapid-shot ability (45s cooldown, 6.2s duration, 11.25s initial)
+                            <li>gains rapid-shot ability (45s cooldown, 6.2s duration, battle ready)
                                 <ul>
                                     <li>33.33%s</li>
                                     <li>duration increases 0.5s per level (2 + 0.5 level)</li>
@@ -7800,6 +7800,7 @@ const data = {
                                 <li>on contact: explosion
                                     <ul>
                                         <li>1d, 10p, 15r blast, explosion type</li>
+                                        <li>50% chance for normal type</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -8648,7 +8649,7 @@ const data = {
                         </li>
                         <li>party-time buffed
                             <ul>
-                                <li>now +3d, 15s duration, towers now aren't disabled after buff expires</li>
+                                <li>now +3d, 9s duration, towers now aren't disabled after buff expires</li>
                             </ul>
                         </li>
                     </ul>`,

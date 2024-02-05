@@ -12,17 +12,26 @@ if (window.Worker) {
 
     const ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
 
-    function loadingSim() {
+    function loadingSim(initializing) {
         statusLightClasses.add("loadingLight")
         statusLightClasses.remove("readyLight")
-        statusText.innerText = "Simulating"
+        if (!initializing) {
+            statusText.innerText = "Simulating"
+        }
         currentlySimulating = true
     }
 
-    function simulationFinished() {
+    function simulationFinished(initializing) {
         statusLightClasses.remove("loadingLight")
         statusLightClasses.add("readyLight")
-        statusText.innerText = ""
+        if (!initializing) {
+            statusText.innerText = ""
+        }
+        if (initializing) {
+            document.getElementById("startingBloonSend").addEventListener("change", () => {
+                sendUpdatedValues()
+            })
+        }
         currentlySimulating = false
     }
 
@@ -32,12 +41,33 @@ if (window.Worker) {
         for (let parameterIndex in parameters) {
             config[parameters[parameterIndex]] = Number(document.getElementById(parameters[parameterIndex]).value)
         }
-        config.ecoSend = "Grouped Blacks"
+        config.ecoSend = document.getElementById("startingBloonSend").value
         console.log(config)
         ecosimWorker.postMessage({
             "type": "requestData",
             "config": config
         })
+    }
+
+    function updateStartingEcoBloons(bloonSendData) {
+        let currentValue = document.getElementById("startingBloonSend").value
+        let startRound = document.getElementById("gameRound").value
+        
+        function eachBloonSend(value, key) {
+            let bloonSendStartRound = value.get("Start Round"); let bloonSendEndRound = value.get("End Round")
+            if (startRound >= bloonSendStartRound && startRound <= bloonSendEndRound) {
+                let optionElement = document.createElement("option")
+                if (currentValue == key) {optionElement.selected = true}
+                optionElement.value = key; optionElement.innerText = key
+                document.getElementById("startingBloonSend").insertAdjacentElement("beforeend", optionElement)
+            }
+        }
+        ecosimWorker.postMessage({
+            "type": "requestBloonSendData"
+        })
+        console.log(bloonSendData)
+        document.getElementById("startingBloonSend").innerHTML = ""
+        bloonSendData.forEach(eachBloonSend)
     }
 
     ecosimWorker.onmessage = (e) => {
@@ -62,7 +92,7 @@ if (window.Worker) {
                             case "importb2sim":     updateStatusElements(45, "Loading b2sim"); break
                             default:                updateStatusElements(0, "Loading"); break
                         }
-                        break;
+                        break
                     case "ready":
                         statusLightClasses.add("readyLight")
                         statusText.innerText = `Ready! Loaded in ${e.data.loadTime}s!`
@@ -74,27 +104,31 @@ if (window.Worker) {
                             statusText.innerText = ""
                         }, 5000)
                         sendUpdatedValues()
-                        loadingSim()
+                        loadingSim(true)
                         break
                 }
                 break
             case "returnData":
                 let data = e.data.data
                 console.log(data)
+                updateStartingEcoBloons(data.ecoSendInfo)
 
                 document.getElementById("chartContainer").innerHTML = `<canvas id="myChart" class="chartCanvas"></canvas>`
 
                 const chart = document.getElementById('myChart');
                 new Chart(chart, {
-                    type: 'line',
                     borderWidth: 2,
                     data: {
                         labels: data.timeStates,
                         datasets: [{
+                            type: 'line',
                             label: 'Amount of eco',
+                            yAxisID: "amountOfEco",
                             data: data.ecoStates
                         }, {
+                            type: 'line',
                             label: 'Amount of cash',
+                            yAxisID: "amountOfCash",
                             data: data.cashStates
                         }]
                     },
@@ -113,23 +147,75 @@ if (window.Worker) {
                             }
                         },
                         scales: {
+                            'amountOfEco': {
+                                type: 'linear',
+                                position: 'left',
+                                ticks: {
+                                    color: "#FFFFFF",
+                                    max: 1,
+                                    min: 0
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Amount of Eco',
+                                    color: '#FFFFFF',
+                                    font: {
+                                        family: 'Gabarito',
+                                        size: 16,
+                                        lineHeight: 1.2,
+                                    }
+                                }
+                            },
+                            'amountOfCash': {
+                                type: 'linear',
+                                position: 'right',
+                                ticks: {
+                                    color: "#FFFFFF",
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Amount of Cash',
+                                    color: '#FFFFFF',
+                                    font: {
+                                        family: 'Gabarito',
+                                        size: 16,
+                                        lineHeight: 1.2,
+                                    }
+                                }
+                            },
                             x: {
                                 ticks: {
                                     color: "#FFFFFF",
                                     maxTicksLimit: "10",
                                     maxRotation: 0
                                 }
-                            },
-                            y: {
-                                ticks: {
-                                    color: "#FFFFFF",
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        // console.log(context)
+                                        let label = context.dataset.label || '';
+                                        //yAxisID
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
                                 }
                             }
                         }
                     }
                 });
-                simulationFinished()
+                simulationFinished(e.data.initializing)
                 break
         }
     }
+} else {
+    document.getElementById("statusLight").classList.add("errorLight")
+    document.getElementById("statusText").innerText = "Error: Your browser does not support web workers"
 }

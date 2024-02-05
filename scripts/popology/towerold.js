@@ -369,7 +369,7 @@ class Tower {
     }
     
     static Path = class {
-        constructor(path) {
+        constructor(path) { 
             this.path = path
             this.highestPaths = []
 

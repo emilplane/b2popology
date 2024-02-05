@@ -3,11 +3,14 @@ importScripts("https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js");
 let pyodide;
 const start = new Date;
 let b2simLoadTime;
+let initializing = true;
 
 class b2sim {
     constructor(configData) {
         this.configData = configData
-        this.farms = this.configData.farms
+        if (this.configData != undefined) {
+            this.farms = this.configData.farms
+        }
     }
 
     static async initPython() {
@@ -28,15 +31,15 @@ class b2sim {
         messageLoadStatus("installb2sim")
         await micropip.install('b2sim');
         messageLoadStatus("importjs")
-        pyodide.runPython(`
+        await pyodide.runPython(`
+            import importlib.metadata
+            print("Version: " + importlib.metadata.version('b2sim'))
             import js
         `)
-
         messageLoadStatus("importb2sim")
         pyodide.runPython(`
-            import b2sim as b2
+            import b2sim.engine as b2
         `)
-
         b2simLoadTime = new Date-start
         console.log(`Loaded b2sim in ${(b2simLoadTime)/1000}s`)
         postMessage({
@@ -68,13 +71,15 @@ class b2sim {
             }
             game_state = b2.GameState(initial_state_game)
             game_state.fastForward(target_round = ${this.configData.targetRound})
+            js.ecoSendInfo = b2.eco_send_info
         `
     }
 
     async runSim() {
         await pyodide.runPython(this.startingPythonCode());
-    };
-
+        console.log(roundStarts.toJs())
+    }
+    
     async getData() {
         this.runSim();
         pyodide.runPython(`
@@ -84,8 +89,8 @@ class b2sim {
             js.ecoStates = game_state.eco_states
             js.timeStates = game_state.time_states
             js.roundStarts = rounds.round_starts
-        `);
-        console.log(roundStarts.toJs())
+        `)
+        ecoSendInfo = ecoSendInfo.toJs()
         function roundArray(array, places) {
             let arrayRounded = []
             for (let i in array) {
@@ -102,10 +107,19 @@ class b2sim {
         return {
             "cash": cash, "eco": eco,
             "cashStates": cashStates,
-            "ecoStates": ecoStates,
-            "timeStates": timeStates
+            "ecoStates": ecoStates,     
+            "timeStates": timeStates,
+            "ecoSendInfo": ecoSendInfo
         }
-    };
+    }
+
+    async getBloonSendData() {
+        pyodide.runPython(`
+            js.roundStarts = rounds.round_starts
+        `)
+        roundStarts = roundStarts.toJs()
+        return roundStarts
+    }
 };
 
 async function main() {
@@ -120,7 +134,17 @@ onmessage = async function (e) {
             let data = await sim.getData()
             postMessage({
                 "type": "returnData",
-                "data": data
+                "data": data,
+                "initializing": initializing
+            })
+            initializing = false
+            break
+        case "requestBloonSendData": 
+            let roundDataSim = new b2sim(undefined)
+            let roundData = await roundDataSim.getBloonSendData()
+            postMessage({
+                "type": "requestBloonSendData",
+                "data": roundData
             })
             break
     }

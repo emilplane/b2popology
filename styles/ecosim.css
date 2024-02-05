@@ -2,6 +2,7 @@
     --loadingColorMain: hsl(61, 100%, 50%);
     --loadingColorFaded: hsl(61, 71%, 35%);
     --statusReady: hsl(103, 81%, 49%);
+    --statusError: hsl(0, 81%, 49%);
 }
 
 .statsPageBody {
@@ -67,6 +68,10 @@
 
 .readyLight {
     background-color: var(--statusReady);
+}
+
+.errorLight {
+    background-color: var(--statusError);
 }
 
 .loadingBarContainer {
