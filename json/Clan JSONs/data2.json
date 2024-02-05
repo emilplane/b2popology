@@ -1,0 +1,1122 @@
+{
+    "error": null,
+    "success": true,
+    "body": [
+        {
+            "eventState": "WAR_RUNNING",
+            "rewardState": "TOO_EARLY",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d792fba01a13de430a71e421c45215b99d178a3d",
+                    "score": 270400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d88b9ff1f01045da4b5e70e324c8011fb9cf418b3e",
+                    "score": 141800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12de8dc0f8f74c14da425725e726cd501cbf9f188b39",
+                    "score": 77000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba1188d896f9f01d11dd190c7ab27e9e0c14bdc844de3c",
+                    "score": 58200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12dfd8c5aaf11045da4b5e70e324c8011fbb9b438e3e",
+                    "score": 45200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12ded8c7f9a71042de420c76b023c50614eacb148c6b",
+                    "score": 45200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d6c3fff649438a4a0c72e271c50515b99819df30",
+                    "score": 43600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba1188d8c3faa01e17dd4d0e20e124c40d4ee8ca17dd6a",
+                    "score": 31800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12dfdac5aaf11045da4b5e70e324c8011fbb9e17d16c",
+                    "score": 31600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba11d8d994fcac1e448a1a567ae372ce0319b596188e3e",
+                    "score": 27200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba118b8b94f8f41f42861a0a21e725cc5249ba9742dd6e",
+                    "score": 15400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d989c5abac4b1486490a26e673cb0249b8c815df6e",
+                    "score": 11600
+                }
+            ],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 39000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 38000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 33000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 31000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb1edf8ac4fef74e42d9190c7ae325cf021ebe9b188a6b",
+                    "score": 27000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 24000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 19000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 19000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 14000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 10000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 6400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 4000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 3000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 1000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941ddd8c3afa61f44874b5876e77ec8561ebe9a15db6b",
+                    "score": 1000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 1000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
+                    "score": 0
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d792fba01a13de430a71e421c45215b99d178a3d",
+                    "score": 361000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d79eaba518108a4d5a27b225ca0c4eb59c46db6e",
+                    "score": 167600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba118ddc91f0a14b17864b0927b774cd521aed9e16dc6a",
+                    "score": 112800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba108f8996adac11178e1a567bb7249a0d49bc9918da38",
+                    "score": 93600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12ded9c7f0a14b42894f0a77e077c5021deecd148c39",
+                    "score": 84000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba118f8ec0fff149408c195772e124c5011bbccc15d93c",
+                    "score": 79800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d8dc93f1ac1c14de4c5d72e774c5004bb5cd45896b",
+                    "score": 70800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d8df97fda44b1486490a26e673cb0249b99e16da6e",
+                    "score": 55600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba108fd693fda710438c1f5922ef249e044cea9f13da3c",
+                    "score": 34400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba11dada97faf11c14dd4a0c72e0269a041cbfca11893a",
+                    "score": 32400
+                }
+            ],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 46000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fba1e8cda94aca31f4b864b5a20ef729d054fb8cd18dd6b",
+                    "score": 30000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 30000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 25000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 22000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb1edf8ac4fef74e42d9190c7ae325cf021ebe9b188a6b",
+                    "score": 21000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 16000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb438c8d9ef8f61e4adc4b0e77e4749d0148e89642d069",
+                    "score": 9000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 6000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941d9df92fca34947db185a20e77eca004fb99717db6c",
+                    "score": 6000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 3000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 2000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 0
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 0
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d792fba01a13de430a71e421c45215b99d178a3d",
+                    "score": 338600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d98d9ffea64b1486490a26e673cb0249b89d41d93c",
+                    "score": 112600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d8dcc3f0f749438a4a0c72e271c50515bb9c458a6c",
+                    "score": 106400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba108f8996adac11178e1a567bb7249a0d49bc9918da38",
+                    "score": 103800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d98997f1f64b45874c5d7ae273c5524ce89f11df3f",
+                    "score": 103000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12dedd93aff01a11da1e5e75e526cb551fefcd42df30",
+                    "score": 99800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12dfd7c2ada51d108e495971e071c5061cbd99128e69",
+                    "score": 89400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12dfde97f0a21d14da190973e122cb5219ed9816d06e",
+                    "score": 55200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d7c7abf41841864f577bb076ca0749bacd418c6a",
+                    "score": 52400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d8d794faa149438a4a0c72e271c50515bbca19d13e",
+                    "score": 51600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d989c2aaa34b478a4a5d7be5239e011eb99645df3e",
+                    "score": 51400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12df8ec4fca11d14da190973e122cb5219ef9f11df30",
+                    "score": 22400
+                }
+            ],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 55000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 30000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 29000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 24200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 23000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 22000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941d9df92fca34947db185a20e77eca004fb99717db6c",
+                    "score": 13000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb1edf8ac4fef74e42d9190c7ae325cf021ebe9b188a6b",
+                    "score": 12000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 8000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fba1e8cda94aca31f4b864b5a20ef729d054fb8cd18dd6b",
+                    "score": 5000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 4000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 3400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 1000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb438c8d9ef8f61e4adc4b0e77e4749d0148e89642d069",
+                    "score": 1000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 1000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d691fca54a16dc4b5671e372cf551abbcf42db3e",
+                    "score": 793000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d7c3faf71e42881f5d76e021cb061cb59a13dd3d",
+                    "score": 740600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d792fba01a13de430a71e421c45215b99d178a3d",
+                    "score": 489200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d98ac5ffa41a14864b0b7ab424990415ea9914db6a",
+                    "score": 233800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d9d793f0ad4c43864e5677e1749e514ebc9814df69",
+                    "score": 216800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d88b9ff1f01045da4b5e70e324c8011fb9cf418b3e",
+                    "score": 181200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12ddd8c7ada310468f1d0d76ef769f521be99841d830",
+                    "score": 133800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d8de94afa31b4488185872b2729a0c4bb89f19d039",
+                    "score": 126600
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12d88cc2f0ac1a148e1a5a7bef76cc0519bdcf14d838",
+                    "score": 115800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba118edbc2ada74b458a1d5d20b026cc0648ea9c108e6a",
+                    "score": 101800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba118cdc93fea24a418c485c20e172cb0519e99f468c6d",
+                    "score": 85400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/guild/9fba12df8a96afa24c4386485920ee229d501eb9cd10d069",
+                    "score": 47200
+                }
+            ],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 42000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 39000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 39000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 38000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 37000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 34000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 26000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cba1382dec2adf14e16dd4d5f7be072cd0148bdcd44d93a",
+                    "score": 26000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 24000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 22000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb1edf8ac4fef74e42d9190c7ae325cf021ebe9b188a6b",
+                    "score": 19000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 16000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb41ded6c2fca6114a874c5b7be176c4071ae9cc41de6a",
+                    "score": 15000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 13200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 13000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 12000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 11000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fba1e8cda94aca31f4b864b5a20ef729d054fb8cd18dd6b",
+                    "score": 9000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 5000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 3000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb438c8d9ef8f61e4adc4b0e77e4749d0148e89642d069",
+                    "score": 2000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbd46dede92f0f04c4bdb1f5e72e271c4524cbf9b14df39",
+                    "score": 1000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 47000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 44000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cba1382dec2adf14e16dd4d5f7be072cd0148bdcd44d93a",
+                    "score": 44000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 40000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 37000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 37000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 35000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 34000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 33000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 25000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 14000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941ddd8c3afa61f44874b5876e77ec8561ebe9a15db6b",
+                    "score": 11000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbd46dede92f0f04c4bdb1f5e72e271c4524cbf9b14df39",
+                    "score": 9000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 8000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 5800
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 4000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ceb438c8d9ef8f61e4adc4b0e77e4749d0148e89642d069",
+                    "score": 3400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb41ded6c2fca6114a874c5b7be176c4071ae9cc41de6a",
+                    "score": 1000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbc46dd8e95ffa31e108c1a5921ef709e024ce99c15dc3e",
+                    "score": 1000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
+                    "score": 55000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 46000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cba1382dec2adf14e16dd4d5f7be072cd0148bdcd44d93a",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 42000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbd46dede92f0f04c4bdb1f5e72e271c4524cbf9b14df39",
+                    "score": 39000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 33000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 32000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 32000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 31000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 27000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 23000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 19000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 17000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941ddd8c3afa61f44874b5876e77ec8561ebe9a15db6b",
+                    "score": 16000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 15000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb41ded6c2fca6114a874c5b7be176c4071ae9cc41de6a",
+                    "score": 14000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 14000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 11000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe16898e95f1f34a448b490a27e575cc001aba9f16dd6b",
+                    "score": 8000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
+                    "score": 8000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbc46dd8e95ffa31e108c1a5921ef709e024ce99c15dc3e",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 1000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 4,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 55000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 47000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 47000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cba1382dec2adf14e16dd4d5f7be072cd0148bdcd44d93a",
+                    "score": 47000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbd46dede92f0f04c4bdb1f5e72e271c4524cbf9b14df39",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe16898e95f1f34a448b490a27e575cc001aba9f16dd6b",
+                    "score": 35000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 35000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 31000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 30000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 30000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 28200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 27000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 26000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 24000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
+                    "score": 20000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 15000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 14000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 13000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 11000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb41ded6c2fca6114a874c5b7be176c4071ae9cc41de6a",
+                    "score": 10000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbc46dd8e95ffa31e108c1a5921ef709e024ce99c15dc3e",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941ddd8c3afa61f44874b5876e77ec8561ebe9a15db6b",
+                    "score": 4000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 3,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 55000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe4683dfc2fff34b138b435b7be27f9a504cb8cd198d3f",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 47000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 43000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 42000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 41000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941ddd8c3afa61f44874b5876e77ec8561ebe9a15db6b",
+                    "score": 39000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
+                    "score": 39000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 38000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb14d9da97f0ad1b4bd94f0d75b273c90d4be99b12da6b",
+                    "score": 34000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 34000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 31000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 30400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 30000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbd46dede92f0f04c4bdb1f5e72e271c4524cbf9b14df39",
+                    "score": 27000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe16898e95f1f34a448b490a27e575cc001aba9f16dd6b",
+                    "score": 27000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 26000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 25000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 23000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cba1382dec2adf14e16dd4d5f7be072cd0148bdcd44d93a",
+                    "score": 22000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 7000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb41ded6c2fca6114a874c5b7be176c4071ae9cc41de6a",
+                    "score": 6000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": [
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb81fde8d91aaa51f428f4b5a70e073ca574ce89718de69",
+                    "score": 55000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe10d98c9ef8a211108d4a5a22e5769a0d1ab99a42d839",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec1289dbc5f0a44c4388495b77b425ce5619e99c16d16e",
+                    "score": 51000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf15828ac4fea011408f4a5771e771c8511bed9e43d13e",
+                    "score": 44000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe468dd99ffba41f45d94c0d7ae621c9051be8cc19df3b",
+                    "score": 41400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cba1382dec2adf14e16dd4d5f7be072cd0148bdcd44d93a",
+                    "score": 41000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec43da8990f8a61d408e425825b724c80d1fef9c41d831",
+                    "score": 40000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce9468e8b92f0a24a448b4b0b20e523ce514eeecd12d06c",
+                    "score": 39400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec168edfc4fba34d138a4d5c21e023ce5118be9e148a6c",
+                    "score": 38000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cb7168f8c90f1a14c16db4a5a26e175cc5019bfcf448e3d",
+                    "score": 38000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe4283d896fbac4a4a8f190922e272cc5714bc9c19dc30",
+                    "score": 37000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe138bdd94ada419148a480c74e576c95649ee9911de3a",
+                    "score": 34000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe45d88a9faaf04947dc48587be1749a0119bd9b108c3d",
+                    "score": 32000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea16888e90faa54c16de425825e77fcd054fb89912d030",
+                    "score": 32000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea418c8b9ffda41844864a5622e5729e0648b9cb158b31",
+                    "score": 31000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbd46dede92f0f04c4bdb1f5e72e271c4524cbf9b14df39",
+                    "score": 29400
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ce941ddd8c3afa61f44874b5876e77ec8561ebe9a15db6b",
+                    "score": 27000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbb16838e92fca31e418a1f0926ef25c45515e8cc138c6b",
+                    "score": 22000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cea4188d992aff04a14de495c76e57499041cee9d13dc3c",
+                    "score": 22000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe4683dfc2fff34b138b435b7be27f9a504cb8cd198d3f",
+                    "score": 21000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cee1e82d792fcf71041d9195c73b371cc051fbd96468d3d",
+                    "score": 17000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbe16898e95f1f34a448b490a27e575cc001aba9f16dd6b",
+                    "score": 12000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9cec42dd8b93fca64c4388495974b526c90649b99f428c3d",
+                    "score": 9000
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9fbf418a8997fef11c47de1d5a75e6759e0c4cbc9812d83b",
+                    "score": 7200
+                },
+                {
+                    "url": "https://data.ninjakiwi.com/battles2/users/9ced1188d892f9a11145d94c5c70b472cf071db5cb19db6e",
+                    "score": 7000
+                }
+            ]
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": []
+        },
+        {
+            "eventState": "WAR_FINISHED",
+            "rewardState": "FINISHED",
+            "tier": 5,
+            "nextMatchEpoch": 1707127200000,
+            "groupGuildLeaderboard": [],
+            "memberContributionsLeaderboard": []
+        }
+    ],
+    "model": {
+        "name": "_battles2guildwar",
+        "parameters": {
+            "eventState": {
+                "description": "The curent event state. Can be NOT_STARTED,WAR_WARMUP,WAR_RUNNING,WAR_GRACE_PERIOD,WAR_FINISHED",
+                "type": "string"
+            },
+            "rewardState": {
+                "description": "After a war, you can check if rewards have been given out. Can be TOO_EARLY,PROCESSING,FINISHED",
+                "type": "string"
+            },
+            "tier": {
+                "description": "The guild's tier in this event",
+                "type": "number"
+            },
+            "nextMatchEpoch": {
+                "description": "Unix epoch timestamp. This is when the daily matches will reset",
+                "type": "number"
+            },
+            "groupGuildLeaderboard": {
+                "description": "An array of guild scores for all the guilds in this group",
+                "type": "map[]"
+            },
+            "memberContributionsLeaderboard": {
+                "description": "An array of scores. This represents the medallions won be each player in the current guild. This can include members not currently in the guild if they won a match but left during the event",
+                "type": "map[]"
+            }
+        }
+    },
+    "next": null,
+    "prev": null
+}
