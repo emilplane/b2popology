@@ -171,3 +171,4 @@ let exampleTower = {
 let example = new Tower(exampleTower)
 
 console.log(example)
+console.log(example.getTowerData([1, 0, 0]))

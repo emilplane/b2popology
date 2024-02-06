@@ -4143,7 +4143,6 @@ const data = {
                                             <ul>
                                                 <li>104: zombloons position targetable manually</li>
                                                 <li>014: fireball +1d for every 200 graveyard</li>
-                                                <li>024: wall-of-fire +0d for every 200 graveyard</li>
                                             </ul>
                                         </li>
                                     </ul>
