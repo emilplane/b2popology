@@ -169,7 +169,7 @@ menuCloseButton.addEventListener('click', function() {
 //         "links": [
 //             {
 //                 "name": "Open",
-//                 "link": "https://nitjus7.github.io/BTD6-Central/index.html"
+//                 "link": "https://btd6central.com/"
 //             },
 //             {
 //                 "name": "Join the Discord",
