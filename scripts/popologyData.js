@@ -931,7 +931,7 @@ const data = {
                                         <li>crosspath
                                             <ul>
                                                 <li>410: +10p (55p)</li>
-                                                <li>420: +10p (60p)</li>
+                                                <li>420: +5p (60p)</li>
                                                 <li>401: +1d (4d)</li>
                                                 <li>402: +1d (5d)</li>
                                             </ul>
