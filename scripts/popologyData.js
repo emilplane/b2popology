@@ -6055,9 +6055,9 @@ const data = {
                                             <ul>
                                                 <li>+2d (3d), 240s lifetime
                                                     <ul>
-                                                        <li>total: 10 damage per spike
+                                                        <li>total: 15 damage per spike
                                                             <ul>
-                                                                <li>104: 20 damage per spike</li>
+                                                                <li>104: 30 damage per spike</li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -10180,7 +10180,7 @@ const data = {
                             <ul>
                                 <li>selected tower gains sacrifice buff
                                     <ul>
-                                        <li>0.2?%s for 4 seconds</li>
+                                        <li>20?%s for 4 seconds</li>
                                         <li>when buff ends
                                             <ul>
                                                 <li>tower is sold for $0</li>
