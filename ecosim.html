@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/style.css"/>
-        <link rel="stylesheet" href="styles/ecosim.css"/>
         <title>Eco Simulator</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +14,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+        
         <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="styles/ecosim.css"/>
     </head>
     <body>
         <main id="main">
@@ -92,12 +93,41 @@
                             </div>
                             <div class="simSettingsContainer">
                                 <div class="simSettingsList">
-                                    <div class="simSetting">
-                                        <h6>Starting Bloon Send</h6>
-                                        <select id="startingBloonSend" class="settingInput">
-                                            <option value="Grouped Blacks">Grouped Blacks</option>
-                                        </select>
+                                    <div class="farmTitleContainer">
+                                        <h4>Farms</h4>
+                                        <div class="farmMainButtonContainer">
+                                            <div class="material-symbols-outlined" id="addFarmButton">add</div>
+                                        </div>
                                     </div>
+                                    <div class="farmsContainer" id="farmsContainer">    
+                                    </div>
+                                    <template id="farmTemplate">
+                                        <div>
+                                            <h4 class="farmTemplateTitle">1</h4>
+                                            <div class="farmRight">
+                                                <div>
+                                                    <p class="smallText">Round</p>
+                                                    <div class="farmUpgradesContainer">
+                                                        <input class="farmTemplateStartRound" type="number" min="0" max="50" step="1" value="0" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p class="smallText">Upgrades</p>
+                                                    <div class="farmUpgradesContainer">
+                                                        <input class="farmTemplateUpgrade1" type="number" min="0" max="5" step="1" value="0" />
+                                                        <input class="farmTemplateUpgrade2" type="number" min="0" max="5" step="1" value="0" />
+                                                        <input class="farmTemplateUpgrade3" type="number" min="0" max="5" step="1" value="0" />
+                                                    </div>
+                                                </div>
+                                                <div class="farmButtonContainer">
+                                                    <div class="material-symbols-outlined">expand_less</div>
+                                                    <div class="material-symbols-outlined">expand_more</div>
+                                                    <div class="material-symbols-outlined">menu</div>
+                                                    <div class="material-symbols-outlined farmTemplateDeleteButton">delete</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
                                 </div>
                             </div>
                             <div class="simSettingsContainer">
@@ -110,6 +140,12 @@
                                         <h6>End Round</h6>
                                         <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
                                     </div>
+                                    <div class="simSetting">
+                                        <h6>Starting Bloon Send</h6>
+                                        <select id="startingBloonSend" class="settingInput">
+                                            <option value="Grouped Blacks">Grouped Blacks</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -117,6 +153,13 @@
                 </div>
             </div>
         </main>
+        <dialog class="propertiesDialog" id="propertiesDialog" open>
+            <div class="propertyDialogTopContainer">
+                <h2 id="propertyDialogName">Property Name</h2>
+                <div class="material-symbols-outlined propertyCloseButton">close</div>
+            </div>
+            <div class="propertyDividerLine"></div>
+        </dialog>
     </body>
     <script type="module" src="scripts/ecosim.js"></script>
 </html>

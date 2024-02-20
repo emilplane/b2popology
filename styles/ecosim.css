@@ -136,3 +136,95 @@
 input.settingInput {
     width: 100px;
 }
+
+.farmTitleContainer {
+    display: flex;
+}
+
+.farmMainButtonContainer {
+    margin-left: auto;
+}
+
+.farmMainButtonContainer > * {
+    height: 24px; aspect-ratio: 1;
+    background-color: var(--primaryDark2);
+    border-radius: 50px;
+    align-items: center; justify-content: center;
+    font-size: 24px;
+    display: flex;
+    cursor: pointer;
+}
+
+.farmButtonContainer {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+}
+
+.farmButtonContainer > * {
+    width: 28px; aspect-ratio: 1;
+    background-color: var(--primaryDark2b);
+    border-radius: 8px;
+    align-items: center; justify-content: center;
+    font-size: 22px;
+    display: flex;
+    cursor: pointer;
+}
+
+.farmsContainer {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.farmsContainer > * { 
+    background-color: var(--primaryDark2);
+    border-radius: 8px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.farmRight {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 12px;
+}
+
+.farmUpgradesContainer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.smallText {
+    text-transform: uppercase;
+    font-size: 9pt;
+}
+
+.propertiesDialog {
+    width: 400px;
+    height: 100vh;
+    border-radius: 16px 0 0 16px;
+    margin: 0 0 0 auto;
+    background-color: hsl(0, 0%, 10%, 97%);
+}
+
+.propertyDialogTopContainer {
+    display: flex;
+    align-items: center;
+}
+
+.propertyCloseButton {
+    margin-left: auto;
+    font-size: 28pt;
+
+    cursor: pointer;
+}
+
+.propertyDividerLine {
+    height: 2px;
+    background-color: var(--shade6);
+    margin-top: 4px;
+}

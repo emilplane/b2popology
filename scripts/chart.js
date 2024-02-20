@@ -1,0 +1,5 @@
+class Chart {
+    constructor(chartData) {
+        
+    }
+}

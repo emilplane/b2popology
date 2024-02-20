@@ -2,15 +2,62 @@ if (window.Worker) {
     let statusLightClasses = document.getElementById("statusLight").classList
     let statusText = document.getElementById("statusText")
     let currentlySimulating = false
+    let farmArray = [
+        {
+            "crosspath": [3, 2, 0],
+            "purchase": 14
+        },
+        {
+            "crosspath": [2, 0, 3],
+            "purchase": 16
+        },
+        {
+            "crosspath": [2, 0, 4],
+            "purchase": 20
+        }
+    ]
 
+    
     document.querySelectorAll(".settingInput").forEach((input) => {
         input.addEventListener("change", () => {
             sendUpdatedValues()
             loadingSim()
         })
     })
-
+    
     const ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
+    
+    function farmUpdate() {
+        updateFarmUI();
+        sendUpdatedValues();
+    }
+
+    function updateFarmUI() {
+        document.getElementById("farmsContainer").innerHTML = "";
+        let template = document.getElementById("farmTemplate");
+        for (let farmIndex in farmArray) {
+            let clone = template.content.cloneNode(true);
+            clone.querySelector(".farmTemplateTitle").innerText = Number(farmIndex)+1
+            for (let pathIndex in farmArray[farmIndex].crosspath) {
+                clone.querySelector(`.farmTemplateUpgrade${Number(pathIndex)+1}`).value = farmArray[farmIndex].crosspath[pathIndex]
+            }
+            clone.querySelector(`.farmTemplateStartRound`).value = farmArray[farmIndex].purchase
+            clone.querySelector(".farmTemplateDeleteButton").addEventListener("click", () => {
+                delete farmArray[farmIndex]
+                farmUpdate()
+            })
+            document.getElementById("farmsContainer").appendChild(clone);
+        }
+    }
+    updateFarmUI()
+
+    document.getElementById("addFarmButton").addEventListener("click", () => {
+        farmArray.push({
+            "crosspath": [0, 0, 0],
+            "purchase": 10
+        })
+        farmUpdate()
+    })
 
     function loadingSim(initializing) {
         statusLightClasses.add("loadingLight")
@@ -37,11 +84,13 @@ if (window.Worker) {
 
     function sendUpdatedValues() {
         const parameters = ["cash", "eco", "rounds", "gameRound", "targetRound"]
-        let config = {}
+        let config = {
+            "ecoSend": document.getElementById("startingBloonSend").value,
+            "farms": farmArray
+        }
         for (let parameterIndex in parameters) {
             config[parameters[parameterIndex]] = Number(document.getElementById(parameters[parameterIndex]).value)
         }
-        config.ecoSend = document.getElementById("startingBloonSend").value
         console.log(config)
         ecosimWorker.postMessage({
             "type": "requestData",
