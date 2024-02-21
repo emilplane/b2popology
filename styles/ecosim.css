@@ -209,6 +209,7 @@ input.settingInput {
     border-radius: 16px 0 0 16px;
     margin: 0 0 0 auto;
     background-color: hsl(0, 0%, 10%, 97%);
+    max-height: 999999px;
 }
 
 .propertyDialogTopContainer {

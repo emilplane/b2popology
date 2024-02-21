@@ -27,8 +27,10 @@ if (window.Worker) {
     
     const ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
     
-    function farmUpdate() {
-        updateFarmUI();
+    function farmUpdate(updateUI) {
+        if (updateUI) {
+            updateFarmUI();
+        }
         sendUpdatedValues();
     }
 
@@ -40,23 +42,31 @@ if (window.Worker) {
             clone.querySelector(".farmTemplateTitle").innerText = Number(farmIndex)+1
             for (let pathIndex in farmArray[farmIndex].crosspath) {
                 clone.querySelector(`.farmTemplateUpgrade${Number(pathIndex)+1}`).value = farmArray[farmIndex].crosspath[pathIndex]
+                clone.querySelector(`.farmTemplateUpgrade${Number(pathIndex)+1}`).addEventListener("change", (e) => {
+                    farmArray[farmIndex].crosspath[pathIndex] = e.target.value
+                    farmUpdate()
+                })
             }
             clone.querySelector(`.farmTemplateStartRound`).value = farmArray[farmIndex].purchase
+            clone.querySelector(`.farmTemplateStartRound`).addEventListener("change", (e) => {
+                farmArray[farmIndex].purchase = e.target.value
+                farmUpdate()
+            })
             clone.querySelector(".farmTemplateDeleteButton").addEventListener("click", () => {
                 delete farmArray[farmIndex]
-                farmUpdate()
+                farmUpdate(true)
             })
             document.getElementById("farmsContainer").appendChild(clone);
         }
     }
-    updateFarmUI()
+    updateFarmUI(true)
 
     document.getElementById("addFarmButton").addEventListener("click", () => {
         farmArray.push({
             "crosspath": [0, 0, 0],
             "purchase": 10
         })
-        farmUpdate()
+        farmUpdate(true)
     })
 
     function loadingSim(initializing) {
