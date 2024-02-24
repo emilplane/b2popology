@@ -162,6 +162,8 @@ function runPopology(compare) {
         urlParams.set('section', selectedCategory);
 	    urlParams.set('page', selectedPage);
         history.replaceState(null, null, "?" + urlParams.toString());
+
+        document.getElementById("towerCostContent" + compareID).classList.remove("showCost")
     }
 
     function initializeCategoryButtons() {

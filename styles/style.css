@@ -759,3 +759,19 @@ dialog {
         background: var(--primaryDark2);
     }
 }
+
+.tournamentSection {
+    background-color: hsl(32, 100%, 88%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(31, 100%, 16%);        
+    };
+}
+
+.tourneyInfoContainer {
+    display: flex;
+    align-items: end;
+}
+
+.tourneyInfoContainer > a {
+    margin-left: auto;
+}

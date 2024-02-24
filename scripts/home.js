@@ -12,6 +12,15 @@ menuCloseButton.addEventListener('click', function() {
     menuDialog.close(); 
 });
 
+const startDate = new Date('2024-02-25T18:00:00.000Z');
+const now = new Date();
+const diffTime = Math.abs(now - startDate);
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60)); 
+console.log(diffDays + " hours");
+
+document.getElementById("tourneyHours").innerText = diffDays
+document.getElementById("tourneyDate").innerText = startDate.toLocaleDateString() + " at " + startDate.toLocaleTimeString() + "!"
+
 // document.getElementById("eventSection").innerHTML =  `<h4 class="sectionStyle">Loading...</h4>`
 
 // let events = [
