@@ -767,11 +767,68 @@ dialog {
     };
 }
 
+.tournamentSectionLive {
+    background-color: hsl(268, 100%, 88%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(268, 100%, 16%);        
+    };
+}
+
 .tourneyInfoContainer {
     display: flex;
     align-items: end;
 }
 
-.tourneyInfoContainer > a {
+.tourneyInfoContainer > a, .tourneyInfoContainerLive > a {
     margin-left: auto;
+}
+
+.tourneyInfoContainerLive {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.liveTag {
+    /* background-color: red; */
+    animation: liveAnimation 4s infinite;
+    margin-left: 8px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+
+@keyframes liveAnimation {
+    0% {background-color: hsl(0, 100%, 50%)}
+    50% {background-color: hsl(0, 100%, 29%)}
+    100% {background-color: hsl(0, 100%, 50%)}
+}
+
+.liveTournamentButton {
+    display: flex;
+    align-items: center;
+    background-color: hsl(268, 100%, 80%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(268, 100%, 36%);        
+    };
+}
+
+.liveTournamentButton:hover {
+    background-color: hsl(268, 100%, 60%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(268, 100%, 50%);        
+    };
+}
+.liveTournamentButton > h6 {
+    transition: 0.5s;
+
+}
+.liveTournamentButton:hover > h6 {
+    color: var(--shade1);
+    transition: 0.5s;
+}
+
+.liveTournamentButton > span {
+    margin-bottom: 4px;
 }

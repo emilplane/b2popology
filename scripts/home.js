@@ -14,12 +14,35 @@ menuCloseButton.addEventListener('click', function() {
 
 const startDate = new Date('2024-02-25T18:00:00.000Z');
 const now = new Date();
-const diffTime = Math.abs(now - startDate);
+const diffTime = (now - startDate)*-1
+console.log(diffTime)
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60)); 
 console.log(diffDays + " hours");
 
 document.getElementById("tourneyHours").innerText = diffDays
 document.getElementById("tourneyDate").innerText = startDate.toLocaleDateString() + " at " + startDate.toLocaleTimeString() + "!"
+
+if (diffTime < 0) {
+    document.getElementById("tournamentSection").classList.remove("tournamentSection")
+    document.getElementById("tournamentSection").classList.add("tournamentSectionLive")
+    document.getElementById("tourneyInfoContainer").classList.remove("tourneyInfoContainer")
+    document.getElementById("tourneyInfoContainer").classList.add("tourneyInfoContainerLive")
+    document.getElementById("tourneyInfoContainer").innerHTML = `
+        <div>
+            <h4>Watch the Popology Weekly 9 tournament now!</h4>
+        </div>
+        
+        <a href="https://twitch.tv/b2popology" target="blank" class="buttonAnchor">
+            <button class="linkToExternalButton liveTournamentButton">
+                <h6>Watch now</h6>
+                <div class="liveTag">
+            <p>LIVE</p>
+        </div>
+                <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
+            </button>
+        </a>
+    `
+}
 
 // document.getElementById("eventSection").innerHTML =  `<h4 class="sectionStyle">Loading...</h4>`
 
