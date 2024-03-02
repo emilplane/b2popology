@@ -797,7 +797,7 @@ const data = {
                                         <li>crosspath
                                             <ul>
                                                 <li>103: cluster +6p (14p)</li>
-                                                <li>203: cluster +1d (2d), +10p (24p)</li>
+                                                <li>203: cluster +1d (2d), +6p (20p)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -1511,8 +1511,8 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>510: splat +1p (6)</li>
-                                                <li>520: splat +4p (10), +13r (25)</li>
+                                                <li>510: splat +1p (6p)</li>
+                                                <li>520: splat +4p (15?p), +13r (25)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -1541,7 +1541,7 @@ const data = {
                                                 <li>46r, 0.9s, applies glued status</li>
                                                 <li>on contact: splat
                                                     <ul>
-                                                        <li>5p, 13r blast, applies glued status</li>
+                                                        <li>9p, 13r blast, applies glued status</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -1684,7 +1684,7 @@ const data = {
                                         <li>crosspath
                                             <ul>
                                                 <li>205: glued 1d/2.0s, level 5</li>
-                                                <li>025: splat 10p</li>
+                                                <li>025: splat +5p (15p)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -1760,7 +1760,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "400 - Maim MOAB - $5,000",
+                                "name": "400 - x MOAB - $5,000",
                                 "content": `
                                     <ul>
                                         <li>bullet buffed
@@ -1768,7 +1768,7 @@ const data = {
                                                 <li>+10d (30d, 45cd)</li>
                                                 <li>applies stun
                                                     <ul>
-                                                        <li>2s duration for MOABs, BFBs 1s, DDTs 0.5s, ZOMGs 0.3s</li>
+                                                        <li>2s duration for MOABs, BFBs 1s, DDTs 0.5s, ZOMGs 0.45s</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -2030,7 +2030,7 @@ const data = {
                                             <ul>
                                                 <li>while submerged, dart is replaced by sonar
                                                     <ul>
-                                                        <li>&#8734;p, 52r zone, 1.5s passive, decamo</li>
+                                                        <li>100p, 52r zone, 1.5s passive, decamo</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -2039,6 +2039,8 @@ const data = {
                                             <ul>
                                                 <li>301: sonar 85%s (1.275s)</li>
                                                 <li>302: sonar 75%s (0.95625s)</li>
+                                                <li>310: sonar +20p (120p)</li>
+                                                <li>320: sonar +30p (150p)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -2050,7 +2052,7 @@ const data = {
                                     <ul>
                                         <li>sonar buffed
                                             <ul>
-                                                <li>0.4s</li>
+                                                <li>200p, 0.4s</li>
                                             </ul>
                                         </li>
                                         <li>while submerged, gains radioactive attack
@@ -2061,8 +2063,8 @@ const data = {
                                         <li>while submerged, abilities of water towers in range -15% cooldown time</li>
                                         <li>crosspath
                                             <ul>
-                                                <li>410: radioactive +5p (35p)</li>
-                                                <li>420: radioactive +1ld, +15p (50), normal type</li>
+                                                <li>410: sonar +40p (240p), radioactive +5p (35p)</li>
+                                                <li>420: sonar +60p (300p), radioactive +1ld, +15p (50), normal type</li>
                                                 <li>401: radioactive 75%s (0.3s)</li>
                                                 <li>402: radioactive 66.66%s (0.2s)</li>
                                             </ul>
@@ -2074,6 +2076,11 @@ const data = {
                                 "name": "500 - Energizer - $32,000",
                                 "content": `
                                     <ul>
+                                        <li>sonar buffed
+                                            <ul>
+                                                <li>1000p</li>
+                                            </ul>
+                                        </li>
                                         <li>radioactive buffed
                                             <ul>
                                                 <li>5d, 10cd (15cd), 1000p</li>
@@ -2082,6 +2089,12 @@ const data = {
                                         <li>while submerged, abilities of water towers in range have -50% cooldown time, all other abilities have -20% cooldown time</li>
                                         <li>hero in range gains +75% XP</li>
                                         <li>hero upgrade cost reduced by 42.8571%</li>
+                                        <li>crosspath
+                                            <ul>
+                                                <li>310: sonar +200p (1200p)</li>
+                                                <li>320: sonar +300p (1500p)</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 `
                             }
@@ -2931,7 +2944,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "300 - Razor Rotors - $1,900",
+                                "name": "300 - Razor Rotors - $1,800",
                                 "content": `
                                     <ul>
                                         <li>gains rotor attack
@@ -2953,7 +2966,7 @@ const data = {
                                         </li>
                                         <li>rotor buffed
                                             <ul>
-                                                <li>+2d (4d), +7p (20p)</li>
+                                                <li>+4d (6d), +7p (20p)</li>
                                             </ul>
                                         </li>
                                         <li>gains machinegun attack
@@ -2967,7 +2980,7 @@ const data = {
                                                 <li>moderate homing (? turn rate)</li>
                                                 <li>on contact: explosion
                                                     <ul>
-                                                        <li>2d, 3cd (5cd), 3md (5md), 40p, 25r blast, explosion type</li>
+                                                        <li>3d, 3cd (6cd), 3md (6md), 40p, 25r blast, explosion type</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -2985,9 +2998,9 @@ const data = {
                                 "content": `
                                     <ul>
                                         <li>dart buffed: +5d (6), +20p (23), energy type</li>
-                                        <li>rotor buffed: +4d (8d), +20p (40p)</li>
+                                        <li>rotor buffed: +4d (10d), +20p (40p)</li>
                                         <li>machinegun buffed: +4d (5d), +6p (15p), plasma type</li>
-                                        <li>rocket buffed: +12cd (17cd), +12md (17md)</li>
+                                        <li>rocket explosion buffed: +12cd (18cd), +12md (18md)</li>
                                     </ul>
                                 `
                             }
@@ -3110,12 +3123,12 @@ const data = {
                                         <li>gains shove attack
                                             <ul>
                                                 <li>1p</li>
-                                                <li>slows MOABs to - 33% normal speed, BFBs to 0%, DDTs and ZOMGs to 33%</li>
+                                                <li>slows MOABs to -33% normal speed, BFBs to 0%, ZOMGs to 50%, DDTs to 33%</li>
                                             </ul>
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>013: shove pushes back more (MOABs - 44%, BFBs - 11%, ZOMGs and DDTs 22%)</li>
+                                                <li>013: shove buffed (MOABs to -44%, BFBs to -11%,  ZOMGs to 33%, DDTs to 22%)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -3691,7 +3704,7 @@ const data = {
                                         <li>gains rocket-storm ability (40s cooldown, 8s duration, battle ready)
                                             <ul>
                                                 <li>1i, 10j, 0.5s passive</li>
-                                                <li>120&deg random spread</li>
+                                                <li>75&deg random spread</li>
                                                 <li>on contact: explosion
                                                     <ul>
                                                         <li>4d, 8p, 8r blast, normal type</li>
@@ -3701,7 +3714,7 @@ const data = {
                                         </li>
                                         <li>crosspath:
                                             <ul>
-                                                <li>140: rocket-storm ability random spread decreased to 48&deg </li>
+                                                <li>140: rocket-storm ability random spread reduced by 30% (52.5&deg)</li>
                                                 <li>042: rocket-storm ability explosion gets +3p (11p)</li>
                                             </ul>
                                         </li>
@@ -4543,8 +4556,8 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>502: caltrops 2.8s, caltrop 30d</li>
-                                                <li>510: 100% chance to send bloons back, 15% chance to send MOABs back 45-75 units</li>
+                                                <li>510: 100% chance to send bloons back; 50% chance to send MOABs, BFBs back 60-100 units</li>
+                                                <li>502: caltrops 2.8s, caltrop 25d</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4656,10 +4669,24 @@ const data = {
                                 "name": "003 - Flash Bomb - $1,800",
                                 "content": `
                                     <ul>
-                                        <li>every 4th shuriken replaced by flash-bomb
+                                        <li>every 3rd shuriken replaced by flash-bomb
                                             <ul>
                                                 <li>1d, 75p, 40r blast, normal type</li>
                                                 <li>applies stun (1.3s duration) to bloons</li>
+                                            </ul>
+                                        </li>
+                                        <li>crosspath
+                                            <ul>
+                                                <li>023: gains decamo-aura attack
+                                                    <ul>
+                                                        <li>flash-bomb buffed: gains decamo attack
+                                                            <ul>
+                                                                <li>75p, 65r, camo</li>
+                                                                <li>decamo</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -5363,7 +5390,7 @@ const data = {
                                         <li>gains primary-support
                                             <ul>
                                                 <li>affects primary towers in range</li>
-                                                <li>+1p, +10%r, increased projectile speed</li>
+                                                <li>+15%p (minimum +1p), +10%r, increased projectile speed</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -5375,7 +5402,7 @@ const data = {
                                     <ul>
                                         <li>primary-support buffed
                                             <ul>
-                                                <li>+5r, free tier 1 upgrades, -10% ability cooldown time</li>
+                                                <li>+5r, free tier 1 upgrades, -20% ability cooldown time</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -5388,7 +5415,7 @@ const data = {
                                         <li>+7r (55r)</li>
                                         <li>primary-support buffed
                                             <ul>
-                                                <li>+2p (+3 overall), free tier 2 upgrades, -10% ability cooldown time (-20% overall)</li>
+                                                <li>+30%p (minimum +3p), free tier 2 upgrades, additional -10% ability cooldown time (-30% overall)</li>
                                             </ul>
                                         </li>
                                         <li>gains catapult attack
@@ -5797,7 +5824,7 @@ const data = {
                         `,
                         "topPath": {
                             "1": {
-                                "name": "100 - Bigger Stacks - $700",
+                                "name": "100 - Bigger Stacks - $600",
                                 "content": `
                                     <ul>
                                         <li>spikes buffed
@@ -5880,7 +5907,7 @@ const data = {
                         },
                         "middlePath": {
                             "1": {
-                                "name": "010 - Faster Production - $600",
+                                "name": "010 - Faster Production - $500",
                                 "content": `
                                     <ul>
                                         <li>spikes buffed
@@ -5892,7 +5919,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "020 - Even Faster Production - $700",
+                                "name": "020 - Even Faster Production - $600",
                                 "content": `
                                     <ul>
                                         <li>spikes buffed
@@ -5924,7 +5951,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "040 - Spike Storm - $5,000",
+                                "name": "040 - Spike Storm - $5,200",
                                 "content": `
                                     <ul>
                                         <li>gains spike-storm ability (40s cooldown, 1s duration, battle ready)
@@ -6008,7 +6035,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "002 - Smart Spikes - $400",
+                                "name": "002 - Smart Spikes - $500",
                                 "content": `
                                     <ul>
                                         <li>gains extra targeting options
@@ -7307,7 +7334,7 @@ const data = {
                         "9": `<ul>
                         <li>spirit buffed
                             <ul>
-                                <li>+2d (4d)</li>
+                                <li>+3d (5d)</li>
                             </ul>
                         </li>
                         </ul>`,
@@ -7351,7 +7378,7 @@ const data = {
                         "14": `<ul>
                         <li>spirit buffed
                             <ul>
-                                <li>+2d (6d)</li>
+                                <li>+2d (7d)</li>
                             </ul>
                         </li>
                         </ul>`,
@@ -7498,7 +7525,7 @@ const data = {
                         "9": `<ul>
                         <li>spirit buffed
                             <ul>
-                                <li>+2d (4d)</li>
+                                <li>+3d (5d)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -7520,7 +7547,7 @@ const data = {
                         <li>wrath-of-the-sea buffed
                             <ul>
                                 <li>affects magic towers in range except druids</li>
-                                <li>+1p, +5r</li>
+                                <li>+2p, +5r</li>
                                 <li>note: stacks with the existing +1p for magic monkeys</li>
                                 <li>note: this means that druids still only get +1p</li>
                             </ul>
@@ -7543,7 +7570,7 @@ const data = {
                         "14": `<ul>
                         <li>spirit buffed
                             <ul>
-                                <li>+2d (6d)</li>
+                                <li>+4d (9d)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -7590,7 +7617,7 @@ const data = {
                         "19": `<ul>
                         <li>spirit buffed
                             <ul>
-                                <li>+4d (10d)</li>
+                                <li>+5d (14d)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -7673,7 +7700,7 @@ const data = {
                         <li>gains mortar-expert buff
                             <ul>
                                 <li>affects all mortars</li>
-                                <li>+10% blast radius</li>
+                                <li>+15% blast radius</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -7681,7 +7708,7 @@ const data = {
                         <li>gains bomb-expert buff
                             <ul>
                                 <li>affects bomb towers in range</li>
-                                <li>+25%p, +5%r</li>
+                                <li>+35%p, +5%r</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -7701,7 +7728,7 @@ const data = {
                         "10": `<ul>
                         <li>gains artillery-command ability (30s cooldown, battle ready)
                             <ul>
-                                <li>every bomb and mortar ability is immediately ready to use</li>
+                                <li>every bomb and mortar ability is activated without affecting their ability cooldowns</li>
                             </ul>
                         </li>
                     </ul>
@@ -7861,14 +7888,14 @@ const data = {
                         <li>gains mortar-expert buff
                             <ul>
                                 <li>affects all mortars</li>
-                                <li>+10% blast radius</li>
+                                <li>+15% blast radius</li>
                             </ul>
                         </li>
                     </ul>`,
                         "8": `<ul>
-                        <li>gains bomb-expert buff
+                        <li>gains biker-expert buff
                             <ul>
-                                <li>affects bomb towers in range</li>
+                                <li>affects all towers in range, excluding self</li>
                                 <li>+25%p, +5%r</li>
                             </ul>
                         </li>
@@ -8420,6 +8447,7 @@ const data = {
                         </li>
                     </ul>`,
                         "5": `<ul>
+                        <li>+$50 end of round income ($200)</li>
                         <li>gains bank-hack buff
                             <ul>
                                 <li>affects all x3+x farms</li>
@@ -8444,7 +8472,7 @@ const data = {
                         </li>
                     </ul>`,
                         "8": `<ul>
-                        <li>+$250 end of round income ($400)</li>
+                        <li>+$200 end of round income ($400)</li>
                     </ul>`,
                         "9": `<ul>
                         <li>bank-hack buffed
@@ -8556,6 +8584,7 @@ const data = {
                         </li>
                     </ul>`,
                         "5": `<ul>
+                        <li>+$38 end of round income ($150)</li>
                         <li>gains bank-hack buff
                             <ul>
                                 <li>affects all x3+x farms</li>
@@ -8580,7 +8609,7 @@ const data = {
                         </li>
                     </ul>`,
                         "8": `<ul>
-                        <li>+$188 end of round income ($300)</li>
+                        <li>+$150 end of round income ($300)</li>
                     </ul>`,
                         "9": `<ul>
                         <li>bank-hack buffed
@@ -9261,7 +9290,7 @@ const data = {
                         "19": `<ul>
                         <li>slam buffed
                             <ul>
-                                <li>+5d (10d)</li>
+                                <li>+10d (15d)</li>
                             </ul>
                         </li>
                         <li>aoe buffed
@@ -9274,7 +9303,7 @@ const data = {
                         <li>big-squeeze buffed:
                             <ul>
                                 <li>2.5s duration</li>
-                                <li>affects 4 eligible bloons instead of 1</li>
+                                <li>affects 6 eligible bloons instead of 1</li>
                                 <li>spends 2 seconds to pop the bloons instead of 4</li>
                             </ul>
                         </li>
@@ -9466,19 +9495,19 @@ const data = {
                         "19": `<ul>
                         <li>slam buffed
                             <ul>
-                                <li>+5d (10d)</li>
+                                <li>+10d (15d)</li>
                             </ul>
                         </li>
                         <li>aoe buffed
                             <ul>
-                                <li>+5d (9d)</li>
+                                <li>+11d (15d)</li>
                             </ul>
                         </li>
                     </ul>`,
                         "20": `<ul>
                         <li>crushing-ice buffed:
                             <ul>
-                                <li>affects 4 eligible bloons instead of 1</li>
+                                <li>affects 6 eligible bloons instead of 1</li>
                             </ul>
                         </li>
                         <li>freeze-bomb buffed
@@ -11590,7 +11619,7 @@ const data = {
             },
             "heliPilot": {
                 "base": 900,
-                "top": [600, 250, 1900, 19600, 45000],
+                "top": [600, 250, 1800, 19600, 45000],
                 "middle": [200, 350, 3200, 7500, 30000],
                 "bottom": [150, 250, 3700, 8500, 35000]
             },
@@ -11654,9 +11683,9 @@ const data = {
             },
             "spikeFactory": {
                 "base": 600,
-                "top": [700, 600, 2700, 9500, 110000],
-                "middle": [600, 700, 2500, 5000, 40000],
-                "bottom": [150, 400, 600, 3300, 30000]
+                "top": [600, 600, 2700, 9500, 110000],
+                "middle": [500, 600, 2500, 5200, 40000],
+                "bottom": [150, 500, 600, 3300, 30000]
             },
             "engineerMonkey": {
                 "base": 400,
