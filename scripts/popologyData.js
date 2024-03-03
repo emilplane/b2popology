@@ -6203,7 +6203,7 @@ const data = {
                     "data": {
                         "base": `
                             <ul>
-                                <li>$350 (1,000 MM)</li>
+                                <li>$400 (1,000 MM)</li>
                                 <li>size: 7 radius</li>
                                 <li>placeable on: land</li>
                                 <li>nail attack
