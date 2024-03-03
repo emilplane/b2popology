@@ -1,3 +1,7 @@
+li {
+    margin: 3px 0
+}
+
 .categoryButtonContainer {
     display: grid;
     grid-template-columns: repeat(7, 1fr);

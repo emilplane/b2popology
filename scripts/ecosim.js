@@ -1,3 +1,5 @@
+
+
 if (window.Worker) {
     let statusLightClasses = document.getElementById("statusLight").classList
     let statusText = document.getElementById("statusText")
@@ -174,7 +176,10 @@ if (window.Worker) {
 
                 document.getElementById("chartContainer").innerHTML = `<canvas id="myChart" class="chartCanvas"></canvas>`
 
+
+                
                 const chart = document.getElementById('myChart');
+                
                 new Chart(chart, {
                     borderWidth: 2,
                     data: {

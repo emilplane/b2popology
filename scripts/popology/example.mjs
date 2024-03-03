@@ -168,7 +168,9 @@ let exampleTower = {
     }
 }
 
-let example = new Tower(exampleTower)
+let preferences = {}
+
+let example = new Tower(exampleTower, preferences)
 
 console.log(example)
-console.log(example.getTowerData([1, 0, 0]))
+console.log(example.getTowerData([2, 0, 0]))

@@ -4277,6 +4277,90 @@ const data = {
                                                 <li>detailed sacrifice info is unconfirmed</li>
                                             </ul>
                                         </li>
+                                        <li>temple sacrifice on upgrade
+                                            <ul>
+                                                <li>sacrifices towers in range, not heroes
+                                                <li>on a sacrifice value threshold of $15,000 or greater of primary towers:
+                                                    <ul>
+                                                        <li>gains temple buff
+                                                            <ul>
+                                                                <li>90%s, +50% projectile speed</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>gains primary-blades attack
+                                                            <ul>
+                                                                <li>30d, 8j, 20p, 65r, 1.5s, normal type</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>on a sacrifice value threshold of $15,000 or greater of military towers:
+                                                    <ul>
+                                                        <li>gains temple buff
+                                                            <ul>
+                                                                <li>+1md, +5p, +30% increased projectile size</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>gains missile attack
+                                                            <ul>
+                                                                <li>&#8734;r, 1.0s</li>
+                                                                <li>can only affect blimps</li>
+                                                                <li>on contact: explosion
+                                                                    <ul>
+                                                                        <li>1d, +99md (100md), 50p, 18r blast, explosion type</li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>on a sacrifice value threshold of $15,000 or greater of magic towers:
+                                                    <ul>
+                                                        <li>gains magic-tornado attack
+                                                            <ul>
+                                                                <li>12d, 50p, 10s</li>
+                                                                <li>MOABs use 9p, BFBs 24p, ZOMGs and DDTs 49p</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>gains arcane-temple attack
+                                                            <ul>
+                                                                <li>35d, 6j, 7p, 7s, normal type, moderate homing</li>
+                                                                <li>can see past obstacles</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>on a sacrifice value threshold of $15,000 or greater of support towers:
+                                                    <ul>
+                                                        <li>gains temple buff
+                                                            <ul>
+                                                                <li>+1md, +5% discount, grants camo</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>crate attack
+                                                            <ul>
+                                                                <li>$4,000 income, produced 3 time per round</li>
+                                                                <li>15s lifetime</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>gains temple-permaspikes attack
+                                                            <ul>
+                                                                <li>30s</li>
+                                                                <li>places temple-permaspike randomly on track
+                                                                    <ul>
+                                                                        <li>10d, 250p, 300s lifespan, camo
+                                                                            <ul>
+                                                                                <li>total: 2500 damage per spike</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 `
                             },
@@ -4291,7 +4375,7 @@ const data = {
                                             </ul>
                                         </li>
                                         <li>when upgraded, absorbs all towers in range for even more power (same $15,000 threshold as the Sun Temple)</li>
-                                        <li>detailed sacrifice info is unconfirmed</li>
+                                        <li>detailed sacrifice info is undocumented</li>
                                     </ul>
                                 `
                             }
