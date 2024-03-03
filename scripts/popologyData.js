@@ -4269,14 +4269,6 @@ const data = {
                                                 <li>can see past obstacles</li>
                                             </ul>
                                         </li>
-                                        <li>when upgraded
-                                            <ul>
-                                                <li>all towers in range are sacrificed to the temple</li>
-                                                <li>gains buffs and additional attacks from up to three categories of tower, depending on the total cost (amount spent) of the sacrifices</li>
-                                                <li>note: $15,000 spent in each category gives the max temple</li>
-                                                <li>detailed sacrifice info is unconfirmed</li>
-                                            </ul>
-                                        </li>
                                         <li>temple sacrifice on upgrade
                                             <ul>
                                                 <li>sacrifices towers in range, not heroes
