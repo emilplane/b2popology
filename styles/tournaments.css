@@ -1,0 +1,129 @@
+.tournamentsTitleSection {
+    position: relative;
+}
+
+.tournamentsTitleContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tournamentsText, .tournamentsSubheader {
+    color: var(--shade1);
+}
+
+.tournamentsSubheader {
+    text-shadow: 2px 2px 2px rgba(0, 199, 133, 1);
+}
+
+.greenShadow {
+    text-shadow: 2px 2px 4px rgba(0, 199, 133, 1);
+}
+
+.tournamentsText {
+    text-shadow: 4px 4px 4px rgba(0, 199, 133, 1);
+    font-size: 48pt;
+}
+
+.allTournamentsContainer {
+    margin-top: 16-px;
+}
+
+.allTournamentsHeader {
+    display: flex;
+    align-items: center;
+
+}
+
+.allTournamentsSortingDropdownContainer {
+    margin-left: auto;
+}
+
+.allTournaments {
+    display: grid;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.allTournaments > * {
+    height: 150px;
+    /* background-color: var(--primaryDark3); */
+    border-radius: 8px;
+}
+
+.tournamentCard {
+    position: relative;
+}
+
+.tournamentCardContent {
+    position: absolute;
+    top: 0;
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tournamentButtonContainer {
+    margin-top: auto;
+    display: flex;
+    gap: 12px;
+    height: 30px;
+}
+
+.challongeButton {
+    background-color: rgb(255, 204, 109);
+    color: var(--shade8)
+}
+.challongeButton:hover {
+    background-color: rgb(255, 165, 0);
+}
+@media (prefers-color-scheme: dark) {
+    .challongeButton {
+        background-color: rgb(255, 165, 0);
+        color: var(--shade8)
+    }
+    .challongeButton:hover {
+        background-color: rgb(255, 204, 109);
+    }
+}
+
+.youtubeButton {
+    background-color: rgb(255, 174, 174);
+    color: var(--shade8)
+}
+.youtubeButton:hover {
+    background-color: rgb(255, 128, 128);
+}
+@media (prefers-color-scheme: dark) {
+    .youtubeButton {
+        background-color: rgb(255, 0, 0);
+        color: var(--shade1)
+    }
+    .youtubeButton:hover {
+        background-color: rgb(255, 79, 79);
+    }
+}
+
+.twitchButton {
+    background-color: rgb(210, 161, 255);
+    color: var(--shade8)
+}
+.twitchButton:hover {
+    background-color: rgb(186, 130, 238);
+}
+@media (prefers-color-scheme: dark) {
+    .twitchButton {
+        background-color: rgb(138, 43, 226);
+        color: var(--shade1)
+    }
+    .twitchButton:hover {
+        background-color: rgb(164, 92, 231);
+    }
+}

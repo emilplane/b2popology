@@ -1265,7 +1265,7 @@ const data = {
                                         <li>gains slow attack
                                             <ul>
                                                 <li>35r</li>
-                                                <li>60% slow, cannot affect white/lead/blimp</li>
+                                                <li>60% slow, cannot affect blimp</li>
                                                 <li>land towers are placeable on any water in range</li>
                                             </ul>
                                         </li>
@@ -1760,7 +1760,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "400 - x MOAB - $5,000",
+                                "name": "400 - Maim MOAB - $5,000",
                                 "content": `
                                     <ul>
                                         <li>bullet buffed
@@ -4086,6 +4086,11 @@ const data = {
                                                         <li>note: technically a separate tower so is not affected by buffs to the original wizard</li>
                                                     </ul>
                                                 </li>
+                                                <li>[BUG] on detransformation
+                                                    <ul>
+                                                        <li>spawns too many phoenix subtowers when affected by an attack cooldown buff</li>
+                                                    </ul>
+                                                </li>
                                                 <li>while active, doubles all phoenix subtowers' damage</li>
                                             </ul>
                                         </li>
@@ -4326,7 +4331,8 @@ const data = {
                                                     <ul>
                                                         <li>gains temple buff
                                                             <ul>
-                                                                <li>+1md, +5% discount, grants camo</li>
+                                                                <li>+5% discount, grants camo</li>
+                                                                <li>[BUG] +1d</li>
                                                             </ul>
                                                         </li>
                                                         <li>crate attack
@@ -4363,7 +4369,7 @@ const data = {
                                         <li>size: 25 radius</li>
                                         <li>sunblast buffed
                                             <ul>
-                                                <li>+24d (30d)</li>
+                                                <li>+21d (30d)</li>
                                             </ul>
                                         </li>
                                         <li>when upgraded, absorbs all towers in range for even more power (same $15,000 threshold as the Sun Temple)</li>
@@ -4709,7 +4715,11 @@ const data = {
                                                     </ul>
                                                 </li>
                                                 <li>currently sabotaged blimps will remain slowed for the duration of the ability if this ninja is sold</li>
-                                                <li>25%d to new blimps entering the map</li>
+                                                <li>25%d to new blimps entering the map
+                                                    <ul>
+                                                        <li>does not contribute to tower pop count</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -7374,6 +7384,7 @@ const data = {
                                     <ul>
                                         <li>28r, 25% slow / 12.5% for blimps, 15s lifetime</li>
                                         <li>note: camos can be slowed, but the totem does not allow camos in range to be targeted by subs</li>
+                                        <li>[BUG] may sell itself immediately after placing on some maps</li>
                                     </ul>
                                 </li>
                             </ul>

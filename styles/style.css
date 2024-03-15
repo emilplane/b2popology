@@ -171,9 +171,9 @@ td {
     font-weight: 400;
 }
 
-.luckiestGuyShadow {
+.textShadow {
     @media (prefers-color-scheme: dark) {
-        text-shadow: 0 0 16px var(--shade8);
+        text-shadow: 2px 2px 8px var(--shade8);
     }
 }
 
