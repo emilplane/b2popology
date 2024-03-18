@@ -77,7 +77,6 @@ class b2sim {
 
     async runSim() {
         await pyodide.runPython(this.startingPythonCode());
-        console.log(roundStarts.toJs())
     }
     
     async getData() {
@@ -104,12 +103,14 @@ class b2sim {
         ecoStates = roundArray(ecoStates, 1)
         timeStates = timeStates.toJs()
         timeStates = roundArray(timeStates, 3)
+        roundStarts = roundStarts.toJs()
         return {
             "cash": cash, "eco": eco,
             "cashStates": cashStates,
             "ecoStates": ecoStates,     
             "timeStates": timeStates,
-            "ecoSendInfo": ecoSendInfo
+            "ecoSendInfo": ecoSendInfo,
+            "roundStarts": roundStarts
         }
     }
 

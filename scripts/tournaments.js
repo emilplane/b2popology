@@ -126,6 +126,21 @@ let tournaments = [
         "links": {
             "bracket": "https://challonge.com/popologyweekly9",
         }
+    },
+    {
+        "name": "Popology Weekly 9",
+        "type": "weekly",
+        "date": "2023-3-17",
+        "backgroundImage": {
+            "name": "rbc.png",
+            "yPosition": "60%"
+        },
+        "textColor": "shade1",
+        "links": {
+            "bracket": "https://challonge.com/popologyweekly10",
+            "youtubeVod": "https://youtu.be/29XJfbP7avI",
+            "twitchHighlight": "https://www.twitch.tv/videos/2094139216"
+        }
     }
 ]
 

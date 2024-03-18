@@ -1,5 +1,3 @@
-
-
 if (window.Worker) {
     let statusLightClasses = document.getElementById("statusLight").classList
     let statusText = document.getElementById("statusText")
@@ -172,14 +170,40 @@ if (window.Worker) {
             case "returnData":
                 let data = e.data.data
                 console.log(data)
+                let verticalReferenceMarkers = {
+                    // test1: {
+                    //     type: 'line',
+                    //     xMin: 179,
+                    //     xMax: 179,
+                    //     borderColor: 'rgb(255, 99, 132)',
+                    //     borderWidth: 2,
+                    //     xScaleID: "x"
+                    // }
+                }
+
                 updateStartingEcoBloons(data.ecoSendInfo)
-
-                document.getElementById("chartContainer").innerHTML = `<canvas id="myChart" class="chartCanvas"></canvas>`
-
-
+                document.getElementById("chartContainer").innerHTML = `<canvas id="myChart" class="chartCanvas">`
                 
+                for (let roundStartIndex in data.roundStarts) {
+                    if (
+                        data.timeStates[0] < data.roundStarts[roundStartIndex] && 
+                        data.timeStates[data.timeStates.length-1] >= data.roundStarts[roundStartIndex]
+                    ) {
+                        verticalReferenceMarkers["round"+roundStartIndex] = {
+                            scaleID: "x",
+                            type: 'line',
+                            value: data.roundStarts[roundStartIndex],
+                            endValue: data.roundStarts[roundStartIndex],
+                            borderColor: 'rgb(255, 255, 255)',
+                            borderWidth: 2,
+                        }
+                    }
+                }
+
+                console.log(verticalReferenceMarkers)
+
+
                 const chart = document.getElementById('myChart');
-                
                 new Chart(chart, {
                     borderWidth: 2,
                     data: {
@@ -188,11 +212,13 @@ if (window.Worker) {
                             type: 'line',
                             label: 'Amount of eco',
                             yAxisID: "amountOfEco",
+                            xAxisID: "x",
                             data: data.ecoStates
                         }, {
                             type: 'line',
                             label: 'Amount of cash',
                             yAxisID: "amountOfCash",
+                            xAxisID: "x",
                             data: data.cashStates
                         }]
                     },
@@ -201,17 +227,9 @@ if (window.Worker) {
                         responsive: true,
                         maintainAspectRatio: false,
                         pointRadius: 0,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    font: {
-                                        fanily: "Gabarito"
-                                    }
-                                }
-                            }
-                        },
+                        pointHitRadius: 6,
                         scales: {
-                            'amountOfEco': {
+                            "amountOfEco": {
                                 type: 'linear',
                                 position: 'left',
                                 ticks: {
@@ -230,7 +248,7 @@ if (window.Worker) {
                                     }
                                 }
                             },
-                            'amountOfCash': {
+                            "amountOfCash": {
                                 type: 'linear',
                                 position: 'right',
                                 ticks: {
@@ -247,7 +265,7 @@ if (window.Worker) {
                                     }
                                 }
                             },
-                            x: {
+                            "x": {
                                 ticks: {
                                     color: "#FFFFFF",
                                     maxTicksLimit: "10",
@@ -271,6 +289,16 @@ if (window.Worker) {
                                         return label;
                                     }
                                 }
+                            },
+                            legend: {
+                                labels: {
+                                    font: {
+                                        fanily: "Gabarito"
+                                    }
+                                }
+                            },
+                            annotation: {
+                                annotations: verticalReferenceMarkers
                             }
                         }
                     }
