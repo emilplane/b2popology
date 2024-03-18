@@ -145,10 +145,10 @@ if (window.Worker) {
                         }
                         switch (e.data.loadingState) {
                             case "pyodideInit":     updateStatusElements(5, "Loading pyodide and python libraries"); break
-                            case "micropip":        updateStatusElements(15, "Loading pyodide and python libraries"); break
-                            case "installb2sim":    updateStatusElements(20, "Loading pyodide and python libraries"); break
-                            case "importjs":        updateStatusElements(35, "Loading pyodide and python libraries"); break
-                            case "importb2sim":     updateStatusElements(45, "Loading b2sim"); break
+                            case "micropip":        updateStatusElements(50, "Loading pyodide and python libraries"); break
+                            case "installb2sim":    updateStatusElements(60, "Loading pyodide and python libraries"); break
+                            case "importjs":        updateStatusElements(70, "Loading pyodide and python libraries"); break
+                            case "importb2sim":     updateStatusElements(80, "Loading b2sim"); break
                             default:                updateStatusElements(0, "Loading"); break
                         }
                         break
@@ -168,32 +168,33 @@ if (window.Worker) {
                 }
                 break
             case "returnData":
-                let data = e.data.data
-                console.log(data)
-                let verticalReferenceMarkers = {
-                    // test1: {
-                    //     type: 'line',
-                    //     xMin: 179,
-                    //     xMax: 179,
-                    //     borderColor: 'rgb(255, 99, 132)',
-                    //     borderWidth: 2,
-                    //     xScaleID: "x"
-                    // }
+                let data = e.data.data; data.convertedTimeStates = []; data.convertedEcoStates = []; data.convertedCashStates = []
+                for (let timeStateIndex in data.timeStates) {
+                    if (Number(data.timeStates[timeStateIndex].toFixed(1)) == data.timeStates[timeStateIndex]) {
+                        data.convertedTimeStates.push(data.timeStates[timeStateIndex])
+                        data.convertedEcoStates.push(data.ecoStates[timeStateIndex])
+                        data.convertedCashStates.push(data.cashStates[timeStateIndex])
+                    }
                 }
+                console.log(data)
+
+                let verticalReferenceMarkers = {}
 
                 updateStartingEcoBloons(data.ecoSendInfo)
                 document.getElementById("chartContainer").innerHTML = `<canvas id="myChart" class="chartCanvas">`
                 
                 for (let roundStartIndex in data.roundStarts) {
                     if (
-                        data.timeStates[0] < data.roundStarts[roundStartIndex] && 
-                        data.timeStates[data.timeStates.length-1] >= data.roundStarts[roundStartIndex]
+                        data.convertedTimeStates[0] < Number(data.roundStarts[roundStartIndex].toFixed(1)) && 
+                        data.convertedTimeStates[data.convertedTimeStates.length-1] >= Number(data.roundStarts[roundStartIndex].toFixed(1))
                     ) {
+                        console.log(Number(data.roundStarts[roundStartIndex].toFixed(1)))
+                        let xAxisIndex = data.convertedTimeStates.findIndex((e) => e == Number(data.roundStarts[roundStartIndex].toFixed(1)))
                         verticalReferenceMarkers["round"+roundStartIndex] = {
                             scaleID: "x",
                             type: 'line',
-                            value: data.roundStarts[roundStartIndex],
-                            endValue: data.roundStarts[roundStartIndex],
+                            value: xAxisIndex,
+                            endValue: xAxisIndex,
                             borderColor: 'rgb(255, 255, 255)',
                             borderWidth: 2,
                         }
@@ -202,24 +203,23 @@ if (window.Worker) {
 
                 console.log(verticalReferenceMarkers)
 
-
                 const chart = document.getElementById('myChart');
                 new Chart(chart, {
                     borderWidth: 2,
                     data: {
-                        labels: data.timeStates,
+                        labels: data.convertedTimeStates,
                         datasets: [{
                             type: 'line',
                             label: 'Amount of eco',
                             yAxisID: "amountOfEco",
                             xAxisID: "x",
-                            data: data.ecoStates
+                            data: data.convertedEcoStates
                         }, {
                             type: 'line',
                             label: 'Amount of cash',
                             yAxisID: "amountOfCash",
                             xAxisID: "x",
-                            data: data.cashStates
+                            data: data.convertedCashStates
                         }]
                     },
                     options: {
