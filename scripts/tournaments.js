@@ -128,7 +128,7 @@ let tournaments = [
         }
     },
     {
-        "name": "Popology Weekly 9",
+        "name": "Popology Weekly 10",
         "type": "weekly",
         "date": "2023-3-17",
         "backgroundImage": {
