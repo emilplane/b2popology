@@ -20,7 +20,9 @@ const buffData = {
     "monkeyCommerce1": ["discount", 0.05, 3],
     "monkeyCommerce2": ["discount", 0.05, 3],
     "monkeyCommerce3": ["discount", 0.05, 3],
-    "bananaSalvage": ["sellback", 0.1, 5]
+    "bananaSalvage": ["sellback", 0.1, 5],
+    "sunTemple": ["discount", 0.05, 5],
+    "trueSunGod": ["discount", 0.05, 5],
 }
 
 let compareOn = false
@@ -113,7 +115,6 @@ function runPopology(compare) {
     `
 
     document.getElementById("towerCostButton" + compareID).addEventListener("click", () => {
-        console.log("j")
         if (document.getElementById("towerCostContent" + compareID).classList.contains("showCost")) {
             document.getElementById("towerCostContent" + compareID).classList.remove("showCost")
         } else {
@@ -146,7 +147,9 @@ function runPopology(compare) {
             "monkeyBusiness": false,
             "monkeyCommerce1": false,
             "monkeyCommerce2": false,
-            "monkeyCommerce3": false
+            "monkeyCommerce3": false,
+            "sunTemple": false,
+            "trueSunGod": false
         }
 
         if (
@@ -155,7 +158,6 @@ function runPopology(compare) {
             selectedCategory == "accolades")
         ) {
             selectedPathForPrice = [0, 0, 0]
-           
             updateCost()
         }
 
@@ -402,6 +404,8 @@ function runPopology(compare) {
                 case "monkeyBusiness":  src = "/media/Tower Portraits/monkeyVillage/bottom/monkeyVillage001Portrait.webp";      break
                 case "monkeyCommerce1": case "monkeyCommerce2": case "monkeyCommerce3": 
                                         src = "/media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp";      break
+                case "sunTemple":       src = "/media/Tower Portraits/superMonkey/top/superMonkey400Portrait.webp";             break
+                case "trueSunGod":      src = "/media/Tower Portraits/superMonkey/top/superMonkey500Portrait.webp";             break
             }
             let required = false
             for (let requiredBuff in forceBuffs) {
@@ -459,6 +463,16 @@ function runPopology(compare) {
                                 priceBuffs.monkeyCommerce2 = true
                             }
                             break
+                        case "sunTemple": 
+                            if (!priceBuffs[buff]) {
+                                priceBuffs.trueSunGod = false
+                            }
+                            break
+                        case "trueSunGod": 
+                            if (priceBuffs[buff]) {
+                                priceBuffs.sunTemple = true
+                            }
+                            break
                     }
                     updateCost()
                 })
@@ -482,6 +496,7 @@ function runPopology(compare) {
                 button.classList.remove("selected")
                 button.addEventListener("click", () => {
                     selectedPathForPrice[pathIndex] = i
+                    ensureValidPath(pathIndex)
                     updateCost()
                 })
             }
@@ -532,6 +547,29 @@ function runPopology(compare) {
 
     initializeCategoryButtons()
     update()
+
+    function ensureValidPath(selectedPathIndex) {
+        let path = selectedPathForPrice; let selectedValue = selectedPathForPrice[selectedPathIndex]
+        if (selectedValue > 2) {
+            for (let pathIndex in path) {
+                if (pathIndex != selectedPathIndex && path[pathIndex] > 2) {
+                    selectedPathForPrice[pathIndex] = 2
+                }
+            }
+        }
+        let numberOfUpgradedPathsBesidesSelectedPath = 0
+        let highestValueUnselectedPath;
+        for (let pathIndex in path) {
+            if (pathIndex != selectedPathIndex) {
+                highestValueUnselectedPath = pathIndex
+                if (path[pathIndex] != 0) {numberOfUpgradedPathsBesidesSelectedPath++}
+            }
+        }
+        if (numberOfUpgradedPathsBesidesSelectedPath >= 2) {
+            selectedPathForPrice[highestValueUnselectedPath] = 0
+        }
+        console.log(highestValueUnselectedPath)
+    }
 }
 
 export function numberPathNameConversion(data) {
