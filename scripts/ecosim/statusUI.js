@@ -17,7 +17,7 @@ export default class StatusUI {
     }
 
     /**
-     * Sets the state of the status light
+     * Sets the state of the status light.
      * @param {string} state - ready, loading, error, or clear
      */
     static setLight(state) {
@@ -38,9 +38,10 @@ export default class StatusUI {
 
     /**
      * 
-     * @param {number} percentage - The percentage completion to apply to the loading bar
+     * @param {number} percentage - Percentage completed from 0 to 1
      */
     static setLoadingBar(percentage){
+        loadingBar.style.width = `${loadingBarWidth}%`
         return this // to perform another action
     }
 }

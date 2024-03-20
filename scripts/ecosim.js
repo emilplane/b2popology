@@ -1,5 +1,5 @@
-import chartConfig from "./ecosim/chartConfig"
-import StatusUI from "./ecosim/statusUI"
+import chartConfig from "./ecosim/chartConfig.js"
+import StatusUI from "./ecosim/statusUI.js"
 
 // Displays any unhandled exceptions to the user
 window.onerror = (message, source, lineno, colno, error) => {
@@ -19,7 +19,7 @@ if (window.Worker) {
 function runSim() {
     let farmArray = []
 
-    initEventLiisteners()
+    addEventLiisteners()
     
     // Creates a web worker to run the simulator
     const ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
@@ -62,6 +62,10 @@ function runSim() {
     }
     updateFarmUI()
 
+    /**
+     * Indicates that the simulator is running.
+     * @param {boolean} initializing - Whether the simulator is initializing
+     */
     function loadingSim(initializing) {
         StatusUI.setLight("loading")
         if (!initializing) {
@@ -69,18 +73,20 @@ function runSim() {
         }
     }
 
+    /**
+     * Indicates that the simulator is running.
+     * @param {boolean} initializing - Whether the simulator was initializing
+     */
     function simulationFinished(initializing) {
         StatusUI.setLight("ready")
         if (!initializing) {
             StatusUI.clearText()
         }
-        if (initializing) {
-            document.getElementById("startingBloonSend").addEventListener("change", () => {
-                sendUpdatedValues()
-            })
-        }
     }
 
+    /**
+     * Sends updated values to the simulator's web worker; called when a simulator parameter is changed
+     */
     function sendUpdatedValues() {
         const parameters = ["cash", "eco", "rounds", "gameRound", "targetRound"]
         let config = {
@@ -97,6 +103,10 @@ function runSim() {
         })
     }
 
+    /**
+     * Updates the dropdown of bloon sends for the starting round.
+     * @param {object} bloonSendData - Data from the simulator about which bloons are available on which rounds.
+     */
     function updateStartingEcoBloons(bloonSendData) {
         let currentValue = document.getElementById("startingBloonSend").value
         let startRound = document.getElementById("gameRound").value
@@ -110,9 +120,6 @@ function runSim() {
                 document.getElementById("startingBloonSend").insertAdjacentElement("beforeend", optionElement)
             }
         }
-        ecosimWorker.postMessage({
-            "type": "requestBloonSendData"
-        })
         console.log(bloonSendData)
         document.getElementById("startingBloonSend").innerHTML = ""
         bloonSendData.forEach(eachBloonSend)
@@ -191,7 +198,7 @@ function runSim() {
                 
                 const chart = document.getElementById('myChart');
 
-                new Chart (chart, chartConfig(data, verticalReferenceMarkers))
+                new Chart(chart, chartConfig(data, verticalReferenceMarkers))
 
                 simulationFinished(e.data.initializing)
                 break
@@ -201,8 +208,8 @@ function runSim() {
     /**
      * Adds event listeners for UI elements.
      */
-    function initEventLiisteners() {
-        // Applies an event listener for UI elements that change simulator parameters
+    function addEventLiisteners() {
+        // Adds an event listener for UI elements that change simulator parameters
         document.querySelectorAll(".settingInput").forEach((input) => {
             input.addEventListener("change", () => {
                 sendUpdatedValues()
@@ -210,7 +217,7 @@ function runSim() {
             })
         })
     
-        // Applies an event listener to add a new farm to the array of farms
+        // Adds an event listener to add a new farm to the array of farms
         document.getElementById("addFarmButton").addEventListener("click", () => {
             farmArray.push({
                 "crosspath": [0, 0, 0],
