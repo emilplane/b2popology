@@ -1,47 +1,40 @@
 import chartConfig from "./ecosim/chartConfig"
+import StatusUI from "./ecosim/statusUI"
+
+// Displays any unhandled exceptions to the user
+window.onerror = (message, source, lineno, colno, error) => {
+    StatusUI.setLight("error").setText(error)
+};
+
+// Logic to detect whether the browser supports web workers
 if (window.Worker) {
     runSim()
 } else {
-    document.getElementById("statusLight").classList.add("errorLight")
-    document.getElementById("statusText").innerText = "Error: Your browser does not support web workers"
+    throw "Error: Web workers are not supported on this browser"
 }
 
+/**
+ * Main function to run the simulator
+ */
 function runSim() {
-    let statusLightClasses = document.getElementById("statusLight").classList
-    let statusText = document.getElementById("statusText")
-    let currentlySimulating = false
-    let farmArray = [
-        {
-            "crosspath": [3, 2, 0],
-            "purchase": 14
-        },
-        {
-            "crosspath": [2, 0, 3],
-            "purchase": 16
-        },
-        {
-            "crosspath": [2, 0, 4],
-            "purchase": 20
-        }
-    ]
+    let farmArray = []
 
+    initEventLiisteners()
     
-    document.querySelectorAll(".settingInput").forEach((input) => {
-        input.addEventListener("change", () => {
-            sendUpdatedValues()
-            loadingSim()
-        })
-    })
-    
+    // Creates a web worker to run the simulator
     const ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
     
-    function farmUpdate(updateUI) {
-        if (updateUI) {
-            updateFarmUI();
-        }
+    /**
+     * Called when the list of farms is updated.
+     */
+    function farmUpdate() {
+        updateFarmUI();
         sendUpdatedValues();
     }
 
+    /**
+     * Updates the UI for the list of farms.
+     */
     function updateFarmUI() {
         document.getElementById("farmsContainer").innerHTML = "";
         let template = document.getElementById("farmTemplate");
@@ -62,42 +55,30 @@ function runSim() {
             })
             clone.querySelector(".farmTemplateDeleteButton").addEventListener("click", () => {
                 delete farmArray[farmIndex]
-                farmUpdate(true)
+                farmUpdate()
             })
             document.getElementById("farmsContainer").appendChild(clone);
         }
     }
-    updateFarmUI(true)
-
-    document.getElementById("addFarmButton").addEventListener("click", () => {
-        farmArray.push({
-            "crosspath": [0, 0, 0],
-            "purchase": 10
-        })
-        farmUpdate(true)
-    })
+    updateFarmUI()
 
     function loadingSim(initializing) {
-        statusLightClasses.add("loadingLight")
-        statusLightClasses.remove("readyLight")
+        StatusUI.setLight("loading")
         if (!initializing) {
-            statusText.innerText = "Simulating"
+            StatusUI.setText("Simulating")
         }
-        currentlySimulating = true
     }
 
     function simulationFinished(initializing) {
-        statusLightClasses.remove("loadingLight")
-        statusLightClasses.add("readyLight")
+        StatusUI.setLight("ready")
         if (!initializing) {
-            statusText.innerText = ""
+            StatusUI.clearText()
         }
         if (initializing) {
             document.getElementById("startingBloonSend").addEventListener("change", () => {
                 sendUpdatedValues()
             })
         }
-        currentlySimulating = false
     }
 
     function sendUpdatedValues() {
@@ -140,16 +121,15 @@ function runSim() {
     ecosimWorker.onmessage = (e) => {
         switch (e.data.type) {
             case "initStatus": 
-                statusLightClasses.remove("loadingLight", "readyLight")
-                statusText.innerText = ""
+                StatusUI.clearText().setLight("clear")
                 let loadingBar = document.getElementById("loadingBar")
                 switch (e.data.state) {
                     case "loading": 
                         loadingBar.style.opacity = "1"
-                        statusLightClasses.add("loadingLight")
+                        StatusUI.setLight("loading")
                         function updateStatusElements(loadingBarWidth, loadingText) {
                             loadingBar.style.width = `${loadingBarWidth}%`
-                            statusText.innerText = loadingText
+                            StatusUI.setText(loadingText)
                         }
                         switch (e.data.loadingState) {
                             case "pyodideInit":     updateStatusElements(5, "Loading pyodide and python libraries"); break
@@ -161,14 +141,14 @@ function runSim() {
                         }
                         break
                     case "ready":
-                        statusLightClasses.add("readyLight")
-                        statusText.innerText = `Ready! Loaded in ${e.data.loadTime}s!`
+                        StatusUI.setText(`Ready! Loaded in ${e.data.loadTime}s!`)
+                            .setLight("ready")
                         loadingBar.style.width = `${100}%`
                         setTimeout(() => {
                             loadingBar.style.opacity = "0"
                         }, 500);
                         setTimeout(() => {
-                            statusText.innerText = ""
+                            StatusUI.clearText()
                         }, 5000)
                         sendUpdatedValues()
                         loadingSim(true)
@@ -197,7 +177,6 @@ function runSim() {
                         data.convertedTimeStates[0] < Number(data.roundStarts[roundStartIndex].toFixed(1)) && 
                         data.convertedTimeStates[data.convertedTimeStates.length-1] >= Number(data.roundStarts[roundStartIndex].toFixed(1))
                     ) {
-                        console.log(Number(data.roundStarts[roundStartIndex].toFixed(1)))
                         let xAxisIndex = data.convertedTimeStates.findIndex((e) => e == Number(data.roundStarts[roundStartIndex].toFixed(1)))
                         verticalReferenceMarkers["round"+roundStartIndex] = {
                             scaleID: "x",
@@ -217,5 +196,27 @@ function runSim() {
                 simulationFinished(e.data.initializing)
                 break
         }
+    }
+
+    /**
+     * Adds event listeners for UI elements.
+     */
+    function initEventLiisteners() {
+        // Applies an event listener for UI elements that change simulator parameters
+        document.querySelectorAll(".settingInput").forEach((input) => {
+            input.addEventListener("change", () => {
+                sendUpdatedValues()
+                loadingSim()
+            })
+        })
+    
+        // Applies an event listener to add a new farm to the array of farms
+        document.getElementById("addFarmButton").addEventListener("click", () => {
+            farmArray.push({
+                "crosspath": [0, 0, 0],
+                "purchase": 10
+            })
+            farmUpdate()
+        })
     }
 }
