@@ -1,4 +1,4 @@
-import runSim from "./ecosim/runSim.js"
+import RunSim from "./ecosim/runSim.js"
 import StatusUI from "./ecosim/statusUI.js"
 
 // Displays any unhandled exceptions to the user
@@ -8,11 +8,7 @@ window.onerror = (message, source, lineno, colno, error) => {
 
 // Logic to detect whether the browser supports web workers
 if (window.Worker) {
-    runSim()
+    new RunSim()
 } else {
     throw "Error: Web workers are not supported on this browser"
 }
-
-/**
- * Main function to run the simulator
- */

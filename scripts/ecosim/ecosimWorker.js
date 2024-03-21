@@ -6,6 +6,11 @@ let b2simLoadTime;
 let initializing = true;
 
 class b2sim {
+    /**
+     * Creates a new b2sim
+     * @constructor
+     * @param {*} configData - parameters for the simulator
+     */
     constructor(configData) {
         this.configData = configData
         if (this.configData != undefined) {
@@ -13,6 +18,9 @@ class b2sim {
         }
     }
 
+    /**
+     * Initializes pyodide, micropip, b2sim, etc, etc, etc
+     */
     static async initPython() {
         function messageLoadStatus(status) {
             postMessage({
@@ -49,10 +57,17 @@ class b2sim {
         })
     }
 
-    startingPythonCode() {
+    /**
+     * Returns Python code to run the simulator
+     * @returns generated code
+     */
+    pythonCode() {
         let farms = [];
         for (let farmNumber in this.farms) {
-            farms.push(`b2.initFarm(purchase_time=rounds.getTimeFromRound(${this.farms[farmNumber].purchase}), upgrades=(${this.farms[farmNumber].crosspath}))`)
+            farms.push(`b2.initFarm(purchase_time=rounds.getTimeFromRound(
+                ${this.farms[farmNumber].purchase}),
+                upgrades=(${this.farms[farmNumber].crosspath}))`
+            )
         }
         return `
             class simData:
@@ -75,10 +90,17 @@ class b2sim {
         `
     }
 
+    /**
+     * Runs the simulator with Pyodide
+     */
     async runSim() {
-        await pyodide.runPython(this.startingPythonCode());
+        await pyodide.runPython(this.pythonCode());
     }
     
+    /**
+     * Gets simulator data
+     * @returns simulator data
+     */
     async getData() {
         this.runSim();
         pyodide.runPython(`
@@ -114,6 +136,10 @@ class b2sim {
         }
     }
 
+    /**
+     * Gets bloon send data
+     * @returns bloon send data
+     */
     async getBloonSendData() {
         pyodide.runPython(`
             js.roundStarts = rounds.round_starts
