@@ -1,10 +1,19 @@
+// The element for the loading bar
+const loadingBar = document.getElementById("loadingBar")
+
+// The element for the status text
+const statusText = document.getElementById("statusText")
+
+// The element for the status light
+const statusLight = document.getElementById("statusLight")
+
 export default class StatusUI {
     /**
      * Sets the text next to the status light
      * @param {string} text - the text to set
      */
     static setText(text) {
-        document.getElementById("statusText").innerText = text
+        statusText.innerText = text
         return this // to perform another action
     }
 
@@ -12,7 +21,7 @@ export default class StatusUI {
      * Clears the status text next to the status light
      */
     static clearText() {
-        document.getElementById("statusText").innerText = ""
+        statusText.innerText = ""
         return this // to perform another action
     }
 
@@ -21,15 +30,7 @@ export default class StatusUI {
      * @param {string} state - ready, loading, error, or clear
      */
     static setLight(state) {
-        document.getElementById("statusLight").classList.remove("readyLight", "loadingLight", "errorLight")
-        if (state == "ready" || state == "loading" || state == "error") {
-            document.getElementById("statusLight").classList.add(state + "Light")
-        }
-        return this // to perform another action
-    }
-
-    static setLightForLoadingBar(state) {
-        document.getElementById("statusLight").classList.remove("readyLight", "loadingLight", "errorLight")
+        statusLight.classList.remove("readyLight", "loadingLight", "errorLight")
         if (state == "ready" || state == "loading" || state == "error") {
             document.getElementById("statusLight").classList.add(state + "Light")
         }
@@ -40,8 +41,15 @@ export default class StatusUI {
      * 
      * @param {number} percentage - Percentage completed from 0 to 1
      */
-    static setLoadingBar(percentage){
-        loadingBar.style.width = `${loadingBarWidth}%`
+    static setLoadingBar(percentage) {
+        loadingBar.style.width = `${percentage*100}%`
+        if (percentage == 1) {
+            this.setLight("ready")
+            setTimeout(() => {loadingBar.style.opacity = "0"}, 500);
+        } else {
+            this.setLight("loading")
+            loadingBar.style.opacity = "1"
+        }
         return this // to perform another action
     }
 }
