@@ -185,7 +185,7 @@ export default class RunSim {
             let clone = template.content.cloneNode(true);
             clone.querySelector(".farmTemplateTitle").innerText = Number(farmIndex)+1
             for (let pathIndex in this.farmArray[farmIndex].crosspath) {
-                path = clone.querySelector(`.farmTemplateUpgrade${Number(pathIndex)+1}`)
+                let path = clone.querySelector(`.farmTemplateUpgrade${Number(pathIndex)+1}`)
                 path.value = this.farmArray[farmIndex].crosspath[pathIndex]
                 path.addEventListener("change", (e) => {
                     this.farmArray[farmIndex].crosspath[pathIndex] = e.target.value
