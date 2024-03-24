@@ -5,8 +5,13 @@
     --statusError: hsl(0, 81%, 49%);
 }
 
-.statsPageBody {
+.ecosimMain {
+    margin: 0 auto;
+    padding: 16px;
     max-width: 2000px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    height: calc(100vh - 32px);
 }
 
 .menuBar {
@@ -90,12 +95,20 @@
 .mainContent {
     margin-top: 8px;
     gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
 }
 
 .configureSim {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+    border-radius: 8px;
+    padding: 8px;
 }
 
 .simOutputContainer {
@@ -105,16 +118,7 @@
     };
     border-radius: 8px;
     padding: 8px;
-    height: 500px;
-}
-
-.simSettingsContainer {
-    background-color: var(--primaryLight3);
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--primaryDark3);
-    };
-    border-radius: 8px;
-    padding: 8px;
+    /* height: 500px; */
 }
 
 .simSettingsList {

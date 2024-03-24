@@ -159,3 +159,28 @@
 .versionHistoryPush {
     margin-left: auto;
 }
+
+.contentInfoSection {
+    background-color: var(--primaryLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryDark3);
+    };
+}
+
+.linksSection {
+    display: grid;
+    gap: 8px;
+}
+
+.simpleWithButton {
+    display: flex;
+    align-items: end;
+}
+
+.simpleWithButton > a {
+    margin-left: 8px;
+}
+
+.simpleWithButton > :nth-child(2){
+    margin-left: auto;
+}

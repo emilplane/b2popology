@@ -111,7 +111,7 @@ class b2sim {
             js.timeStates = game_state.time_states
             js.roundStarts = rounds.round_starts
         `)
-        ecoSendInfo = ecoSendInfo.toJs()
+        ecoSendInfo = ecoSendInfo.toJs()            
         function roundArray(array, places) {
             let arrayRounded = []
             for (let i in array) {
@@ -137,7 +137,7 @@ class b2sim {
     }
 
     /**
-     * Gets bloon send data
+     * Gets bloon send data.
      * @returns bloon send data
      */
     async getBloonSendData() {

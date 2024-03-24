@@ -788,8 +788,6 @@ dialog {
     align-items: center;
 }
 
-
-
 .liveTag {
     /* background-color: red; */
     animation: liveAnimation 4s infinite;
