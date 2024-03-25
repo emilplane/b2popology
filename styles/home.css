@@ -174,6 +174,7 @@
 
 .simpleWithButton {
     display: flex;
+    flex-wrap: wrap;
     align-items: end;
 }
 
@@ -182,5 +183,9 @@
 }
 
 .simpleWithButton > :nth-child(2){
+    display: flex;
     margin-left: auto;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
 }

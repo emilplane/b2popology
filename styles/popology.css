@@ -28,7 +28,7 @@ li {
     cursor: pointer;
     transition: 0.5s;
 }
-.categoryButton:hover {
+.categoryButton:hover, .categoryButtonSelected {
     background-color: var(--shade4);
     @media (prefers-color-scheme: dark) {
         background-color: var(--shade5);
@@ -54,7 +54,9 @@ li {
 }
 .primaryCategoryButton:hover, .primaryCategoryButtonSelected {
     background-color: var(--primaryTower5);
-    color: var(--shade8);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primaryTower5);
+    }
 }
 
 .militaryCategoryButton {
@@ -65,6 +67,9 @@ li {
 }
 .militaryCategoryButton:hover, .militaryCategoryButtonSelected {
     background-color: var(--militaryTower5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--militaryTower5);
+    }
 }
 
 .magicCategoryButton {
@@ -75,6 +80,9 @@ li {
 }
 .magicCategoryButton:hover, .magicCategoryButtonSelected {
     background-color: var(--magicTower5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--magicTower5);
+    }
 }
 
 .supportCategoryButton {
@@ -85,6 +93,9 @@ li {
 }
 .supportCategoryButton:hover, .supportCategoryButtonSelected {
     background-color: var(--supportTower5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--supportTower5);
+    }
 }
 
 .heroesCategoryButton {
@@ -93,8 +104,26 @@ li {
         background-color: var(--heroes7);
     }
 }
-.heroesCategoryButton:hover, .heroesCategoryButtonSelected{
+.heroesCategoryButton:hover, .heroesCategoryButtonSelected {
     background-color: var(--heroes5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--heroes5);
+    }
+}
+
+.magicCategoryButton:hover > *, .magicCategoryButtonSelected > *
+{
+    color: var(--shade1)
+}
+
+.primaryCategoryButton:hover > *, .primaryCategoryButtonSelected > *,
+.militaryCategoryButton:hover > *, .militaryCategoryButtonSelected > *,
+.supportCategoryButton:hover > *, .supportCategoryButtonSelected > *,
+.heroesCategoryButton:hover > *, .heroesCategoryButtonSelected > * 
+{
+    @media (prefers-color-scheme: dark) {
+        color: var(--shade8)
+    }
 }
 
 .pageButtonContainer {
@@ -128,7 +157,6 @@ li {
 }
 .pageButton:hover > .pageButtonImage, .pageButtonSelected > .pageButtonImage {
     height: 85px;
-    transition: 0.5s
 }
 
 .contentSubconatiner {

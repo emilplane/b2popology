@@ -211,7 +211,6 @@ function runPopology(compare) {
                             <select id="pageSelect${compareID}"></select>
                         </div>
                     `
-                    // for (let level in popologyData.stats[selectedCategory].entries[selectedPage].data) {
                     for (let hero in popologyData.stats[selectedCategory].entries) {
                         let selectedString = ""
                         if (hero == selectedPage) {
@@ -415,15 +414,15 @@ function runPopology(compare) {
             }
             if (required) {
                 document.getElementById("requiredBuffs" + compareID).insertAdjacentHTML("beforeend", `
-                    <div class="buffIcon" id="${buff}${compareID}">
+                    <button class="buffIcon" id="${buff}${compareID}">
                         <img class="buffIconImage" src="${src}" />
-                    </div>
+                    </button>
                 `)
             } else {
                 document.getElementById("buffs" + compareID).insertAdjacentHTML("beforeend", `
-                    <div class="buffIcon" id="${buff}${compareID}">
+                    <button class="buffIcon" id="${buff}${compareID}">
                         <img class="buffIconImage" src="${src}" />
-                    </div>
+                    </button>
                 `)
 
                 if (priceBuffs[buff]) {
