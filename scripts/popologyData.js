@@ -6572,7 +6572,7 @@ const data = {
                                             <ul>
                                                 <li>10,000i, 1.5s</li>
                                                 <li>deploy time 1.5s</li>
-                                                <li>cash per trap increased to natural bloon RBE captured*0.75</li>
+                                                <li>cash per trap is now natural bloon RBE captured*0.75</li>
                                                 <li>can trap blimps other than BAD</li>
                                                 <li>can capture blimps beyond the pierce limit</li>
                                             </ul>
