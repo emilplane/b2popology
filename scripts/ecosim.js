@@ -7,7 +7,7 @@ window.onerror = (message, source, lineno, colno, error) => {
 };
 
 // Logic to detect whether the browser supports web workers
-if (window.Worker) {
+if (!window.Worker) {
     new RunSim()
 } else {
     throw "Error: Web workers are not supported on this browser"

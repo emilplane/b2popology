@@ -58,7 +58,6 @@ export default class RunSim {
                     .setLight("ready")
                     .setLoadingBar(1)
                 this.sendUpdatedValues()
-                this.loadingSim(true)
                 break
         }
     }
@@ -141,6 +140,7 @@ export default class RunSim {
             "type": "requestData",
             "config": config
         })
+        this.loadingSim()
     }
 
     /**
@@ -236,7 +236,6 @@ export default class RunSim {
         document.querySelectorAll(".settingInput").forEach((input) => {
             input.addEventListener("change", () => {
                 this.sendUpdatedValues()
-                this.loadingSim()
             })
         })
 

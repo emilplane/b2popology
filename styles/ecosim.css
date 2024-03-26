@@ -96,7 +96,7 @@
     margin-top: 8px;
     gap: 8px;
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr calc(300px + 5vw);
 }
 
 .configureSim {
