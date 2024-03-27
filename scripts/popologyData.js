@@ -153,7 +153,7 @@ const data = {
                                     <ul>
                                         <li>dart attack buffed
                                             <ul>
-                                                <li>75%s (0.477375s)</li>
+                                                <li>+2d (3d), 75%s (0.477375s)</li>
                                             </ul>
                                         </li>
                                         <li>gains fan-club ability (50s cooldown, 15s duration, battle ready)
@@ -184,6 +184,11 @@ const data = {
                                 "name": "050 - Plasma Monkey Fan Club - $45,000",
                                 "content": `
                                     <ul>
+                                        <li>dart attack buffed
+                                            <ul>
+                                                <li>+3d (6d)</li>
+                                            </ul>
+                                        </li>
                                         <li>fan-club ability replaced by plasma-club (50s cooldown, 15s duration, battle ready)
                                             <ul>
                                                 <li>transforms 20 nearest dart monkeys within 50r (up to 2-5-2) into plasmafans
@@ -201,6 +206,8 @@ const data = {
                                                 <li>plasma attack
                                                     <ul>
                                                         <li>2d, 5p, 40r, 0.025s, plasma type</li>
+                                                        <li>if transformed tower is an x4x Dart Monkey: 4d</li>
+                                                        <li>if transformed tower is an x5x Dart Monkey: 7d</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -1730,7 +1737,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "200 - Large Calibre - $1,000",
+                                "name": "200 - Large Calibre - $800",
                                 "content": `
                                     <ul>
                                         <li>bullet buffed</li>
@@ -1826,7 +1833,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "020 - Shrapnel Shot - $300",
+                                "name": "020 - Shrapnel Shot - $250",
                                 "content": `
                                     <ul>
                                         <li>bullet buffed
@@ -1929,7 +1936,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "003 - Semi-Automatic - $2,500",
+                                "name": "003 - Semi-Automatic - $2,300",
                                 "content": `
                                     <ul>
                                         <li>bullet buffed
@@ -1960,7 +1967,7 @@ const data = {
                                 `
                             },
                             "5": {
-                                "name": "005 - Elite Defender - $16,000",
+                                "name": "005 - Elite Defender - $14,500",
                                 "content": `
                                     <ul>
                                         <li>bullet buffed
@@ -2030,7 +2037,7 @@ const data = {
                                             <ul>
                                                 <li>while submerged, dart is replaced by sonar
                                                     <ul>
-                                                        <li>100p, 52r zone, 1.5s passive, decamo</li>
+                                                        <li>75p, 52r zone, 1.5s passive, decamo</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -2039,20 +2046,20 @@ const data = {
                                             <ul>
                                                 <li>301: sonar 85%s (1.275s)</li>
                                                 <li>302: sonar 75%s (0.95625s)</li>
-                                                <li>310: sonar +20p (120p)</li>
-                                                <li>320: sonar +30p (150p)</li>
+                                                <li>310: sonar +20%p (90p)</li>
+                                                <li>320: sonar +25%p (102.5?p)</li>
                                             </ul>
                                         </li>
                                     </ul>
                                 `
                             },
                             "4": {
-                                "name": "400 - Bloontonium Reactor - $2,600",
+                                "name": "400 - Bloontonium Reactor - $2,800",
                                 "content": `
                                     <ul>
                                         <li>sonar buffed
                                             <ul>
-                                                <li>200p, 0.4s</li>
+                                                <li>150p, 0.4s</li>
                                             </ul>
                                         </li>
                                         <li>while submerged, gains radioactive attack
@@ -2063,8 +2070,8 @@ const data = {
                                         <li>while submerged, abilities of water towers in range -15% cooldown time</li>
                                         <li>crosspath
                                             <ul>
-                                                <li>410: sonar +40p (240p), radioactive +5p (35p)</li>
-                                                <li>420: sonar +60p (300p), radioactive +1ld, +15p (50), normal type</li>
+                                                <li>410: sonar +20%p (180p), radioactive +5p (35p)</li>
+                                                <li>420: sonar +25%p (225p), radioactive +1ld, +15p (50), normal type</li>
                                                 <li>401: radioactive 75%s (0.3s)</li>
                                                 <li>402: radioactive 66.66%s (0.2s)</li>
                                             </ul>
@@ -3252,7 +3259,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "300 - Shell Shock - $1,100",
+                                "name": "300 - Shell Shock - $1,300",
                                 "content": `
                                     <ul>
                                         <li>explosion buffed
@@ -3287,7 +3294,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "400 - The Big One - $7,500",
+                                "name": "400 - The Big One - $7,300",
                                 "content": `
                                     <ul>
                                         <li>explosion buffed
@@ -3406,7 +3413,7 @@ const data = {
                                                 <li>applies stun status: 1s duration</li>
                                                 <li>gains artillery-buff
                                                     <ul>
-                                                        <li>all x4x mortars get +6 BAD damage</li>
+                                                        <li>all x4x mortars get +4 BAD damage</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -3453,7 +3460,7 @@ const data = {
                                             <ul>
                                                 <li>on expire: flare
                                                     <ul>
-                                                        <li>0d, 80p, 50r blast</li>
+                                                        <li>0d, 55p, 50r blast</li>
                                                         <li>on hit: decamo bloons including DDTs</li>
                                                     </ul>
                                                 </li>
@@ -3836,7 +3843,7 @@ const data = {
                     "data": {
                         "base": `
                             <ul>
-                                <li>$300 (750 MM)</li>
+                                <li>$250 (750 MM)</li>
                                 <li>size: 7 radius</li>
                                 <li>placeable on: land</li>
                                 <li>magic-bolt attack
@@ -3907,7 +3914,7 @@ const data = {
                                     <ul>
                                         <li>magic-bolt buffed
                                             <ul>
-                                                <li>+2d (10d), +15md (35md), +4ld(+8ld), +4p (11p), 50%s (0.1375s)</li>
+                                                <li>+2d (10d), +15md (35md), +4ld(+8ld), +6p (13p), 50%s (0.1375s)</li>
                                             </ul>
                                         </li>
                                         <li>gains shimmer attack
@@ -4073,7 +4080,7 @@ const data = {
                                                     <ul>
                                                         <li>flame attack
                                                             <ul>
-                                                                <li>40d, 50p, &#8734;r, 0.1s, normal type, camo</li>
+                                                                <li>55d, 50p, &#8734;r, 0.1s, normal type, camo</li>
                                                                 <li>can see past walls</li>
                                                             </ul>
                                                         </li>
@@ -4084,11 +4091,6 @@ const data = {
                                                             </ul>
                                                         </li>
                                                         <li>note: technically a separate tower so is not affected by buffs to the original wizard</li>
-                                                    </ul>
-                                                </li>
-                                                <li>[BUG] on detransformation
-                                                    <ul>
-                                                        <li>spawns too many phoenix subtowers when affected by an attack cooldown buff</li>
                                                     </ul>
                                                 </li>
                                                 <li>while active, doubles all phoenix subtowers' damage</li>
@@ -4332,7 +4334,6 @@ const data = {
                                                         <li>gains temple buff
                                                             <ul>
                                                                 <li>+5% discount, grants camo</li>
-                                                                <li>[BUG] +1d</li>
                                                             </ul>
                                                         </li>
                                                         <li>crate attack
@@ -4568,7 +4569,7 @@ const data = {
                                 <li>gains camo detection</li>
                                 <li>shuriken attack
                                     <ul>
-                                        <li>1d, 2p, 40r, 0.7s, sharp type</li>
+                                        <li>1d, 3p, 40r, 0.7s, sharp type</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -4597,7 +4598,7 @@ const data = {
                                     <ul>
                                         <li>shuriken buffed
                                             <ul>
-                                                <li>+2p (4p)</li>
+                                                <li>+2p (5p)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4612,6 +4613,11 @@ const data = {
                                                 <li>+1j 30&deg spread (2j)</li>
                                             </ul>
                                         </li>
+                                        <li>crosspath
+                                            <ul>
+                                                <li>502: caltrops +2d (5d)</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 `
                             },
@@ -4622,6 +4628,11 @@ const data = {
                                         <li>shuriken buffed
                                             <ul>
                                                 <li>+3j 45&deg spread (5j)</li>
+                                            </ul>
+                                        </li>
+                                        <li>crosspath
+                                            <ul>
+                                                <li>502: caltrops +5d (10d)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4677,7 +4688,7 @@ const data = {
                                     <ul>
                                         <li>gains shinobi buff
                                             <ul>
-                                                <li>affects ninjas in range</li>
+                                                <li>affects Ninja Monkeys in range</li>
                                                 <li>stacks up to 10 times</li>
                                                 <li>85%s</li>
                                                 <li>+15%p, stacking additively</li>
@@ -5224,7 +5235,7 @@ const data = {
                                 `
                             },
                             "5": {
-                                "name": "500 - Superstorm - $60,000",
+                                "name": "500 - Superstorm - $55,000",
                                 "content": `
                                     <ul>
                                         <li>gains camo detection</li>
@@ -5401,7 +5412,7 @@ const data = {
                                     <ul>
                                         <li>gains poplust buff
                                             <ul>
-                                                <li>affects druids in range, including self</li>
+                                                <li>affects Druids in range, including self</li>
                                                 <li>+15%p, +15% speed</li>
                                                 <li>can stack (additively) up to 5 times total</li>
                                                 <li>note that this is yet another speed buff, which also stacks multiplicatively with tiers 2 and 3</li>
@@ -5542,7 +5553,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "030 - Monkey Intelligence Bureau - $7,000",
+                                "name": "030 - Monkey Intelligence Bureau - $5,000",
                                 "content": `
                                     <ul>
                                         <li>support buffed
@@ -5554,7 +5565,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "040 - Call to Arms - $21,500",
+                                "name": "040 - Call to Arms - $23,500",
                                 "content": `
                                     <ul>
                                         <li>gains call-to-arms ability (45s cooldown, 8s duration, battle ready)
@@ -6154,7 +6165,7 @@ const data = {
                                         </li>
                                         <li>smart-boost buffed
                                             <ul>
-                                                <li>6s duration</li>
+                                                <li>5s duration</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -6225,7 +6236,7 @@ const data = {
                         `,
                         "topPath": {
                             "1": {
-                                "name": "100 - Sentry Gun - $500",
+                                "name": "100 - Sentry Gun - $450",
                                 "content": `
                                     <ul>
                                         <li>gains build-sentry attack
@@ -6257,7 +6268,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "200 - Faster Engineering - $400",
+                                "name": "200 - Faster Engineering - $350",
                                 "content": `
                                     <ul>
                                         <li>build-sentry buffed
@@ -6286,7 +6297,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "400 - Sentry Expert - $2,500",
+                                "name": "400 - Sentry Expert - $2,800",
                                 "content": `
                                     <ul>
                                         <li>build-sentry buffed
@@ -6368,10 +6379,10 @@ const data = {
                                             <ul>
                                                 <li>plasma attack
                                                     <ul>
-                                                        <li>2d, 5p, 50r, 0.035, plasma type</li>
+                                                        <li>2d, 5p, 50r, 0.03, plasma type</li>
                                                         <li>on expire: selfdestruct attack
                                                             <ul>
-                                                                <li>200d, 100p, 45r blast, plasma type</li>
+                                                                <li>260d, 100p, 45r blast, plasma type</li>
                                                                 <li>activates either when sold or 2s after expiring</li>
                                                             </ul>
                                                         </li>
@@ -6500,7 +6511,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "002 - Pin - $220",
+                                "name": "002 - Pin - $200",
                                 "content": `
                                     <ul>
                                         <li>nail buffed
@@ -6544,9 +6555,9 @@ const data = {
                                                         <li>pops any visible non-MOAB-class bloon up to its impact limit</li>
                                                         <li>once full, can be collected manually (100r) or automatically (5s)
                                                             <ul>
-                                                                <li>when collected, gives $2 times the amount of natural RBE collected</li>
+                                                                <li>when collected, gives $1.5 times the amount of natural RBE collected</li>
                                                                 <ul>
-                                                                    <li>does not give money for bloons captured over the impact limit</li>
+                                                                    <li>does not give money for bloons captured over the impact limit (max $750)</li>
                                                                 </ul>
                                                             </ul>
                                                         </li>
@@ -6956,7 +6967,7 @@ const data = {
                                 <li>can see past obstacles</li>
                                 <li>places wall-of-fire on the track, targetable manually anywhere within range
                                     <ul>
-                                        <li>1d, 40p, 15r zone, 0.2s, fire type, camo</li>
+                                        <li>1d, 26p, 15r zone, 0.2s, fire type, camo</li>
                                         <li>12s lifetime</li>
                                     </ul>
                                 </li>
@@ -7160,7 +7171,7 @@ const data = {
                                 <li>can see past obstacles</li>
                                 <li>places wall-of-fire on the track, targetable manually anywhere within range
                                     <ul>
-                                        <li>1d, +1ld (2ld), +1 frd (2frd), 60p, 15r zone, 0.15s, fire type, camo</li>
+                                        <li>1d, +1ld (2ld), +1 frd (2frd), 40p, 15r zone, 0.15s, fire type, camo</li>
                                         <li>8s lifetime</li>
                                     </ul>
                                 </li>
@@ -7384,7 +7395,6 @@ const data = {
                                     <ul>
                                         <li>28r, 25% slow / 12.5% for blimps, 15s lifetime</li>
                                         <li>note: camos can be slowed, but the totem does not allow camos in range to be targeted by subs</li>
-                                        <li>[BUG] may sell itself immediately after placing on some maps</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -8814,6 +8824,12 @@ const data = {
                                 <li>+3r (43r)</li>
                             </ul>
                         </li>
+                        <li>wizard-synergy buff
+                            <ul>
+                                <li>affects Wizard Monkeys in range</li>
+                                <li>+2p</li>
+                            </ul>
+                        </li>
                     </ul>`,
                         "3": `<ul>
                         <li>heartstopper ability
@@ -9029,7 +9045,16 @@ const data = {
                         </li>
                     </ul>`,
                         "2": `<ul>
-                        <li>curse buffed: +3r (43r)</li>
+                        <li>curse buffed
+                            <ul>
+                                <li>+3r (43r)</li>
+                            </ul>
+                        </li>
+                        <li>splash buffed
+                            <ul>
+                                <li>+2p (7p)</li>
+                            </ul>
+                        </li>
                     </ul>`,
                         "3": `<ul>
                         <li>screech ability
@@ -9289,6 +9314,11 @@ const data = {
                                 <li>+3r (27r)</li>
                             </ul>
                         </li>
+                        <li>rallying-roar ability buffed 
+                            <ul>
+                                <li>towers granted normal damage</li>
+                            </ul>
+                        </li>
                     </ul>`,
                         "9": `<ul>
                         <li>slam buffed
@@ -9335,7 +9365,7 @@ const data = {
                         </li>
                     </ul>`,
                         "14": `<ul>
-                        <li>rallying-roar ability buffed: 
+                        <li>rallying-roar ability buffed:
                             <ul>
                                 <li>50s cooldown</li>
                                 <li>9s duration</li>
@@ -9431,7 +9461,7 @@ const data = {
                             <ul>
                                 <li>buffs Ice Monkeys and self in 60r, including self</li>
                                 <li>+1d</li>
-                                <li>-15% attack cooldown  </li>
+                                <li>-15% attack cooldown</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -9487,7 +9517,7 @@ const data = {
                         </li>
                         <li>chilling-cheer buffed
                             <ul>
-                                <li>Ice Monkeys can now target and inflict 2x damage to MOAB-class bloons but without associated slowing status effects.</li>
+                                <li>Ice Monkeys can now target and inflict 3x damage to MOAB-class bloons but without associated slowing status effects.</li>
                                 <li>Ice Monkey's Arctic Wind slow attack can affect all non-BAD MOAB-class bloons</li>
                             </ul>
                         </li>
@@ -9701,6 +9731,7 @@ const data = {
                         <li>fortified bloon modifier buffed
                             <ul>
                                 <li>$-0.3x ($1.7x)</li>
+                                <li>excludes BADs</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -9793,6 +9824,11 @@ const data = {
                                 <li>?s cooldown</li>
                             </ul>
                         </li>
+                        <li>fortified bloon modifier buffed
+                            <ul>
+                                <li>discount now applies to BADs</li>
+                            </ul>
+                        </li>
                     </ul>`
                     }
                 },
@@ -9823,7 +9859,7 @@ const data = {
                         </li>
                     </ul>`,
                         "3": `<ul>
-                        <li>stand-and-deliver ability (100s cooldown, 33.3s initial cooldown)
+                        <li>stand-and-deliver ability (100s cooldown, 60s initial cooldown)
                             <ul>
                                 <li>takes $200 from the opponent
                                     <ul>
@@ -9886,6 +9922,7 @@ const data = {
                         <li>fortified bloon modifier buffed
                             <ul>
                                 <li>$-0.3x ($1.7x)</li>
+                                <li>excludes BADs</li>
                             </ul>
                         </li>
                         <li>stand-and-deliver buffed
@@ -9982,6 +10019,11 @@ const data = {
                         <li>misdirection ability buffed
                             <ul>
                                 <li>?s cooldown</li>
+                            </ul>
+                        </li>
+                        <li>fortified bloon modifier buffed
+                            <ul>
+                                <li>discount now applies to BADs</li>
                             </ul>
                         </li>
                     </ul>`
@@ -10131,7 +10173,7 @@ const data = {
                         <li>sent fortified bloons buffed
                             <ul>
                                 <li>+12.5%hp</li>
-                                <li>affects MOAB-class bloons, including BADs</li>
+                                <li>affects MOAB-class bloons, excluding BADs</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10229,6 +10271,11 @@ const data = {
                                 <li>affects BAD bloons</li>
                             </ul>
                         </li>
+                        <li>sent fortified bloons buffed
+                            <ul>
+                                <li>buff now includes BADs</li>
+                            </ul>
+                        </li>
                     </ul>`
                     }
                 },
@@ -10236,14 +10283,14 @@ const data = {
                     "name": "Adora",
                     "data": {
                         "1": `<ul>
-                        <li>$700</li>
+                        <li>$650</li>
                         <li>Leveling Rate: 1.5x</li>
                         <li>Unlock Cost: 5,000 MM</li>
                         <li>size: 7 radius</li>
                         <li>placeable on: land</li>
                         <li>sun-bolt attack
                             <ul>
-                                <li>1d, 5p, 45r, 1s, plasma type</li>
+                                <li>1d, 6p, 45r, 1s, plasma type</li>
                                 <li>can see past obstacles</li>
                                 <li>homing</li>
                             </ul>
@@ -10280,7 +10327,7 @@ const data = {
                         "5": `<ul>
                         <li>sun-bolt buffed
                             <ul>
-                                <li>+3p (8p)</li>
+                                <li>+3p (9p)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10365,7 +10412,7 @@ const data = {
                         "13": `<ul>
                         <li>sun-bolt buffed
                             <ul>
-                                <li>+1fd (3fd), +3p (11p)</li>
+                                <li>+1fd (3fd), +3p (12p)</li>
                             </ul>
                         </li>
                         <li>beam attack buffed
@@ -11249,8 +11296,8 @@ const data = {
                             <li>Grouped
                                 <ul>
                                     <li>Rounds: 10-21</li>
-                                    <li>Count: 3</li>
-                                    <li>Total time: 0.3s</li>
+                                    <li>Count: 5</li>
+                                    <li>Total time: 0.35s</li>
                                     <li>Eco: +$2.6</li>
                                     <li>Cost: $65</li>
                                 </ul>
@@ -11293,7 +11340,7 @@ const data = {
                                 <ul>
                                     <li>Rounds: 8-10</li>
                                     <li>Count: 4</li>
-                                    <li>Total time: 1.6s</li>
+                                    <li>Total time: 1.2s</li>
                                     <li>Eco: +$3.3</li>
                                     <li>Cost: $70</li>
                                 </ul>
@@ -11682,15 +11729,15 @@ const data = {
         "military": {
             "sniperMonkey": {
                 "base": 250,
-                "top": [250, 1000, 2800, 5000, 34000],
-                "middle": [200, 300, 3200, 5600, 14000],
-                "bottom": [250, 250, 2700, 4200, 16000]
+                "top": [250, 800, 2800, 5000, 34000],
+                "middle": [200, 250, 3200, 5600, 14000],
+                "bottom": [250, 250, 2300, 4200, 14500]
             },
             "monkeySub": {
                 "base": 325,
-                "top": [130, 500, 950, 2600, 32000],
+                "top": [130, 500, 950, 2800, 32000],
                 "middle": [300, 300, 1600, 15000, 30000],
-                "bottom": [300, 700, 800, 2800, 25000]
+                "bottom": [300, 800, 800, 2800, 25000]
             },
             "monkeyBuccaneer": {
                 "base": 500,
@@ -11712,7 +11759,7 @@ const data = {
             },
             "mortarMonkey": {
                 "base": 700,
-                "top": [350, 500, 1100, 7500, 28000],
+                "top": [350, 500, 1300, 7300, 28000],
                 "middle": [300, 500, 900, 7600, 27000],
                 "bottom": [200, 700, 700, 8500, 40000]
             },
@@ -11725,7 +11772,7 @@ const data = {
         },
         "magic": {
             "wizardMonkey": {
-                "base": 300,
+                "base": 250,
                 "top": [150, 250, 1200, 9000, 32000],
                 "middle": [300, 1000, 3000, 4000, 50000],
                 "bottom": [300, 300, 1600, 2800, 24000]
@@ -11750,7 +11797,7 @@ const data = {
             },
             "druid": {
                 "base": 425,
-                "top": [250, 1000, 1500, 4300, 60000],
+                "top": [250, 1000, 1500, 4300, 55000],
                 "middle": [250, 350, 450, 3100, 35000],
                 "bottom": [100, 400, 750, 2500, 45000]
             }
@@ -11759,7 +11806,7 @@ const data = {
             "monkeyVillage": {
                 "base": 1000,
                 "top": [400, 1500, 800, 2500, 25000],
-                "middle": [250, 1700, 7000, 21500, 45000],
+                "middle": [250, 1700, 5000, 23500, 45000],
                 "bottom": [500, 500, 5000, 7000, 20000]
             },
             "bananaFarm": {
@@ -11776,9 +11823,9 @@ const data = {
             },
             "engineerMonkey": {
                 "base": 400,
-                "top": [500, 400, 525, 2500, 32000],
+                "top": [450, 350, 525, 2800, 32000],
                 "middle": [250, 350, 800, 13500, 100000],
-                "bottom": [450, 220, 350, 3600, 54000]
+                "bottom": [450, 200, 350, 3600, 54000]
             }
         }
     }
