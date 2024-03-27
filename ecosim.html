@@ -25,132 +25,141 @@
     </head>
     <body>
         <main id="main">
-            <div class="coverImage" id="coverImage"></div>
-            <div class="statsPageWrapper">
-                <div class="ecosimMain">
-                    <div class="headerStyle" id="header">
-                        <h4 class="luckiestGuy title">Battles 2 Popology</h4>
-                        <div class="headerContent">
-                            <a href="index.html">
-                                <h5>Home</h5>
-                            </a>
-                            <a href="popology.html">
-                                <h5>Popology</h5>
-                            </a>
-                            <a href="ecosim.html">
-                                <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Eco Simulator</h5>
-                            </a>
-                            <a href="clans.html">
-                                <h5>Clan</h5>
-                            </a>
-                            <a href="https://discord.com/invite/9YAaxDXAYZ">
-                                <h5>Discord</h5>
-                            </a>
+            <div class="ecosimMain">
+                <div class="headerStyle" id="header">
+                    <h4 class="luckiestGuy title">Battles 2 Popology</h4>
+                    <div class="headerContent">
+                        <a href="index.html">
+                            <h5>Home</h5>
+                        </a>
+                        <a href="popology.html">
+                            <h5>Popology</h5>
+                        </a>
+                        <a href="ecosim.html">
+                            <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Eco Simulator</h5>
+                        </a>
+                        <a href="clans.html">
+                            <h5>Clan</h5>
+                        </a>
+                        <a href="https://discord.com/invite/9YAaxDXAYZ">
+                            <h5>Discord</h5>
+                        </a>
+                    </div>
+                    <div class="menuIcon" id="menuIcon">
+                        <span class="material-symbols-outlined menuIcon">menu</span>
+                    </div>
+                </div>
+                <div class="menuBar">
+                    <div class="menuBarContent">
+                        <div class="menuBarButton">
+                            <h6>Load</h6>
                         </div>
-                        <div class="menuIcon" id="menuIcon">
-                            <span class="material-symbols-outlined menuIcon">menu</span>
+                        <div class="menuBarButton">
+                            <h6>Save</h6>
+                        </div>
+                        <div class="menuBarButton">
+                            <h6>Settings</h6>
+                        </div>
+                        <div class="simStatusContainer">
+                            <h6 id="statusText">Javascript unavailable or not started</h6>
+                            <div id="statusLight" class="statusLight"></div>
                         </div>
                     </div>
-                    <div class="menuBar">
-                        <div class="menuBarContent">
-                            <div class="menuBarButton">
-                                <h6>Load</h6>
-                            </div>
-                            <div class="menuBarButton">
-                                <h6>Save</h6>
-                            </div>
-                            <div class="menuBarButton">
-                                <h6>Settings</h6>
-                            </div>
-                            <div class="simStatusContainer">
-                                <h6 id="statusText">Javascript unavailable or not started</h6>
-                                <div id="statusLight" class="statusLight"></div>
-                            </div>
-                        </div>
-                        <div class="loadingBarContainer">
-                            <div class="loadingBar" id="loadingBar"></div>
+                    <div class="loadingBarContainer">
+                        <div class="loadingBar" id="loadingBar"></div>
+                    </div>
+                </div>
+                <div class="mainContent">
+                    <div class="simOutputContainer">
+                        <div id="chartContainer" style="height: 480px; width: 100%">
+                            
                         </div>
                     </div>
-                    <div class="mainContent">
-                        <div class="simOutputContainer">
-                            <div id="chartContainer" style="height: 480px; width: 100%">
+                    <div class="configureSim">
+                        <div class="configTabs">
+                            <div class="activeTab">
+                                <img src="media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp">
+                            </div>
+                            <div class="">
+                                <img src="media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png">
+                            </div>
+                            <div class="">
+                                <img src="media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp">
+                            </div>
+                        </div>
+
+                        <div class="simSettingsContainer" style="display: none">
+                            <h4>Initial Game State</h4>
+                            <div class="simSettingsList">
+                                <div class="simSetting">
+                                    <h6>Stall Factor</h6>
+                                    <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
+                                </div>
                                 
-                            </div>
-                        </div>
-                        <div class="configureSim">
-                            <div class="simSettingsContainer" style="display: none">
-                                <h4>Initial Game State</h4>
-                                <div class="simSettingsList">
-                                    <div class="simSetting">
-                                        <h6>Stall Factor</h6>
-                                        <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
-                                    </div>
-                                    
-                                    <div class="simSetting">
-                                        <h6>Initial Cash</h6>
-                                        <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
-                                    </div>
-                                    <div class="simSetting">
-                                        <h6>Initial Eco</h6>
-                                        <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
-                                    </div>
+                                <div class="simSetting">
+                                    <h6>Initial Cash</h6>
+                                    <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
+                                </div>
+                                <div class="simSetting">
+                                    <h6>Initial Eco</h6>
+                                    <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
                                 </div>
                             </div>
-                            <div class="simSettingsContainer" style="display: none">
-                                <div class="simSettingsList">
-                                    <div class="farmTitleContainer">
-                                        <h4>Farms</h4>
-                                        <div class="farmMainButtonContainer">
-                                            <div class="material-symbols-outlined" id="addFarmButton">add</div>
-                                        </div>
+                        </div>
+                        <div class="simSettingsContainer" style="display: none">
+                            <div class="simSettingsList">
+                                <div class="farmTitleContainer">
+                                    <h4>Farms</h4>
+                                    <div class="farmMainButtonContainer">
+                                        <div class="material-symbols-outlined" id="addFarmButton">add</div>
                                     </div>
-                                    <div class="farmsContainer" id="farmsContainer">    
-                                    </div>
-                                    <template id="farmTemplate">
-                                        <div>
-                                            <h4 class="farmTemplateTitle">1</h4>
-                                            <div class="farmRight">
-                                                <div>
-                                                    <p class="smallText">Round</p>
-                                                    <div class="farmUpgradesContainer">
-                                                        <input class="farmTemplateStartRound" type="number" min="0" max="50" step="1" value="0" />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <p class="smallText">Upgrades</p>
-                                                    <div class="farmUpgradesContainer">
-                                                        <input class="farmTemplateUpgrade1" type="number" min="0" max="5" step="1" value="0" />
-                                                        <input class="farmTemplateUpgrade2" type="number" min="0" max="5" step="1" value="0" />
-                                                        <input class="farmTemplateUpgrade3" type="number" min="0" max="5" step="1" value="0" />
-                                                    </div>
-                                                </div>
-                                                <div class="farmButtonContainer">
-                                                    <div class="material-symbols-outlined">expand_less</div>
-                                                    <div class="material-symbols-outlined">expand_more</div>
-                                                    <div class="material-symbols-outlined">menu</div>
-                                                    <div class="material-symbols-outlined farmTemplateDeleteButton">delete</div>
+                                </div>
+                                <div class="farmsContainer" id="farmsContainer">    
+                                </div>
+                                <template id="farmTemplate">
+                                    <div>
+                                        <h4 class="farmTemplateTitle">1</h4>
+                                        <div class="farmRight">
+                                            <div>
+                                                <p class="smallText">Round</p>
+                                                <div class="farmUpgradesContainer">
+                                                    <input class="farmTemplateStartRound" type="number" min="0" max="50" step="1" value="0" />
                                                 </div>
                                             </div>
+                                            <div>
+                                                <p class="smallText">Upgrades</p>
+                                                <div class="farmUpgradesContainer">
+                                                    <input class="farmTemplateUpgrade1" type="number" min="0" max="5" step="1" value="0" />
+                                                    <input class="farmTemplateUpgrade2" type="number" min="0" max="5" step="1" value="0" />
+                                                    <input class="farmTemplateUpgrade3" type="number" min="0" max="5" step="1" value="0" />
+                                                </div>
+                                            </div>
+                                            <div class="farmButtonContainer">
+                                                <div class="material-symbols-outlined">expand_less</div>
+                                                <div class="material-symbols-outlined">expand_more</div>
+                                                <div class="material-symbols-outlined">menu</div>
+                                                <div class="material-symbols-outlined farmTemplateDeleteButton">delete</div>
+                                            </div>
                                         </div>
-                                    </template>
-                                </div>
+                                    </div>
+                                </template>
                             </div>
-                            <div class="simSettingsContainer" style="display: none">
-                                <div class="simSettingsList">
-                                    <div class="simSetting">
-                                        <h6>Start Round</h6>
-                                        <input id="gameRound" class="settingInput" type="number" min="10" step="1" value="10" />
-                                    </div>
-                                    <div class="simSetting">
-                                        <h6>End Round</h6>
-                                        <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
-                                    </div>
-                                    <div class="simSetting">
-                                        <h6>Starting Bloon Send</h6>
-                                        <select id="startingBloonSend" class="settingInput">
-                                            <option value="Grouped Blacks">Grouped Blacks</option>
-                                        </select>
-                                    </div>
+                        </div>
+                        <div class="simSettingsContainer" style="display: none">
+                            <div class="simSettingsList">
+                                <div class="simSetting">
+                                    <h6>Start Round</h6>
+                                    <input id="gameRound" class="settingInput" type="number" min="10" step="1" value="10" />
+                                </div>
+                                <div class="simSetting">
+                                    <h6>End Round</h6>
+                                    <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
+                                </div>
+                                <div class="simSetting">
+                                    <h6>Starting Bloon Send</h6>
+                                    <select id="startingBloonSend" class="settingInput">
+                                        <option value="Grouped Blacks">Grouped Blacks</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
