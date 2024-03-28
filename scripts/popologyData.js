@@ -4615,7 +4615,7 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>502: caltrops +2d (5d)</li>
+                                                <li>302: caltrops +2d (5d)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4632,7 +4632,7 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>502: caltrops +5d (10d)</li>
+                                                <li>402: caltrops +5d (10d)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -11272,8 +11272,8 @@ const data = {
                                     <li>Rounds: 9+</li>
                                     <li>Count: 4</li>
                                     <li>Total time: 0.2s</li>
-                                    <li>Eco: +$2.4</li>
-                                    <li>Cost: $65</li>
+                                    <li>Eco: +$2.3</li>
+                                    <li>Cost: $60</li>
                                 </ul>
                             </li>
                         </ul>
@@ -11350,7 +11350,7 @@ const data = {
                                     <li>Rounds: 11+</li>
                                     <li>Count: 5</li>
                                     <li>Total time: 0.175s</li>
-                                    <li>Eco: +$2.7</li>
+                                    <li>Eco: +$2.9</li>
                                     <li>Cost: $115</li>
                                 </ul>
                             </li>
@@ -11427,7 +11427,7 @@ const data = {
                             <li>Grouped
                                 <ul>
                                     <li>Rounds: 13+</li>
-                                    <li>Count: 3</li>
+                                    <li>Count: 4</li>
                                     <li>Total time: 0.4s</li>
                                     <li>Eco: +$6.0</li>
                                     <li>Cost: $250</li>
