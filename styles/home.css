@@ -167,6 +167,13 @@
     };
 }
 
+.fateweaverInfoSection {
+    background-color: hsl(81, 100%, 77%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(81, 73%, 19%);
+    };
+}
+
 .linksSection {
     display: grid;
     gap: 8px;
@@ -188,4 +195,18 @@
     gap: 8px;
     flex-wrap: wrap;
     margin-top: 8px;
+}
+
+.fateweaverButton {
+    background-color: hsl(81, 64%, 58%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(81, 84%, 30%);
+    };
+}
+
+.fateweaverButton:hover {
+    background-color: hsl(81, 57%, 44%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(81, 83%, 35%);
+    };
 }
