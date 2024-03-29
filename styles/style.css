@@ -262,6 +262,7 @@ input:focus + .inputUnderline {
     margin-left: auto;
     font-size: 36px;
     aspect-ratio: 1;
+    display: flex;
     @media screen and (min-width: 701px) {
         display: none;
     }

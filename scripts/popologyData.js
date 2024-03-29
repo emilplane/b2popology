@@ -10469,7 +10469,7 @@ const data = {
                         "19": `<ul>
                         <li>sun-bolt buffed
                             <ul>
-                                <li>+1fd (5fd), +5r (59r)</li>
+                                <li>+1d (3d), +5r (59r)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10497,6 +10497,191 @@ const data = {
                         <li>if a 5xx Super Monkey is purchased with Adora in range, Adora merges with that Super Monkey to form the True Sun Goddess
                             <ul>
                                 <li>specifics unconfirmed</li>
+                            </ul>
+                        </li>
+                    </ul>`
+                    }
+                },
+                "fateweaverAdora": {
+                    "name": "Fateweaver Adora",
+                    "data": {
+                        "1": `<ul>
+                        <li>$650</li>
+                        <li>Leveling Rate: 1.5x</li>
+                        <li>Unlock Cost: 5,000 MM</li>
+                        <li>size: 7 radius</li>
+                        <li>placeable on: land</li>
+                        <li>fate-bolt attack
+                            <ul>
+                                <li>1d, 6p, 45r, 1s, plasma type</li>
+                                <li>can see past obstacles</li>
+                                <li>homing</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "2": `<ul>
+                        <li>bad-luck buff</li>
+                        <ul>
+                            <li>applies to enemy hero</li>
+                            <li>+5% ability cooldown time</li>
+                        </ul>
+                    </ul>`,
+                        "3": `<ul>
+                        <li>sharp-sting-of-fate ability (35s cooldown, 2?s duration)
+                            <ul>
+                                <li>buffs fate-bolt</li>
+                                <ul>
+                                    <li>+?d, +?p</li>
+                                    <li>on enemy bloon boost: ?% cooldown (approximately 8 seconds)</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "4": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1j (2j 30&deg spread)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "5": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+3p (9p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "6": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1j (3j)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "7": `<ul>
+                        <li>eye-of-misfortune ability (?s cooldown, ?s duration, targets a tower)
+                            <ul>
+                                <li>selected tower is sacrificed</li>
+                                <li>misfortune buff
+                                    <ul>
+                                        <li>decreases enemy hero leveling by ?%</li>
+                                        <li>increases speeed of bloons in the enemy hero's range by ?%</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "8": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1j (4j)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "9": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1fd (2fd), +5r (54r)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "10": `<ul>
+                        <li>chains-of-fate ability (?s cooldown, ?s duration)
+                            <ul>
+                                <li>places chain-trap based on targeting, defaults on close</li>
+                                <ul>
+                                    <li>stats untested</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "11": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>0.8s</li>
+                            </ul>
+                        </li>
+                        <li>bad-luck buffed
+                            <ul>
+                                <li>+10% ability cooldown time</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "12": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1j (5j)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "13": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1fd (3fd), +3p (12p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "14": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1j (6j)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "15": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1d (2d)</li>
+                            </ul>
+                        </li>
+                        <li>chains-of-fate buffed
+                            <ul>
+                                <li>increased duration</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "16": `<ul>
+                        <li>bad-luck buffed
+                            <ul>
+                                <li>now applies to all enemy ability cooldowns</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "17": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>0.6s</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "18": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+2j (8j)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "19": `<ul>
+                        <li>fate-bolt buffed
+                            <ul>
+                                <li>+1d (3d), +5r (59r)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "20": `<ul>
+                        <li>chains-of-fate ability buffed
+                            <ul>
+                                <li>increased duration</li>
+                            </ul>
+                        </li>
+                        <li>chain-trap buffed
+                            <ul>
+                                <li>200%d (?d)</li>
+                            </ul>
+                        </li>
+                        <li>eye-of-misfortune buffed
+                            <ul>
+                                <li>+?r, increased bloon speed</li>
                             </ul>
                         </li>
                     </ul>`

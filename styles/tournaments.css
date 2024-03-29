@@ -19,6 +19,9 @@
 
 .tournamentsSubheader {
     text-shadow: 2px 2px 2px rgba(0, 199, 133, 1);
+    @media screen and (max-width: 700px) {
+        font-size: 18pt;
+    }
 }
 
 .greenShadow {
@@ -28,10 +31,13 @@
 .tournamentsText {
     text-shadow: 4px 4px 4px rgba(0, 199, 133, 1);
     font-size: 48pt;
+    @media screen and (max-width: 700px) {
+        font-size: 32pt;
+    }
 }
 
 .allTournamentsContainer {
-    margin-top: 16-px;
+    margin-top: 16px;
 }
 
 .allTournamentsHeader {
@@ -51,7 +57,7 @@
 }
 
 .allTournaments > * {
-    height: 150px;
+    height: 200px;
     /* background-color: var(--primaryDark3); */
     border-radius: 8px;
 }
@@ -71,10 +77,11 @@
 }
 
 .tournamentButtonContainer {
-    margin-top: auto;
     display: flex;
     gap: 12px;
-    height: 30px;
+    height: 110px;
+    flex-wrap: wrap;
+    align-items: end;
 }
 
 .challongeButton {
