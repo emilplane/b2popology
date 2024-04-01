@@ -243,7 +243,8 @@ function runPopology(compare) {
                     }
                 }
                 
-                button.addEventListener("click", () => {
+                button.addEventListener("click", (x) => {
+                    console.log(x.srcElement.classList)
                     selectedPage = pageIndex
                     update()
                 });

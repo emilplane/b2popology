@@ -79,6 +79,8 @@ h1, h2, h3, h4, h5, h6, p, ul, select, button, table, thead, tbody, td {
 h1, h2, h3, h4, h5, h6, button, input, select, thead, .tableHead {
     font-family: "Gabarito";
     font-weight: 400;
+    font-family: "Comic Neue";
+    font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6, button, select, thead, .tableHead {
@@ -99,6 +101,8 @@ input {
 p, ul, td, th {
     font-family: "Roboto";
     font-weight: 100;
+    font-family: "Comic Neue";
+    font-weight: 400;
     padding: 0px 0;
 }
 
@@ -249,6 +253,7 @@ input:focus + .inputUnderline {
 
 .title {
     margin-right: 16px;
+    transform: rotate(180deg);
 }
 
 .headerContent {
