@@ -264,3 +264,52 @@ input.settingInput {
     position: absolute;
     height: 70px;
 }
+
+.simConfigSection {
+    padding: 0 8px;
+    display: grid;
+    gap: 8px;
+}
+
+.simConfigSection > .configTitle > h4 {
+    margin-bottom: 4px;
+}
+
+.simConfigSection > .configTitle > .horizontalLine {
+    margin-bottom: 0;
+}
+
+.simConfigSection > .setting {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.simConfigSection > .setting > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.simConfigSection > .setting > div:nth-child(2) {
+    justify-content: end;
+}
+
+.simConfigSection > .setting > div > input {
+    width: 100px;
+}
+
+.simConfigSection > .setting > div > .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    height: 28px; 
+    font-size: 22px;
+    background-color: var(--primaryDark2);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.simConfigSection > .gap {
+    height: 8px;
+}
