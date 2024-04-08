@@ -1,76 +1,15 @@
 import chartConfig from "./chartConfig.js"
 import StatusUI from "./statusUI.js"
-import SidePanel from "./sidePanel.js"
 
 export default class RunSim {
-    simConfig = {
-        "tabs": [
-            {
-                "name": "main",
-                "icon": "media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp",
-                "sections": [
-                    {
-                        "name": "rounds", "displayName": "Rounds",
-                        "type": "standard",
-                        "settings": [
-                            {
-                                "name": "startRound", "displayName": "Start Round",
-                                "type": "numberInput"
-                            },
-                            {
-                                "name": "endRound", "displayName": "End Round",
-                                "type": "numberInput"
-                            },
-                            {
-                                "name": "stallFactor", "displayName": "Stall Factor",
-                                "type": "numberInput",
-                                "help": true
-                            }
-                        ]
-                    },
-                    {
-                        "name": "rounds", "displayName": "Rounds",
-                        "type": "standard",
-                        "settings": [
-                            {
-                                "name": "startRound", "displayName": "Start Round",
-                                "type": "numberInput"
-                            },
-                            {
-                                "name": "endRound", "displayName": "End Round",
-                                "type": "numberInput"
-                            },
-                            {
-                                "name": "stallFactor", "displayName": "Stall Factor",
-                                "type": "numberInput",
-                                "help": true
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "tab2",
-                "icon": "media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp",
-                "sections": []
-            },
-            {
-                "name": "tab3",
-                "icon": "media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp",
-                "sections": []
-            }
-        ]
-    }
-
     /**
      * Main code to run the simulator
      * @constructor
      */
     constructor() {
-        this.sidePanel = new SidePanel(this.simConfig) 
-        this.sidePanel.fullUpdate()
-        
         this.farmArray = []
+        this.selectedTab = 0
+        
 
         this.addEventListeners()
         this.updateFarmUI()
@@ -310,5 +249,43 @@ export default class RunSim {
             })
             this.farmUpdate()
         })
+
+        // Event listeners for tab buttons
+        document.getElementById("tab0Button").addEventListener("click", () => {
+            this.selectedTab = 0
+            hideAllExcept("tab0")
+            setTabButtons(this)
+        })
+        document.getElementById("tab1Button").addEventListener("click", () => {
+            this.selectedTab = 1
+            hideAllExcept("tab1")
+            setTabButtons(this)
+        })
+        document.getElementById("tab2Button").addEventListener("click", () => {
+            this.selectedTab = 2
+            hideAllExcept("tab2")
+            setTabButtons(this)
+        })
+
+        /**
+         * Hides all tab content except for a specific tab's content.
+         * @param {string} id - the ID to not hide 
+         */
+        function hideAllExcept(id) {
+            document.getElementById("tab0").classList.remove("showTab")
+            document.getElementById("tab1").classList.remove("showTab")
+            document.getElementById("tab2").classList.remove("showTab")
+            document.getElementById(id).classList.add("showTab")
+        }
+
+        /**
+         * Updates the tab buttons.
+         */
+        function setTabButtons(context) {
+            document.getElementById("tab0Button").classList.remove("activeTab")
+            document.getElementById("tab1Button").classList.remove("activeTab")
+            document.getElementById("tab2Button").classList.remove("activeTab")
+            document.getElementById(`tab${context.selectedTab}Button`).classList.add("activeTab")
+        }
     }
 }

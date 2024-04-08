@@ -1,8 +1,8 @@
 let version = {
     "major": 0,
     "minor": 24,
-    "patch": 6,
-    "fix": 7
+    "patch": 7,
+    "fix": 1
 }
 
 let versionString;
