@@ -17,12 +17,16 @@
     }
     border-radius: 8px;
     height: 100px;
+    @media screen and (max-width: 700px) {
+        height: 60px;
+    }
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: 0.5s;
 }
+
 .categoryButton:hover {
     background-color: var(--shade4);
     @media (prefers-color-scheme: dark) {
@@ -119,6 +123,10 @@
     gap: 8px;
 }
 
+.resourceTitleContainer > h6 {
+    margin-bottom: 1px;
+}
+
 .discordSection {
     background-color: rgb(211, 203, 247);
     @media (prefers-color-scheme: dark) {
@@ -149,6 +157,12 @@
     max-height: 500px;
     text-align: center;
     padding: 0 24px;
+}
+
+.welcomeContainer > h1 {
+    @media screen and (max-width: 700px) {
+        font-size: 24pt;
+    }
 }
 
 .versionHistoryContainer {

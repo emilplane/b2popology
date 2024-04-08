@@ -6037,7 +6037,7 @@ const data = {
                                                     <ul>
                                                         <li>total: 25 moab damage per spike
                                                             <ul>
-                                                                <li>103: 50 moab damage per spike</li>
+                                                                <li>130: 50 moab damage per spike</li>
                                                             </ul>
                                                         </li>
                                                     </ul>
@@ -10312,7 +10312,7 @@ const data = {
                             <ul>
                                 <li>buffs sun-bolt</li>
                                 <ul>
-                                    <li>+200%r, +240%p</li>
+                                    <li>+200%r, +240%p, normal type, camo</li>
                                 </ul>
                             </ul>
                         </li>

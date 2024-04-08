@@ -1,12 +1,75 @@
 import chartConfig from "./chartConfig.js"
 import StatusUI from "./statusUI.js"
+import SidePanel from "./sidePanel.js"
 
 export default class RunSim {
+    simConfig = {
+        "tabs": [
+            {
+                "name": "main",
+                "icon": "media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp",
+                "sections": [
+                    {
+                        "name": "rounds", "displayName": "Rounds",
+                        "type": "standard",
+                        "settings": [
+                            {
+                                "name": "startRound", "displayName": "Start Round",
+                                "type": "numberInput"
+                            },
+                            {
+                                "name": "endRound", "displayName": "End Round",
+                                "type": "numberInput"
+                            },
+                            {
+                                "name": "stallFactor", "displayName": "Stall Factor",
+                                "type": "numberInput",
+                                "help": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "rounds", "displayName": "Rounds",
+                        "type": "standard",
+                        "settings": [
+                            {
+                                "name": "startRound", "displayName": "Start Round",
+                                "type": "numberInput"
+                            },
+                            {
+                                "name": "endRound", "displayName": "End Round",
+                                "type": "numberInput"
+                            },
+                            {
+                                "name": "stallFactor", "displayName": "Stall Factor",
+                                "type": "numberInput",
+                                "help": true
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "tab2",
+                "icon": "media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp",
+                "sections": []
+            },
+            {
+                "name": "tab3",
+                "icon": "media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp",
+                "sections": []
+            }
+        ]
+    }
+
     /**
      * Main code to run the simulator
      * @constructor
      */
     constructor() {
+        this.sidePanel = new SidePanel(this.simConfig) 
+        this.sidePanel.fullUpdate()
+        
         this.farmArray = []
 
         this.addEventListeners()

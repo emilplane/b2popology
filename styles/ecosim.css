@@ -235,7 +235,6 @@ input.settingInput {
 
 .configTabs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     height: 75px;
 }
 
@@ -247,6 +246,7 @@ input.settingInput {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
 }
 
 .configTabs > .activeTab {

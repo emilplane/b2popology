@@ -1,3 +1,5 @@
+import { isArray } from "chart.js/dist/helpers/helpers.core"
+
 const propertyList = {
     "damage": {
         "type": "number"
@@ -34,8 +36,17 @@ export class Tower {
         let currentConstructedTower = new Tower.ConstructedTower(this.towerData.upgrades)
         currentConstructedTower.addUpgrade(this.getTowerUpgrade(true))
         currentConstructedTower.addUpgrade(this.getTowerUpgrade(false, 0, 0))
-        
+        this.addFullPathUpgradesInOrder(fullPath, () => {
+
+        })
         return currentConstructedTower
+    }
+
+    addFullPathUpgradesInOrder(fullPath, functionToRun) {
+        if (!isArray(fullPath)) {return false}
+        if (fullPath[0] > fullPath[1] || fullPath[0] > fullPath[2]) {
+            
+        }
     }
 
     static ConstructedTower = class {
