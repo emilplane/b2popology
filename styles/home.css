@@ -112,7 +112,7 @@
 }
 
 .linkToExternal {
-    aspect-ratio: 1;
+    /* aspect-ratio: 1; */
     height: 18px;
     margin-left: 4px;
 }

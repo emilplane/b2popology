@@ -270,6 +270,7 @@ input:focus + .inputUnderline {
     @media screen and (min-width: 701px) {
         display: none;
     }
+    cursor: pointer;
 }
 .menu {
     border-color: var(--shade2);

@@ -141,6 +141,21 @@ let tournaments = [
             "youtubeVod": "https://youtu.be/29XJfbP7avI",
             "twitchHighlight": "https://www.twitch.tv/videos/2094139216"
         }
+    },
+    {
+        "name": "Popology Weekly 11",
+        "type": "weekly",
+        "date": "2023-3-24",
+        "backgroundImage": {
+            "name": "rbc.png",
+            "yPosition": "60%"
+        },
+        "textColor": "shade1",
+        "links": {
+            "bracket": "https://challonge.com/popologyweekly11",
+            "youtubeVod": "https://youtu.be/Muep87XExU0",
+            "twitchHighlight": "https://www.twitch.tv/videos/2100467526"
+        }
     }
 ]
 

@@ -1297,6 +1297,7 @@ const data = {
                                             <ul>
                                                 <li>1d, &#8734;p, &#8734;r, shatter type, camo</li>
                                                 <li>applies frozen status (6s duration, or 3s for camo/white/blimp)</li>
+                                                <li>all Ice Monkeys and Fusty the Snowman gain 50%s buff for 10s</li>
                                             </ul>
                                         </li>
                                         <li>crosspath
@@ -4436,7 +4437,7 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>041: surviving targets move backwards at 18x speed for ?s</li>
+                                                <li>041: surviving targets move backwards at 18x speed for 0.2s</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4460,7 +4461,7 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>051: surviving targets move backwards at ?x speed for ?s</li>
+                                                <li>051: surviving targets move backwards at 25x speed for 0.2s</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -10586,7 +10587,7 @@ const data = {
                         </li>
                     </ul>`,
                         "10": `<ul>
-                        <li>chains-of-fate ability (?s cooldown, ?s duration)
+                        <li>chains-of-fate ability (60s cooldown, 6s duration, battle ready)
                             <ul>
                                 <li>places chain-trap based on targeting, defaults on close</li>
                                 <ul>
