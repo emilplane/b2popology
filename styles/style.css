@@ -90,6 +90,10 @@ h1, h2, h3, h4, h5, h6, button, select, thead, .tableHead {
     }
 }
 
+li, p {
+    margin: 3px 0;
+}
+
 input {
     color: var(--shade8);
     outline-width: 0;
@@ -835,4 +839,23 @@ dialog {
 
 .liveTournamentButton > span {
     margin-bottom: 4px;
+}
+
+.simpleHeaderSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px 0;
+}
+
+.simpleHeaderSection > .headerLine {
+    height: 2px;
+    width: 50%;
+    margin: 12px 0 4px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .simpleHeaderSection > .headerLine {
+        background-color: var(--primaryDark1);
+    }
 }
