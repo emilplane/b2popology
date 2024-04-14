@@ -5113,7 +5113,7 @@ const data = {
                                                 <li>cannot target BADs</li>
                                                 <li>on contact: gold-splash
                                                     <ul>
-                                                        <li>15p, 14r blast</li>
+                                                        <li>14p, 14r blast</li>
                                                         <li>applies golden status</li>
                                                     </ul>
                                                 </li>
@@ -5126,7 +5126,7 @@ const data = {
                                         </li>
                                         <li>crosspath
                                             <ul>
-                                                <li>104: gold-splash +8p (20p)</li>
+                                                <li>104: gold-splash +6p (20p)</li>
                                             </ul>
                                         </li>
                                     </ul>
