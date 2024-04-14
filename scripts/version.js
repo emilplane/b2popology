@@ -2,19 +2,19 @@ let version = {
     "major": 0,
     "minor": 25,
     "patch": 1,
-    "fix": 1
+    "content": 2
 }
 
 let versionString;
 
-if (version.fix == 0) {
+if (version.content == 0) {
     if (version.patch == 0) {
         versionString = `${version.major}.${version.minor}`
     } else {
         versionString = `${version.major}.${version.minor}.${version.patch}`
     }
 } else {
-    versionString = `${version.major}.${version.minor}.${version.patch}.${version.fix}`
+    versionString = `${version.major}.${version.minor}.${version.patch}.${version.content}`
 }
 
 try {
@@ -23,8 +23,8 @@ try {
 
 let smallVersionString = ""
 
-if (version.fix != 0) {
-    smallVersionString = `.${version.patch}.${version.fix}`
+if (version.content != 0) {
+    smallVersionString = `.${version.patch}.${version.content}`
 } else if (version.patch != 0) {
     smallVersionString = `.${version.patch}`
 }
