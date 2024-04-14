@@ -85,6 +85,7 @@ function populateDialogContent(data) {
     for (let textIndex in data.content.text) {
         document.getElementById("dialogMain").insertAdjacentHTML("beforeend", `<p>${data.content.text[textIndex]}</p>`)
     }
+    document.getElementById("dialogImageContainer").innerHTML = ""
     for (let imgIndex in data.content.images) {
         document.getElementById("dialogImageContainer").insertAdjacentHTML("beforeend", `<img src="media/balanceMedia/${data.content.images[imgIndex]}.png" onclick="window.open('media/balanceMedia/${data.content.images[imgIndex]}.png')"/>`)
     }
