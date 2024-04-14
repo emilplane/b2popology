@@ -189,3 +189,19 @@
 .dialogMain {
     padding: 16px 0;
 }
+
+.imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 12px;
+}
+
+.imageContainer > * {
+    border-radius: 8px;
+    height: 100px;
+}
+
+.dialogDiscordButtonContainer {
+    margin-top: 12px;
+}
