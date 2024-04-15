@@ -188,6 +188,30 @@
     };
 }
 
+.balanceChangeInfoSection {
+    display: flex;
+    background-color: transparent;
+    padding: 0;
+}
+
+.balanceChangeInfoSectionImage {
+    background-image: url('/media/balanceMedia/bloonBot.png');
+    background-position: center;
+    background-position-y: 50%;
+    background-size: 100%;
+    filter: blur(4px);
+    opacity: 0.5;
+    width: calc(100% + 24px); height: 100%;
+    z-index: 1;
+}
+
+.balanceChangeInfoSectionContent {
+    margin-left: calc(-100%);
+    width: 100%;
+    z-index: 2;
+    padding: 12px;
+}
+
 .linksSection {
     display: grid;
     gap: 8px;
