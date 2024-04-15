@@ -62,15 +62,16 @@
 }
 
 .suggestionStats {
+    background-color: hsla(0, 0%, 50%, 0.6);
     display: flex;
     gap: 12px;
+    border-radius: 8px;
+    padding: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
     .suggestionStats {
         background-color: hsla(0, 0%, 10%, 0.6);
-        border-radius: 8px;
-        padding: 4px;
     }
 }
 
