@@ -534,7 +534,7 @@ function runPopology(compare) {
 
         let price = (costData.base*(discountForTier(0)))
         for (let path in selectedPathForPrice) {
-            for (let i=0; i<5; i++) {
+            for (let i = 0; i < 5; i++) {
                 if (selectedPathForPrice[path] > i) {
                     price += (popologyData.prices[selectedCategory][selectedPage][numberPathNameConversion(Number(path))][i])*(discountForTier(i+1))
                 }
