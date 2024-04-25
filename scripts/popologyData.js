@@ -424,7 +424,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "040 - Turbo Charge - $4,350",
+                                "name": "040 - Turbo Charge - $4,500",
                                 "content": `
                                     <ul>
                                         <li>gains turbocharge ability (45s cooldown, 8s duration, battle ready)
@@ -436,7 +436,7 @@ const data = {
                                 `
                             },
                             "5": {
-                                "name": "050 - Perma Charge - $35,000",
+                                "name": "050 - Perma Charge - $33,000",
                                 "content": `
                                     <ul>
                                         <li>boomerang attack buffed
@@ -484,7 +484,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "003 - Kylie Boomerang - $1,300",
+                                "name": "003 - Kylie Boomerang - $1,100",
                                 "content": `
                                     <ul>
                                         <li>boomerang replaced by kylie
@@ -498,7 +498,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "004 - MOAB Press - $3,200",
+                                "name": "004 - MOAB Press - $3,400",
                                 "content": `
                                     <ul>
                                         <li>gains press attack
@@ -1136,7 +1136,7 @@ const data = {
                     "data": {
                         "base": `
                             <ul>
-                                <li>$500 (150 MM)</li>
+                                <li>$450 (150 MM)</li>
                                 <li>size: 6 radius</li>
                                 <li>placeable on: land</li>
                                 <li>freeze attack
@@ -1304,7 +1304,7 @@ const data = {
                                 `
                             },
                             "5": {
-                                "name": "050 - Absolute Zero - $20,000",
+                                "name": "050 - Absolute Zero - $18,000",
                                 "content": `
                                     <ul>
                                         <li>freeze attack buffed
@@ -3591,7 +3591,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "300 - Laser Cannon - $3,000",
+                                "name": "300 - Laser Cannon - $2,800",
                                 "content": `
                                     <ul>
                                         <li>dart replaced by laser
@@ -4589,7 +4589,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "200 - Sharp Shurikens - $300",
+                                "name": "200 - Sharp Shurikens - $200",
                                 "content": `
                                     <ul>
                                         <li>shuriken buffed
@@ -4601,7 +4601,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "300 - Double Shot - $650",
+                                "name": "300 - Double Shot - $750",
                                 "content": `
                                     <ul>
                                         <li>shuriken buffed
@@ -6007,7 +6007,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "020 - Even Faster Production - $600",
+                                "name": "020 - Even Faster Production - $500",
                                 "content": `
                                     <ul>
                                         <li>spikes buffed
@@ -6146,7 +6146,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "003 - Long Life Spikes - $600",
+                                "name": "003 - Long Life Spikes - $750",
                                 "content": `
                                     <ul>
                                         <li>spikes buffed
@@ -6163,7 +6163,7 @@ const data = {
                                 `
                             },
                             "4": {
-                                "name": "004 - Deadly Spikes - $3,300",
+                                "name": "004 - Deadly Spikes - $3,200",
                                 "content": `
                                     <ul>
                                         <li>spikes buffed
@@ -11915,8 +11915,8 @@ const data = {
             "boomerangMonkey": {
                 "base": 325,
                 "top": [200, 280, 1300, 3600, 30000],
-                "middle": [175, 250, 1100, 4350, 35000],
-                "bottom": [100, 300, 1300, 3200, 52000]
+                "middle": [175, 250, 1100, 4500, 33000],
+                "bottom": [100, 300, 1100, 3400, 52000]
             },
             "bombShooter": {
                 "base": 525,
@@ -11931,9 +11931,9 @@ const data = {
                 "bottom": [100, 100, 450, 3400, 24000]
             },
             "iceMonkey": {
-                "base": 500,
+                "base": 450,
                 "top": [100, 350, 2000, 2700, 34000],
-                "middle": [225, 350, 2900, 3000, 20000],
+                "middle": [225, 350, 2900, 3000, 18000],
                 "bottom": [100, 200, 1750, 2400, 32000]
             },
             "glueGunner": {
@@ -11982,7 +11982,7 @@ const data = {
             },
             "dartlingGunner": {
                 "base": 800,
-                "top": [250, 600, 3000, 12000, 80000],
+                "top": [250, 600, 2800, 12000, 80000],
                 "middle": [250, 500, 5600, 5100, 68000],
                 "bottom": [150, 800, 3400, 14500, 53000]
             }
@@ -12002,7 +12002,7 @@ const data = {
             },
             "ninjaMonkey": {
                 "base": 400,
-                "top": [150, 300, 650, 2750, 35000],
+                "top": [150, 200, 750, 2750, 35000],
                 "middle": [200, 375, 2100, 4500, 25000],
                 "bottom": [200, 250, 1800, 4900, 40000]
             },
@@ -12035,8 +12035,8 @@ const data = {
             "spikeFactory": {
                 "base": 600,
                 "top": [600, 600, 2700, 9500, 110000],
-                "middle": [500, 600, 2500, 5200, 40000],
-                "bottom": [150, 500, 600, 3300, 30000]
+                "middle": [500, 500, 2500, 5200, 40000],
+                "bottom": [150, 500, 750, 3200, 30000]
             },
             "engineerMonkey": {
                 "base": 400,
