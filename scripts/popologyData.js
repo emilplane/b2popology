@@ -952,7 +952,7 @@ const data = {
                                     <ul>
                                         <li>ring-of-fire buffed
                                             <ul>
-                                                <li>+8d (11d), +7md (15md), +11.5r (34.5r), 0.1s</li>
+                                                <li>+8d (11d), +11md (22md), +11.5r (34.5r), 0.1s</li>
                                             </ul>
                                         </li>
                                         <li>gains meteor attack
@@ -1015,7 +1015,7 @@ const data = {
                                     <ul>
                                         <li>tacks replaced by blades 
                                             <ul>
-                                                <li>1d, +2p (4p), 31r, 1.19s, sharp type, increased projectile size</li>
+                                                <li>1d, +2p (4p), 31r, 88%s (1.232s), sharp type, increased projectile size</li>
                                             </ul>
                                         </li>
                                         <li>crosspath
@@ -1276,11 +1276,6 @@ const data = {
                                                 <li>land towers are placeable on any water in range</li>
                                             </ul>
                                         </li>
-                                        <li>crosspath
-                                            <ul>
-                                                <li>230: slow can affect lead</li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 `
                             },
@@ -1297,7 +1292,7 @@ const data = {
                                             <ul>
                                                 <li>1d, &#8734;p, &#8734;r, shatter type, camo</li>
                                                 <li>applies frozen status (6s duration, or 3s for camo/white/blimp)</li>
-                                                <li>all Ice Monkeys and Fusty the Snowman gain 50%s buff for 10s</li>
+                                                <li>all Ice Monkeys and Fusty the Snowman gain 50%s buff for 6s</li>
                                             </ul>
                                         </li>
                                         <li>crosspath
@@ -2707,13 +2702,13 @@ const data = {
                                     <ul>
                                         <li>radial-dart buffed
                                             <ul>
-                                                <li>+2d (3d), +2cd (5cd), +16j (32j), +3p (12p), 50%s (0.27s), normal type</li>
+                                                <li>+2d (3d), +2cd (5cd), +16j (32j), +5p (14p), 50%s (0.27s), normal type</li>
                                                 <li>much faster projectile speed</li>
                                             </ul>
                                         </li>
                                         <li>explosion buffed
                                             <ul>
-                                                <li>180d, +1p (5p)</li>
+                                                <li>200d, +1p (5p)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -2863,7 +2858,7 @@ const data = {
                                         </li>
                                         <li>dart projectile
                                             <ul>
-                                                <li>2d, 2cd (4cd), 15p, sharp type</li>
+                                                <li>2d, +2cd (4cd), +2md (4md), 15p, sharp type</li>
                                                 <li>very weak homing (80 turn rate)</li>
                                             </ul>
                                         </li>
@@ -2898,7 +2893,7 @@ const data = {
                                         </li>
                                         <li>dart buffed
                                             <ul>
-                                                <li>+2d (4d), +10md (14md), normal type</li>
+                                                <li>+2d (4d), +8md (14md), normal type</li>
                                             </ul>
                                         </li>
                                         <li>bomb buffed
@@ -4194,14 +4189,14 @@ const data = {
                                                 <li>60r, 3s</li>
                                                 <li>if less than 2000 pops in the graveyard, uses 20 to spawn a zmoab
                                                     <ul>
-                                                        <li>40d, 20p, normal type, 20s lifetime</li>
+                                                        <li>25d, 20p, normal type, 20s lifetime</li>
                                                         <li>travels backwards along the track at 60% red speed</li>
                                                         <li>+1d for every 300 graveyard bloons, stacking additively up to 10 times</li>
                                                     </ul>
                                                 </li>
                                                 <li>if more than 2000 pops in the graveyard, uses 50 to spawn a zbfb
                                                     <ul>
-                                                        <li>100d, 50p, normal type, 12.5s lifetime</li>
+                                                        <li>130d, 50p, normal type, 12.5s lifetime</li>
                                                         <li>travels backwards along the track at 60% red speed</li>
                                                     </ul>
                                                 </li>
@@ -4412,7 +4407,7 @@ const data = {
                                         <li>dart buffed
                                             <ul>
                                                 <li>+3p (7p)</li>
-                                                <li>10d crit every 15-20 shots</li>
+                                                <li>10d crit every 15 shots</li>
                                             </ul>
                                         </li>
                                         <li>gains a second attack, which is a copy of the first, with independent choice of targeting priority</li>
@@ -4426,7 +4421,7 @@ const data = {
                                     <ul>
                                         <li>dart replaced by plasma
                                             <ul>
-                                                <li>1d, 9p, 72r, 80%s (0.036s), plasma type</li>
+                                                <li>1d, +6p (13p), 72r, 80%s (0.036s), plasma type</li>
                                             </ul>
                                         </li>
                                         <li>gains annihilate ability (45s cooldown, battle ready)
@@ -4449,8 +4444,8 @@ const data = {
                                     <ul>
                                         <li>plasma buffed
                                             <ul>
-                                                <li>+4d (5d), +5p (14p), +10r (82r), normal type</li>
-                                                <li>50d crit every 13-17 shots</li>
+                                                <li>+4d (5d), +3p (16p), +10r (82r), normal type</li>
+                                                <li>50d crit every 15 shots</li>
                                             </ul>
                                         </li>
                                         <li>annihilate replaced by anti-bloon (30s cooldown, battle ready)
@@ -4599,7 +4594,7 @@ const data = {
                                     <ul>
                                         <li>shuriken buffed
                                             <ul>
-                                                <li>+2p (5p)</li>
+                                                <li>+1p (4p)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4629,11 +4624,6 @@ const data = {
                                         <li>shuriken buffed
                                             <ul>
                                                 <li>+3j 45&deg spread (5j)</li>
-                                            </ul>
-                                        </li>
-                                        <li>crosspath
-                                            <ul>
-                                                <li>402: caltrops +5d (10d)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4755,7 +4745,7 @@ const data = {
                                             <ul>
                                                 <li>40r, 9s passive, places caltrop randomly on path
                                                     <ul>
-                                                        <li>3d, 6p, sharp type, 25s lifetime</li>
+                                                        <li>3d, 6i, sharp type, 25s lifetime</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -4770,7 +4760,7 @@ const data = {
                                         <li>every 3rd shuriken replaced by flash-bomb
                                             <ul>
                                                 <li>1d, 75p, 40r blast, normal type</li>
-                                                <li>applies stun (1.3s duration) to bloons</li>
+                                                <li>applies stun (1s duration) to bloons</li>
                                             </ul>
                                         </li>
                                         <li>crosspath
@@ -4859,7 +4849,7 @@ const data = {
                                         <li>can see past obstacles</li>
                                         <li>on contact: splash
                                             <ul>
-                                                <li>1d single-layer, 14p, 14r blast, acid type</li>
+                                                <li>1d single-layer, 12p, 12r blast, acid type</li>
                                                 <li>applies acid status: 1d/2.0s, 4.05s duration</li>
                                             </ul>
                                         </li>
@@ -4874,7 +4864,7 @@ const data = {
                                     <ul>
                                         <li>splash buffed
                                             <ul>
-                                                <li>+6p (20p), +7r (21r)</li>
+                                                <li>+6p (18p), +6r (18r)</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -4964,7 +4954,7 @@ const data = {
                                     <ul>
                                         <li>acid status buffed
                                             <ul>
-                                                <li>1d/1s, 3s duration</li>
+                                                <li>1d/1.33s, 4s duration</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -5113,7 +5103,7 @@ const data = {
                                                 <li>cannot target BADs</li>
                                                 <li>on contact: gold-splash
                                                     <ul>
-                                                        <li>14p, 14r blast</li>
+                                                        <li>12p, 12r blast</li>
                                                         <li>applies golden status</li>
                                                     </ul>
                                                 </li>
@@ -5121,7 +5111,7 @@ const data = {
                                         </li>
                                         <li>golden status
                                             <ul>
-                                                <li>affected bloons give $2 per layer popped</li>
+                                                <li>affected bloons give $1.5 per layer popped</li>
                                             </ul>
                                         </li>
                                         <li>crosspath
@@ -5649,7 +5639,7 @@ const data = {
                                         <li>farms in range are sacrificed to the village when upgraded</li>
                                         <li>gains income
                                             <ul>
-                                                <li>$3600 base + $600 per $2,000 spent on sacrifices per round</li>
+                                                <li>$4,200 base + $600 per $2,000 spent on sacrifices per round</li>
                                                 <li>divided throughout the round into at most 10 crates, but at least 6 crates</li>
                                             </ul>
                                         </li>
@@ -8500,11 +8490,11 @@ const data = {
                                         <li>+3d (5d)</li>
                                     </ul>
                                 </li>
-                                <li>barrage buffed
-                                    <ul>
-                                        <li>300d</li>
-                                    </ul>
-                                </li>
+                            </ul>
+                        </li>
+                        <li>barrage buffed
+                            <ul>
+                                <li>300d</li>
                             </ul>
                         </li>
                     </ul>`
@@ -9053,7 +9043,7 @@ const data = {
                         </li>
                         <li>splash buffed
                             <ul>
-                                <li>+2p (7p)</li>
+                                <li>+3p (8p), +3r (11r)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -9173,7 +9163,7 @@ const data = {
                         "13": `<ul>
                         <li>splash buffed
                             <ul>
-                                <li>+10p (15p), +3r (11r)</li>
+                                <li>+10p (16p), +3r (14r)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -9205,7 +9195,7 @@ const data = {
                         </li>
                     </ul>`,
                         "17": `<ul>
-                        <li>splash buffed: +10p (25p), +2r (13r)</li>
+                        <li>splash buffed: +10p (26p), +2r (16r)</li>
                     </ul>`,
                         "18": `<ul>
                         <li>curse buffed: 0.8s</li>
@@ -9361,7 +9351,7 @@ const data = {
                         <li>slam buffed
                             <ul>
                                 <li>stuns MOABs for 0.2s</li>
-                                <li>+0.1s stun duration (0.4s stun duration)</li>
+                                <li>+0.1s stun duration (0.55s stun duration)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -9369,7 +9359,7 @@ const data = {
                         <li>rallying-roar ability buffed:
                             <ul>
                                 <li>50s cooldown</li>
-                                <li>9s duration</li>
+                                <li>12.5s duration</li>
                                 <li>+10r</li>
                                 <li>gives +3d instead of +1</li>
                             </ul>
@@ -9391,7 +9381,7 @@ const data = {
                         <li>aoe buffed</li>
                         <ul>
                             <li>+6cd (12cd)</li>
-                        <ul>
+                        </ul>
                     </ul>`,
                         "17": `<ul>
                         <li>slam buffed</li>
@@ -9456,6 +9446,11 @@ const data = {
                                 <li>+5 blast radius (13 blast radius)</li>
                             </ul>
                         </li>
+                        <li>applies frozen-weakness status to frozen bloons
+                        <ul>
+                            <li>frozen bloons can now be hit by all projectiles</li>
+                        </ul>
+                    </li>
                     </ul>`,
                         "3": `<ul>
                         <li>chilling-cheer ability (50s cooldown, 7s duration, 12s initial)
@@ -9577,6 +9572,7 @@ const data = {
                                 <li>9s duration</li>
                                 <li>+10r</li>
                                 <li>gives +3d instead of +1</li>
+                                <li>-50% attack cooldown</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10528,12 +10524,12 @@ const data = {
                         </ul>
                     </ul>`,
                         "3": `<ul>
-                        <li>sharp-sting-of-fate ability (35s cooldown, 2?s duration)
+                        <li>sharp-sting-of-fate ability (50s cooldown)
                             <ul>
                                 <li>buffs fate-bolt</li>
                                 <ul>
                                     <li>+?d, +?p</li>
-                                    <li>on enemy bloon boost: ?% cooldown (approximately 8 seconds)</li>
+                                    <li>on enemy bloon boost: 0.18% cooldown (9s cooldown)</li>
                                 </ul>
                             </ul>
                         </li>
@@ -10565,8 +10561,9 @@ const data = {
                                 <li>selected tower is sacrificed</li>
                                 <li>misfortune buff
                                     <ul>
-                                        <li>decreases enemy hero leveling by ?%</li>
-                                        <li>increases speeed of bloons in the enemy hero's range by ?%</li>
+                                        <li>reduces opponent's hero xp by the cost of the sacrificed tower</li>
+                                        <li>increases speeed of bloons in the enemy hero's range by ?% for 1 + x / 500</li>
+                                        <li>x = cost of sacrificed tower</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -10591,7 +10588,9 @@ const data = {
                             <ul>
                                 <li>places chain-trap based on targeting, defaults on close</li>
                                 <ul>
-                                    <li>stats untested</li>
+                                    <li>(1 + x / 1000)d, ?p, ?r zone, 0.12s, normal type, camo</li>
+                                    <li>x = cost of opponent's most expensive tower</li>
+                                    <li>slows moab-class bloons</li>
                                 </ul>
                             </ul>
                         </li>
@@ -11586,11 +11585,20 @@ const data = {
                             </li>
                             <li>Grouped
                                 <ul>
-                                    <li>Rounds: 12+</li>
+                                    <li>Rounds: 12-22</li>
                                     <li>Count: 4</li>
                                     <li>Total time: 0.6s</li>
                                     <li>Eco: +$4.5</li>
                                     <li>Cost: $150</li>
+                                </ul>
+                            </li>
+                            <li>Tight
+                                <ul>
+                                    <li>Rounds: 23+</li>
+                                    <li>Count: 80</li>
+                                    <li>Total time: 1s</li>
+                                    <li>Eco: +$20</li>
+                                    <li>Cost: $1,200</li>
                                 </ul>
                             </li>
                         </ul>
@@ -11688,11 +11696,20 @@ const data = {
                             </li>
                             <li>Grouped
                                 <ul>
-                                    <li>Rounds: 19+</li>
+                                    <li>Rounds: 19-24</li>
                                     <li>Count: 1</li>
                                     <li>Total time: 0.5s</li>
                                     <li>Eco: +$0</li>
-                                    <li>Cost: $1,000</li>
+                                    <li>Cost: $900</li>
+                                </ul>
+                            </li>
+                            <li>Tight
+                                <ul>
+                                    <li>Rounds: 25+</li>
+                                    <li>Count: 20</li>
+                                    <li>Total time: 1s</li>
+                                    <li>Eco: -$50</li>
+                                    <li>Cost: $3,500</li>
                                 </ul>
                             </li>
                         </ul>
@@ -11716,11 +11733,20 @@ const data = {
                             </li>
                             <li>Grouped
                                 <ul>
-                                    <li>Rounds: 22+</li>
+                                    <li>Rounds: 22-26</li>
                                     <li>Count: 1</li>
                                     <li>Total time: 0.6s</li>
                                     <li>Eco: -$25</li>
-                                    <li>Cost: $1,600</li>
+                                    <li>Cost: $1,300</li>
+                                </ul>
+                            </li>
+                            <li>Tight
+                                <ul>
+                                    <li>Rounds: 27+</li>
+                                    <li>Count: 10</li>
+                                    <li>Total time: 1.2s</li>
+                                    <li>Eco: -$150</li>
+                                    <li>Cost: $7,000</li>
                                 </ul>
                             </li>
                         </ul>
@@ -11748,7 +11774,12 @@ const data = {
                                     <li>Count: 1</li>
                                     <li>Total time: 1s</li>
                                     <li>Eco: -$100</li>
-                                    <li>Cost: $5,500</li>
+                                    <li>Cost:
+                                        <ul>
+                                            <li>Rounds 24-25: $5,000</li>
+                                            <li>Rounds 26-29: $4,500</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li>Tight
@@ -11784,7 +11815,7 @@ const data = {
                                     <li>Rounds: 28+</li>
                                     <li>Count: 3</li>
                                     <li>Total time: 0.6s</li>
-                                    <li>Eco: -$300</li>
+                                    <li>Eco: -$200</li>
                                     <li>Cost: $5,000</li>
                                 </ul>
                             </li>
