@@ -12,7 +12,7 @@ menuCloseButton.addEventListener('click', function() {
     menuDialog.close(); 
 });
 
-const startDate = new Date('2024-04-27T17:00:00.000Z');
+const startDate = new Date('2024-04-26T17:00:00.000Z');
 const now = new Date();
 const diffTime = (now - startDate)*-1
 console.log(diffTime)
