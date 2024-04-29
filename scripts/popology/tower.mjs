@@ -162,33 +162,56 @@ export class Tower {
                 for (let buffIndex in this.moduleList[moduleIndex].buffs) {
                     let propertyName = this.moduleList[moduleIndex].buffs[buffIndex][0]
                     let buffData = this.moduleList[moduleIndex].buffs[buffIndex][1]
-
                     if (buffListObject[propertyName] == undefined) {
-                        buffListObject[propertyName] = { "+": [], "%": [], "*": [] }
+                        let temp = { "type": propertyList[propertyName].type }
+                        switch (propertyList[propertyName].type) {
+                            case "number": 
+                                temp["+"] = []; temp["%"] = []; temp["*"] = []; break
+                            case "boolean":
+                                temp.changes = []; break
+                        }
+                        buffListObject[propertyName] = temp
                     }
-                    buffListObject[propertyName][buffData[0]].push(buffData)
+                    switch (propertyList[propertyName].type) {
+                        case "number": 
+                            buffListObject[propertyName][buffData[0]].push(buffData); break
+                        case "boolean":
+                            buffListObject[propertyName].changes.push(buffData); break
+                    }
                 }
 
                 for (let propertyName in buffListObject) {
                     let propertyValue = this.moduleList[moduleIndex].properties[propertyName]
-
-                    let multiplier = 1
-                    let percentage = 1
-                    let additive = 0
-                    
-                    for (let i in buffListObject[propertyName]["*"]) {
-                        multiplier = multiplier * buffListObject[propertyName]["*"][i][1]
+                    switch (propertyList[propertyName].type) {
+                        case "number": 
+                            let multiplier = 1, percentage = 1, additive = 0
+                            
+                            for (let i in buffListObject[propertyName]["*"]) {
+                                multiplier = multiplier * buffListObject[propertyName]["*"][i][1]
+                            }
+                            for (let i in buffListObject[propertyName]["%"]) {
+                                percentage += buffListObject[propertyName]["%"][i][1]
+                            }
+                            for (let i in buffListObject[propertyName]["+"]) {
+                                additive += buffListObject[propertyName]["+"][i][1]
+                            }
+                            propertyValue = propertyValue * multiplier
+                            propertyValue = propertyValue * percentage
+                            propertyValue += additive
+                            this.moduleList[moduleIndex].properties[propertyName] = propertyValue
+                            break
+                        case "boolean": 
+                            for (let i in buffListObject[propertyName].changes) {
+                                switch (buffListObject[propertyName].changes[i]) {
+                                    case "invert": 
+                                        if (propertyValue) {propertyValue = false} 
+                                            else {propertyValue = true}
+                                        break
+                                    default: propertyValue = buffListObject[propertyName].changes[i]
+                                }
+                            }
+                            this.moduleList[moduleIndex].properties[propertyName] = propertyValue
                     }
-                    for (let i in buffListObject[propertyName]["%"]) {
-                        percentage += buffListObject[propertyName]["%"][i][1]
-                    }
-                    for (let i in buffListObject[propertyName]["+"]) {
-                        additive += buffListObject[propertyName]["+"][i][1]
-                    }
-                    propertyValue = propertyValue * multiplier
-                    propertyValue = propertyValue * percentage
-                    propertyValue += additive
-                    this.moduleList[moduleIndex].properties[propertyName] = propertyValue
                 }
             }
         }

@@ -6,21 +6,30 @@ const sampleTower = {
     "upgrades": {
         "base": [
             {"name": "dart", "action": "new", "damage": 2, "attackCooldown": 0.95},
-            {"name": "bullet", "action": "new", "damage": 3, "attackCooldown": 2}
+            {"name": "bullet", "action": "new", "damage": 3, "pierce": 1, "impact": true, "attackCooldown": 2}
         ],
         "paths": [
             [
                 [
                     {"name": "dart", "action": "buff", "damage": ["+", 1]}
                 ],[
-                    {"name": "dart", "action": "buff", "damage": ["+", 2]},
+                    {"name": "dart", "action": "buff", "damage": ["+", 2], "attackCooldown": ["*", 0.5]},
                     {"name": "bullet", "action": "buff", "damage": ["+", 3]}
                 ],[
-                    {"name": "dart", "action": "buff", "damage": ["%", 0.5]}
+                    {"name": "fireball", "action": "new", "damage": 2, "attackCooldown": 0.8},
+                    {"name": "dart", "action": "buff", "damage": ["%", 0.5]},
+                    {
+                        "name": "bullet", 
+                        "action": "buff", 
+                        "impact": false
+                    }
                 ],[
-                    {"name": "dart", "action": "buff", "damage": ["%", 0.15]}
+                    {"name": "dart", "action": "buff", "damage": ["%", 0.15]},
+                    {"name": "fireball", "action": "buff", "damage": ["%", 0.15]},
+                    {"name": "bullet", "action": "buff", "attackCooldown": ["*", 0.01]}
                 ],[
-                    {"name": "dart", "action": "buff", "damage": ["*", 2]}
+                    {"name": "dart", "action": "buff", "damage": ["*", 2]},
+                    {"name": "bullet", "action": "buff", "impact": "invert"}
                 ]
             ],
             [
