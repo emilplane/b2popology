@@ -3,12 +3,16 @@ let tournaments;
 function getTournamentData() {
     fetch("https://raw.githubusercontent.com/emilplane/b2popology/main/json/tournaments.json")
         .then((response) => response.json())
-        .then((json) => main(json))
+        .then((json) => (tournaments = json))
+        .then(() => main())
 }
 
 getTournamentData()
 
-updateTournamentCards()
+function main () {
+    console.log(tournaments)
+    updateTournamentCards()
+}
 
 document.getElementById("sortingDropdown").addEventListener("change", () => {
     updateTournamentCards()
@@ -40,9 +44,7 @@ function updateTournamentCards() {
         }
         let cardHTML = `
             <div class="tournamentCard">
-                <div class="tournamentCardBackgroundImage tournamentCardBackgroundImage${tournamentIndex}">
-                    
-                </div>
+                <div class="tournamentCardBackgroundImage tournamentCardBackgroundImage${tournamentIndex}"></div>
                 <div class="tournamentCardContent">
                     <h2 class="textShadow" style="color:var(--)">${tournament.name}</h2>
                     <h5 class="textShadow">Weekly Tournament &bull; ${new Date(tournament.date).toLocaleDateString(undefined, {timeZone: "UTC"})}</h5>
@@ -70,7 +72,3 @@ function updateTournamentCards() {
         }
     }
 }
-
-// <button class="challongeButton">Challonge bracket</button>
-// <button class="youtubeButton">YouTube VOD</button>
-// <button class="twitchButton">Twitch Highlight</button>

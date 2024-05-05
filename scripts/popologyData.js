@@ -3644,13 +3644,18 @@ const data = {
                                         <li>beam replaced by full-beam
                                             <ul>
                                                 <li>30d, +20 shocked4 damage (50 shocked4 damage), 1000p, 0.2s passive, normal type</li>
-                                                <li>additional +55d to the first 3 targets</li>
+                                                <li>additional +55d to the first target</li>
                                                 <li>one solid beam to the edge of the screen</li>
                                                 <li>applies shocked4 status
                                                     <ul>
                                                         <li>20d/0.95s, 5s duration</li>
                                                     </ul>
                                                 </li>
+                                            </ul>
+                                        </li>
+                                        <li>crosspath
+                                            <ul>
+                                                <li>502: bonus damage applies to first 3 targets</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -8857,24 +8862,23 @@ const data = {
                             <ul>
                                 <li>90s cooldown</li>
                                 <li>costs 10 lives</li>
-                                <li>places sacrificial-totem at selected point</li>
-                                <li>note: sacrificing lives does trigger effects based on losing lives (xx5 bomb, xx5 sniper, xx2+ druid)</li>
-                            </ul>
-                        </li>
-                        <li>sacrificial-totem subtower
-                            <ul>
-                                <li>30s lifetime</li>
-                                <li>78r</li>
-                                <li>grants support buff
+                                <li>places sacrificial-totem at selected point
                                     <ul>
-                                        <li>affects all towers in range</li>
-                                        <li>+1p, +20%r, 85%s, camo detection, increased projectile speed
+                                        <li>20s lifetime</li>
+                                        <li>78r</li>
+                                        <li>grants support buff
                                             <ul>
-                                                <li>wizards instead get +2p, +20%r, 66%s, camo detection, increased projectile speed</li>
+                                                <li>affects all towers in range</li>
+                                                <li>+1p, +20%r, 85%s, camo detection, increased projectile speed
+                                                    <ul>
+                                                        <li>wizards instead get +2p, +20%r, 66%s, camo detection, increased projectile speed</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
+                                <li>note: sacrificing lives does trigger effects based on losing lives (xx5 bomb, xx5 sniper, xx2+ druid)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -9048,9 +9052,8 @@ const data = {
                         </li>
                     </ul>`,
                         "3": `<ul>
-                        <li>screech ability
+                        <li>screech ability (45s cooldown, battle ready)
                             <ul>
-                                <li>45s cooldown</li>
                                 <li>&#8734;p, &#8734;r</li>
                                 <li>all regrow bloons on screen instantly lose the regrow property</li>
                                 <li>all purple bloons on screen instantly lose the purple property</li>
@@ -9079,28 +9082,25 @@ const data = {
                         </li>
                     </ul>`,
                         "7": `<ul>
-                        <li>scratch ability
+                        <li>scratch ability (30s cooldown, 11s duration, battle ready)
                             <ul>
-                                <li>90s cooldown</li>
                                 <li>costs 5 lives</li>
-                                <li>places sacrificial-totem at selected point</li>
-                                <li>note: sacrificing lives does trigger effects based on losing lives (xx5 bomb, xx5 sniper, xx2+ druid)</li>
-                            </ul>
-                        </li>
-                        <li>scratching-post subtower
-                            <ul>
-                                <li>30s lifetime</li>
-                                <li>78r</li>
-                                <li>grants support buff
+                                <li>places scratching-post at selected point
                                     <ul>
-                                        <li>affects all towers in range</li>
-                                        <li>+1p, +20%r, 85%s, camo detection, increased projectile speed
+                                        <li>78r</li>
+                                        <li>grants support buff
                                             <ul>
-                                                <li>ezili gets an additional 50%s (42.5%s total) and +(6*level)md</li>
+                                                <li>affects all towers in range</li>
+                                                <li>+1p, +20%r, 85%s, camo detection, increased projectile speed
+                                                    <ul>
+                                                        <li>Smudge Catt Ezili gets an additional 50%s (42.5%s total) and +(6*level)md</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
+                                <li>note: sacrificing lives does trigger effects based on losing lives (xx5 bomb, xx5 sniper, xx2+ druid)</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -11786,7 +11786,7 @@ const data = {
                                 <ul>
                                     <li>Rounds: 30+</li>
                                     <li>Count: 4</li>
-                                    <li>Total time: 12s</li>
+                                    <li>Total time: 1.2s</li>
                                     <li>Eco: -$400</li>
                                     <li>Cost: $12,000</li>
                                 </ul>

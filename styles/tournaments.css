@@ -68,20 +68,23 @@
 
 .tournamentCardContent {
     position: absolute;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
     top: 0;
     width: calc(100% - 24px);
     height: calc(100% - 24px);
     padding: 12px;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 
 .tournamentButtonContainer {
     display: flex;
     gap: 12px;
-    height: 110px;
+    /* height: 110px; */
     flex-wrap: wrap;
-    align-items: end;
+    /* align-items: end; */
+    align-content: flex-end;
 }
 
 .challongeButton {
@@ -133,4 +136,34 @@
     .twitchButton:hover {
         background-color: rgb(164, 92, 231);
     }
+}
+
+.importantContentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    /* justify-items: stretch; */
+    min-height: 100px;
+}
+
+.importantContentBox {
+    
+    flex: auto
+}
+
+.importantContent {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    background-color: green;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.importantContent > .horizontalLine {
+    width: 150px;
+    margin-bottom: 0px;
 }
