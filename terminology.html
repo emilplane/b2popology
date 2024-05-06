@@ -36,7 +36,7 @@
                     <section class="simpleHeaderSection">
                         <h2>Terminology</h2>
                         <div class="headerLine"></div>
-                        <p>Last updated: 4/12/2024</p>
+                        <p>Last updated: 5/5/2024</p>
                     </section>
                     <section class="roundedBoxSection">
                         <h4>Damage (d)</h4>
@@ -124,6 +124,45 @@
                     <section class="roundedBoxSection">
                         <h4>Defort</h4>
                         <p>The attack removes the fortified property from affected bloons.</p>
+                    </section>
+                    <section class="roundedBoxSection">
+                        <h4>Upgrades and buffs</h4>
+                        <p>
+                            When applying many stat buffs from both upgrades and external towers, it is important to 
+                            apply them in the correct order. The algorithm is as follows:
+                        </p>
+                        <ul>
+                            <li>
+                                Stat buffs from tower upgrades always apply before buffs from external towers.
+                                <ul>
+                                    <li>
+                                        First, multiplicative buffs are applied. For example, if a tower 
+                                        has 2 pierce and has an upgrade that gives it 3x pierce ("300%p"), then it now has 6 pierce.
+                                    </li>
+                                    <li>
+                                        Next, percentage buffs added together and applied as a multiplier. For example,
+                                        if we have:
+                                        <ul>
+                                            <li>one upgrade that gives +50%p, and </li>
+                                            <li>one upgrade that gives +200%p,</li>
+                                        </ul>
+                                        then both stats are first added together (+250%p) and then multiplied. For our 
+                                        previous example, 6*2.5 = 15 pierce.
+                                    </li>
+                                    <li>
+                                        Finally, additive buffs are added together. For example, a +20p buff
+                                        will result in 15+20 = 35 pierce.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                After all upgrades have been evaulated, external buffs are then applied using the above
+                                process. Remember, these calculations use our previously calculated value.
+                            </li>
+                            <li>
+                                For example, if we have a buff that gives us 200%p, we multiply it by our 35p to get 70p.
+                            </li>
+                        </ul>
                     </section>
                 </div>
             </div>

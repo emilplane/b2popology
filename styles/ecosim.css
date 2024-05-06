@@ -133,7 +133,11 @@
 }
 
 .settingInput {
-    margin-left: auto;
+    /* margin-left: auto; */
+}
+
+.dollar::before {
+    
 }
 
 input.settingInput {
@@ -319,8 +323,9 @@ input.settingInput {
 
 .tab {
     display: none;
+    gap: 16px;
 }
 
 .showTab {
-    display: block;
+    display: grid;
 }

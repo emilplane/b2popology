@@ -41,6 +41,7 @@
                         <a href="clans.html">
                             <h5>Tournaments</h5>
                         </a>
+                        <a href="balance.html"><h5>Balancing</h5></a>
                         <a href="https://discord.com/invite/9YAaxDXAYZ">
                             <h5>Discord</h5>
                         </a>
@@ -78,7 +79,7 @@
                     <div class="configureSim" id="sidePanelContainer">
                         <div class="configTabs">
                             <div class="activeTab" id="tab0Button">
-                                <img src="media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp">
+                                <img src="media/Tower Portraits/monkeyVillage/base/monkeyVillagePortrait.png">
                             </div>
                             <div class="" id="tab1Button">
                                 <img src="media/Tower Portraits/dartMonkey/base/dartMonkeyPortrait.png">
@@ -99,7 +100,7 @@
                                         <h5>Start round</h5>
                                     </div>
                                     <div>
-                                        <input/>
+                                        <input id="gameRound" class="settingInput" type="number" min="10" step="1" value="10" />
                                     </div>
                                 </div>
                                 <div class="setting">
@@ -107,7 +108,7 @@
                                         <h5>End round</h5>
                                     </div>
                                     <div>
-                                        <input/>
+                                        <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
                                     </div>
                                 </div>
                                 <div class="setting">
@@ -116,16 +117,57 @@
                                     </div>
                                     <div>
                                         <div class="material-symbols-outlined icon">question_mark</div>
-                                        <input/>
+                                        <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="simConfigSection">
+                                <div class="configTitle">
+                                    <h4>Starting Configuration</h4>
+                                    <div class="horizontalLine strongLineStyle"></div>
+                                </div>
+                                <div class="setting">
+                                    <div>
+                                        <h5>Starting cash</h5>
+                                    </div>
+                                    <div>
+                                        <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
+                                    </div>
+                                </div>
+                                <div class="setting">
+                                    <div>
+                                        <h5>Starting eco</h5>
+                                    </div>
+                                    <div>
+                                        <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="tab" id="tab1">
-
+                            <div class="simConfigSection">
+                                <div class="configTitle">
+                                    <h4>Initial Configuration</h4>
+                                    <div class="horizontalLine strongLineStyle"></div>
+                                </div>
+                                <div class="setting">
+                                    <div>
+                                        <h5>Starting cash</h5>
+                                    </div>
+                                    <div>
+                                        <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
+                                    </div>
+                                </div>
+                                <div class="setting">
+                                    <div>
+                                        <h5>Starting eco</h5>
+                                    </div>
+                                    <div>
+                                        <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                         <div class="tab" id="tab2">
 
                         </div>
@@ -133,19 +175,18 @@
                         <div class="simSettingsContainer" style="display: none">
                             <h4>Initial Game State</h4>
                             <div class="simSettingsList">
-                                <div class="simSetting">
+                                <!-- <div class="simSetting">
                                     <h6>Stall Factor</h6>
                                     <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
-                                </div>
-                                
-                                <div class="simSetting">
+                                </div> -->
+                                <!-- <div class="simSetting">
                                     <h6>Initial Cash</h6>
                                     <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
-                                </div>
-                                <div class="simSetting">
+                                </div> -->
+                                <!-- <div class="simSetting">
                                     <h6>Initial Eco</h6>
                                     <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="simSettingsContainer" style="display: none">
@@ -189,14 +230,14 @@
                         </div>
                         <div class="simSettingsContainer" style="display: none">
                             <div class="simSettingsList">
-                                <div class="simSetting">
+                                <!-- <div class="simSetting">
                                     <h6>Start Round</h6>
                                     <input id="gameRound" class="settingInput" type="number" min="10" step="1" value="10" />
-                                </div>
-                                <div class="simSetting">
+                                </div> -->
+                                <!-- <div class="simSetting">
                                     <h6>End Round</h6>
                                     <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
-                                </div>
+                                </div> -->
                                 <div class="simSetting">
                                     <h6>Starting Bloon Send</h6>
                                     <select id="startingBloonSend" class="settingInput">
