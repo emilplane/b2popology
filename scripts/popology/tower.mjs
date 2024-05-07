@@ -1,15 +1,28 @@
+import popologyText from "./popologyText.mjs";
+import switchBetweenOperators from "./utilities/switchBetweenOperators.mjs";
+
 const propertyList = {
     "damage": {
-        "type": "number"
+        "type": "number",
+        "shorthand": "d",
+        "mainStatsList": true
     },
     "pierce": {
-        "type": "number"
+        "type": "number",
+        "shorthand": "p",
+        "mainStatsList": true
     },
     "impact": {
-        "type": "boolean"
+        "type": "boolean",
     },
     "attackCooldown": {
-        "type": "number"
+        "type": "number",
+        "shorthand": "s",
+        "mainStatsList": true
+    },
+    "rebound": {
+        "type": "boolean",
+        "trueText": "can rebound off of walls"
     }
 }
 
@@ -35,6 +48,17 @@ export class Tower {
      */
     getDisplayName() {
         return this.towerData.displayName
+    }
+
+    getUpgradeText(isBaseUpgrade, path, upgrade) {
+        return new popologyText(
+            "upgrade",
+            this.getTowerUpgrade(isBaseUpgrade, path, upgrade), propertyList
+        ).getUpgradeText().plainText()
+    }
+
+    getConstructedTowerText() {
+
     }
 
     /**

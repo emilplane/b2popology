@@ -24,7 +24,7 @@ const sampleTower = {
                         "impact": false
                     }
                 ],[
-                    {"name": "dart", "action": "buff", "damage": ["%", 0.15]},
+                    {"name": "dart", "action": "buff", "damage": ["%", 0.15], "rebound": true},
                     {"name": "fireball", "action": "buff", "damage": ["%", 0.15]},
                     {"name": "bullet", "action": "buff", "attackCooldown": ["*", 0.01]}
                 ],[
@@ -42,9 +42,37 @@ const sampleTower = {
     }
 }
 
+const dartMonkey = {
+    "name": "dartMonkey", "displayName": "Dart Monkey",
+
+    "upgrades": {
+        "base": [
+            {
+                "name": "dart", "action": "new",
+
+                "damage": 2,
+                "attackCooldown": 0.95
+            },
+        ],
+        "paths": [
+            [
+                [], [], [], [], []
+            ],
+            [
+                [], [], [], [], []
+            ],
+            [
+                [], [], [], [], []
+            ]
+        ]
+    }
+}
+
 let tower1 = new Tower(sampleTower)
 
 // console.log(tower1.getTowerUpgrade(true))
 // console.log(tower1.getTowerUpgrade(false, 0, 0))
 console.log(tower1.getName())
+console.log(tower1.getTowerUpgrade(false, 0, 1))
+console.log(tower1.getUpgradeText(false, 0, 3))
 console.log(tower1.getConstructedTower([5, 0, 0]))
