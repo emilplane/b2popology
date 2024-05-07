@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -85,7 +86,7 @@
                                 <img src="media/Bloons/BTD6Red.png">
                             </div>
                             <div class="" id="tab2Button">
-                                <img src="media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp">
+                                <img src="media/Icons/monkeyMoney.png">
                             </div>
                         </div>
 
@@ -116,7 +117,7 @@
                                         <h5>Stall factor</h5>
                                     </div>
                                     <div>
-                                        <div class="material-symbols-outlined icon">question_mark</div>
+                                        <button class="material-symbols-outlined iconButton">question_mark</button>
                                         <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
                                     </div>
                                 </div>
@@ -147,7 +148,12 @@
                         <div class="tab" id="tab1">
                             <div class="simConfigSection">
                                 <div class="configTitle">
-                                    <h4>Initial Configuration</h4>
+                                    <div class="titleWithOptions">
+                                        <h4>Eco Queue</h4>
+                                        <div class="options">
+                                            <button id="addEcoQueueItem" class="material-symbols-outlined iconButton">add</button>
+                                        </div>
+                                    </div>
                                     <div class="horizontalLine strongLineStyle"></div>
                                 </div>
                                 <div class="setting">
@@ -160,12 +166,15 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="simConfigSection">
-                                <div class="configTitle">
-                                    <h4>Eco Queue</h4>
-                                    <div class="horizontalLine strongLineStyle"></div>
+                                <div class="shadedSection">
+                                    <h5>Start with</h5>
                                 </div>
+                                <div class="contentSection" id="ecoQueueContainer"></div>
+                                <template id="ecoQueueTemplate">
+                                    <div class="shadedSection">
+                                        <h5 class="timeText">Unknown Time</h5>
+                                    </div>
+                                </template>
                             </div>
                         </div>
                         <div class="tab" id="tab2" style="display: none;">

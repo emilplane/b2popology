@@ -90,6 +90,8 @@ export default class RunSim {
                     .setLight("ready")
                     .setLoadingBar(1)
                 this.sendUpdatedValues()
+                this.updateFarmUI()
+                this.updateEcoQueueUI()
                 break
         }
     }
@@ -200,6 +202,28 @@ export default class RunSim {
         bloonSendData.forEach(eachBloonSend)
     }
 
+    ecoQueueUpdate() {
+        this.updateEcoQueueUI();
+        this.sendUpdatedValues();
+    }
+
+    updateEcoQueueUI() {
+        document.getElementById("ecoQueueContainer").innerHTML = "";
+        let template = document.getElementById("ecoQueueTemplate");
+        for (let ecoQueueIndex in this.ecoQueue) {
+            let clone = template.content.cloneNode(true);
+            switch (this.ecoQueue[ecoQueueIndex].time[0]) {
+                case "round":
+                    console.log(this.ecoQueue[ecoQueueIndex].time[0])
+                    clone.querySelector(".timeText").innerHTML = 
+                        `Round <span class="monoHighlight">
+                            ${this.ecoQueue[ecoQueueIndex].time[1]}
+                        </span>`
+            }
+            document.getElementById("ecoQueueContainer").appendChild(clone);
+        }
+    }
+
     /**
      * Called when the list of farms is updated.
      */
@@ -273,6 +297,17 @@ export default class RunSim {
         })
 
         // Adds an event listener to add a new farm to the array of farms
+        document.getElementById("addEcoQueueItem").addEventListener("click", () => {
+            this.ecoQueue.push({
+                "time": ["round", 12],
+                "ecoSend": {
+                    "name": "zero",
+                    "spacing": null
+                }
+            })
+            this.ecoQueueUpdate()
+        })
+
         document.getElementById("addFarmButton").addEventListener("click", () => {
             this.farmArray.push({
                 "crosspath": [0, 0, 0],

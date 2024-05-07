@@ -5,6 +5,27 @@
     --statusError: hsl(0, 81%, 49%);
 }
 
+.iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    height: 26px; 
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.monoHighlight {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 80%;
+    padding: 0 2px;
+    background-color: var(--primaryDark2b);
+    border-radius: 4px;
+}
+
 .ecosimMain {
     margin: 0 auto;
     padding: 16px;
@@ -278,12 +299,25 @@ input.settingInput {
     gap: 8px;
 }
 
-.simConfigSection > .configTitle > h4 {
+.simConfigSection > .configTitle > h4,
+.titleWithOptions > h4 {
     margin-bottom: 4px;
 }
 
 .simConfigSection > .configTitle > .horizontalLine {
     margin-bottom: 0;
+}
+
+.titleWithOptions {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.titleWithOptions > .options {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .simConfigSection > .setting {
@@ -305,16 +339,15 @@ input.settingInput {
     width: 100px;
 }
 
-.simConfigSection > .setting > div > .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1;
-    height: 28px; 
-    font-size: 22px;
+.shadedSection {
     background-color: var(--primaryDark2);
     border-radius: 8px;
-    cursor: pointer;
+    padding: 8px;
+}
+
+.contentSection {
+    display: grid;
+    gap: 8px;
 }
 
 .simConfigSection > .gap {
