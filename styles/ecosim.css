@@ -288,7 +288,7 @@ input.settingInput {
 
 .simConfigSection > .setting {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
 }
 
 .simConfigSection > .setting > div {

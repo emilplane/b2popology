@@ -15,6 +15,7 @@ class b2sim {
         this.configData = configData
         if (this.configData != undefined) {
             this.farms = this.configData.farms
+            this.ecoQueue = this.configData.ecoQueue
         }
     }
 
@@ -63,12 +64,24 @@ class b2sim {
      */
     pythonCode() {
         let farms = [];
+        let eco_queue = [];
         for (let farmNumber in this.farms) {
             farms.push(`b2.initFarm(purchase_time=rounds.getTimeFromRound(
                 ${this.farms[farmNumber].purchase}),
                 upgrades=(${this.farms[farmNumber].crosspath}))`
             )
         }
+        for (let ecoQueueIndex in this.ecoQueue) {
+            let timeString = "0"
+            if (this.ecoQueue[ecoQueueIndex].time[0] == "round") {
+                timeString = `rounds.getTimeFromRound(${this.ecoQueue[ecoQueueIndex].time[1]})`
+            }
+            eco_queue.push(`b2.ecoSend(
+                time=${timeString},
+                send_name='${this.getBloonSendName(this.ecoQueue[ecoQueueIndex].ecoSend)}'
+            )`)
+        }
+        console.log(eco_queue)
         return `
             class simData:
                 x = [1, 2, 3, 4]
@@ -82,7 +95,8 @@ class b2sim {
                 'Eco Send': b2.ecoSend(send_name = '${this.configData.ecoSend}'),
                 'Rounds': rounds,
                 'Farms': farms,
-                'Game Round': ${this.configData.gameRound}
+                'Game Round': ${this.configData.gameRound},
+                'Eco Queue': [${eco_queue}]
             }
             game_state = b2.GameState(initial_state_game)
             game_state.fastForward(target_round = ${this.configData.targetRound})
@@ -146,6 +160,31 @@ class b2sim {
         `)
         roundStarts = roundStarts.toJs()
         return roundStarts
+    }
+
+    getBloonSendName(ecoSend) {
+        let name, spacing
+        switch (ecoSend.name) {
+            case "red":       name = "Reds";    break;  case "blue":      name = "Blues";   break;
+            case "green":     name = "Greens";  break;  case "yellow":    name = "Yellows"; break;
+            case "pink":      name = "Pinks";   break;  case "white":     name = "Whites";  break;
+            case "black":     name = "Blacks";  break;  case "purple":    name = "Purples"; break;
+            case "zebra":     name = "Zebras";  break;  case "lead":      name = "Leads";   break;
+            case "rainbow":   name = "Rainbows";break;  case "ceramic":   name = "Ceramics";break;
+            case "moab":      name = "MOABs";   break;  case "bfb":       name = "BFBs";    break;
+            case "zomg":      name = "ZOMGs";   break;  case "ddt":       name = "DDTss";   break;
+            case "bad":       name = "BADs";    break;  case "zero": default: name = "Zero";break;
+        }
+        if (name == "Zero") {
+            spacing = ""
+        } else {
+            switch (ecoSend.spacing) {
+                case "spaced":                          spacing = "Spaced ";    break; 
+                case "grouped": case "fastCooldown":    spacing = "Grouped ";   break;
+                case "tight":                           spacing = "Tight ";     break;
+            }
+        }
+        return spacing + name
     }
 };
 

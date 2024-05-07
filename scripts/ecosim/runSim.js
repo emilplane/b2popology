@@ -8,6 +8,36 @@ export default class RunSim {
      */
     constructor() {
         this.farmArray = []
+        this.ecoQueue = [
+            {
+                "time": ["round", 12],
+                "ecoSend": {
+                    "name": "rainbow",
+                    "spacing": "spaced"
+                }
+            },
+            {
+                "time": ["round", 16],
+                "ecoSend": {
+                    "name": "black",
+                    "spacing": "grouped"
+                }
+            },
+            {
+                "time": ["round", 17],
+                "ecoSend": {
+                    "name": "pink",
+                    "spacing": "grouped"
+                }
+            },
+            {
+                "time": ["round", 18],
+                "ecoSend": {
+                    "name": "purple",
+                    "spacing": "grouped"
+                }
+            }
+        ]
         this.selectedTab = 0
         
 
@@ -25,7 +55,7 @@ export default class RunSim {
                     break
                 case "returnData":
                     this.returnData(e.data)
-                    break
+                    break   
             }
         }
     }
@@ -131,7 +161,8 @@ export default class RunSim {
         const parameters = ["cash", "eco", "rounds", "gameRound", "targetRound"]
         let config = {
             "ecoSend": document.getElementById("startingBloonSend").value,
-            "farms": this.farmArray
+            "farms": this.farmArray,
+            "ecoQueue": this.ecoQueue
         }
         for (let parameterIndex in parameters) {
             config[parameters[parameterIndex]] = 
