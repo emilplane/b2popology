@@ -131,6 +131,8 @@ export class Tower {
         }
 
         addModule(incomingModuleData) {
+            let targetModule;
+            let moduleList = this.moduleList
             switch (incomingModuleData.action) {
                 case "new":
                     // Check to make sure that there is not already a module with the same name
@@ -142,36 +144,54 @@ export class Tower {
 
                     let newModuleObject = {
                         "name": incomingModuleData.name,
+                        "originalName": incomingModuleData.name,
                         "initialProperties": {},
                         "buffs": [],
                         "properties": {}
                     }
                     
                     iterateThroughProperties((propertyName) => {
-                        newModuleObject.initialProperties[propertyName] = incomingModuleData[propertyName]
+                        newModuleObject.initialProperties[propertyName] = 
+                            incomingModuleData[propertyName]
                     })
                     
                     this.moduleList.push(newModuleObject)
-                    this.calculateBuffs()
                     break
-                case "buff": 
-                    let targetModule;
-                    for (let moduleIndex in this.moduleList) {
-                        if (this.moduleList[moduleIndex].name == incomingModuleData.name) {
-                           targetModule = this.moduleList[moduleIndex]
-                        }
-                    }
-                    if (targetModule == undefined) {throw new Error(`The module named ${incomingModuleData.name} does not exist`)}
+                case "buff":
+                    setTargetModule(incomingModuleData.name)
                     iterateThroughProperties((propertyName) => {
                         targetModule.buffs.push([propertyName, incomingModuleData[propertyName]])
                     })
-                    this.calculateBuffs()
+                    break
+                case "replace":
+                    setTargetModule(incomingModuleData.replacing)
+                    let replaceData = {
+                        "properties": [],
+                        "newName": incomingModuleData.name
+                    }
+                    iterateThroughProperties((propertyName) => {
+                        replaceData.properties.push([propertyName, incomingModuleData[propertyName]])
+                    })
+                    targetModule.buffs.push(["replace", replaceData])
+                    break
+            }
+            this.calculateBuffs()
+
+            function setTargetModule(moduleName) {
+                for (let moduleIndex in moduleList) {
+                    if (moduleList[moduleIndex].name == moduleName) {
+                        targetModule = moduleList[moduleIndex]
+                    }
+                }
+                if (targetModule == undefined) {
+                    throw new Error(`The module named ${incomingModuleData.name} does not exist`)
+                }
             }
             
-            function iterateThroughProperties(addBuff) {
+            function iterateThroughProperties(callbackFunction) {
                 for (let propertyName in propertyList) {
                     if (incomingModuleData[propertyName] != undefined) {
-                        addBuff(propertyName)
+                        callbackFunction(propertyName)
                     }
                 }
             }
@@ -179,62 +199,100 @@ export class Tower {
 
         calculateBuffs() {
             for (let moduleIndex in this.moduleList) {
-                this.moduleList[moduleIndex].properties = 
-                    structuredClone(this.moduleList[moduleIndex].initialProperties)
-
-                let buffListObject = {}
+                let buffSections = []
                 for (let buffIndex in this.moduleList[moduleIndex].buffs) {
-                    let propertyName = this.moduleList[moduleIndex].buffs[buffIndex][0]
-                    let buffData = this.moduleList[moduleIndex].buffs[buffIndex][1]
-                    if (buffListObject[propertyName] == undefined) {
-                        let temp = { "type": propertyList[propertyName].type }
-                        switch (propertyList[propertyName].type) {
-                            case "number": 
-                                temp["+"] = []; temp["%"] = []; temp["*"] = []; break
-                            case "boolean":
-                                temp.changes = []; break
-                        }
-                        buffListObject[propertyName] = temp
-                    }
-                    switch (propertyList[propertyName].type) {
-                        case "number": 
-                            buffListObject[propertyName][buffData[0]].push(buffData); break
-                        case "boolean":
-                            buffListObject[propertyName].changes.push(buffData); break
+                    switch (this.moduleList[moduleIndex].buffs[buffIndex][0]) {
+                        case "replace":
+                            buffSections.push(this.moduleList[moduleIndex].buffs[buffIndex])
+                            break
+                        default:
+                            if (
+                                buffSections.length == 0 ||
+                                buffSections[buffSections.length-1][0] == "replace"
+                            ) {
+                                buffSections.push([])
+                            }
+                            buffSections[buffSections.length-1].push(
+                                this.moduleList[moduleIndex].buffs[buffIndex]
+                            )
+                            break
                     }
                 }
 
-                for (let propertyName in buffListObject) {
-                    let propertyValue = this.moduleList[moduleIndex].properties[propertyName]
-                    switch (propertyList[propertyName].type) {
-                        case "number": 
-                            let multiplier = 1, percentage = 1, additive = 0
-                            
-                            for (let i in buffListObject[propertyName]["*"]) {
-                                multiplier = multiplier * buffListObject[propertyName]["*"][i][1]
+                this.moduleList[moduleIndex].properties = 
+                    structuredClone(this.moduleList[moduleIndex].initialProperties)
+                
+                let properties = this.moduleList[moduleIndex].properties
+
+                for (let buffSectionIndex in buffSections) {
+                    console.log(buffSections[buffSectionIndex])
+                    switch (buffSections[buffSectionIndex][0]) {
+                        case "replace": replace(buffSections[buffSectionIndex][1]); break
+                        default: buff(buffSections[buffSectionIndex]); break
+                    }
+                }
+
+                function replace(replacementData) {
+                    
+                }
+                
+                function buff(setOfBuffs) {
+                    let buffListObject = {}
+                    console.log(setOfBuffs)
+                    for (let buffIndex in setOfBuffs) {
+                        const buff = setOfBuffs
+                        let propertyName = buff[buffIndex][0]
+                        let buffData = buff[buffIndex][1]
+                        if (buffListObject[propertyName] == undefined) {
+                            let temp = { "type": propertyList[propertyName].type }
+                            switch (propertyList[propertyName].type) {
+                                case "number": 
+                                    temp["+"] = []; temp["%"] = []; temp["*"] = []; break
+                                case "boolean":
+                                    temp.changes = []; break
                             }
-                            for (let i in buffListObject[propertyName]["%"]) {
-                                percentage += buffListObject[propertyName]["%"][i][1]
-                            }
-                            for (let i in buffListObject[propertyName]["+"]) {
-                                additive += buffListObject[propertyName]["+"][i][1]
-                            }
-                            propertyValue = propertyValue * multiplier
-                            propertyValue = propertyValue * percentage
-                            propertyValue += additive
-                            this.moduleList[moduleIndex].properties[propertyName] = propertyValue
-                            break
-                        case "boolean": 
-                            for (let i in buffListObject[propertyName].changes) {
-                                switch (buffListObject[propertyName].changes[i]) {
-                                    case "invert": 
-                                        if (propertyValue) {propertyValue = false} 
-                                            else {propertyValue = true}
-                                        break
-                                    default: propertyValue = buffListObject[propertyName].changes[i]
+                            buffListObject[propertyName] = temp
+                        }
+                        switch (propertyList[propertyName].type) {
+                            case "number": 
+                                buffListObject[propertyName][buffData[0]].push(buffData); break
+                            case "boolean":
+                                buffListObject[propertyName].changes.push(buffData); break
+                        }
+                    }
+    
+                    for (let propertyName in buffListObject) {
+                        let propertyValue = properties[propertyName]
+                        switch (propertyList[propertyName].type) {
+                            case "number": 
+                                let multiplier = 1, percentage = 1, additive = 0
+                                
+                                for (let i in buffListObject[propertyName]["*"]) {
+                                    multiplier = multiplier * buffListObject[propertyName]["*"][i][1]
                                 }
-                            }
-                            this.moduleList[moduleIndex].properties[propertyName] = propertyValue
+                                for (let i in buffListObject[propertyName]["%"]) {
+                                    percentage += buffListObject[propertyName]["%"][i][1]
+                                }
+                                for (let i in buffListObject[propertyName]["+"]) {
+                                    additive += buffListObject[propertyName]["+"][i][1]
+                                }
+                                propertyValue = propertyValue * multiplier
+                                propertyValue = propertyValue * percentage
+                                propertyValue += additive
+                                properties[propertyName] = propertyValue
+                                break
+                            case "boolean": 
+                                for (let i in buffListObject[propertyName].changes) {
+                                    switch (buffListObject[propertyName].changes[i]) {
+                                        case "invert": 
+                                            if (propertyValue) {propertyValue = false} 
+                                                else {propertyValue = true}
+                                            break
+                                        default: propertyValue = buffListObject[propertyName].changes[i]
+                                    }
+                                }
+                                properties[propertyName] = propertyValue
+                        }
                     }
                 }
             }
