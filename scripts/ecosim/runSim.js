@@ -214,11 +214,15 @@ export default class RunSim {
             let clone = template.content.cloneNode(true);
             switch (this.ecoQueue[ecoQueueIndex].time[0]) {
                 case "round":
-                    console.log(this.ecoQueue[ecoQueueIndex].time[0])
+                    console.log(this.ecoQueue[ecoQueueIndex])
                     clone.querySelector(".timeText").innerHTML = 
                         `Round <span class="monoHighlight">
                             ${this.ecoQueue[ecoQueueIndex].time[1]}
                         </span>`
+                    clone.querySelector(".ecoBloonIconContainer").insertAdjacentHTML("beforeend", `
+                        <img class="imageIconSmall ecoBloonIcon" src="media/bloonIcons/red/red.png">
+                        <img class="imageIconSmall ecoBloonIcon" src="media/bloonIcons/red/red.png">
+                    `)
             }
             document.getElementById("ecoQueueContainer").appendChild(clone);
         }

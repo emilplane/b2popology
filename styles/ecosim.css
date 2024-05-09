@@ -345,6 +345,19 @@ input.settingInput {
     padding: 8px;
 }
 
+.ecoQueueCard {
+    display: flex;
+}
+
+.ecoBloonIconContainer {
+    margin-left: auto;
+    display: flex;
+}
+
+.imageIconSmall {
+    height: 24px;
+}
+
 .contentSection {
     display: grid;
     gap: 8px;
