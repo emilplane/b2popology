@@ -29,7 +29,7 @@ if (diffTime < 0) {
     document.getElementById("tourneyInfoContainer").classList.add("tourneyInfoContainerLive")
     document.getElementById("tourneyInfoContainer").innerHTML = `
         <div>
-            <h4>Watch the Popology Weekly 11 tournament now!</h4>
+            <h4>Watch the Popology Weekly 14 tournament now!</h4>
         </div>
         
         <a href="https://twitch.tv/b2popology" target="blank" class="buttonAnchor">
