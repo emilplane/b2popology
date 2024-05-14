@@ -89,7 +89,6 @@ export class Tower {
     getConstructedTower(fullPath) {
         let currentConstructedTower = new Tower.ConstructedTower(this.towerData.upgrades)
         currentConstructedTower.addUpgrade(this.getTowerUpgrade(true))
-        // currentConstructedTower.addUpgrade(this.getTowerUpgrade(false, 0, 0))
         this.addFullPathUpgradesInOrder(fullPath, (path, upgrade) => {
             currentConstructedTower.addUpgrade(this.getTowerUpgrade(false, path, upgrade))
         })
@@ -222,21 +221,27 @@ export class Tower {
                 this.moduleList[moduleIndex].properties = 
                     structuredClone(this.moduleList[moduleIndex].initialProperties)
                 
-                let properties = this.moduleList[moduleIndex].properties
+                let module = this.moduleList[moduleIndex]
 
                 for (let buffSectionIndex in buffSections) {
                     switch (buffSections[buffSectionIndex][0]) {
-                        case "replace": console.log(this.moduleList);replace(buffSections[buffSectionIndex][1]); break
+                        case "replace": replace(buffSections[buffSectionIndex][1]); break
                         default: buff(buffSections[buffSectionIndex]); break
                     }
                 }
 
                 function replace(replacementData) {
-                    console.log(properties)
-                    console.log(replacementData)
+                    let replacementProperties = {}
+                    for (let replacementPropertyIndex in replacementData.properties) {
+                        replacementProperties[replacementData.properties[replacementPropertyIndex][0]] = 
+                            replacementData.properties[replacementPropertyIndex][1]
+                    }
+                    module.name = replacementData.newName
+                    module.properties = replacementProperties
                 }
                 
                 function buff(setOfBuffs) {
+                    let properties = module.properties
                     let buffListObject = {}
                     for (let buffIndex in setOfBuffs) {
                         const buff = setOfBuffs

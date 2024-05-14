@@ -34,7 +34,7 @@ const sampleTower = {
                     }
                 ], [
                     {
-                        "name": "attack1", "replacing": "attack1",
+                        "name": "attack1b", "replacing": "attack1",
                         "type": "attack", 
                         "action": "replace", 
                         "damage": 1, 
@@ -44,14 +44,14 @@ const sampleTower = {
                     }
                 ], [
                     {
-                        "name": "attack1", 
+                        "name": "attack1b", 
                         "type": "attack", 
                         "action": "buff", 
                         "pierce": ["%", 0.42], 
                     }
                 ], [
                     {
-                        "name": "attack1", 
+                        "name": "attack1b", 
                         "type": "attack", 
                         "action": "buff", 
                         "attackCooldown": ["*", 0.8],
@@ -101,4 +101,4 @@ let tower1 = new Tower(sampleTower)
 console.log(tower1.getName())
 // console.log(tower1.getTowerUpgrade(false, 0, 1))
 // console.log(tower1.getUpgradeText(false, 0, 3))
-console.log(tower1.getConstructedTower([3, 0, 0]))
+console.log(tower1.getConstructedTower([5, 0, 0]))
