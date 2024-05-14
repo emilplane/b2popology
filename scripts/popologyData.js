@@ -11024,6 +11024,12 @@ const data = {
                                 <li>Play a game every day for 90 days in a row</li>
                             </ul>
                         </ul>
+                        <ul>
+                            <li>Level 3</li>
+                            <ul>
+                                <li>Play a game every day for 365 days in a row</li>
+                            </ul>
+                        </ul>
                     `
                 },
                 "noPainNoGain10Lives": {

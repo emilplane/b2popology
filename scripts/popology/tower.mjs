@@ -225,20 +225,19 @@ export class Tower {
                 let properties = this.moduleList[moduleIndex].properties
 
                 for (let buffSectionIndex in buffSections) {
-                    console.log(buffSections[buffSectionIndex])
                     switch (buffSections[buffSectionIndex][0]) {
-                        case "replace": replace(buffSections[buffSectionIndex][1]); break
+                        case "replace": console.log(this.moduleList);replace(buffSections[buffSectionIndex][1]); break
                         default: buff(buffSections[buffSectionIndex]); break
                     }
                 }
 
                 function replace(replacementData) {
-                    
+                    console.log(properties)
+                    console.log(replacementData)
                 }
                 
                 function buff(setOfBuffs) {
                     let buffListObject = {}
-                    console.log(setOfBuffs)
                     for (let buffIndex in setOfBuffs) {
                         const buff = setOfBuffs
                         let propertyName = buff[buffIndex][0]
@@ -283,12 +282,10 @@ export class Tower {
                                 break
                             case "boolean": 
                                 for (let i in buffListObject[propertyName].changes) {
-                                    switch (buffListObject[propertyName].changes[i]) {
-                                        case "invert": 
-                                            if (propertyValue) {propertyValue = false} 
-                                                else {propertyValue = true}
-                                            break
-                                        default: propertyValue = buffListObject[propertyName].changes[i]
+                                    if (buffListObject[propertyName].changes[i] = "invert") {
+                                        propertyValue = !propertyValue
+                                    } else {
+                                        propertyValue = buffListObject[propertyName].changes[i]
                                     }
                                 }
                                 properties[propertyName] = propertyValue
