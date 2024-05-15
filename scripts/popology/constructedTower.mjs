@@ -1,27 +1,4 @@
-const propertyList = {
-    "damage": {
-        "type": "number",
-        "shorthand": "d",
-        "mainStatsList": true
-    },
-    "pierce": {
-        "type": "number",
-        "shorthand": "p",
-        "mainStatsList": true
-    },
-    "impact": {
-        "type": "boolean",
-    },
-    "attackCooldown": {
-        "type": "number",
-        "shorthand": "s",
-        "mainStatsList": true
-    },
-    "rebound": {
-        "type": "boolean",
-        "trueText": "can rebound off of walls"
-    }
-}
+import propertyList from "./propertyList.mjs";
 
 export default class ConstructedTower {
     constructor() { 
@@ -131,80 +108,83 @@ export default class ConstructedTower {
         this.modules[moduleIndex].properties = 
             structuredClone(this.modules[moduleIndex].initialProperties)
         
-        let module = this.modules[moduleIndex]
-
         for (let buffSectionIndex in buffSections) {
             switch (buffSections[buffSectionIndex][0]) {
-                case "replace": replace(buffSections[buffSectionIndex][1]); break
-                default: buff(buffSections[buffSectionIndex]); break
+                case "replace": 
+                    this.replace(buffSections[buffSectionIndex][1], moduleIndex)
+                    break
+                case "buff": default: 
+                    this.buff(buffSections[buffSectionIndex], moduleIndex)
+                    break
             }
         }
+    }
 
-        function replace(replacementData) {
-            let replacementProperties = {}
-            for (let replacementPropertyIndex in replacementData.properties) {
-                replacementProperties[replacementData.properties[replacementPropertyIndex][0]] = 
-                    replacementData.properties[replacementPropertyIndex][1]
-            }
-            module.name = replacementData.newName
-            module.properties = replacementProperties
+    replace(replacementData, moduleIndex) {
+        let module = this.modules[moduleIndex]
+        let replacementProperties = {}
+        for (let replacementPropertyIndex in replacementData.properties) {
+            replacementProperties[replacementData.properties[replacementPropertyIndex][0]] = 
+                replacementData.properties[replacementPropertyIndex][1]
         }
-        
-        function buff(setOfBuffs) {
-            let properties = module.properties
-            let buffListObject = {}
-            for (let buffIndex in setOfBuffs) {
-                const buff = setOfBuffs
-                let propertyName = buff[buffIndex][0]
-                let buffData = buff[buffIndex][1]
-                if (buffListObject[propertyName] == undefined) {
-                    let temp = { "type": propertyList[propertyName].type }
-                    switch (propertyList[propertyName].type) {
-                        case "number": 
-                            temp["+"] = []; temp["%"] = []; temp["*"] = []; break
-                        case "boolean":
-                            temp.changes = []; break
-                    }
-                    buffListObject[propertyName] = temp
-                }
+        module.name = replacementData.newName
+        module.properties = replacementProperties
+    }
+
+    buff(setOfBuffs, moduleIndex) {
+        let properties = this.modules[moduleIndex].properties
+        let buffListObject = {}
+        for (let buffIndex in setOfBuffs) {
+            const buff = setOfBuffs
+            let propertyName = buff[buffIndex][0]
+            let buffData = buff[buffIndex][1]
+            if (buffListObject[propertyName] == undefined) {
+                let temp = { "type": propertyList[propertyName].type }
                 switch (propertyList[propertyName].type) {
                     case "number": 
-                        buffListObject[propertyName][buffData[0]].push(buffData); break
+                        temp["+"] = []; temp["%"] = []; temp["*"] = []; break
                     case "boolean":
-                        buffListObject[propertyName].changes.push(buffData); break
+                        temp.changes = []; break
                 }
+                buffListObject[propertyName] = temp
             }
+            switch (propertyList[propertyName].type) {
+                case "number": 
+                    buffListObject[propertyName][buffData[0]].push(buffData); break
+                case "boolean":
+                    buffListObject[propertyName].changes.push(buffData); break
+            }
+        }
 
-            for (let propertyName in buffListObject) {
-                let propertyValue = properties[propertyName]
-                switch (propertyList[propertyName].type) {
-                    case "number": 
-                        let multiplier = 1, percentage = 1, additive = 0
-                        
-                        for (let i in buffListObject[propertyName]["*"]) {
-                            multiplier = multiplier * buffListObject[propertyName]["*"][i][1]
+        for (let propertyName in buffListObject) {
+            let propertyValue = properties[propertyName]
+            switch (propertyList[propertyName].type) {
+                case "number": 
+                    let multiplier = 1, percentage = 1, additive = 0
+                    
+                    for (let i in buffListObject[propertyName]["*"]) {
+                        multiplier = multiplier * buffListObject[propertyName]["*"][i][1]
+                    }
+                    for (let i in buffListObject[propertyName]["%"]) {
+                        percentage += buffListObject[propertyName]["%"][i][1]
+                    }
+                    for (let i in buffListObject[propertyName]["+"]) {
+                        additive += buffListObject[propertyName]["+"][i][1]
+                    }
+                    propertyValue = propertyValue * multiplier
+                    propertyValue = propertyValue * percentage
+                    propertyValue += additive
+                    properties[propertyName] = propertyValue
+                    break
+                case "boolean": 
+                    for (let i in buffListObject[propertyName].changes) {
+                        if (buffListObject[propertyName].changes[i] = "invert") {
+                            propertyValue = !propertyValue
+                        } else {
+                            propertyValue = buffListObject[propertyName].changes[i]
                         }
-                        for (let i in buffListObject[propertyName]["%"]) {
-                            percentage += buffListObject[propertyName]["%"][i][1]
-                        }
-                        for (let i in buffListObject[propertyName]["+"]) {
-                            additive += buffListObject[propertyName]["+"][i][1]
-                        }
-                        propertyValue = propertyValue * multiplier
-                        propertyValue = propertyValue * percentage
-                        propertyValue += additive
-                        properties[propertyName] = propertyValue
-                        break
-                    case "boolean": 
-                        for (let i in buffListObject[propertyName].changes) {
-                            if (buffListObject[propertyName].changes[i] = "invert") {
-                                propertyValue = !propertyValue
-                            } else {
-                                propertyValue = buffListObject[propertyName].changes[i]
-                            }
-                        }
-                        properties[propertyName] = propertyValue
-                }
+                    }
+                    properties[propertyName] = propertyValue
             }
         }
     }

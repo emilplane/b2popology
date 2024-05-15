@@ -1,6 +1,6 @@
 import switchBetweenOperators from "./utilities/switchBetweenOperators.mjs";
 
-export default class popologyText {
+export default class PopologyText {
     constructor(type, data, propertyList) {
         this.type = type
         this.data = data
