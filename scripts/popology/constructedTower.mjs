@@ -1,5 +1,11 @@
 import propertyList from "./propertyList.mjs";
 
+class ConstructedModule {
+    constructor(name, initialProperties) {
+        this.name = name; this.originalName = name;
+    }
+}
+
 export default class ConstructedTower {
     constructor() { 
         this.modules = []
@@ -188,4 +194,4 @@ export default class ConstructedTower {
             }
         }
     }
-}   
+}

@@ -1,0 +1,45 @@
+:root {
+    --incomeColorDark: rgb(92, 86, 0);
+}
+
+.moduleContainer {
+    display: grid;
+    gap: 8px
+}
+
+.module {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--primaryDark3);
+}
+
+.attackModule {
+    background-color: var(--primaryDark3);
+}
+
+.incomeModule {
+    background-color: var(--incomeColorDark);
+}
+
+.moduleNameStyle {
+    font-style: italic;
+}
+
+.propertyChipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.propertyChip {
+    background-color: var(--primaryDark2);
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: flex;
+    gap: 4px;
+    align-items: end;
+}
+
+.propertyChipLargeText {
+    font-size: 20pt;
+}

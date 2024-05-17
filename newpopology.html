@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="styles/style.css"/>
-        <link rel="stylesheet" href="styles/randomizer.css"/>
+        <link rel="stylesheet" href="styles/newpopology.css"/>
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,48 @@
     </head>
     <body>
         <main>
-            
+            <div class="coverImage" id="coverImage"></div>
+            <div class="statsPageWrapper">
+                <div class="statsPageBody" id="statsPageBody">
+                    <div class="headerStyle" id="header">
+                        <h4 class="luckiestGuy title">Battles 2 Popology</h4>
+                        <div class="headerContent">
+                            <a href="index.html"><h5>Home</h5></a>
+                            <a href="popology.html"><h5>Popology</h5></a>
+                            <a href="tournaments.html"><h5>Tournaments</h5></a>
+                            <a href="balance.html"><h5>Balancing</h5></a>
+                            <a href="newpopology.html"><h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">newpopology</h5></a>
+                            <a href="https://discord.com/invite/9YAaxDXAYZ"><h5>Discord</h5></a>    
+                        </div>
+                        <div class="menuIcon" id="menuIcon">
+                            <span class="material-symbols-outlined menuIcon">menu</span>
+                        </div>
+                    </div>
+                    <div>
+                    <section class="moduleContainer" id="modules">
+                        <div class="module attackModule">
+                            <h4><span class="moduleNameStyle">dart</span> attack</h4>
+                            <div class="horizontalLine strongLineStyle"></div>
+                            <div class="propertyChipContainer">
+                                <div class="propertyChip">
+                                    <h6><span class="propertyChipLargeText">1 </span>damage</h6>
+                                </div>
+                                <div class="propertyChip">
+                                    <h6><span class="propertyChipLargeText">3 </span>pierce</h6>
+                                </div>
+                                <div class="propertyChip">
+                                    <h6><span class="propertyChipLargeText">sharp </span>attack type</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module incomeModule">
+                            <h4><span class="moduleNameStyle">crate</span> income</h4>
+                            <div class="horizontalLine strongLineStyle"></div>
+                        </div>
+                    </section>
+                    <div class="suggestionGrid" id="suggestionGrid"></div>
+                </div>
+            </div>
         </main>
     </body>
     <script type="module" src="scripts/popology/example.mjs"></script>

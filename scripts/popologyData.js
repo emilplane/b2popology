@@ -10588,7 +10588,7 @@ const data = {
                             <ul>
                                 <li>places chain-trap based on targeting, defaults on close</li>
                                 <ul>
-                                    <li>(1 + x / 1000)d, ?p, ?r zone, 0.12s, normal type, camo</li>
+                                    <li>(1 + x / 1000)d, &infin;p, ?r zone, 0.12s, normal type, camo</li>
                                     <li>x = cost of opponent's most expensive tower</li>
                                     <li>slows moab-class bloons</li>
                                 </ul>
