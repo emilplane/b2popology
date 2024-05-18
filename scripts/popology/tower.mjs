@@ -1,89 +1,180 @@
-import PopologyText from "./popologyText.mjs";
-import ConstructedTower from "./constructedTower.mjs";
-import propertyList from "./propertyList.mjs";
+import BuffList from "./buffList.mjs";
+import propertyList from "./data/propertyList.mjs";
 
-export class Tower {
-    constructor(towerData) {
-        this.towerData = towerData
+class ConstructedModule {
+    constructor(name, initialProperties) {
+        this.name = name; this.originalName = name;
+    }
+}
+
+export default class Tower {
+    constructor() { 
+        this.modules = []
     }
 
-    /**
-     * Get the internal name of this tower. 
-     * If you want the name that should be displayed to the user, use 
-     * getDisplayName().
-     * @returns the internal name of the tower.
-     */
-    getName() {
-        return this.towerData.name
+    addUpgrade(upgradeData) {
+        for (let moduleIndex in upgradeData) {
+            this.addModule(upgradeData[moduleIndex])
+        }
     }
 
-    /**
-     * Get the display name of the tower - the name that is displayed to the 
-     * user. 
-     * @returns the display name.
-     */
-    getDisplayName() {
-        return this.towerData.displayName
-    }
+    addModule(moduleData) {
+        let targetModule;
+        let moduleList = this.modules
+        switch (moduleData.action) {
+            case "new":
+                // Check to make sure that there is not already a module with the same name
+                for (let moduleIndex in this.modules) {
+                    if (this.modules[moduleIndex].name == moduleData.name) {
+                        throw new Error("testError")
+                    }
+                }
 
-    getUpgradeText(isBaseUpgrade, path, upgrade) {
-        return new PopologyText(
-            "upgrade",
-            this.getTowerUpgrade(isBaseUpgrade, path, upgrade), propertyList
-        ).getUpgradeText().plainText()
-    }
+                let newModuleObject = {
+                    "name": moduleData.name,
+                    "originalName": moduleData.name,
+                    "initialProperties": {},
+                    "buffs": [],
+                    "properties": {}
+                }
+                
+                iterateThroughProperties((propertyName) => {
+                    newModuleObject.initialProperties[propertyName] = 
+                        moduleData[propertyName]
+                })
+                
+                this.modules.push(newModuleObject)
+                break
+            case "buff":
+                setTargetModule(moduleData.name)
+                iterateThroughProperties((propertyName) => {
+                    targetModule.buffs.push([propertyName, moduleData[propertyName]])
+                })
+                break
+            case "replace":
+                setTargetModule(moduleData.replacing)
+                let replaceData = {
+                    "properties": [],
+                    "newName": moduleData.name
+                }
+                iterateThroughProperties((propertyName) => {
+                    replaceData.properties.push([propertyName, moduleData[propertyName]])
+                })
+                targetModule.buffs.push(["replace", replaceData])
+                break
+        }
+        this.calculateBuffs()
 
-    getConstructedTowerText() {
-
-    }
-
-    /**
-     * Returns the stats of a specific tower upgrade, including the base tower 
-     * "upgrade".
-     * @param {boolean} isBaseUpgrade
-     * True to return the base tower upgrade, otherwise false. 
-     * @param {number} path
-     * The path of the desired upgrade, 0-indexed (0 for top path, 1 for middle 
-     * path, 2 for bottom path). Optional if the base upgrade is being requested
-     * instead.
-     * @param {number} upgrade 
-     * The upgrade tier, 0-indexed (0 for tier 1, 1 for tier 2, etc.). Optional 
-     * if the base upgrade is being requested instead.
-     * @returns 
-     */
-    getTowerUpgrade(isBaseUpgrade, path, upgrade) {
-        if (isBaseUpgrade) { return this.towerData.upgrades.base }
-        return this.towerData.upgrades.paths[path][upgrade]
-    }
-
-    /**
-     * Returns a tower with upgrades applied to it.
-     * @param {array} fullPath 
-     * The upgrades of the tower, formatted as: [2, 3, 0]
-     * @returns 
-     */
-    getConstructedTower(fullPath) {
-        let currentConstructedTower = new ConstructedTower(this.towerData.upgrades)
-        currentConstructedTower.addUpgrade(this.getTowerUpgrade(true))
-        this.addFullPathUpgradesInOrder(fullPath, (path, upgrade) => {
-            currentConstructedTower.addUpgrade(this.getTowerUpgrade(false, path, upgrade))
-        })
-        return currentConstructedTower
-    }
-
-    addFullPathUpgradesInOrder(fullPath, addUpgrade) {
-        if (!Array.isArray(fullPath)) {return false}
-        if (fullPath[0] > fullPath[1] || fullPath[0] > fullPath[2]) {
-            for (let i = 0; i < fullPath[0]; i++) {
-                addUpgrade(0, i)
+        function setTargetModule(moduleName) {
+            for (let moduleIndex in moduleList) {
+                if (moduleList[moduleIndex].name == moduleName) {
+                    targetModule = moduleList[moduleIndex]
+                }
             }
-        } else if (fullPath[1] > fullPath[2]) {
-            for (let i = 0; i < fullPath[1]; i++) {
-                addUpgrade(1, i)
+            if (targetModule == undefined) {
+                throw new Error(`The module named ${moduleData.name} does not exist`)
             }
-        } else {
-            for (let i = 0; i < fullPath[2]; i++) {
-                addUpgrade(2, i)
+        }
+        
+        function iterateThroughProperties(callbackFunction) {
+            for (let propertyName in propertyList) {
+                if (moduleData[propertyName] != undefined) {
+                    callbackFunction(propertyName)
+                }
+            }
+        }
+    }
+
+    calculateBuffs() {
+        for (let moduleIndex in this.modules) {
+            this.calculateModule(moduleIndex)
+        }
+    }
+
+    calculateModule(moduleIndex) {
+        let buffSections = []
+        for (let buffIndex in this.modules[moduleIndex].buffs) {
+            if (this.modules[moduleIndex].buffs[buffIndex][0] == "replace") {
+                buffSections.push(this.modules[moduleIndex].buffs[buffIndex])
+            // } else if (typeof this.modules[moduleIndex].buffs[buffIndex][1] == "number") {
+
+            } else {
+                if (
+                    buffSections.length == 0 ||
+                    buffSections[buffSections.length-1][0] == "replace"
+                ) {
+                    buffSections.push([])
+                }
+                buffSections[buffSections.length-1].push(
+                    this.modules[moduleIndex].buffs[buffIndex]
+                )
+            }
+        }
+
+        console.log(buffSections)
+
+        this.modules[moduleIndex].properties = 
+            structuredClone(this.modules[moduleIndex].initialProperties)
+        
+        for (let buffSectionIndex in buffSections) {
+            switch (buffSections[buffSectionIndex][0]) {
+                case "replace": 
+                    this.replace(buffSections[buffSectionIndex][1], moduleIndex)
+                    break
+                case "buff": default: 
+                    this.buff(buffSections[buffSectionIndex], moduleIndex)
+                    break
+            }
+        }
+    }
+
+    replace(replacementData, moduleIndex) {
+        let module = this.modules[moduleIndex]
+        let replacementProperties = {}
+        for (let replacementPropertyIndex in replacementData.properties) {
+            replacementProperties[replacementData.properties[replacementPropertyIndex][0]] = 
+                replacementData.properties[replacementPropertyIndex][1]
+        }
+        module.name = replacementData.newName
+        module.properties = replacementProperties
+    }
+
+    buff(setOfBuffs, moduleIndex) {
+        let properties = this.modules[moduleIndex].properties
+        let buffListObject = new BuffList()
+        for (let buffIndex in setOfBuffs) {
+            buffListObject.addBuff(setOfBuffs[buffIndex])
+        }
+
+        for (let propertyName in buffListObject.properties) {
+            let propertyValue = properties[propertyName]
+            switch (propertyList[propertyName].type) {
+                case "number": 
+                    let multiplier = 1, percentage = 1, additive = 0
+                    
+                    for (let i in buffListObject.properties[propertyName]["*"]) {
+                        multiplier = multiplier * buffListObject.properties[propertyName]["*"][i][1]
+                    }
+                    for (let i in buffListObject.properties[propertyName]["%"]) {
+                        percentage += buffListObject.properties[propertyName]["%"][i][1]
+                    }
+                    for (let i in buffListObject.properties[propertyName]["+"]) {
+                        additive += buffListObject.properties[propertyName]["+"][i][1]
+                    }
+                    propertyValue = propertyValue * multiplier
+                    propertyValue = propertyValue * percentage
+                    propertyValue += additive
+                    properties[propertyName] = propertyValue
+                    break
+                case "boolean": 
+                    for (let i in buffListObject.properties[propertyName].changes) {
+                        if (buffListObject.properties[propertyName].changes[i] = "invert") {
+                            propertyValue = !propertyValue
+                        } else {
+                            propertyValue = buffListObject.properties[propertyName].changes[i]
+                        }
+                    }
+                    properties[propertyName] = propertyValue
             }
         }
     }

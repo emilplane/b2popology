@@ -1,4 +1,4 @@
-import switchBetweenOperators from "./utilities/switchBetweenOperators.mjs";
+import switchBetweenOperators from "../utilities/switchBetweenOperators.mjs";
 
 export default class PopologyText {
     constructor(type, data, propertyList) {
@@ -11,17 +11,17 @@ export default class PopologyText {
     plainText(stringArray) {
         stringArray = this.upgradeStrings
         let text = ""
-        let indention = -1
+        let indent = -1
         function evaluateArray(array) {
-            indention++
+            indent++
             for (let i in array) {
                 if (typeof array[i] == "string") {
-                    text += indentedSpaces(indention) + "- " + array[i] + "\n"
+                    text += indentedSpaces(indent) + "- " + array[i] + "\n"
                 } else {
                     evaluateArray(array[i])
                 }
             }
-            indention--
+            indent--
         }
         function indentedSpaces(indention) {
             let spaceString = ""
@@ -39,6 +39,10 @@ export default class PopologyText {
         for (let moduleIndex in this.data) {
             let moduleStats = this.data[moduleIndex]
             switch (moduleStats.action) {
+                case "new":
+                    this.upgradeStrings.push(`${moduleStats.name} ${moduleStats.type}`)
+                    this.upgradeStrings.push(this.getUpgradeModuleBuffs(moduleStats))
+                    break
                 case "buff":
                     this.upgradeStrings.push(`${moduleStats.name} buffed`)
                     this.upgradeStrings.push(this.getUpgradeModuleBuffs(moduleStats))
@@ -47,6 +51,8 @@ export default class PopologyText {
         }
         return this
     }
+
+    
 
     getUpgradeModuleBuffs(moduleStats) {
         let moduleStrings = []

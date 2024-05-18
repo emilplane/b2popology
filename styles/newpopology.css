@@ -40,6 +40,10 @@
     align-items: end;
 }
 
+.propertyChipText {
+    font-size: 12pt;
+}
+
 .propertyChipLargeText {
-    font-size: 20pt;
+    font-size: 18pt;
 }
