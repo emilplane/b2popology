@@ -2347,7 +2347,7 @@ const data = {
                                             <ul>
                                                 <li>forward-dart attack
                                                     <ul>
-                                                        <li>1d, 2j, 9p, 0.15s, sharp type</li>
+                                                        <li>1d, +3cd (4cd), 2j, 13p, 0.15s, sharp type</li>
                                                         <li>can only aim directly in front</li>
                                                     </ul>
                                                 </li>
@@ -2390,7 +2390,7 @@ const data = {
                                         </li>
                                         <li>plane forward-dart buffed
                                             <ul>
-                                                <li>+1d (2d), 1j, +3cd (5cd), +5p (14p), &#8734;r, normal type</li>
+                                                <li>+1d (2d), 1j, +3cd (8cd), +5p (18p), &#8734;r, normal type</li>
                                                 <li>aimed according to the main tower's targeting instead of straight forward</li>
                                             </ul>
                                         </li>
@@ -3163,7 +3163,7 @@ const data = {
                                                                 <li>moderate homing (250 turn rate)</li>
                                                                 <li>on contact: explosion
                                                                     <ul>
-                                                                        <li>1d, 2cd (3cd), 2md (3md), 100p, 18r blast, normal type</li>
+                                                                        <li>1d, 2cd (3cd), 2md (3md), 100p, 25r blast, normal type</li>
                                                                     </ul>
                                                                 </li>
                                                             </ul>
@@ -3385,7 +3385,7 @@ const data = {
                                 "name": "040 - Artillery Battery - $8,000",
                                 "content": `
                                     <ul>
-                                        <li>25%s (0.27s), +4 BAD damage (6 BAD damage)</li>
+                                        <li>25%s (0.27s), +3 BAD damage (5 BAD damage)</li>
                                         <li>gains bombardment ability (60s cooldown, 7s duration, battle ready)
                                             <ul>
                                                 <li>25%s (0.0675)</li>
@@ -3400,7 +3400,7 @@ const data = {
                                     <ul>
                                         <li>explosion buffed
                                             <ul>
-                                                <li>+9cd (13cd), +6md (7md), +3fd (4fd), +6 BAD damage (17 BAD damage), +3ld (4ld), +8 sd (10sd)</li>
+                                                <li>+9cd (13cd), +6md (7md), +3fd (4fd), +6 BAD damage (16 BAD damage), +3ld (4ld), +8 sd (10sd)</li>
                                             </ul>
                                         </li>
                                         <li>gains pop-and-awe ability (45s cooldown, 10s duration, battle ready)
@@ -3409,7 +3409,7 @@ const data = {
                                                 <li>applies stun status: 1s duration</li>
                                                 <li>gains artillery-buff
                                                     <ul>
-                                                        <li>all x4x mortars get +4 BAD damage</li>
+                                                        <li>all x4x mortars get +3 BAD damage</li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -4243,7 +4243,7 @@ const data = {
                                 `
                             },
                             "2": {
-                                "name": "200 - Plasma Blasts - $3,000",
+                                "name": "200 - Plasma Blasts - $2,500",
                                 "content": `
                                     <ul>
                                         <li>laser replaced by plasma
@@ -4255,7 +4255,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "300 - Sun Avatar - $11,000",
+                                "name": "300 - Sun Avatar - $11,500",
                                 "content": `
                                     <ul>
                                         <li>plasma replaced by sunbeam
@@ -4273,7 +4273,7 @@ const data = {
                                         <li>size: 20 radius</li>
                                         <li>sunbeam replaced by sunblast
                                             <ul>
-                                                <li>9d, 30p, 65r, 0.06s, normal type</li>
+                                                <li>11d, 30p, 65r, 0.06s, normal type</li>
                                                 <li>can see past obstacles</li>
                                             </ul>
                                         </li>
@@ -4371,7 +4371,7 @@ const data = {
                                         <li>size: 25 radius</li>
                                         <li>sunblast buffed
                                             <ul>
-                                                <li>+21d (30d)</li>
+                                                <li>+21d (32d)</li>
                                             </ul>
                                         </li>
                                         <li>when upgraded, absorbs all towers in range for even more power (same $15,000 threshold as the Sun Temple)</li>
@@ -4497,7 +4497,7 @@ const data = {
                                 `
                             },
                             "3": {
-                                "name": "003 - Dark Knight - $4,000",
+                                "name": "003 - Dark Knight - $4,500",
                                 "content": `
                                     <ul>
                                         <li>dart replaced by monkeyrang
@@ -5138,7 +5138,7 @@ const data = {
                                                 <li>on contact: shrink-splash
                                                     <ul>
                                                         <li>200p</li>
-                                                        <li>MOABs use 20p, BFBs and DDTs use 50p, and ZOMGs use 100p</li>
+                                                        <li>MOABs use 10p, BFBs use 30p, DDTs use 50p, and ZOMGs use 100p</li>
                                                         <li>transforms target into a red bloon</li>
                                                     </ul>
                                                 </li>
@@ -5964,7 +5964,7 @@ const data = {
                                             <ul>
                                                 <li>at 100%p and on expire: explosion
                                                     <ul>
-                                                        <li>10d, 2cd (12cd), 1fd, 40p, 19r blast, explosion type</li>
+                                                        <li>10d, 2cd (12cd), 1fd, 60p, 28r blast, explosion type</li>
                                                         <li>applies burn status: 1d/2s, 6s duration</li>
                                                     </ul>
                                                 </li>
@@ -6483,7 +6483,11 @@ const data = {
                                         </li>
                                         <li>overclock replaced by ultraboost (20s cooldown, battle ready)
                                             <ul>
-                                                <li>applies overclock buff as before</li>
+                                                <li>applies overclock buff as before
+                                                    <ul>
+                                                        <li>60s duration on tier 5 towers</li>
+                                                    </ul>
+                                                </li>
                                                 <li>additionally applies a permanent 8% reload buff, which stacks additively up to 5 times</li>
                                                 <li>this means that after the first ultraboost, the tower has a 92% reload multiplier, after the second it is replaced by 84%, and so on down to 60% (1.667x faster)</li>
                                                 <li>in the case of villages, this is +2.5% to range, then 5%, etc, up to +25%r</li>
@@ -6936,7 +6940,7 @@ const data = {
                         </ul>`
                     }
                 },
-                "Gwendolin": {
+                "gwendolin": {
                     "name": "Gwendolin",
                     "data": {
                         "1": `<ul>
@@ -6958,7 +6962,7 @@ const data = {
                             </ul>
                         </ul>`,
                         "3": `<ul>
-                        <li>gains cocktail-of-fire ability (30s cooldown, 7.5s initial)
+                        <li>gains cocktail-of-fire ability (45s cooldown, 7.5s initial)
                             <ul>
                                 <li>can see past obstacles</li>
                                 <li>places wall-of-fire on the track, targetable manually anywhere within range
@@ -7460,6 +7464,12 @@ const data = {
                                 <li>0.8s</li>
                             </ul>
                         </li>
+                        <li>natures-wrath buffed
+                            <ul>
+                                <li>affects druids in range</li>
+                                <li>+1fd</li>
+                            </ul>
+                        </li>
                         </ul>`,
                         "13": ` <ul>
                         <li>spirit buffed
@@ -7500,6 +7510,7 @@ const data = {
                                 <li>0.5s</li>
                             </ul>
                         </li>
+                        <li>65r</li>
                         </ul>`,
                         "18": `<ul>
                         <li>gains improved-wrath buff
@@ -7698,6 +7709,7 @@ const data = {
                                 <li>0.5s</li>
                             </ul>
                         </li>
+                        <li>65r</li>
                     </ul>`,
                         "18": `<ul>
                         <li>gains crystal-clarity buff
@@ -8540,7 +8552,7 @@ const data = {
                         </li>
                     </ul>`,
                         "5": `<ul>
-                        <li>+$50 end of round income ($200)</li>
+                        <li>+$100 end of round income ($250)</li>
                         <li>gains bank-hack buff
                             <ul>
                                 <li>affects all x3+x farms</li>
@@ -8565,7 +8577,7 @@ const data = {
                         </li>
                     </ul>`,
                         "8": `<ul>
-                        <li>+$200 end of round income ($400)</li>
+                        <li>+$150 end of round income ($400)</li>
                     </ul>`,
                         "9": `<ul>
                         <li>bank-hack buffed
@@ -8639,6 +8651,7 @@ const data = {
                         "20": `<ul>
                         <li>syphon-funding buffed
                             <ul>
+                                <li>45s cooldown</li>
                                 <li>can affect DDTs</li>
                             </ul>
                         </li>
@@ -8677,7 +8690,7 @@ const data = {
                         </li>
                     </ul>`,
                         "5": `<ul>
-                        <li>+$38 end of round income ($150)</li>
+                        <li>+$75.5 end of round income ($187.5)</li>
                         <li>gains bank-hack buff
                             <ul>
                                 <li>affects all x3+x farms</li>
@@ -8702,7 +8715,7 @@ const data = {
                         </li>
                     </ul>`,
                         "8": `<ul>
-                        <li>+$150 end of round income ($300)</li>
+                        <li>+$112.5 end of round income ($300)</li>
                     </ul>`,
                         "9": `<ul>
                         <li>bank-hack buffed
@@ -8714,7 +8727,7 @@ const data = {
                         "10": `<ul>
                         <li>gains beatdown ability (65s cooldown, battle ready)
                             <ul>
-                                <li>10 strongest bloons on screen up to a BFB are downgraded by 1 layer</li>
+                                <li>12 strongest bloons on screen up to a BFB are downgraded by 1 layer</li>
                                 <li>can only downgrade up to 3 BFBs in an ability, but can still downgrade other bloons if this threshold is reached</li>
                             </ul>
                         </li>
@@ -8779,7 +8792,7 @@ const data = {
                             <ul>
                                 <li>can affect DDTs</li>
                                 <li>can affect up to 10 BFBs</li>
-                                <li>can affect up to 2 ZOMGs</li>
+                                <li>can affect up to 4 ZOMGs</li>
                             </ul>
                         </li>
                     </ul>`
@@ -9082,7 +9095,7 @@ const data = {
                         </li>
                     </ul>`,
                         "7": `<ul>
-                        <li>scratch ability (30s cooldown, 11s duration, battle ready)
+                        <li>scratch ability (40s cooldown, 11s duration, battle ready)
                             <ul>
                                 <li>costs 5 lives</li>
                                 <li>places scratching-post at selected point
@@ -9250,7 +9263,7 @@ const data = {
                         "3": `<ul>
                         <li>rallying-roar ability (50s cooldown, 7s duration, 12s initial)
                             <ul>
-                                <li>buffs himself and towers in 30r</li>
+                                <li>buffs himself and towers in 35r</li>
                                 <li>+1d, ?%s</li>
                             </ul>
                         </li>
@@ -9360,7 +9373,7 @@ const data = {
                             <ul>
                                 <li>50s cooldown</li>
                                 <li>12.5s duration</li>
-                                <li>+10r</li>
+                                <li>+15r (50r)</li>
                                 <li>gives +3d instead of +1</li>
                             </ul>
                         </li>
@@ -9660,7 +9673,7 @@ const data = {
                         </li>
                     </ul>`,
                         "3": `<ul>
-                        <li>seize-assets ability (70s cooldown, 10s duration, 15s initial cooldown)
+                        <li>seize-assets ability (70s cooldown, 10s duration, 28s initial cooldown)
                             <ul>
                                 <li>takes $25 from the opponent every 1s
                                     <ul>
@@ -10059,7 +10072,7 @@ const data = {
                         </li>
                     </ul>`,
                         "3": `<ul>
-                        <li>in-it-for-the-money ability (70s cooldown, 17s initial cooldown, 6s duration)
+                        <li>in-it-for-the-money ability (70s cooldown, 28s initial cooldown, 6s duration)
                             <ul>
                                 <li>applies money-trap status to up to 25 sent bloons within ability duration
                                     <ul>
@@ -10588,7 +10601,8 @@ const data = {
                             <ul>
                                 <li>places chain-trap based on targeting, defaults on close</li>
                                 <ul>
-                                    <li>(1 + x / 1000)d, &infin;p, ?r zone, 0.12s, normal type, camo</li>
+                                    <li>(1 + x / 1000)d, 500p, ?r zone, 0.12s, normal type, camo</li>
+                                    <li>MOABs use 10p, BFBs use 20p, ZOMGs and DDTs use 40p, BADs use 60p</li>
                                     <li>x = cost of opponent's most expensive tower</li>
                                     <li>slows moab-class bloons</li>
                                 </ul>
@@ -11620,7 +11634,7 @@ const data = {
                                     <li>Rounds: 12</li>
                                     <li>Count: 1</li>
                                     <li>Total time: 0.35s</li>
-                                    <li>Eco: +$3.0</li>
+                                    <li>Eco: +$2.8</li>
                                     <li>Cost: $70</li>
                                 </ul>
                             </li>
@@ -11712,10 +11726,10 @@ const data = {
                             <li>Tight
                                 <ul>
                                     <li>Rounds: 25+</li>
-                                    <li>Count: 20</li>
+                                    <li>Count: 15</li>
                                     <li>Total time: 1s</li>
                                     <li>Eco: -$50</li>
-                                    <li>Cost: $3,500</li>
+                                    <li>Cost: $4,000</li>
                                 </ul>
                             </li>
                         </ul>
@@ -12002,9 +12016,9 @@ const data = {
             },
             "superMonkey": {
                 "base": 1800,
-                "top": [1400, 3000, 11000, 80000, 200000],
+                "top": [1400, 2500, 11500, 80000, 200000],
                 "middle": [1000, 1000, 10000, 20000, 90000],
-                "bottom": [3000, 1200, 4000, 30000, 100000]
+                "bottom": [3000, 1200, 4500, 30000, 100000]
             },
             "ninjaMonkey": {
                 "base": 400,

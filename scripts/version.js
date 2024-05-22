@@ -1,7 +1,7 @@
 let version = {
     "major": 0,
     "minor": 25,
-    "patch": 7,
+    "patch": 8,
     "content": 0
 }
 
