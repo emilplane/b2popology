@@ -10700,6 +10700,196 @@ const data = {
                         </li>
                     </ul>`
                     }
+                },
+                "etienne": {
+                    "name": "Etienne",
+                    "data": {
+                        "1": `<ul>
+                        <li>$650</li>
+                        <li>Leveling Rate: ?x</li>
+                        <li>Unlock Cost: 3,000 MM</li>
+                        <li>size: 7 radius</li>
+                        <li>placeable on: land</li>
+                        <li>55r</li>
+                        <li>spawns two permanent drone subtowers
+                            <li>dart attack
+                                <ul>
+                                    <li>1d, 2p, 0.7s, sharp type</li>
+                                    <li>can see past obstacles</li>
+                                </ul>
+                            </li>
+                        </li>
+                    </ul>`,
+                        "2": `<ul>
+                        <li>+5r (60r)</li>
+                        <li>gains spy-drone
+                            <ul>
+                                <li>opponent's bloon queue and cash is visible</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "3": `<ul>
+                        <li>drone-swarm ability (?)
+                            <ul>
+                                <li>spawns 4 more drone subtowers</li>
+                                <li>duration increases 0.5s? per level</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "4": `<ul>
+                        <li>dart buffed
+                            <ul>
+                                <li>+1p (3p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "5": `<ul>
+                        <li>dart buffed
+                            <ul>
+                                <li>0.55s, camo</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "6": `<ul>
+                        <li>uav buff
+                            <ul>
+                                <li>affects all towers</li>
+                                <li>all bloon properties have a 25%? chance of being ignored</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "7": `<ul>
+                        <li>uav buffed
+                            <ul>
+                                <li>grants camo</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "8": `<ul>
+                        <li>dart buffed
+                            <ul>
+                                <li>+1d (2d)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "9": `<ul>
+                        <li>uav buffed
+                            <ul>
+                                <li>all bloon properties now have a 66%? chance of being ignored</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "10": `<ul>
+                        <li>ucav ability (?)
+                            <li>uav replaced by ucav-drone subtower
+                                <ul>
+                                    <li>10j/240°, 1 impact, ∞r, 0.6s</li>
+                                    <li>homing</li>
+                                    <li>always targets first</li>
+                                    <li>on contact: explosion
+                                        <ul>
+                                            <li>2d, 25p, 20r blast, explosion type, camo</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </li>
+                    </ul>`,
+                        "11": `<ul>
+                        <li>spawns 1 more permanent drone subtower (3)</li>
+                    </ul>`,
+                        "12": `<ul>
+                        <li>drone buffed
+                            <ul>
+                                <li>flies faster</li>
+                            </ul>
+                        </li>
+                        <li>dart buffed
+                            <ul>
+                                <li>+3p (6p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "13": `<ul>
+                        <li>ucav buffed
+                            <ul>
+                                <li>? cooldown</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "14": `<ul>
+                        <li>dart buffed
+                            <ul>
+                                <li>+1d (3d)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "15": `<ul>
+                        <li>uav buffed
+                            <ul>
+                                <li>all bloon properties now have a 100% chance of being ignored</li>
+                            </ul>
+                        </li>
+                        <li>ucav buffed
+                            <ul>
+                                <li>? duration</li>
+                            </ul>
+                        </li>
+                        <li>explosion buffed
+                            <ul>
+                                <li>+2d (4d), +5p (30p)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "16": `<ul>
+                        <li>+20r (80r)</li>
+                        <li>dart buffed
+                            <ul>
+                                <li>+3p (9p)</li>
+                            </ul>
+                        </li>
+                        <li>drone-swarm buffed
+                            <ul>
+                                <li>? cooldown</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "17": `<ul>
+                        <li>explosion buffed
+                            <ul>
+                                <li>+3d (7d)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "18": `<ul>
+                        <li>dart buffed
+                            <ul>
+                                <li>+1d (4d)</li>
+                            </ul>
+                        </li>
+                    </ul>`,
+                        "19": `<ul>
+                        <li>spawns 1 more permanent drone subtower (4)</li>
+                    </ul>`,
+                        "20": `<ul>
+                        <li>uav buffed
+                            <ul>
+                                <li>missile attack
+                                    <ul>
+                                        <li>10j 240&deg spread, 1i, ∞r, 0.6sx, camo</li>
+                                        <li>homing</li>
+                                        <li>always targets first</li>
+                                    </ul>
+                                </li>
+                                <li>explosion attack
+                                    <ul>
+                                        <li>2d, 25p, 20r blast, explosion type, camo</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>`
+                    }
                 }
             }
         },
