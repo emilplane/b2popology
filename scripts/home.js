@@ -12,7 +12,7 @@ menuCloseButton.addEventListener('click', function() {
     menuDialog.close(); 
 });
 
-const startDate = new Date('2024-05-11T19:00:00.000Z');
+const startDate = new Date('2024-05-26T19:00:00.000Z');
 const now = new Date();
 const diffTime = (now - startDate)*-1
 console.log(diffTime)
@@ -29,7 +29,7 @@ if (diffTime < 0) {
     document.getElementById("tourneyInfoContainer").classList.add("tourneyInfoContainerLive")
     document.getElementById("tourneyInfoContainer").innerHTML = `
         <div>
-            <h4>Watch the Popology Weekly 14 tournament now!</h4>
+            <h4>Watch the Popology Weekly 16 tournament now!</h4>
         </div>
         
         <a href="https://twitch.tv/b2popology" target="blank" class="buttonAnchor">
