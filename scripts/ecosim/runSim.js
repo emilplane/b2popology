@@ -195,7 +195,7 @@ export default class RunSim {
                 optionElement.value = key; optionElement.innerText = key
                 document.getElementById("startingBloonSend")
                     .insertAdjacentElement("beforeend", optionElement)
-            }
+            }   
         }
         console.log(bloonSendData)
         document.getElementById("startingBloonSend").innerHTML = ""
@@ -203,27 +203,109 @@ export default class RunSim {
     }
 
     ecoQueueUpdate() {
+        console.log(this)
         this.updateEcoQueueUI();
         this.sendUpdatedValues();
     }
 
     updateEcoQueueUI() {
+        this.ecoQueue.sort((a, b) => a.time[1] - b.time[1]);
         document.getElementById("ecoQueueContainer").innerHTML = "";
         let template = document.getElementById("ecoQueueTemplate");
         for (let ecoQueueIndex in this.ecoQueue) {
             let clone = template.content.cloneNode(true);
-            switch (this.ecoQueue[ecoQueueIndex].time[0]) {
-                case "round":
-                    console.log(this.ecoQueue[ecoQueueIndex])
-                    clone.querySelector(".timeText").innerHTML = 
-                        `Round <span class="monoHighlight">
-                            ${this.ecoQueue[ecoQueueIndex].time[1]}
-                        </span>`
-                    clone.querySelector(".ecoBloonIconContainer").insertAdjacentHTML("beforeend", `
-                        <img class="imageIconSmall ecoBloonIcon" src="media/bloonIcons/red/red.png">
-                        <img class="imageIconSmall ecoBloonIcon" src="media/bloonIcons/red/red.png">
-                    `)
+            let context = this
+
+            clone.querySelector(".timeText").innerHTML = 
+                `Round <div class="monoHighlight roundNumber">
+                    ${this.ecoQueue[ecoQueueIndex].time[1]}
+                </div>`
+            clone.querySelector(".roundNumber").addEventListener(
+                "click", editRoundNumberCallbackFunction
+            )
+            clone.querySelector(".delete").addEventListener("click", () => {
+                delete this.ecoQueue[ecoQueueIndex]
+                context.ecoQueueUpdate()
+            })
+            clone.querySelector(".ecoQueueCardConfigPanel").id = "configPanel" + ecoQueueIndex
+            let configPanel = clone.getElementById("configPanel" + ecoQueueIndex)
+            console.log(configPanel)
+            clone.querySelector(".edit").addEventListener("click", () => {
+                configPanel.classList.toggle("showConfigPanel")
+            })
+
+            function editRoundNumberCallbackFunction(e) {
+                let currentValue = Number(e.target.innerHTML)
+                
+                e.target.innerHTML = `
+                    <div class="changeEcoSendRoundContainer">
+                        <input type="number" class="changeEcoSendRoundInput"
+                            value="${currentValue}"/>
+                        <button 
+                            class="material-symbols-outlined iconButton cancel">
+                            close</button>
+                        <button 
+                            class="material-symbols-outlined iconButton confirm">
+                            check</button>
+                    </div>
+                `
+                
+                let roundInput = e.target.querySelector(".changeEcoSendRoundInput")
+                roundInput.focus()
+                roundInput.select()
+
+                e.target.removeEventListener("click", editRoundNumberCallbackFunction)
+
+                roundInput.addEventListener(
+                    'keyup', function(event) {
+                        if (event.key === 'Enter') {
+                            confirmCallbackFunction()
+                        }
+                    }
+                )
+                e.target.querySelector(".confirm").addEventListener(
+                    "click", confirmCallbackFunction
+                )
+                roundInput.addEventListener(
+                    'keydown', function(event) {
+                        if (event.key === "Escape") {
+                            console.log(1)
+                            cancelCallbackFunction()
+                        }
+                    }
+                )
+                e.target.querySelector(".cancel").addEventListener(
+                    "click", cancelCallbackFunction
+                )
+                function confirmCallbackFunction() {
+                    let updatedValue = 
+                    Number(roundInput.value)
+                    context.ecoQueue[ecoQueueIndex].time[1] = updatedValue
+                    context.ecoQueueUpdate()
+                }
+                function cancelCallbackFunction() {
+                    context.updateEcoQueueUI()
+                }
             }
+
+            if (this.ecoQueue[ecoQueueIndex].ecoSend.name == "zero") {
+                clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
+                    <div 
+                    class="material-symbols-outlined imageIconSmall 
+                    ecoBloonIcon zeroSendSymbol">
+                        block
+                    </div>
+                `)
+            } else {
+                let bloonFolder = this.ecoQueue[ecoQueueIndex].ecoSend.name
+                let bloonName = this.ecoQueue[ecoQueueIndex].ecoSend.name
+    
+                clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
+                    <img class="imageIconSmall ecoBloonIcon" 
+                        src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
+                `)
+            }
+
             document.getElementById("ecoQueueContainer").appendChild(clone);
         }
     }

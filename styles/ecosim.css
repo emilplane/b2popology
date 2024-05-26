@@ -15,6 +15,10 @@
     cursor: pointer;
 }
 
+.iconButtonDark {
+    background-color: var(--primaryDark2b);
+}
+
 .monoHighlight {
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
@@ -26,6 +30,10 @@
     border-radius: 4px;
 }
 
+.roundNumber {
+    cursor: text;
+}
+
 .ecosimMain {
     margin: 0 auto;
     padding: 16px;
@@ -33,6 +41,7 @@
     display: grid;
     grid-template-rows: auto auto 1fr;
     height: calc(100vh - 32px);
+    max-height: calc(100vh - 32px);
 }
 
 .menuBar {
@@ -118,11 +127,16 @@
     gap: 8px;
     display: grid;
     grid-template-columns: 1fr calc(300px + 5vw);
+    max-height: 100%;
+    height: 100%;
 }
 
 .configureSim {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    max-height: 100%;
+
     gap: 8px;
     background-color: var(--primaryLight3);
     @media (prefers-color-scheme: dark) {
@@ -346,16 +360,81 @@ input.settingInput {
 }
 
 .ecoQueueCard {
-    display: flex;
+    display: grid;
+    gap: 4px
 }
 
-.ecoBloonIconContainer {
+.ecoQueueCardStats {
+    display: flex;
+    align-items: center;
+}
+
+.ecoQueueCardConfigPanel {
+    display: none;
+}
+
+.showConfigPanel {
+    display: block;
+}
+
+.timeText {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ecoBloonGridContainer {
+
+}
+
+.ecoBloonGrid {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(auto-fit, minmax(36px, 1fr))
+}
+
+.ecoBloonGridItem {
+    height: 40px;
+    background-color: var(--primaryDark2b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.ecoQueueMainButtonContainer {
     margin-left: auto;
     display: flex;
+    align-items: center;
+    gap: 8px;
+    
 }
 
 .imageIconSmall {
     height: 24px;
+    width: 24px;
+    object-fit: contain;
+}
+
+.zeroSendSymbol {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ecoBloonGridImage {
+    height: 32px;
+}
+
+.changeEcoSendRoundContainer {
+    display: flex;
+    gap: 4px;
+    padding: 4px 2px;
+}
+
+.changeEcoSendRoundInput {
+    width: 100px;
 }
 
 .contentSection {
@@ -365,6 +444,39 @@ input.settingInput {
 
 .simConfigSection > .gap {
     height: 8px;
+}
+
+.tabContainer {
+    height: calc(100vh - 32px - 75px - 54px - 8px - 8px - 8px);
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        padding: 2px;
+    }
+}
+
+.tabContainer::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 8px;
+}
+ 
+.tabContainer::-webkit-scrollbar-thumb {
+    background: var(--primaryLight3);
+    border-radius: 8px;
+    margin: 8px;
+}
+.tabContainer::-webkit-scrollbar-thumb:hover {
+    background: var(--primaryLight2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .tabContainer::-webkit-scrollbar-thumb {
+        background: var(--primaryDark2);
+    }
+    .tabContainer::-webkit-scrollbar-thumb:hover {
+        background: var(--primaryDark1);
+    }
 }
 
 .tab {
