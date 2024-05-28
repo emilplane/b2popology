@@ -54,9 +54,10 @@ export default class RunSim {
                 case "initStatus": 
                     this.initStatus(e.data)
                     break
-                    break
                 case "returnData":
                     this.returnData(e.data)
+                    this.updateFarmUI()
+                    this.updateEcoQueueUI()
                     break
             }
         }
@@ -92,8 +93,6 @@ export default class RunSim {
                     .setLight("ready")
                     .setLoadingBar(1)
                 this.sendUpdatedValues()
-                this.updateFarmUI()
-                this.updateEcoQueueUI()
                 break
         }
     }
@@ -106,7 +105,6 @@ export default class RunSim {
     returnData(data) {
         const simulationData = data.data;
         this.bloonSendData = simulationData.ecoSendInfo
-        console.log(this.bloonSendData)
 
         // Logic that creates arrays that for timeStates, ecoStates, and cashStates that only
         // include data points that have a timeState that goes up to the tenths place (0.1)
@@ -206,6 +204,14 @@ export default class RunSim {
         bloonSendData.forEach(eachBloonSend)
     }
 
+    getSendsForRound(round) {
+        this.bloonSendData.forEach(eachBloonSend)
+        function eachBloonSend(value) {
+            console.log(value)
+        }
+        return round
+    }
+
     ecoQueueUpdate() {
         console.log(this)
         this.updateEcoQueueUI();
@@ -217,12 +223,13 @@ export default class RunSim {
         document.getElementById("ecoQueueContainer").innerHTML = "";
         let template = document.getElementById("ecoQueueTemplate");
         for (let ecoQueueIndex in this.ecoQueue) {
-            let clone = template.content.cloneNode(true);
-            let context = this
-
+            const clone = template.content.cloneNode(true);
+            const context = this
+            const ecoQueueItem = this.ecoQueue[ecoQueueIndex]
+            console.log(this.getSendsForRound(Math.floor(ecoQueueItem.time[1])))
             clone.querySelector(".timeText").innerHTML = 
                 `Round <div class="monoHighlight roundNumber">
-                    ${this.ecoQueue[ecoQueueIndex].time[1]}
+                    ${ecoQueueItem.time[1]}
                 </div>`
             clone.querySelector(".roundNumber").addEventListener(
                 "click", editRoundNumberCallbackFunction
@@ -272,7 +279,6 @@ export default class RunSim {
                 roundInput.addEventListener(
                     'keydown', function(event) {
                         if (event.key === "Escape") {
-                            console.log(1)
                             cancelCallbackFunction()
                         }
                     }
@@ -291,7 +297,7 @@ export default class RunSim {
                 }
             }
 
-            if (this.ecoQueue[ecoQueueIndex].ecoSend.name == "zero") {
+            if (ecoQueueItem.ecoSend.name == "zero") {
                 clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
                     <div 
                     class="material-symbols-outlined imageIconSmall 
@@ -300,8 +306,8 @@ export default class RunSim {
                     </div>
                 `)
             } else {
-                let bloonFolder = this.ecoQueue[ecoQueueIndex].ecoSend.name
-                let bloonName = this.ecoQueue[ecoQueueIndex].ecoSend.name
+                let bloonFolder = ecoQueueItem.ecoSend.name
+                let bloonName = ecoQueueItem.ecoSend.name
     
                 clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
                     <img class="imageIconSmall ecoBloonIcon" 
