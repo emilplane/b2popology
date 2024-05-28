@@ -12,8 +12,8 @@ class b2sim {
      * @param {*} configData - parameters for the simulator
      */
     constructor(configData) {
-        this.configData = configData
-        if (this.configData != undefined) {
+        if (configData != undefined) {
+            this.configData = configData
             this.farms = this.configData.farms
             this.ecoQueue = this.configData.ecoQueue
         }
@@ -207,7 +207,8 @@ onmessage = async function (e) {
             break
         case "requestBloonSendData": 
             let roundDataSim = new b2sim(undefined)
-            let roundData = await roundDataSim.getBloonSendData()
+            // let roundData = await roundDataSim.getBloonSendData()
+            let roundData = []
             postMessage({
                 "type": "requestBloonSendData",
                 "data": roundData

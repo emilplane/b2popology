@@ -46,7 +46,6 @@
 
 .menuBar {
     border-radius: 8px;
-    overflow: hidden;
 }
 
 .menuBarContent {
@@ -447,7 +446,7 @@ input.settingInput {
 }
 
 .tabContainer {
-    height: calc(100vh - 32px - 75px - 54px - 8px - 8px - 8px);
+    height: calc(100vh - 32px - 75px - 54px - 8px - 8px - 8px - 37px);
     overflow-y: auto;
     ::-webkit-scrollbar {
         width: 12px;

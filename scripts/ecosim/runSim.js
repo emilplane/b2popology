@@ -8,6 +8,7 @@ export default class RunSim {
      */
     constructor() {
         this.farmArray = []
+        this.bloonSendData;
         this.ecoQueue = [
             {
                 "time": ["round", 12],
@@ -53,9 +54,10 @@ export default class RunSim {
                 case "initStatus": 
                     this.initStatus(e.data)
                     break
+                    break
                 case "returnData":
                     this.returnData(e.data)
-                    break   
+                    break
             }
         }
     }
@@ -102,7 +104,9 @@ export default class RunSim {
      * @param {object} data - The content of the message returned by the web worker
      */
     returnData(data) {
-        let simulationData = data.data; 
+        const simulationData = data.data;
+        this.bloonSendData = simulationData.ecoSendInfo
+        console.log(this.bloonSendData)
 
         // Logic that creates arrays that for timeStates, ecoStates, and cashStates that only
         // include data points that have a timeState that goes up to the tenths place (0.1)
@@ -229,7 +233,6 @@ export default class RunSim {
             })
             clone.querySelector(".ecoQueueCardConfigPanel").id = "configPanel" + ecoQueueIndex
             let configPanel = clone.getElementById("configPanel" + ecoQueueIndex)
-            console.log(configPanel)
             clone.querySelector(".edit").addEventListener("click", () => {
                 configPanel.classList.toggle("showConfigPanel")
             })
