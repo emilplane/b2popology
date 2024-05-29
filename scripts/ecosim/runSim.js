@@ -1,5 +1,6 @@
 import chartConfig from "./chartConfig.js"
 import StatusUI from "./statusUI.js"
+import EcoSend from "./ecoSend.js";
 
 export default class RunSim {
     /**
@@ -205,11 +206,17 @@ export default class RunSim {
     }
 
     getSendsForRound(round) {
+        let validSends = []
         this.bloonSendData.forEach(eachBloonSend)
-        function eachBloonSend(value) {
-            console.log(value)
+        function eachBloonSend(value, index) {
+            if (
+                round >= value.get("Start Round") && 
+                round <= value.get("End Round")
+            ) {
+                validSends.push(index)
+            }
         }
-        return round
+        return validSends
     }
 
     ecoQueueUpdate() {
@@ -226,7 +233,35 @@ export default class RunSim {
             const clone = template.content.cloneNode(true);
             const context = this
             const ecoQueueItem = this.ecoQueue[ecoQueueIndex]
-            console.log(this.getSendsForRound(Math.floor(ecoQueueItem.time[1])))
+            this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach(element => {
+                let ecoSend = new EcoSend(element, "ecoSimName")
+                let ecoSendHTML;
+                if (ecoSend.getName() == "zero") {
+                    ecoSendHTML = `
+                        <button class="material-symbols-outlined ecoBloonGridItem doubleBloon zeroSendSymbol">
+                            block</button>
+                    `
+                } else {
+                    switch (ecoSend.getSpacing()) {
+                        case "grouped": 
+                            ecoSendHTML = `
+                                <button class="ecoBloonGridItem doubleBloon">
+                                    <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
+                                    <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
+                                </button>
+                            `
+                            break
+                        case "spaced": default: 
+                            ecoSendHTML = `
+                                <button class="ecoBloonGridItem">
+                                    <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
+                                </button>
+                            `
+                            break
+                    }
+                }
+                clone.querySelector(".ecoBloonGrid").insertAdjacentHTML("beforeend", ecoSendHTML)
+            });
             clone.querySelector(".timeText").innerHTML = 
                 `Round <div class="monoHighlight roundNumber">
                     ${ecoQueueItem.time[1]}
