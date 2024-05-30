@@ -31,13 +31,6 @@ export default class RunSim {
                     "name": "pink",
                     "spacing": "grouped"
                 }
-            },
-            {
-                "time": ["round", 18],
-                "ecoSend": {
-                    "name": "purple",
-                    "spacing": "grouped"
-                }
             }
         ]
         this.selectedTab = 0
@@ -233,19 +226,19 @@ export default class RunSim {
             const clone = template.content.cloneNode(true);
             const context = this
             const ecoQueueItem = this.ecoQueue[ecoQueueIndex]
-            this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach(element => {
+            this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach((element, index) => {
                 let ecoSend = new EcoSend(element, "ecoSimName")
                 let ecoSendHTML;
                 if (ecoSend.getName() == "zero") {
                     ecoSendHTML = `
-                        <button class="material-symbols-outlined ecoBloonGridItem doubleBloon zeroSendSymbol">
+                        <button id="newEcoBloonButton" class="material-symbols-outlined ecoBloonGridItem doubleBloon zeroSendSymbol">
                             block</button>
                     `
                 } else {
                     switch (ecoSend.getSpacing()) {
                         case "grouped": 
                             ecoSendHTML = `
-                                <button class="ecoBloonGridItem doubleBloon">
+                                <button id="newEcoBloonButton" class="ecoBloonGridItem doubleBloon">
                                     <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
                                     <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
                                 </button>
@@ -253,7 +246,7 @@ export default class RunSim {
                             break
                         case "spaced": default: 
                             ecoSendHTML = `
-                                <button class="ecoBloonGridItem">
+                                <button id="newEcoBloonButton" class="ecoBloonGridItem">
                                     <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
                                 </button>
                             `
@@ -261,6 +254,11 @@ export default class RunSim {
                     }
                 }
                 clone.querySelector(".ecoBloonGrid").insertAdjacentHTML("beforeend", ecoSendHTML)
+                clone.getElementById("newEcoBloonButton").addEventListener("click", () => {
+                    ecoQueueItem.ecoSend = ecoSend.getEcoSend()
+                    context.ecoQueueUpdate()
+                })
+                clone.getElementById("newEcoBloonButton").removeAttribute("id");
             });
             clone.querySelector(".timeText").innerHTML = 
                 `Round <div class="monoHighlight roundNumber">

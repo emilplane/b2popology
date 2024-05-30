@@ -35,6 +35,10 @@ export default class EcoSend {
         return `media/bloonIcons/${this.ecoSend.name}/${this.ecoSend.name}.png`
     }
 
+    getEcoSend() {
+        return this.ecoSend
+    }
+
     getName() {
         return this.ecoSend.name
     }
