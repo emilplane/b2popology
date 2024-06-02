@@ -1,6 +1,8 @@
 import chartConfig from "./chartConfig.js"
 import StatusUI from "./statusUI.js"
-import EcoSend from "./ecoSend.js";
+import EcoSend from "./eco/ecoSend.js";
+import EcoQueue from "./eco/ecoQueue.js";
+import EcoSendWithTime from "./eco/ecoSendWithTime.js";
 
 export default class RunSim {
     /**
@@ -33,6 +35,24 @@ export default class RunSim {
                 }
             }
         ]
+        this.newEcoQueue = new EcoQueue
+        this.someEcoSendWithTime = new EcoSendWithTime({
+            "time": ["round", 17],
+            "ecoSend": {
+                "name": "pink",
+                "spacing": "grouped"
+            }
+        })
+        this.newEcoQueue.addSend(this.someEcoSendWithTime)
+        this.newEcoQueue.addSend(new EcoSendWithTime({
+            "time": ["round", 12],
+            "ecoSend": {
+                "name": "rainbow",
+                "spacing": "spaced"
+            }
+        }))
+        this.newEcoQueue.sortQueue()
+        console.log(this.newEcoQueue)
         this.selectedTab = 0
         
 
@@ -414,20 +434,21 @@ export default class RunSim {
     }
 
     /**
-     * Adds event listeners for UI elements.
+     * Adds event listeners for UI buttons that don't move or.
      */
     addEventListeners() {
-        // Adds an event listener for UI elements that change simulator parameters
+        // Adds an event listener for UI elements that change simple simulator parameters. More 
+        // complex implementations will need their own logic to implement event listeners. 
         document.querySelectorAll(".settingInput").forEach((input) => {
             input.addEventListener("change", () => {
                 this.sendUpdatedValues()
             })
         })
 
-        // Adds an event listener to add a new farm to the array of farms
+
         document.getElementById("addEcoQueueItem").addEventListener("click", () => {
             this.ecoQueue.push({
-                "time": ["round", 12],
+                "time": ["round", 1],           
                 "ecoSend": {
                     "name": "zero",
                     "spacing": null
@@ -444,22 +465,14 @@ export default class RunSim {
             this.farmUpdate()
         })
 
-        // Event listeners for tab buttons
-        document.getElementById("tab0Button").addEventListener("click", () => {
-            this.selectedTab = 0
-            hideAllExcept("tab0")
-            setTabButtons(this)
-        })
-        document.getElementById("tab1Button").addEventListener("click", () => {
-            this.selectedTab = 1
-            hideAllExcept("tab1")
-            setTabButtons(this)
-        })
-        document.getElementById("tab2Button").addEventListener("click", () => {
-            this.selectedTab = 2
-            hideAllExcept("tab2")
-            setTabButtons(this)
-        })
+        // Event listeners for the 3 tab buttons
+        for (let tabIndex = 0; tabIndex < 3; tabIndex++) {
+            document.getElementById(`tab${tabIndex}Button`).addEventListener("click", () => {
+                this.selectedTab = tabIndex
+                hideAllExcept(`tab${tabIndex}`)
+                setTabButtons(this)
+            })
+        }
 
         /**
          * Hides all tab content except for a specific tab's content.

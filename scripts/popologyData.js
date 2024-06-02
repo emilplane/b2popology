@@ -4541,7 +4541,7 @@ const data = {
                                     <ul>
                                         <li>monkeyrang buffed
                                             <ul>
-                                                <li>+4d (6d), +4cd (16cd), +4md (10md), +8p (17p), +4r (57r)</li>
+                                                <li>+4d (6d), +4cd (12cd), +4md (14md), +8p (17p), +4r (57r)</li>
                                             </ul>
                                         </li>
                                         <li>gains black-hole ability (120s cooldown, 4s duration, battle ready, triggered by something about to leak)

@@ -206,7 +206,7 @@ onmessage = async function (e) {
             initializing = false
             break
         case "requestBloonSendData": 
-            let roundDataSim = new b2sim(undefined)
+            /*let roundDataSim = */new b2sim(undefined)
             // let roundData = await roundDataSim.getBloonSendData()
             let roundData = []
             postMessage({
