@@ -4524,7 +4524,7 @@ const data = {
                                     <ul>
                                         <li>monkeyrang buffed
                                             <ul>
-                                                <li>+1d (2d), +2cd (4cd), +2md (4md), +2p (7p), 50%s (0.0225), normal type</li>
+                                                <li>+1d (2d), +2cd (4cd), +2md (6md), +2p (7p), 50%s (0.0225), normal type</li>
                                             </ul>
                                         </li>
                                         <li>darkshift buffed
