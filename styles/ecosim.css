@@ -3,6 +3,8 @@
     --loadingColorFaded: hsl(61, 71%, 35%);
     --statusReady: hsl(103, 81%, 49%);
     --statusError: hsl(0, 81%, 49%);
+
+    --buttonSelected: hsl(207, 100%, 39%);
 }
 
 .iconButton {
@@ -15,8 +17,12 @@
     cursor: pointer;
 }
 
-.iconButtonDark {
+.buttonDark, .iconButtonDark {
     background-color: var(--primaryDark2b);
+}
+
+.buttonSelected {
+    background-color: var(--buttonSelected);
 }
 
 .monoHighlight {
@@ -383,8 +389,11 @@ input.settingInput {
     gap: 8px;
 }
 
-.ecoBloonGridContainer {
-
+.bloonModifierContainer {
+    margin-top: 8px;
+    /* display: flex; */
+    /* gap: 8px; */
+    /* flex-wrap: wrap; */
 }
 
 .ecoBloonGrid {
@@ -405,6 +414,15 @@ input.settingInput {
 
 .doubleBloon > :nth-child(2) {
     margin-left: -16px;
+}
+
+.doubleBloonSmall {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.doubleBloonSmall > :nth-child(2) {
+    margin-left: -20px;
 }
 
 .ecoQueueMainButtonContainer {

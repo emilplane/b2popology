@@ -1,8 +1,6 @@
 import chartConfig from "./chartConfig.js"
 import StatusUI from "./statusUI.js"
 import EcoSend from "./eco/ecoSend.js";
-import EcoQueue from "./eco/ecoQueue.js";
-import EcoSendWithTime from "./eco/ecoSendWithTime.js";
 
 export default class RunSim {
     /**
@@ -12,6 +10,7 @@ export default class RunSim {
     constructor() {
         this.farmArray = []
         this.bloonSendData;
+        this.selectedTab = 0
         this.ecoQueue = [
             {
                 "time": ["round", 12],
@@ -35,33 +34,11 @@ export default class RunSim {
                 }
             }
         ]
-        this.newEcoQueue = new EcoQueue
-        this.someEcoSendWithTime = new EcoSendWithTime({
-            "time": ["round", 17],
-            "ecoSend": {
-                "name": "pink",
-                "spacing": "grouped"
-            }
-        })
-        this.newEcoQueue.addSend(this.someEcoSendWithTime)
-        this.newEcoQueue.addSend(new EcoSendWithTime({
-            "time": ["round", 12],
-            "ecoSend": {
-                "name": "rainbow",
-                "spacing": "spaced"
-            }
-        }))
-        this.newEcoQueue.sortQueue()
-        console.log(this.newEcoQueue)
-        this.selectedTab = 0
-        
-
         this.addEventListeners()
         this.updateFarmUI()
 
         // Creates a web worker to run the simulator
         this.ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
-
         // Handles messages back from the simulation's web worker
         this.ecosimWorker.onmessage = (e) => {
             switch (e.data.type) {
@@ -186,7 +163,6 @@ export default class RunSim {
             config[parameters[parameterIndex]] = 
                 Number(document.getElementById(parameters[parameterIndex]).value)
         }
-        console.log(config)
         this.ecosimWorker.postMessage({
             "type": "requestData",
             "config": config
@@ -213,7 +189,6 @@ export default class RunSim {
                     .insertAdjacentElement("beforeend", optionElement)
             }   
         }
-        console.log(bloonSendData)
         document.getElementById("startingBloonSend").innerHTML = ""
         bloonSendData.forEach(eachBloonSend)
     }
@@ -233,25 +208,25 @@ export default class RunSim {
     }
 
     ecoQueueUpdate() {
-        console.log(this)
         this.updateEcoQueueUI();
         this.sendUpdatedValues();
     }
 
     updateEcoQueueUI() {
-        this.ecoQueue.sort((a, b) => a.time[1] - b.time[1]);
+        this.ecoQueue.sort((a, b) => a.time[1] - b.time[1])
         document.getElementById("ecoQueueContainer").innerHTML = "";
         let template = document.getElementById("ecoQueueTemplate");
         for (let ecoQueueIndex in this.ecoQueue) {
             const clone = template.content.cloneNode(true);
             const context = this
             const ecoQueueItem = this.ecoQueue[ecoQueueIndex]
-            this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach((element, index) => {
+            this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach((element) => {
                 let ecoSend = new EcoSend(element, "ecoSimName")
                 let ecoSendHTML;
                 if (ecoSend.getName() == "zero") {
                     ecoSendHTML = `
-                        <button id="newEcoBloonButton" class="material-symbols-outlined ecoBloonGridItem doubleBloon zeroSendSymbol">
+                        <button id="newEcoBloonButton" class="material-symbols-outlined 
+                        ecoBloonGridItem doubleBloon zeroSendSymbol">
                             block</button>
                     `
                 } else {
@@ -280,6 +255,20 @@ export default class RunSim {
                 })
                 clone.getElementById("newEcoBloonButton").removeAttribute("id");
             });
+            let bloonModifierContainerHtml = ``
+            
+            clone.querySelector(".ecoBloonGridContainer").insertAdjacentHTML("beforeend", `
+                <div class="bloonModifierContainer">
+                    <button class="buttonDark regrow">Regrow</button>
+                    <button class="buttonDark camo">Camo</button>
+                    <button class="buttonDark fortified">Fortified</button>
+                </div>
+            `)
+            //buttonSelected
+            clone.querySelector(".regrow").addEventListener("click", () => {
+                this.ecoQueue[ecoQueueIndex].property
+                context.ecoQueueUpdate()
+            })
             clone.querySelector(".timeText").innerHTML = 
                 `Round <div class="monoHighlight roundNumber">
                     ${ecoQueueItem.time[1]}
@@ -296,6 +285,7 @@ export default class RunSim {
             clone.querySelector(".edit").addEventListener("click", () => {
                 configPanel.classList.toggle("showConfigPanel")
             })
+            
 
             function editRoundNumberCallbackFunction(e) {
                 let currentValue = Number(e.target.innerHTML)
@@ -359,13 +349,31 @@ export default class RunSim {
                     </div>
                 `)
             } else {
-                let bloonFolder = ecoQueueItem.ecoSend.name
-                let bloonName = ecoQueueItem.ecoSend.name
-    
-                clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
-                    <img class="imageIconSmall ecoBloonIcon" 
+                const bloonFolder = ecoQueueItem.ecoSend.name
+                const bloonName = ecoQueueItem.ecoSend.name
+
+                let htmlString;
+                switch (ecoQueueItem.ecoSend.spacing) {
+                    case "grouped":
+                        htmlString = `
+                            <div class="doubleBloonSmall">
+                                <img class="imageIconSmall ecoBloonIcon" 
+                                    src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
+                                <img class="imageIconSmall ecoBloonIcon" 
+                                    src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
+                            </div>
+                        `
+                        break
+                    case "spaced": default:
+                        htmlString = `
+                        <img class="imageIconSmall ecoBloonIcon" 
                         src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                `)
+                        `
+                        break
+                }
+    
+                clone.querySelector(".ecoQueueMainButtonContainer")
+                    .insertAdjacentHTML("beforeend", htmlString)
             }
 
             document.getElementById("ecoQueueContainer").appendChild(clone);

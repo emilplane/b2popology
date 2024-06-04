@@ -81,7 +81,6 @@ class b2sim {
                 send_name='${this.getBloonSendName(this.ecoQueue[ecoQueueIndex].ecoSend)}'
             )`)
         }
-        console.log(eco_queue)
         return `
             class simData:
                 x = [1, 2, 3, 4]
@@ -125,7 +124,7 @@ class b2sim {
             js.timeStates = game_state.time_states
             js.roundStarts = rounds.round_starts
         `)
-        ecoSendInfo = ecoSendInfo.toJs()            
+        ecoSendInfo = ecoSendInfo.toJs()
         function roundArray(array, places) {
             let arrayRounded = []
             for (let i in array) {
@@ -171,7 +170,7 @@ class b2sim {
             case "black":     name = "Blacks";  break;  case "purple":    name = "Purples"; break;
             case "zebra":     name = "Zebras";  break;  case "lead":      name = "Leads";   break;
             case "rainbow":   name = "Rainbows";break;  case "ceramic":   name = "Ceramics";break;
-            case "moab":      name = "MOABs";   break;  case "bfb":       name = "BFBs";    break;
+            case "moab":      name = "Moabs";   break;  case "bfb":       name = "BFBs";    break;
             case "zomg":      name = "ZOMGs";   break;  case "ddt":       name = "DDTss";   break;
             case "bad":       name = "BADs";    break;  case "zero": default: name = "Zero";break;
         }
