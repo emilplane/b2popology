@@ -136,6 +136,9 @@ let towers = {
         "adora": {
             "displayName": "Adora"
         },
+        "fateweaverAdora": {
+            "displayName": "Fateweaver Adora"
+        },
     }
 }
 
@@ -167,14 +170,14 @@ function generateRandomTowers(towerWeightInput) {
 
     let includeHero = false
 
-    if (Math.random()*4 < 1) {
+    if (Math.random()*3.5 < 1) {
         includeHero = true
     }
 
     for (let category in towers.towers) {
         for (let tower in towers.towers[category]) {
             towerList.push(tower)
-            towerWeights.push(10)
+            towerWeights.push(3)
             for (let weight in towerWeightInput) {
                 if (towerWeightInput[weight][0] == tower) {
                     towerWeights[towerWeights.length-1] = towerWeightInput[weight][1]
@@ -241,7 +244,15 @@ function findDisplayName(input) {
 }
 
 function putRandomTowers() {
-    let randomLoadout = generateRandomTowers([["monkeyVillage", 5]])
+    let randomLoadout = generateRandomTowers(
+        [
+            ["dartMonkey", 3], ["boomerangMonkey", 3], ["bombShooter", 3], ["tackShooter", 3], ["iceMonkey", 3], ["glueGunner", 1],
+            ["sniperMonkey", 3], ["monkeySub", 4], ["monkeyBuccaneer", 3], ["monkeyAce", 3], ["heliPilot", 3], ["mortarMonkey", 3], ["dartlingGunner", 3],
+            ["wizardMonkey", 4], ["superMonkey", 2], ["ninjaMonkey", 3], ["alchemist", 3], ["druid", 3],
+            ["monkeyVillage", 1], ["bananaFarm", 5], ["spikeFactory", 3], ["engineerMonkey", 3],
+            ["fateweaverAdora", 2], ["starCaptainJericho", 2]
+        ]
+    )
 
     let i = 0
     document.getElementById("outputTowers").innerText = ""
