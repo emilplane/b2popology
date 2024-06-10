@@ -9,6 +9,28 @@ const statusLight = document.getElementById("statusLight")
 
 export default class StatusUI {
     /**
+     * Indicates that the simulator is running.
+     * @param {boolean} initializing - Whether the simulator is initializing
+     */
+    static loadingSim(initializing) {
+        StatusUI.setLight("loading")
+        if (!initializing) {
+            StatusUI.setText("Simulating")
+        }
+    }
+
+    /**
+     * Indicates that the simulator is finished.
+     * @param {boolean} initializing - Whether the simulator was initializing
+     */
+    static simulationFinished(initializing) {
+        StatusUI.setLight("ready")
+        if (initializing == undefined) {
+            StatusUI.clearText()
+        }
+    }
+
+    /**
      * Sets the text next to the status light
      * @param {string} text - the text to set
      */

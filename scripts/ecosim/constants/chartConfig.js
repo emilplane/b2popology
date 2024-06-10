@@ -1,3 +1,4 @@
+/** Config data for the ecosim chart */
 export default function(ecosimData, verticalReferenceMarkers) {
     let data = ecosimData
     return {

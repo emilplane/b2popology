@@ -1,6 +1,8 @@
-import chartConfig from "./chartConfig.js"
+import chartConfig from "./constants/chartConfig.js"
 import StatusUI from "./statusUI.js"
-import EcoSend from "./eco/ecoSend.js";
+import addEventListeners from "./constants/eventListeners.js";
+import { DEFAULT_ECO_QUEUE } from "./constants/constants.js";
+import updateEcoQueueUI from "./queues/updateEcoQueueUi.js";
 
 export default class RunSim {
     /**
@@ -8,34 +10,12 @@ export default class RunSim {
      * @constructor
      */
     constructor() {
-        this.farmArray = []
         this.bloonSendData;
         this.selectedTab = 0
-        this.ecoQueue = [
-            {
-                "time": ["round", 12],
-                "ecoSend": {
-                    "name": "rainbow",
-                    "spacing": "spaced"
-                }
-            },
-            {
-                "time": ["round", 16],
-                "ecoSend": {
-                    "name": "black",
-                    "spacing": "grouped"
-                }
-            },
-            {
-                "time": ["round", 17],
-                "ecoSend": {
-                    "name": "pink",
-                    "spacing": "grouped"
-                }
-            }
-        ]
-        this.addEventListeners()
-        this.updateFarmUI()
+        this.ecoQueue = DEFAULT_ECO_QUEUE
+
+        // Adds event listeners
+        addEventListeners.call(this)
 
         // Creates a web worker to run the simulator
         this.ecosimWorker = new Worker("scripts/ecosim/ecosimWorker.js")
@@ -47,8 +27,7 @@ export default class RunSim {
                     break
                 case "returnData":
                     this.returnData(e.data)
-                    this.updateFarmUI()
-                    this.updateEcoQueueUI()
+                    updateEcoQueueUI.call(this)
                     break
             }
         }
@@ -145,29 +124,29 @@ export default class RunSim {
             chartConfig(simulationData, verticalReferenceMarkers)
         )
 
-        this.simulationFinished(simulationData.initializing)
+        StatusUI.simulationFinished(simulationData.initializing)
     }
 
     /**
-     * Sends updated values to the simulator's web worker; called when a simulator parameter is 
-     * changed
+     * Send updated values to the simulator's web worker
      */
     sendUpdatedValues() {
-        const parameters = ["cash", "eco", "rounds", "gameRound", "targetRound"]
-        let config = {
-            "ecoSend": document.getElementById("startingBloonSend").value,
-            "farms": this.farmArray,
-            "ecoQueue": this.ecoQueue
-        }
-        for (let parameterIndex in parameters) {
-            config[parameters[parameterIndex]] = 
-                Number(document.getElementById(parameters[parameterIndex]).value)
-        }
+        const params = ["cash", "eco", "rounds", "gameRound", "targetRound"];
+        const config = {
+            ecoSend: document.getElementById("startingBloonSend").value,
+            ecoQueue: this.ecoQueue
+        };
+        
+        params.forEach(p => {
+            config[p] = Number(document.getElementById(p).value);
+        });
+        
         this.ecosimWorker.postMessage({
-            "type": "requestData",
-            "config": config
-        })
-        this.loadingSim()
+            type: "requestData",
+            config
+        });
+        
+        StatusUI.loadingSim();
     }
 
     /**
@@ -208,299 +187,12 @@ export default class RunSim {
     }
 
     ecoQueueUpdate() {
-        this.updateEcoQueueUI();
+        this.sortEcoQueue()
+        updateEcoQueueUI.call(this)
         this.sendUpdatedValues();
     }
 
-    updateEcoQueueUI() {
+    sortEcoQueue() {
         this.ecoQueue.sort((a, b) => a.time[1] - b.time[1])
-        document.getElementById("ecoQueueContainer").innerHTML = "";
-        let template = document.getElementById("ecoQueueTemplate");
-        for (let ecoQueueIndex in this.ecoQueue) {
-            const clone = template.content.cloneNode(true);
-            const context = this
-            const ecoQueueItem = this.ecoQueue[ecoQueueIndex]
-            this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach((element) => {
-                let ecoSend = new EcoSend(element, "ecoSimName")
-                let ecoSendHTML;
-                if (ecoSend.getName() == "zero") {
-                    ecoSendHTML = `
-                        <button id="newEcoBloonButton" class="material-symbols-outlined 
-                        ecoBloonGridItem doubleBloon zeroSendSymbol">
-                            block</button>
-                    `
-                } else {
-                    switch (ecoSend.getSpacing()) {
-                        case "grouped": 
-                            ecoSendHTML = `
-                                <button id="newEcoBloonButton" class="ecoBloonGridItem doubleBloon">
-                                    <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
-                                    <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
-                                </button>
-                            `
-                            break
-                        case "spaced": default: 
-                            ecoSendHTML = `
-                                <button id="newEcoBloonButton" class="ecoBloonGridItem">
-                                    <img class="ecoBloonGridImage" src="${ecoSend.getPortraitFilePath()}">
-                                </button>
-                            `
-                            break
-                    }
-                }
-                clone.querySelector(".ecoBloonGrid").insertAdjacentHTML("beforeend", ecoSendHTML)
-                clone.getElementById("newEcoBloonButton").addEventListener("click", () => {
-                    ecoQueueItem.ecoSend = ecoSend.getEcoSend()
-                    context.ecoQueueUpdate()
-                })
-                clone.getElementById("newEcoBloonButton").removeAttribute("id");
-            });
-            let bloonModifierContainerHtml = ``
-            
-            clone.querySelector(".ecoBloonGridContainer").insertAdjacentHTML("beforeend", `
-                <div class="bloonModifierContainer">
-                    <button class="buttonDark regrow">Regrow</button>
-                    <button class="buttonDark camo">Camo</button>
-                    <button class="buttonDark fortified">Fortified</button>
-                </div>
-            `)
-            //buttonSelected
-            clone.querySelector(".regrow").addEventListener("click", () => {
-                this.ecoQueue[ecoQueueIndex].property
-                context.ecoQueueUpdate()
-            })
-            clone.querySelector(".timeText").innerHTML = 
-                `Round <div class="monoHighlight roundNumber">
-                    ${ecoQueueItem.time[1]}
-                </div>`
-            clone.querySelector(".roundNumber").addEventListener(
-                "click", editRoundNumberCallbackFunction
-            )
-            clone.querySelector(".delete").addEventListener("click", () => {
-                delete this.ecoQueue[ecoQueueIndex]
-                context.ecoQueueUpdate()
-            })
-            clone.querySelector(".ecoQueueCardConfigPanel").id = "configPanel" + ecoQueueIndex
-            let configPanel = clone.getElementById("configPanel" + ecoQueueIndex)
-            clone.querySelector(".edit").addEventListener("click", () => {
-                configPanel.classList.toggle("showConfigPanel")
-            })
-            
-
-            function editRoundNumberCallbackFunction(e) {
-                let currentValue = Number(e.target.innerHTML)
-                
-                e.target.innerHTML = `
-                    <div class="changeEcoSendRoundContainer">
-                        <input type="number" class="changeEcoSendRoundInput"
-                            value="${currentValue}"/>
-                        <button 
-                            class="material-symbols-outlined iconButton cancel">
-                            close</button>
-                        <button 
-                            class="material-symbols-outlined iconButton confirm">
-                            check</button>
-                    </div>
-                `
-                
-                let roundInput = e.target.querySelector(".changeEcoSendRoundInput")
-                roundInput.focus()
-                roundInput.select()
-
-                e.target.removeEventListener("click", editRoundNumberCallbackFunction)
-
-                roundInput.addEventListener(
-                    'keyup', function(event) {
-                        if (event.key === 'Enter') {
-                            confirmCallbackFunction()
-                        }
-                    }
-                )
-                e.target.querySelector(".confirm").addEventListener(
-                    "click", confirmCallbackFunction
-                )
-                roundInput.addEventListener(
-                    'keydown', function(event) {
-                        if (event.key === "Escape") {
-                            cancelCallbackFunction()
-                        }
-                    }
-                )
-                e.target.querySelector(".cancel").addEventListener(
-                    "click", cancelCallbackFunction
-                )
-                function confirmCallbackFunction() {
-                    let updatedValue = 
-                    Number(roundInput.value)
-                    context.ecoQueue[ecoQueueIndex].time[1] = updatedValue
-                    context.ecoQueueUpdate()
-                }
-                function cancelCallbackFunction() {
-                    context.updateEcoQueueUI()
-                }
-            }
-
-            if (ecoQueueItem.ecoSend.name == "zero") {
-                clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
-                    <div 
-                    class="material-symbols-outlined imageIconSmall 
-                    ecoBloonIcon zeroSendSymbol">
-                        block
-                    </div>
-                `)
-            } else {
-                const bloonFolder = ecoQueueItem.ecoSend.name
-                const bloonName = ecoQueueItem.ecoSend.name
-
-                let htmlString;
-                switch (ecoQueueItem.ecoSend.spacing) {
-                    case "grouped":
-                        htmlString = `
-                            <div class="doubleBloonSmall">
-                                <img class="imageIconSmall ecoBloonIcon" 
-                                    src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                                <img class="imageIconSmall ecoBloonIcon" 
-                                    src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                            </div>
-                        `
-                        break
-                    case "spaced": default:
-                        htmlString = `
-                        <img class="imageIconSmall ecoBloonIcon" 
-                        src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                        `
-                        break
-                }
-    
-                clone.querySelector(".ecoQueueMainButtonContainer")
-                    .insertAdjacentHTML("beforeend", htmlString)
-            }
-
-            document.getElementById("ecoQueueContainer").appendChild(clone);
-        }
-    }
-
-    /**
-     * Called when the list of farms is updated.
-     */
-    farmUpdate() {
-        this.updateFarmUI();
-        this.sendUpdatedValues();
-    }
-
-    /**
-     * Updates the UI for the list of farms.
-     */
-    updateFarmUI() {
-        document.getElementById("farmsContainer").innerHTML = "";
-        let template = document.getElementById("farmTemplate");
-        for (let farmIndex in this.farmArray) {
-            let clone = template.content.cloneNode(true);
-            clone.querySelector(".farmTemplateTitle").innerText = Number(farmIndex)+1
-            for (let pathIndex in this.farmArray[farmIndex].crosspath) {
-                let path = clone.querySelector(`.farmTemplateUpgrade${Number(pathIndex)+1}`)
-                path.value = this.farmArray[farmIndex].crosspath[pathIndex]
-                path.addEventListener("change", (e) => {
-                    this.farmArray[farmIndex].crosspath[pathIndex] = e.target.value
-                    this.farmUpdate()
-                })
-            }
-            clone.querySelector(`.farmTemplateStartRound`).value = 
-                this.farmArray[farmIndex].purchase
-            clone.querySelector(`.farmTemplateStartRound`).addEventListener("change", (e) => {
-                this.farmArray[farmIndex].purchase = e.target.value
-                this.farmUpdate()
-            })
-            clone.querySelector(".farmTemplateDeleteButton").addEventListener("click", () => {
-                delete this.farmArray[farmIndex]
-                this.farmUpdate()
-            })
-            document.getElementById("farmsContainer").appendChild(clone);
-        }
-    }
-
-    /**
-     * Indicates that the simulator is running.
-     * @param {boolean} initializing - Whether the simulator is initializing
-     */
-    loadingSim(initializing) {
-        StatusUI.setLight("loading")
-        if (!initializing) {
-            StatusUI.setText("Simulating")
-        }
-    }
-
-    /**
-     * Indicates that the simulator is running.
-     * @param {boolean} initializing - Whether the simulator was initializing
-     */
-    simulationFinished(initializing) {
-        StatusUI.setLight("ready")
-        if (initializing == undefined) {
-            StatusUI.clearText()
-        }
-    }
-
-    /**
-     * Adds event listeners for UI buttons that don't move or.
-     */
-    addEventListeners() {
-        // Adds an event listener for UI elements that change simple simulator parameters. More 
-        // complex implementations will need their own logic to implement event listeners. 
-        document.querySelectorAll(".settingInput").forEach((input) => {
-            input.addEventListener("change", () => {
-                this.sendUpdatedValues()
-            })
-        })
-
-
-        document.getElementById("addEcoQueueItem").addEventListener("click", () => {
-            this.ecoQueue.push({
-                "time": ["round", 1],           
-                "ecoSend": {
-                    "name": "zero",
-                    "spacing": null
-                }
-            })
-            this.ecoQueueUpdate()
-        })
-
-        document.getElementById("addFarmButton").addEventListener("click", () => {
-            this.farmArray.push({
-                "crosspath": [0, 0, 0],
-                "purchase": 10
-            })
-            this.farmUpdate()
-        })
-
-        // Event listeners for the 3 tab buttons
-        for (let tabIndex = 0; tabIndex < 3; tabIndex++) {
-            document.getElementById(`tab${tabIndex}Button`).addEventListener("click", () => {
-                this.selectedTab = tabIndex
-                hideAllExcept(`tab${tabIndex}`)
-                setTabButtons(this)
-            })
-        }
-
-        /**
-         * Hides all tab content except for a specific tab's content.
-         * @param {string} id - the ID to not hide 
-         */
-        function hideAllExcept(id) {
-            document.getElementById("tab0").classList.remove("showTab")
-            document.getElementById("tab1").classList.remove("showTab")
-            document.getElementById("tab2").classList.remove("showTab")
-            document.getElementById(id).classList.add("showTab")
-        }
-
-        /**
-         * Updates the tab buttons.
-         */
-        function setTabButtons(context) {
-            document.getElementById("tab0Button").classList.remove("activeTab")
-            document.getElementById("tab1Button").classList.remove("activeTab")
-            document.getElementById("tab2Button").classList.remove("activeTab")
-            document.getElementById(`tab${context.selectedTab}Button`).classList.add("activeTab")
-        }
     }
 }
