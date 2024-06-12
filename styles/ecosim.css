@@ -43,7 +43,7 @@
 main {
     width: 100%;
     height: 100vh;
-    overflow: hidden; 
+    /* overflow: hidden;  */
 }
 
 .ecosimMain {
@@ -70,6 +70,7 @@ main {
 }
 
 .simOutputContainer {
+    display: none;
     flex-grow: 1;
 }
 
@@ -158,9 +159,13 @@ main {
     margin-top: 8px;
     gap: 8px;
     display: grid;
-    grid-template-columns: 1fr calc(300px + 5vw);
+    /* grid-template-columns: 1fr calc(300px + 5vw); */
     max-height: 100%;
     height: 100%;
+}
+
+.simConfigContainer {
+    /* overflow-y: auto; */
 }
 
 .configureSim {
@@ -499,6 +504,9 @@ input.settingInput {
 .tabContainer {
     flex-grow: 1;
     overflow-y: auto;
+}
+
+.tabs {
     ::-webkit-scrollbar {
         width: 12px;
         height: 12px;

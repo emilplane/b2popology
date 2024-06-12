@@ -80,157 +80,161 @@
                             <!-- Chart is inserted here -->
                         </div>
                     </div>
-                    <div class="configureSim" id="sidePanelContainer">
-                        <div class="configTabs">
-                            <div class="activeTab" id="tab0Button">
-                                <img src="media/Tower Portraits/monkeyVillage/base/monkeyVillagePortrait.png">
-                            </div>
-                            <div class="" id="tab1Button">
-                                <img src="media/Bloons/BTD6Red.png">
-                            </div>
-                            <div class="" id="tab2Button">
-                                <img src="media/Icons/monkeyMoney.png">
-                            </div>
-                        </div>
-                        <div class="tabContainer">
-                            <div class="tab showTab" id="tab0">
-                                <div class="simConfigSection">
-                                    <div class="configTitle">
-                                        <h4>Rounds</h4>
-                                        <div class="horizontalLine strongLineStyle"></div>
-                                    </div>
-                                    <div class="setting">
-                                        <div>
-                                            <h5>Start round</h5>
-                                        </div>
-                                        <div>
-                                            <input id="gameRound" class="settingInput" type="number" min="1" step="1" value="10" />
-                                        </div>
-                                    </div>
-                                    <div class="setting">
-                                        <div>
-                                            <h5>End round</h5>
-                                        </div>
-                                        <div>
-                                            <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
-                                        </div>
-                                    </div>
-                                    <div class="setting">
-                                        <div>
-                                            <h5>Stall factor</h5>
-                                        </div>
-                                        <div>
-                                            <button class="material-symbols-outlined iconButton">question_mark</button>
-                                            <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
-                                        </div>
-                                    </div>
+                    <div class="simConfigContainer">
+                        <div class="configureSim" id="sidePanelContainer">
+                            <div class="configTabs">
+                                <div class="activeTab" id="tab0Button">
+                                    <img src="media/Tower Portraits/monkeyVillage/base/monkeyVillagePortrait.png">
                                 </div>
-                                <div class="simConfigSection">
-                                    <div class="configTitle">
-                                        <h4>Starting Configuration</h4>
-                                        <div class="horizontalLine strongLineStyle"></div>
-                                    </div>
-                                    <div class="setting">
-                                        <div>
-                                            <h5>Starting cash</h5>
-                                        </div>
-                                        <div>
-                                            <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
-                                        </div>
-                                    </div>
-                                    <div class="setting">
-                                        <div>
-                                            <h5>Starting eco</h5>
-                                        </div>
-                                        <div>
-                                            <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
-                                        </div>
-                                    </div>
+                                <div class="" id="tab1Button">
+                                    <img src="media/Bloons/BTD6Red.png">
+                                </div>
+                                <div class="" id="tab2Button">
+                                    <img src="media/Icons/monkeyMoney.png">
                                 </div>
                             </div>
-                            <div class="tab" id="tab1">
-                                <div class="simConfigSection">
-                                    <div class="configTitle">
-                                        <div class="titleWithOptions">
-                                            <h4>Eco Queue</h4>
-                                            <div class="options">
-                                                <button id="addEcoQueueItem" class="material-symbols-outlined iconButton">add</button>
+                            <div class="tabContainer">
+                                <div class="tabs">
+                                    <div class="tab showTab" id="tab0">
+                                        <div class="simConfigSection">
+                                            <div class="configTitle">
+                                                <h4>Rounds</h4>
+                                                <div class="horizontalLine strongLineStyle"></div>
                                             </div>
-                                        </div>
-                                        <div class="horizontalLine strongLineStyle"></div>
-                                    </div>
-                                    <div class="setting">
-                                        <div>
-                                            <h5>Starting Bloon Send</h5>
-                                        </div>
-                                        <div>
-                                            <select id="startingBloonSend" class="settingInput">
-                                                <option value="Grouped Blacks">Grouped Blacks</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="shadedSection">
-                                        <h5>Start with</h5>
-                                    </div> -->
-                                    <div class="contentSection" id="ecoQueueContainer"></div>
-                                    <div class="contentSection" id="ecoQueueContainer2"></div>
-                                    <template id="ecoQueueTemplate">
-                                        <div class="shadedSection ecoQueueCard">
-                                            <div class="ecoQueueCardStats">
-                                                <h5 class="timeText">Unknown Time</h5>
-                                                <div class="ecoQueueMainButtonContainer">
-                                                    <button class="material-symbols-outlined iconButton iconButtonDark edit">edit</button>
-                                                    <button class="material-symbols-outlined iconButton iconButtonDark delete">delete</button>
+                                            <div class="setting">
+                                                <div>
+                                                    <h5>Start round</h5>
+                                                </div>
+                                                <div>
+                                                    <input id="gameRound" class="settingInput" type="number" min="1" step="1" value="10" />
                                                 </div>
                                             </div>
-                                            <div class="ecoQueueCardConfigPanel">
+                                            <div class="setting">
+                                                <div>
+                                                    <h5>End round</h5>
+                                                </div>
+                                                <div>
+                                                    <input id="targetRound" class="settingInput" type="number" min="10" step="1" value="20" />
+                                                </div>
+                                            </div>
+                                            <div class="setting">
+                                                <div>
+                                                    <h5>Stall factor</h5>
+                                                </div>
+                                                <div>
+                                                    <button class="material-symbols-outlined iconButton">question_mark</button>
+                                                    <input id="rounds" class="settingInput" type="number" min="0.05" max="0.95" step="0.05" value="0.5" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="simConfigSection">
+                                            <div class="configTitle">
+                                                <h4>Starting Configuration</h4>
                                                 <div class="horizontalLine strongLineStyle"></div>
-                                                <div class="ecoBloonGridContainer">
-                                                    <div class="ecoBloonGrid">
-                                                        
+                                            </div>
+                                            <div class="setting">
+                                                <div>
+                                                    <h5>Starting cash</h5>
+                                                </div>
+                                                <div>
+                                                    <input id="cash" class="settingInput" type="number" min="0" step="25" value="1000" />
+                                                </div>
+                                            </div>
+                                            <div class="setting">
+                                                <div>
+                                                    <h5>Starting eco</h5>
+                                                </div>
+                                                <div>
+                                                    <input id="eco" class="settingInput" type="number" min="0" step="10" value="500" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab" id="tab1">
+                                        <div class="simConfigSection">
+                                            <div class="configTitle">
+                                                <div class="titleWithOptions">
+                                                    <h4>Eco Queue</h4>
+                                                    <div class="options">
+                                                        <button id="addEcoQueueItem" class="material-symbols-outlined iconButton">add</button>
+                                                    </div>
+                                                </div>
+                                                <div class="horizontalLine strongLineStyle"></div>
+                                            </div>
+                                            <div class="setting">
+                                                <div>
+                                                    <h5>Starting Bloon Send</h5>
+                                                </div>
+                                                <div>
+                                                    <select id="startingBloonSend" class="settingInput">
+                                                        <option value="Grouped Blacks">Grouped Blacks</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="shadedSection">
+                                                <h5>Start with</h5>
+                                            </div> -->
+                                            <div class="contentSection" id="ecoQueueContainer"></div>
+                                            <div class="contentSection" id="ecoQueueContainer2"></div>
+                                            <template id="ecoQueueTemplate">
+                                                <div class="shadedSection ecoQueueCard">
+                                                    <div class="ecoQueueCardStats">
+                                                        <h5 class="timeText">Unknown Time</h5>
+                                                        <div class="ecoQueueMainButtonContainer">
+                                                            <button class="material-symbols-outlined iconButton iconButtonDark edit">edit</button>
+                                                            <button class="material-symbols-outlined iconButton iconButtonDark delete">delete</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ecoQueueCardConfigPanel">
+                                                        <div class="horizontalLine strongLineStyle"></div>
+                                                        <div class="ecoBloonGridContainer">
+                                                            <div class="ecoBloonGrid">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div class="tab" id="tab2" style="display: none;">
+                                        <div class="farmTitleContainer">
+                                            <h4>Farms</h4>
+                                            <div class="farmMainButtonContainer">
+                                                <div class="material-symbols-outlined" id="addFarmButton">add</div>
+                                            </div>
+                                        </div>
+                                        <div class="farmsContainer" id="farmsContainer">    
+                                        </div>
+                                        <template id="farmTemplate">
+                                            <div>
+                                                <h4 class="farmTemplateTitle">1</h4>
+                                                <div class="farmRight">
+                                                    <div>
+                                                        <p class="smallText">Round</p>
+                                                        <div class="farmUpgradesContainer">
+                                                            <input class="farmTemplateStartRound" type="number" min="0" max="50" step="1" value="0" />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <p class="smallText">Upgrades</p>
+                                                        <div class="farmUpgradesContainer">
+                                                            <input class="farmTemplateUpgrade1" type="number" min="0" max="5" step="1" value="0" />
+                                                            <input class="farmTemplateUpgrade2" type="number" min="0" max="5" step="1" value="0" />
+                                                            <input class="farmTemplateUpgrade3" type="number" min="0" max="5" step="1" value="0" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="farmButtonContainer">
+                                                        <div class="material-symbols-outlined">expand_less</div>
+                                                        <div class="material-symbols-outlined">expand_more</div>
+                                                        <div class="material-symbols-outlined">menu</div>
+                                                        <div class="material-symbols-outlined farmTemplateDeleteButton">delete</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                            <div class="tab" id="tab2" style="display: none;">
-                                <div class="farmTitleContainer">
-                                    <h4>Farms</h4>
-                                    <div class="farmMainButtonContainer">
-                                        <div class="material-symbols-outlined" id="addFarmButton">add</div>
+                                        </template>
                                     </div>
                                 </div>
-                                <div class="farmsContainer" id="farmsContainer">    
-                                </div>
-                                <template id="farmTemplate">
-                                    <div>
-                                        <h4 class="farmTemplateTitle">1</h4>
-                                        <div class="farmRight">
-                                            <div>
-                                                <p class="smallText">Round</p>
-                                                <div class="farmUpgradesContainer">
-                                                    <input class="farmTemplateStartRound" type="number" min="0" max="50" step="1" value="0" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <p class="smallText">Upgrades</p>
-                                                <div class="farmUpgradesContainer">
-                                                    <input class="farmTemplateUpgrade1" type="number" min="0" max="5" step="1" value="0" />
-                                                    <input class="farmTemplateUpgrade2" type="number" min="0" max="5" step="1" value="0" />
-                                                    <input class="farmTemplateUpgrade3" type="number" min="0" max="5" step="1" value="0" />
-                                                </div>
-                                            </div>
-                                            <div class="farmButtonContainer">
-                                                <div class="material-symbols-outlined">expand_less</div>
-                                                <div class="material-symbols-outlined">expand_more</div>
-                                                <div class="material-symbols-outlined">menu</div>
-                                                <div class="material-symbols-outlined farmTemplateDeleteButton">delete</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </template>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Prevent body overflow */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header {
+    flex: 0 0 40px;
+    background-color: red;
+}
+
+.statusBar {
+    flex: 0 0 30px; /* Changed to match your CSS */
+    background-color: green;
+}
+
+.content {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.output {
+    background-color: purple;
+}
+
+.configContainer {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden; /* Hide the overflow from the container */
+}
+
+.tabs {
+    height: 80px;
+    background-color: blue;
+    width: 100%;
+}
+
+.tabContainer {
+    flex: 1; /* Let it grow as much as possible */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.square {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 8px;
+    background-color: pink;
+}
