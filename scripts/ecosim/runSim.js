@@ -3,6 +3,8 @@ import StatusUI from "./statusUI.js"
 import addEventListeners from "./constants/eventListeners.js";
 import { DEFAULT_ECO_QUEUE } from "./constants/constants.js";
 import updateEcoQueueUI from "./queues/updateEcoQueueUi.js";
+import { EcoSendWithTime } from "./eco/ecoSend.js";
+import EcoQueue from "./queues/ecoQueue.js";
 
 export default class RunSim {
     /**
@@ -10,9 +12,10 @@ export default class RunSim {
      * @constructor
      */
     constructor() {
-        this.bloonSendData;
+        this.ecoQueue = new EcoQueue
+        this.ecoQueue.addObjects(DEFAULT_ECO_QUEUE)
+        console.log(this.ecoQueue)
         this.selectedTab = 0
-        this.ecoQueue = DEFAULT_ECO_QUEUE
 
         // Adds event listeners
         addEventListeners.call(this)
@@ -134,7 +137,7 @@ export default class RunSim {
         const params = ["cash", "eco", "rounds", "gameRound", "targetRound"];
         const config = {
             ecoSend: document.getElementById("startingBloonSend").value,
-            ecoQueue: this.ecoQueue
+            ecoQueue: this.ecoQueue.getQueue()
         };
         
         params.forEach(p => {
@@ -193,6 +196,6 @@ export default class RunSim {
     }
 
     sortEcoQueue() {
-        this.ecoQueue.sort((a, b) => a.time[1] - b.time[1])
+        this.ecoQueue.sortQueue()
     }
 }

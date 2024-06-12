@@ -12,7 +12,7 @@ export default function addEventListeners() {
 
 
     document.getElementById("addEcoQueueItem").addEventListener("click", () => {
-        this.ecoQueue.push({
+        this.ecoQueue.addObject({
             "time": ["round", 1],           
             "ecoSend": {
                 "name": "zero",

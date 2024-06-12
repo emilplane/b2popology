@@ -1,46 +1,56 @@
 import EcoSend from "/scripts/ecosim/eco/ecoSend.js"
 import { ECO_QUEUE_UI_ELEMENTS } from "/scripts/ecosim/constants/constants.js";
+import editRoundNumber from "./editRoundNumber.js";
 
 /**
  * Updates the UI for the eco queue. Pass context with call(), apply(), etc.
  * @return {void}
  */
 export default function updateEcoQueueUI() {
-
     // Clear the container
     ECO_QUEUE_UI_ELEMENTS.ECO_QUEUE_CONTAINER.innerHTML = "";
 
-    let template = ECO_QUEUE_UI_ELEMENTS.ECO_QUEUE_TEMPLATE;
-    for (let ecoQueueIndex in this.ecoQueue) {
-        /** Clone of the eco queue UI */
-        const clone = template.content.cloneNode(true);
-        const context = this
-        const ecoQueueItem = this.ecoQueue[ecoQueueIndex]
+    // Iterate through each item in the eco queue
+    this.ecoQueue.items.forEach((ecoQueueItem, ecoQueueIndex) => {
+        console.log(ecoQueueItem, ecoQueueIndex)
+
+        /** Clone of the current eco queue card */
+        const clone = ECO_QUEUE_UI_ELEMENTS.ECO_QUEUE_TEMPLATE.content.cloneNode(true);
+        const cloneElements = {
+            ecoBloonGridContainer: clone.querySelector(".ecoBloonGridContainer"),
+            ecoBloonGrid: clone.querySelector(".ecoBloonGrid"),
+            mainButtonContainer: clone.querySelector(".ecoQueueMainButtonContainer"),
+            timeText: clone.querySelector(".timeText")
+        }
+
+        // Iterate through sends available on this round
         this.getSendsForRound(Math.floor(ecoQueueItem.time[1])).forEach((element) => {
-            let ecoSend = new EcoSend(element, "ecoSimName")
+            const ecoSend = new EcoSend(element, "ecoSimName")
+            // Create the eco send button
             let ecoSendButton;
             if (ecoSend.getName() == "zero") {
                 ecoSendButton = ECO_QUEUE_UI_ELEMENTS.ZERO_SEND_BUTTON();
             } else {
                 const button = ECO_QUEUE_UI_ELEMENTS.BLOON_SEND_BUTTON();
+                const bloonImage = ECO_QUEUE_UI_ELEMENTS.BLOON_SEND_BUTTON_IMAGE(ecoSend);
                 switch (ecoSend.getSpacing()) {
                     case "grouped":
                         for (let i = 0; i < 2; i++) {
-                            const img = ECO_QUEUE_UI_ELEMENTS.BLOON_SEND_IMAGE(ecoSend)
-                            button.appendChild(img);
+                            button.appendChild(bloonImage.cloneNode(true));
                         }
                         break;
-                    case "spaced":
-                    default:
-                        const img = ECO_QUEUE_UI_ELEMENTS.BLOON_SEND_IMAGE(ecoSend)
-                        button.appendChild(img);
+                    case "spaced": default:
+                        button.appendChild(bloonImage);
                         break;
                 }
-
                 button.className += " doubleBloon";
                 ecoSendButton = button;
             }
-            clone.querySelector(".ecoBloonGrid").insertAdjacentElement("beforeend", ecoSendButton)
+            
+            // Insert the button
+            cloneElements.ecoBloonGrid.insertAdjacentElement("beforeend", ecoSendButton)
+
+            // Add an event listener to the button
             clone.getElementById("newEcoBloonButton").addEventListener("click", () => {
                 ecoQueueItem.ecoSend = ecoSend.getEcoSend()
                 this.ecoQueueUpdate()
@@ -48,120 +58,71 @@ export default function updateEcoQueueUI() {
             clone.getElementById("newEcoBloonButton").removeAttribute("id");
         });
         
-        clone.querySelector(".ecoBloonGridContainer").insertAdjacentElement("beforeend", ECO_QUEUE_UI_ELEMENTS.BLOON_MODIFIER_CONTAINER())
+        // Insert the bloon modifier container
+        cloneElements.ecoBloonGridContainer
+            .insertAdjacentElement("beforeend", ECO_QUEUE_UI_ELEMENTS.BLOON_MODIFIER_CONTAINER())
 
-        //buttonSelected
-        clone.querySelector(".regrow").addEventListener("click", () => {
-            this.ecoQueue[ecoQueueIndex].property
-            context.ecoQueueUpdate()
-        })
-        clone.querySelector(".timeText").innerHTML = 
-            `Round <div class="monoHighlight roundNumber">
-                ${ecoQueueItem.time[1]}
-            </div>`
-        clone.querySelector(".roundNumber").addEventListener(
-            "click", editRoundNumberCallbackFunction
-        )
-        clone.querySelector(".delete").addEventListener("click", () => {
-            delete this.ecoQueue[ecoQueueIndex]
-            context.ecoQueueUpdate()
-        })
-        clone.querySelector(".ecoQueueCardConfigPanel").id = "configPanel" + ecoQueueIndex
-        let configPanel = clone.getElementById("configPanel" + ecoQueueIndex)
-        clone.querySelector(".edit").addEventListener("click", () => {
-            configPanel.classList.toggle("showConfigPanel")
-        })
+        // TODO: Fully implement bloon modifiers
+        // clone.querySelector(".regrow").addEventListener("click", () => {
+        //     this.ecoQueue[ecoQueueIndex].property
+        //     this.ecoQueueUpdate()
+        // })
+
+        // Insert the time (in rounds) for current bloon send
+        cloneElements.timeText.innerHTML = '';
+
+        const roundContainer = document.createElement('div');
+        roundContainer.classList.add('monoHighlight', 'roundNumber');
+        roundContainer.textContent = ecoQueueItem.time[1];
+
+        const textNode = document.createTextNode('Round ');
+        cloneElements.timeText.appendChild(textNode);
+        cloneElements.timeText.appendChild(roundContainer);
         
+        addEventListeners.call(this, clone, ecoQueueIndex)
 
-        function editRoundNumberCallbackFunction(e) {
-            let currentValue = Number(e.target.innerHTML)
+
+        if (ecoQueueItem.name == "zero") {
             
-            e.target.innerHTML = `
-                <div class="changeEcoSendRoundContainer">
-                    <input type="number" class="changeEcoSendRoundInput"
-                        value="${currentValue}"/>
-                    <button 
-                        class="material-symbols-outlined iconButton cancel">
-                        close</button>
-                    <button 
-                        class="material-symbols-outlined iconButton confirm">
-                        check</button>
-                </div>
-            `
-            
-            let roundInput = e.target.querySelector(".changeEcoSendRoundInput")
-            roundInput.focus()
-            roundInput.select()
-
-            e.target.removeEventListener("click", editRoundNumberCallbackFunction)
-
-            roundInput.addEventListener(
-                'keyup', function(event) {
-                    if (event.key === 'Enter') {
-                        confirmCallbackFunction()
-                    }
-                }
-            )
-            e.target.querySelector(".confirm").addEventListener(
-                "click", confirmCallbackFunction
-            )
-            roundInput.addEventListener(
-                'keydown', function(event) {
-                    if (event.key === "Escape") {
-                        cancelCallbackFunction()
-                    }
-                }
-            )
-            e.target.querySelector(".cancel").addEventListener(
-                "click", cancelCallbackFunction
-            )
-            function confirmCallbackFunction() {
-                let updatedValue = 
-                Number(roundInput.value)
-                context.ecoQueue[ecoQueueIndex].time[1] = updatedValue
-                context.ecoQueueUpdate()
-            }
-            function cancelCallbackFunction() {
-                context.updateEcoQueueUI()
-            }
-        }
-
-        if (ecoQueueItem.ecoSend.name == "zero") {
-            clone.querySelector(".ecoQueueMainButtonContainer").insertAdjacentHTML("beforeend", `
-                <div 
-                class="material-symbols-outlined imageIconSmall 
-                ecoBloonIcon zeroSendSymbol">
-                    block
-                </div>
-            `)
+            cloneElements.mainButtonContainer.appendChild(ECO_QUEUE_UI_ELEMENTS.ZERO_SEND_IMAGE());
         } else {
-            const bloonFolder = ecoQueueItem.ecoSend.name
-            const bloonName = ecoQueueItem.ecoSend.name
+            const bloonFolder = ecoQueueItem.name
+            const bloonName = ecoQueueItem.name
 
-            let htmlString;
-            switch (ecoQueueItem.ecoSend.spacing) {
-                case "grouped":
-                    htmlString = `
-                        <div class="doubleBloonSmall">
-                            <img class="imageIconSmall ecoBloonIcon" 
-                                src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                            <img class="imageIconSmall ecoBloonIcon" 
-                                src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                        </div>
-                    `
-                    break
-                case "spaced": default:
-                    htmlString = `
-                    <img class="imageIconSmall ecoBloonIcon" 
-                    src="media/bloonIcons/${bloonFolder}/${bloonName}.png">
-                    `
-                    break
+            const filePath = `media/bloonIcons/${bloonFolder}/${bloonName}.png`
+
+            let imageElement;
+            if (ecoQueueItem.spacing == "grouped") {
+                imageElement = ECO_QUEUE_UI_ELEMENTS.DOUBLE_SEND_BLOON_IMAGE(filePath)
+            } else {
+                imageElement = ECO_QUEUE_UI_ELEMENTS.SINGLE_SEND_BLOON_IMAGE(filePath)
             }
 
             clone.querySelector(".ecoQueueMainButtonContainer")
-                .insertAdjacentHTML("beforeend", htmlString)
+                .insertAdjacentElement("beforeend", imageElement)
         }
 
         document.getElementById("ecoQueueContainer").appendChild(clone);
-    }
+    });
+}
+
+/** Add event listeners to each eco queue card */
+function addEventListeners(clone, ecoQueueIndex) {
+    // Event listener for when the round number is clicked to edit the round number
+    clone.querySelector(".roundNumber").addEventListener(
+        "click", editRoundNumber.bind(this, ecoQueueIndex)
+    )
+
+    // Event listener for the delete button
+    clone.querySelector(".delete").addEventListener("click", () => {
+        delete this.ecoQueue.items[ecoQueueIndex]
+        this.ecoQueueUpdate()
+    })
+
+    // Event listener for the edit button
+    clone.querySelector(".ecoQueueCardConfigPanel").id = "configPanel" + ecoQueueIndex
+    const configPanel = clone.getElementById("configPanel" + ecoQueueIndex)
+    clone.querySelector(".edit").addEventListener("click", () => {
+        configPanel.classList.toggle("showConfigPanel")
+    })
 }
