@@ -67,7 +67,7 @@ export default class StatusUI {
         loadingBar.style.width = `${percentage*100}%`
         if (percentage == 1) {
             this.setLight("ready")
-            setTimeout(() => {loadingBar.style.opacity = "0"}, 500);
+            setTimeout(() => {loadingBar.style.opacity = "0"}, 1000);
         } else {
             this.setLight("loading")
             loadingBar.style.opacity = "1"

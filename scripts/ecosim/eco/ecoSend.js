@@ -36,6 +36,11 @@ export default class EcoSend {
     getSpacing() {
         return this.spacing
     }
+
+    replaceEcoSend(newEcoSend) {
+        this.name = newEcoSend.name
+        this.spacing = newEcoSend.spacing
+    }
 }
 
 export class EcoSendWithTime extends EcoSend {

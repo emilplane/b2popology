@@ -12,8 +12,6 @@ export default function updateEcoQueueUI() {
 
     // Iterate through each item in the eco queue
     this.ecoQueue.items.forEach((ecoQueueItem, ecoQueueIndex) => {
-        console.log(ecoQueueItem, ecoQueueIndex)
-
         /** Clone of the current eco queue card */
         const clone = ECO_QUEUE_UI_ELEMENTS.ECO_QUEUE_TEMPLATE.content.cloneNode(true);
         const cloneElements = {
@@ -52,7 +50,8 @@ export default function updateEcoQueueUI() {
 
             // Add an event listener to the button
             clone.getElementById("newEcoBloonButton").addEventListener("click", () => {
-                ecoQueueItem.ecoSend = ecoSend.getEcoSend()
+                ecoQueueItem.replaceEcoSend(ecoSend.getEcoSend())
+                console.log(this.ecoQueue, ecoQueueItem)
                 this.ecoQueueUpdate()
             })
             clone.getElementById("newEcoBloonButton").removeAttribute("id");
@@ -80,7 +79,6 @@ export default function updateEcoQueueUI() {
         cloneElements.timeText.appendChild(roundContainer);
         
         addEventListeners.call(this, clone, ecoQueueIndex)
-
 
         if (ecoQueueItem.name == "zero") {
             
