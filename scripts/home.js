@@ -12,7 +12,7 @@ menuCloseButton.addEventListener('click', function() {
     menuDialog.close(); 
 });
 
-const startDate = new Date('2024-05-26T21:00:00.000Z');
+const startDate = new Date('2024-06-22T16:00:00.000Z');
 const now = new Date();
 const diffTime = (now - startDate)*-1
 console.log(diffTime)
@@ -29,10 +29,10 @@ if (diffTime < 0) {
     document.getElementById("tourneyInfoContainer").classList.add("tourneyInfoContainerLive")
     document.getElementById("tourneyInfoContainer").innerHTML = `
         <div>
-            <h4>Watch the Popology Weekly 16 tournament now!</h4>
+            <h4>Watch Ryan Mehalic's New Season Tournament now!</h4>
         </div>
         
-        <a href="https://twitch.tv/b2popology" target="blank" class="buttonAnchor">
+        <a href="https://www.youtube.com/@RyanMehalic" target="blank" class="buttonAnchor">
             <button class="linkToExternalButton liveTournamentButton">
                 <h6>Watch now</h6>
                 <div class="liveTag">

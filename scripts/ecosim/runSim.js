@@ -1,10 +1,12 @@
 import chartConfig from "./constants/chartConfig.js"
 import StatusUI from "./statusUI.js"
 import addEventListeners from "./constants/eventListeners.js";
-import { DEFAULT_ECO_QUEUE } from "./constants/constants.js";
+import { DEFAULT_BUY_QUEUE, DEFAULT_ECO_QUEUE } from "./constants/constants.js";
 import updateEcoQueueUI from "./queues/updateEcoQueueUi.js";
-import { EcoSendWithTime } from "./eco/ecoSend.js";
 import EcoQueue from "./queues/ecoQueue.js";
+import BuyQueueItem from "./queues/buyQueueItem.js";
+import BuyQueue from "./queues/buyQueue.js";
+import updateBuyQueueUi from "./queues/updateBuyQueueUi.js";
 
 export default class RunSim {
     /**
@@ -15,6 +17,16 @@ export default class RunSim {
         this.ecoQueue = new EcoQueue
         this.ecoQueue.addObjects(DEFAULT_ECO_QUEUE)
         console.log(this.ecoQueue)
+
+        this.buyQueue = new BuyQueue
+
+        this.testBuyQueueItem = new BuyQueueItem(
+            DEFAULT_BUY_QUEUE[0].action, DEFAULT_BUY_QUEUE[0].values
+        )
+        console.log(this.testBuyQueueItem.getEcosimCode())
+        this.buyQueue.addObjects(DEFAULT_BUY_QUEUE)
+        console.log(this.buyQueue.getQueueEcosimCode())
+
         this.selectedTab = 0
 
         // Adds event listeners
@@ -31,6 +43,7 @@ export default class RunSim {
                 case "returnData":
                     this.returnData(e.data)
                     updateEcoQueueUI.call(this)
+                    updateBuyQueueUi.call(this)
                     break
             }
         }
@@ -65,9 +78,19 @@ export default class RunSim {
                 StatusUI.setText(`Ready! Loaded in ${data.loadTime}s!`)
                     .setLight("ready")
                     .setLoadingBar(1)
+                this.tabContentLoaded()
                 this.sendUpdatedValues()
                 break
         }
+    }
+
+    tabContentLoaded() {
+        document.getElementById("loadingTab0ContentContainer").classList.add("hide")
+        document.getElementById("tab0Content").classList.remove("hide")
+        document.getElementById("loadingTab1ContentContainer").classList.add("hide")
+        document.getElementById("tab1Content").classList.remove("hide")
+        document.getElementById("loadingTab2ContentContainer").classList.add("hide")
+        document.getElementById("tab2Content").classList.remove("hide")
     }
     
     /**
@@ -108,6 +131,7 @@ export default class RunSim {
                 simulationData.convertedTimeStates[simulationData.convertedTimeStates.length-1] >= 
                     Number(simulationData.roundStarts[roundStartIndex].toFixed(1))
             ) {
+                console.log(roundStartIndex)
                 let xAxisIndex = simulationData.convertedTimeStates.findIndex((e) => e == 
                     Number(simulationData.roundStarts[roundStartIndex].toFixed(1)))
                 verticalReferenceMarkers["round"+roundStartIndex] = {
@@ -117,11 +141,18 @@ export default class RunSim {
                     endValue: xAxisIndex,
                     borderColor: 'rgb(255, 255, 255)',
                     borderWidth: 2,
+                    label: {
+                        content: `r${roundStartIndex}`,
+                        display: true,
+                        position: "start",
+                        backgroundColor: 'hsl(160, 100%, 26%)',
+                    }
                 }
             }
         }
         
         // Creates a new chart with the returned simulation data
+        console.log(verticalReferenceMarkers)
         new Chart(
             document.getElementById('myChart'),
             chartConfig(simulationData, verticalReferenceMarkers)
@@ -137,7 +168,8 @@ export default class RunSim {
         const params = ["cash", "eco", "rounds", "gameRound", "targetRound"];
         const config = {
             ecoSend: document.getElementById("startingBloonSend").value,
-            ecoQueue: this.ecoQueue.getQueue()
+            ecoQueue: this.ecoQueue.getQueue(),
+            buyQueue: this.buyQueue.getQueueEcosimCode()
         };
         
         params.forEach(p => {
@@ -192,6 +224,12 @@ export default class RunSim {
     ecoQueueUpdate() {
         this.sortEcoQueue()
         updateEcoQueueUI.call(this)
+        this.sendUpdatedValues();
+    }
+
+    buyQueueUpdate() {
+        console.log(this.buyQueue)
+        updateBuyQueueUi.call(this)
         this.sendUpdatedValues();
     }
 

@@ -1,4 +1,4 @@
-import { EcoSendWithTime } from "../eco/ecoSend.js";
+import { EcoSendWithTime } from "./ecoSend.js";
 
 export default class EcoQueue {
     constructor() {

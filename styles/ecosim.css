@@ -93,7 +93,15 @@ main {
     padding: 8px;
     overflow-x: scroll;
     flex-grow: 1;
+}
 
+.chartContainer {
+    height: calc(100% - 200px);
+    width: 100%
+}
+
+.simDetails {
+    height: 200px;
 }
 
 .configureSim {
@@ -276,31 +284,13 @@ input.settingInput {
     font-size: 9pt;
 }
 
-.propertiesDialog {
-    width: 400px;
-    height: 100vh;
-    border-radius: 16px 0 0 16px;
-    margin: 0 0 0 auto;
-    background-color: hsl(0, 0%, 10%, 97%);
-    max-height: 999999px;
-}
-
-.propertyDialogTopContainer {
+.loadingTabContentContainer {
     display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-.propertyCloseButton {
-    margin-left: auto;
-    font-size: 28pt;
-
-    cursor: pointer;
-}
-
-.propertyDividerLine {
-    height: 2px;
-    background-color: var(--shade6);
-    margin-top: 4px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 .configTabs {
@@ -319,6 +309,7 @@ input.settingInput {
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .configTabs > .activeTab {
@@ -391,17 +382,17 @@ input.settingInput {
     padding: 8px;
 }
 
-.ecoQueueCard {
+.ecoQueueCard, .buyQueueCard {
     display: grid;
     gap: 4px
 }
 
-.ecoQueueCardStats {
+.ecoQueueCardStats, .buyQueueCardStats {
     display: flex;
     align-items: center;
 }
 
-.ecoQueueCardConfigPanel {
+.ecoQueueCardConfigPanel, .buyQueueCardConfigPanel {
     display: none;
 }
 
@@ -409,7 +400,7 @@ input.settingInput {
     display: block;
 }
 
-.timeText {
+.timeText, .actionText {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -417,9 +408,9 @@ input.settingInput {
 
 .bloonModifierContainer {
     margin-top: 8px;
-    /* display: flex; */
-    /* gap: 8px; */
-    /* flex-wrap: wrap; */
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .ecoBloonGrid {
@@ -451,7 +442,7 @@ input.settingInput {
     margin-left: -20px;
 }
 
-.ecoQueueMainButtonContainer {
+.ecoQueueMainButtonContainer, .buyQueueMainButtonContainer {
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -495,12 +486,29 @@ input.settingInput {
     height: 8px;
 }
 
+.buyQueueConfigContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.buyQueueConfigParameter {
+    display: flex;
+    align-items: center;
+}
+
+.buyQueueConfigInput {
+    width: 100px;
+    margin-left: auto;
+}
+
 .tabContainer {
     flex-grow: 1;
     overflow-y: auto;
 }
 
 .tabs {
+    height: 100%;
     ::-webkit-scrollbar {
         width: 12px;
         height: 12px;
@@ -535,8 +543,15 @@ input.settingInput {
     display: none;
     gap: 16px;
     flex-grow: 1;
+    height: 100%;
 }
 
 .showTab {
     display: grid;
+}
+
+.tabContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }

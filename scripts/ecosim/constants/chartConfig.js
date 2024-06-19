@@ -77,7 +77,10 @@ export default function(ecosimData, verticalReferenceMarkers) {
                             let label = context.dataset.label || '';
                             if (label) {label += ': ';}
                             if (context.parsed.y !== null) {
-                                label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                label += new Intl.NumberFormat(
+                                    'en-US',
+                                    { style: 'currency', currency: 'USD' }
+                                ).format(context.parsed.y);
                             }
                             return label;
                         }

@@ -22,12 +22,15 @@ export default function addEventListeners() {
         this.ecoQueueUpdate()
     })
 
-    document.getElementById("addFarmButton").addEventListener("click", () => {
-        this.farmArray.push({
-            "crosspath": [0, 0, 0],
-            "purchase": 10
+    document.getElementById("addBuyQueueItem").addEventListener("click", () => {
+        this.buyQueue.addObject({
+            "action": "buyDefense",
+            "values": {
+                "name": "New defense purchase",
+                "defenseCost": 1000
+            }
         })
-        this.farmUpdate()
+        this.buyQueueUpdate()
     })
 
     // Event listeners for the 3 tab buttons

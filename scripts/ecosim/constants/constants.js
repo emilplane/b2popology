@@ -1,208 +1,15 @@
 /** The default eco send queue */
+export const DEFAULT_BUY_QUEUE = [
+    {
+        "action": "buyDefense",
+        "values": {
+            "name": "Nice defense purchase",
+            "defenseCost": 69
+        }
+    }
+]
+
 export const DEFAULT_ECO_QUEUE = [
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
-    {
-        "time": ["round", 12],
-        "ecoSend": {
-            "name": "rainbow",
-            "spacing": "spaced"
-        }
-    },
     {
         "time": ["round", 12],
         "ecoSend": {
@@ -361,6 +168,26 @@ export class ECO_QUEUE_UI_ELEMENTS {
         div.appendChild(confirmButton);
 
         return div
+    }
+}
+
+export class BUY_QUEUE_UI_ELEMENTS {
+    /* Buy queue container */
+    static BUY_QUEUE_CONTAINER = document.getElementById("buyQueueContainer")
+
+    /* Buy queue template card */
+    static BUY_QUEUE_TEMPLATE = document.getElementById("buyQueueTemplate")
+
+    /** Zero send button for an eco queue entry */
+    static BUY_DEFENSE_CONFIG() {
+        
+        return buyDefenseConfig
+    }
+}
+
+export const BUY_QUEUE_ACTIONS = {
+    "buyDefense": {
+        "displayName": "Buy Defense",
     }
 }
 

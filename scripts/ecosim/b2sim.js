@@ -9,10 +9,11 @@ class b2sim {
      * @param {*} configData - parameters for the simulator
      */
     constructor(configData) {
+        console.log(configData)
         if (configData != undefined) {
             this.configData = configData;
-            this.farms = this.configData.farms;
             this.ecoQueue = this.configData.ecoQueue;
+            this.buyQueue = this.configData.buyQueue;
         }
     }
 
@@ -75,14 +76,7 @@ class b2sim {
      * @returns generated code
      */
     pythonCode() {
-        let farms = [];
         let eco_queue = [];
-        for (let farmNumber in this.farms) {
-            farms.push(`b2.initFarm(purchase_time=rounds.getTimeFromRound(
-                ${this.farms[farmNumber].purchase}),
-                upgrades=(${this.farms[farmNumber].crosspath}))`
-            );
-        }
         for (let ecoQueueIndex in this.ecoQueue) {
             let timeString = "0";
             if (this.ecoQueue[ecoQueueIndex].time[0] == "round") {
@@ -93,13 +87,11 @@ class b2sim {
                 send_name='${this.getBloonSendName(this.ecoQueue[ecoQueueIndex].ecoSend)}'
             )`);
         }
-        return `
+        let codeString = `
             class simData:
                 x = [1, 2, 3, 4]
             rounds = b2.Rounds(${this.configData.rounds})
-            farms = [
-                ${farms}
-            ]
+            farms = []
             initial_state_game = {
                 'Cash': ${this.configData.cash},
                 'Eco': ${this.configData.eco},
@@ -107,12 +99,14 @@ class b2sim {
                 'Rounds': rounds,
                 'Farms': farms,
                 'Game Round': ${this.configData.gameRound},
-                'Eco Queue': [${eco_queue}]
+                'Eco Queue': [${eco_queue}],
+                'Buy Queue': ${this.buyQueue}
             }
             game_state = b2.GameState(initial_state_game)
             game_state.fastForward(target_round = ${this.configData.targetRound})
             js.ecoSendInfo = b2.eco_send_info
-        `;
+        `
+        return codeString;
     }
 
     /**

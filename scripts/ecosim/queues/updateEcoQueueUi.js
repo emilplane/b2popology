@@ -1,4 +1,4 @@
-import EcoSend from "/scripts/ecosim/eco/ecoSend.js"
+import EcoSend from "/scripts/ecosim/queues/ecoSend.js"
 import { ECO_QUEUE_UI_ELEMENTS } from "/scripts/ecosim/constants/constants.js";
 import editRoundNumber from "./editRoundNumber.js";
 

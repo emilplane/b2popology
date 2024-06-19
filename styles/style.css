@@ -784,13 +784,12 @@ dialog {
     };
 }
 
-.tourneyInfoContainer {
-    display: flex;
-    align-items: end;
+.tourneyInfoContainer > :nth-child(2), .tourneyInfoContainerLive > a {
+    margin-left: auto;
 }
 
-.tourneyInfoContainer > a, .tourneyInfoContainerLive > a {
-    margin-left: auto;
+.tourneyInfoContainer > a {
+    margin-left: 8px;
 }
 
 .tourneyInfoContainerLive {
