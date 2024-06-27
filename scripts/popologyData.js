@@ -849,9 +849,9 @@ const data = {
                                             </li>
                                             <li>crosspath
                                                 <ul>
-                                                    <li>104: superbomb +0p, subcluster +36p (96p), all other explosions +6p</li>
+                                                    <li>104: superbomb +0p, subcluster +36p (84p), all other explosions +6p</li>
                                                     <li>104: subcluster +3.5r (37.5), all other explosions +50%r</li>
-                                                    <li>204: superbomb +0p, subcluster +60p (156p), all other explosions +10p</li>
+                                                    <li>204: superbomb +0p, subcluster +36p (120p), all other explosions +10p</li>
                                                     <li>204: all explosions +1d (as expected)</li>
                                                 </ul>
                                             </li>
@@ -8864,7 +8864,7 @@ const data = {
                     "data": {
                         "1": `<ul>
                         <li>$600</li>
-                        <li>Leveling Rate: 1.5x</li>
+                        <li>Leveling Rate: 1.68352941x (1.06x Striker)</li>
                         <li>Unlock Cost: 5,000 MM</li>
                         <li>size: 7 radius</li>
                         <li>placeable on: land</li>
@@ -10767,7 +10767,7 @@ const data = {
                     "data": {
                         "1": `<ul>
                         <li>$650</li>
-                        <li>Leveling Rate: ?x</li>
+                        <li>Leveling Rate: 1.06x</li>
                         <li>Unlock Cost: 3,000 MM</li>
                         <li>size: 7 radius</li>
                         <li>placeable on: land</li>
@@ -12286,7 +12286,7 @@ const data = {
             "druid": {
                 "base": 425,
                 "top": [250, 1000, 1500, 4300, 55000],
-                "middle": [250, 350, 450, 4500, 35000],
+                "middle": [250, 350, 700, 4200, 35000],
                 "bottom": [100, 400, 750, 2500, 45000]
             }
         },
@@ -12295,7 +12295,7 @@ const data = {
                 "base": 1000,
                 "top": [400, 1500, 800, 2500, 25000],
                 "middle": [250, 1700, 5000, 23500, 45000],
-                "bottom": [500, 500, 1200, 7500, 15000]
+                "bottom": [500, 500, 1500, 7200, 15000]
             },
             "bananaFarm": {
                 "base": 1000,
