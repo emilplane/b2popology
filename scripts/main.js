@@ -1,3 +1,14 @@
+// OUTDATED: DO NOT USE
+// USE popology.js INSTEAD
+// OUTDATED: DO NOT USE
+// USE popology.js INSTEAD
+// OUTDATED: DO NOT USE
+// USE popology.js INSTEAD
+// OUTDATED: DO NOT USE
+// USE popology.js INSTEAD
+// OUTDATED: DO NOT USE
+// USE popology.js INSTEAD
+
 let data = {
     "primary": {
         "type": "legacy",

@@ -245,7 +245,6 @@ function runPopology(compare) {
                 }
                 
                 button.addEventListener("click", (x) => {
-                    console.log(x.srcElement.classList)
                     selectedPage = pageIndex
                     update()
                 });
@@ -280,10 +279,10 @@ function runPopology(compare) {
                     for (let level in popologyData.stats[selectedCategory].entries[selectedPage].data) {
                         if (level == 1) {
                             contentHTML += `<h3 class="baseTowerName">Level ${level}</h3>`
-                            contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[level]
+                            contentHTML += nestedArraysToHTML(popologyData.stats[selectedCategory].entries[selectedPage].data[level])
                         } else {
                             contentHTML += `<h3 class="pathName">Level ${level}</h3>`
-                            contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[level]
+                            contentHTML += nestedArraysToHTML(popologyData.stats[selectedCategory].entries[selectedPage].data[level])
                         }
                     }
                     document.getElementById("statsContent" + compareID).innerHTML = contentHTML
@@ -294,28 +293,157 @@ function runPopology(compare) {
                     break
             }
         } else {
-            let contentHTML = `<h5 class="baseTowerName">Base Tower</h5>`
-            for (let path in popologyData.stats[selectedCategory].entries[selectedPage].data) {
-                if (path == "base") {
-                    contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[path]
-                } else {
-                    contentHTML += `<h3 class="pathName">${pathName(path)} Path</h3>`
-                    for (let upgrade in popologyData.stats[selectedCategory].entries[selectedPage].data[path]) {
-                        console.log(popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name)
-                        if (popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name == "005 - Monkeyopolis") {
-                            contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $15,000 + $5,000 * Monkey Village</h5>`
-                        } else {
-                            contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()}</h5>`
+            if (popologyData.stats[selectedCategory].type === "nestedArrays") {
+                if (typeof popologyData.stats[selectedCategory].entries[selectedPage].data.base === "string") {
+                    console.log("This is a string! Change this to arrays instead!")
+                    console.log(objectToArrayFormat(popologyData.stats[selectedCategory].entries[selectedPage].data))
+                }
+
+                let contentHTML = `<h5 class="baseTowerName">Base Tower</h5>`
+                for (let path in popologyData.stats[selectedCategory].entries[selectedPage].data) {
+                    if (path == "base") {
+                        contentHTML += nestedArraysToHTML(popologyData.stats[selectedCategory].entries[selectedPage].data[path])
+                    } else {
+                        contentHTML += `<h3 class="pathName">${pathName(path)} Path</h3>`
+                        for (let upgrade in popologyData.stats[selectedCategory].entries[selectedPage].data[path]) {
+                            if (popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name == "005 - Monkeyopolis") {
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $15,000 + $5,000 * Monkey Village</h5>`
+                            } else {
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()}</h5>`
+                            }
+                            contentHTML += nestedArraysToHTML(popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].content)
                         }
-                        contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].content
                     }
                 }
+                document.getElementById("statsContent" + compareID).innerHTML = contentHTML
+
+            } else {
+                let contentHTML = `<h5 class="baseTowerName">Base Tower</h5>`
+                for (let path in popologyData.stats[selectedCategory].entries[selectedPage].data) {
+                    if (path == "base") {
+                        contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[path]
+                    } else {
+                        contentHTML += `<h3 class="pathName">${pathName(path)} Path</h3>`
+                        for (let upgrade in popologyData.stats[selectedCategory].entries[selectedPage].data[path]) {
+                            if (popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name == "005 - Monkeyopolis") {
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $15,000 + $5,000 * Monkey Village</h5>`
+                            } else {
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()}</h5>`
+                            }
+                            contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].content
+                        }
+                    }
+                }
+                document.getElementById("statsContent" + compareID).innerHTML = contentHTML
             }
-            document.getElementById("statsContent" + compareID).innerHTML = contentHTML
         }
     }
 
-    function updateCost() {
+    function nestedArraysToHTML(array) {
+        if (typeof array === "string") {
+            return array
+        }
+
+        let html = ""
+        handleArray(array)
+        
+        function handleArray(array) {
+            html += "<ul>"
+            array.forEach(element => {
+                if (Array.isArray(element)) {
+                    handleArray(element)
+                } else {
+                    html += `<li>${element}</li>`
+                }
+            })
+            html += "</ul>"
+        }
+        return html
+    }
+
+    let clone = structuredClone(popologyData.stats[selectedCategory].entries)
+    for (let key in clone) {
+        console.log(clone[key])
+        clone[key].data = objectToArrayFormat(clone[key].data)
+    }
+
+    console.log(clone)
+
+    // let clone = structuredClone(popologyData.stats[selectedCategory].entries)
+    // console.log(clone)
+
+    function objectToArrayFormat(object) {
+        let clone = structuredClone(object)
+        for (let key in object) {
+            clone[key] = htmlStringToArray(clone[key])
+        }
+        return clone
+    }
+
+    function htmlStringToArray(htmlString) {
+        const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+    
+        function extractContent(node) {
+            const result = [];
+    
+            Array.from(node.childNodes).forEach(child => {
+                if (child.nodeType === Node.TEXT_NODE) {
+                    const text = child.textContent.trim();
+                    if (text) result.push(text);
+                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                    if (child.nodeName === 'UL') {
+                        // For <ul> elements, process each <li> child
+                        const ulContent = [];
+                        Array.from(child.children).forEach(li => {
+                            ulContent.push(...extractContent(li));
+                        });
+                        result.push(ulContent.length > 0 ? ulContent : '');
+                    } else if (child.nodeName === 'LI') {
+                        // For <li> elements, handle nested content
+                        const liContent = extractContent(child);
+                        if (liContent.length === 1 && typeof liContent[0] === 'string') {
+                            result.push(liContent[0]);
+                        } else if (liContent.length > 0) {
+                            result.push(liContent);
+                        }
+                    } else {
+                        // Handle other elements
+                        result.push(...extractContent(child));
+                    }
+                }
+            });
+    
+            return result;
+        }
+    
+        // Extract content from the body
+        const content = extractContent(doc.body);
+    
+        // Flatten the result if it's a single wrapped array
+        return content.length === 1 && Array.isArray(content[0]) ? content[0] : content;
+    }
+
+    const htmlString = `
+        <ul>
+            <li>$325 (150 MM)</li>
+            <li>size: 6 radius</li>
+            <li>placeable on: land</li>
+            <li>boomerang attack
+                <ul>
+                    <li>1d, 4p, 43r, 1.2s, sharp type</li>
+                    <li>follows a counterclockwise or clockwise arc instead of a straight line, depending on targeting</li>
+                </ul>
+            </li>
+        </ul>
+    `;
+
+    
+    
+    const nestedArray = htmlStringToArray(htmlString);
+    console.log(nestedArray);
+
+
+    function updateCost() { 
         let forceBuffs = []
         if (selectedPage == "monkeyBuccaneer" && selectedPathForPrice[2] >= 4) {
             forceBuffs.push("favoredTrades")
@@ -431,7 +559,6 @@ function runPopology(compare) {
                     </button>
                 `)
             } else {
-                console.log(buff)
                 if (
                     (
                         buff == "obynLevel12" && selectedCategory == "magic" && (
