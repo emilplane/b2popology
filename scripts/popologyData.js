@@ -4846,7 +4846,7 @@ const data = {
                                             </li>
                                             <li>sticky-bomb buffed
                                                 <ul>
-                                                    <li>&#8734;r, 0.18s, applies stun (1s duration)</li>
+                                                    <li>&#8734;r, 1.8s, applies stun (1s duration)</li>
                                                 </ul>
                                             </li>
                                             <li>bombed buffed
