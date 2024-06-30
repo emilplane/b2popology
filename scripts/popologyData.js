@@ -10769,7 +10769,7 @@ const data = {
                         <li>$650</li>
                         <li>Leveling Rate: 1.06x</li>
                         <li>Unlock Cost: 3,000 MM</li>
-                        <li>size: 7 radius</li>
+                        <li>size: 6 radius</li>
                         <li>placeable on: land</li>
                         <li>55r</li>
                         <li>spawns two permanent drone subtowers
@@ -10790,10 +10790,10 @@ const data = {
                         </li>
                     </ul>`,
                         "3": `<ul>
-                        <li>drone-swarm ability (?)
+                        <li>drone-swarm ability (45s cooldown, 18.5s duration)
                             <ul>
                                 <li>spawns 4 more drone subtowers</li>
-                                <li>duration increases 0.5s? per level</li>
+                                <li>duration increases 0.5s per level</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10815,7 +10815,7 @@ const data = {
                         <li>uav buff
                             <ul>
                                 <li>affects all towers</li>
-                                <li>all bloon properties have a 25%? chance of being ignored</li>
+                                <li>all bloon properties have a 20% chance of being ignored</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10836,15 +10836,15 @@ const data = {
                         "9": `<ul>
                         <li>uav buffed
                             <ul>
-                                <li>all bloon properties now have a 66%? chance of being ignored</li>
+                                <li>all bloon properties now have a 50% chance of being ignored</li>
                             </ul>
                         </li>
                     </ul>`,
                         "10": `<ul>
-                        <li>ucav ability (?)
+                        <li>ucav ability (75s cooldown, 18s duration)
                             <li>uav replaced by ucav-drone subtower
                                 <ul>
-                                    <li>10j/240°, 1 impact, ∞r, 0.6s</li>
+                                    <li>10j/230°, 1 impact, ∞r, 0.6s</li>
                                     <li>homing</li>
                                     <li>always targets first</li>
                                     <li>on contact: explosion
@@ -10858,11 +10858,12 @@ const data = {
                     </ul>`,
                         "11": `<ul>
                         <li>spawns 1 more permanent drone subtower (3)</li>
+                        <li>gains zone defense targeting</li>
                     </ul>`,
                         "12": `<ul>
                         <li>drone buffed
                             <ul>
-                                <li>flies faster</li>
+                                <li>200% flight speed</li>
                             </ul>
                         </li>
                         <li>dart buffed
@@ -10874,7 +10875,7 @@ const data = {
                         "13": `<ul>
                         <li>ucav buffed
                             <ul>
-                                <li>? cooldown</li>
+                                <li>60s cooldown</li>
                             </ul>
                         </li>
                     </ul>`,
@@ -10893,7 +10894,7 @@ const data = {
                         </li>
                         <li>ucav buffed
                             <ul>
-                                <li>? duration</li>
+                                <li>+6s duration (24s)</li>
                             </ul>
                         </li>
                         <li>explosion buffed
@@ -10911,7 +10912,7 @@ const data = {
                         </li>
                         <li>drone-swarm buffed
                             <ul>
-                                <li>? cooldown</li>
+                                <li>-5s cooldown (40s)</li>
                             </ul>
                         </li>
                     </ul>`,
