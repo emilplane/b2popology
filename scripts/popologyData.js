@@ -3433,7 +3433,7 @@ const data = {
                                             ],
                                             "crate attack",
                                             [
-                                                "$4,000 income, produced 3 time per round",
+                                                "$2,000 income, produced one time per round",
                                                 "15s lifetime"
                                             ],  
                                         ]
@@ -3455,7 +3455,8 @@ const data = {
                                         [
                                             "gains primary-glaives attack",
                                             [
-                                                "25d, 40p, 0.5s, sharp type"
+                                                "25d, 40p, 0.5s, sharp type",
+                                                "jumps to a nearby target after hitting",
                                             ]
                                         ],
                                         "on a sacrifice value threshold of $15,000 or greater of military towers:",
