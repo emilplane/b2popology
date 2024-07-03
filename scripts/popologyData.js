@@ -3333,7 +3333,7 @@ const data = {
                     "data": {
                         "base": [
                             "$1,800 (750 MM)",
-                            "size: 8 radius",
+                            "size: 7 radius",
                             "placeable on: land",
                             "dart attack",
                             [
@@ -3388,7 +3388,7 @@ const data = {
                                             ],
                                             "gains primary-blades attack",
                                             [
-                                                "30d, 8j, 20p, 65r, 1.5s, normal type"
+                                                "20d, 8j, 20p, 65r, 1.5s, normal type"
                                             ]
                                         ],
                                         "on a sacrifice value threshold of $15,000 or greater of military towers:",
@@ -3399,11 +3399,11 @@ const data = {
                                             ],
                                             "gains missile attack",
                                             [
-                                                "∞r, 1.0s",
+                                                "∞r, 2.0s",
                                                 "can only affect blimps",
                                                 "on contact: explosion",
                                                 [
-                                                    "1d, +99md (100md), 50p, 18r blast, explosion type"
+                                                    "100d, 50p, 18r blast, normal type"
                                                 ]
                                             ]
                                         ],
@@ -3412,11 +3412,12 @@ const data = {
                                             "gains magic-tornado attack",
                                             [
                                                 "12d, 50p, 10s",
-                                                "MOABs use 9p, BFBs 24p, ZOMGs and DDTs 49p"
+                                                "MOABs use 9p, BFBs 24p, ZOMGs and DDTs 49p",
+                                                "sends bloons back 33-10000 distance"
                                             ],
                                             "gains arcane-temple attack",
                                             [
-                                                "35d, 6j, 7p, 7s, normal type, moderate homing",
+                                                "35d, 6j, 7p, 7s, energy type, moderate homing",
                                                 "can see past obstacles"
                                             ],
                                             "gains temple buff",
@@ -3428,13 +3429,76 @@ const data = {
                                         [
                                             "gains temple buff",
                                             [
-                                                "+5% discount, grants camo"
+                                                "+5% discount, +7 range, 85%s, grants camo"
                                             ],
                                             "crate attack",
                                             [
                                                 "$4,000 income, produced 3 time per round",
                                                 "15s lifetime"
-                                            ],
+                                            ],  
+                                        ]
+                                    ]
+                                ]
+                            },
+                            "5": {
+                                "name": "500 - True Sun God",
+                                "content": [
+                                    "size: 25 radius",
+                                    "sunblast buffed",
+                                    [
+                                        "+19d (30d)"
+                                    ],
+                                    "temple sacrifice on upgrade",
+                                    [
+                                        "sacrifices towers in range, not heroes",
+                                        "on a sacrifice value threshold of $15,000 or greater of primary towers:",
+                                        [
+                                            "gains primary-glaives attack",
+                                            [
+                                                "25d 40p 0.5s"
+                                            ]
+                                        ],
+                                        "on a sacrifice value threshold of $15,000 or greater of military towers:",
+                                        [
+                                            "spawns two golden aircrafts, first after 0.0s, second after 1.2s",
+                                            [
+                                                "barrage attack",
+                                                [
+                                                    "∞r, 0.06s",
+                                                    "always targets first",
+                                                    "alternately fires dart and bomb",
+                                                ],
+                                                "dart projectile",
+                                                [
+                                                    "15d, 30p, sharp type",
+                                                ],
+                                                "bomb projectile",
+                                                [
+                                                    "on contact: explosion",
+                                                    [
+                                                        "10d, 60p, 20r blast, explosion type"
+                                                    ]
+                                                ]
+                                            ]
+                                        ],
+                                        "on a sacrifice value threshold of $15,000 or greater of magic towers:",
+                                        [
+                                            "spawns a mini sun avatar after 10.0s, then more mini sun avatars at an interval of 30.0s",
+                                            "places mini sun avatar between tower footprint and range",
+                                            "mini sun avatar",
+                                            [
+                                                "size: 6 radius",
+                                                "footprint ignored by other towers",
+                                                "60s liftime",
+                                                "can be buffed",
+                                                "sunbeam attack",
+                                                [
+                                                    "1d, 3j, 6p, 40r, 0.03s, plasma Type"
+                                                ]
+                                            ]
+                                        ],
+                                        "on a sacrifice value threshold of $15,000 or greater of support towers:",
+                                        [
                                             "gains temple-permaspikes attack",
                                             [
                                                 "30s",
@@ -3446,20 +3510,9 @@ const data = {
                                                     ]
                                                 ]
                                             ]
+                                            
                                         ]
                                     ]
-                                ]
-                            },
-                            "5": {
-                                "name": "500 - True Sun God",
-                                "content": [
-                                    "size: 25 radius",
-                                    "sunblast buffed",
-                                    [
-                                        "+21d (32d)"
-                                    ],
-                                    "when upgraded, absorbs all towers in range for even more power (same $15,000 threshold as the Sun Temple)",
-                                    "detailed sacrifice info is undocumented"
                                 ]
                             }
                         },
@@ -3576,7 +3629,7 @@ const data = {
                                 "content": [
                                     "monkeyrang buffed",
                                     [
-                                        "+1d (2d), +2cd (4cd), +2md (6md), +2p (7p), 50%s (0.0225), normal type"
+                                        "+1d (2d), +2md (6md), +2p (7p), +1j (2j), normal type"
                                     ],
                                     "darkshift buffed",
                                     [
@@ -3589,7 +3642,7 @@ const data = {
                                 "content": [
                                     "monkeyrang buffed",
                                     [
-                                        "+4d (6d), +4cd (12cd), +4md (14md), +8p (17p), +4r (57r)"
+                                        "+4d (6d), +4cd (12cd), +4md (14md), +8p (15p), +4r (57r)"
                                     ],
                                     "gains black-hole ability (120s cooldown, 4s duration, battle ready, triggered by something about to leak)",
                                     [
