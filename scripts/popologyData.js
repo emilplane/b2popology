@@ -7992,7 +7992,7 @@ const data = {
                         "7": [
                             "bullet buffed",
                             [
-                                "+2d (5), +30r (70r), camo"
+                                "+2d (5d), +30r (70r), camo"
                             ],
                             "camo bloon modifier buffed",
                             [
@@ -8397,7 +8397,7 @@ const data = {
                                 [
                                     "cannot store bloons over the price limit",
                                     "cannot store BADs",
-                                    "after ability duration stored bloons are deposited ?% of the way down the opponent's player sent track"
+                                    "after ability duration stored bloons are deposited 25% of the way down the opponent's player sent track"
                                 ]
                             ]
                         ],
