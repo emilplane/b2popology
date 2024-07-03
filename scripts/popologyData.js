@@ -3455,7 +3455,7 @@ const data = {
                                         [
                                             "gains primary-glaives attack",
                                             [
-                                                "25d 40p 0.5s"
+                                                "25d, 40p, 0.5s, sharp type"
                                             ]
                                         ],
                                         "on a sacrifice value threshold of $15,000 or greater of military towers:",
