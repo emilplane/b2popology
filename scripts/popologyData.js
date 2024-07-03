@@ -7939,11 +7939,11 @@ const data = {
                             "$850",
                             "Leveling Rate: 1.58823529x",
                             "Unlock Cost: 5,000 MM",
-                            "size: ? radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "bullet attack",
                             [
-                                "3d, 1i, 0.9s, ?r, sharp type"
+                                "3d, 1i, 0.9s, 40r, sharp type"
                             ]
                         ],
                         "2": [
@@ -7992,7 +7992,7 @@ const data = {
                         "7": [
                             "bullet buffed",
                             [
-                                "+2d (5), +?r (?), camo"
+                                "+2d (5), +30r (70r), camo"
                             ],
                             "camo bloon modifier buffed",
                             [
@@ -8066,7 +8066,7 @@ const data = {
                         "16": [
                             "bullet buffed",
                             [
-                                "66.67%s (0.15), +?d (?)"
+                                "66.67%s (0.15), +7d (12d)"
                             ]
                         ],
                         "17": [
@@ -8084,7 +8084,7 @@ const data = {
                         "19": [
                             "bullet buffed",
                             [
-                                "+?d (?)"
+                                "+8d (20d)"
                             ]
                         ],
                         "20": [
@@ -8106,11 +8106,11 @@ const data = {
                             "$850",
                             "Leveling Rate: 1.58823529x",
                             "Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points",
-                            "size: ? radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "bullet attack",
                             [
-                                "3d, 1i, 0.9s, ?r, sharp type"
+                                "3d, 1i, 0.9s, 40r, sharp type"
                             ]
                         ],
                         "2": [
@@ -8159,7 +8159,7 @@ const data = {
                         "7": [
                             "bullet buffed",
                             [
-                                "+2d (5), +?r (?), camo"
+                                "+2d (5d), +30r (70r), camo"
                             ],
                             "camo bloon modifier buffed",
                             [
@@ -8233,7 +8233,7 @@ const data = {
                         "16": [
                             "bullet buffed",
                             [
-                                "66.67%s (0.15), +?d (?)"
+                                "66.67%s (0.15s), +7d (12d)"
                             ]
                         ],
                         "17": [
@@ -8251,7 +8251,7 @@ const data = {
                         "19": [
                             "bullet buffed",
                             [
-                                "+?d (?)"
+                                "+8d (20d)"
                             ]
                         ],
                         "20": [
@@ -8273,11 +8273,11 @@ const data = {
                             "$850",
                             "Leveling Rate: 1.58823529x",
                             "Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points",
-                            "size: ? radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "bullet attack",
                             [
-                                "1d, +1 shocked damage (2d), 1i, 0.5s, ?r, plasma type",
+                                "1d, +1 shocked damage, 1i, 0.54s, 40r, plasma type",
                                 "applies shocked status",
                                 [
                                     "1d/0.95s, 1s duration",
@@ -8315,7 +8315,7 @@ const data = {
                         "4": [
                             "regrow rate buffed",
                             [
-                                "85%s (2.25s)"
+                                "88%s (2.2s)"
                             ]
                         ],
                         "5": [
@@ -8330,7 +8330,7 @@ const data = {
                         "6": [
                             "bullet buffed",
                             [
-                                "50%s (0.25s)"
+                                "65%s (0.35s)"
                             ],
                             "money-trap buffed",
                             [
@@ -8354,7 +8354,7 @@ const data = {
                         "7": [
                             "bullet buffed",
                             [
-                                "+2d (3), +?r (?), camo"
+                                "+2d (3d), +30r (70r), camo"
                             ],
                             "player sent camo bloons buffed",
                             [
@@ -8368,7 +8368,7 @@ const data = {
                             ],
                             "in-it-for-the-money buffed",
                             [
-                                "+2s (8s) duration"
+                                "+6s (12s) duration"
                             ],
                             "money-trap buffed",
                             [
@@ -8442,7 +8442,7 @@ const data = {
                         "16": [
                             "bullet buffed",
                             [
-                                "66.67%s (0.0833)"
+                                "+2d (5d), shocked damage 1 -> 2, 66.67%s (0.0833s)"
                             ]
                         ],
                         "17": [
@@ -8454,13 +8454,13 @@ const data = {
                         "18": [
                             "money-trap buffed",
                             [
-                                "?s cooldown"
+                                "45s cooldown"
                             ]
                         ],
                         "19": [
                             "bullet buffed",
                             [
-                                "+?d (?), normal type"
+                                "+3d (8d), shocked damage 2 -> 4, normal type"
                             ]
                         ],
                         "20": [
