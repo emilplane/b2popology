@@ -8410,7 +8410,7 @@ const data = {
                         "12": [
                             "bullet buffed",
                             [
-                                "50%s (0.125s)"
+                                "50%s (0.175s)"
                             ],
                             "smuggle-run buffed",
                             [
@@ -8442,7 +8442,7 @@ const data = {
                         "16": [
                             "bullet buffed",
                             [
-                                "+2d (5d), shocked damage 1 -> 2, 66.67%s (0.0833s)"
+                                "+2d (5d), shocked damage 1 -> 2, 66.67%s (0.117s)"
                             ]
                         ],
                         "17": [
