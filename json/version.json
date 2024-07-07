@@ -1,0 +1,1523 @@
+{
+    "currentVersion": [
+        0,
+        25,
+        18
+    ],
+    "versionHistory": {
+        "0": {
+            "2": {
+                "7": {
+                    "version": [
+                        0,
+                        2,
+                        7
+                    ],
+                    "date": "2023-07-09T05:00:00.000Z",
+                    "content": [
+                        "Added better interactivity (vTri)",
+                        "Javascript for Popology section reduced significantly",
+                        "Added Heli Pilot, Mortar Monkey, and Dartling Gunner data"
+                    ]
+                },
+                "8": {
+                    "version": [
+                        0,
+                        2,
+                        8
+                    ],
+                    "date": "2023-07-09T05:00:00.000Z",
+                    "content": [
+                        "Removed button redirects to the original document for Heli Pilot, Mortar Monkey, and Dartling Gunner"
+                    ]
+                },
+                "9": {
+                    "version": [
+                        0,
+                        2,
+                        9
+                    ],
+                    "date": "2023-07-09T05:00:00.000Z",
+                    "content": [
+                        "Added Quincy data",
+                        "Added a heroes home screen button"
+                    ]
+                }
+            },
+            "3": {
+                "0": {
+                    "version": [
+                        0,
+                        3,
+                        0
+                    ],
+                    "date": "2023-07-10T05:00:00.000Z",
+                    "content": [
+                        "Added a other resources section to the home screen"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        3,
+                        1
+                    ],
+                    "date": "2023-07-10T05:00:00.000Z",
+                    "content": [
+                        "Added blank sections for Gwendolyn, Scientist Gwendolyn, Obyn, and Ocean Obyn"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        3,
+                        2
+                    ],
+                    "date": "2023-07-11T05:00:00.000Z",
+                    "content": [
+                        "Added blank sections for all heroes"
+                    ]
+                }
+            },
+            "4": {
+                "0": {
+                    "version": [
+                        0,
+                        4,
+                        0
+                    ],
+                    "date": "2023-07-11T05:00:00.000Z",
+                    "content": [
+                        "Added shortened urls for Popology data (vTri)",
+                        "Added a Terminology section at the bottom of Popology entries"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        4,
+                        1
+                    ],
+                    "date": "2023-07-11T05:00:00.000Z",
+                    "content": [
+                        "Fixed links appearing black"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        4,
+                        2
+                    ],
+                    "date": "2023-07-11T05:00:00.000Z",
+                    "content": [
+                        "Added an updates page"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        4,
+                        3
+                    ],
+                    "date": "2023-07-12T05:00:00.000Z",
+                    "content": [
+                        "Fixed typos (vTri)",
+                        "Fixed updates page scaling on mobile"
+                    ]
+                }
+            },
+            "5": {
+                "0": {
+                    "version": [
+                        0,
+                        5,
+                        0
+                    ],
+                    "date": "2023-07-18T05:00:00.000Z",
+                    "content": [
+                        "Added Cyber Quincy, Gwendolyn, and Scientist Gwendolyn data (Vuldo)"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        5,
+                        1
+                    ],
+                    "date": "2023-07-18T05:00:00.000Z",
+                    "content": [
+                        "Changed Scientist Gwendolyn's unlock requirements from “Complete Training Camp” to “2,000 MM + 40,000 Gwendolyn Points”"
+                    ]
+                }
+            },
+            "6": {
+                "0": {
+                    "version": [
+                        0,
+                        6,
+                        0
+                    ],
+                    "date": "2023-07-19T05:00:00.000Z",
+                    "content": [
+                        "Added all remaining hero data (Vuldo)"
+                    ]
+                }
+            },
+            "7": {
+                "0": {
+                    "version": [
+                        0,
+                        7,
+                        0
+                    ],
+                    "date": "2023-07-19T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 2.0.4 data"
+                    ]
+                }
+            },
+            "8": {
+                "0": {
+                    "version": [
+                        0,
+                        8,
+                        0
+                    ],
+                    "date": "2023-07-26T05:00:00.000Z",
+                    "content": [
+                        "Fixed the Luckiest Guy font looking so dang terrible on most devices",
+                        "Added a simple hover effect to buttons"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        8,
+                        1
+                    ],
+                    "date": "2023-07-27T05:00:00.000Z",
+                    "content": [
+                        "Changed xx4 Monkey Engineer trap pierce from 1200p to 500p (david_thesuperior)"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        8,
+                        2
+                    ],
+                    "date": "2023-07-29T05:00:00.000Z",
+                    "content": [
+                        "Changed 4xx Dartling Gunner price from $11,000 to $12,000 (ertos-accounter)",
+                        "Changed x4x Spike Factory ability spikes from pierce to impact",
+                        "Changed xx4 and xx5 Engineer monkey trap pierce to impact",
+                        "Added a note to xx4 Engineer Monkey that extra money is not earned from bloons that exceed the impact limit"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        8,
+                        3
+                    ],
+                    "date": "2023-07-29T05:00:00.000Z",
+                    "content": [
+                        "Changed 2xx Dartling Gunner price from $750 to $600 (ertos-accounter)",
+                        "Changed Pat Fusty Level 3 to buff all towers in 30r, not just ice towers (NioMastr 2.0#2166)"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        8,
+                        4
+                    ],
+                    "date": "2023-08-05T05:00:00.000Z",
+                    "content": [
+                        "Changed x1x Monkey Wizard fireball from on damage to on contact",
+                        "Changed x3x Monkey Wizard fireball damage from 9 to 8 (theoneandonlyghast, ertos-accounter)"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        8,
+                        5
+                    ],
+                    "date": "2023-08-06T05:00:00.000Z",
+                    "content": [
+                        "Changed Level 9 Highwayman Jericho's fortified Bloon modifier from -$0.4x to -$0.3x (ertos-accounter)",
+                        "Changed xx5 Monkey Sub to affect all towers on the map (vtri)",
+                        "Changed x3x Monkey Wizard fireball from 8d to 9d (vtri)",
+                        "Changed x3x Dartling Gunner total explosions from 4 to 3 (ertos-accounter)"
+                    ]
+                }
+            },
+            "9": {
+                "0": {
+                    "version": [
+                        0,
+                        9,
+                        0
+                    ],
+                    "date": "2023-08-07T05:00:00.000Z",
+                    "content": [
+                        "Updated home page"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        9,
+                        1
+                    ],
+                    "date": "2023-08-08T05:00:00.000Z",
+                    "content": [
+                        "Added a max width to the homepage"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        9,
+                        2
+                    ],
+                    "date": "2023-08-08T05:00:00.000Z",
+                    "content": [
+                        "Fixed incorrect season info"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        9,
+                        3
+                    ],
+                    "date": "2023-08-14T05:00:00.000Z",
+                    "content": [
+                        "Adapted new design to updates page",
+                        "Changed x3x Heli Pilot price from $3,000 to $3,200 (ertos-accounter)"
+                    ]
+                }
+            },
+            "10": {
+                "0": {
+                    "version": [
+                        0,
+                        10,
+                        0
+                    ],
+                    "date": "2023-08-15T05:00:00.000Z",
+                    "content": [
+                        "Adapted new design to popology page",
+                        "Added dropdowns to select towers instead of buttons and scrolling",
+                        "Fixed xx3+ Super Monkey attack speed"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        10,
+                        1
+                    ],
+                    "date": "2023-08-15T05:00:00.000Z",
+                    "content": [
+                        "Fixed dropdown text color on certain devices",
+                        "Fixed Luckiest Guy font on the popology page on certain devices"
+                    ]
+                }
+            },
+            "11": {
+                "0": {
+                    "version": [
+                        0,
+                        11,
+                        0
+                    ],
+                    "date": "2023-08-16T05:00:00.000Z",
+                    "content": [
+                        "Updated stats to Battles 2 2.1"
+                    ]
+                }
+            },
+            "12": {
+                "0": {
+                    "version": [
+                        0,
+                        12,
+                        0
+                    ],
+                    "date": "2023-08-16T05:00:00.000Z",
+                    "content": [
+                        "Added accolades to the popology page",
+                        "Added Mortar Monkey bug where the shell is 100% accurate (david_thesuperior)"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        12,
+                        1
+                    ],
+                    "date": "2023-08-16T05:00:00.000Z",
+                    "content": [
+                        "Added a bug on the xx3 Druid Monkey where the attack speed buff does sometimes not apply (aAtacoThatGames)"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        12,
+                        2
+                    ],
+                    "date": "2023-08-21T05:00:00.000Z",
+                    "content": [
+                        "Fixed buttons appearing too close to each other vertically",
+                        "Added hero cost reduction to 5xx Monkey Sub (vtri)"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        12,
+                        3
+                    ],
+                    "date": "2023-08-21T05:00:00.000Z",
+                    "content": [
+                        "Added preview tower cost feature"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        12,
+                        4
+                    ],
+                    "date": "2023-08-21T05:00:00.000Z",
+                    "content": [
+                        "Changed “Gwendolyn” to “Gwendolin” and “Science Gwendolyn” to “Science Gwendolin” (Qwertyxp2000#3394)"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        12,
+                        5
+                    ],
+                    "date": "2023-08-22T05:00:00.000Z",
+                    "content": [
+                        "Added bug where xx4 Druid applies the xx3 Druid buff to nearby monkeys (akcuber)"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        12,
+                        6
+                    ],
+                    "date": "2023-08-22T05:00:00.000Z",
+                    "content": [
+                        "Added bug where Pat Fusty Level 10 and Fusty the Snowman Level 10 are useless (updateflash)"
+                    ]
+                }
+            },
+            "13": {
+                "0": {
+                    "version": [
+                        0,
+                        13,
+                        0
+                    ],
+                    "date": "2023-08-23T05:00:00.000Z",
+                    "content": [
+                        "Added tower costs feature to view total tower costs and sellback costs",
+                        "Improved data on the xx4 Druid bug (ryan_mehalic)",
+                        "Fixed Dartling Gunner formatting issues"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        13,
+                        1
+                    ],
+                    "date": "2023-08-23T05:00:00.000Z",
+                    "content": [
+                        "Reduced banner sizes on large devices"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        13,
+                        2
+                    ],
+                    "date": "2023-08-23T05:00:00.000Z",
+                    "content": [
+                        "Fixed sell prices in the tower cost tool ending with a very long decimal (nitjus.)"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        13,
+                        3
+                    ],
+                    "date": "2023-08-24T05:00:00.000Z",
+                    "content": [
+                        "Improved decimal interactions in the tower cost tool",
+                        "Fixed error which displayed incorrect sell prices with crosspathing in the tower cost tool",
+                        "The tower cost tool now accounts for xx2 Banana Farm sellback"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        13,
+                        4
+                    ],
+                    "date": "2023-08-25T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 2.1.1 Changes"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        13,
+                        5
+                    ],
+                    "date": "2023-08-25T05:00:00.000Z",
+                    "content": [
+                        "Added dark mode so that jazzy doesn't get blinded"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        13,
+                        6
+                    ],
+                    "date": "2023-08-25T05:00:00.000Z",
+                    "content": [
+                        "Fixed banners not appearing when the viewport is exactly 600 pixels wide"
+                    ]
+                },
+                "7": {
+                    "version": [
+                        0,
+                        13,
+                        7
+                    ],
+                    "date": "2023-08-25T05:00:00.000Z",
+                    "content": [
+                        "Fixed the category selector appearing blue on some devices"
+                    ]
+                },
+                "8": {
+                    "version": [
+                        0,
+                        13,
+                        8
+                    ],
+                    "date": "2023-09-04T05:00:00.000Z",
+                    "content": [
+                        "Changed x4x Super Monkey base attack cooldown from a static attack cooldown to a percentage (80%s) and changed the calculated value to match (0.036s) (doot_revenant666)"
+                    ]
+                },
+                "9": {
+                    "version": [
+                        0,
+                        13,
+                        9
+                    ],
+                    "date": "2023-09-04T05:00:00.000Z",
+                    "content": [
+                        "Changed xx5 Monkey Wizard's calculated shimmer attack cooldown to 0.75s (doot_revenant666)",
+                        "Corrected Level 11 Smudge Catt Ezili's end of round lives to give lives every 2 rounds instead of every round (vuldo)"
+                    ]
+                },
+                "10": {
+                    "version": [
+                        0,
+                        13,
+                        10
+                    ],
+                    "date": "2023-09-05T05:00:00.000Z",
+                    "content": [
+                        "Added a hamburger menu for mobile"
+                    ]
+                },
+                "11": {
+                    "version": [
+                        0,
+                        13,
+                        11
+                    ],
+                    "date": "2023-09-06T05:00:00.000Z",
+                    "content": [
+                        "FIxed hamburger menu not working on some pages"
+                    ]
+                },
+                "12": {
+                    "version": [
+                        0,
+                        13,
+                        12
+                    ],
+                    "date": "2023-09-11T05:00:00.000Z",
+                    "content": [
+                        "Changed the Level 4 Upgrade to Tier 5 accolade from 200 times to 500 times (.ctrlb)"
+                    ]
+                },
+                "13": {
+                    "version": [
+                        0,
+                        13,
+                        13
+                    ],
+                    "date": "2023-09-13T05:00:00.000Z",
+                    "content": [
+                        "Removed the description in the tower cost tool saying the feature was new"
+                    ]
+                },
+                "14": {
+                    "version": [
+                        0,
+                        13,
+                        14
+                    ],
+                    "date": "2023-09-14T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 2.1.2 Changes"
+                    ]
+                },
+                "15": {
+                    "version": [
+                        0,
+                        13,
+                        15
+                    ],
+                    "date": "2023-09-18T05:00:00.000Z",
+                    "content": [
+                        "Changed x3x Dartling Gunner rocket from pierce to impact (ertos_accounter)"
+                    ]
+                },
+                "16": {
+                    "version": [
+                        0,
+                        13,
+                        16
+                    ],
+                    "date": "2023-09-20T05:00:00.000Z",
+                    "content": [
+                        "Changed x3x Dartling Gunner rocket to have 3i and for explosions to take 1i (ertos_accounter)"
+                    ]
+                },
+                "17": {
+                    "version": [
+                        0,
+                        13,
+                        17
+                    ],
+                    "date": "2023-09-21T05:00:00.000Z",
+                    "content": [
+                        "Changed 030 Tack Shooter pierce from 6p to +2p (4p) (destructivforce)"
+                    ]
+                },
+                "18": {
+                    "version": [
+                        0,
+                        13,
+                        18
+                    ],
+                    "date": "2023-09-25T05:00:00.000Z",
+                    "content": [
+                        "Added Discord button to the header",
+                        "Made links more readable (qwertyxp2000)"
+                    ]
+                },
+                "19": {
+                    "version": [
+                        0,
+                        13,
+                        19
+                    ],
+                    "date": "2023-10-01T05:00:00.000Z",
+                    "content": [
+                        "Level 10 Sentai Churchill attacks 50 times instead of 64 (baconisbets)",
+                        "Level 12 Ezili heartstopper gives normal damage to towers"
+                    ]
+                }
+            },
+            "14": {
+                "0": {
+                    "version": [
+                        0,
+                        14,
+                        0
+                    ],
+                    "date": "2023-10-11T05:00:00.000Z",
+                    "content": [
+                        "Added update 2.2 data"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        14,
+                        1
+                    ],
+                    "date": "2023-10-11T05:00:00.000Z",
+                    "content": [
+                        "Added regrow buff data for Star Captain Jericho (vuldora, destructivforce)",
+                        "Added camo buff data for Star Captain Jericho (vuldora, theoneandonlyghast)",
+                        "Corrected Star Captain Jericho's so that he can pop lead Bloons (destructivforce, vuldora)",
+                        "Added 5xx Monkey Buccaneer platform sizes (theoneandonlyghast, vuldora)"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        14,
+                        2
+                    ],
+                    "date": "2023-10-11T05:00:00.000Z",
+                    "content": [
+                        "Added a note that Star Captain Jericho's level 3 affected bloons still work even after the ability expires"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        14,
+                        3
+                    ],
+                    "date": "2023-10-11T05:00:00.000Z",
+                    "content": [
+                        "Added data for Star Captain Jericho level 6 for stronger bloons (v0lcano, qwertyxp2000, destructivforce)",
+                        "Added an initial cooldown of 0 for Star Captain Jericho's level 10 (qwertyxp2000)"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        14,
+                        4
+                    ],
+                    "date": "2023-10-11T05:00:00.000Z",
+                    "content": [
+                        "Corrected incorrect values on Star Captain Jericho level 6 (qwertyxp2000)",
+                        "Added an initial cooldown of 0 for Star Captain Jericho's level 10 (qwertyxp2000)",
+                        "Changed the fortified modifier buff for Star Captain Jericho level 9 to 12.5% (v0lcano, emilplane)"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        14,
+                        5
+                    ],
+                    "date": "2023-10-14T05:00:00.000Z",
+                    "content": [
+                        "Changed 105 Mortar Monkey wall-of-fire pierce from 25p to 45p (doot_revenant666)",
+                        "Added Level 7 damage buff values for Star Captian Jericho (qwertyxp2000)",
+                        "Changed 104 Alchemist gold-splash pierce from 23 to 20 (vtri)",
+                        "Moved the 2.2.1 Monkey Buccaneer buffs from 030 to 031 (jake6542)"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        14,
+                        6
+                    ],
+                    "date": "2023-10-14T05:00:00.000Z",
+                    "content": [
+                        "Fixed an issue where the price calculator generated incorrect prices for 20x upgrades (vuldo)",
+                        "Improved visibility of the hamburger menu"
+                    ]
+                }
+            },
+            "15": {
+                "0": {
+                    "version": [
+                        0,
+                        15,
+                        0
+                    ],
+                    "date": "2023-10-18T05:00:00.000Z",
+                    "content": [
+                        "Added bloon stats"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        15,
+                        1
+                    ],
+                    "date": "2023-10-19T05:00:00.000Z",
+                    "content": [
+                        "Corrected several values for bloon stats"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        15,
+                        2
+                    ],
+                    "date": "2023-10-19T05:00:00.000Z",
+                    "content": [
+                        "Added an loading indicator when news has not yet loaded on the home page"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        15,
+                        3
+                    ],
+                    "date": "2023-10-21T05:00:00.000Z",
+                    "content": [
+                        "Added Star Captain Jericho Level 10 smuggle-run ability duration (theoneandonlyghast)",
+                        "x5x Druid brambles have normal type"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        15,
+                        4
+                    ],
+                    "date": "2023-11-02T05:00:00.000Z",
+                    "content": [
+                        "Added Star Captain Jericho Level 8 in-it-for-the-money ability duration (vuldo, theoneandonlyghast)",
+                        "Changed Star Captain Jericho Level 18 duration buff from smuggle-run to money-trap (theoneandonlyghast, vuldo)",
+                        "Added Star Captain Jericho Level 20 smuggle-run ability duration (vuldo, theoneandonlyghast)"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        15,
+                        5
+                    ],
+                    "date": "2023-11-03T05:00:00.000Z",
+                    "content": [
+                        "Changed Star Captain Jericho Level 20's capacity from $20,000 to $25,000 (theoneandonlyghast)",
+                        "Accounted for hand switching when describing Boomerang Monkey's projectile path (qwertyxp2000)",
+                        "3xx Boomerang Monkey's glaive travels in a straight line (qwertyxp2000)",
+                        "Removed Pat Fusty level 10 buff saying it does not do anything (qwertyxp2000)"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        15,
+                        6
+                    ],
+                    "date": "2023-11-11T06:00:00.000Z",
+                    "content": [
+                        "Removed some outdated arrows (qwertyxp2000)",
+                        "Changed x1x Sniper Monkey's +1 bonus damage from \"cmd\" to \"cad\" (qwertyxp2000)",
+                        "Added increased projectile size to x3x Tack Shooter (qwertyxp2000)",
+                        "Fixed too many things being on the same line of text for x4x and x5x Ice Monkey (qwertyxp2000)",
+                        "Changed x4x Dartling Gunner's rocket storm explosion pierce from 6 to 8 (qwertyxp2000)"
+                    ]
+                },
+                "7": {
+                    "version": [
+                        0,
+                        15,
+                        7
+                    ],
+                    "date": "2023-11-11T06:00:00.000Z",
+                    "content": [
+                        "Fixed some outdated new change formatting"
+                    ]
+                }
+            },
+            "16": {
+                "0": {
+                    "version": [
+                        0,
+                        16,
+                        0
+                    ],
+                    "date": "2023-11-20T06:00:00.000Z",
+                    "content": [
+                        "Added a Popology Clan Page!",
+                        "Fixed xx5 Monkey Village income (destructivforce)",
+                        "Fixed a season number bug on the homepage."
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        16,
+                        1
+                    ],
+                    "date": "2023-11-20T06:00:00.000Z",
+                    "content": [
+                        "Fixed a visual issue with the dark mode loading icon"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        16,
+                        2
+                    ],
+                    "date": "2023-11-21T06:00:00.000Z",
+                    "content": [
+                        "Added player banners to profile popups"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        16,
+                        3
+                    ],
+                    "date": "2023-11-22T06:00:00.000Z",
+                    "content": [
+                        "Added player medals, trophy count, and club status to player profiles"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        16,
+                        4
+                    ],
+                    "date": "2023-12-01T06:00:00.000Z",
+                    "content": [
+                        "Corrected xx3 and xx4 Super Monkey MOAB bonus damage (carrotor for testing)",
+                        "Fixed Level 8 Quincy MOAB Damage typo"
+                    ]
+                }
+            },
+            "17": {
+                "0": {
+                    "version": [
+                        0,
+                        17,
+                        0
+                    ],
+                    "date": "2023-12-06T06:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 3.1 Balance Changes",
+                        "Changed 5xx Dart Monkey lead damage bonus formatting to be more consistent",
+                        "Moved note for 5xx Tack Shooter meteor explosion to be inline"
+                    ]
+                }
+            },
+            "18": {
+                "0": {
+                    "version": [
+                        0,
+                        18,
+                        0
+                    ],
+                    "date": "2023-12-26T06:00:00.000Z",
+                    "content": [
+                        "Initial clan page API support",
+                        "Fixed formatting for total fortified damage for 3xx Spike Factory (jake6542)",
+                        "xx5 Monkey Ace's second copy of the barrage attack targets strong instead of close (qwertyxp2000, mawobtd)",
+                        "Changed 205 Mortar Monkey's bonus burn damage from overall damage to moab damage and added the +3 overall damage to the crosspath (qwertyxp2000)",
+                        "Updated and fixed 4xx and 5xx Super Monkey price values for calculating prices",
+                        "Added a price entry for xx2 Spike Factory so that the price calculation tool works properly with all Spike Factory combinations that include xx2",
+                        "Improved language for degrow, delead, and defortify effects for xx4 and xx5 Mortar Monkey (ecolisz)",
+                        "Fixed total damage per spike values for x5x Spike Factory storm-spikes (ecolisz)",
+                        "4xx Super Monkey can see past obstacles (jxmyy21)",
+                        "Added version number to the version history page"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        18,
+                        1
+                    ],
+                    "date": "2023-12-26T06:00:00.000Z",
+                    "content": [
+                        "Copied \"Wins with a tower\" data into to \"Win games with a tower\" then removed it, added level 4 (vuldora)",
+                        "Added levels for \"Win with a tower category\" (vuldora)",
+                        "Added level 2 for \"Complete Events\" (vuldora)",
+                        "Added level 4 for \"Win Event Games\", \"Win Casual Games\", and \"Collect Money From Farms\" (vuldora)"
+                    ]
+                }
+            },
+            "19": {
+                "0": {
+                    "version": [
+                        0,
+                        19,
+                        0
+                    ],
+                    "date": "2024-01-06T06:00:00.000Z",
+                    "content": [
+                        "Updated the homepage",
+                        "Fixed the hamburger not working on the Clan page",
+                        "Fixed 5xx Dartling Gunner having incorrect base damage, shocked4 damage bonus, and shocked4 damage total values",
+                        "Fixed the pierce bonus for Ocean Obyn's level 20 unleash-the-krakens (Spork)"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        19,
+                        1
+                    ],
+                    "date": "2024-01-08T06:00:00.000Z",
+                    "content": [
+                        "Added a custom scrollbar style"
+                    ]
+                }
+            },
+            "20": {
+                "0": {
+                    "version": [
+                        0,
+                        20,
+                        0
+                    ],
+                    "date": "2024-01-08T06:00:00.000Z",
+                    "content": [
+                        "Updated the Popology page with new styling and improved navigation for towers",
+                        "Made the tower cost tool more user-friendly"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        20,
+                        1
+                    ],
+                    "date": "2024-01-09T06:00:00.000Z",
+                    "content": [
+                        "Corrected bottom path Super Monkey prices for the tower cost tool (theoneandonlyghast)"
+                    ]
+                }
+            },
+            "21": {
+                "0": {
+                    "version": [
+                        0,
+                        21,
+                        0
+                    ],
+                    "date": "2024-01-09T06:00:00.000Z",
+                    "content": [
+                        "Added dedicated discount and sellback buff buttons and icons to the tower cost tool"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        21,
+                        1
+                    ],
+                    "date": "2024-01-14T06:00:00.000Z",
+                    "content": [
+                        "Changed the Win games with a tower Level 2 accolade from 250 games to 100 games (atacothatgames)",
+                        "Added 100 lifetime pierce to x2x Monkey Wizard's wall-of-fire (jajajosh)",
+                        "Fixed hamburger menu on the Popology page not working on mobile (nitjus)"
+                    ]
+                }
+            },
+            "22": {
+                "0": {
+                    "version": [
+                        0,
+                        22,
+                        0
+                    ],
+                    "date": "2024-01-26T06:00:00.000Z",
+                    "content": [
+                        "Added a feature to the Popology page to compare two stat pages next to each other"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        22,
+                        1
+                    ],
+                    "date": "2024-01-27T06:00:00.000Z",
+                    "content": [
+                        "Fixing an issue causing the content inside of the tower cost calculator being able to exceed the size of its container and blow out the page in compare mode"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        22,
+                        2
+                    ],
+                    "date": "2024-01-31T06:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 3.2 changes"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        22,
+                        3
+                    ],
+                    "date": "2024-01-31T06:00:00.000Z",
+                    "content": [
+                        "Fixed typo for how long x4x Engineer Monkey's overclock ability lasts on a tower",
+                        "Changed spacing between items in the tower cost tool when in compare mode"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        22,
+                        4
+                    ],
+                    "date": "2024-02-04T06:00:00.000Z",
+                    "content": [
+                        "Changed the x3x Ninja Monkey's pierce buff from multiplicative to additive (jake6542)",
+                        "Biker Bones Level 1 explosion has a 50% chance to have normal type (7770005)",
+                        "Quincy Level 3 rapid-shot is battle ready (JazzyJonah)",
+                        "DJ Benjammin' Level 19 party-time lasts 9 seconds instead of 15 (mawobtd)"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        22,
+                        5
+                    ],
+                    "date": "2024-02-05T06:00:00.000Z",
+                    "content": [
+                        "Changed Monkey Sub base cost from $350 to $325 in the tower cost tool"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        22,
+                        6
+                    ],
+                    "date": "2024-02-05T06:00:00.000Z",
+                    "content": [
+                        "Updated 1xx, 2xx, and x3x Super Monkey tower costs in the tower cost tool"
+                    ]
+                },
+                "7": {
+                    "version": [
+                        0,
+                        22,
+                        7
+                    ],
+                    "date": "2024-02-06T06:00:00.000Z",
+                    "content": [
+                        "Removed the +0d damage per 200 graveyard Wall of Fire bonus from 024 Wizard Monkey (JazzyJonah)"
+                    ]
+                },
+                "8": {
+                    "version": [
+                        0,
+                        22,
+                        8
+                    ],
+                    "date": "2024-02-08T06:00:00.000Z",
+                    "content": [
+                        "Corrected typo on the amount of additional pierce the x1x crosspath applies to 410 Tack Shooter (jake6542)"
+                    ]
+                },
+                "9": {
+                    "version": [
+                        0,
+                        22,
+                        9
+                    ],
+                    "date": "2024-02-18T06:00:00.000Z",
+                    "content": [
+                        "Corrected typo on Level 7 Adora's blood-sacrifice sacrifice buff's attack cooldown multiplier (nitjus)",
+                        "Fixed incorrect road item damage total on xx4 Spike Factory"
+                    ]
+                },
+                "10": {
+                    "version": [
+                        0,
+                        22,
+                        10
+                    ],
+                    "date": "2024-02-23T06:00:00.000Z",
+                    "content": [
+                        "Fixed an issue where the tower cost tool would display when switching to a category where the tool is not available (adamthepig)",
+                        "Fixed styling on the Accolade and Bloon buttons on the Popology page in dark mode"
+                    ]
+                },
+                "11": {
+                    "version": [
+                        0,
+                        22,
+                        11
+                    ],
+                    "date": "2024-03-01T06:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 3.2.4 changes"
+                    ]
+                }
+            },
+            "23": {
+                "0": {
+                    "version": [
+                        0,
+                        23,
+                        0
+                    ],
+                    "date": "2024-03-02T06:00:00.000Z",
+                    "content": [
+                        "Added basic sacrifice info for 4xx Super Monkey",
+                        "Slightly increased the space between lines to improve readability"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        23,
+                        1
+                    ],
+                    "date": "2024-03-03T06:00:00.000Z",
+                    "content": [
+                        "Changed base Engineer Monkey display price to $400 (ertos_accounter)"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        23,
+                        2
+                    ],
+                    "date": "2024-03-13T05:00:00.000Z",
+                    "content": [
+                        "Changed 4xx Super Monkey support tower temple buff from +1md to +1d (ertos_accounter)",
+                        "Identified 4xx Super Monkey support tower temple buff giving +1d as a bug",
+                        "Fixed typo for the name of the 4xx Sniper Monkey (jake6542, vuldo)",
+                        "Removed x3x Ice Monkey not being able to slow down White Bloons (krunkerprime)",
+                        "Removed x3x Ice Monkey not being able to slow down Lead Bloons",
+                        "Fixed damage math for 5xx Super Monkey (hooboo100)",
+                        "x5x Ninja Monkey grand-sabotage damage does not contribute to pop count (hooboo100)",
+                        "Added bug where Obyn Greenfoot's ward-totem may sell itself immediately after placing on some maps (atacothatgames)",
+                        "Added bug where x5x Wizard Monkey spawns too many phoenix subtowers when detransforming with an attack cooldown buff active (foxyops)"
+                    ]
+                }
+            },
+            "24": {
+                "0": {
+                    "version": [
+                        0,
+                        24,
+                        0
+                    ],
+                    "date": "2024-03-15T05:00:00.000Z",
+                    "content": [
+                        "Added a tournaments page to display information about Popology Weekly and potentially other Battles 2 tournaments"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        24,
+                        1
+                    ],
+                    "date": "2024-03-18T05:00:00.000Z",
+                    "content": [
+                        "Added 4xx and 5xx Super Monkey discounts to the tower cost tool",
+                        "Added logic to always change to a valid tower path in the tower cost tool"
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        24,
+                        2
+                    ],
+                    "date": "2024-03-24T05:00:00.000Z",
+                    "content": [
+                        "Changed language for the amount of money made by xx5 Engineer Monkey (destructivforce)"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        24,
+                        3
+                    ],
+                    "date": "2024-03-24T05:00:00.000Z",
+                    "content": [
+                        "Fixed an issue where text color on the buttons to select categories did not properly change to retain proper contrast",
+                        "Made more buttons on the popology page selectable with tab",
+                        "Fixed issue with displaying some content on narrow viewports on the homepage"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        24,
+                        4
+                    ],
+                    "date": "2024-03-27T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 3.3 balance changes"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        24,
+                        5
+                    ],
+                    "date": "2024-03-28T05:00:00.000Z",
+                    "content": [
+                        "Corrected amount of bloons for grouped Rainbow Bloons (updateflash)",
+                        "Corrected amount of eco granted for grouped Purple Bloons (krunkerprime)",
+                        "Corrected amount of eco granted for grouped Pink Bloons (krunkerprime)",
+                        "Corrected cost of grouped Pink Bloons (krunkerprime)",
+                        "Fixed crosspath typos for 3xx and 4xx Ninja Monkey (pir)"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        24,
+                        6
+                    ],
+                    "date": "2024-03-28T05:00:00.000Z",
+                    "content": [
+                        "Added initial Fateweaver Adora stats",
+                        "Fixed Tournament page formatting for mobile devices",
+                        "Fixed Level 19 Adora giving bonus fortified damage instead of damage"
+                    ]
+                },
+                "7": {
+                    "version": [
+                        0,
+                        24,
+                        7
+                    ],
+                    "date": "2024-03-28T05:00:00.000Z",
+                    "content": [
+                        "Fixed crosspath typo for x3x Spike Factory (mawobtd)",
+                        "Addded stun duration nerf from Battles 2 3.2.4 for xx3 Ninja Monkey (minimumornot)",
+                        "Added normal type and camo for Adora's Level 3 long-arm-of-light ability (updateflash)",
+                        "Made some UI elements on the home screen smaller on mobile."
+                    ]
+                },
+                "8": {
+                    "version": [
+                        0,
+                        24,
+                        8
+                    ],
+                    "date": "2024-04-10T05:00:00.000Z",
+                    "content": [
+                        "x4x Ice Monkey activated ability applies a 50%s buff to all Ice Monkeys and Fusty the Snowman, not just x5x (mawobtd)",
+                        "Added ability duration and cooldown stats for Level 10 Fateweaver Adora",
+                        "Added missing knockback stats for 041 and 051 Super Monkey (minimumornot)",
+                        "Fixed button formatting on Firefox",
+                        "Known issue: media queries on some versions of Safari are formatted incorrectly resulting in a bugged interface and no dark mode"
+                    ]
+                }
+            },
+            "25": {
+                "0": {
+                    "version": [
+                        0,
+                        25,
+                        0
+                    ],
+                    "date": "2024-04-12T05:00:00.000Z",
+                    "content": [
+                        "Added a dedicated terminology page"
+                    ]
+                },
+                "1": {
+                    "version": [
+                        0,
+                        25,
+                        1
+                    ],
+                    "date": "2024-04-12T05:00:00.000Z",
+                    "content": [
+                        "Corrected xx4 Alchemist's golden status to give $2 per layer (ertos-accounter)",
+                        "Fixed pierce values for the xx4 and 104 Alchemist's gold-splash attack",
+                        "Fixed price values in the tower cost tool for x4x Mortar Monkey (destructivforce), 4xx Bomb Shooter, xx4 Glue Gunner, xx4 Sniper Monkey, xx4 Monkey Buccaneer, 4xx Apache Prime, x2x Super Monkey, and x4x Banana Farm. All tower upgrades have been re-checked in game to make sure that they are accurate."
+                    ]
+                },
+                "2": {
+                    "version": [
+                        0,
+                        25,
+                        2
+                    ],
+                    "date": "2024-04-12T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 3.3.2 balance changes",
+                        "Fixed formatting issue for Sentain Churchill Level 20 stats",
+                        "Added basic Fateweaver Adora Level 3, 7, and 10 stats (destructivforce, jake6542, jessiepatch)",
+                        "Fixed inaccurate total stun duration for Pat Fusty Level 13 (jessiepatch)",
+                        "Fixed formatting issue for Pat Fusty levels 17-20 (jessiepatch)",
+                        "Removed 230 crosspathing benefits that allow the x3x Ice Monkey to affect lead bloons because it does so natively (krunkerprime)"
+                    ]
+                },
+                "3": {
+                    "version": [
+                        0,
+                        25,
+                        3
+                    ],
+                    "date": "2024-04-25T05:00:00.000Z",
+                    "content": [
+                        "Added tower price values from Battles 2 3.3.2"
+                    ]
+                },
+                "4": {
+                    "version": [
+                        0,
+                        25,
+                        4
+                    ],
+                    "date": "2024-05-05T05:00:00.000Z",
+                    "content": [
+                        "Added battle ready stat to Smudge Catt Ezili's Level 3 ability",
+                        "Corrected Ezili's Level 7 ability uptime (krunkerprime)",
+                        "Corrected Smudge Catt Ezili's Level 7 ability uptime (krunkerprime, urhere) and cooldown (urhere)",
+                        "Moved 5xx Dartling Gunner's bonus damage applying to 3 targets to 502 (destructivforce)",
+                        "Fixed typo for the total duration of a Tight ZOMG send (krunkerprime)"
+                    ]
+                },
+                "5": {
+                    "version": [
+                        0,
+                        25,
+                        5
+                    ],
+                    "date": "2024-05-05T05:00:00.000Z",
+                    "content": [
+                        "Added a section to the terminology page detailing in which order upgrades and buffs are calculated",
+                        "Reduced the maximum width of the terminology page to improve readability"
+                    ]
+                },
+                "6": {
+                    "version": [
+                        0,
+                        25,
+                        6
+                    ],
+                    "date": "2024-05-14T05:00:00.000Z",
+                    "content": [
+                        "Added the play a game every day for 365 days in a row accolade (vuldo https://github.com/emilplane/b2popology/pull/13)",
+                        "Resolved an issue where the play a game every day for 365 days in a row accolade was not displayed"
+                    ]
+                },
+                "7": {
+                    "version": [
+                        0,
+                        25,
+                        7
+                    ],
+                    "date": "2024-05-17T05:00:00.000Z",
+                    "content": [
+                        "Added Fateweaver Adora's Level 10 Chains of Fate having infinite pierce"
+                    ]
+                },
+                "8": {
+                    "version": [
+                        0,
+                        25,
+                        8
+                    ],
+                    "date": "2024-05-22T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 4.0 balance changes",
+                        "Added hero portrait icons to the heroes page"
+                    ]
+                },
+                "9": {
+                    "version": [
+                        0,
+                        25,
+                        9
+                    ],
+                    "date": "2024-05-23T05:00:00.000Z",
+                    "content": [
+                        "Added initial Etienne stats",
+                        "Added initial Etienne bloon immunity probabilities (jake6542)"
+                    ]
+                },
+                "10": {
+                    "version": [
+                        0,
+                        25,
+                        10
+                    ],
+                    "date": "2024-06-02T05:00:00.000Z",
+                    "content": [
+                        "Updated total moab damage stats for xx4 and xx5 Super Monkey (krunkerprime)"
+                    ]
+                },
+                "11": {
+                    "version": [
+                        0,
+                        25,
+                        11
+                    ],
+                    "date": "2024-06-19T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 4.0.2 stats",
+                        "Corrected 1xx and 2xx Boomerang Monkey pierce values",
+                        "Added Ocean Obyn's Level 12 discount to the tower cost tool"
+                    ]
+                },
+                "12": {
+                    "version": [
+                        0,
+                        25,
+                        12
+                    ],
+                    "date": "2024-06-27T05:00:00.000Z",
+                    "content": [
+                        "Added Battles 2 4.0.3 stats",
+                        "Reverted 2xx Boomerang Monkey pierce values",
+                        "Added hero leveling rate for Etienne (jajajosh)",
+                        "Fixed 104 Bomb Shooter pierce values (qwertyxp2000)"
+                    ]
+                },
+                "13": {
+                    "version": [
+                        0,
+                        25,
+                        13
+                    ],
+                    "date": "2024-06-29T05:00:00.000Z",
+                    "content": [
+                        "Updated the backend data format to suck a bit less (uses nested arrays instead of html in template literals). This makes contributing easier and fixes various formatting issues (and prevents more from occurring)",
+                        "Changed xx5 Ninja Monkey's sticky-bomb cooldown to 1.8s from 4.0.3"
+                    ]
+                },
+                "14": {
+                    "version": [
+                        0,
+                        25,
+                        14
+                    ],
+                    "date": "2024-06-30T05:00:00.000Z",
+                    "content": [
+                        "Added missing Etienne stats (JazzyJonah, lemonlime339)"
+                    ]
+                }
+            }
+        }
+    }
+}
