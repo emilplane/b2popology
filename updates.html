@@ -665,31 +665,43 @@
                     <p>Added Heli Pilot, Mortar Monkey, and Dartling Gunner data</p>
                 </section>
         </main>
+        <main>
+            
+        </main>
+
+
         <script>
             const history = {}
             const items = document.getElementById("main").children
             for (child of items) {
                 if (child.classList.contains("roundedBox")) {
-                    const entry = { "version": [], "date": undefined, "content": [] }
+                    const entry = { "date": undefined, "content": [] }
+                    let version;
                     const childContents = child.children
                     for (element of childContents) {
                         if (element.nodeName == "H4") {
                             const titleContent = parseString(element.innerText)
-                            entry.version = titleContent[0]
-                            entry.date = titleContent[1]
+                            version = titleContent[0]
+                            const date = new Date(titleContent[1])
+
+                            const year = date.getFullYear();
+                            const month = ('0' + (date.getMonth() + 1)).slice(-2);
+                            const day = ('0' + date.getDate()).slice(-2);
+
+                            entry.date = `${year}/${month}/${day}`
                         } else {
                             // console.log(element.innerText)
                             entry.content.push(element.innerText)
                         }
                     }
                     // console.log(entry)
-                    if (history[entry.version[1]] == undefined) {
-                        history[entry.version[1]] = {}
+                    if (history[version[1]] == undefined) {
+                        history[version[1]] = {}
                     }
-                    if (history[entry.version[1]][entry.version[2]] == undefined) {
-                        history[entry.version[1]][entry.version[2]] = {}
+                    if (history[version[1]][version[2]] == undefined) {
+                        history[version[1]][version[2]] = {}
                     }
-                    history[entry.version[1]][entry.version[2]] = entry
+                    history[version[1]][version[2]] = entry
                 }
             }
             console.log(history)
@@ -736,7 +748,6 @@
                 // Return version number and date as an array
                 return [parseVersion(version), dateObject];
             }
-
         </script>
     </body>
     <script src="scripts/fontFix.js"></script>
