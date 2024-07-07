@@ -1,9 +1,9 @@
-const versionHistoryURL = "https://raw.githubusercontent.com/emilplane/b2popology/main/json/version.json"
+const versionHistoryURL = "https://raw.githubusercontent.com/emilplane/b2popology/main/json/versionHistory.json"
 const mainContainer = document.getElementById("versionHistoryContainer")
 
-getNews()
-function getNews() {
-    fetch(newsURL)
+getVersionHistory()
+function getVersionHistory() {
+    fetch(versionHistoryURL)
         .then((response) => response.json())
         .then((json) => main(json))
 }
