@@ -1,0 +1,14 @@
+{
+    "tournaments": [],
+    "news": [
+        {
+            "title": "Update 4.0.3 is out!",
+            "date": "2000/1/1",
+            "timeutc": "00:00:00",
+            "description": "Emergency balance changes to Druid and Village, and some bug fixes",
+            "buttons": [
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1dp6gyc/update_403_is_rolling_out_now_patch_notes/"]
+            ]
+        }
+    ]
+}

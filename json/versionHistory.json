@@ -1,4 +1,5 @@
 {
+    "documentation": "docs/versionHistory.txt",
     "currentVersion": [
         0,
         26,
@@ -904,7 +905,30 @@
                 "14": {
                     "date": "2024/06/30",
                     "content": [
-                        "Added missing Etienne stats (JazzyJonah,lemonlime339)"
+                        "Added missing Etienne stats (JazzyJonah, lemonlime339)"
+                    ]
+                },
+                "15": {
+                    "date": "2024/07/03",
+                    "content": [
+                        "Added a tab icon",
+                        "Added detailed TSG sacrifice info and fixed issues with Super Monkey (kiteskute)"
+                    ]
+                },
+                "16": {
+                    "date": "2024/07/03",
+                    "content": [
+                        "Added missing Staricho stats (jessiepatch)",
+                        "Added some missing stats for other Jerichos"
+                    ]
+                }
+            },
+            "26": {
+                "0": {
+                    "date": "2024/07/07",
+                    "content": [
+                        "New version history page",
+                        "Internally restructured the home page news section"
                     ]
                 }
             }
