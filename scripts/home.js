@@ -22,27 +22,28 @@ console.log(diffDays + " hours");
 document.getElementById("tourneyHours").innerText = diffDays
 document.getElementById("tourneyDate").innerText = startDate.toLocaleDateString() + " at " + startDate.toLocaleTimeString() + "!"
 
-if (diffTime < 0) {
-    document.getElementById("tournamentSection").classList.remove("tournamentSection")
-    document.getElementById("tournamentSection").classList.add("tournamentSectionLive")
-    document.getElementById("tourneyInfoContainer").classList.remove("tourneyInfoContainer")
-    document.getElementById("tourneyInfoContainer").classList.add("tourneyInfoContainerLive")
-    document.getElementById("tourneyInfoContainer").innerHTML = `
-        <div>
-            <h4>Watch Ryan Mehalic's New Season Tournament now!</h4>
-        </div>
-        
-        <a href="https://www.youtube.com/@RyanMehalic" target="blank" class="buttonAnchor">
-            <button class="linkToExternalButton liveTournamentButton">
-                <h6>Watch now</h6>
-                <div class="liveTag">
-            <p>LIVE</p>
-        </div>
-                <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
-            </button>
-        </a>
-    `
-}
+
+//if (diffTime < 0) {
+//    document.getElementById("tournamentSection").classList.remove("tournamentSection")
+//    document.getElementById("tournamentSection").classList.add("tournamentSectionLive")
+//    document.getElementById("tourneyInfoContainer").classList.remove("tourneyInfoContainer")
+//    document.getElementById("tourneyInfoContainer").classList.add("tourneyInfoContainerLive")
+//   document.getElementById("tourneyInfoContainer").innerHTML = `
+//        <div>
+//            <h4>Watch Ryan Mehalic's New Season Tournament now!</h4>
+//        </div>
+//        
+//        <a href="https://www.youtube.com/@RyanMehalic" target="blank" class="buttonAnchor">
+//            <button class="linkToExternalButton liveTournamentButton">
+//                <h6>Watch now</h6>
+//                <div class="liveTag">
+//            <p>LIVE</p>
+//        </div>
+//                <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
+//            </button>
+//        </a>
+//    `
+//}
 
 // document.getElementById("eventSection").innerHTML =  `<h4 class="sectionStyle">Loading...</h4>`
 
