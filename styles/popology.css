@@ -215,6 +215,26 @@
     display: none;
 }
 
+.compareButton {
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+}
+
+.advancedButton {
+    background-color: hsl(0, 100%, 80%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(0, 100%, 40%);
+    }
+}
+
+.advancedButton:hover {
+    background-color: hsl(0, 100%, 73%);
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(0, 100%, 50%);
+    }
+}
+
 .compareButtonDialog {
     background-color: var(--primaryLight3);
     @media (prefers-color-scheme: dark) {
@@ -376,20 +396,18 @@
     };
 }
 
-.compareButton {
+.cornerButtonContainer {
     position: fixed;
-    width: 180px; height: 40px;
-    background-color: var(--primaryDark1);
-    left: calc(100% - 200px);
-    top: calc(100% - 60px);
+    width: 100vw; height: 30px;
+    /* background-color: var(--primaryDark1); */
+    right: 16px;
+    top: calc(100% - 46px);
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: end;
     cursor: pointer;
-    @media screen and (max-width: 700px) {
-        display: none;
-    }
+    gap: 8px;
 }
 
 .costsContainer {
@@ -409,5 +427,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+}
+
+.experimentsText {
+    color: hsl(0, 100%, 20%);
+    @media (prefers-color-scheme: dark) {
+        color: hsl(0, 100%, 80%);
     }
 }

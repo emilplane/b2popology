@@ -12,7 +12,8 @@ const data = {
                             "placeable on: land",
                             "dart attack",
                             [
-                                "1d, 2p, 32r, 0.95s, sharp type"
+                                "1d, 2p, 32r, 0.95s, sharp type",
+                                ["advanced_mode", "2jr, 300jsp, 0.25js, 0.14ds"]
                             ]
                         ],
                         "top": {
@@ -39,7 +40,8 @@ const data = {
                                 "content": [
                                     "dart attack replaced by spikeball",
                                     [
-                                        "1d, 1cd (2cd), 22p, 36.8r, 1.15s, shatter type",
+                                        "1d, 1cd (2cd), +17p (22p), +15%r (36.8r), 1.15s, shatter type",
+                                        ["advanced_mode", "5jr, 150jsp, 1js, 0.15ds"],
                                         "can rebound off of walls",
                                         [
                                             "can rehit bloons after rebounding"
@@ -53,6 +55,7 @@ const data = {
                                     "spikeball attack replaced by juggernaut",
                                     [
                                         "2d, 4cd (6cd), 50p, 36.8r, 1.0s, normal type",
+                                        ["advanced_mode", "7jr"],
                                         "can rebound off of walls",
                                         [
                                             "can rehit bloons after rebounding"
@@ -66,6 +69,7 @@ const data = {
                                     "juggernaut attack replaced by ultrajugg",
                                     [
                                         "5d, 16cd (21cd), 5fd (11fd), 600% ld (30ld), 200p, 36.8r, 1.0s, normal type",
+                                        ["advanced_mode", "0.07ds"],
                                         "can rebound off of walls",
                                         [
                                             "can rehit bloons after rebounding"
@@ -77,7 +81,8 @@ const data = {
                                     ],
                                     "juggernauts attack",
                                     [
-                                        "1d, 2cd (3cd), 600% ld (6ld), 2fd (3fd), 6j 360&deg spread, 100p, normal type",
+                                        "1d, 2cd (3cd), 600% ld (6ld), 2fd (3fd), 6j 360&deg spread, 50%p (100p), normal type",
+                                        ["advanced_mode", "70%js? (0.7js?)"],
                                         "can rebound off of walls",
                                         [
                                             "can rehit bloons after rebounding"
@@ -101,7 +106,7 @@ const data = {
                                 "content": [
                                     "dart attack buffed",
                                     [
-                                        "78.82%s (0.6365s)"
+                                        "78%s (0.6299s)"
                                     ]
                                 ]
                             },
@@ -119,7 +124,7 @@ const data = {
                                 "content": [
                                     "dart attack buffed",
                                     [
-                                        "+2d (3d), 75%s (0.477375s)"
+                                        "+2d (3d), 75%s (0.4774s)"
                                     ],
                                     "gains fan-club ability (50s cooldown, 12s duration, battle ready)",
                                     [
@@ -184,7 +189,9 @@ const data = {
                                 "content": [
                                     "dart attack buffed",
                                     [
-                                        "+8r (48r), increased projectile speed"
+                                        "+8r (48r)",
+                                        ["simple_mode", "increased projectile speed"],
+                                        ["advanced_mode", "+30jsp (330jsp)"]
                                     ],
                                     "gains camo detection"
                                 ]
@@ -194,7 +201,8 @@ const data = {
                                 "content": [
                                     "dart replaced by bolt",
                                     [
-                                        "3d, 6p, 56r, 0.95s, sharp type"
+                                        "3d, +4p (6p), +8r (56r), 0.95s, sharp type",
+                                        ["advanced_mode", "+30jsp (360jsp)"]
                                     ]
                                 ]
                             },
@@ -203,7 +211,9 @@ const data = {
                                 "content": [
                                     "bolt attack buffed",
                                     [
-                                        "+3d (6d), 0.75s, increased projectile speed",
+                                        "+3d (6d), 0.75s",
+                                        ["simple_mode", "increased projectile speed"],
+                                        ["advanced_mode", "+40jsp (400jsp)"],
                                         "50d crit every 7 shots",
                                         "first attack will always crit"
                                     ]
@@ -214,13 +224,15 @@ const data = {
                                 "content": [
                                     "bolt attack buffed",
                                     [
-                                        "+3d (9d), +7p (13p), +20r (76r), 0.13s, normal type, increased projectile speed",
+                                        "+3d (9d), +6p (12p), +20r (76r), 0.13s, normal type",
+                                        ["simple_mode", "increased projectile speed"],
+                                        ["advanced_mode", "+50jsp (450jsp)"],
                                         "crit now occurs every 5 shots"
                                     ],
                                     "crosspath",
                                     [
-                                        "105: +6p (19p)",
-                                        "205: +8p (27p)"
+                                        "105: +6p (18p)",
+                                        "205: +8p (26p)",
                                     ]
                                 ]
                             }

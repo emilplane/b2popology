@@ -26,26 +26,37 @@ const buffData = {
     "obynLevel12": ["discount", 0.1, 5, 5, "magic"],
 }
 
-let compareOn = false
+let compare = false
+let advancedMode = false
 
 let urlParams = new URLSearchParams(window.location.search);
 let urlSection; let urlPage;
 
 
 runPopology()
-if (compareOn) {
+if (compare) {
     runPopology(true)
 }
 
 const compareButton = document.getElementById('compareButton');
+const advancedButton = document.getElementById('advancedButton');
 
 compareButton.addEventListener('click', function() {
-    compareOn = !compareOn;
+    compare = !compare;
+    run()
+});
+
+advancedButton.addEventListener('click', function() {
+    advancedMode = !advancedMode;
+    run()
+});
+
+function run() {
     runPopology()
-    if (compareOn) {
+    if (compare) {
         runPopology(true)
     }
-});
+}
 
 function runPopology(compare) {
     let compareID
@@ -350,12 +361,32 @@ function runPopology(compare) {
         function handleArray(array) {
             html += "<ul>"
             array.forEach(element => {
+                let elementContent = element
+                if (element[0] == "advanced_mode") {
+                    elementContent = element[1]
+                    if (advancedMode) {
+                        segment(elementContent, true)
+                    }
+                } else if (element[0] == "simple_mode") {
+                    elementContent = element[1]
+                    if (!advancedMode) {
+                        segment(elementContent)
+                    }
+                } else {
+                    segment(elementContent)
+                }
+            })
+            function segment(element, isAdvanced) {
                 if (Array.isArray(element)) {
                     handleArray(element)
                 } else {
-                    html += `<li>${element}</li>`
+                    if (isAdvanced) {
+                        html += `<li class="experimentsText">${element}</li>`
+                    } else {
+                        html += `<li>${element}</li>`
+                    }
                 }
-            })
+            }
             html += "</ul>"
         }
         return html
@@ -436,12 +467,8 @@ function runPopology(compare) {
             </li>
         </ul>
     `;
-
-    
     
     const nestedArray = htmlStringToArray(htmlString);
-    console.log(nestedArray);
-
 
     function updateCost() { 
         let forceBuffs = []

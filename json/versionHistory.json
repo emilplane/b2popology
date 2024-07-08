@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        0
+        1
     ],
     "versionHistory": {
         "0": {
@@ -929,6 +929,32 @@
                     "content": [
                         "New version history page",
                         "Internally restructured the home page news section"
+                    ]
+                },
+                "1": {
+                    "date": "2024/07/07",
+                    "content": [
+                        "New experiments mode - adds data like projectile speed, homing projectile turn rate, etc. for supported towers",
+                        "Added 2r projectile radius to 000 Dart Monkey",
+                        "Added 300 projectile speed to 000 Dart Monkey",
+                        "Added 0.25s projectile lifespan to 000 Dart Monkey",
+                        "Added 0.14s emission delay to 000 dart monkey",
+                        "Converted 3xx Dart Monkey pierce buff from absolute 22p to +17p",
+                        "Converted 3xx Dart Monkey range buff from absolute 36.8r to +15%r",
+                        "Added 5r projectile radius to 3xx Dart Monkey",
+                        "Added 150 projectile speed to 3xx Dart Monkey",
+                        "Added 1s projectile lifespan to 3xx Dart Monkey",
+                        "Added 0.15s emission delay to 3xx dart monkey",
+                        "Added 7r projectile radius to 4xx Dart Monkey",
+                        "Added 0.07s emission delay to 5xx Dart Monkey",
+                        "Converted 5xx Dart Monkey's juggernaut's attack from absolute 100p to 50%p of its parent projectile",
+                        "Changed x2x Dart Monkey attack cooldown from 78.82%s to 78%s",
+                        "Added +30 projectile speed to xx2 Dart Monkey",
+                        "Converted xx3 Dart Monkey range buff from absolute 56r to +8r",
+                        "Converted xx3 Dart Monkey pierce buff from absolute 6p to +4p",
+                        "Added +30 projectile speed to xx3 Dart Monkey",
+                        "Added +40 projectile speed to xx4 Dart Monkey",
+                        "Changed xx5 Dart Monkey pierce from +7p to +6p"
                     ]
                 }
             }
