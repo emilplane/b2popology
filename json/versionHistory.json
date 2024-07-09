@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        1
+        2
     ],
     "versionHistory": {
         "0": {
@@ -955,6 +955,17 @@
                         "Added +30 projectile speed to xx3 Dart Monkey",
                         "Added +40 projectile speed to xx4 Dart Monkey",
                         "Changed xx5 Dart Monkey pierce from +7p to +6p"
+                    ]
+                },
+                "2": {
+                    "date": "2024/07/09",
+                    "content": [
+                        "Redesigned the popology page for viewports wider than 1000px to improve readability",
+                        "Fixed bug where the bottom right button cluster on the popology page would overlap and prevent some links from being clicked",
+                        "Turned the buttons on the bottom right of the popology page into icons",
+                        "Added a version history button to the popology page",
+                        "Changed the amount of bloons the reanimate attack on the xx4 Monkey Wizard spawns from 1-4 to 1-5 (krunkerprime)",
+                        "Changed the pierce of bloons from the reanimate attack on the xx4 Monkey Wizard spawns 2-11 to 2-10"
                     ]
                 }
             }

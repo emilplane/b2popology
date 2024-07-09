@@ -51,117 +51,135 @@
                 <div class="mainContent">
                     <div class="statsContainer">
                         <div id="mainStats">
-                            <div class="contentSubconatiner">
-                                <div class="categoryButtonContainer">
-                                    <button class="categoryButton primaryCategoryButton" id="primary" tabindex="0">
-                                        <h4>Primary</h4>
-                                    </button>
-                                    <button class="categoryButton militaryCategoryButton" id="military" tabindex="0">
-                                        <h4>Military</h4>
-                                    </button>
-                                    <button class="categoryButton magicCategoryButton" id="magic" tabindex="0">
-                                        <h4>Magic</h4>
-                                    </button>
-                                    <button class="categoryButton supportCategoryButton" id="support" tabindex="0">
-                                        <h4>Support</h4>
-                                    </button>
-                                    <button class="categoryButton heroesCategoryButton" id="heroes" tabindex="0">
-                                        <h4>Heroes</h4>
-                                    </button>
-                                    <button class="categoryButton" id="bloons" tabindex="0">
-                                        <h4>Bloons</h4>
-                                    </button>
-                                    <button class="categoryButton standardButton" id="accolades" tabindex="0">
-                                        <h4>Accolades</h4>
-                                    </button>
-                                </div>
-                                <div id="pageButtonContainer" class="pageButtonContainer">
-
-                                </div>
-                                <div class="titleBar">
-                                    <h1 id="title"></h1>
-                                    <div id="towerCostButtonContainer" style="margin-left: auto">
-                                        <button id="towerCostButton" class="towerCostButton">Calculate Tower Cost</button>
+                            <div class="contentContainer1">
+                                <div id="contentContainer" class="contentContainer">
+                                    <div id="configButtonsContainer" class="configButtonsContainer">
+                                        <div id="categoryButtonContainer" class="categoryButtonContainer">
+                                            <button class="categoryButton primaryCategoryButton" id="primary" tabindex="0">
+                                                <h4>Primary</h4>
+                                            </button>
+                                            <button class="categoryButton militaryCategoryButton" id="military" tabindex="0">
+                                                <h4>Military</h4>
+                                            </button>
+                                            <button class="categoryButton magicCategoryButton" id="magic" tabindex="0">
+                                                <h4>Magic</h4>
+                                            </button>
+                                            <button class="categoryButton supportCategoryButton" id="support" tabindex="0">
+                                                <h4>Support</h4>
+                                            </button>
+                                            <button class="categoryButton heroesCategoryButton" id="heroes" tabindex="0">
+                                                <h4>Heroes</h4>
+                                            </button>
+                                            <button class="categoryButton" id="bloons" tabindex="0">
+                                                <h4>Bloons</h4>
+                                            </button>
+                                            <button class="categoryButton standardButton" id="accolades" tabindex="0">
+                                                <h4>Accolades</h4>
+                                            </button>
+                                        </div>
+                                        <div id="pageButtonContainer" class="pageButtonContainer"></div>
                                     </div>
+                                    <div class="statsContentContainer">
+                                        <div id="dropdownContainer" class="pageButtonContainer"></div>
+                                        <div class="titleBar">
+                                            <h1 id="title"></h1>
+                                            <div id="towerCostButtonContainer" style="margin-left: auto">
+                                                <button id="towerCostButton" class="towerCostButton">Calculate Tower Cost</button>
+                                            </div>
+                                        </div>
+                                        <section class="roundedBoxSection towerCostSection" id="towerCostContent">
+                                            
+                                        </section>
+                                        <section class="roundedBoxSection" id="statsContent">
+        
+                                        </section>
+                                        <section class="roundedBoxSection">
+                                            <p>Confused about something? Read our <a class="linkUnderline" href="terminology.html">terminology</a> page (work in progress)</p>
+                                        </section>
+                                    </div>
+                                    <div class="fillContainer"></div>
                                 </div>
-                                <template id="pageButtonTemplate">
-                                    <button class="pageButton" id="pageButton">
-                                        <img class="pageButtonImage" id="pageButtonImage" />
-                                    </button>
-                                </template>
-                                <section class="roundedBoxSection towerCostSection" id="towerCostContent">
-                                    
-                                </section>
-                                <section class="roundedBoxSection" id="statsContent">
-
-                                </section>
-                                <section class="roundedBoxSection">
-                                    <p>Confused about something? Read our <a class="linkUnderline" href="terminology.html">terminology</a> page (work in progress)</p>
-                                </section>
                             </div>
                         </div>
                         <div id="compareStats" class="compareStats">
-                            <div class="contentSubconatiner">
-                                <div class="categoryButtonContainer">
-                                    <button class="categoryButton primaryCategoryButton" id="primaryCompare" tabindex="0">
-                                        <h4>Primary</h4>
-                                    </button>
-                                    <button class="categoryButton militaryCategoryButton" id="militaryCompare" tabindex="0">
-                                        <h4>Military</h4>
-                                    </button>
-                                    <button class="categoryButton magicCategoryButton" id="magicCompare" tabindex="0">
-                                        <h4>Magic</h4>
-                                    </button>
-                                    <button class="categoryButton supportCategoryButton" id="supportCompare" tabindex="0">
-                                        <h4>Support</h4>
-                                    </button>
-                                    <button class="categoryButton heroesCategoryButton" id="heroesCompare" tabindex="0">
-                                        <h4>Heroes</h4>
-                                    </button>
-                                    <button class="categoryButton" id="bloonsCompare" tabindex="0">
-                                        <h4>Bloons</h4>
-                                    </button>
-                                    <button class="categoryButton" id="accoladesCompare" tabindex="0">
-                                        <h4>Accolades</h4>
-                                    </button>
-                                </div>
-                                <div id="pageButtonContainerCompare" class="pageButtonContainer">
-
-                                </div>
-                                <div class="titleBar">
-                                    <h1 id="titleCompare"></h1>
-                                    <div id="towerCostButtonContainerCompare" style="margin-left: auto">
-                                        <button id="towerCostButtonCompare" class="towerCostButton">Calculate Tower Cost</button>
+                            <div class="contentContainer">
+                                <div class="configButtonsContainer">
+                                    <div class="categoryButtonContainer">
+                                        <button class="categoryButton primaryCategoryButton" id="primaryCompare" tabindex="0">
+                                            <h4>Primary</h4>
+                                        </button>
+                                        <button class="categoryButton militaryCategoryButton" id="militaryCompare" tabindex="0">
+                                            <h4>Military</h4>
+                                        </button>
+                                        <button class="categoryButton magicCategoryButton" id="magicCompare" tabindex="0">
+                                            <h4>Magic</h4>
+                                        </button>
+                                        <button class="categoryButton supportCategoryButton" id="supportCompare" tabindex="0">
+                                            <h4>Support</h4>
+                                        </button>
+                                        <button class="categoryButton heroesCategoryButton" id="heroesCompare" tabindex="0">
+                                            <h4>Heroes</h4>
+                                        </button>
+                                        <button class="categoryButton" id="bloonsCompare" tabindex="0">
+                                            <h4>Bloons</h4>
+                                        </button>
+                                        <button class="categoryButton" id="accoladesCompare" tabindex="0">
+                                            <h4>Accolades</h4>
+                                        </button>
                                     </div>
+                                    <div id="pageButtonContainerCompare" class="pageButtonContainer"></div>
                                 </div>
-                                <template id="pageButtonTemplateCompare">
-                                    <div class="pageButton" id="pageButtonCompare">
-                                        <img class="pageButtonImage" id="pageButtonImageCompare" />
+                                <div class="statsContentContainer">
+                                    <div id="dropdownContainerCompare" class="pageButtonContainer"></div>
+                                    <div class="titleBar">
+                                        <h1 id="titleCompare"></h1>
+                                        <div id="towerCostButtonContainerCompare" style="margin-left: auto">
+                                            <button id="towerCostButtonCompare" class="towerCostButton">Calculate Tower Cost</button>
+                                        </div>
                                     </div>
-                                </template>
-                                <section class="roundedBoxSection towerCostSection" id="towerCostContentCompare">
-                                    
-                                </section>
-                                <section class="roundedBoxSection" id="statsContentCompare">
-
-                                </section>
-                                <section class="roundedBoxSection">
-                                    <p>Confused about something? Read our <a class="linkUnderline" href="terminology.html">terminology</a> page (work in progress)</p>
-                                </section>
+                                    <template id="pageButtonTemplateCompare">
+                                        <div class="pageButton" id="pageButtonCompare">
+                                            <img class="pageButtonImage" id="pageButtonImageCompare" />
+                                        </div>
+                                    </template>
+                                    <section class="roundedBoxSection towerCostSection" id="towerCostContentCompare">
+                                        
+                                    </section>
+                                    <section class="roundedBoxSection" id="statsContentCompare">
+    
+                                    </section>
+                                    <section class="roundedBoxSection">
+                                        <p>Confused about something? Read our <a class="linkUnderline" href="terminology.html">terminology</a> page (work in progress)</p>
+                                    </section>
+                                </div>
+                                <div class="fillContainer"></div>
                             </div>
                         </div>
+                        <template id="pageButtonTemplate">
+                            <button class="pageButton" id="pageButton">
+                                <img class="pageButtonImage" id="pageButtonImage" />
+                            </button>
+                        </template>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <div class="cornerButtonContainer">
-        <button id="compareButton" class="compareButton">
-            <h6>Compare mode</h6>
-        </button>
-        <button id="advancedButton" class="advancedButton">
-            <h6>Experiments</h6>
-        </button>
+        <p id="cornerButtonPreviewText"></p>
+        <div class="cornerButtons">
+            <a href="versionHistory.html">
+                <button id="versionHistoryButton">
+                    <span class="material-symbols-outlined">family_history</span>
+                </button>
+            </a>
+            <button id="compareButton" class="compareButton">
+                <span class="material-symbols-outlined">compare_arrows</span>
+            </button>
+            <button id="advancedButton" class="advancedButton">
+                <span class="material-symbols-outlined">experiment</span>
+            </button>
+        </div>
     </div>
 </body>
 <dialog class="menu" id="menu">

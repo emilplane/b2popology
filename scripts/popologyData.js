@@ -3288,9 +3288,9 @@ const data = {
                                     "gains reanimate attack",
                                     [
                                         "60r, 1.5s",
-                                        "spawns 1-4 zombloons, each using 1-10 pops from the graveyard",
+                                        "spawns 1-5 zombloons, each using 1-10 pops from the graveyard",
                                         [
-                                            "2d, 2-11p (pops used +1), normal type, 10s lifetime",
+                                            "2d, 2-10p (pops used +1), normal type, 10s lifetime",
                                             "travels backwards along the track at red bloon speed",
                                             "+1d for every 200 graveyard bloons, stacking additively up to 10 times"
                                         ],

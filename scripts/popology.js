@@ -26,6 +26,12 @@ const buffData = {
     "obynLevel12": ["discount", 0.1, 5, 5, "magic"],
 }
 
+const wideModeIDs = [
+    "configButtonsContainer",
+    "categoryButtonContainer",
+    "pageButtonContainer",
+    "contentContainer"
+]
 let compare = false
 let advancedMode = false
 
@@ -38,18 +44,66 @@ if (compare) {
     runPopology(true)
 }
 
+const versionHistoryButton = document.getElementById('versionHistoryButton');
 const compareButton = document.getElementById('compareButton');
 const advancedButton = document.getElementById('advancedButton');
+
+const buttonHelperText = document.getElementById("cornerButtonPreviewText");
+
+versionHistoryButton.addEventListener('mouseover', function() {
+    buttonHelperText.classList.add("cornerButtonPreviewText")
+    buttonHelperText.innerText = "Version history"
+});
+
+versionHistoryButton.addEventListener('mouseout', function() {
+    buttonHelperText.classList.remove("cornerButtonPreviewText")
+    buttonHelperText.innerText = ""
+});
 
 compareButton.addEventListener('click', function() {
     compare = !compare;
     run()
 });
 
+compareButton.addEventListener('mouseover', function() {
+    buttonHelperText.classList.add("cornerButtonPreviewText")
+    buttonHelperText.innerText = "Compare mode"
+});
+
+compareButton.addEventListener('mouseout', function() {
+    buttonHelperText.classList.remove("cornerButtonPreviewText")
+    buttonHelperText.innerText = ""
+});
+
 advancedButton.addEventListener('click', function() {
     advancedMode = !advancedMode;
     run()
 });
+
+advancedButton.addEventListener('mouseover', function() {
+    buttonHelperText.classList.add("cornerButtonPreviewText")
+    buttonHelperText.classList.add("dangerPreviewText")
+    buttonHelperText.innerText = "Experiments"
+});
+
+advancedButton.addEventListener('mouseout', function() {
+    buttonHelperText.classList.remove("cornerButtonPreviewText")
+    buttonHelperText.classList.remove("dangerPreviewText")
+    buttonHelperText.innerText = ""
+});
+
+// Create a media query for viewport widths smaller than 700px
+const mediaQuery = window.matchMedia('(max-width: 700px)');
+
+// Function to handle changes in viewport size
+const handleViewportChange = (mq) => {
+  if (mq.matches && compare) {
+    compare = !compare;
+    run()
+  }
+};
+
+mediaQuery.addListener(handleViewportChange);
 
 function run() {
     runPopology()
@@ -62,8 +116,11 @@ function runPopology(compare) {
     let compareID
     if (compare) {
         compareID = "Compare"
+        wideModeIDs.forEach(className => {
+            document.getElementById(className).classList.remove(`${className}WideMode`)
+        });
         document.getElementById("compareStyle").innerHTML = `
-            .contentSubconatiner {
+            .contentContainer {
                 height: calc(100vh - 95px);
                 overflow-y: scroll;
             }
@@ -101,6 +158,9 @@ function runPopology(compare) {
     } else {
         compareID = ""
         document.getElementById("compareStyle").innerHTML = ""
+        wideModeIDs.forEach(className => {console.log(className)
+            document.getElementById(className).classList.add(`${className}WideMode`)
+        });
     }
 
     let selectedCategory = "primary"
@@ -210,6 +270,7 @@ function runPopology(compare) {
 
     function updatePageButtons() {
         document.getElementById("pageButtonContainer" + compareID).innerHTML = ""
+        document.getElementById("dropdownContainer" + compareID).innerHTML = ""
 
         if (
             selectedCategory == "bloons" || 
@@ -217,7 +278,7 @@ function runPopology(compare) {
         ) {
             switch (selectedCategory) {
                 case "heroes": case "bloons": case "accolades": 
-                    document.getElementById("pageButtonContainer" + compareID).innerHTML = `
+                    document.getElementById("dropdownContainer" + compareID).innerHTML = `
                         <div>
                             <h5>Select Page</h5>
                             <select id="pageSelect${compareID}"></select>
@@ -392,13 +453,13 @@ function runPopology(compare) {
         return html
     }
 
-    let clone = structuredClone(popologyData.stats[selectedCategory].entries)
-    for (let key in clone) {
-        console.log(clone[key])
-        clone[key].data = objectToArrayFormat(clone[key].data)
-    }
+    // let clone = structuredClone(popologyData.stats[selectedCategory].entries)
+    // for (let key in clone) {
+    //     console.log(clone[key])
+    //     clone[key].data = objectToArrayFormat(clone[key].data)
+    // }
 
-    console.log(clone)
+    // console.log(clone)
 
     // let clone = structuredClone(popologyData.stats[selectedCategory].entries)
     // console.log(clone)
