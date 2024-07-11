@@ -126,7 +126,7 @@ function runPopology(compare) {
             }
             .categoryButtonContainer {
                 grid-template-columns: repeat(4, 1fr);
-                @media screen and (max-width: 900px) {
+                @media screen and (max-width: 1000px) {
                     grid-template-columns: repeat(2, 1fr);
                 }
             }

@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        2
+        3
     ],
     "versionHistory": {
         "0": {
@@ -966,6 +966,15 @@
                         "Added a version history button to the popology page",
                         "Changed the amount of bloons the reanimate attack on the xx4 Monkey Wizard spawns from 1-4 to 1-5 (krunkerprime)",
                         "Changed the pierce of bloons from the reanimate attack on the xx4 Monkey Wizard spawns 2-11 to 2-10"
+                    ]
+                },
+                "3": {
+                    "date": "2024/07/10",
+                    "content": [
+                        "Fixed an issue where the main content container would change size depending on the width of the text it contains (jake6542)",
+                        "Left-aligned popology category and tower select buttons and removed blank space on the right side for the widescreen popology ui",
+                        "Fixed misconfigured viewport width breakpoints from 800px to around 900px with the two sets of category buttons that would cause the viewport to scroll horizontally",
+                        "Fixed an issue where content entries shorter than the viewport's height would be centered vertically"
                     ]
                 }
             }
