@@ -22,7 +22,29 @@ export const TEST_CASES = {
             ],
             "paths": [
                 [
-                    [],
+                    [
+                        {
+                            "name": "missile",
+                            "action": "new", "type": "attack",
+
+                            "properties": {
+                                "damage": 3,
+                                "pierce": 1,
+                                "attackCooldown": 2,
+                                "attackType": "explosion"
+                            }
+                        },
+                        {
+                            "name": "dart",
+                            "action": "buff", "type": "attack",
+
+                            "properties": {
+                                "pierce": ["+", 2],
+                                "attackCooldown": ["*", 0.5],
+                                "attackType": "normal"
+                            }
+                        }
+                    ],
                     [],
                     [],
                     [],
@@ -49,7 +71,7 @@ export const TEST_CASES = {
 
 export const MODULE_PROPERTIES = {
     "damage": {
-        "type": "number"
+        "type": "number",
     },
     "pierce": {
         "type": "number"

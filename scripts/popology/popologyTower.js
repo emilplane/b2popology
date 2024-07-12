@@ -1,4 +1,5 @@
 import { SETTINGS, TOWER_JSON_SCHEMA } from "./constants.js"
+import { Tower, Upgrade } from "./modulesHiearchy.js"
 import validateJson from "./validateJson.js"
 
 export default class PopologyTower {
@@ -17,7 +18,26 @@ export default class PopologyTower {
 
     getUpgrade(path, upgrade) {
         if (path == "base") {
-            return this.blueprint.upgrades.base
+            return new Upgrade(this.blueprint.upgrades.base)
+        } else {
+            return new Upgrade(this.blueprint.upgrades.paths[path][upgrade])
         }
+    }
+
+    getTower(path1, path2, path3) {
+        const tower = new Tower()
+        tower.addUpgrade(this.blueprint.upgrades.base)
+        if (path1 >= path2 && path1 >= path3) {
+            for (let i = 0; i < path1; i++) {
+                tower.addUpgrade(this.blueprint.upgrades.paths[0][i])
+            }
+        } else if (path2 >= path3) {
+
+        } else {
+
+        }
+        tower.constructTower()
+        
+        return tower
     }
 }
