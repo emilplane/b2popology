@@ -980,7 +980,8 @@
                 "4": {
                     "date": "2024/17/10",
                     "content": [
-                        "Added Battles 2 4.1 balance changes"
+                        "Added Battles 2 4.1 balance changes",
+                        "Added reverted Battles 2 4.0.3 price changes (each as a bug)"
                     ]
                 }
             }

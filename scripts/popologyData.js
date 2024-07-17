@@ -4297,6 +4297,7 @@ const data = {
                             "5": {
                                 "name": "050 - Spirit of the Forest",
                                 "content": [
+                                    "[BUG] costs $4,500 instead of $4,200",
                                     "thorn buffed",
                                     [
                                         "+13d (14d)"
@@ -4524,6 +4525,7 @@ const data = {
                             "3": {
                                 "name": "003 - Monkeyconomy",
                                 "content": [
+                                    "[BUG] costs $1,200 instead of $1,500",
                                     "crate attack",
                                     [
                                         "$400 income, split between 4 crates throughout the round",
@@ -4534,6 +4536,7 @@ const data = {
                             "4": {
                                 "name": "004 - Monkey City",
                                 "content": [
+                                    "[BUG] costs $7,500 instead of $7,200",
                                     "crate buffed",
                                     [
                                         "+$1,200 income ($1,600)"
@@ -10359,7 +10362,7 @@ const data = {
             "druid": {
                 "base": 425,
                 "top": [350, 900, 1500, 4300, 55000],
-                "middle": [350, 250, 450, 4200, 35000],
+                "middle": [350, 250, 450, 4500, 35000],
                 "bottom": [100, 400, 750, 2500, 45000]
             }
         },
@@ -10368,7 +10371,7 @@ const data = {
                 "base": 1000,
                 "top": [400, 1500, 800, 2500, 25000],
                 "middle": [250, 1700, 5000, 23500, 45000],
-                "bottom": [500, 500, 1500, 7200, 15000]
+                "bottom": [500, 500, 1200, 7500, 15000]
             },
             "bananaFarm": {
                 "base": 1000,
