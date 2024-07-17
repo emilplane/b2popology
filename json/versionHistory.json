@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        3
+        4
     ],
     "versionHistory": {
         "0": {
@@ -975,6 +975,12 @@
                         "Left-aligned popology category and tower select buttons and removed blank space on the right side for the widescreen popology ui",
                         "Fixed misconfigured viewport width breakpoints from 800px to around 900px with the two sets of category buttons that would cause the viewport to scroll horizontally",
                         "Fixed an issue where content entries shorter than the viewport's height would be centered vertically"
+                    ]
+                },
+                "4": {
+                    "date": "2024/17/10",
+                    "content": [
+                        "Added Battles 2 4.1 balance changes"
                     ]
                 }
             }

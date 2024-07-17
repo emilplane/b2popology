@@ -132,11 +132,31 @@ export class TowerModule {
  * A property on a module that has some value.
  */
 export class Property {
+
     constructor(name, value) {
         this.name = name
         this.initialValue = value
         this.value = value
         this.buffs = []
+
+        // this.buffs = [
+        //     {
+        //         "+": [2, 6],
+        //         "%": [0.5, 0.85],
+        //         "*": [0.64, 0.85]
+        //     },
+        //     10,
+        //     {
+        //         "+": [2, 7],
+        //         "%": [0.5, 0.85],
+        //         "*": [0.64, 0.85]
+        //     },
+        //     {
+        //         "+": [2, 8],
+        //         "%": [0.5, 0.85],
+        //         "*": [0.64, 0.85]
+        //     }
+        // ]
 
         // this.propertyCriteria = MODULE_PROPERTIES[name]
 
@@ -146,7 +166,6 @@ export class Property {
         //     case "number":
                 
         // }
-
     }
     
     buff(buffProperty) {
@@ -163,16 +182,47 @@ export class Property {
                         "implemented yet!"
                     )
                 }
-                switch (buffProperty.value[0]) {
-                    case "+":
-                        break;
-                    case "*":
-                        break;
-                    default:
-                        throw new Error(
-                            "This operator is not accounted for!"
-                        )
+                
+                if (buffProperty.value[0] == "set") {
+                    this.buffs.push(buffProperty.value[1])
+                } else if (["+", "%", "*"].includes(buffProperty.value[0])) {
+                    if (
+                        typeof this.buffs[this.buffs.length-1] != "object"
+                    ) {
+                        this.buffs.push({ "+": [], "%": [], "*": [] })
+                    }
+                    this.buffs[this.buffs.length-1][buffProperty.value[0]].push(
+                        buffProperty.value[1]
+                    )
+                } else {
+                    throw new Error("This operator is not accounted for!")
                 }
+                break;
+            case "string":
+                this.buffs.push(buffProperty.value)
+                break;
+            default:
+                throw new Error(
+                    "The type of this property is not accounted for!"
+                )
+        }
+        this.calculateBuffs()
+    }
+
+    calculateBuffs() {
+        const propertyCriteria = MODULE_PROPERTIES[this.name]
+
+        this.value = this.initialValue
+
+        switch (propertyCriteria.type) {
+            case "number":
+                this.buffs.forEach(buffBracket => {
+                    if (typeof buffBracket == "number") {
+                        this.value == buffBracket
+                    } else {
+                        
+                    }
+                });
                 break;
             case "string":
                 break;
@@ -181,10 +231,6 @@ export class Property {
                     "The type of this property is not accounted for!"
                 )
         }
-    }
-
-    calculateBuffs() {
-
     }
 }
 
