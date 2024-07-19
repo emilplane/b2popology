@@ -3537,8 +3537,12 @@ const data = {
                                                         "total: 2500 damage per spike"
                                                     ]
                                                 ]
+                                            ],
+                                            "crate attack buffed",
+                                            [
+                                                "$2,000 income x3, produced twice at the start of round, once at the end of round",
+                                                "on expiry, autocollects for 1000$",
                                             ]
-                                            
                                         ]
                                     ]
                                 ]
@@ -8509,7 +8513,7 @@ const data = {
                             "$650",
                             "Leveling Rate: 1.5x",
                             "Unlock Cost: 5,000 MM",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "sun-bolt attack",
                             [
@@ -8530,11 +8534,11 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "long-arm-of-light ability (35s cooldown, 10s duration)",
+                            "long-arm-of-light ability (40s cooldown, 10s duration)",
                             [
                                 "buffs sun-bolt",
                                 [
-                                    "+200%r, +240%p, normal type, camo"
+                                    "+200%r, +240%p, +50% projectile speed, normal type, camo"
                                 ]
                             ]
                         ],
@@ -8557,11 +8561,11 @@ const data = {
                             ]
                         ],
                         "7": [
-                            "blood-sacrifice ability (10s cooldown, 10s duration, targets a tower)",
+                            "blood-sacrifice ability (30s cooldown, 10s initial cooldown, 10s duration, targets a tower)",
                             [
                                 "selected tower gains sacrifice buff",
                                 [
-                                    "20?%s for 4 seconds",
+                                    "20%s for 4 seconds",
                                     "when buff ends",
                                     [
                                         "tower is sold for $0",
@@ -8571,10 +8575,10 @@ const data = {
                                 ],
                                 "temporary-blood buff",
                                 [
-                                    "+(10+x)%r, (90-x)%s",
+                                    "+(10+0.4x)%r, (90-0.4x)%s",
                                     [
-                                        "where x = dollars sacrificed / 100, and x may not exceed 40",
-                                        "this means that the max buff is +50%r, 50%s"
+                                        "where x = dollars sacrificed / 100, and x may not exceed 100",
+                                        "this means that the max buff is +50%r, 50%s at a $10000 sacrifice"
                                     ]
                                 ]
                             ]
@@ -8596,7 +8600,7 @@ const data = {
                             [
                                 "gains beam attack",
                                 [
-                                    "3d, +3fd (6fd), 8p, ∞r, 0.05s, plasma type",
+                                    "4d, +4fd (8fd), 1p, ∞r, 0.05s, plasma type",
                                     "can see past obstacles"
                                 ]
                             ]
@@ -8605,17 +8609,17 @@ const data = {
                             "sun-bolt buffed",
                             [
                                 "0.8s"
+                            ],
+                            "super-support buffed",
+                            [
+                                "+1p (+2p)"
                             ]
                         ],
                         "12": [
                             "sun-bolt buffed",
                             [
                                 "+1j (5j)"
-                            ],
-                            "super-support buffed",
-                            [
-                                "+1p (+2p)"
-                            ]
+                            ] 
                         ],
                         "13": [
                             "sun-bolt buffed",
@@ -8624,7 +8628,7 @@ const data = {
                             ],
                             "beam attack buffed",
                             [
-                                "+5p (13p)"
+                                "+3p (11p)"
                             ]
                         ],
                         "14": [
@@ -8640,13 +8644,13 @@ const data = {
                             ],
                             "beam attack buffed",
                             [
-                                "+2d (5d), +2fd (10fd)"
+                                "+3d (7d), +3fd (14fd)"
                             ]
                         ],
                         "16": [
                             "long-arm-of-light buffed",
                             [
-                                "15s duration",
+                                "12s duration",
                                 "sun-avatar buff",
                                 [
                                     "+2d to 3xx Super Monkeys in range"
@@ -8668,7 +8672,7 @@ const data = {
                         "19": [
                             "sun-bolt buffed",
                             [
-                                "+1d (3d), +5r (59r)"
+                                "+1d (3d), +3fd (6fd), +5r (59r)"
                             ]
                         ],
                         "20": [
@@ -8678,15 +8682,12 @@ const data = {
                             ],
                             "temporary-blood buffed",
                             [
-                                "x = dollars sacrificed / 50"
-                            ],
-                            "ball-of-light buffed",
-                            [
-                                "20s duration"
+                                "+(10+0.8x)%r, (90-0.8x)%s",
+                                "where x = dollars sacrificed / 100, and may not exceed 50",
                             ],
                             "beam buffed",
                             [
-                                "20d, +20fd (40fd), normal type"
+                                "+23d (30d), +23fd (60fd), normal type"
                             ],
                             "if a 5xx Super Monkey is purchased with Adora in range, Adora merges with that Super Monkey to form the True Sun Goddess",
                             [
