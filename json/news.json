@@ -2,6 +2,15 @@
     "tournaments": [],
     "news": [
         {
+            "title": "Update 4.1.1 out now!",
+            "date": "2000/1/1",
+            "timeutc": "00:00:00",
+            "description": "4.0.3 changes are back, and more bug fixes!",
+            "buttons": [
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1e76zv5/update_411_is_rolling_out_now_patch_notes/"]
+            ]
+        },
+        {
             "title": "Update 4.1 out now!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",

@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        4
+        6
     ],
     "versionHistory": {
         "0": {
@@ -978,10 +978,23 @@
                     ]
                 },
                 "4": {
-                    "date": "2024/17/10",
+                    "date": "2024/07/17",
                     "content": [
                         "Added Battles 2 4.1 balance changes",
                         "Added reverted Battles 2 4.0.3 price changes (each as a bug)"
+                    ]
+                },
+                "5": {
+                    "date": "2024/07/20",
+                    "content": [
+                        "Fixed some Adora stats (kiteskute)",
+                        "Added TSG support crate"
+                    ]
+                },
+                "6": {
+                    "date": "2024/07/20",
+                    "content": [
+                        "Added Battles 2 4.1.1 balance changes"
                     ]
                 }
             }
