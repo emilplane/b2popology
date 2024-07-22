@@ -1,5 +1,5 @@
 import { SETTINGS, TOWER_JSON_SCHEMA } from "./constants.js"
-import { Tower, Upgrade } from "./modulesHiearchy.js"
+import { Tower, Upgrade } from "./modulesHiearchy/towerLevel.js"
 import validateJson from "./validateJson.js"
 
 export default class PopologyTower {

@@ -6,4 +6,4 @@ const testTower = new PopologyTower(TEST_CASES.TEST_CASE_1)
 
 console.log(testTower)
 // console.log(testTower.getUpgrade("base"))
-console.log(testTower.getTower(1, 0, 0))
+console.log(testTower.getTower(3, 0, 0))

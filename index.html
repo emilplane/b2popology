@@ -227,9 +227,19 @@
     </dialog>
     <style id="coverImageStyle">
         .coverImage {
-            background-image: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0)), url('media/update_4_1_pugmaster.png');
+            background-image: linear-gradient(to right,
+                rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.25) 15%,
+                rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%,
+                rgba(255, 255, 255, 0.25) 85%, rgba(255, 255, 255, 1)
+            ),
+            linear-gradient(to top,
+                rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5) 25%,
+                rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 110%
+            ),
+            url('media/update_4_1_pugmaster.png');
+
             @media (prefers-color-scheme: dark) {
-                background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('media/update_4_1_pugmaster.png');
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0)), url('media/update_4_1_pugmaster.png');
             }
         }
     </style>
