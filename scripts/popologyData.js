@@ -10202,6 +10202,7 @@ const data = {
                                 <ul>
                                     <li>Unlocked Round 8</li>
                                     <li>Cash modifier: $1.6x</li>
+                                    <li>Grows one extra layer every 2.55 seconds, up to their original form.</li>
                                 </ul>
                             </li>
                             <li>Camo
