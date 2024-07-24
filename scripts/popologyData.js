@@ -5216,7 +5216,7 @@ const data = {
                                         ],
                                         "additionally applies a permanent 8% reload buff, which stacks additively up to 5 times",
                                         "this means that after the first ultraboost, the tower has a 92% reload multiplier, after the second it is replaced by 84%, and so on down to 60% (1.667x faster)",
-                                        "in the case of villages, this is +2.5% to range, then 5%, etc, up to +25%r"
+                                        "in the case of villages, this is +5% to range, then 10%, etc, up to +25%r"
                                     ]
                                 ]
                             }
