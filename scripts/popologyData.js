@@ -8720,7 +8720,7 @@ const data = {
                             [
                                 "buffs fate-bolt",
                                 [
-                                    "+?d, (p*j*7)p (35p)",
+                                    "(d*2)d (2d), (p*j*7)p (35p), normal type",
                                 ],
                                 "on enemy bloon boost: 0.18% cooldown (9s cooldown)"
                             ]
@@ -8744,14 +8744,12 @@ const data = {
                             ]
                         ],
                         "7": [
-                            "eye-of-misfortune ability (?s cooldown, ?s duration, targets a tower)",
-                            [
+                            "eye-of-misfortune ability (30s cooldown, (x*0.003)s duration (where x is the sacrifice cost), 50r, targets a tower)", [
                                 "selected tower is sacrificed",
                                 "misfortune buff",
                                 [
                                     "reduces opponent's hero xp by the cost of the sacrificed tower",
-                                    "increases speeed of bloons in the enemy hero's range by ?% for 1 + x / 500",
-                                    "x = cost of sacrificed tower"
+                                    "increases speeed of bloons in the enemy hero's range by 50%",
                                 ]
                             ]
                         ],
@@ -8772,7 +8770,7 @@ const data = {
                             [
                                 "places chain-trap based on targeting, defaults on close",
                                 [
-                                    "(1 + x / 1000)d, 450p, ?r zone, 0.12s, normal type, camo",
+                                    "(1 + x / 1000)d, 450p, 10r zone, 0.12s, normal type, camo",
                                     "MOABs use 10p, BFBs use 20p, ZOMGs and DDTs use 40p, BADs use 60p",
                                     "x = cost of opponent's most expensive tower",
                                     "slows moab-class bloons"
@@ -8814,7 +8812,7 @@ const data = {
                             ],
                             "chains-of-fate buffed",
                             [
-                                "increased duration"
+                                "+2s (8s) duration"
                             ]
                         ],
                         "16": [
@@ -8838,21 +8836,22 @@ const data = {
                         "19": [
                             "fate-bolt buffed",
                             [
-                                "+1d (3d), +5r (59r)"
+                                "+1d (3d), +1fd (6fd), +5r (59r)"
                             ]
                         ],
                         "20": [
                             "chains-of-fate ability buffed",
                             [
-                                "increased duration"
+                                "+4s (12s) duration",
+                                "lasts twice as long on MOAB class bloons (24s)",
                             ],
                             "chain-trap buffed",
                             [
-                                "200%d (?d)"
+                                "200%d and cost of most expensive tower is worth twice as much (2 + x / 500)d"
                             ],
                             "eye-of-misfortune buffed",
                             [
-                                "+?r, increased bloon speed"
+                                "+15r (65r), increases bloon speed by 70%"
                             ]
                         ]
                     }
