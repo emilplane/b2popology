@@ -2321,7 +2321,7 @@ const data = {
                     "name": "Heli Pilot",
                     "data": {
                         "base": [
-                            "$900 (500 MM)",
+                            "$800 (500 MM)",
                             "size: 23 units * 23 units",
                             "placeable on: land",
                             "22r",
