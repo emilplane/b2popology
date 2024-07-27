@@ -1251,7 +1251,7 @@ const data = {
                                     "gains glue-strike ability (30s cooldown, battle ready)",
                                     [
                                         "∞p, ∞r, camo",
-                                        "cannot target blimps",
+                                        "cannot slow down blimps",
                                         "applies weakening-glue status",
                                         [
                                             "11s duration, 50% slow, take +2d, soaks 6 layers, removes lead property while active"
@@ -3545,7 +3545,7 @@ const data = {
                                             ]
                                         ]
                                     ],
-                                    "if bought when adora level 20 is in range, transforms into sun goddess adora",
+                                    "if bought when adora level 20 is in range, transforms into true sun goddess adora",
                                     [
                                         "buffs super monkeys in range",
                                         [
@@ -3584,7 +3584,7 @@ const data = {
                                             "20d, 11p, 0.05s, normal type",
                                             "terminus attack at point of contact",
                                             [
-                                                "30d, 1p, 0.05s normal type"
+                                                "30d, 1p, 0.05s, normal type"
                                             ]
                                         ],
                                     ]
