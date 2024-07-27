@@ -1258,7 +1258,7 @@ const data = {
                                         ],
                                         "crosspath",
                                         [
-                                            "240: weakening-glue can be applied to blimps"
+                                            "240: weakening-glue can be applied to blimps, but will not cause them to slow down"
                                         ]
                                     ]
                                 ]
@@ -1269,7 +1269,7 @@ const data = {
                                     "glue-strike replaced by glue-storm (30s cooldown, 20s duration, battle ready)",
                                     [
                                         "∞p, ∞r, 2.0s, camo",
-                                        "cannot target blimps",
+                                        "cannot slow down blimps",
                                         "applies weakening-glue"
                                     ],
                                     "weakening-glue buffed",
@@ -3544,6 +3544,49 @@ const data = {
                                                 "on expiry, autocollects for 1000$",
                                             ]
                                         ]
+                                    ],
+                                    "if bought when adora level 20 is in range, transforms into sun goddess adora",
+                                    [
+                                        "buffs super monkeys in range",
+                                        [
+                                            "+2p, +15%r"
+                                        ],
+                                        "buffs sun avatars in range",
+                                        [
+                                            "+2d"
+                                        ],
+                                        "gains sun-bolt attack",
+                                        [
+                                            "5d, 22p, 0.6s, 8j, normal type"
+                                        ],
+                                        "gains blood-sacrifice ability",
+                                        [
+                                            "selected tower gains sacrifice buff",
+                                            [
+                                                "20%s for 4 seconds",
+                                                "when buff ends",
+                                                [
+                                                    "tower is sold for $0",
+                                                    "temporary-blood enabled",
+                                                ]
+                                            ],
+                                            "temporary-blood buff, 20s duration",
+                                            [
+                                                "+0.08x%r, -0.08x%s",
+                                                [
+                                                    "where x = dollars sacrificed / 100, and x may not exceed 300",
+                                                    "this means that the max buff is +124%r, 76%s at a $30000 sacrifice"
+                                                ],
+                                            ],
+                                        ],
+                                        "gains ball-of-light attack (30s cooldown, 10s duration, targets a tower)",
+                                        [
+                                            "20d, 11p, 0.05s, normal type",
+                                            "terminus attack at point of contact",
+                                            [
+                                                "30d, 1p, 0.05s normal type"
+                                            ]
+                                        ],
                                     ]
                                 ]
                             }
