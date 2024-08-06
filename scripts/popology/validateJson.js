@@ -5,9 +5,9 @@
  * @returns 
  */
 export default function validateJson(schema, data) {
-    var ajv = new ajv7();
-    var validate = ajv.compile(schema);
-    var valid = validate(data);
+    const ajv = new ajv7();
+    const validate = ajv.compile(schema);
+    const valid = validate(data);
 
     return {
         valid,

@@ -4315,7 +4315,8 @@ const data = {
                                     ],
                                     "gains money-grab attack",
                                     [
-                                        "∞r, 11s, targets strongest bloon",
+                                        "∞r, 14s, targets strongest bloon",
+                                        "attack cooldown cannot be buffed",
                                         "can see past obstacles",
                                         "applies money-snared status",
                                         [
@@ -4388,8 +4389,8 @@ const data = {
                                 "content": [
                                     "all attacks buffed",
                                     [
-                                        "+x% speed, capped at +100%, where x is 20 plus the number of lives below the amount when this upgrade was purchased, ignoring any lives above the starting amount for the current mode",
-                                        "note that this is a buff to speed, NOT reload time"
+                                        "+x% speed, capped at +100%, where x is 20 plus the number of lives below the amount when this upgrade was purchased",
+                                        "note that this is a buff to attack speed, NOT attack cooldown"
                                     ]
                                 ]
                             },

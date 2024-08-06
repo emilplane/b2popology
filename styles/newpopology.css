@@ -1,49 +1,253 @@
 :root {
-    --incomeColorDark: rgb(92, 86, 0);
+    --track-item-primaryLight: hsl(323, 100%, 75%);
+    --track-item-primary: hsl(323, 100%, 44%);
+    --track-item-dark: hsl(323, 100%, 25%);
+
+    --status-primaryLight: hsl(270, 100%, 70%);
+    --status-primary: hsl(270, 100%, 55%);
+    --status-dark: hsl(270, 100%, 30%);
+
+    --income-primaryLight: hsl(58, 100%, 45%);
+    --income-primary: hsl(58, 100%, 38%);
+    --income-dark: hsl(58, 100%, 26%);
+
+    --subattack-primaryLight: hsl(190, 100%, 50%);
+    --subattack-primary: hsl(190, 100%, 45%);
+    --subattack-dark: hsl(190, 100%, 21%);
+
+    --upgrade-selector-node-height: 26px;
+    --upgrade-selector-node-width: 18px;
+}
+
+.towerSections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-m);
+}
+
+.towerBanner {
+    border-radius: var(--bradius);
+    min-height: 100px;
+    background-color: var(--dark2);
+    padding: var(--margin-m);
+    background: linear-gradient(
+        135deg, hsla(281, 90%, 38%, 0.5), hsla(325, 100%, 30%, 0.5)
+    );
 }
 
 .moduleContainer {
-    display: grid;
-    gap: 8px
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-m);
 }
 
 .module {
-    border-radius: 8px;
-    padding: 8px;
-    background-color: var(--primaryDark3);
+    border-radius: var(--bradius);
+    min-height: 75px;
+    background-color: var(--dark2);
+    padding: var(--margin-m);
+    background: linear-gradient(135deg, var(--moduleBackground1), var(--moduleBackground2));
+    transition: 
+        --moduleBackground1 var(--transition-time),
+        --moduleBackground2 var(--transition-time);
 }
 
-.attackModule {
-    background-color: var(--primaryDark3);
+.moduleDividingLine {
+    height: 2px;
+    background-color: var(--gray);
+    width: auto;
+    transform: scaleY(0.5);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--margin-s);
 }
 
-.incomeModule {
-    background-color: var(--incomeColorDark);
+.moduleDividingLineHover {
+    position: absolute; 
+    width: 0%;
+    height: 100%;
+    transition: var(--transition-time);
 }
 
-.moduleNameStyle {
+.moduleTitle {
+    font: var(--h4)
+}
+
+.moduleName {
     font-style: italic;
 }
 
-.propertyChipContainer {
+@property --moduleBackground1 {
+    syntax: '<color>';
+    initial-value: hsl(0, 0%, 22%);
+    inherits: false;
+  }
+  
+@property --moduleBackground2 {
+    syntax: '<color>';
+    initial-value: hsl(0, 0%, 22%);
+    inherits: false;
+}
+
+.module:hover .moduleDividingLineHover {
+    width: 100%;
+}
+
+.attackModule:hover {
+    --moduleBackground1: hsl(161, 25%, 27%);
+    --moduleBackground2: hsl(159, 45%, 19%);
+}
+
+.attackModule:hover .moduleDividingLineHover {
+    background-color: var(--primary);
+}
+
+.trackItemModule:hover {
+    --moduleBackground1: hsl(323, 13%, 27%);
+    --moduleBackground2: hsl(324, 41%, 23%);
+}
+
+.trackItemModule:hover .moduleDividingLineHover {
+    background-color: var(--track-item-primary);
+}
+
+.statusModule:hover {
+    --moduleBackground1: hsl(270, 10%, 26%);
+    --moduleBackground2: hsl(271, 41%, 27%);
+}
+
+.statusModule:hover .moduleDividingLineHover {
+    background-color: var(--status-primary);
+}
+
+.incomeModule:hover {
+    --moduleBackground1: hsl(56, 11%, 28%);
+    --moduleBackground2: hsl(58, 60%, 20%);
+}
+
+.incomeModule:hover .moduleDividingLineHover {
+    background-color: var(--income-primary);
+}
+
+.subattackModule:hover {
+    --moduleBackground1: hsl(190, 12%, 28%);
+    --moduleBackground2: hsl(190, 62%, 21%);
+}
+
+.subattackModule:hover .moduleDividingLineHover {
+    background-color: var(--subattack-primary);
+}
+
+.attackModule .moduleType {
+    color: var(--primaryLight);
+}
+
+.trackItemModule .moduleType {
+    color: var(--track-item-primaryLight);
+}
+
+.statusModule .moduleType {
+    color: var(--status-primaryLight);
+}
+
+.incomeModule .moduleType {
+    color: var(--income-primaryLight);
+}
+
+.subattackModule .moduleType {
+    color: var(--subattack-primaryLight);
+}
+
+
+
+.configPanel {
+    border-radius: var(--bradius);
+    padding: var(--margin-s);
+    background-color: var(--dark2);
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
 }
 
-.propertyChip {
-    background-color: var(--primaryDark2);
-    padding: 4px 8px;
-    border-radius: 8px;
+.towerUpgradeSelector {
+    position: relative;
+    border-radius: var(--bradius);
+    background-color: var(--dark3);
+}
+
+.pathTrack {
+    width: calc(6 * var(--upgrade-selector-node-width));
+    height: var(--upgrade-selector-node-height);
+    background-color: var(--dark1);
+    border-radius: var(--bradius);
+}
+
+.pathTrackContainer, .numberOverlay, .upgradeSelectorVisual {
     display: flex;
-    gap: 4px;
-    align-items: end;
+    flex-direction: column;
+    padding: var(--margin-s);
+    gap: var(--margin-s);
 }
 
-.propertyChipText {
-    font-size: 12pt;
+.path {
+    display: flex;
+    height: var(--upgrade-selector-node-height);
 }
 
-.propertyChipLargeText {
-    font-size: 18pt;
+.upgradeNode {
+    font: var(--p);
+    margin: 0 var(--margin-xs);
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition-time);
+}
+
+.selectedNode {
+    color: var(--black);
+}
+
+.upgradeSelectorVisual {
+    position: absolute;
+    top: 0; left: 0;
+    width: calc(100% - 2 * var(--margin-s));
+    height: calc(100% - 2 * var(--margin-s));
+}
+
+.numberOverlay {
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.upgradeSelectorVisual > .path {
+    width: calc(10px + 2 * var(--margin-xs));;
+    background-color: var(--primary);
+    border-radius: var(--bradius);
+    transition: var(--transition-time);
+    height: 36px;
+}
+
+.position0 {
+    margin-left: 0px;
+}
+
+.position1 {
+    margin-left: var(--upgrade-selector-node-width);
+}
+
+.position2 {
+    margin-left: calc(2 * var(--upgrade-selector-node-width));
+}
+
+.position3 {
+    margin-left: calc(3 * var(--upgrade-selector-node-width));
+}
+
+.position4 {
+    margin-left: calc(4 * var(--upgrade-selector-node-width));
+}
+
+.position5 {
+    margin-left: calc(5 * var(--upgrade-selector-node-width));
 }

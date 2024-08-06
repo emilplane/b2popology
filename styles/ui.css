@@ -1,0 +1,125 @@
+:root {
+    /* Colors */
+    --primaryLight: hsl(160, 56%, 74%);
+    --primary: hsl(160, 100%, 39%);
+    --primaryDark: hsl(160, 100%, 20%);
+
+    --white: hsl(0, 0%, 100%);
+    --light1: hsl(0, 0%, 98%);
+    --light2: hsl(0, 0%, 95%);
+    --light3: hsl(0, 0%, 90%);
+    --light4: hsl(0, 0%, 85%);
+    --light5: hsl(0, 0%, 80%);
+
+    --gray: hsl(0, 0%, 50%);
+
+    --dark1: hsl(0, 0%, 28%);
+    --dark2: hsl(0, 0%, 23%);
+    --dark3: hsl(0, 0%, 15%);
+    --dark4: hsl(0, 0%, 10%);
+    --dark5: hsl(0, 0%, 5%);
+    --black: hsl(0, 0%, 0%);
+
+    /* Fonts */
+    --ff: "Gabarito", sans-serif;
+    --luckiest-guy-ff: "Luckiest Guy", sans-serif;
+    --mono-ff: "Source Code Pro", sans-serif;
+    --h1: bold 3.5rem/0.5em var(--ff);
+    --h2: bold 2.5rem/1em var(--ff);
+    --h3: 1.75rem/1.2em var(--ff);
+    --h4: 1.5rem/1.2em var(--ff);
+    --big: 1.2rem/1.3em var(--ff);
+    --p: 1rem/1.6em var(--ff);
+
+    /* Spacing */
+    --margin-xxs: 0.125rem;
+    --margin-xs: 0.25rem;
+    --margin-s: 0.5rem;
+    --margin-m: 0.75rem;
+    --margin-l: 1rem;
+    --margin-xl: 1.5rem;
+
+    /* Other */
+    --bradius: 8px;
+    --transition-time: 0.25s;
+}
+
+.hide {
+    display: none !important;
+}
+
+html {
+	font-family: "Roboto";
+}
+
+body {
+	margin: var(--margin-m);
+	display: flex;
+	flex-direction: column;
+    gap: var(--margin-m);
+    background-color: var(--light3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--dark3);
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, select, button, table, thead, tbody, td {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, button, select, thead, .tableHead, html {
+    color: var(--black);
+    @media (prefers-color-scheme: dark) {
+        color: var(--white);
+    }
+}
+
+h1 {
+	font: var(--h1)
+}
+
+h2 {
+	font: var(--h2)
+}
+
+h3 {
+    font: var(--h3)
+
+}
+
+h4, h5, h6 {
+    font: var(--h4)
+}
+
+p {
+    font: var(--p)
+}
+
+.luckiestGuy {
+    font-family: var(--luckiest-guy-ff);
+    font-weight: normal;
+}
+
+.mono {
+    font-family: var(--mono-ff);
+    font-weight: normal;
+}
+
+header {
+    background-color: var(--primaryDark);
+    border-radius: var(--bradius);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.headerLinks {
+    margin-left: auto;
+    display: flex;
+    gap: var(--margin-m)
+}
+
+.headerLinks > p {
+    font: var(--big)
+}

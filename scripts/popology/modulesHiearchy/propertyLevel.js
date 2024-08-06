@@ -157,9 +157,18 @@ export class PropertyBuff {
      */
     toProperty() {
         const propertyCriteria = MODULE_PROPERTIES[this.name];
-        const property = new Property(this.name, this.value);
+        let property = new Property(this.name, this.value);
+        console.log(MODULE_PROPERTIES, this)
         switch (propertyCriteria.type) {
             case "string": case "boolean":
+                break;
+            case "number": 
+                if (Array.isArray(this.value)) {
+                    if (!(this.value[0] == "set" || this.value[0] == "+")) {
+                        throw new Error(ERRORS.CANT_CONVERT);
+                    }
+                    property = new Property(this.name, this.value[1]);
+                }
                 break;
             default:
                 throw new Error(ERRORS.CANT_CONVERT);

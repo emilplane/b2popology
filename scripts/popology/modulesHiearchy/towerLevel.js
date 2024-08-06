@@ -21,10 +21,15 @@ export class Upgrade {
  * A collection of upgrades that are constructed together into a tower.
  */
 export class Tower {
-    constructor() {
+    constructor(popologyTower, path) {
+        this.popologyTower = popologyTower
+        this.path = path
         this.upgrades = []
         this.modules = []
+        this.towerName = "unknown"
     }
+
+    
 
     /**
      * After adding upgrades, construct the resulting modules onto the instance

@@ -1,9 +1,16 @@
 import PopologyTower from "./popologyTower.js";
-import { TEST_CASES, TOWER_JSON_SCHEMA } from "./constants.js";
-import validateJson from "./validateJson.js";
+import { TEST_CASES, UI_CONSTANTS } from "./constants.js";
+import { PopologyUi } from "./ui.js";
+import { Tower } from "./modulesHiearchy/towerLevel.js";
 
-const testTower = new PopologyTower(TEST_CASES.TEST_CASE_1)
+const popologyTowerInstance = new PopologyTower(TEST_CASES.WIZARD_MONKEY)
+const path = [0, 0, 0]
+const currentTower = {
+    "type": "tower",
+    "data": new Tower(popologyTowerInstance, path)
+}
 
-console.log(testTower)
-// console.log(testTower.getUpgrade("base"))
-console.log(testTower.getTower(3, 0, 0))
+console.log(currentTower.data)
+
+PopologyUi.updateBanner("Operation: Dart Storm", "Exploding Pineapple ")
+PopologyUi.createConfigPanel()

@@ -79,8 +79,6 @@ h1, h2, h3, h4, h5, h6, p, ul, select, button, table, thead, tbody, td {
 h1, h2, h3, h4, h5, h6, button, input, select, thead, .tableHead {
     font-family: "Gabarito";
     font-weight: 400;
-    /* font-family: "Comic Neue";
-    font-weight: 600; */
 }
 
 h1, h2, h3, h4, h5, h6, button, select, thead, .tableHead {
@@ -312,7 +310,7 @@ a {
 .mainContent {
     display: flex;
     flex-direction: column;
-    gap: 16px;   
+    gap: 12px;   
 }
 
 .titleSection {
@@ -340,12 +338,15 @@ a {
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center 90%;
-    max-width: 1400px;
     margin: 0 auto;
 
     @media (prefers-color-scheme: dark) {
         opacity: .6;
     }
+}
+
+.homeCoverImage {
+    max-width: 1400px;
 }
 
 .playerCoverImage {

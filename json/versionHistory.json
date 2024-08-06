@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        6
+        9
     ],
     "versionHistory": {
         "0": {
@@ -995,6 +995,26 @@
                     "date": "2024/07/20",
                     "content": [
                         "Added Battles 2 4.1.1 balance changes"
+                    ]
+                },
+                "7": {
+                    "date": "2024/07/24",
+                    "content": [
+                        "Added some missing Fateweaver stats (jazzyjonah, jessiepatch)"
+                    ]
+                },
+                "8": {
+                    "date": "2024/07/27",
+                    "content": [
+                        "Added true sun goddess adora stats (kiteskute)",
+                        "Added true sun goddess adora stats (kiteskute)"
+                    ]
+                },
+                "9": {
+                    "date": "2024/08/06",
+                    "content": [
+                        "Added Battles 2 4.1.2 balance changes",
+                        "Removed statement saying xx2 Druid can't be buffed with lives lost above the \"starting amount for the current mode\""
                     ]
                 }
             }
