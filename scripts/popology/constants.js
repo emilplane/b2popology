@@ -132,6 +132,7 @@ export const TEST_CASES = {
 
         "aliases": ["lizard", "lizardmonkey", "wiz", "apprentice"],
 
+        
         "upgradeNames": [
             [
                 {
@@ -204,10 +205,15 @@ export const TEST_CASES = {
             ]
         ],
 
+        "towerProperties": {
+            "range": 40,
+            "towerCamo": true
+        },
+        
         "properties": {
             "range": 40
         },
-
+        
         "upgrades": {
             "base": [
                 {
@@ -297,7 +303,8 @@ export const TEST_CASES = {
                                 "attackCooldown": 0.05,
                                 "attackType": "fire",
                                 "canSeePastObstacles": true,
-                                "collidesWithObstacles": true
+                                "collidesWithObstacles": true,
+                                "onContact": ["burn"],
                             }
                         },
                         {
@@ -320,6 +327,7 @@ export const TEST_CASES = {
         
                             "properties": {
                                 "attackCooldown": 2.6,
+                                "onContact": ["explosion"]
                             }
                         },
                         {
@@ -340,6 +348,7 @@ export const TEST_CASES = {
         
                             "properties": {
                                 "attackCooldown": 5.5,
+                                "places": ["wall-of-fire"],
                             }
                         },
                         {
@@ -349,9 +358,26 @@ export const TEST_CASES = {
                             "properties": {
                                 "damage": 1,
                                 "pierce": 15,
+                                "attackCooldown": 0.15,
+                                "attackType": "fire",
                                 "duration": 5.5,
+                                "onContact": ["vuldora"],
                             }
-                        }   
+                        },
+                        {
+                            "name": "vuldora",
+                            "action": "new", "type": "status",
+        
+                            "properties": {
+                                "damage": 1000,
+                                "moabDamageBonus": 5000,
+                                "leadDamageBonus": 100,
+                                "pierce": 50000,
+                                "attackCooldown": 0.0000000000001,
+                                "attackType": "normal",
+                                "duration": 1000,
+                            }
+                        }
                     ],
                     [],
                     [],
@@ -369,57 +395,79 @@ export const TEST_CASES = {
     }
 }
 
+export const MODULE_TYPES = {
+    "attack": {
+        "displayName": "attack",
+    },
+    "subattack": {
+        "displayName": "subattack",
+    },
+    "trackItem": {
+        "displayName": "track item",
+    },
+    "status": {
+        "displayName": "status",
+    },
+    "income": {
+        "displayName": "income",
+    }
+}
+
 export const MODULE_PROPERTIES = {
     "damage": {
         "type": "number",
         "displayName": "Damage",
-        "subproperties": {
-            "moabDamageBonus": {
-                "type": "number",
-                "displayName": "MOAB Damage"
-            }
-        }
+        "category": "damage",
+        "icon": true
     },
     "moabDamageBonus": {
         "type": "number",
-        "bonusValueTo": "damage",
         "displayName": "MOAB Damage",
-        "parent": "damage"
+        "category": "damage",
+        "icon": true
     },
     "ceramicDamageBonus": {
         "type": "number",
-        "bonusValueTo": "damage",
-        "displayName": "Ceramic Damage"
+        "displayName": "Ceramic Damage",
+        "category": "damage"
     },
     "fortifiedDamageBonus": {
         "type": "number",
-        "bonusValueTo": "damage",
-        "displayName": "Fortified Damage"
+        "displayName": "Fortified Damage",
+        "category": "damage"
     },
     "leadDamageBonus": {
         "type": "number",
-        "bonusValueTo": "damage",
-        "displayName": "Lead Damage"
+        "displayName": "Lead Damage",
+        "category": "damage",
+        "icon": true
     },  
     "pierce": {
         "type": "number",
         "displayName": "Pierce",
-        "subproperties": {
-            "impact": {
-                "type": "boolean",
-                "displayName": "Impact"
-            }
-        }
+        "category": "basic",
+        "icon": true
     },
-    // "impact": {
-    //     "type": "boolean",
-    //     "parent": "pierce",
-    //     "displayName": "Impact"
-    // },
+    "impact": {
+        "type": "boolean",
+        "parent": "pierce",
+        "displayName": "Impact"
+    },
+    "range": {
+        "type": "number",
+        "unit": "r",
+        "showUnitByDefault": true,
+        "displayName": "Range",
+        "category": "basic",
+        "isTowerProperty": true
+    },
     "attackCooldown": {
         "type": "number",
         "unit": "s",
-        "displayName": "Attack Cooldown"
+        "showUnitByDefault": true,
+        "displayName": "Attack Cooldown",
+        "category": "basic",
+        "icon": true
     },
     "tick": {
         "type": "number",
@@ -429,24 +477,54 @@ export const MODULE_PROPERTIES = {
     "duration": {
         "type": "number",
         "unit": "s",
-        "displayName": "Duration"
+        "showUnitByDefault": true,
+        "displayName": "Duration",
+        "category": "basic",
+        "icon": true
     },
     "attackType": {
         "type": "string",
-        "displayName": "Attack Type"
+        "displayName": "Attack Type",
+        "category": "basic",
+        "stringValueWhitelist": [
+            ["normal", "Normal"], ["explosion", "Explosion"], ["fire", "Fire"],
+            ["plasma", "Plasma"], ["sharp", "Sharp"], ["shatter", "Shatter"]
+        ]
     },
     "canSeePastObstacles": {
         "type": "boolean",
-        "displayName": "Can See Past Obstacles"
+        "displayName": "Can See Past Obstacles",
+        "category": "boolean"
     },
     "collidesWithObstacles": {
         "type": "boolean",
-        "displayName": "Collides With Obstacles"
+        "displayName": "Collides With Obstacles",
+        "category": "boolean"
     },
     "homingTurnRate": {
         "type": "number",
-        "displayName": "Turn Rate"
+        "displayName": "Homing Turn Rate",
+        "category": "basic",
+        "unit": "°",
+        "showUnitByDefault": true
     },
+    "onContact": {
+        "type": "modules",
+        "displayName": "on contact",
+        "colon": true,
+        "category": "submodules"
+    },
+    "places": {
+        "type": "modules",
+        "displayName": "places",
+        "colon": false,
+        "category": "submodules"
+    },
+    "towerCamo": {
+        "type": "boolean",
+        "displayName": "Tower has camo",
+        "category": "basic"
+    }
 }
 
 /**
@@ -526,17 +604,33 @@ export const ERRORS = {
     "TYPE_NOT_SUPPORTED": "The type of this property is not accounted for!",
     "VALUE_NOT_SUPPORTED": "The value of this property is not accounted for!",
     "OPERATOR_NOT_SUPPORTED": "This operator is not accounted for!",
+
+    "PROPERTY_NOT_CONFIGURED": "This property is not configured!",
+    "REFERS_TO_OWN_MODULE": "This property is attempting to embed its own module!",
+    "CIRCULAR_DEPENDENCY": "you bozo you can't do that (This property refers to its own module creating a circular dependency)",
+}
+
+export const WARNS = {
+    "NO_TOWER_PROPERTIES_MODULE": "There is no tower properties module for this tower!",
+    
+    "NOT_IMPLEMENTED": "This feature is not implemented yet!",
 }
 
 export const UI_CONSTANTS = {
+    "PATH_JOIN_CHARACTER": "",
+    "MODULE_NESTING_MODE": "none",
+
     "CONFIG_PANEL": {
         "ELEMENT": document.getElementById("configPanel"),
-        "SHOW": false
+        "SHOW": false   
     },
     "BANNER": {
         "ELEMENT": document.getElementById("towerBanner"),
         "TITLE_TEXT_SIZE": "h2",
-        "CROSSPATH_TEXT_SIZE": "h4",
-        "CROSSPATH_PREFIX": "+ "
+        "CROSSPATH_TEXT_SIZE": "h5",
+        "CROSSPATH_PREFIX": "+ ",
+    },
+    "MODULES": {
+        "COMTAINER_ELEMENT": document.getElementById("moduleContainer"),
     }
 }

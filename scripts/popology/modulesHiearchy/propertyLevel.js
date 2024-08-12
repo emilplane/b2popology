@@ -15,6 +15,10 @@ export class Property {
         if (this.initializedAfterModule == undefined) {
             this.initializedAfterModule = false;
         }
+        this.criteria = MODULE_PROPERTIES[this.name];
+        if (this.criteria == undefined) {
+            throw new Error(ERRORS.PROPERTY_NOT_CONFIGURED);
+        }
     }
 
     /**
@@ -31,7 +35,6 @@ export class Property {
      * the valid order. The ordering depends on the type.
      */
     assembleBuffs() {
-        const propertyCriteria = MODULE_PROPERTIES[this.name];
         let orderedBuffs = [];
 
         this.newBuffs.forEach(propertyBuff => {
@@ -39,7 +42,7 @@ export class Property {
                 throw new Error(ERRORS.NAME_NOT_MATCHING);
             }
 
-            switch (propertyCriteria.type) {
+            switch (this.criteria.type) {
                 case "number":
                     handleNumberTypeBuff(propertyBuff, orderedBuffs);
                     break;
@@ -96,11 +99,9 @@ export class Property {
      * @param {Array} orderedBuffs The ordered buffs for this property.
      */
     calculateBuffs(orderedBuffs) {
-        const propertyCriteria = MODULE_PROPERTIES[this.name];
-
         this.value = this.initialValue;
 
-        switch (propertyCriteria.type) {
+        switch (this.criteria.type) {
             case "number":
                 orderedBuffs.forEach(buffValue => {
                     if (typeof buffValue === "number") {
@@ -158,7 +159,6 @@ export class PropertyBuff {
     toProperty() {
         const propertyCriteria = MODULE_PROPERTIES[this.name];
         let property = new Property(this.name, this.value);
-        console.log(MODULE_PROPERTIES, this)
         switch (propertyCriteria.type) {
             case "string": case "boolean":
                 break;

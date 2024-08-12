@@ -1,4 +1,5 @@
-import { TowerModule, UpgradeModule } from "./moduleLevel.js";
+import { isBasePath } from "../utilities.js";
+import { TowerModule, TowerPropertiesModule, UpgradeModule } from "./moduleLevel.js";
 
 /**
  * A collection of modules that make up a tower's upgrade.
@@ -26,10 +27,58 @@ export class Tower {
         this.path = path
         this.upgrades = []
         this.modules = []
-        this.towerName = "unknown"
+        this.towerName = "unknown",
+        this.towerCrosspathName;
+
+        this.initTower()
     }
 
+    initTower() {
+        this.upgrades = [];
+
+        this.addUpgrade(this.popologyTower.blueprint.upgrades.base);
     
+        const paths = this.path.map((level, index) => ({
+            level,
+            pathNumber: index,
+            upgrades: this.popologyTower.blueprint.upgrades.paths[index]
+        }));
+    
+        paths.sort((a, b) => b.level - a.level);
+    
+        paths.forEach((path, index) => {
+            for (let i = 0; i < path.level; i++) {
+                this.addUpgrade(path.upgrades[i]);
+            }
+
+            const upgradeData = this.popologyTower.blueprint
+                .upgradeNames[path.pathNumber][path.level - 1];
+            let upgradeName = upgradeData ? upgradeData.displayName : undefined;
+            
+            switch (index) {
+                case 0:
+                    this.towerName = 
+                        (upgradeData === undefined) ? "unknown" : upgradeName;
+                    break;
+                case 1:
+                    this.towerCrosspathName = upgradeName;
+                    break;
+                case 2:
+                    if (path.level > 0) {
+                        this.towerCrosspathName =
+                            `${this.towerCrosspathName} + ${upgradeName}`
+                    }
+                    break;
+            }
+        });
+
+        const baseTowerName = this.popologyTower.blueprint.displayName
+        if (isBasePath(this.path) && baseTowerName != undefined) {
+            this.towerName = baseTowerName
+        }
+    
+        this.constructTower();
+    }
 
     /**
      * After adding upgrades, construct the resulting modules onto the instance
@@ -38,6 +87,8 @@ export class Tower {
     constructTower() {
         this.modules = []
 
+        this.modules.push(new TowerPropertiesModule(this.popologyTower.blueprint.towerProperties))
+        
         this.upgrades.forEach(upgrade => {
             upgrade.modules.forEach(module => {
                 if (module.action == "new") {
@@ -61,5 +112,3 @@ export class Tower {
         this.upgrades.push(new Upgrade(upgrade))
     }
 }
-
-

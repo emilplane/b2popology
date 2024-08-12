@@ -15,6 +15,9 @@
     --subattack-primary: hsl(190, 100%, 45%);
     --subattack-dark: hsl(190, 100%, 21%);
 
+    --transluscent-background: hsla(0, 0%, 0%, 0.2);
+    --transluscent-background-hover: hsla(0, 0%, 0%, 0.4);
+
     --upgrade-selector-node-height: 26px;
     --upgrade-selector-node-width: 18px;
 }
@@ -27,12 +30,21 @@
 
 .towerBanner {
     border-radius: var(--bradius);
-    min-height: 100px;
+    min-height: 120px;
     background-color: var(--dark2);
     padding: var(--margin-m);
     background: linear-gradient(
         135deg, hsla(281, 90%, 38%, 0.5), hsla(325, 100%, 30%, 0.5)
     );
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerBottomText {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex: 1;
 }
 
 .moduleContainer {
@@ -50,6 +62,19 @@
     transition: 
         --moduleBackground1 var(--transition-time),
         --moduleBackground2 var(--transition-time);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.towerPropertiesModule {
+    min-height: 0px;
+}
+
+.secondaryModuleStyle {
+    background: linear-gradient(135deg, var(--moduleBackground2), var(--moduleBackground1));
+    --moduleBackground1: hsl(0, 0%, 15%);
+    --moduleBackground2: hsl(0, 0%, 15%);
 }
 
 .moduleDividingLine {
@@ -75,14 +100,20 @@
 }
 
 .moduleName {
-    font-style: italic;
+    font-style: oblique 14deg;
+}
+
+.moduleStatContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-s);
 }
 
 @property --moduleBackground1 {
     syntax: '<color>';
     initial-value: hsl(0, 0%, 22%);
     inherits: false;
-  }
+}
   
 @property --moduleBackground2 {
     syntax: '<color>';
@@ -90,7 +121,7 @@
     inherits: false;
 }
 
-.module:hover .moduleDividingLineHover {
+.module:hover > .moduleDividingLine > .moduleDividingLineHover {
     width: 100%;
 }
 
@@ -99,7 +130,7 @@
     --moduleBackground2: hsl(159, 45%, 19%);
 }
 
-.attackModule:hover .moduleDividingLineHover {
+.attackModule:hover > .moduleDividingLine > .moduleDividingLineHover {
     background-color: var(--primary);
 }
 
@@ -108,7 +139,7 @@
     --moduleBackground2: hsl(324, 41%, 23%);
 }
 
-.trackItemModule:hover .moduleDividingLineHover {
+.trackItemModule:hover > .moduleDividingLine > .moduleDividingLineHover {
     background-color: var(--track-item-primary);
 }
 
@@ -117,7 +148,7 @@
     --moduleBackground2: hsl(271, 41%, 27%);
 }
 
-.statusModule:hover .moduleDividingLineHover {
+.statusModule:hover > .moduleDividingLine > .moduleDividingLineHover {
     background-color: var(--status-primary);
 }
 
@@ -126,7 +157,7 @@
     --moduleBackground2: hsl(58, 60%, 20%);
 }
 
-.incomeModule:hover .moduleDividingLineHover {
+.incomeModule:hover > .moduleDividingLine > .moduleDividingLineHover {
     background-color: var(--income-primary);
 }
 
@@ -135,7 +166,7 @@
     --moduleBackground2: hsl(190, 62%, 21%);
 }
 
-.subattackModule:hover .moduleDividingLineHover {
+.subattackModule:hover > .moduleDividingLine > .moduleDividingLineHover {
     background-color: var(--subattack-primary);
 }
 
@@ -159,7 +190,11 @@
     color: var(--subattack-primaryLight);
 }
 
-
+.submoduleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-s);
+}
 
 .configPanel {
     border-radius: var(--bradius);
@@ -250,4 +285,64 @@
 
 .position5 {
     margin-left: calc(5 * var(--upgrade-selector-node-width));
+}
+
+.statContainer {
+    display: flex;
+    padding: var(--margin-s);
+    background-color: var(--transluscent-background);
+    border-radius: var(--bradius);
+    gap: var(--margin-m);
+    transition: var(--transition-time);
+    cursor: pointer;
+}
+
+.statContainer:hover {
+    background-color: var(--transluscent-background-hover);
+    /* transform: scale(1.05) */
+}
+
+.statChipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--margin-s);
+}
+
+.statDividingLine {
+    width: 2px;
+    transform: scaleX(0.5);
+    height: auto;
+    background-color: var(--gray);
+    margin: 2px 0;
+}
+
+.secondaryStatsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: var(--margin-l)
+}
+
+.statTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--margin-l);
+}
+
+.statIcon {
+    margin-left: auto;
+    height: 22px;
+    transition: var(--transition-time);
+}
+
+.statContainer .statGroup h4, .statContainer .statGroup p {
+    transition: var(--transition-time);
+}
+
+/* .statContainer:hover .statGroup h4, .statContainer:hover .statGroup p {
+    transform: scale(1.02);
+} */
+
+.statContainer:hover .statGroup .statIcon {
+    /* transform: scale(1.2); */
+    transform: scale(1.25) translate(-5%, 0%);
 }

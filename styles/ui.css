@@ -28,8 +28,9 @@
     --h2: bold 2.5rem/1em var(--ff);
     --h3: 1.75rem/1.2em var(--ff);
     --h4: 1.5rem/1.2em var(--ff);
+    --h5: 1.3rem/1.2em var(--ff);
     --big: 1.2rem/1.3em var(--ff);
-    --p: 1rem/1.6em var(--ff);
+    --p: 1rem/1.4em var(--ff);
 
     /* Spacing */
     --margin-xxs: 0.125rem;
@@ -87,8 +88,12 @@ h3 {
 
 }
 
-h4, h5, h6 {
+h4 {
     font: var(--h4)
+}
+
+h5, h6 {
+    font: var(--h5)
 }
 
 p {

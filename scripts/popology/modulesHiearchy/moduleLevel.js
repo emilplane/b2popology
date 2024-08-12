@@ -4,7 +4,6 @@ import { Property, PropertyBuff } from "./propertyLevel.js";
 /**
  * A module for an upgrade.
  */
-
 export class UpgradeModule {
     /**
      * @param {Object} moduleBlueprint
@@ -18,29 +17,41 @@ export class UpgradeModule {
 
         for (let propertyName in moduleBlueprint.properties) {
             const propertyValue = moduleBlueprint.properties[propertyName];
-            if (propertyValue instanceof Property ||
-                propertyValue instanceof PropertyBuff) {
-                this.properties.push(moduleBlueprint.properties[propertyName]);
-            } else {
-                if (this.action == "new") {
-                    this.properties.push(new Property(
-                        propertyName,
-                        moduleBlueprint.properties[propertyName]
-                    ));
-                } else if (this.action == "buff") {
-                    this.properties.push(new PropertyBuff(
-                        propertyName,
-                        moduleBlueprint.properties[propertyName]
-                    ));
-                }
-            }
+            this.properties.push(addProperty(propertyName, propertyValue, this.action))
         }
     }
 }
+
+export class TowerPropertiesModule {
+    constructor(towerPropertiesModuleBlueprint) {
+        this.name = "tower-properties";
+        this.allValidNames = ["tower-properties"];
+        this.type = "towerProperties";
+        this.properties = [];
+        
+        for (let propertyName in towerPropertiesModuleBlueprint) {
+            const propertyValue = towerPropertiesModuleBlueprint[propertyName];
+            console.log()
+            this.properties.push(addProperty(propertyName, propertyValue, "new"))
+        }
+    }
+}
+
+function addProperty(propertyName, propertyValue, action) {
+    if (propertyValue instanceof Property || propertyValue instanceof PropertyBuff) {
+        return propertyValue;
+    }
+    if (action == "new") {
+        return new Property(propertyName, propertyValue);
+    }
+    if (action == "buff") {
+        return new PropertyBuff(propertyName, propertyValue);
+    }
+}
+
 /**
  * A constructed module for a tower.
  */
-
 export class TowerModule {
     constructor(newModuleBlueprint) {
         if (newModuleBlueprint.action != "new") {
@@ -51,6 +62,7 @@ export class TowerModule {
         this.type = newModuleBlueprint.type;
         this.properties = newModuleBlueprint.properties;
         this.allValidNames = [newModuleBlueprint.name];
+        this.validateModuleReferences();
     }
 
     upgradeModule(moduleBlueprint) {
@@ -72,6 +84,22 @@ export class TowerModule {
                 this.properties.push(propertyBuff.toProperty());
             }
         });
+        this.validateModuleReferences();
+    }
+
+    /**
+     * Makes sure we don't end up with any nasty maximum call stack size errors when some bozo
+     * goes and makes a property try and embed its own module
+     */
+    validateModuleReferences() {
+        this.properties.forEach(property => {
+            if (property.criteria.type == "modules") {
+                property.value.forEach(value => {
+                    if (this.name == value) {
+                        throw new Error(ERRORS.CIRCULAR_DEPENDENCY);
+                    }
+                })
+            }
+        })
     }
 }
-
