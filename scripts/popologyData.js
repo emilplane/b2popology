@@ -8793,7 +8793,7 @@ const data = {
                                 "misfortune buff",
                                 [
                                     "reduces opponent's hero xp by the cost of the sacrificed tower",
-                                    "increases speeed of bloons in the enemy hero's range by 50%",
+                                    "increases speed of bloons in the enemy hero's range by 50%",
                                 ]
                             ]
                         ],
