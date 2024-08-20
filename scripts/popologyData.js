@@ -6299,7 +6299,7 @@ const data = {
                             "ward-totem buffed",
                             [
                                 "knocks back every other bloon",
-                                "stuns every 3th blimp for 0.5s"
+                                "stuns every 3rd blimp for 0.5s"
                             ]
                         ],
                         "16": [
