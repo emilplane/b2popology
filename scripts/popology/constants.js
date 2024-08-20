@@ -1,3 +1,5 @@
+import { BackgroundGradient, HSL } from "./utilities.js"
+
 export const SETTINGS = {
     "STOP_IF_INVALID_TOWER_JSON": true
 }
@@ -205,6 +207,23 @@ export const TEST_CASES = {
             ]
         ],
 
+        "colors": {
+            "base": {
+                "backgroundGradient": {
+                    "start": new HSL(0, 0, 0),
+                    "end": new HSL(0, 0, 0)
+                }
+            },
+            "upgrades": [
+                [
+                    {
+                        // "backgroundGradient": new BackgroundGradient(
+                        //     new HSL(18, 90, 38), new HSL(73, 100, 30), 90)
+                    }
+                ],
+            ],
+        },
+
         "towerProperties": {
             "range": 40,
             "towerCamo": true
@@ -363,20 +382,6 @@ export const TEST_CASES = {
                                 "duration": 5.5,
                                 "onContact": ["vuldora"],
                             }
-                        },
-                        {
-                            "name": "vuldora",
-                            "action": "new", "type": "status",
-        
-                            "properties": {
-                                "damage": 1000,
-                                "moabDamageBonus": 5000,
-                                "leadDamageBonus": 100,
-                                "pierce": 50000,
-                                "attackCooldown": 0.0000000000001,
-                                "attackType": "normal",
-                                "duration": 1000,
-                            }
                         }
                     ],
                     [],
@@ -394,6 +399,8 @@ export const TEST_CASES = {
         }
     }
 }
+
+
 
 export const MODULE_TYPES = {
     "attack": {

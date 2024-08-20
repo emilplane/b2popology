@@ -31,14 +31,17 @@
     --h5: 1.3rem/1.2em var(--ff);
     --big: 1.2rem/1.3em var(--ff);
     --p: 1rem/1.4em var(--ff);
+    --button: 1rem/1.2em var(--ff);
 
     /* Spacing */
-    --margin-xxs: 0.125rem;
-    --margin-xs: 0.25rem;
+    --margin-xxs: 0.25rem;
+    --margin-xs: 0.375rem;
     --margin-s: 0.5rem;
     --margin-m: 0.75rem;
     --margin-l: 1rem;
-    --margin-xl: 1.5rem;
+    --margin-xl: 1.25rem;
+    --margin-xxl: 1.5rem;
+    --margin-xxxl: 2rem;
 
     /* Other */
     --bradius: 8px;
@@ -127,4 +130,27 @@ header {
 
 .headerLinks > p {
     font: var(--big)
+}
+
+button {
+    background-color: var(--primaryLight);
+    border: 0;
+    border-radius: var(--bradius);
+    cursor: pointer;
+    font: var(--button);
+}
+
+@media (prefers-color-scheme: dark) {
+    button {
+        background-color: var(--primaryDark);
+    }
+}
+
+.transluscentButton {
+    background-color: hsla(0, 0%, 0%, 0.3);
+    transition: var(--transition-time);
+}
+
+.transluscentButton:hover {
+    background-color: hsla(0, 0%, 0%, 0.5);
 }

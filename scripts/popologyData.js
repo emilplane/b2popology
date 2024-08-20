@@ -994,7 +994,7 @@ const data = {
                                 "content": [
                                     "frozen status buffed",
                                     [
-                                        "soaks through 2 layers"
+                                        "soaks through 3 layers"
                                     ]
                                 ]
                             },
@@ -1363,7 +1363,7 @@ const data = {
                     "name": "Sniper Monkey",
                     "data": {
                         "base": [
-                            "$250 (500 MM)",
+                            "$200 (500 MM)",
                             "size: 6 radius",
                             "placeable on: land",
                             "20r",
@@ -1558,8 +1558,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "50%s (0.12985s), +2md (4md)",
-                                        "can pop lead"
+                                        "50%s (0.12985s), +2md (4md), normal type",
                                     ],
                                     "crosspath",
                                     [
@@ -2899,7 +2898,7 @@ const data = {
                                 "content": [
                                     "beam replaced by full-beam",
                                     [
-                                        "35d, +20 shocked4 damage (50 shocked4 damage), 1000p, 0.2s passive, normal type",
+                                        "35d, +20 shocked4 damage (55 shocked4 damage), 1000p, 0.2s passive, normal type",
                                         "additional +55d to the first target",
                                         "one solid beam to the edge of the screen",
                                         "applies shocked4 status",
@@ -3094,11 +3093,7 @@ const data = {
                                 "content": [
                                     "magic-bolt buffed",
                                     [
-                                        "+20r (60)"
-                                    ],
-                                    "magic-bolt buffed",
-                                    [
-                                        "+1d (3d), +4p (7p), 50%s (0.55s), plasma type"
+                                        "+1d (3d), +4p (7p), +20r (60), 50%s (0.55s), plasma type"
                                     ]
                                 ]
                             },
@@ -8793,7 +8788,7 @@ const data = {
                                 "misfortune buff",
                                 [
                                     "reduces opponent's hero xp by the cost of the sacrificed tower",
-                                    "increases speeed of bloons in the enemy hero's range by 50%",
+                                    "increases speed of bloons in the enemy hero's range by 50%",
                                 ]
                             ]
                         ],

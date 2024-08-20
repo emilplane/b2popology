@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        9
+        10
     ],
     "versionHistory": {
         "0": {
@@ -1014,6 +1014,17 @@
                     "content": [
                         "Added Battles 2 4.1.2 balance changes",
                         "Removed statement saying xx2 Druid can't be buffed with lives lost above the \"starting amount for the current mode\""
+                    ]
+                },
+                "10": {
+                    "date": "2024/08/20",
+                    "content": [
+                        "xx4 Sniper Monkey now uses normal damage type instead of \"can pop lead\"",
+                        "Fixed typo with Level 7 Fateweaver Adora stats (onion7667)",
+                        "x2x Ice Monkey freezes through 3 layers instead of 2 (jake6542)",
+                        "Merged two seperate buffs for the magic-bolt attack on the 3xx Monkey Wizard",
+                        "Fixed 000 Sniper Monkey cost in the stats text (qwertyxp2000)",
+                        "Fixed total shocked4 damage for the 5xx Dartling Gunner (qwertyxp2000)"
                     ]
                 }
             }
