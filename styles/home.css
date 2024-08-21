@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'BCS Font';
+    src: url('/bcsfont.ttf') format('truetype');
+}
+
+:root {
+    --bcspopologyLight3: hsl(249, 78%, 90%);
+    --bcspopologyLight2: hsl(249, 78%, 80%);
+    --bcspopologyLight1: hsl(249, 78%, 70%);
+    --bcspopology: hsl(249, 78%, 65%);
+    --bcspopologyDark1: hsl(248, 55%, 52%);
+    --bcspopologyDark1b: hsl(248, 55%, 48%);
+    --bcspopologyDark2: hsl(248, 55%, 40%);
+    --bcspopologyDark2b: hsl(249, 55%, 30%);
+    --bcspopologyDark3: hsl(249, 55%, 20%);
+
+    --btd6central: hsl(219, 76%, 47%);
+    --btd6centralLight: #5985e5
+}
+
 .categoryButtonContainer {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -246,4 +266,60 @@
     @media (prefers-color-scheme: dark) {
         background-color: hsl(81, 83%, 35%);
     };
+}
+
+.bcsfont {
+    font-family: "BCS Font";
+    font-weight: 400;
+}
+
+.resourcesSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media screen and (max-width: 700px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    grid-gap: 16px;
+}
+
+.otherGamesSection > a > button {
+    width: 100%; height: 100%
+}
+
+.bcspopologyButton {
+    background-color: var(--bcspopologyLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--bcspopologyDark3);
+    }
+}
+.bcspopologyButton:hover {
+    background-color: var(--bcspopologyLight2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--bcspopologyDark2);
+    }
+}
+
+.btd6centralButton {
+    background-color: var(--btd6centralLight);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--btd6central);
+        color: black
+    }
+}
+
+.btd6centralButton > h4, .btd6centralButton > h4 > p {
+    color: white;
+    @media (prefers-color-scheme: dark) {
+        color: black
+    }
+}
+
+.btd6centralButton:hover {
+    background-color: var(--btd6central);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--btd6centralLight);
+    }
+}
+.btd6centralText {
+    font-family: Poppins
 }
