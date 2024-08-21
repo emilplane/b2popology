@@ -322,9 +322,9 @@ function runPopology(compare) {
                 });
                 
                 if (selectedCategory == "heroes") {
-                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/Tower Portraits/${pageIndex}/${pageIndex}Portrait.png`)
+                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/${pageIndex}Portrait.png`)
                 } else {
-                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/Tower Portraits/${pageIndex}/base/${pageIndex}Portrait.png`)
+                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`)
                 }
                 document.getElementById("pageButtonContainer" + compareID).appendChild(clone)
             }
@@ -626,13 +626,13 @@ function runPopology(compare) {
         for (let buff in priceBuffs) {
             let src;
             switch (buff) {
-                case "favoredTrades":   src = "/media/Tower Portraits/monkeyBuccaneer/bottom/monkeyBuccaneer004Portrait.png";   break
-                case "monkeyBusiness":  src = "/media/Tower Portraits/monkeyVillage/bottom/monkeyVillage001Portrait.webp";      break
+                case "favoredTrades":   src = "/media/towerPortraits/monkeyBuccaneer/bottom/monkeyBuccaneer004Portrait.png";   break
+                case "monkeyBusiness":  src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage001Portrait.webp";      break
                 case "monkeyCommerce1": case "monkeyCommerce2": case "monkeyCommerce3": 
-                                        src = "/media/Tower Portraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp";      break
-                case "sunTemple":       src = "/media/Tower Portraits/superMonkey/top/superMonkey400Portrait.webp";             break
-                case "trueSunGod":      src = "/media/Tower Portraits/superMonkey/top/superMonkey500Portrait.webp";             break
-                case "obynLevel12":      src = "/media/Tower Portraits/obyn/obynPortrait.png";                                  break
+                                        src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp";      break
+                case "sunTemple":       src = "/media/towerPortraits/superMonkey/top/superMonkey400Portrait.webp";             break
+                case "trueSunGod":      src = "/media/towerPortraits/superMonkey/top/superMonkey500Portrait.webp";             break
+                case "obynLevel12":      src = "/media/towerPortraits/obyn/obynPortrait.png";                                  break
             }
             let required = false
             for (let requiredBuff in forceBuffs) {
@@ -719,7 +719,7 @@ function runPopology(compare) {
         }
 
         for (let requiredBuff in forceBuffs) {
-            let src = "/media/Tower Portraits/bananaFarm/bottom/bananaFarm002Portrait.webp"
+            let src = "/media/towerPortraits/bananaFarm/bottom/bananaFarm002Portrait.webp"
             if (forceBuffs[requiredBuff] == "bananaSalvage") {
                 document.getElementById("requiredBuffs" + compareID).insertAdjacentHTML("beforeend", `
                     <div class="buffIcon" id="bananaSalvage${compareID}">

@@ -1026,6 +1026,13 @@
                         "Fixed 000 Sniper Monkey cost in the stats text (qwertyxp2000)",
                         "Fixed total shocked4 damage for the 5xx Dartling Gunner (qwertyxp2000)"
                     ]
+                },
+                "11": {
+                    "date": "2024/08/20",
+                    "content": [
+                        "Restored tower portraits across the site",
+                        "Corrected a typo for Level 15 Ocean Obyn's stats (ertos_accounter)"
+                    ]
                 }
             }
         }
