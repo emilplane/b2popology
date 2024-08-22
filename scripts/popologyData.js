@@ -1258,7 +1258,10 @@ const data = {
                                         ],
                                         "crosspath",
                                         [
-                                            "240: weakening-glue can be applied to blimps, but will not cause them to slow down"
+                                            "240: weakening-glue can be applied to blimps, but will not cause them to slow down",
+                                            [
+                                                "note: the +2d debuff does not work with this tower's Corrisive Glue"
+                                            ]
                                         ]
                                     ]
                                 ]
@@ -2380,7 +2383,7 @@ const data = {
                                         "moderate homing (? turn rate)",
                                         "on contact: explosion",
                                         [
-                                            "3d, 3cd (6cd), 3md (6md), 40p, 25r blast, explosion type"
+                                            "3d, +3cd (6cd), +3md (6md), 40p, 25r blast, explosion type"
                                         ]
                                     ],
                                     "crosspath",
@@ -2522,7 +2525,7 @@ const data = {
                                                 "moderate homing (250 turn rate)",
                                                 "on contact: explosion",
                                                 [
-                                                    "1d, 2cd (3cd), 2md (3md), 100p, 25r blast, normal type"
+                                                    "1d, +2cd (3cd), +2md (3md), 100p, 25r blast, normal type"
                                                 ]
                                             ],
                                             "mini-comanche flight pattern locked on Pursuit"
@@ -2687,7 +2690,7 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "normal type, +3cd (4cd), +1md (2md), +1fd, +1ld, +2sd"
+                                        "normal type, +3cd (4cd), +1md (2md), +1fd (2fd), +1ld (2ld), +2sd (3sd)"
                                     ]
                                 ]
                             },
@@ -2970,15 +2973,15 @@ const data = {
                                 "content": [
                                     "rocket buffed",
                                     [
-                                        "3d, 500md, 300%s (0.396)"
+                                        "3d, +500md (503md), 300%s (0.396s)"
                                     ],
                                     "explosion buffed",
                                     [
-                                        "+2d (3)"
+                                        "+2d (3d)"
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+5cd (9), +13md (17md), +10p (18p), +4r (12r)"
+                                        "+5cd (9cd), +13md (17md), +10p (18p), +4r (12r)"
                                     ]
                                 ]
                             }
@@ -3111,7 +3114,7 @@ const data = {
                                 "content": [
                                     "magic-bolt buffed",
                                     [
-                                        "+2d (10d), +15md (35md), +4ld(+8ld), +6p (13p), 50%s (0.1375s)"
+                                        "+2d (10d), +15md (35md), +4ld (+8ld), +6p (13p), 50%s (0.1375s)"
                                     ],
                                     "gains shimmer attack",
                                     [
@@ -3121,7 +3124,7 @@ const data = {
                                     ],
                                     "gains flame attack",
                                     [
-                                        "1d, 1cd (2cd), 1md (2md), 4p, 70r, 0.05s, fire type",
+                                        "1d, +1cd (2cd), +1md (2md), 4p, 70r, 0.05s, fire type",
                                         "can see past obstacles, but will collide with them",
                                         "applies burn status",
                                         [
@@ -3191,7 +3194,7 @@ const data = {
                                     ],
                                     "gains flame attack",
                                     [
-                                        "1d, 1cd (2), 4p, 50r, 0.1s, fire type",
+                                        "1d, +1cd (2cd), 4p, 50r, 0.1s, fire type",
                                         "applies burn status",
                                         [
                                             "1d/1.5s, fire type, 3.1s duration"
@@ -4842,7 +4845,7 @@ const data = {
                                     [
                                         "at 100%p and on expire: explosion",
                                         [
-                                            "10d, 2cd (12cd), 1fd, 60p, 28r blast, explosion type",
+                                            "10d, +2cd (12cd), +1fd (11fd), 60p, 28r blast, explosion type",
                                             "applies burn status: 1d/2s, 6s duration"
                                         ],
                                         "note: the projectile timing out triggers both explosions, but using up pierce only triggers one"
@@ -4858,12 +4861,12 @@ const data = {
                                         "+40d (50d), +18cd (70cd), +14fd",
                                         "on damage: mini-explosion",
                                         [
-                                            "20d, 10cd (30cd), 5fd, 30p, 20r blast, normal type"
+                                            "20d, +10cd (30cd), +5fd (25fd), 30p, 20r blast, normal type"
                                         ]
                                     ],
                                     "explosion buffed",
                                     [
-                                        "+990d (1000d), +250fd, 0cd, +20p (60p), 100r, normal type"
+                                        "+990d (1000d), +250fd (1251fd), 0cd, +20p (60p), 100r, normal type"
                                     ]
                                 ]
                             }
@@ -4913,7 +4916,7 @@ const data = {
                                         ],
                                         "places storm-spikes randomly on track",
                                         [
-                                            "1d, 4md (5md), 5i, sharp type",
+                                            "1d, +4md (5md), 5i, sharp type",
                                             [
                                                 "total: 25md per spike"
                                             ],
@@ -5068,7 +5071,7 @@ const data = {
                                     "crosspath",
                                     [
                                         "110: sentry nail +4r (49r)",
-                                        "120: sentry nail +1md, +1fd",
+                                        "120: sentry nail +1md (2md), +1fd (2fd)",
                                         "101: sentry nail +1p (3p), shatter type",
                                         "102: sentry nail applies pinned status on damage"
                                     ]
@@ -5194,7 +5197,7 @@ const data = {
                                 "content": [
                                     "nail buffed",
                                     [
-                                        "+1md (2md), +1fd"
+                                        "+1md (2md), +1fd (2fd)"
                                     ]
                                 ]
                             },
@@ -5347,7 +5350,7 @@ const data = {
                     "data": {
                         "1": [
                             "$450",
-                            "Leveling Rate: 1.0x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Quincy"}],
                             "Unlock Cost: None",
                             "size: 7 radius",
                             "placeable on: land",
@@ -5495,7 +5498,7 @@ const data = {
                     "data": {
                         "1": [
                             "$450",
-                            "Leveling Rate: 1.0x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Quincy Points",
                             "size: 7 radius",
                             "placeable on: land",
@@ -5645,7 +5648,7 @@ const data = {
                     "data": {
                         "1": [
                             "$700",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: Complete Training Camp",
                             "size: 7 radius",
                             "placeable on: land",
@@ -5820,7 +5823,7 @@ const data = {
                     "data": {
                         "1": [
                             "$700",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Gwendolin Points",
                             "size: 7 radius",
                             "placeable on: land",
@@ -5995,7 +5998,7 @@ const data = {
                     "data": {
                         "1": [
                             "$650",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 3,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -6163,7 +6166,7 @@ const data = {
                     "data": {
                         "1": [
                             "$650",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Obyn Greenfoot Points",
                             "size: 7 radius",
                             "placeable on: land and water",
@@ -6345,7 +6348,7 @@ const data = {
                     "data": {
                         "1": [
                             "$750",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 3,000 MM",
                             "size: 6 radius",
                             "placeable on: land",
@@ -6500,7 +6503,7 @@ const data = {
                     "data": {
                         "1": [
                             "$750",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Striker Jones Points",
                             "size: 6 radius",
                             "placeable on: land",
@@ -6664,7 +6667,7 @@ const data = {
                     "data": {
                         "1": [
                             "$1500",
-                            "Leveling Rate: 1.5x",
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 4,000 MM",
                             "size: 8 radius",
                             "placeable on: land",
@@ -6832,7 +6835,7 @@ const data = {
                     "data": {
                         "1": [
                             "$1500",
-                            "Leveling Rate: 1.5x",
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Captain Churchill Points",
                             "size: 8 radius",
                             "placeable on: land",
@@ -7013,7 +7016,7 @@ const data = {
                     "data": {
                         "1": [
                             "$900",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7139,7 +7142,7 @@ const data = {
                     "data": {
                         "1": [
                             "$900",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Benjamin Points",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7265,7 +7268,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            "Leveling Rate: 1.68352941x (1.06x Striker)",
+                            ["hero_level", {"multiplier": 1.06, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7458,7 +7461,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            "Leveling Rate: 1.5x",
+                            ["hero_level", {"multiplier": 1.06, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Ezili Points",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7638,7 +7641,7 @@ const data = {
                     "data": {
                         "1": [
                             "$900",
-                            "Leveling Rate: 1.15x",
+                            ["hero_level", {"multiplier": 1.15, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 8 radius",
                             "placeable on: land and water",
@@ -7813,7 +7816,7 @@ const data = {
                     "data": {
                         "1": [
                             "$950",
-                            "Leveling Rate: 1.15x",
+                            ["hero_level", {"multiplier": 1.15, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM + 40,000 Fusty Points",
                             "size: 8 radius",
                             "placeable on: land and water",
@@ -8001,7 +8004,7 @@ const data = {
                     "data": {
                         "1": [
                             "$850",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 6 radius",
                             "placeable on: land",
@@ -8168,7 +8171,7 @@ const data = {
                     "data": {
                         "1": [
                             "$850",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points",
                             "size: 6 radius",
                             "placeable on: land",
@@ -8335,7 +8338,7 @@ const data = {
                     "data": {
                         "1": [
                             "$850",
-                            "Leveling Rate: 1.58823529x",
+                            ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM + 40,000 Agent Jericho Points",
                             "size: 6 radius",
                             "placeable on: land",
@@ -8546,7 +8549,7 @@ const data = {
                     "data": {
                         "1": [
                             "$650",
-                            "Leveling Rate: 1.5x",
+                            ["hero_level", {"multiplier": 1, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 6 radius",
                             "placeable on: land",
@@ -8736,7 +8739,7 @@ const data = {
                     "data": {
                         "1": [
                             "$700",
-                            "Leveling Rate: 1.5x",
+                            ["hero_level", {"multiplier": 1.2, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -8900,7 +8903,7 @@ const data = {
                     "data": {
                         "1": [
                             "$650",
-                            "Leveling Rate: 1.06x",
+                            ["hero_level", {"multiplier": 1.06, "curve": "unknown"}],
                             "Unlock Cost: 3,000 MM",
                             "size: 6 radius",
                             "placeable on: land",

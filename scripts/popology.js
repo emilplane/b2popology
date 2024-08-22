@@ -433,6 +433,9 @@ function runPopology(compare) {
                     if (!advancedMode) {
                         segment(elementContent)
                     }
+                } else if (element[0] == "hero_level") {
+                    elementContent = `Leveling Rate: ${element[1].multiplier}x w/${element[1].curve} curve`
+                    html += `<li>${elementContent}</li>`
                 } else {
                     segment(elementContent)
                 }

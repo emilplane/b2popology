@@ -1033,6 +1033,15 @@
                         "Restored tower portraits across the site",
                         "Corrected a typo for Level 15 Ocean Obyn's stats (ertos_accounter)"
                     ]
+                },
+                "12": {
+                    "date": "2024/08/22",
+                    "content": [
+                        "Fixed damage bonus syntax for 4xx and xx4 Heli Pilot, x3x Mortar Monkey, x5x Dartling Gunner, 5xx and x3x Monkey Wizard, 4xx, 5xx, and x4x Spike Factory, and x2x and 120 Engineer Monkey",
+                        "Accounted for Quincy or Striker Jones leveling curves for hero leveling",
+                        "Added correct leveling stats for Fateweaver Adora (jake6542)",
+                        "Added note for corrosive glue not being buffed by +2d from 240 Glue Gunner (jake6542)"
+                    ]
                 }
             }
         }
