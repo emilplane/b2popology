@@ -9121,6 +9121,12 @@ const data = {
                                 <li>Reached 1k eco in 1000 games</li>
                             </ul>
                         </ul>
+                        <ul>
+                            <li>Level 4</li>
+                            <ul>
+                                <li>Reached 1k eco in 2000 games</li>
+                            </ul>
+                        </ul>
                     `
                 },
                 "completeEvent": {
