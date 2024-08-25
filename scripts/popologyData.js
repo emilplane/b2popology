@@ -8947,7 +8947,7 @@ const data = {
                             "uav buff",
                             [
                                 "affects all towers",
-                                "all bloon properties have a 20% chance of being ignored"
+                                "every attack has a 20% chance to ignore bloon properties"
                             ]
                         ],
                         "7": [
@@ -8965,7 +8965,7 @@ const data = {
                         "9": [
                             "uav buffed",
                             [
-                                "all bloon properties now have a 50% chance of being ignored"
+                                "every attack now has a 50% chance to ignore bloon properties"
                             ]
                         ],
                         "10": [
@@ -9012,7 +9012,7 @@ const data = {
                         "15": [
                             "uav buffed",
                             [
-                                "all bloon properties now have a 100% chance of being ignored"
+                                "every attack now has a 100% chance to ignore bloon properties"
                             ],
                             "ucav buffed",
                             [
