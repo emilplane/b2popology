@@ -5112,7 +5112,7 @@ const data = {
                                                 [
                                                     "2d, 1cd (3cd), 16p, 50r, 1.1s, sharp type"
                                                 ],
-                                                "skipped if there are leads (unless black and white are also present), but never skipped if there are ceramics"
+                                                "skipped if there are leads (unless black or white are also present), but never skipped if there are ceramics"
                                             ],
                                             "boom-sentry",
                                             [
@@ -5124,7 +5124,7 @@ const data = {
                                                         "2d, 30p, 18r blast, explosion type"
                                                     ]
                                                 ],
-                                                "skipped if there are blacks (unless white and lead are also present)"
+                                                "skipped if there are blacks (unless white or lead are also present)"
                                             ],
                                             "cold-sentry",
                                             [
@@ -5138,7 +5138,7 @@ const data = {
                                                         "applies permafrost status: 50% slow"
                                                     ]
                                                 ],
-                                                "skipped if there are whites (unless lead and black are also present)"
+                                                "skipped if there are whites (unless lead or black are also present)"
                                             ],
                                             "energy-sentry",
                                             [
@@ -5146,7 +5146,7 @@ const data = {
                                                 [
                                                     "2d, 8p, 50r, 0.57s, energy type"
                                                 ],
-                                                "skipped if there are leads (unless black and white are also present), and always skipped if there are purples"
+                                                "skipped if there are leads (unless black or white are also present), and always skipped if there are purples"
                                             ]
                                         ]
                                     ],
