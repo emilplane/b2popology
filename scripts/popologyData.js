@@ -1451,7 +1451,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "520: shrapnel +6d (12d), applies crippled status"
+                                        "520: shrapnel +4d (12d), applies crippled status"
                                     ]
                                 ]
                             }
