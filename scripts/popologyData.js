@@ -9392,6 +9392,12 @@ const data = {
                                 <li>Win a total of 100 games on (map)</li>
                             </ul>
                         </ul>
+                        <ul>
+                            <li>Level 2</li>
+                            <ul>
+                                <li>Win a total of 500 games on (map)</li>
+                            </ul>
+                        </ul>
                     `
                 },
                 "playEveryDay": {
