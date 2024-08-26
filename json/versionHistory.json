@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        10
+        12
     ],
     "versionHistory": {
         "0": {
@@ -1041,6 +1041,15 @@
                         "Accounted for Quincy or Striker Jones leveling curves for hero leveling",
                         "Added correct leveling stats for Fateweaver Adora (jake6542)",
                         "Added note for corrosive glue not being buffed by +2d from 240 Glue Gunner (jake6542)"
+                    ]
+                },
+                "13": {
+                    "date": "2024/08/26",
+                    "content": [
+                    "Added level 4 to the get 1k eco accolade (thanks Unpoppable!)",
+                    "Fixed cripple moab damage increase (thanks Jake!)",
+                    "Fixed sentry expert sentries spawn condition using and instead of or (thanks Jake!)",
+                    "Fixed Etienne's UAV using bloon immunity instead of attacks having an mib like effect"
                     ]
                 }
             }
