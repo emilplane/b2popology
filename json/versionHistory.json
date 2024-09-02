@@ -1046,10 +1046,25 @@
                 "13": {
                     "date": "2024/08/26",
                     "content": [
-                    "Added level 4 to the get 1k eco accolade (thanks Unpoppable!)",
-                    "Fixed cripple moab damage increase (thanks Jake!)",
-                    "Fixed sentry expert sentries spawn condition using and instead of or (thanks Jake!)",
-                    "Fixed Etienne's UAV using bloon immunity instead of attacks having an mib like effect"
+                        "Added level 4 to the get 1k eco accolade (thanks Unpoppable!)",
+                        "Fixed cripple moab damage increase (thanks Jake!)",
+                        "Fixed sentry expert sentries spawn condition using and instead of or (thanks Jake!)",
+                        "Fixed Etienne's UAV using bloon immunity instead of attacks having an mib like effect"
+                    ]
+                },
+                "14": {
+                    "date": "2024/09/02",
+                    "content": [
+                        "Added Battles 2 4.2 balance changes",
+                        "Missing Monkey Wizard, 5xx Heli Pilot, and xx4 Boomerang Monkey stats"
+                    ]
+                },
+                "15": {
+                    "date": "2024/09/02",
+                    "content": [
+                        "Added basic Bonnie stats up to level 10",
+                        "Corrected Adora leveling curve",
+                        "Made the hero buttons 2 columns wide on large devices"
                     ]
                 }
             }

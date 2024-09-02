@@ -327,6 +327,11 @@ function runPopology(compare) {
                     clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`)
                 }
                 document.getElementById("pageButtonContainer" + compareID).appendChild(clone)
+                if (selectedCategory == "heroes") {
+                    document.getElementById("pageButtonContainer" + compareID).classList.add("heroPageButtonContainer")
+                } else {
+                    document.getElementById("pageButtonContainer" + compareID).classList.remove("heroPageButtonContainer")
+                }
             }
         }
     }
@@ -423,6 +428,7 @@ function runPopology(compare) {
             html += "<ul>"
             array.forEach(element => {
                 let elementContent = element
+                console.log(element)
                 if (element[0] == "advanced_mode") {
                     elementContent = element[1]
                     if (advancedMode) {

@@ -1658,7 +1658,7 @@ const data = {
                                         "410: sonar +20%p (180p), radioactive +5p (35p)",
                                         "420: sonar +25%p (225p), radioactive +1ld, +15p (50), normal type",
                                         "401: radioactive 75%s (0.3s)",
-                                        "402: radioactive 66.66%s (0.2s)"
+                                        "402: radioactive 66.67%s (0.2s)"
                                     ]
                                 ]
                             },
@@ -8555,7 +8555,7 @@ const data = {
                     "data": {
                         "1": [
                             "$650",
-                            ["hero_level", {"multiplier": 1, "curve": "Quincy"}],
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 6 radius",
                             "placeable on: land",
@@ -9069,6 +9069,151 @@ const data = {
                                     "2d, 25p, 20r blast, explosion type, camo"
                                 ]
                             ]
+                        ]
+                    }
+                },
+                "bonnie": {
+                    "name": "Bonnie",
+                    "data": {
+                        "1": [
+                            "$900",
+                            ["hero_level", {"multiplier": "?", "curve": "unknown"}],
+                            "Unlock Cost: 5,000 MM",
+                            "size: ? radius",
+                            "placeable on: land",
+                            "?r",
+                            "dynamites attack",
+                            [
+                                "3s passive",
+                                "places dynamite randomly on track",
+                                [
+                                    "13s lifetime",
+                                    "on contact or expire: explosion",
+                                    [
+                                        "1d, ?p, ?r blast, explosion type"
+                                    ]
+                                ]
+                            ]
+                        ],
+                        "2": [
+                            "spawns a minecart every 6 seconds",
+                            [
+                                "4HP, 25 speed (equivalent to a red bloon)",
+                                "HP increases each round?",
+                                "does not take any lives if it exits the track",
+                                "on pop: bloonstone attack",
+                                [
+                                    "$50 income",
+                                ],
+                                "can be upgraded to buff bloonstone up to $300 income"
+                            ]
+                        ],
+                        "3": [
+                            "mass-detonation ability (50s cooldown, 20s initial)",
+                            [
+                                "places dynamite randomly on track ? times",
+                                "gains 1 detonation-dynamite attack per minecart",
+                                [
+                                    "pops targeted minecart",
+                                    "on pop: detonation-explosion",
+                                    [
+                                        "3d, ?p, ?r blast, normal type, camo"
+                                    ]
+                                ]
+                            ]
+                        ],
+                        "4": [
+                            "dynamites buffed",
+                            [
+                                "66.67%s (2s)"
+                            ],
+                            "dynamite buffed",
+                            [
+                                "? lifetime"
+                            ]
+                        ],
+                        "5": [
+                            "bloonstone buffed",
+                            [
+                                "maximum income: $800"
+                            ],
+                        ],
+                        "6": [
+                            "explosion buffed",
+                            [
+                                "+1d (2d)"
+                            ],
+                            "detonation-explosion buffed",
+                            [
+                                "+1d (4d)"
+                            ]
+                        ],
+                        "7": [
+                            "explosion buffed",
+                            [
+                                "+?p (?p), +?r (?r), normal type"
+                            ],
+                        ],
+                        "8": [
+                            "dynamite buffed",
+                            [
+                                "? lifetime"
+                            ],
+                            "bloonstone buffed",
+                            [
+                                "maximum income: $1,600"
+                            ]
+                        ],
+                        "9": [
+                            "explosion buffed",
+                            [
+                                "+2d (4d)"
+                            ],
+                            "detonation-explosion buffed",
+                            [
+                                "+2d (6d)"
+                            ]
+                        ],
+                        "10": [
+                            "beast ability (65s cooldown, battle ready)",
+                            [
+                                "spawns a beast-minecart",
+                                [
+                                    "?HP, ? speed",
+                                    "does not take any lives if it exits the track",
+                                    "more details soon"
+                                ]
+                            ]
+                        ],
+                        "11": [
+                            "no data"
+                        ],
+                        "12": [
+                            "no data"
+                        ],
+                        "13": [
+                            "no data"
+                        ],
+                        "14": [
+                            "no data"
+                        ],
+                        "15": [
+                            "no data"
+                        ],
+                        "16": [
+                            "no data"
+                        ],
+                        "17": [
+                            "no data"
+                        ],
+                        "18": [
+                            "no data"
+                        ],
+                        "19": [
+                            "no data"
+                        ],
+                        "20": [
+                            "no data"
                         ]
                     }
                 }

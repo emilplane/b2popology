@@ -2,12 +2,12 @@
     "tournaments": [],
     "news": [
         {
-            "title": "Update 4.1.2 out now!",
+            "title": "Update 4.2 out now!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",
-            "description": "More druid changes and bug fixes!",
+            "description": "Introducing a new hero: Bonnie the Bloonstone Miner! Also, ranked league changes, balance changes, and more!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1ekrm4k/update_412_is_rolling_out_now_patch_notes/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1f4s3zw/battles_2_update_42_coming_soon_new_hero_bonnie/"]
             ]
         }
     ]

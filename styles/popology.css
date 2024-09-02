@@ -154,7 +154,12 @@
         margin-top: 8px;
     }
 }
-
+.heroPageButtonContainer{
+    @media screen and (min-width: 1000px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 .pageButton {
     background-color: var(--shade2_5);
     @media (prefers-color-scheme: dark) {
@@ -176,7 +181,7 @@
     transition: 0.5s;
 }
 .pageButton:hover > .pageButtonImage, .pageButtonSelected > .pageButtonImage {
-    height: 85px;
+    transform: scale(1.4);
 }
 
 .contentContainer {
