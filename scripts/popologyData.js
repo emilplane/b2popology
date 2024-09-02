@@ -762,7 +762,7 @@ const data = {
                                     ],
                                     "gains meteor attack",
                                     [
-                                        "900d, 1p, ∞r, 4.0s, fire type, camo, strong priority",
+                                        "900d, 1p, ∞r, 4.0s, fire type, camo, follows targeting",
                                         "can see past obstacles",
                                         "weak homing (100 turn rate)",
                                         "applies burn status",
@@ -1024,6 +1024,7 @@ const data = {
                                     [
                                         "1d, ∞p, ∞r, shatter type, camo",
                                         "applies frozen status (6s duration, or 3s for camo/white/blimp)",
+                                        "slows down blimps to 2.25 speed",
                                         "all Ice Monkeys and Fusty the Snowman gain 50%s buff for 6s"
                                     ],
                                     "crosspath",
@@ -1052,7 +1053,8 @@ const data = {
                                     [
                                         "1d, ∞p, ∞r, normal type, camo",
                                         "applies frozen status (10s duration)",
-                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff for 10s"
+                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff for 10s",
+                                        "soaks through blimp layers"
                                     ],
                                     "crosspath",
                                     [
@@ -1322,7 +1324,7 @@ const data = {
                                     "gains camo detection",
                                     "on pop: stun-splat",
                                     [
-                                        "6p, 12p, applies stun (1s, MOABs and DDTs for 0.35s, BFBs for 0.2s, ZOMGs for 0.1s)"
+                                        "6p, 12p, applies stun (1s, MOABs and DDTs for 0.35s, BFBs for 0.2s, ZOMGs for 0.06s)"
                                     ],
                                     "crosspath",
                                     [
@@ -1474,7 +1476,7 @@ const data = {
                                     [
                                         "on damage: shrapnel",
                                         [
-                                            "1d, 5j 45° spread, 2p, sharp type",
+                                            "1d, +2cad (3cad), 5j 45° spread, 2p, sharp type",
                                             "spread centered around direction fired"
                                         ]
                                     ]
@@ -2050,7 +2052,7 @@ const data = {
                             "4": {
                                 "name": "004 - Favored Trades",
                                 "content": [
-                                    "+$700 end of round income ($1,000)",
+                                    "+$900 end of round income ($1,200)",
                                     "dart buffed",
                                     [
                                         "50%s (0.5s)"
@@ -2307,7 +2309,7 @@ const data = {
                                     ],
                                     "dart buffed",
                                     [
-                                        "+2d (4d), +8md (14md), normal type"
+                                        "+10d (12d), normal type"
                                     ],
                                     "bomb buffed",
                                     [
@@ -2324,7 +2326,7 @@ const data = {
                     "data": {
                         "base": [
                             "$800 (500 MM)",
-                            "size: 23 units * 23 units",
+                            "size: 18 units * 18 units",
                             "placeable on: land",
                             "22r",
                             "dart attack",
@@ -2649,7 +2651,7 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+18d (25d), +25cd (50cd), 35md (60md), +115p (195p), +16r (72r), normal type"
+                                        "+43d (50d), +115p (195p), +16r (72r), normal type"
                                     ],
                                     "stun-explosion buffed",
                                     [
@@ -3025,6 +3027,10 @@ const data = {
                             "4": {
                                 "name": "004 - Bloon Area Denial System",
                                 "content": [
+                                    "buckshot attack buffed",
+                                    [
+                                        "+1d (5d)"
+                                    ],
                                     "gains 3 more buckshot attacks, which attack in sequence for effectively 0.375s attack cooldown",
                                     "gains independent targeting",
                                     [
@@ -3935,7 +3941,7 @@ const data = {
                                     ],
                                     "bombed buffed",
                                     [
-                                        "850d",
+                                        "1000d",
                                         "explosion 200d"
                                     ]
                                 ]
@@ -4056,7 +4062,7 @@ const data = {
                                 "content": [
                                     "gains unstable-potion attack",
                                     [
-                                        "67.5r, 6.0s, can only target blimps",
+                                        "67.5r, 4.5s, can only target blimps",
                                         "on contact: unstable-splash",
                                         [
                                             "3p, 14r blast",
@@ -4073,7 +4079,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "130: unstable-splash +7r (21r)"
+                                        "130: unstable-splash +7r (21r), +1p (4p)"
                                     ]
                                 ]
                             },
@@ -4922,7 +4928,7 @@ const data = {
                                             ],
                                             "10-13s lifetime"
                                         ]
-                                    ],
+                                    ], 
                                     "crosspath",
                                     [
                                         "140: storm-spikes +5p (10p)",
@@ -4938,7 +4944,7 @@ const data = {
                                 "content": [
                                     "spikes buffed",
                                     [
-                                        "+2d (3d, 7md)",
+                                        "+2d (3d, 7md), 50%s (0.49s)",
                                         [
                                             "total: 15 damage per spike, 35 moab",
                                             [
@@ -9776,7 +9782,7 @@ const data = {
                                     <li>Rounds: 3-12</li>
                                     <li>Count: 6</li>
                                     <li>Total time: 0.6s</li>
-                                    <li>Eco: +$1.0</li>
+                                    <li>Eco: +$1.1</li>
                                     <li>Cost: $24</li>
                                 </ul>
                             </li>
@@ -9880,7 +9886,7 @@ const data = {
                                     <li>Rounds: 10-21</li>
                                     <li>Count: 5</li>
                                     <li>Total time: 0.35s</li>
-                                    <li>Eco: +$2.6</li>
+                                    <li>Eco: +$2.5</li>
                                     <li>Cost: $65</li>
                                 </ul>
                             </li>
@@ -9906,7 +9912,7 @@ const data = {
                                     <li>Rounds: 10-25</li>
                                     <li>Count: 4</li>
                                     <li>Total time: 0.32s</li>
-                                    <li>Eco: +$3.0</li>
+                                    <li>Eco: +$2.9</li>
                                     <li>Cost: $75</li>
                                 </ul>
                             </li>
@@ -9992,10 +9998,10 @@ const data = {
                             <li>Tight
                                 <ul>
                                     <li>Rounds: 23+</li>
-                                    <li>Count: 80</li>
+                                    <li>Count: 60</li>
                                     <li>Total time: 1s</li>
-                                    <li>Eco: +$24</li>
-                                    <li>Cost: $1,400</li>
+                                    <li>Eco: +$22</li>
+                                    <li>Cost: $1,200</li>
                                 </ul>
                             </li>
                         </ul>
@@ -10320,7 +10326,7 @@ const data = {
                 "base": 525,
                 "top": [350, 650, 1200, 3600, 55000],
                 "middle": [250, 400, 900, 3200, 25000],
-                "bottom": [200, 300, 900, 3200, 35000]
+                "bottom": [200, 300, 900, 3200, 38000]
             },
             "tackShooter": {
                 "base": 280,
@@ -10330,7 +10336,7 @@ const data = {
             },
             "iceMonkey": {
                 "base": 450,
-                "top": [100, 350, 2000, 2700, 34000],
+                "top": [100, 350, 1800, 2700, 34000],
                 "middle": [225, 350, 2900, 3000, 18000],
                 "bottom": [100, 200, 1750, 2400, 32000]
             },
@@ -10338,7 +10344,7 @@ const data = {
                 "base": 100,
                 "top": [150, 300, 2300, 4500, 19000],
                 "middle": [100, 700, 2200, 4000, 14000],
-                "bottom": [120, 400, 3200, 2000, 28000]
+                "bottom": [120, 400, 3200, 2200, 28000]
             }
         },
         "military": {
@@ -10358,19 +10364,19 @@ const data = {
                 "base": 500,
                 "top": [350, 550, 2700, 6400, 25000],
                 "middle": [550, 500, 900, 5250, 21000],
-                "bottom": [300, 400, 1600, 5400, 19000]
+                "bottom": [300, 400, 1500, 5700, 19000]
             },
             "monkeyAce": {
                 "base": 700,
                 "top": [550, 600, 1000, 3000, 40000],
-                "middle": [200, 350, 900, 14000, 30000],
+                "middle": [200, 350, 900, 15000, 30000],
                 "bottom": [450, 300, 2200, 20000, 75000]
             },
             "heliPilot": {
                 "base": 800,
                 "top": [600, 250, 1800, 17500, 45000],
                 "middle": [200, 350, 3200, 7500, 30000],
-                "bottom": [350, 250, 3700, 8500, 35000]
+                "bottom": [350, 250, 3700, 7500, 35000]
             },
             "mortarMonkey": {
                 "base": 700,
@@ -10382,7 +10388,7 @@ const data = {
                 "base": 800,
                 "top": [250, 600, 2800, 12000, 80000],
                 "middle": [250, 500, 5600, 5100, 68000],
-                "bottom": [150, 800, 3400, 14500, 53000]
+                "bottom": [150, 800, 3400, 16000, 50000]
             }
         },
         "magic": {
@@ -10412,7 +10418,7 @@ const data = {
             },
             "druid": {
                 "base": 425,
-                "top": [350, 900, 1500, 4300, 55000],
+                "top": [250, 1000, 1500, 4300, 55000],
                 "middle": [350, 250, 700, 4200, 35000],
                 "bottom": [100, 400, 750, 2500, 45000]
             }
@@ -10438,7 +10444,7 @@ const data = {
             },
             "engineerMonkey": {
                 "base": 400,
-                "top": [450, 350, 525, 2800, 32000],
+                "top": [400, 350, 500, 2800, 32000],
                 "middle": [250, 350, 800, 13500, 100000],
                 "bottom": [450, 200, 350, 3600, 54000]
             }
