@@ -410,11 +410,11 @@ const data = {
                                     "gains press attack",
                                     [
                                         "1d, 4md (5md), 200p, 49.45r, 10.0s, normal type",
-                                        "can rehit after 0.1s",
+                                        "can rehit after 0.13s",
                                         "only targets blimps below BAD",
-                                        "knocks back blimps",
+                                        "sends back blimps",
                                         [
-                                            "ZOMG knockback is weaker"
+                                            "MOABs 2.4 units, BFBs 1 unit, ZOMGs 0.35 units, DDTs 0.5 units"
                                         ]
                                     ],
                                     "crosspath",
@@ -2500,7 +2500,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "013: shove buffed (MOABs to -44%, BFBs to -11%,  ZOMGs to 33%, DDTs to 22%)"
+                                        "013: shove buffed (MOABs to -44%, BFBs to -11%, ZOMGs to 33%, DDTs to 22%)"
                                     ]
                                 ]
                             },
@@ -9096,16 +9096,41 @@ const data = {
                             ]
                         ],
                         "2": [
-                            "spawns a minecart every 6 seconds",
+                            "spawns a minecart track entity every 6 seconds",
                             [
                                 "4HP, 25 speed (equivalent to a red bloon)",
-                                "HP increases each round?",
+                                "ignores status effects",
                                 "does not take any lives if it exits the track",
                                 "on pop: bloonstone attack",
                                 [
                                     "$50 income",
                                 ],
-                                "can be upgraded to buff bloonstone up to $300 income"
+                                "can be upgaded",
+                                [
+                                    "gains set of level-1 upgrades (5 upgrades)",
+                                    [
+                                        "costs $240/upgrade",
+                                        "+1HP (5HP; 6HP; 7HP; 8HP; 9HP)",
+                                        "bloonstone buffed",
+                                        [
+                                            "+$10 income ($60; $70; $80; $90; $100)"
+                                        ]
+                                    ],
+                                    "gains set of level-2 upgrades (5 upgrades)",
+                                    [
+                                        "costs $1,000/upgrade",
+                                        "+2HP (11HP, 13HP, 15HP, 17HP, 19HP)",
+                                        "bloonstone buffed",
+                                        [
+                                            "+$40 income ($140; $180; $220; $260; $300)"
+                                        ]
+                                    ],
+                                    "sets of upgrades must be purchased in order",
+                                    "all upgrades may be sold for 70% sellback",
+                                    [
+                                        "sellback cannot be buffed"
+                                    ]
+                                ]
                             ]
                         ],
                         "3": [
@@ -9133,10 +9158,18 @@ const data = {
                             ]
                         ],
                         "5": [
-                            "bloonstone buffed",
+                            "minecart buffed",
                             [
-                                "maximum income: $800"
-                            ],
+                                "gains set of level-3 upgrades (5 upgrades)",
+                                [
+                                    "costs $2,700/upgrade",
+                                    "+7HP (?)",
+                                    "bloonstone buffed",
+                                    [
+                                        "+$100 income ($400; $500; $600; $700; $800)"
+                                    ]
+                                ],
+                            ]
                         ],
                         "6": [
                             "explosion buffed",
@@ -9159,9 +9192,17 @@ const data = {
                             [
                                 "? lifetime"
                             ],
-                            "bloonstone buffed",
+                            "minecart buffed",
                             [
-                                "maximum income: $1,600"
+                                "gains set of level-4 upgrades (5 upgrades)",
+                                [
+                                    "costs $4,800/upgrade",
+                                    "+?HP (?)",
+                                    "bloonstone buffed",
+                                    [
+                                        "+$160 income ($960; $1,120; $1,280; $1,440; $1,600)"
+                                    ]
+                                ],
                             ]
                         ],
                         "9": [
@@ -9177,43 +9218,125 @@ const data = {
                         "10": [
                             "beast ability (65s cooldown, battle ready)",
                             [
-                                "spawns a beast-minecart",
+                                "spawns a beast-minecart track entity",
                                 [
-                                    "?HP, ? speed",
+                                    "2000HP, ? speed, MOAB-class?",
                                     "does not take any lives if it exits the track",
                                     "more details soon"
                                 ]
                             ]
                         ],
                         "11": [
-                            "no data"
+                            "minecart buffed",
+                            [
+                                "gains set of level-5 upgrades (5 upgrades)",
+                                [
+                                    "costs $8,800/upgrade",
+                                    "+?HP (?)",
+                                    "bloonstone buffed",
+                                    [
+                                        "+$280 income ($1,880; $2,160; $2,440; $2,720; $3,000)"
+                                    ]
+                                ],
+                            ]
                         ],
                         "12": [
-                            "no data"
+                            "explosion buffed",
+                            [
+                                "400%md? (?md)"
+                            ],
                         ],
                         "13": [
-                            "no data"
+                            "mass-detonation buffed",
+                            [
+                                "?s cooldown"
+                            ],
+                            "dynamite buffed",
+                            [
+                                "? lifetime"
+                            ],
                         ],
                         "14": [
-                            "no data"
+                            "minecart buffed",
+                            [
+                                "gains set of level-6 upgrades (5 upgrades)",
+                                [
+                                    "costs $13,000/upgrade",
+                                    "+?HP (?)",
+                                    "bloonstone buffed",
+                                    [
+                                        "+$400 income ($3,400; $3,800; $4,200; $4,600; $5,000)"
+                                    ]
+                                ],
+                            ]
                         ],
                         "15": [
-                            "no data"
+                            "explosion buffed",
+                            [
+                                "+?d (?d, ?md)"
+                            ],
+                            "detonation-explosion buffed",
+                            [
+                                "+?d (?d, ?md)"
+                            ]
                         ],
                         "16": [
-                            "no data"
+                            "beast buffed",
+                            [
+                                "no data"
+                            ]
                         ],
                         "17": [
-                            "no data"
+                            "minecart buffed",
+                            [
+                                "gains set of level-7 upgrades (5 upgrades)",
+                                [
+                                    "costs $21,000/upgrade",
+                                    "+?HP (?)",
+                                    "bloonstone buffed",
+                                    [
+                                        "+$600 income ($5,600; $6,200; $6,800; $7,400; $8,000)"
+                                    ]
+                                ],
+                            ]
                         ],
                         "18": [
-                            "no data"
+                            "explosion buffed",
+                            [
+                                "+?p (?p), +?r (?r)"
+                            ],
+                            "detonation-explosion buffed",
+                            [
+                                "+?p (?p), +?r (?r)"
+                            ]
                         ],
                         "19": [
-                            "no data"
+                            "explosion buffed",
+                            [
+                                "+?d (?d, ?md)"
+                            ],
+                            "detonation-explosion buffed",
+                            [
+                                "+?d (?d, ?md)"
+                            ]
                         ],
                         "20": [
-                            "no data"
+                            "minecart buffed",
+                            [
+                                "gains set of level-8 upgrades (5 upgrades)",
+                                [
+                                    "costs $29,000/upgrade",
+                                    "+?HP (?)",
+                                    "bloonstone buffed",
+                                    [
+                                        "+$800 income ($8,800; $9,600; $10,400; $11,200; $12,000)"
+                                    ]
+                                ],
+                            ],
+                            "beast buffed",
+                            [
+                                "no data"
+                            ]
                         ]
                     }
                 }

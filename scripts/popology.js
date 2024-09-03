@@ -45,6 +45,7 @@ if (compare) {
 }
 
 const versionHistoryButton = document.getElementById('versionHistoryButton');
+const terminologyButton = document.getElementById('terminologyButton');
 const compareButton = document.getElementById('compareButton');
 const advancedButton = document.getElementById('advancedButton');
 
@@ -56,6 +57,16 @@ versionHistoryButton.addEventListener('mouseover', function() {
 });
 
 versionHistoryButton.addEventListener('mouseout', function() {
+    buttonHelperText.classList.remove("cornerButtonPreviewText")
+    buttonHelperText.innerText = ""
+});
+
+terminologyButton.addEventListener('mouseover', function() {
+    buttonHelperText.classList.add("cornerButtonPreviewText")
+    buttonHelperText.innerText = "Terminology"
+});
+
+terminologyButton.addEventListener('mouseout', function() {
     buttonHelperText.classList.remove("cornerButtonPreviewText")
     buttonHelperText.innerText = ""
 });
@@ -158,7 +169,7 @@ function runPopology(compare) {
     } else {
         compareID = ""
         document.getElementById("compareStyle").innerHTML = ""
-        wideModeIDs.forEach(className => {console.log(className)
+        wideModeIDs.forEach(className => {
             document.getElementById(className).classList.add(`${className}WideMode`)
         });
     }
@@ -428,7 +439,6 @@ function runPopology(compare) {
             html += "<ul>"
             array.forEach(element => {
                 let elementContent = element
-                console.log(element)
                 if (element[0] == "advanced_mode") {
                     elementContent = element[1]
                     if (advancedMode) {

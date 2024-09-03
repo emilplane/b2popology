@@ -78,12 +78,17 @@ function main(json) {
             minorVersionContentContainer.appendChild(minorVersionSummaryContainer)
             minorVersionContentContainer.appendChild(minorVersionFullContentContainer)
             
-            minorVersionContentContainer.addEventListener("click", function () {
+            minorVersionContentContainer.addEventListener("mousedown", function (event) {
                 const summarySection = minorVersionContentContainer.querySelector(".minorVersionSummaryContainer")
                 const fullSection = minorVersionContentContainer.querySelector(".minorVersionFullContentContainer")
                 if (summarySection.classList.contains("hideSection")) {
-                    fullSection.classList.add("hideSection")
-                    summarySection.classList.remove("hideSection")
+                    
+                    if (event.target.tagName === "P" || event.target.closest("p")) {
+                        return
+                    } else {
+                        fullSection.classList.add("hideSection")
+                        summarySection.classList.remove("hideSection")
+                    }
                 } else if (fullSection.classList.contains("hideSection")) {
                     fullSection.classList.remove("hideSection")
                     summarySection.classList.add("hideSection")

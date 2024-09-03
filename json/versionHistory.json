@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        13
+        16
     ],
     "versionHistory": {
         "0": {
@@ -1065,6 +1065,16 @@
                         "Added basic Bonnie stats up to level 10",
                         "Corrected Adora leveling curve",
                         "Made the hero buttons 2 columns wide on large devices"
+                    ]
+                },
+                "16": {
+                    "date": "2024/09/03",
+                    "content": [
+                        "Added basic Bonnie stats up to level 20",
+                        "Added known minecart data for Bonnie",
+                        "Added a terminology/help button to the bottom right corner of the page (in addition to the bottom of the page)",
+                        "Added MOAB press blowback stats for all MOAB-class bloons",
+                        "Text on the version history page can now be selected without closing its container (vuldo)"
                     ]
                 }
             }
