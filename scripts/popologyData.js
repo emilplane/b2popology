@@ -9162,8 +9162,9 @@ const data = {
                             [
                                 "gains set of level-3 upgrades (5 upgrades)",
                                 [
+                                    "applies to set: +1HP",
                                     "costs $2,700/upgrade",
-                                    "+7HP (?)",
+                                    "+7HP (27HP; 34HP; 41HP; 48HP; 55HP)",
                                     "bloonstone buffed",
                                     [
                                         "+$100 income ($400; $500; $600; $700; $800)"
@@ -9196,8 +9197,9 @@ const data = {
                             [
                                 "gains set of level-4 upgrades (5 upgrades)",
                                 [
+                                    "applies to set: +4HP",
                                     "costs $4,800/upgrade",
-                                    "+?HP (?)",
+                                    "+60HP (119HP; 179HP; 239HP; 299HP; 359HP)",
                                     "bloonstone buffed",
                                     [
                                         "+$160 income ($960; $1,120; $1,280; $1,440; $1,600)"
@@ -9220,9 +9222,12 @@ const data = {
                             [
                                 "spawns a beast-minecart track entity",
                                 [
-                                    "2000HP, ? speed, MOAB-class?",
+                                    "2,000HP, ? speed, MOAB-class",
                                     "does not take any lives if it exits the track",
-                                    "more details soon"
+                                    "every 20 damage: beast-bloonstone attack",
+                                    [
+                                        "$50 income ($5,000 max)",
+                                    ],
                                 ]
                             ]
                         ],
@@ -9232,7 +9237,7 @@ const data = {
                                 "gains set of level-5 upgrades (5 upgrades)",
                                 [
                                     "costs $8,800/upgrade",
-                                    "+?HP (?)",
+                                    "+120HP (479HP; 599HP, 719HP; 839HP; 959HP)",
                                     "bloonstone buffed",
                                     [
                                         "+$280 income ($1,880; $2,160; $2,440; $2,720; $3,000)"
@@ -9262,7 +9267,7 @@ const data = {
                                 "gains set of level-6 upgrades (5 upgrades)",
                                 [
                                     "costs $13,000/upgrade",
-                                    "+?HP (?)",
+                                    "+200HP (1159HP; 1359HP; 1559HP; 1759HP; 1959HP)",
                                     "bloonstone buffed",
                                     [
                                         "+$400 income ($3,400; $3,800; $4,200; $4,600; $5,000)"
@@ -9283,7 +9288,11 @@ const data = {
                         "16": [
                             "beast buffed",
                             [
-                                "no data"
+                                "5,000HP"
+                            ],
+                            "beast-bloonstone buffed: every 50 damage",
+                            [
+                                "$100 income ($10,000 max)",
                             ]
                         ],
                         "17": [
@@ -9292,7 +9301,7 @@ const data = {
                                 "gains set of level-7 upgrades (5 upgrades)",
                                 [
                                     "costs $21,000/upgrade",
-                                    "+?HP (?)",
+                                    "+400HP (2359HP; 2759HP; 3159HP; 3559HP; 3959HP)",
                                     "bloonstone buffed",
                                     [
                                         "+$600 income ($5,600; $6,200; $6,800; $7,400; $8,000)"
@@ -9326,7 +9335,7 @@ const data = {
                                 "gains set of level-8 upgrades (5 upgrades)",
                                 [
                                     "costs $29,000/upgrade",
-                                    "+?HP (?)",
+                                    "+600HP (4559HP; 5159HP; 5759HP; 6359HP; 6959HP)",
                                     "bloonstone buffed",
                                     [
                                         "+$800 income ($8,800; $9,600; $10,400; $11,200; $12,000)"
@@ -9335,7 +9344,11 @@ const data = {
                             ],
                             "beast buffed",
                             [
-                                "no data"
+                                "10,000HP"
+                            ],
+                            "beast-bloonstone buffed: every 100 damage",
+                            [
+                                "$200 income ($20,000 max)",
                             ]
                         ]
                     }

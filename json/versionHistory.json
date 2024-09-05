@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        16
+        17
     ],
     "versionHistory": {
         "0": {
@@ -1071,10 +1071,16 @@
                     "date": "2024/09/03",
                     "content": [
                         "Added basic Bonnie stats up to level 20",
-                        "Added known minecart data for Bonnie",
+                        "Added known minecart data for Bonnie (destructivforce)",
                         "Added a terminology/help button to the bottom right corner of the page (in addition to the bottom of the page)",
                         "Added MOAB press blowback stats for all MOAB-class bloons",
                         "Text on the version history page can now be selected without closing its container (vuldo)"
+                    ]
+                },
+                "17": {
+                    "date": "2024/09/04",
+                    "content": [
+                        "Added stats for Bonnie's beast ability (destructivforce)"
                     ]
                 }
             }
