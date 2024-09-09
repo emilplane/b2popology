@@ -4587,7 +4587,8 @@ const data = {
                                 "content": [
                                     "crate buffed",
                                     [
-                                        "+$1,200 income ($1,600)"
+                                        "+$1,200 income ($1,600)",
+                                        "+5%r"
                                     ]
                                 ]
                             },
