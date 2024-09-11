@@ -9087,10 +9087,10 @@ const data = {
                                 "3s passive",
                                 "places dynamite randomly on track",
                                 [
-                                    "13s lifetime",
+                                    "10s lifetime",
                                     "on contact or expire: explosion",
                                     [
-                                        "1d, ?p, ?r blast, explosion type"
+                                        "1d, 20p, 20r blast, explosion type",
                                     ]
                                 ]
                             ]
@@ -9142,7 +9142,11 @@ const data = {
                                     "pops targeted minecart",
                                     "on pop: detonation-explosion",
                                     [
-                                        "3d, ?p, ?r blast, normal type, camo"
+                                        "3d, 80p, 40r blast, normal type, camo",
+                                        "on expire: shrapnel",
+                                        [
+                                            "8d, 8j 360° spread, 1p, normal type"
+                                        ]
                                     ]
                                 ]
                             ]
@@ -9154,7 +9158,7 @@ const data = {
                             ],
                             "dynamite buffed",
                             [
-                                "? lifetime"
+                                "20s lifetime"
                             ]
                         ],
                         "5": [
@@ -9180,18 +9184,22 @@ const data = {
                             "detonation-explosion buffed",
                             [
                                 "+1d (4d)"
+                            ],
+                            "shrapnel buffed",
+                            [
+                                "+2d (10d)"
                             ]
                         ],
                         "7": [
                             "explosion buffed",
                             [
-                                "+?p (?p), +?r (?r), normal type"
+                                "+10p (30p), +8r (28r), normal type",
                             ],
                         ],
                         "8": [
                             "dynamite buffed",
                             [
-                                "? lifetime"
+                                "40s lifetime"
                             ],
                             "minecart buffed",
                             [
@@ -9214,11 +9222,15 @@ const data = {
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+2d (6d)"
+                                "+4d (8d)"
+                            ],
+                            "shrapnel buffed",
+                            [
+                                "+10d (20d)"
                             ]
                         ],
                         "10": [
-                            "beast ability (65s cooldown, battle ready)",
+                            "beast ability (70s cooldown, battle ready)",
                             [
                                 "spawns a beast-minecart track entity",
                                 [
@@ -9246,19 +9258,20 @@ const data = {
                             ]
                         ],
                         "12": [
-                            "explosion buffed",
+                            "all attacks buffed",
                             [
-                                "400%md? (?md)"
+                                "+400%md"
                             ],
+
                         ],
                         "13": [
                             "mass-detonation buffed",
                             [
-                                "?s cooldown"
+                                "40s cooldown"
                             ],
                             "dynamite buffed",
                             [
-                                "? lifetime"
+                                "80s lifetime"
                             ],
                         ],
                         "14": [
@@ -9278,11 +9291,15 @@ const data = {
                         "15": [
                             "explosion buffed",
                             [
-                                "+?d (?d, ?md)"
+                                "+6d (10d, 40md)"
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+?d (?d, ?md)"
+                                "+8d (16d, 160md)"
+                            ],
+                            "shrapnel buffed",
+                            [
+                                "+20d (40d, 400md)"
                             ]
                         ],
                         "16": [
@@ -9312,21 +9329,29 @@ const data = {
                         "18": [
                             "explosion buffed",
                             [
-                                "+?p (?p), +?r (?r)"
+                                "+70p (30p), +10r (38r)",
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+?p (?p), +?r (?r)"
+                                "+120p (200p), +10r (50r)"
+                            ],
+                            "shrapnel buffed",
+                            [
+                                "+2p (3p)"
                             ]
                         ],
                         "19": [
                             "explosion buffed",
                             [
-                                "+?d (?d, ?md)"
+                                "+50d (60d, 600md)"
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+?d (?d, ?md)"
+                                "+84d (100d, 1000md)"
+                            ],
+                            "shrapnel buffed",
+                            [
+                                "+210d (250d, 2500md)"
                             ]
                         ],
                         "20": [

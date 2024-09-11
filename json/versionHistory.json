@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        17
+        18
     ],
     "versionHistory": {
         "0": {
@@ -1081,6 +1081,20 @@
                     "date": "2024/09/04",
                     "content": [
                         "Added stats for Bonnie's beast ability (destructivforce)"
+                    ]
+                },
+                "18": {
+                    "date": "2024/09/11",
+                    "content": [
+                        "Bonnie's beast ability duration corrected to 70 seconds",
+                        "Added Level 13 Bonnie buffing the detonation ability to 40 seconds",
+                        "Bonnie's Level 1 dynamite duration corrected to 10 seconds",
+                        "Added Bonnie's Level 4 buffing dynamite duration to 20 seconds",
+                        "Added Bonnie's Level 8 buffing dynamite duration to 40 seconds",
+                        "Added Bonnie's Level 12 buffing dynamite MOAB-class damage by 35",
+                        "Added Bonnie's Level 13 buffing dynamite duration to 80 seconds",
+                        "Added damage, radius, and pierce stats for Bonnie's dynamite explosion and detonation-explosion",
+                        "Added stats for the shrapnel emitted from Bonnie's detonation-explosion"
                     ]
                 }
             }
