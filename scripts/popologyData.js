@@ -509,7 +509,7 @@ const data = {
                                 "content": [
                                     "bomb buffed",
                                     [
-                                        "+3r (43r)"
+                                        "+3r (43r), normal damage"
                                     ],
                                     "explosion buffed",
                                     [
@@ -10526,7 +10526,7 @@ const data = {
                                     <li>Count: 3</li>
                                     <li>Total time: 0.6s</li>
                                     <li>Eco: -$200</li>
-                                    <li>Cost: $5,000</li>
+                                    <li>Cost: $6,000</li>
                                 </ul>
                             </li>
                         </ul>
