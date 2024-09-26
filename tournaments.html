@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width"/>
+        <!-- <meta name="viewport" content="width=device-width"/> -->
         <title>Battles 2 Popology</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,64 +26,54 @@
                             <a href="index.html"><h5>Home</h5></a>
                             <a href="popology.html"><h5>Popology</h5></a>
                             <a href="tournaments.html"><h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Tournaments</h5></a>
-                            <a href="balance.html"><h5>Balancing</h5></a>
+                            <!-- <a href="balance.html"><h5>Balancing</h5></a> -->
                             <a href="https://discord.com/invite/9YAaxDXAYZ"><h5>Discord</h5></a>
                         </div>
                         <div class="menuIcon" id="menuIcon">
                             <span class="material-symbols-outlined menuIcon">menu</span>
                         </div>
                     </div>
-                        <section class="tournamentsTitleSection">
-                            <div class="tournamentsTitleImage"></div>
-                            <div class="tournamentsTitleContent">
-                                <h2 class="tournamentsSubheader">Battles 2 Popology</h2>
-                                <h1 class="luckiestGuy tournamentsText">Tournaments</h1>
+                    <div class="tournamentsContainer">
+                        <section class="nextTournamentSection">
+                            <div class="nextTournamentBackgroundImg"></div>
+                            <div class="rightSideContentOverlay">
+                                <a href="https://challonge.com/popologyweekly23" target="_blank">
+                                    <button class="viewTournamentButton">Sign up!</button>
+                                </a>
                             </div>
-                        </section>
-                        <!-- <section class="importantContentContainer">
-                            <div class="importantContentBox nextTournamentContainer">
-                                <div class="importantContent">
-                                    <h4>Next Tournament</h4>
-                                    <div class="horizontalLine strongLineStyle thick"></div>
-                                    <h2>Popology Weekly 14</h2>
-                                    <h4>5/11/2024</h4>
+                            <div class="nextTournamentContentOverlay">
+                                <h1 class="luckiestGuy tournamentTitle">Popology Weekly #23</h1>
+                                <h3 class="textShadow"><span class="textHighlight">No Heroes, </span>no Sniper Monkey</h3>
+                                <div class="detailsContainer">
+                                    <h6>Single Elimination</h6>
+                                    <h6>Best of 3; finals best of 5</h6>
+                                </div>
+                                <div class="tournamentProgressContainer">
+                                    <h6 id="progressText">Starts in: - hours, - minutes</h6>
+                                    <div class="progressBarContainer">
+                                        <div class="progressBar" id="progressBar"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </section> -->
-                        <section class="allTournamentsContainer">
-                            <div class="allTournamentsHeader">
-                                <h2>All Tournaments</h2>
-                                <div class="allTournamentsSortingDropdownContainer">
-                                    <select class="allTournamentsSortingDropdown" id="sortingDropdown">
-                                        <option value="newest">Newest</option>
-                                        <option value="oldest">Oldest</option>
-                                        <!-- <option value="numberOfParticipants">Number of Participants</option> -->
-                                    </select>
+                        </section>
+                        <section class="socialsSection">
+                            <a href="https://twitch.tv/b2popology" target="_blank">
+                                <div class="twitchContainer">
+                                    <h3>Twitch</h3>
                                 </div>
-                            </div>
-                            <div class="horizontalLine strongLineStyle thick"></div>
-                            <div class="allTournaments" id="tournaments">
-                                
-                            </div>
+                            </a>
+                            <a href="https://discord.gg/9YAaxDXAYZ" target="_blank">
+                                <div class="discordContainer">
+                                    <h3>Discord</h3>
+                                </div>
+                            </a>
+                            <a href="https://youtube.com/@Battles2Popology" target="_blank">
+                                <div class="youtubeContainer">
+                                    <h3>YouTube</h3>
+                                </div>
+                            </a>
                         </section>
-                        <section class="roundedBoxSection underConstructionSection">
-                            <img class="engiImage" src="media/Tower Portraits/engineerMonkey/base/engineerMonkeyPortrait.png"/>
-                            <div style="display: flex; flex-direction: column; align-items: center;justify-content: center;margin-bottom: 4px;text-align: center;">
-                                <h3 class="luckiestGuy">Under Construction</h3>
-                                <h6>Please check back soon!</h6>
-                            </div>
-                            <img class="engiImage" src="media/Tower Portraits/engineerMonkey/base/engineerMonkeyPortrait.png"/>
-                        </section>
-                        <style>
-                            .engiImage {
-                                height: 64px; @media screen and (max-width: 700px) {display: none;}
-                            }
-
-                            .underConstructionSection {
-                                display: grid; grid-template-columns: auto 1fr auto;
-                                @media screen and (max-width: 700px) {grid-template-columns: 1fr}
-                            }
-                        </style>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -100,27 +90,6 @@
         <a href="balance.html"><h3>Balancing</h3></a>
         <a href="https://discord.com/invite/9YAaxDXAYZ"><h3>Discord Server</h3></a>
     </dialog>
-    <style>
-        .tournamentsTitleImage {
-            margin: 16px 0;
-            opacity: 0.6; filter: blur(4px);
-            width: 100%; height: 350px; 
-            object-fit: cover; 
-            background-size: cover; 
-            background-repeat: no-repeat; 
-            background-position: center;
-            background-position-y: 75%;
-            background-image: url('media/rbc.png')
-        }
-        .tournamentCardBackgroundImage {
-            opacity: 0.6; filter: blur(4px);
-            width: 100%; height: 100%;
-            object-fit: cover; 
-            background-size: cover; 
-            background-repeat: no-repeat; 
-            /* background-image: url('media/clanIsland.png') */
-        }
-    </style>
     <script type="module" src="scripts/hamburger.js"></script>
     <script type="module" src="scripts/tournaments.js"></script>
     </html>

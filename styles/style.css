@@ -332,7 +332,8 @@ a {
 }
 
 .coverImage {
-    opacity: .8; filter: blur(4px);
+    /* opacity: .8; */
+    filter: blur(4px);
     width: 100%; height: 325px;
     object-fit: cover; 
     background-size: cover; 
@@ -341,7 +342,7 @@ a {
     margin: 0 auto;
 
     @media (prefers-color-scheme: dark) {
-        opacity: .6;
+        /* opacity: .6; */
     }
 }
 

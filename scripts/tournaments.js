@@ -1,74 +1,60 @@
-let tournaments;
+let announcedDate = new Date("2024-09-26T19:00:00Z");
+let startDate = new Date("2024-09-28T19:00:00Z");
+// let startDate = new Date("2024-09-26T17:55:40Z");
 
-function getTournamentData() {
-    fetch("https://raw.githubusercontent.com/emilplane/b2popology/main/json/tournaments.json")
-        .then((response) => response.json())
-        .then((json) => (tournaments = json))
-        .then(() => main())
+let percentageBarElement = document.getElementById("progressBar");
+let progressTextElement = document.getElementById("progressText");
+
+function getTimePassedPercentage(announcedDate, currentDate, startDate) {
+    let totalTime = startDate - announcedDate;
+    let timePassed = currentDate - announcedDate;
+
+    let percentage = (timePassed / totalTime) * 100;
+
+    // Normalize percentage to 0-100 range and enforce minimum 2% and maximum 100%
+    return Math.max(2, Math.min(percentage, 100));
 }
 
-getTournamentData()
-
-function main () {
-    console.log(tournaments)
-    updateTournamentCards()
+function pluralize(value, singular, plural) {
+    return value === 1 ? singular : plural;
 }
 
-document.getElementById("sortingDropdown").addEventListener("change", () => {
-    updateTournamentCards()
-})
-
-function updateTournamentCards() {
-    document.getElementById("tournaments").innerHTML = ""
-    for (let tournamentIndex in tournaments) {
-        let tournament = tournaments[tournamentIndex]
-        let linksHTML = ""
-        for (let linkName in tournament.links) {
-            switch (linkName) {
-                case "bracket":
-                    linksHTML += `<a href="${tournament.links[linkName]}"><button class="challongeButton">Challonge bracket</button></a>`
-                    break
-                case "youtubeVod":
-                    linksHTML += `<a href="${tournament.links[linkName]}"><button class="youtubeButton">YouTube VOD</button></a>`
-                    break
-                case "youtubeVideo":
-                    linksHTML += `<a href="${tournament.links[linkName]}"><button class="youtubeButton">YouTube Video</button></a>`
-                    break
-                case "twitchHighlight":
-                    linksHTML += `<a href="${tournament.links[linkName]}"><button class="twitchButton">Twitch Highlight</button></a>`
-                    break
-                default:
-                    linksHTML += `<a href="${tournament.links[linkName]}"><button>${linkName}</button></a>`
-                    break
-            }
-        }
-        let cardHTML = `
-            <div class="tournamentCard">
-                <div class="tournamentCardBackgroundImage tournamentCardBackgroundImage${tournamentIndex}"></div>
-                <div class="tournamentCardContent">
-                    <h2 class="textShadow" style="color:var(--)">${tournament.name}</h2>
-                    <h5 class="textShadow">Weekly Tournament &bull; ${new Date(tournament.date).toLocaleDateString(undefined, {timeZone: "UTC"})}</h5>
-                    <div class="tournamentButtonContainer">
-                        ${linksHTML}
-                        
-                    </div>
-                </div>
-                <style>
-                    .tournamentCardBackgroundImage${tournamentIndex} {
-                        background-position: center;
-                        background-position-y: ${tournament.backgroundImage.yPosition};
-                        background-image: url('media/${tournament.backgroundImage.name}')
-                    }
-            </style>
-            </div>
-        `
-    switch (document.getElementById("sortingDropdown").value) {
-        case "newest": default:
-            document.getElementById("tournaments").insertAdjacentHTML("afterbegin", cardHTML)
-            break
-        case "oldest":
-            document.getElementById("tournaments").insertAdjacentHTML("beforeend", cardHTML)
-            break
-        }
+function updateTimeUntilStart(currentDate, startDate) {
+    let timeDifference = startDate - currentDate;
+    
+    if (timeDifference <= 0) {
+        return "Tournament has started!";
     }
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Convert to days
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Remaining hours
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); // Remaining minutes
+    let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Remaining seconds
+
+    return `Starts in: ${days} ${pluralize(days, 'day', 'days')}, ` +
+           `${hours} ${pluralize(hours, 'hour', 'hours')}, ` +
+           `${minutes} ${pluralize(minutes, 'minute', 'minutes')}, ` +
+           `${seconds} ${pluralize(seconds, 'second', 'seconds')}`;
 }
+
+function updateProgressBarAndTime() {
+    let currentDate = new Date();
+    let timeDifference = startDate - currentDate;
+
+    // Update the progress bar width
+    if (timeDifference <= 0) {
+        percentageBarElement.style.width = "100%";
+    } else {
+        let percentagePassed = getTimePassedPercentage(announcedDate, currentDate, startDate);
+        percentageBarElement.style.width = `${percentagePassed}%`; // Ensure min 2%, max 100%
+    }
+
+    // Update the progress text with time remaining
+    progressTextElement.innerText = updateTimeUntilStart(currentDate, startDate);
+}
+
+// Call the function to update the progress bar and the time remaining text
+updateProgressBarAndTime();
+
+// Update every second
+setInterval(updateProgressBarAndTime, 100);  // Update every 1 second

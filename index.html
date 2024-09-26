@@ -28,7 +28,7 @@
                             <a href="index.html"><h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Home</h5></a>
                             <a href="popology.html"><h5>Popology</h5></a>
                             <a href="tournaments.html"><h5>Tournaments</h5></a>
-                            <a href="balance.html"><h5>Balancing</h5></a>
+                            <!-- <a href="balance.html"><h5>Balancing</h5></a> -->
                             <a href="https://discord.com/invite/9YAaxDXAYZ"><h5>Discord</h5></a>    
                         </div>
                         <div class="menuIcon" id="menuIcon">
@@ -37,6 +37,9 @@
                     </div>
                     <section class="welcomeContainer">
                         <h1>Welcome to the Battles 2 Popology!</h1>
+                    </section>
+                    <section id="artAttribution" style="display: flex; flex-direction: column; align-items: end; padding: 0 12px;">
+                        <p>Art by Pugmaster706!</p>
                     </section>
                     <section class="blankSection linksSection" id="newsSection">
                         <!-- <section class="roundedBoxSection contentInfoSection">
@@ -134,7 +137,7 @@
                                     </button>
                                 </a>
                             </section>
-                            <section class="roundedBoxSection">
+                            <!-- <section class="roundedBoxSection">
                                 <div class="resourceTitleContainer">
                                     <h4>Bloonstar</h4>
                                     <h6>by VTri</h6>
@@ -147,8 +150,35 @@
                                         <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
                                     </button>
                                 </a>
+                            </section> -->
+                            <section class="roundedBoxSection">
+                                <div class="resourceTitleContainer">
+                                    <h4>B2 Stats Tracker Discord bot</h4>
+                                    <h6>by Supertiger</h6>
+                                </div>
+                                <div class="horizontalLine"></div>
+                                <p>Use this Discord bot to track your or other Hall of Masters players' gameplay! Join a Battles 2 server like ours if you want to use it, or join the support server if you want to learn more about the bot or give feedback!</p>
+                                <a href="https://discord.gg/K5QKekv5fu" target="blank" class="buttonAnchor">
+                                    <button class="linkToExternalButton resourceButton">
+                                        <h6>Support server</h6>
+                                        <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
+                                    </button>
+                                </a>
                             </section>
                             <section class="roundedBoxSection">
+                                <div class="resourceTitleContainer">
+                                    <h4>Blooncyclopedia for Battles 2</h4>
+                                </div>
+                                <div class="horizontalLine"></div>
+                                <p>A brand new non-Fandom Bloons wiki! View its Battles 2 information here!</p>
+                                <a href="https://www.bloonswiki.com/Bloons_TD_Battles_2" target="blank" class="buttonAnchor">
+                                    <button class="linkToExternalButton resourceButton">
+                                        <h6>Visit resource</h6>
+                                        <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
+                                    </button>
+                                </a>
+                            </section>
+                            <!-- <section class="roundedBoxSection">
                                 <div class="resourceTitleContainer">
                                     <h4>BTD6 Central</h4>
                                     <h6>by Nitjus</h6>
@@ -161,8 +191,8 @@
                                         <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
                                     </button>
                                 </a>
-                            </section>
-                            <section class="roundedBoxSection">
+                            </section> -->
+                            <!-- <section class="roundedBoxSection">
                                 <div class="resourceTitleContainer">
                                     <h4>BTD6 Index</h4>
                                 </div>
@@ -174,7 +204,7 @@
                                         <span class="material-symbols-outlined linkToExternal">arrow_outward</span>
                                     </button>
                                 </a>
-                            </section>
+                            </section> -->
                         </div>
                     </section>
                     <section class="blankSection">
@@ -259,8 +289,34 @@
             @media (prefers-color-scheme: dark) {
                 background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0)), url('media/update_4_1_pugmaster.png');
             }
+            opacity: 0;
+        }
+        .coverImage.loaded {
+            transition: opacity 0.5s;
+            opacity: 0.8;
+            @media (prefers-color-scheme: dark) {
+                opacity: 0.6;
+            }
+        }
+        #artAttribution {
+            opacity: 0;
+        }
+        #artAttribution.loaded {
+            transition: opacity 0.5s;
+            opacity: 1;            
         }
     </style>
+    <script>
+        window.addEventListener('load', async function() {
+            await sleep(1000);
+            document.getElementById('coverImage').classList.add('loaded');
+            document.getElementById('artAttribution').classList.add('loaded');
+        });
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
     <script type="module" src="scripts/home.js"></script>
     <script type="module" src="scripts/hamburger.js"></script>
     </html>
