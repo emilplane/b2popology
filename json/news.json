@@ -2,12 +2,12 @@
     "tournaments": [],
     "news": [
         {
-            "title": "Update 4.2 out now!",
+            "title": "OTA Update 2 is out now!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",
-            "description": "Introducing a new hero: Bonnie the Bloonstone Miner! Also, ranked league changes, balance changes, and more!",
+            "description": "Ninja Kiwi's first OTA update for balance changes! Includes devastating nerfs for Sniper Monkey, as well as more minor Super Monkey and Bonnie nerfs!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1f4s3zw/battles_2_update_42_coming_soon_new_hero_bonnie/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1fubu6l/over_the_air_update_2_is_now_live_balance_changes/"]
             ]
         }
     ]
