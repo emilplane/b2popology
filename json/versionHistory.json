@@ -1096,6 +1096,16 @@
                         "Added damage, radius, and pierce stats for Bonnie's dynamite explosion and detonation-explosion",
                         "Added stats for the shrapnel emitted from Bonnie's detonation-explosion"
                     ]
+                },
+                "19": {
+                    "date": "2024/10/1",
+                    "content": [
+                        "Fixed end of round income buff numbers for xx5 Monkey Buccaneer (dandelionbreath)",
+                        "Fixed fireball pierce buff for 011 Monkey Wizard being incorrectly documented as 110 (dandelionbreath)",
+                        "x3x Monkey Wizard gives fireball +4r",
+                        "Clarified Quincy and Cyber Quincy's level 3 ability duration scaling (minimumornot)",
+                        "Fixed typo on Level 7 Churchill (minimumornot)"
+                    ]
                 }
             }
         }

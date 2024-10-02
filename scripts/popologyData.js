@@ -2071,7 +2071,7 @@ const data = {
                             "5": {
                                 "name": "005 - Trade Empire",
                                 "content": [
-                                    "+$2,000 end of round income (3,000$)",
+                                    "+$1,800 end of round income (3,000$)",
                                     "all attacks buffed: +1d (2d), +1cd (3cd), +1md (3md)",
                                     "gains trade buff",
                                     [
@@ -3159,7 +3159,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "110: fireball +7p (22p), can see past obstacles"
+                                        "011: fireball +7p (22p), can see past obstacles"
                                     ]
                                 ]
                             },
@@ -3188,7 +3188,7 @@ const data = {
                                 "content": [
                                     "fireball buffed",
                                     [
-                                        "explosion +7d (9d)"
+                                        "explosion +7d (9d), +4r (24r)"
                                     ],
                                     "place-fire buffed",
                                     [
@@ -5374,10 +5374,9 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains rapid-shot ability (45s cooldown, 6.2s duration, battle ready)",
+                            "gains rapid-shot ability (45s cooldown, (2 + 0.5l, l = level number)s duration (3.5s this level), battle ready)",
                             [
-                                "33.33%s",
-                                "duration increases 0.5s per level (2 + 0.5 level)"
+                                "33.33%s"
                             ]
                         ],
                         "4": [
@@ -5523,10 +5522,9 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains cyber-shot ability (45s cooldown, 5s duration, 11.25s initial)",
+                            "gains cyber-shot ability (45s cooldown, (5 + 0.5l, l = level number)s duration (6.5s this level), 11.25s initial)",
                             [
                                 "+15p (21p), +5r (55r), 84.75%s?",
-                                "duration increases 0.5s per level (5 + 0.5 level)"
                             ]
                         ],
                         "4": [
@@ -6724,7 +6722,7 @@ const data = {
                             "gains camo detection"
                         ],
                         "7": [
-                            "explosion buffed",
+                            "shell buffed",
                             [
                                 "+1i (4i)"
                             ],
@@ -8978,7 +8976,7 @@ const data = {
                         "10": [
                             "ucav ability (75s cooldown, 18s duration)",
                             [
-                                "uav replaced by ucav-drone subtower",
+                                "uav replaced by ucav-drone-ability subtower",
                                 [
                                     "10j/230°, 1 impact, ∞r, 0.6s",
                                     "homing",
