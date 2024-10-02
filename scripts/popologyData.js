@@ -1324,7 +1324,7 @@ const data = {
                                     "gains camo detection",
                                     "on pop: stun-splat",
                                     [
-                                        "6p, 12p, applies stun (1s, MOABs and DDTs for 0.35s, BFBs for 0.2s, ZOMGs for 0.06s)"
+                                        "6p, 12r, applies stun (1s, MOABs and DDTs for 0.35s, BFBs for 0.2s, ZOMGs for 0.06s)"
                                     ],
                                     "crosspath",
                                     [
@@ -1368,7 +1368,7 @@ const data = {
                     "name": "Sniper Monkey",
                     "data": {
                         "base": [
-                            "$200 (500 MM)",
+                            "$300 (500 MM)",
                             "size: 6 radius",
                             "placeable on: land",
                             "20r",
@@ -1387,7 +1387,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "120: shrapnel +1d (2d), normal type"
+                                        "120: normal type"
                                     ]
                                 ]
                             },
@@ -1400,7 +1400,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "220: shrapnel +1d (3d)"
+                                        "220: shrapnel +1d (2d)"
                                     ]
                                 ]
                             },
@@ -1413,7 +1413,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "320: shrapnel +2d (5d)"
+                                        "320: shrapnel +3d (5d)"
                                     ]
                                 ]
                             },
@@ -1474,7 +1474,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "on damage: shrapnel",
+                                        "on first hit: shrapnel",
                                         [
                                             "1d, +2cad (3cad), 5j 45° spread, 2p, sharp type",
                                             "spread centered around direction fired"
@@ -1499,13 +1499,18 @@ const data = {
                                     [
                                         "normal type"
                                     ],
-                                    "gains supply-drop ability (40s cooldown, 15s initial)",
+                                    "gains supply-drop ability (50s cooldown, 15s initial)",
                                     [
                                         "drops a crate worth $2000"
                                     ],
                                     "shrapnel buffed",
                                     [
                                         "+1p (3p)"
+                                    ],
+                                    "crosspath",
+                                    [
+                                        "041: -5s cooldown (45s cooldown)",
+                                        "041: -5s cooldown (40s cooldown)"
                                     ]
                                 ]
                             },
@@ -1519,11 +1524,11 @@ const data = {
                                     "gains elite buff",
                                     [
                                         "affects all snipers, excluding self",
-                                        "75%s",
+                                        "80%s",
                                         "enables elite targeting for all snipers",
                                         "prioritizes First if bloons are past 75% of the track, then Ceramics if there are any, otherwise Strong"
                                     ],
-                                    "supply-drop replaced by elite-supplies (40s cooldown, inherit cooldown)",
+                                    "supply-drop replaced by elite-supplies (50s cooldown, inherit cooldown)",
                                     [
                                         "drops a crate worth $5000"
                                     ]
@@ -4908,7 +4913,8 @@ const data = {
                                             [
                                                 "130: 50 moab damage per spike"
                                             ]
-                                        ]
+                                        ],
+                                        "Bonnie's beast-minecart is not MOAB-class for this attack",
                                     ]
                                 ]
                             },
@@ -9075,7 +9081,7 @@ const data = {
                     "name": "Bonnie",
                     "data": {
                         "1": [
-                            "$900",
+                            "$700",
                             ["hero_level", {"multiplier": "?", "curve": "unknown"}],
                             "Unlock Cost: 5,000 MM",
                             "size: ? radius",
@@ -9102,17 +9108,17 @@ const data = {
                                 "does not take any lives if it exits the track",
                                 "on pop: bloonstone attack",
                                 [
-                                    "$50 income",
+                                    "$25 income",
                                 ],
                                 "can be upgaded",
                                 [
                                     "gains set of level-1 upgrades (5 upgrades)",
                                     [
-                                        "costs $240/upgrade",
+                                        "costs $300/upgrade",
                                         "+1HP (5HP; 6HP; 7HP; 8HP; 9HP)",
                                         "bloonstone buffed",
                                         [
-                                            "+$10 income ($60; $70; $80; $90; $100)"
+                                            "+$15 income ($40; $55; $70; $85; $100)"
                                         ]
                                     ],
                                     "gains set of level-2 upgrades (5 upgrades)",
@@ -9133,7 +9139,7 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "mass-detonation ability (50s cooldown, 20s initial)",
+                            "mass-detonation ability (60s cooldown, 20s initial)",
                             [
                                 "places dynamite randomly on track ? times",
                                 "gains 1 detonation-dynamite attack per minecart",
@@ -9233,9 +9239,9 @@ const data = {
                             [
                                 "spawns a beast-minecart track entity",
                                 [
-                                    "2,000HP, ? speed, MOAB-class",
+                                    "4,000HP, ? speed, MOAB-class",
                                     "does not take any lives if it exits the track",
-                                    "every 20 damage: beast-bloonstone attack",
+                                    "every 40 damage: beast-bloonstone attack",
                                     [
                                         "$50 income ($5,000 max)",
                                     ],
@@ -9266,7 +9272,7 @@ const data = {
                         "13": [
                             "mass-detonation buffed",
                             [
-                                "40s cooldown"
+                                "50s cooldown"
                             ],
                             "dynamite buffed",
                             [
@@ -9304,9 +9310,9 @@ const data = {
                         "16": [
                             "beast buffed",
                             [
-                                "5,000HP"
+                                "10,000HP"
                             ],
-                            "beast-bloonstone buffed: every 50 damage",
+                            "beast-bloonstone buffed: every 100 damage",
                             [
                                 "$100 income ($10,000 max)",
                             ]
@@ -9368,9 +9374,9 @@ const data = {
                             ],
                             "beast buffed",
                             [
-                                "10,000HP"
+                                "20,000HP"
                             ],
-                            "beast-bloonstone buffed: every 100 damage",
+                            "beast-bloonstone buffed: every 200 damage",
                             [
                                 "$200 income ($20,000 max)",
                             ]
@@ -10654,10 +10660,10 @@ const data = {
         },
         "military": {
             "sniperMonkey": {
-                "base": 200,
-                "top": [200, 600, 2800, 5000, 34000],
-                "middle": [200, 250, 3200, 5600, 14000],
-                "bottom": [250, 250, 2300, 3800, 14500]
+                "base": 300,
+                "top": [250, 750, 2800, 5000, 34000],
+                "middle": [200, 250, 3000, 5800, 14000],
+                "bottom": [300, 300, 2200, 3800, 14500]
             },
             "monkeySub": {
                 "base": 325,
@@ -10704,7 +10710,7 @@ const data = {
                 "bottom": [300, 300, 1500, 2600, 24000]
             },
             "superMonkey": {
-                "base": 1800,
+                "base": 2000,
                 "top": [1400, 2500, 11500, 80000, 200000],
                 "middle": [1000, 1000, 10000, 20000, 90000],
                 "bottom": [3000, 1200, 4500, 27000, 100000]

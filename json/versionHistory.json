@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        19
+        20
     ],
     "versionHistory": {
         "0": {
@@ -1105,6 +1105,13 @@
                         "x3x Monkey Wizard gives fireball +4r",
                         "Clarified Quincy and Cyber Quincy's level 3 ability duration scaling (minimumornot)",
                         "Fixed typo on Level 7 Churchill (minimumornot)"
+                    ]
+                },
+                "20": {
+                    "date": "2024/10/2",
+                    "content": [
+                        "Added Battles 2 OTA Update 2 Balance Changes",
+                        "Fixed typo on xx4 Glue Gunner indicating projectile radius is pierce resulting in two pierce values (jake6542)"
                     ]
                 }
             }
