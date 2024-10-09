@@ -10051,7 +10051,164 @@ const data = {
                             </ul>
                         </ul>
                     `
-            }
+            },
+                "completeBlingSeason": {
+                    "name": "Complete the bling season",
+                    "data": `
+                        <ul>
+                            <li>Level 1</li>
+                            <ul>
+                                <li>Complete the bling season 5 times</li>
+                            </ul>
+                        </ul>
+                        <ul>
+                            <li>Level 2</li>
+                            <ul>
+                                <li>Complete the bling season 10 times</li>
+                            </ul>
+                        </ul>
+                        `
+            },
+                "takePartInClanWarSilver": {
+                    "name": "Take a part in a clan war in Silver or higher",
+                    "data": `
+                        <ul>
+                            <li>Level 1</li>
+                            <ul>
+                                <li>Take a part in a clan war in Silver or higher 25 times</li>
+                            </ul>
+                        </ul>
+                        `
+            },
+                "takePartInClanWarGold": {
+                    "name": "Take a part in a clan war in Gold or higher",
+                    "data": `
+                        <ul>
+                            <li>Level 1</li>
+                            <ul>
+                                <li>Take a part in a clan war in Gold or higher 25 times</li>
+                            </ul>
+                        </ul>
+                        `
+            },
+                "takePartInClanWarDiamond": {
+                    "name": "Take a part in a clan war in Diamond or higher",
+                    "data": `
+                        <ul>
+                            <li>Level 1</li>
+                            <ul>
+                                <li>Take a part in a clan war in Diamond or higher 25 times</li>
+                            </ul>
+                        </ul>
+                        `
+            },
+                "takePartInClanWarRuby": {
+                    "name": "Take a part in a clan war in Ruby or higher",
+                    "data": `
+                        <ul>
+                            <li>Level 1</li>
+                            <ul>
+                                <li>Take a part in a clan war in Ruby or higher 25 times</li>
+                            </ul>
+                        </ul>
+                        `
+            },
+               "takePartInClanWarBlackDiamond": {
+                "name": "Take a part in a clan war in Black Diamond",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Take a part in a clan war in Black Diamond 25 times</li>
+                        </ul>
+                    </ul>
+                    `
+        },
+                "warFinishFirst": {
+                "name": "Finish 1st on the clan war leaderboard",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Finish 1st on the clan war leaderboard 5 times</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Finish 1st on the clan war leaderboard 25 times</li>
+                        </ul>
+                    </ul>
+                    `
+        },
+                "warFinishSecond": {
+                "name": "Finish 2nd on the clan war leaderboard",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Finish 2nd on the clan war leaderboard 5 times</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Finish 2nd on the clan war leaderboard 25 times</li>
+                        </ul>
+                    </ul>
+                    `
+        },
+                "warFinishThird": {
+                "name": "Finish 3rd on the clan war leaderboard",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Finish 3rd on the clan war leaderboard 5 times</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Finish 3rd on the clan war leaderboard 25 times</li>
+                        </ul>
+                    </ul>
+                    `
+        },
+                "contributeTokens": {
+                "name": "Contribute tokens to unlocking items in the clan shop",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Contribute 5,000 tokens to unlocking items in the clan shop</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Contribute 50,000 tokens to unlocking items in the clan shop</li>
+                        </ul>
+                    </ul>
+                    `
+        },
+                "winMedallions": {
+                "name": "Win medallions during clan wars",
+                "data": `
+                    <ul>
+                        <li>Level 1</li>
+                        <ul>
+                            <li>Win 500,000 medallions during clan wars</li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>Level 2</li>
+                        <ul>
+                            <li>Win 1,000,000 medallions during clan wars</li>
+                        </ul>
+                    </ul>
+                    `
+        },
             }
         },
         "bloons": {
