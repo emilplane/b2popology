@@ -2318,7 +2318,7 @@ const data = {
                                     ],
                                     "bomb buffed",
                                     [
-                                        "+3d (6d), normal type"
+                                        "+2d (6d), normal type"
                                     ],
                                     "gains 2 more copies of barrage, which target last and strong"
                                 ]
@@ -3054,7 +3054,7 @@ const data = {
                                     ],
                                     "all attacks buffed",
                                     [
-                                        "+4d (8d), +6j (12j), +2p (9p)"
+                                        "+3d (8d), +6j (12j), +2p (9p)"
                                     ]
                                 ]
                             }
