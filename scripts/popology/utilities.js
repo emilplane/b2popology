@@ -1,4 +1,4 @@
-import { UI_CONSTANTS } from "./constants.js"
+import { MODULE_PROPERTIES, UI_CONSTANTS } from "./constants.js"
 
 export function fixFloatingPoint(number) {
     if (typeof number == "number") return Number(number.toFixed(10))
@@ -79,5 +79,63 @@ export class BackgroundGradient {
         this.start = start
         this.end = end
         this.direction = direction
+    }
+}
+
+export class UpgradeSummaryStats {
+    constructor(upgrade) {
+        this.upgrade = upgrade
+        this.summaryArray = []
+
+        this.populateSummaryArray()
+    }
+
+    populateSummaryArray() {
+        this.numberOfNonBuffUpgradeModules()
+
+        if (this.numberOfNonBuffUpgradeModules() == 0) {
+            this.upgrade.forEach(module => {
+                for (const propertyName in module.properties) {
+                    const propertyData = MODULE_PROPERTIES[propertyName]
+                    if (propertyData.includeInSummary) {
+                        // console.log(propertyName, module.properties[propertyName])
+                        switch (propertyData.type) {
+                            case "number":
+                                const operator = module.properties[propertyName][0]
+                                const value = module.properties[propertyName][1]
+                                let valueString = ''
+                                switch (operator) {
+                                    case "+":
+                                        valueString = `+${value}`
+                                        break
+                                    case "%":
+                                        valueString = `+${value*100}%`
+                                        break
+                                    case "*":
+                                        valueString = `${value*100}%`
+                                        break
+                                }
+                                if (propertyData.unit != undefined) {
+                                    this.summaryArray.push(`${valueString}${propertyData.unit}`)
+                                } else {
+                                    this.summaryArray.push(`${valueString} ${propertyData.displayName}`)
+                                }
+                                break
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+    numberOfNonBuffUpgradeModules() {
+        let number = 0
+        this.upgrade.forEach(module => {
+            if (module.action != "buff") {
+                number++
+            }
+        })
+
+        return number
     }
 }

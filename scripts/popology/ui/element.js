@@ -39,6 +39,11 @@ export class Element {
         return this;
     }
 
+    onclick(callback) {
+        this.element.onclick = callback;
+        return this;
+    }
+
     clearHTML() {
         this.element.innerHTML = "";
         return this;

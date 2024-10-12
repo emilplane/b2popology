@@ -13,7 +13,7 @@
 
     --gray: hsl(0, 0%, 50%);
 
-    --dark1: hsl(0, 0%, 28%);
+    --dark1: hsl(0, 0%, 30%);
     --dark2: hsl(0, 0%, 23%);
     --dark3: hsl(0, 0%, 15%);
     --dark4: hsl(0, 0%, 10%);
@@ -138,6 +138,10 @@ button {
     border-radius: var(--bradius);
     cursor: pointer;
     font: var(--button);
+}
+
+.grayButton {
+    background-color: var(--dark1);
 }
 
 @media (prefers-color-scheme: dark) {

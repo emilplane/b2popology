@@ -1,7 +1,8 @@
 import { BackgroundGradient, HSL } from "./utilities.js"
 
 export const SETTINGS = {
-    "STOP_IF_INVALID_TOWER_JSON": true
+    "STOP_IF_INVALID_TOWER_JSON": true,
+    "SHOW_DEBUG_STYLES": true
 }
 
 export const TEST_CASES = {
@@ -133,7 +134,6 @@ export const TEST_CASES = {
         "name": "wizardMonkey", "displayName": "Wizard Monkey",
 
         "aliases": ["lizard", "lizardmonkey", "wiz", "apprentice"],
-
         
         "upgradeNames": [
             [
@@ -223,6 +223,25 @@ export const TEST_CASES = {
                 ],
             ],
         },
+
+        // An attempt to identify which properties are shown as a summary on the upgrade selection
+        // screen.
+        // "summaryProperties": {
+        //     "base": [
+        //         []
+        //     ],
+        //     "paths": [
+        //         [
+        //             [], [["magic-bolt", "damage"]], [], [], [],
+        //         ],
+        //         [
+        //             [], [], [], [], [],
+        //         ],
+        //         [
+        //             [], [], [], [], [],
+        //         ]
+        //     ]
+        // },
 
         "towerProperties": {
             "range": 40,
@@ -400,8 +419,6 @@ export const TEST_CASES = {
     }
 }
 
-
-
 export const MODULE_TYPES = {
     "attack": {
         "displayName": "attack",
@@ -425,34 +442,42 @@ export const MODULE_PROPERTIES = {
         "type": "number",
         "displayName": "Damage",
         "category": "damage",
+        "includeInSummary": true,
+        "unit": "d",
         "icon": true
     },
     "moabDamageBonus": {
         "type": "number",
         "displayName": "MOAB Damage",
         "category": "damage",
+        "includeInSummary": true,
         "icon": true
     },
     "ceramicDamageBonus": {
         "type": "number",
         "displayName": "Ceramic Damage",
-        "category": "damage"
+        "category": "damage",
+        "includeInSummary": true,
     },
     "fortifiedDamageBonus": {
         "type": "number",
         "displayName": "Fortified Damage",
-        "category": "damage"
+        "category": "damage",
+        "includeInSummary": true,
     },
     "leadDamageBonus": {
         "type": "number",
         "displayName": "Lead Damage",
         "category": "damage",
+        "includeInSummary": true,
         "icon": true
     },  
     "pierce": {
         "type": "number",
         "displayName": "Pierce",
         "category": "basic",
+        "unit": "p",
+        "includeInSummary": true,
         "icon": true
     },
     "impact": {
@@ -626,6 +651,8 @@ export const WARNS = {
 export const UI_CONSTANTS = {
     "PATH_JOIN_CHARACTER": "",
     "MODULE_NESTING_MODE": "none",
+
+    "POPOLOGY_UI_CONTAINER": document.getElementById("uiContent"),
 
     "CONFIG_PANEL": {
         "ELEMENT": document.getElementById("configPanel"),

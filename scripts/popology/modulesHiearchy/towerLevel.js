@@ -15,6 +15,7 @@ export class Upgrade {
         upgradeBlueprint.forEach(module => {
             this.modules.push(new UpgradeModule(module))
         });
+        console.log(this)
     }
 }
 
@@ -22,8 +23,8 @@ export class Upgrade {
  * A collection of upgrades that are constructed together into a tower.
  */
 export class Tower {
-    constructor(popologyTower, path) {
-        this.popologyTower = popologyTower
+    constructor(towerBlueprint, path) {
+        this.towerBlueprint = towerBlueprint
         this.path = path
         this.upgrades = []
         this.modules = []
@@ -35,13 +36,13 @@ export class Tower {
 
     initTower() {
         this.upgrades = [];
-
-        this.addUpgrade(this.popologyTower.blueprint.upgrades.base);
+        console.log(this.towerBlueprint)
+        this.addUpgrade(this.towerBlueprint.blueprint.upgrades.base);
     
         const paths = this.path.map((level, index) => ({
             level,
             pathNumber: index,
-            upgrades: this.popologyTower.blueprint.upgrades.paths[index]
+            upgrades: this.towerBlueprint.blueprint.upgrades.paths[index]
         }));
     
         paths.sort((a, b) => b.level - a.level);
@@ -51,7 +52,7 @@ export class Tower {
                 this.addUpgrade(path.upgrades[i]);
             }
 
-            const upgradeData = this.popologyTower.blueprint
+            const upgradeData = this.towerBlueprint.blueprint
                 .upgradeNames[path.pathNumber][path.level - 1];
             let upgradeName = upgradeData ? upgradeData.displayName : undefined;
             
@@ -72,7 +73,7 @@ export class Tower {
             }
         });
 
-        const baseTowerName = this.popologyTower.blueprint.displayName
+        const baseTowerName = this.towerBlueprint.blueprint.displayName
         if (isBasePath(this.path) && baseTowerName != undefined) {
             this.towerName = baseTowerName
         }
@@ -87,7 +88,7 @@ export class Tower {
     constructTower() {
         this.modules = []
 
-        this.modules.push(new TowerPropertiesModule(this.popologyTower.blueprint.towerProperties))
+        this.modules.push(new TowerPropertiesModule(this.towerBlueprint.blueprint.towerProperties))
         
         this.upgrades.forEach(upgrade => {
             upgrade.modules.forEach(module => {
@@ -102,6 +103,8 @@ export class Tower {
                 }
             })
         });
+
+        console.log(this)
     }
 
     /**

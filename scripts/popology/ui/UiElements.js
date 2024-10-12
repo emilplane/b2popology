@@ -1,11 +1,73 @@
 import { MODULE_TYPES, MODULE_PROPERTIES, WARNS } from "../constants.js";
 import { setCharAt } from "../utilities.js";
 import { Element } from "./element.js";
+import UIUpdates from "./uiUpdates.js";
 
 /**
  * Contains functions that create UI elements across the site
  */
 export class UiElements {
+    static categoryContainer(category, categoryData, popologyContext) {
+        console.log(categoryData);
+        const title = new Element(categoryData.nameSplit[0].prioritize == true ? "h2" : "h4")
+            .class("luckiestGuy", `${category}CategoryTitle`)
+            .text(categoryData.nameSplit[0].name);
+        
+        let subtitle = new Element("div");
+        if (categoryData.nameSplit[1] != undefined) {
+            subtitle = new Element(categoryData.nameSplit[1].prioritize == true ? "h2" : "h4")
+                .class(`${category}CategorySubtitle`)
+                .text(categoryData.nameSplit[1].name);
+        }
+
+        const titleContainer = new Element("div")
+            .class("categoryTitleContainer")
+            .children(title, subtitle);
+
+        const categoryDividingLine = new Element("div")
+            .class("categoryDividingLine");
+
+        const towerCardContainer = new Element("div")
+            .class("categoryContainerTowerCardContainer")
+
+        for (const towerName in categoryData.items) {
+            const towerBlueprint = categoryData.items[towerName];
+            towerCardContainer.children(this.categoryContainerTowerCard(category, towerBlueprint));
+        }
+
+        return new Element("div").class("categoryContainer", `${category}CategoryContainer`)
+            .children(titleContainer, categoryDividingLine, towerCardContainer);
+    }
+
+    static categoryContainerTowerCard(category, towerBlueprint) {
+        const titleContainer = new Element("div").class("categoryContainerTowerCardTitleContainer");
+        towerBlueprint.nameSplit.forEach((split) => {
+            let title;
+            if (split.prioritize == true) {
+                title = new Element("h4")
+                    .class("categoryContainerTowerCardTitle")
+                    .text(split.name);
+            } else {
+                title = new Element("p")
+                    .class("categoryContainerTowerCardTitle")
+                    .text(split.name);
+            }
+            titleContainer.children(title);
+        })
+
+        const towerPortrait = new Element("img")
+            .class("categoryContainerTowerCardPortrait")
+
+        if (category == "heroes") {
+            towerPortrait.setProperty("src", `media/towerPortraits/${towerBlueprint.name}/${towerBlueprint.name}Portrait.png`);
+        } else {
+            towerPortrait.setProperty("src", `media/towerPortraits/${towerBlueprint.name}/base/${towerBlueprint.name}Portrait.png`);
+        }
+
+        return new Element("div").class("categoryContainerTowerCard")
+            .children(titleContainer, towerPortrait);
+    }
+
     static towerUpgradeSelector() {
         // Layer 1
         const pathTrackContainer = new Element("div").class("pathTrackContainer");
@@ -296,7 +358,7 @@ export class UiElements {
         return new Element("p").text(`${stat[1]}: ${stat[2]}`);
     }
 
-    static towerInfoPathContainer(path, blueprint) {
+    static towerInfoPathContainer(path, blueprint, context) {
         const towerPathData = blueprint.upgrades.paths[path];
         const nameData = blueprint.upgradeNames[path];
 
@@ -315,17 +377,56 @@ export class UiElements {
                     new Element("h3").class("towerTitle", "luckiestGuy")
                         .text(nameData[index].displayName)
                 )
-            
+
+            const towerCardChipContainer = new Element("div").class("towerCardChipContainer")
+                // .children(
+                //     new Element("div").class("towerCardChip").text("1p")
+                // )
+
+            // const upgradeSummaryStats = new UpgradeSummaryStats(upgrade)
+
+            // upgradeSummaryStats.summaryArray.forEach(summary => {
+            //     towerCardChipContainer.children(
+            //         new Element("div").class("towerCardChip").text(summary)
+            //     )
+            // })
+
+            const towerButtonsContainer = new Element("div").class("towerButtonsContainer")
+
+            const viewUpgradeButton = new Element("button").class("towerNavButton").children(
+                document.createTextNode("View Upgrade "),
+                new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
+            )
+
+            viewUpgradeButton.onclick(() => {
+                const newPath = [0, 0, 0]
+                newPath[path] = index + 1
+                context.path = newPath
+                UIUpdates.towerUpgrade(context)
+            })
+
+            towerButtonsContainer.children(viewUpgradeButton)
+
             const card = new Element("div").class("towerCard").children(
-                image, titleContainer
+                image, titleContainer, /*towerCardChipContainer,*/ towerButtonsContainer
             )
 
             container.children(card)
         })
         
-
-        console.log(towerPathData, nameData);
-            
         return container;
+    }
+
+    static UiOverlays = class {
+        static propertyInfoOverlay() {
+            const stat = new Element("h2").class("mono").text("1.1s");
+            const title = new Element("h4").class().text("Attack Cooldown");
+
+            const description = new Element("p").text("The time between attacks in seconds. This is commonly confused with attack speed, which refers to attacks per second. For example, if a tower shoots a projectile every quarter second, then it has 4 attack speed, but 0.25 attack cooldown, which is what is used here.");
+
+            const container = new Element("div").class("propertyInfoOverlay").children(stat, title, description);
+
+            return new Element("div").class("propertyInfoOverlayWrapper").children(container);
+        }
     }
 }

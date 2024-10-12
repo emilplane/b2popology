@@ -1,4 +1,4 @@
-const data = {
+    const data = {
     "stats": {
         "primary": {
             "type": "nestedArrays",
