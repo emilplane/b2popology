@@ -360,11 +360,11 @@
                                     ],
                                     "turbocharge replaced by permacharge (40s cooldown, 15s duration, battle ready)",
                                     [
-                                        "+10d (14d)"
+                                        "+10d (14d, 16md)"
                                     ],
                                     "crosspath",
                                     [
-                                        "052: +4d (8d, 10md), permacharge grants +10d instead"
+                                        "052: +4d (8d, 10md), permacharge +12d (16d, 18md)"
                                     ]
                                 ]
                             }
@@ -5166,7 +5166,7 @@
                                     "crosspath",
                                     [
                                         "410: all sentries +4r",
-                                        "410: all sentry attacks +1md and +1fd",
+                                        "420: all sentry attacks +1md and +1fd",
                                         "401: spiked-ball 28p, bomb 38p, ice-ball 19p, laser 10p",
                                         "402: all sentry attacks can apply pinned status"
                                     ]

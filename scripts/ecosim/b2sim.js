@@ -1,4 +1,3 @@
-
 class b2sim {
     /** Time taken to load b2sim */
     static b2simLoadTime;

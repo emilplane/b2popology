@@ -132,6 +132,10 @@ export const TEST_CASES = {
     },
     WIZARD_MONKEY: {
         "name": "wizardMonkey", "displayName": "Wizard Monkey",
+        "nameSplit": [
+            {"name": "Wizard", "prioritize": true},
+            {"name": "Monkey", "prioritize": false}
+        ],
 
         "aliases": ["lizard", "lizardmonkey", "wiz", "apprentice"],
         

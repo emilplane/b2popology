@@ -338,10 +338,11 @@ function runPopology(compare) {
                     clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`)
                 }
                 document.getElementById("pageButtonContainer" + compareID).appendChild(clone)
-                if (selectedCategory == "heroes") {
+                if (selectedCategory == "heroes" && !compare) {
                     document.getElementById("pageButtonContainer" + compareID).classList.add("heroPageButtonContainer")
                 } else {
                     document.getElementById("pageButtonContainer" + compareID).classList.remove("heroPageButtonContainer")
+                    document.getElementById("pageButtonContainer").classList.remove("heroPageButtonContainer")
                 }
             }
         }

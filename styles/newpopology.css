@@ -161,13 +161,13 @@
     width: 4px;
     transform: scaleX(0.5);
     background-color: var(--white);
-    margin-bottom: var(--margin-s);
 }
 @media screen and (max-width: 900px) {
     .categoryDividingLine {
         width: auto;
         height: 4px;
         transform: scaleY(0.5);
+        margin-bottom: var(--margin-s);
     }
 }
 

@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        20
+        23
     ],
     "versionHistory": {
         "0": {
@@ -1112,6 +1112,26 @@
                     "content": [
                         "Added Battles 2 OTA Update 2 Balance Changes",
                         "Fixed typo on xx4 Glue Gunner indicating projectile radius is pierce resulting in two pierce values (jake6542)"
+                    ]
+                },
+                "21": {
+                    "date": "2024/10/9",
+                    "content": [
+                        "Added various accolades (DestructivForce)"
+                    ]
+                },
+                "22": {
+                    "date": "2024/10/9",
+                    "content": [
+                        "Fixed BEZ and Flying Fortress damage values (Anyar)"
+                    ]
+                },
+                "23": {
+                    "date": "2024/10/17",
+                    "content": [
+                        "Fixed typo for the 420 Engineer Monkey crosspath (Jake6542)",
+                        "Fixed incorrect 052 Boomerang Monkey damage value (Anyar)",
+                        "Fixed hero icon display issue in compare mode"
                     ]
                 }
             }

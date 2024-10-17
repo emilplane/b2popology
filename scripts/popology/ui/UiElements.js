@@ -1,4 +1,6 @@
 import { MODULE_TYPES, MODULE_PROPERTIES, WARNS } from "../constants.js";
+import { PopologyContext } from "../PopologyContext.js";
+import TowerBlueprint from "../TowerBlueprint.js";
 import { setCharAt } from "../utilities.js";
 import { Element } from "./element.js";
 import UIUpdates from "./uiUpdates.js";
@@ -8,7 +10,6 @@ import UIUpdates from "./uiUpdates.js";
  */
 export class UiElements {
     static categoryContainer(category, categoryData, popologyContext) {
-        console.log(categoryData);
         const title = new Element(categoryData.nameSplit[0].prioritize == true ? "h2" : "h4")
             .class("luckiestGuy", `${category}CategoryTitle`)
             .text(categoryData.nameSplit[0].name);
@@ -32,14 +33,14 @@ export class UiElements {
 
         for (const towerName in categoryData.items) {
             const towerBlueprint = categoryData.items[towerName];
-            towerCardContainer.children(this.categoryContainerTowerCard(category, towerBlueprint));
+            towerCardContainer.children(this.categoryContainerTowerCard(category, towerBlueprint, popologyContext));
         }
 
         return new Element("div").class("categoryContainer", `${category}CategoryContainer`)
             .children(titleContainer, categoryDividingLine, towerCardContainer);
     }
 
-    static categoryContainerTowerCard(category, towerBlueprint) {
+    static categoryContainerTowerCard(category, towerBlueprint, popologyContext) {
         const titleContainer = new Element("div").class("categoryContainerTowerCardTitleContainer");
         towerBlueprint.nameSplit.forEach((split) => {
             let title;
@@ -59,13 +60,24 @@ export class UiElements {
             .class("categoryContainerTowerCardPortrait")
 
         if (category == "heroes") {
-            towerPortrait.setProperty("src", `media/towerPortraits/${towerBlueprint.name}/${towerBlueprint.name}Portrait.png`);
+            towerPortrait.setProperty(
+                "src",
+                `media/towerPortraits/${towerBlueprint.name}/${towerBlueprint.name}Portrait.png`
+            );
         } else {
-            towerPortrait.setProperty("src", `media/towerPortraits/${towerBlueprint.name}/base/${towerBlueprint.name}Portrait.png`);
+            towerPortrait.setProperty(
+                "src",
+                `media/towerPortraits/${towerBlueprint.name}/base/${towerBlueprint.name}Portrait.png`
+            );
         }
-
+        
         return new Element("div").class("categoryContainerTowerCard")
-            .children(titleContainer, towerPortrait);
+            .children(titleContainer, towerPortrait)
+            .onclick(() => {
+                // popologyContext.createTower([0, 0, 0], "tower")
+                popologyContext.selectBlueprint(category, towerBlueprint.name);
+                UIUpdates.towerSelection(popologyContext);
+            })
     }
 
     static towerUpgradeSelector() {

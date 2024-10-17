@@ -1,4 +1,4 @@
-import { UI_CONSTANTS, WARNS } from "../constants.js"
+import { UI_CONSTANTS, TEST_CASES, WARNS } from "../constants.js"
 import { DIRECTORY } from "../data/directory.js"
 import { Element } from "./element.js"
 import { UiElements } from "./UiElements.js"
@@ -14,21 +14,22 @@ export class PopologyUi {
         }
 
         get element() {
-            return new Element("div").class("categoriesContainer")
-                .children(
-                    UiElements.categoryContainer("primary", DIRECTORY.categories.primary),
-                    UiElements.categoryContainer("military", DIRECTORY.categories.military),
-                    UiElements.categoryContainer("magic", DIRECTORY.categories.magic),
-                    UiElements.categoryContainer("support", DIRECTORY.categories.support),
-                    UiElements.categoryContainer("heroes", DIRECTORY.categories.heroes)
-                ).element
+            const container = new Element("div").class("categoriesContainer")
+
+            for (const category in this.popologyContext.directory.categories) {
+                const categoryData = this.popologyContext.directory.categories[category]
+                container.children(UiElements.categoryContainer(category, categoryData, this.popologyContext))
+            }
+
+            return container.element
         }
     }
 
     static TowerInfo = class {
         constructor(popologyContext) {
             this.popologyContext = popologyContext
-            this.blueprint = popologyContext.towerBlueprint.blueprint
+            this.blueprint = popologyContext.towerBlueprint
+            console.log(this.blueprint)
         }
 
         get element() {

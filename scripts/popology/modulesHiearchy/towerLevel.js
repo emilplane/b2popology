@@ -15,7 +15,6 @@ export class Upgrade {
         upgradeBlueprint.forEach(module => {
             this.modules.push(new UpgradeModule(module))
         });
-        console.log(this)
     }
 }
 
@@ -24,6 +23,7 @@ export class Upgrade {
  */
 export class Tower {
     constructor(towerBlueprint, path) {
+        console.log(towerBlueprint, path)
         this.towerBlueprint = towerBlueprint
         this.path = path
         this.upgrades = []
@@ -36,13 +36,12 @@ export class Tower {
 
     initTower() {
         this.upgrades = [];
-        console.log(this.towerBlueprint)
-        this.addUpgrade(this.towerBlueprint.blueprint.upgrades.base);
+        this.addUpgrade(this.towerBlueprint.upgrades.base);
     
         const paths = this.path.map((level, index) => ({
             level,
             pathNumber: index,
-            upgrades: this.towerBlueprint.blueprint.upgrades.paths[index]
+            upgrades: this.towerBlueprint.upgrades.paths[index]
         }));
     
         paths.sort((a, b) => b.level - a.level);
@@ -52,7 +51,7 @@ export class Tower {
                 this.addUpgrade(path.upgrades[i]);
             }
 
-            const upgradeData = this.towerBlueprint.blueprint
+            const upgradeData = this.towerBlueprint
                 .upgradeNames[path.pathNumber][path.level - 1];
             let upgradeName = upgradeData ? upgradeData.displayName : undefined;
             
@@ -73,7 +72,7 @@ export class Tower {
             }
         });
 
-        const baseTowerName = this.towerBlueprint.blueprint.displayName
+        const baseTowerName = this.towerBlueprint.displayName
         if (isBasePath(this.path) && baseTowerName != undefined) {
             this.towerName = baseTowerName
         }
@@ -88,7 +87,7 @@ export class Tower {
     constructTower() {
         this.modules = []
 
-        this.modules.push(new TowerPropertiesModule(this.towerBlueprint.blueprint.towerProperties))
+        this.modules.push(new TowerPropertiesModule(this.towerBlueprint.towerProperties))
         
         this.upgrades.forEach(upgrade => {
             upgrade.modules.forEach(module => {
@@ -103,8 +102,6 @@ export class Tower {
                 }
             })
         });
-
-        console.log(this)
     }
 
     /**
