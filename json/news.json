@@ -2,12 +2,12 @@
     "tournaments": [],
     "news": [
         {
-            "title": "OTA Update 2 is out now!",
+            "title": "Battles 4.3 coming soon!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",
-            "description": "Ninja Kiwi's first OTA update for balance changes! Includes devastating nerfs for Sniper Monkey, as well as more minor Super Monkey and Bonnie nerfs!",
+            "description": "Hero Challenge mode, new map, redesigned Heroes screen, and the usual balance changes and bug fixes!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1fubu6l/over_the_air_update_2_is_now_live_balance_changes/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1g6hbag/update_43_coming_soon_update_notes/"]
             ]
         }
     ]
