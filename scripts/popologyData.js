@@ -201,7 +201,7 @@
                                 "content": [
                                     "dart replaced by bolt",
                                     [
-                                        "3d, +4p (6p), +8r (56r), 0.95s, sharp type",
+                                        "3d, +6p (8p), +8r (56r), 0.95s, sharp type",
                                         ["advanced_mode", "+30jsp (360jsp)"]
                                     ]
                                 ]
@@ -224,14 +224,14 @@
                                 "content": [
                                     "bolt attack buffed",
                                     [
-                                        "+3d (9d), +6p (12p), +20r (76r), 0.13s, normal type",
+                                        "+3d (9d), +6p (14p), +20r (76r), 0.13s, normal type",
                                         ["simple_mode", "increased projectile speed"],
                                         ["advanced_mode", "+50jsp (450jsp)"],
                                         "crit now occurs every 5 shots"
                                     ],
                                     "crosspath",
                                     [
-                                        "105: +6p (18p)",
+                                        "105: +6p (20p)",
                                         "205: +8p (26p)",
                                     ]
                                 ]
@@ -1803,7 +1803,7 @@
                                 "content": [
                                     "airburst buffed",
                                     [
-                                        "+1d (2d), +2md (4md)"
+                                        "+2d (3d), +2md (5md)"
                                     ],
                                     "subdart buffed",
                                     [
@@ -2010,6 +2010,10 @@
                                     "gains takedown ability (30s cooldown, battle ready)",
                                     [
                                         "targets the strongest \"small\" blimp (not ZOMG or BAD), immediately removing it"
+                                    ],
+                                    "crosspath",
+                                    [
+                                        "140: takedown -10s cooldown (20s cooldown)",
                                     ]
                                 ]
                             },
@@ -2045,7 +2049,11 @@
                             "2": {
                                 "name": "002 - Crow's Nest",
                                 "content": [
-                                    "gains camo detection"
+                                    "gains camo detection",
+                                    "all attacks buffed",
+                                    [
+                                        "+2cad"
+                                    ]
                                 ]
                             },
                             "3": {
@@ -2080,9 +2088,9 @@
                                     "all attacks buffed: +1d (2d), +1cd (3cd), +1md (3md)",
                                     "gains trade buff",
                                     [
-                                        "affects up to 20 xx3 or xx4 buccaneers",
+                                        "affects up to 10 xx3 or xx4 buccaneers",
                                         "+1d, +1cd, +1md",
-                                        "+5% * n income, where n is the number of buffed towers"
+                                        "+10% * n income, where n is the number of buffed towers"
                                     ]
                                 ]
                             }
@@ -2576,7 +2584,7 @@
                             "shell attack",
                             [
                                 "2.0s passive",
-                                "targets randomly within 18 units of selected points",
+                                "targets randomly within 8 units of selected points",
                                 "on expire (0.5s): explosion",
                                 [
                                     "1d, 35p, 18r blast, explosion type"
@@ -2732,11 +2740,15 @@
                         },
                         "bottom": {
                             "1": {
-                                "name": "001 - Increased Accuracy",
+                                "name": "001 - Dynamic Targeting",
                                 "content": [
-                                    "shell buffed",
+                                    "gains dynamic-targeting-strong",
                                     [
-                                        "8 units random target variance"
+                                        "automatically targets the strongest bloon",
+                                    ],
+                                    "gains dynamic-targeting-dense",
+                                    [
+                                        "automatically targets the densest area of bloons on the track",
                                     ]
                                 ]
                             },
@@ -3866,6 +3878,11 @@
                                         [
                                             "does not contribute to tower pop count"
                                         ]
+                                    ],
+                                    "gains saboteur buff",
+                                    [
+                                        "affects Ninja Monkeys in range",
+                                        "+2md, +10r",
                                     ]
                                 ]
                             }
@@ -4878,7 +4895,7 @@
                                     ],
                                     "explosion buffed",
                                     [
-                                        "+990d (1000d), +250fd (1251fd), 0cd, +20p (60p), 100r, normal type"
+                                        "+990d (1000d), +250fd (1251fd), 0cd, +40p (80p), 100r, normal type"
                                     ]
                                 ]
                             }
@@ -4924,9 +4941,7 @@
                                     "gains spike-storm ability (40s cooldown, 1s duration, battle ready)",
                                     [
                                         "∞r, 0.005s",
-                                        [
-                                            "note: this can be buffed by smart-boost"
-                                        ],
+                                        "not affected by smart-boost",
                                         "places storm-spikes randomly on track",
                                         [
                                             "1d, +4md (5md), 5i, sharp type",
@@ -6524,6 +6539,7 @@
                                 "on contact: explosion",
                                 [
                                     "1d, 10p, 15r blast, explosion type",
+                                    "targets the densest area of bloons on the track",
                                     "50% chance for normal type"
                                 ]
                             ]
@@ -6541,7 +6557,7 @@
                                 "can see past obstacles",
                                 "on contact: explosion",
                                 [
-                                    "3d, 48p, 27r blast, normal type, 1s stun",
+                                    "3d, 72p, 40r blast, normal type, 1s stun",
                                     "on damage: applies burn status",
                                     [
                                         "2d/1.5s, lasts for 4s"
@@ -6593,7 +6609,7 @@
                             ],
                             "concussive-fire buffed",
                             [
-                                "+17d (20d), +10p (58p)",
+                                "+17d (20d), +10p (82p)",
                                 "stuns bloons for 5s and blimps for 3s"
                             ]
                         ],
@@ -6627,7 +6643,7 @@
                         "14": [
                             "concussive-fire buffed",
                             [
-                                "+50%r (40.5r)",
+                                "+50%r (60r)",
                                 "50% longer stun (7.5s on bloons, 4.5s on blimps)"
                             ]
                         ],
@@ -8936,7 +8952,7 @@
                             ]
                         ],
                         "3": [
-                            "drone-swarm ability (45s cooldown, 15s duration)",
+                            "drone-swarm ability (60s cooldown, 15s duration)",
                             [
                                 "spawns 4 more drone subtowers",
                                 "duration increases 0.5s per level"
@@ -9042,7 +9058,7 @@
                             ],
                             "drone-swarm buffed",
                             [
-                                "-5s cooldown (40s)"
+                                "-15s cooldown (45s cooldown)"
                             ]
                         ],
                         "17": [
@@ -10830,7 +10846,7 @@
             },
             "monkeyBuccaneer": {
                 "base": 500,
-                "top": [350, 550, 2700, 6400, 25000],
+                "top": [350, 550, 2200, 6400, 25000],
                 "middle": [550, 500, 900, 5250, 21000],
                 "bottom": [300, 400, 1500, 5700, 19000]
             },
@@ -10850,7 +10866,7 @@
                 "base": 700,
                 "top": [350, 500, 1300, 7300, 28000],
                 "middle": [400, 550, 800, 8000, 27000],
-                "bottom": [200, 700, 700, 8500, 40000]
+                "bottom": [400, 500, 700, 8500, 40000]
             },
             "dartlingGunner": {
                 "base": 800,
@@ -10875,7 +10891,7 @@
             "ninjaMonkey": {
                 "base": 400,
                 "top": [150, 200, 700, 2750, 35000],
-                "middle": [200, 375, 2100, 4500, 25000],
+                "middle": [200, 375, 2100, 4500, 20000],
                 "bottom": [200, 250, 1800, 4900, 40000]
             },
             "alchemist": {
@@ -10906,7 +10922,7 @@
             },
             "spikeFactory": {
                 "base": 600,
-                "top": [600, 600, 2700, 9500, 110000],
+                "top": [600, 600, 2700, 9500, 90000],
                 "middle": [500, 500, 2500, 5200, 40000],
                 "bottom": [150, 500, 750, 3200, 30000]
             },

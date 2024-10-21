@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        23
+        24
     ],
     "versionHistory": {
         "0": {
@@ -1110,7 +1110,7 @@
                 "20": {
                     "date": "2024/10/2",
                     "content": [
-                        "Added Battles 2 OTA Update 2 Balance Changes",
+                        "Added Battles 2 4.2.1 OTA Update 2 balance changes",
                         "Fixed typo on xx4 Glue Gunner indicating projectile radius is pierce resulting in two pierce values (jake6542)"
                     ]
                 },
@@ -1132,6 +1132,12 @@
                         "Fixed typo for the 420 Engineer Monkey crosspath (Jake6542)",
                         "Fixed incorrect 052 Boomerang Monkey damage value (Anyar)",
                         "Fixed hero icon display issue in compare mode"
+                    ]
+                },
+                "24": {
+                    "date": "2024/10/21",
+                    "content": [
+                        "Added Battles 2 4.3 balance changes"
                     ]
                 }
             }
