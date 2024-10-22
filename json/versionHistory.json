@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        24
+        25
     ],
     "versionHistory": {
         "0": {
@@ -1138,6 +1138,12 @@
                     "date": "2024/10/21",
                     "content": [
                         "Added Battles 2 4.3 balance changes"
+                    ]
+                },
+                "25": {
+                    "date": "2024/10/22",
+                    "content": [
+                        "Fixed incorrect total pierce value for 205 Dart Monkey (yeetboy246)"
                     ]
                 }
             }
