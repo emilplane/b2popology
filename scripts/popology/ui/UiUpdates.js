@@ -1,9 +1,16 @@
 import { UI_CONSTANTS } from "../constants.js"
 import { Tower } from "../modulesHiearchy/towerLevel.js"
 import { pathDisplayText } from "../utilities.js"
-import { PopologyUi } from "./PopologyUi.js"
+import { PopologyUi } from "./popologyUi.js"
 
 export default class UIUpdates {
+    static mainScreen(popologyContext) {
+        UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
+        UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
+            new PopologyUi.MainScreen(popologyContext).element
+        )
+    }
+
     static towerSelection(popologyContext) {
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",

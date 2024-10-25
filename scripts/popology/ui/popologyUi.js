@@ -2,7 +2,7 @@ import { UI_CONSTANTS, TEST_CASES, WARNS } from "../constants.js"
 import { DIRECTORY } from "../data/directory.js"
 import { Element } from "./element.js"
 import { UiElements } from "./UiElements.js"
-import UIUpdates from "./uiUpdates.js"
+import UIUpdates from "./UiUpdates.js"
 
 /**
  * Contains UI content to be used in the uiContent div
@@ -29,21 +29,29 @@ export class PopologyUi {
         constructor(popologyContext) {
             this.popologyContext = popologyContext
             this.blueprint = popologyContext.towerBlueprint
-            console.log(this.blueprint)
         }
 
         get element() {
-            // const banner = new Element("div").class("towerInfoBanner")
-            //     .children(
-            //         new Element("h2").text(this.blueprint.displayName).class("luckiestGuy")
-            //     )
+            const banner = new Element("div").class("towerInfoBanner")
+                .children(
+                    new Element("h2").text(this.blueprint.displayName).class("luckiestGuy")
+                )
 
-            return new Element("div").class("towerInfoContainer").children(
-                // banner,
-                UiElements.towerInfoPathContainer(0, this.blueprint, this.popologyContext),
-                UiElements.towerInfoPathContainer(1, this.blueprint, this.popologyContext),
-                UiElements.towerInfoPathContainer(2, this.blueprint, this.popologyContext)
-            ).element
+            const towerNav = UiElements.towerNavBar(this.popologyContext);
+
+            const towerInfoContainer = new Element("div")
+                .class("towerInfoContainer")
+                .children(
+                    towerNav, banner
+                );
+
+            this.blueprint.upgrades.paths.forEach((path, index) => {
+                towerInfoContainer.children(
+                    UiElements.towerInfoPathContainer(index, this.blueprint, this.popologyContext)
+                )
+            });
+
+            return towerInfoContainer.element;
         }
     }
 

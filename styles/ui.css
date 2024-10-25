@@ -1,7 +1,7 @@
 :root {
     /* Colors */
     --primaryLight: hsl(160, 56%, 74%);
-    --primary: hsl(160, 100%, 39%);
+    --primary: rgb(0, 199, 133);
     --primaryDark: hsl(160, 100%, 20%);
 
     --white: hsl(0, 0%, 100%);

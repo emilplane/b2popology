@@ -1,6 +1,6 @@
 import TowerBlueprint from "./TowerBlueprint.js";
 import { TEST_CASES, UI_CONSTANTS } from "./constants.js";
-import { PopologyUi } from "./ui/PopologyUi.js";
+import { PopologyUi } from "./ui/popologyUi.js";
 import { pathDisplayText } from "./utilities.js";
 import { UiElements } from "./ui/UiElements.js";
 import { PopologyContext } from "./PopologyContext.js";

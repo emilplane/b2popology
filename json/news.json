@@ -2,12 +2,21 @@
     "tournaments": [],
     "news": [
         {
-            "title": "Battles 2 4.3 out now!",
+            "title": "Battles 2 Map Design Competition!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",
-            "description": "Hero Challenge mode, new map, redesigned Heroes screen, and the usual balance changes and bug fixes!",
+            "description": "Create a Battles 2 map with a chance to have it implemented in game!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1g6hbag/update_43_coming_soon_update_notes/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1gbttrb/map_design_competition/"]
+            ]
+        },
+        {
+            "title": "Battles 2 Map Design Survey!",
+            "date": "2000/1/1",
+            "timeutc": "00:00:00",
+            "description": "New survey by DestructivForce to get player feedback on map design in Battles 2!",
+            "buttons": [
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1gc25o2/public_battles_2_map_design_survey/"]
             ]
         }
     ]

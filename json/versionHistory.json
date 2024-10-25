@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         26,
-        25
+        26
     ],
     "versionHistory": {
         "0": {
@@ -1144,6 +1144,12 @@
                     "date": "2024/10/22",
                     "content": [
                         "Fixed incorrect total pierce value for 205 Dart Monkey (yeetboy246)"
+                    ]
+                },
+                "26": {
+                    "date": "2024/10/25",
+                    "content": [
+                        "Fixed xx4 Monkey Sub damage values (jake6542)"
                     ]
                 }
             }

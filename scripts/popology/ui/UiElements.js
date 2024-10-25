@@ -3,7 +3,7 @@ import { PopologyContext } from "../PopologyContext.js";
 import TowerBlueprint from "../TowerBlueprint.js";
 import { setCharAt } from "../utilities.js";
 import { Element } from "./element.js";
-import UIUpdates from "./uiUpdates.js";
+import UIUpdates from "./UiUpdates.js";
 
 /**
  * Contains functions that create UI elements across the site
@@ -42,6 +42,7 @@ export class UiElements {
 
     static categoryContainerTowerCard(category, towerBlueprint, popologyContext) {
         const titleContainer = new Element("div").class("categoryContainerTowerCardTitleContainer");
+
         towerBlueprint.nameSplit.forEach((split) => {
             let title;
             if (split.prioritize == true) {
@@ -71,13 +72,18 @@ export class UiElements {
             );
         }
         
-        return new Element("div").class("categoryContainerTowerCard")
+        const cardElement = new Element("div").class("categoryContainerTowerCard")
             .children(titleContainer, towerPortrait)
-            .onclick(() => {
+        
+        if (towerBlueprint.upgrades != undefined) {
+            cardElement.onclick(() => {
                 // popologyContext.createTower([0, 0, 0], "tower")
                 popologyContext.selectBlueprint(category, towerBlueprint.name);
                 UIUpdates.towerSelection(popologyContext);
             })
+        }
+
+        return cardElement
     }
 
     static towerUpgradeSelector() {
@@ -120,6 +126,117 @@ export class UiElements {
             .children(pathTrackContainer, upgradeSelectorVisual, numberOverlay);
 
         return container;
+    }
+
+    static towerNavBar(popologyContext) {
+        const backButton = new Element("button").class("grayButton").text("Back")
+
+        backButton.onclick(() => {
+            UIUpdates.mainScreen(popologyContext)
+        })
+
+        const titleContainer = new Element("div")
+            .class("towerNavBarTitleContainer")
+            .children(
+                backButton,
+                new Element("p")
+                    .class("towerNavBarTitleContainerText", "mono")
+                    .text("All Towers"),
+                new Element("div")
+                    .class("towerNavBarTitleContainerLine")
+            );
+
+        const buttonContainer = new Element("div").class("towerNavBarButtonContainer");
+
+        for (const category in popologyContext.directory.categories) {
+            const categoryData = popologyContext.directory.categories[category]
+            for (const towerName in categoryData.items) {
+                const towerBlueprint = categoryData.items[towerName]
+
+                const towerPortraitPath = category === "heroes"
+                    ? `media/towerPortraits/${towerBlueprint.name}/${towerBlueprint.name}Portrait.png`
+                    : `media/towerPortraits/${towerBlueprint.name}/base/${towerBlueprint.name}Portrait.png`;
+
+                const button = new Element("button")
+                    .class("towerNavBarButton")
+                    .children(
+                        new Element("img").class("towerNavBarButtonImage")
+                            .setProperty("src", towerPortraitPath)
+                )
+
+                buttonContainer.children(button)
+            }
+        }
+
+        const buttonWrapper = new Element("div")
+            .class("towerNavBarButtonContainerWrapper")
+            .children(buttonContainer)
+
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+        let lastX;
+        let velocity = 0; // To store the speed of the drag
+        let momentumId;
+
+        buttonContainer.element.addEventListener('mousedown', (event) => {
+            isDragging = true;
+            startX = event.pageX - buttonContainer.element.offsetLeft;
+            scrollLeft = buttonContainer.element.scrollLeft;
+            lastX = startX;
+            velocity = 0; // Reset velocity
+            cancelAnimationFrame(momentumId); // Stop any ongoing momentum
+        });
+
+        buttonContainer.element.addEventListener('mouseleave', () => {
+            isDragging = false;
+            startMomentum(); // Start momentum when leaving
+        });
+
+        buttonContainer.element.addEventListener('mouseup', () => {
+            isDragging = false;
+            startMomentum(); // Start momentum on mouse up
+        });
+
+        buttonContainer.element.addEventListener('mousemove', (event) => {
+            if (!isDragging) return;
+            event.preventDefault(); // Prevent text selection
+            const x = event.pageX - buttonContainer.element.offsetLeft;
+            const walk = x - startX; // Calculate distance moved
+            velocity = (x - lastX) * 2;
+            lastX = x; // Update last position
+            buttonContainer.element.scrollLeft = scrollLeft - walk; // Scroll the content
+        });
+
+        // Function to start momentum scrolling
+        function startMomentum() {
+            if (Math.abs(velocity) > 1) { // Apply momentum if there's significant velocity
+                momentumId = requestAnimationFrame(momentumScroll);
+            }
+        }
+
+        // Momentum scrolling function
+        function momentumScroll() {
+            buttonContainer.element.scrollLeft += -velocity; // Apply the current velocity
+
+            // Decay the velocity (adjust this factor to control how quickly it slows down)
+            velocity *= 0.9; // Reduce the velocity for a smoother, longer momentum
+
+            if (Math.abs(velocity) > 0.1) { // Continue if the velocity is still significant
+                momentumId = requestAnimationFrame(momentumScroll);
+            } else {
+                cancelAnimationFrame(momentumId); // Stop when velocity is low
+            }
+        }
+
+        // Wheel event for horizontal scroll
+        buttonContainer.element.addEventListener('wheel', (event) => {
+            event.preventDefault(); // Prevent default scrolling
+            buttonContainer.element.scrollLeft += event.deltaY * 0.5; // Scroll horizontally
+        });
+
+        return new Element("div").class("towerNavBar")
+            .children(titleContainer, buttonWrapper);
     }
 
     static towerPropertiesModule(towerProperties) {
@@ -389,19 +506,6 @@ export class UiElements {
                     new Element("h3").class("towerTitle", "luckiestGuy")
                         .text(nameData[index].displayName)
                 )
-
-            const towerCardChipContainer = new Element("div").class("towerCardChipContainer")
-                // .children(
-                //     new Element("div").class("towerCardChip").text("1p")
-                // )
-
-            // const upgradeSummaryStats = new UpgradeSummaryStats(upgrade)
-
-            // upgradeSummaryStats.summaryArray.forEach(summary => {
-            //     towerCardChipContainer.children(
-            //         new Element("div").class("towerCardChip").text(summary)
-            //     )
-            // })
 
             const towerButtonsContainer = new Element("div").class("towerButtonsContainer")
 
