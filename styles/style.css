@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'BCS Font';
+    src: url('/bcsfont.ttf') format('truetype');
+}
+
 :root {
     --primaryLight3: hsl(161, 61%, 82%);
     --primaryLight2: hsl(160, 56%, 74%);
@@ -50,6 +55,19 @@
     --winColor: hsl(128, 56%, 45%);
     --lossColorDark: hsl(0, 100%, 34%);
     --lossColorLight: hsl(0, 100%, 67%);
+
+    --bcspopologyLight3: hsl(249, 78%, 90%);
+    --bcspopologyLight2: hsl(249, 78%, 80%);
+    --bcspopologyLight1: hsl(249, 78%, 70%);
+    --bcspopology: hsl(249, 78%, 65%);
+    --bcspopologyDark1: hsl(248, 55%, 52%);
+    --bcspopologyDark1b: hsl(248, 55%, 48%);
+    --bcspopologyDark2: hsl(248, 55%, 40%);
+    --bcspopologyDark2b: hsl(249, 55%, 30%);
+    --bcspopologyDark3: hsl(249, 55%, 20%);
+
+    --btd6central: hsl(219, 76%, 47%);
+    --btd6centralLight: #5985e5
 }
 
 html {
@@ -177,6 +195,11 @@ td {
     font-weight: 400;
 }
 
+.bcsfont {
+    font-family: "BCS Font";
+    font-weight: 400;
+}
+
 .textShadow {
     @media (prefers-color-scheme: dark) {
         text-shadow: 2px 2px 8px var(--shade8);
@@ -251,6 +274,7 @@ input:focus + .inputUnderline {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    width: 100%;
 }
 
 .title {
@@ -864,5 +888,28 @@ dialog {
 @media (prefers-color-scheme: dark) {
     .simpleHeaderSection > .headerLine {
         background-color: var(--primaryDark1);
+    }
+}
+
+.headerWrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.bcsHeader {
+    background-color: var(--bcspopologyLight3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--bcspopologyDark3);
+    };
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: max-content;
+    cursor: pointer;
+    @media screen and (max-width: 650px) {
+        display: none;
     }
 }
