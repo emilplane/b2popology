@@ -1,10 +1,3 @@
-:root {
-    --light-blue: hsl(210, 100%, 85%);
-    --primary-blue: hsl(210, 100%, 65%);
-    --secondary-blue: hsl(210, 100%, 50%);
-    --dark-blue: hsl(210, 100%, 16%);
-}
-
 .tournamentsContainer {
     display: flex;
     flex-direction: column;
@@ -12,19 +5,21 @@
 }
 
 .nextTournamentSection {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-tournament-color);
     border-radius: 8px;
     position: relative;
     min-height: 350px;
     /* height: max-content; */
     display: flex;
     justify-content: end;
+    margin-top: 8px;
 }
 
 .nextTournamentBackgroundImg {
-    background-image: url('/media/ports.png');
+    background-image: url('/media/biker_bones_background.png');
     background-size: cover;
     width: 50%;
+    background-position: center;
     /* height: 100%; */
     clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
     border-radius: 0 8px 8px 0;
@@ -51,16 +46,16 @@
 }
 
 .viewTournamentButton {
-    background-color: var(--light-blue);
+    background-color: var(--light-tournament-color);
     @media (prefers-color-scheme: dark) {
-        background-color: var(--dark-blue);
+        background-color: var(--dark-tournament-color);
     };
 }
 
 .viewTournamentButton:hover {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-tournament-color);
     @media (prefers-color-scheme: dark) {
-        background-color: var(--primary-blue);
+        background-color: var(--primary-tournament-color);
     };
 }
 
@@ -76,25 +71,26 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    overflow: scroll
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .tournamentTitle {
-    text-shadow: 6px 6px 0px var(--primary-blue);
+    text-shadow: 4px 4px 0px var(--primary-tournament-color);
     @media (prefers-color-scheme: dark) {
-        text-shadow: 6px 6px 0px var(--dark-blue);
+        text-shadow: 4px 4px 0px var(--secondary-tournament-color);
     };
 }
 
 .textHighlight {
-    color: var(--dark-blue);
+    color: var(--dark-tournament-color);
     @media (prefers-color-scheme: dark) {
-        color: var(--light-blue);
+        color: var(--light-tournament-color);
     };
 }
 
 .textShadow {
-    text-shadow: 2px 2px 8px var(--primary-blue);
+    text-shadow: 2px 2px 8px var(--primary-tournament-color);
     @media (prefers-color-scheme: dark) {
         text-shadow: 2px 2px 8px black;
     }
@@ -120,7 +116,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-tournament-color);
     border-radius: 999px;
     width: 5%;
 }
@@ -129,10 +125,81 @@
     margin-top: 12px;
 }
 
+@media screen and (max-width: 700px) {
+    .nextTournamentBackgroundImg {
+        width: 100%;
+        clip-path: none;
+        border-radius: 8px;
+        opacity: 0.5;
+    }
+
+    .nextTournamentSection {
+        background-color: var(--shade1);
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--shade8);
+        };
+    }
+
+    .nextTournamentContentOverlay {
+        width: 100%;
+    }
+}
+
+.signupButtonSection, .linkToEloSection {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--shade2);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--shade7);
+    };
+    padding:  16px 8px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    gap: 8px;
+}
+
+.signupButtonSection *, .linkToEloSection * {
+    text-align: center;
+}
+
+.signupButtonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    gap: 12px;
+    justify-content: center;
+}
+
+.externalTournamentLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--light-tournament-color);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary-tournament-color);
+    };
+}
+
+.externalTournamentLink:hover {
+    background-color: var(--primary-tournament-color);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primary-tournament-color);
+    };
+}
+
 .socialsSection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
+}
+
+@media screen and (max-width: 500px) {
+    .socialsSection {
+        grid-template-columns: 1fr;
+    }
 }
 
 .socialsSection > * > * {
@@ -142,10 +209,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-tournament-color);
     transition: 0.2s ease-in-out;
     @media (prefers-color-scheme: dark) {
-        background-color: var(--dark-blue);
+        background-color: var(--dark-tournament-color);
     };
 }
 .socialsSection > * > * > * {

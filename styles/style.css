@@ -67,7 +67,12 @@
     --bcspopologyDark3: hsl(249, 55%, 20%);
 
     --btd6central: hsl(219, 76%, 47%);
-    --btd6centralLight: #5985e5
+    --btd6centralLight: #5985e5;
+
+    --light-tournament-color: hsl(19, 100%, 85%);
+    --primary-tournament-color: hsl(19, 100%, 65%);
+    --secondary-tournament-color: hsl(19, 94%, 42%);
+    --dark-tournament-color: hsl(19, 100%, 20%);
 }
 
 html {
@@ -894,6 +899,10 @@ dialog {
 .headerWrapper {
     display: flex;
     gap: 12px;
+    @media screen and (max-width: 650px) {
+        gap: 0;
+    }
+    justify-content: stretch;
 }
 
 .bcsHeader {
@@ -904,12 +913,20 @@ dialog {
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 8px;
+    align-items: center;
+    min-width: max-content;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    min-width: max-content;
+}
+
+.headerWrapper > a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
     cursor: pointer;
     @media screen and (max-width: 650px) {
         display: none;
     }
+    
 }

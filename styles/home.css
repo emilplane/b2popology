@@ -180,6 +180,27 @@
     };
 }
 
+.tournamentInfoSection {
+    background-color: var(--light-tournament-color);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--dark-tournament-color);
+    };
+}
+
+.tournamentPageButton {
+    background-color: var(--primary-tournament-color);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--secondary-tournament-color);
+    };
+}
+
+.tournamentPageButton:hover {
+    background-color: var(--secondary-tournament-color);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--primary-tournament-color);
+    };
+}
+
 .fateweaverInfoSection {
     background-color: hsl(81, 100%, 77%);
     @media (prefers-color-scheme: dark) {
