@@ -1,22 +1,20 @@
-import { MODULE_TYPES, MODULE_PROPERTIES, WARNS } from "../constants.js";
-import { PopologyContext } from "../PopologyContext.js";
-import TowerBlueprint from "../TowerBlueprint.js";
-import { setCharAt } from "../utilities.js";
-import { Element } from "./element.js";
-import UIUpdates from "./UiUpdates.js";
+import {MODULE_PROPERTIES, MODULE_TYPES, WARNS} from "../constants.js";
+import {setCharAt} from "../utilities.js";
+import {Element} from "./element.js";
+import UiUpdates from "./UiUpdates.js";
 
 /**
  * Contains functions that create UI elements across the site
  */
 export class UiElements {
     static categoryContainer(category, categoryData, popologyContext) {
-        const title = new Element(categoryData.nameSplit[0].prioritize == true ? "h2" : "h4")
+        const title = new Element(categoryData.nameSplit[0].prioritize === true ? "h2" : "h4")
             .class("luckiestGuy", `${category}CategoryTitle`)
             .text(categoryData.nameSplit[0].name);
         
         let subtitle = new Element("div");
-        if (categoryData.nameSplit[1] != undefined) {
-            subtitle = new Element(categoryData.nameSplit[1].prioritize == true ? "h2" : "h4")
+        if (categoryData.nameSplit[1] !== undefined) {
+            subtitle = new Element(categoryData.nameSplit[1].prioritize === true ? "h2" : "h4")
                 .class(`${category}CategorySubtitle`)
                 .text(categoryData.nameSplit[1].name);
         }
@@ -45,7 +43,7 @@ export class UiElements {
 
         towerBlueprint.nameSplit.forEach((split) => {
             let title;
-            if (split.prioritize == true) {
+            if (split.prioritize === true) {
                 title = new Element("h4")
                     .class("categoryContainerTowerCardTitle")
                     .text(split.name);
@@ -60,7 +58,7 @@ export class UiElements {
         const towerPortrait = new Element("img")
             .class("categoryContainerTowerCardPortrait")
 
-        if (category == "heroes") {
+        if (category === "heroes") {
             towerPortrait.setProperty(
                 "src",
                 `media/towerPortraits/${towerBlueprint.name}/${towerBlueprint.name}Portrait.png`
@@ -75,13 +73,13 @@ export class UiElements {
         const cardElement = new Element("div").class("categoryContainerTowerCard")
             .children(titleContainer, towerPortrait)
         
-        if (towerBlueprint.upgrades != undefined) {
+        // if (towerBlueprint.upgrades !== undefined) {
             cardElement.onclick(() => {
                 // popologyContext.createTower([0, 0, 0], "tower")
-                popologyContext.selectBlueprint(category, towerBlueprint.name);
-                UIUpdates.towerSelection(popologyContext);
+                // popologyContext.selectBlueprint();
+                UiUpdates.upgradeSelection(popologyContext, category, towerBlueprint.name);
             })
-        }
+        // }
 
         return cardElement
     }
@@ -121,18 +119,18 @@ export class UiElements {
         }
 
         // Combine layers
-        const container = new Element("div")
+        return new Element("div")
             .class("towerUpgradeSelector")
             .children(pathTrackContainer, upgradeSelectorVisual, numberOverlay);
-
-        return container;
     }
 
-    static towerNavBar(popologyContext) {
-        const backButton = new Element("button").class("grayButton").text("Back")
+    static towerNavBar(popologyContext, scrollVelocity) {
+        let velocity = scrollVelocity;
+        let isDragging = false;
 
+        const backButton = new Element("button").class("grayButton").text("Back")
         backButton.onclick(() => {
-            UIUpdates.mainScreen(popologyContext)
+            UiUpdates.mainScreen(popologyContext)
         })
 
         const titleContainer = new Element("div")
@@ -146,7 +144,8 @@ export class UiElements {
                     .class("towerNavBarTitleContainerLine")
             );
 
-        const buttonContainer = new Element("div").class("towerNavBarButtonContainer");
+        const buttonContainer = new Element("div")
+            .class("towerNavBarButtonContainer")
 
         for (const category in popologyContext.directory.categories) {
             const categoryData = popologyContext.directory.categories[category]
@@ -162,7 +161,12 @@ export class UiElements {
                     .children(
                         new Element("img").class("towerNavBarButtonImage")
                             .setProperty("src", towerPortraitPath)
-                )
+                    )
+                    .onclick(() => {
+                        if (startX <= lastX + 20 && startX >= lastX - 20) {
+                            UiUpdates.upgradeSelection(popologyContext, category, towerName, buttonContainer.element.scrollLeft, velocity)
+                        }
+                    })
 
                 buttonContainer.children(button)
             }
@@ -170,23 +174,28 @@ export class UiElements {
 
         const buttonWrapper = new Element("div")
             .class("towerNavBarButtonContainerWrapper")
-            .children(buttonContainer)
+            .children(buttonContainer);
 
-        let isDragging = false;
         let startX;
         let scrollLeft;
         let lastX;
-        let velocity = 0; // To store the speed of the drag
         let momentumId;
 
         buttonContainer.element.addEventListener('mousedown', (event) => {
             isDragging = true;
             startX = event.pageX - buttonContainer.element.offsetLeft;
             scrollLeft = buttonContainer.element.scrollLeft;
+            // navbarScrollPosition = buttonContainer.element.scrollLeft;
             lastX = startX;
             velocity = 0; // Reset velocity
             cancelAnimationFrame(momentumId); // Stop any ongoing momentum
         });
+
+        // buttonContainer.element.addEventListener('mouseup', (event) => {
+        //     buttonContainer.element.scrollLeft = 0
+        // });
+
+        // buttonContainer.element.scrollLeft = navbarScrollPosition;
 
         buttonContainer.element.addEventListener('mouseleave', () => {
             isDragging = false;
@@ -220,9 +229,9 @@ export class UiElements {
             buttonContainer.element.scrollLeft += -velocity; // Apply the current velocity
 
             // Decay the velocity (adjust this factor to control how quickly it slows down)
-            velocity *= 0.9; // Reduce the velocity for a smoother, longer momentum
+            velocity *= 0.95;
 
-            if (Math.abs(velocity) > 0.1) { // Continue if the velocity is still significant
+            if (Math.abs(velocity) > 0.01) { // Continue if the velocity is still significant
                 momentumId = requestAnimationFrame(momentumScroll);
             } else {
                 cancelAnimationFrame(momentumId); // Stop when velocity is low
@@ -259,7 +268,7 @@ export class UiElements {
     static module(module, tower, conditionString, useSecondaryModuleStyle = false) {
         const title = new Element("div").class("moduleTitle");
 
-        if (conditionString != undefined) {
+        if (conditionString !== undefined) {
             title.children(
                 new Element("span").class("moduleCondition").text(`${conditionString} `)
             );
@@ -279,7 +288,7 @@ export class UiElements {
         const basicStats = [], submodules = {};
 
         for (let propertyName in MODULE_PROPERTIES) {
-            if (MODULE_PROPERTIES[propertyName].category == "submodules") {
+            if (MODULE_PROPERTIES[propertyName].category === "submodules") {
                 submodules[propertyName] = [];
             }
         }
@@ -287,7 +296,7 @@ export class UiElements {
         module.properties.forEach(property => {
             switch (property.criteria.category) {
                 case "damage":
-                    if (property.name == "damage") {
+                    if (property.name === "damage") {
                         damageStats.damage = property;
                     } else {
                         damageStats.secondary.push(property);
@@ -304,9 +313,9 @@ export class UiElements {
 
         const moduleStatContainer = new Element("div").class("moduleStatContainer");
 
-        if (damageStats.damage != undefined) {
-            if (damageStats.damage.value != undefined) {
-                if (damageStats.secondary.length == 0) {
+        if (damageStats.damage !== undefined) {
+            if (damageStats.damage.value !== undefined) {
+                if (damageStats.secondary.length === 0) {
                     basicStats.unshift(damageStats.damage);
                 } else {
                     moduleStatContainer.children(
@@ -518,7 +527,7 @@ export class UiElements {
                 const newPath = [0, 0, 0]
                 newPath[path] = index + 1
                 context.path = newPath
-                UIUpdates.towerUpgrade(context)
+                UiUpdates.towerUpgrade(context)
             })
 
             towerButtonsContainer.children(viewUpgradeButton)

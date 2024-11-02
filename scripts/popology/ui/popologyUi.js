@@ -2,7 +2,7 @@ import { UI_CONSTANTS, TEST_CASES, WARNS } from "../constants.js"
 import { DIRECTORY } from "../data/directory.js"
 import { Element } from "./element.js"
 import { UiElements } from "./UiElements.js"
-import UIUpdates from "./UiUpdates.js"
+import UiUpdates from "./UiUpdates.js"
 
 /**
  * Contains UI content to be used in the uiContent div
@@ -26,9 +26,10 @@ export class PopologyUi {
     }
 
     static TowerInfo = class {
-        constructor(popologyContext) {
-            this.popologyContext = popologyContext
-            this.blueprint = popologyContext.towerBlueprint
+        constructor(popologyContext, navBarScrollVelocity) {
+            this.popologyContext = popologyContext;
+            this.navBarScrollVelocity = navBarScrollVelocity;
+            this.blueprint = popologyContext.towerBlueprint;
         }
 
         get element() {
@@ -37,7 +38,7 @@ export class PopologyUi {
                     new Element("h2").text(this.blueprint.displayName).class("luckiestGuy")
                 )
 
-            const towerNav = UiElements.towerNavBar(this.popologyContext);
+            const towerNav = UiElements.towerNavBar(this.popologyContext, this.navBarScrollVelocity);
 
             const towerInfoContainer = new Element("div")
                 .class("towerInfoContainer")
@@ -45,11 +46,15 @@ export class PopologyUi {
                     towerNav, banner
                 );
 
-            this.blueprint.upgrades.paths.forEach((path, index) => {
-                towerInfoContainer.children(
-                    UiElements.towerInfoPathContainer(index, this.blueprint, this.popologyContext)
-                )
-            });
+            if (this.blueprint.upgrades === undefined) {
+
+            } else {
+                this.blueprint.upgrades.paths.forEach((path, index) => {
+                    towerInfoContainer.children(
+                        UiElements.towerInfoPathContainer(index, this.blueprint, this.popologyContext)
+                    )
+                });
+            }
 
             return towerInfoContainer.element;
         }
@@ -86,7 +91,7 @@ export class PopologyUi {
             const backButton = new Element("button").class("grayButton").text("Back")
 
             backButton.onclick(() => {
-                UIUpdates.towerSelection(this.popologyContext)
+                UiUpdates.upgradeSelection(this.popologyContext)
             })
 
             return new Element("div").class("towerDisplayNavbar").children(backButton)

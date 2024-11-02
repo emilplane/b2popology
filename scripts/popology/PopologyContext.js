@@ -13,7 +13,9 @@ export class PopologyContext {
     }
 
     selectBlueprint(category, name) {
-        this.towerBlueprint = this.directory.categories[category].items[name];
+        if (category !== undefined && name !== undefined) {
+            this.towerBlueprint = this.directory.categories[category].items[name];
+        }
     }
 
     /**

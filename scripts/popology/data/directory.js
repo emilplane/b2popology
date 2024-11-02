@@ -1,3 +1,5 @@
+import {magicTowers} from "./magicTowers.js";
+
 export const DIRECTORY = {
     "categories": {
         "primary": {
@@ -117,13 +119,14 @@ export const DIRECTORY = {
                 {"name": "towers", "prioritize": false}
             ],
             "items": {
-                "wizardMonkey": {
-                    "name": "wizardMonkey", "displayName": "Wizard Monkey",
-                    "nameSplit": [
-                        {"name": "Wizard", "prioritize": true},
-                        {"name": "Monkey", "prioritize": false}
-                    ],
-                },
+                "wizardMonkey": magicTowers.wizardMonkey,
+                // {
+                // "name": "wizardMonkey", "displayName": "Wizard Monkey",
+                // "nameSplit": [
+                //     {"name": "Wizard", "prioritize": true},
+                //     {"name": "Monkey", "prioritize": false}
+                // ],
+                // },
                 "superMonkey": {
                     "name": "superMonkey", "displayName": "Super Monkey",
                     "nameSplit": [

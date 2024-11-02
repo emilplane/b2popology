@@ -2,8 +2,9 @@ import { UI_CONSTANTS } from "../constants.js"
 import { Tower } from "../modulesHiearchy/towerLevel.js"
 import { pathDisplayText } from "../utilities.js"
 import { PopologyUi } from "./popologyUi.js"
+import { PopologyContext } from "../PopologyContext.js";
 
-export default class UIUpdates {
+export default class UiUpdates {
     static mainScreen(popologyContext) {
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
@@ -11,11 +12,21 @@ export default class UIUpdates {
         )
     }
 
-    static towerSelection(popologyContext) {
+    /**
+     * Changes the currently selected blueprint and changes the UI to the upgrade selection screen for a tower.
+     * @param {string} category
+     * @param {string} name
+     * @param {PopologyContext} popologyContext
+     * @param {number} navBarScrollPosition
+     * @param {number} scrollVelocity
+     */
+    static upgradeSelection(popologyContext, category, name, navBarScrollPosition = 0, scrollVelocity = 0) {
+        popologyContext.selectBlueprint(category, name);
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
-            new PopologyUi.TowerInfo(popologyContext).element
+            new PopologyUi.TowerInfo(popologyContext, scrollVelocity).element
         )
+        document.querySelector(".towerNavBarButtonContainer").scrollLeft = navBarScrollPosition
     }
 
     static towerUpgrade(popologyContext) {

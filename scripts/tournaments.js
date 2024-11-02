@@ -1,5 +1,5 @@
 let announcedDate = new Date("2024-10-31T19:00:00Z");
-let startDate = new Date("2024-11-02T23:00:00Z");
+let startDate = new Date("2024-11-09T23:00:00Z");
 // let startDate = new Date("2024-09-26T17:55:40Z");
 
 let percentageBarElement = document.getElementById("progressBar");
@@ -32,9 +32,9 @@ function updateTimeUntilStart(currentDate, startDate) {
     let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Remaining seconds
 
     return `Starts in: ${days} ${pluralize(days, 'day', 'days')}, ` +
-           `${hours} ${pluralize(hours, 'hour', 'hours')}, ` +
-           `${minutes} ${pluralize(minutes, 'minute', 'minutes')}, ` +
-           `${seconds} ${pluralize(seconds, 'second', 'seconds')}`;
+       `${hours} ${pluralize(hours, 'hour', 'hours')}, ` +
+       `${minutes} ${pluralize(minutes, 'minute', 'minutes')}, ` +
+       `${seconds} ${pluralize(seconds, 'second', 'seconds')}`;
 }
 
 function updateProgressBarAndTime() {
