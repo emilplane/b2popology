@@ -10,7 +10,7 @@ export class Upgrade {
      * An array of modules that makes up the upgrade
      */
     constructor(upgradeBlueprint) {
-        this.modules = []
+        this.modules = [];
 
         upgradeBlueprint.forEach(module => {
             this.modules.push(new UpgradeModule(module))
@@ -23,15 +23,13 @@ export class Upgrade {
  */
 export class Tower {
     constructor(towerBlueprint, path) {
-        console.log(towerBlueprint, path)
-        this.towerBlueprint = towerBlueprint
-        this.path = path
-        this.upgrades = []
-        this.modules = []
-        this.towerName = "unknown",
-        this.towerCrosspathName;
+        this.towerBlueprint = towerBlueprint;
+        this.path = path;
+        this.upgrades = [];
+        this.modules = [];
+        this.towerName = "unknown";
 
-        this.initTower()
+        this.initTower();
     }
 
     initTower() {
@@ -73,7 +71,7 @@ export class Tower {
         });
 
         const baseTowerName = this.towerBlueprint.displayName
-        if (isBasePath(this.path) && baseTowerName != undefined) {
+        if (isBasePath(this.path) && baseTowerName !== undefined) {
             this.towerName = baseTowerName
         }
     
@@ -91,7 +89,7 @@ export class Tower {
         
         this.upgrades.forEach(upgrade => {
             upgrade.modules.forEach(module => {
-                if (module.action == "new") {
+                if (module.action === "new") {
                     this.modules.push(new TowerModule(module))
                 } else {
                     this.modules.forEach(towerModule => {

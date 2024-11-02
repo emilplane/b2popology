@@ -1,5 +1,5 @@
 import { UI_CONSTANTS } from "../constants.js"
-import { Tower } from "../modulesHiearchy/towerLevel.js"
+import {Tower, Upgrade} from "../modulesHiearchy/towerLevel.js"
 import { pathDisplayText } from "../utilities.js"
 import { PopologyUi } from "./popologyUi.js"
 import { PopologyContext } from "../PopologyContext.js";
@@ -29,7 +29,7 @@ export default class UiUpdates {
         document.querySelector(".towerNavBarButtonContainer").scrollLeft = navBarScrollPosition
     }
 
-    static towerUpgrade(popologyContext) {
+    static towerDisplay(popologyContext) {
         popologyContext.currentTower = {
             "type": "tower",
             "data": new Tower(popologyContext.towerBlueprint, popologyContext.path)
@@ -42,6 +42,27 @@ export default class UiUpdates {
                     popologyContext.currentTower.data.towerName,
                     popologyContext.currentTower.data.towerCrosspathName,
                     `${pathDisplayText(popologyContext.path)} ${popologyContext.towerBlueprint.displayName}`
+                )
+                .generateModules()
+                .element
+        )
+    }
+
+    static upgradeDisplay(popologyContext) {
+        const index = Math.max(...popologyContext.path) - 1
+        const path = popologyContext.path.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0)
+        popologyContext.currentTower = {
+            "type": "upgrade",
+            "data": new Upgrade(popologyContext.towerBlueprint.upgrades.paths[path][index])
+        }
+
+        UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
+        UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
+            new PopologyUi.PopologyTowerDisplay(popologyContext, true)
+                .updateBanner(
+                    popologyContext.currentTower.data.towerName,
+                    popologyContext.currentTower.data.towerCrosspathName,
+                    `${pathDisplayText(popologyContext.path, true)} ${popologyContext.towerBlueprint.displayName}`
                 )
                 .generateModules()
                 .element

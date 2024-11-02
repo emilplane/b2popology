@@ -1,7 +1,8 @@
 import {MODULE_PROPERTIES, MODULE_TYPES, WARNS} from "../constants.js";
-import {setCharAt} from "../utilities.js";
+import {addAfterBuffValueToPropertyBuff, setCharAt, statArrayToDisplayStat} from "../utilities.js";
 import {Element} from "./element.js";
 import UiUpdates from "./UiUpdates.js";
+import {UpgradeModule} from "../modulesHiearchy/moduleLevel.js";
 
 /**
  * Contains functions that create UI elements across the site
@@ -259,13 +260,15 @@ export class UiElements {
 
     /**
      * @param {*} module - The module to display in this element
-     * @param {*} tower - The tower this module comes from
+     * @param {*} tower_upgrade_object - The tower this module comes from
      * @param {*} conditionString
      * The condition under which this module is used (this is used for submodules)
+     * @param {*} tower - If this module is for an upgrade, pass in the tower to display fully calculated stats for some
+     * properties
      * @param {*} useSecondaryModuleStyle
      * Whether to use a darker module style (this alternates as nested modules grow deeper)
      */
-    static module(module, tower, conditionString, useSecondaryModuleStyle = false) {
+    static module(module, tower_upgrade_object, conditionString, tower = undefined, useSecondaryModuleStyle = false) {
         const title = new Element("div").class("moduleTitle");
 
         if (conditionString !== undefined) {
@@ -274,12 +277,30 @@ export class UiElements {
             );
         }
 
-        title.children(
+        // Array of span elements for the title of this module
+        const titleTextElements = [
             new Element("span").class("moduleName").text(`${module.name}`),
             document.createTextNode(" "),
             new Element("span").class("moduleType")
                 .text(`${MODULE_TYPES[module.type].displayName}`)
-        );
+        ]
+
+        if (module instanceof UpgradeModule) {
+            switch (module.action) {
+                case "new":
+                    if (conditionString === undefined) {
+                        titleTextElements.unshift(document.createTextNode(" "));
+                        titleTextElements.unshift(new Element("span").text("gains"));
+                    }
+                    break;
+                case "buff":
+                    titleTextElements.push(document.createTextNode(" "));
+                    titleTextElements.push(new Element("span").text("buffed"));
+                    break;
+            }
+        }
+
+        title.children(...titleTextElements);
 
         const line = new Element("div").class("moduleDividingLine")
             .children(new Element("div").class("moduleDividingLineHover"));
@@ -296,14 +317,26 @@ export class UiElements {
         module.properties.forEach(property => {
             switch (property.criteria.category) {
                 case "damage":
-                    if (property.name === "damage") {
-                        damageStats.damage = property;
+                    if (module instanceof UpgradeModule) {
+                        if (property.name === "damage") {
+                            damageStats.damage = addAfterBuffValueToPropertyBuff(property, module, tower);
+                        } else {
+                            damageStats.secondary.push(addAfterBuffValueToPropertyBuff(property, module, tower));
+                        }
                     } else {
-                        damageStats.secondary.push(property);
+                        if (property.name === "damage") {
+                            damageStats.damage = property
+                        } else {
+                            damageStats.secondary.push(property);
+                        }
                     }
                     break;
                 case "basic":
-                    basicStats.push(property);
+                    if (Array.isArray(property.value)) {
+                        basicStats.push(addAfterBuffValueToPropertyBuff(property, module, tower));
+                    } else {
+                        basicStats.push(property);
+                    }
                     break;
                 case "submodules":
                     submodules[property.name].push(property);
@@ -313,15 +346,14 @@ export class UiElements {
 
         const moduleStatContainer = new Element("div").class("moduleStatContainer");
 
-        if (damageStats.damage !== undefined) {
-            if (damageStats.damage.value !== undefined) {
-                if (damageStats.secondary.length === 0) {
-                    basicStats.unshift(damageStats.damage);
-                } else {
-                    moduleStatContainer.children(
-                        UiElements.damageStatsContainer(damageStats)
-                    );
-                }
+
+        if (damageStats.damage !== undefined && damageStats.damage.value !== undefined) {
+            if (damageStats.secondary.length === 0) {
+                basicStats.unshift(damageStats.damage);
+            } else {
+                moduleStatContainer.children(
+                    UiElements.damageStatsContainer(damageStats)
+                );
             }
         }
 
@@ -331,15 +363,13 @@ export class UiElements {
         Object.entries(submodules).forEach(([key, properties]) => {
             properties.forEach(({ value }) => {
                 value.forEach((val) => {
-                    const matchingModules = tower.modules.filter((module) => module.allValidNames.includes(val)
-                    );
-
+                    const matchingModules = tower_upgrade_object.modules.filter((module) => module.allValidNames.includes(val));
                     matchingModules.forEach((module) => {
                         const colon = MODULE_PROPERTIES[key].colon ? ":" : "";
                         submoduleExists = true;
                         submoduleContainer.children(
-                            UiElements.module(module, tower,
-                                `${MODULE_PROPERTIES[key].displayName}${colon}`,
+                            UiElements.module(module, tower_upgrade_object,
+                                `${MODULE_PROPERTIES[key].displayName}${colon}`, tower,
                                 !useSecondaryModuleStyle
                             )
                         );
@@ -348,7 +378,7 @@ export class UiElements {
             });
         });
 
-        if (basicStats.length != 0) {
+        if (basicStats.length !== 0) {
             moduleStatContainer.children(UiElements.basicStatsContainer(basicStats));
         }
 
@@ -370,14 +400,20 @@ export class UiElements {
      * @returns
      */
     static damageStatsContainer(damageStats) {
-        console.log(damageStats);
-        const input1 = ["damage", "Damage", damageStats.damage.value];
+        const input1 = ["damage", "Damage", statArrayToDisplayStat(damageStats.damage)];
         const input2 = [];
         damageStats.secondary.forEach(stat => {
-            input2.push([stat.name, stat.criteria.displayName, stat.value]);
+            const statWithAddedBaseDamage = structuredClone(stat)
+            if (statWithAddedBaseDamage.afterBuffValue === undefined) {
+                statWithAddedBaseDamage.afterBuffValue = damageStats.damage.value + stat.value;
+            // } else if () {
+            } else {
+                statWithAddedBaseDamage.afterBuffValue += damageStats.damage.afterBuffValue
+            }
+
+            input2.push([stat.name, stat.criteria.displayName, statArrayToDisplayStat(statWithAddedBaseDamage)]);
         });
-        const damageContainer = UiElements.statContainer(input1, input2);
-        return damageContainer;
+        return UiElements.statContainer(input1, input2);
     }
 
     static basicStatsContainer(basicStats) {
@@ -385,13 +421,9 @@ export class UiElements {
             .class("statChipContainer");
 
         basicStats.forEach(stat => {
-            let value = stat.value;
-            if (stat.criteria.showUnitByDefault) {
-                value += stat.criteria.unit;
-            }
             basicStatsContainer.children(
                 UiElements.statContainer(
-                    [stat.name, stat.criteria.displayName, value]
+                    [stat.name, stat.criteria.displayName, statArrayToDisplayStat(stat)]
                 )
             );
         });
@@ -422,8 +454,8 @@ export class UiElements {
         // Arrays are laid out as: [statName, statDisplayName, statValue]
         let secondaryStatsExist = false;
 
-        if (secondaryStats != undefined) {
-            if (secondaryStats.length != 0) {
+        if (secondaryStats !== undefined) {
+            if (secondaryStats.length !== 0) {
                 secondaryStatsExist = true;
             }
         }
@@ -458,13 +490,11 @@ export class UiElements {
         // Arrays are laid out as: [statName, statDisplayName, statValue]
         if (secondaryStats) { console.warn(WARNS.NOT_IMPLEMENTED); }
 
-        const container = new Element("div")
+        return new Element("div")
             .class("statContainer").children(
                 UiElements.statGroupSmall(mainStat)
                     .class("mainStatElement")
             );
-
-        return container;
     }
 
     static statGroup(stat) {
@@ -490,7 +520,7 @@ export class UiElements {
     }
 
     static statGroupSmall(stat) {
-        if (MODULE_PROPERTIES[stat[0]].type == "boolean" && stat[2] == true) {
+        if (MODULE_PROPERTIES[stat[0]].type === "boolean" && stat[2] === true) {
             return new Element("p").text(`${stat[1]}`);
         }
         return new Element("p").text(`${stat[1]}: ${stat[2]}`);
@@ -518,8 +548,20 @@ export class UiElements {
 
             const towerButtonsContainer = new Element("div").class("towerButtonsContainer")
 
+            const viewTowerButton = new Element("button").class("towerNavButton").children(
+                document.createTextNode("View Tower"),
+                new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
+            )
+
+            viewTowerButton.onclick(() => {
+                const newPath = [0, 0, 0]
+                newPath[path] = index + 1
+                context.path = newPath
+                UiUpdates.towerDisplay(context)
+            })
+
             const viewUpgradeButton = new Element("button").class("towerNavButton").children(
-                document.createTextNode("View Upgrade "),
+                document.createTextNode("View Upgrade"),
                 new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
             )
 
@@ -527,10 +569,10 @@ export class UiElements {
                 const newPath = [0, 0, 0]
                 newPath[path] = index + 1
                 context.path = newPath
-                UiUpdates.towerUpgrade(context)
+                UiUpdates.upgradeDisplay(context)
             })
 
-            towerButtonsContainer.children(viewUpgradeButton)
+            towerButtonsContainer.children(viewTowerButton, viewUpgradeButton)
 
             const card = new Element("div").class("towerCard").children(
                 image, titleContainer, /*towerCardChipContainer,*/ towerButtonsContainer

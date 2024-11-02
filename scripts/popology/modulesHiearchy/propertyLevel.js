@@ -12,11 +12,11 @@ export class Property {
         this.value = value;
         this.newBuffs = [];
         this.initializedAfterModule = initializedAfterModule;
-        if (this.initializedAfterModule == undefined) {
+        if (this.initializedAfterModule === undefined) {
             this.initializedAfterModule = false;
         }
         this.criteria = MODULE_PROPERTIES[this.name];
-        if (this.criteria == undefined) {
+        if (this.criteria === undefined) {
             throw new Error(ERRORS.PROPERTY_NOT_CONFIGURED);
         }
     }
@@ -150,6 +150,10 @@ export class PropertyBuff {
     constructor(name, value) {
         this.name = name;
         this.value = value;
+        this.criteria = MODULE_PROPERTIES[this.name];
+        if (this.criteria === undefined) {
+            throw new Error(ERRORS.PROPERTY_NOT_CONFIGURED);
+        }
     }
 
     /**
@@ -164,7 +168,7 @@ export class PropertyBuff {
                 break;
             case "number": 
                 if (Array.isArray(this.value)) {
-                    if (!(this.value[0] == "set" || this.value[0] == "+")) {
+                    if (!(this.value[0] === "set" || this.value[0] === "+")) {
                         throw new Error(ERRORS.CANT_CONVERT);
                     }
                     property = new Property(this.name, this.value[1]);

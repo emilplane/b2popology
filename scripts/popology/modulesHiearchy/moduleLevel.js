@@ -12,6 +12,7 @@ export class UpgradeModule {
         this.name = moduleBlueprint.name;
         this.action = moduleBlueprint.action;
         this.type = moduleBlueprint.type;
+        this.allValidNames = [moduleBlueprint.name];
 
         this.properties = [];
 
@@ -41,10 +42,10 @@ function addProperty(propertyName, propertyValue, action) {
     if (propertyValue instanceof Property || propertyValue instanceof PropertyBuff) {
         return propertyValue;
     }
-    if (action == "new") {
+    if (action === "new") {
         return new Property(propertyName, propertyValue);
     }
-    if (action == "buff") {
+    if (action === "buff") {
         return new PropertyBuff(propertyName, propertyValue);
     }
 }
@@ -54,7 +55,7 @@ function addProperty(propertyName, propertyValue, action) {
  */
 export class TowerModule {
     constructor(newModuleBlueprint) {
-        if (newModuleBlueprint.action != "new") {
+        if (newModuleBlueprint.action !== "new") {
             throw new Error(ERRORS.NOT_NEW_MODULE);
         }
 
@@ -74,7 +75,7 @@ export class TowerModule {
             let propertyExists = false;
 
             this.properties.forEach(property => {
-                if (property.name == propertyBuff.name) {
+                if (property.name === propertyBuff.name) {
                     propertyExists = true;
                     property.buff(propertyBuff);
                 }
@@ -93,9 +94,9 @@ export class TowerModule {
      */
     validateModuleReferences() {
         this.properties.forEach(property => {
-            if (property.criteria.type == "modules") {
+            if (property.criteria.type === "modules") {
                 property.value.forEach(value => {
-                    if (this.name == value) {
+                    if (this.name === value) {
                         throw new Error(ERRORS.CIRCULAR_DEPENDENCY);
                     }
                 })

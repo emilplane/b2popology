@@ -3,6 +3,7 @@ import { DIRECTORY } from "../data/directory.js"
 import { Element } from "./element.js"
 import { UiElements } from "./UiElements.js"
 import UiUpdates from "./UiUpdates.js"
+import {Tower} from "../modulesHiearchy/towerLevel.js";
 
 /**
  * Contains UI content to be used in the uiContent div
@@ -11,6 +12,7 @@ export class PopologyUi {
     static MainScreen = class {
         constructor(popologyContext) {
             this.popologyContext = popologyContext
+            console.log(popologyContext)
         }
 
         get element() {
@@ -65,11 +67,23 @@ export class PopologyUi {
      * @param {*} towerBlueprint - The blueprint of the tower
      */
     static PopologyTowerDisplay = class {
-        constructor(popologyContext) {
-            this.popologyContext = popologyContext
-            this.blueprint = popologyContext.currentTower
-            this.banner = new Element("div").class("towerBanner").id("towerBanner")
-            this.moduleContainer = new Element("div").class("moduleContainer").id("moduleContainer")
+        constructor(popologyContext, isUpgrade) {
+            console.log(popologyContext);
+
+            this.popologyContext = popologyContext;
+            this.isUpgrade = isUpgrade;
+            this.blueprint = popologyContext.currentTower;
+            this.banner = new Element("div").class("towerBanner").id("towerBanner");
+            this.moduleContainer = new Element("div").class("moduleContainer").id("moduleContainer");
+
+            // Create a tower if this display is for viewing an upgrade. This tower is used to display full stats, ex:
+            // +2d (4d)
+            // An instance of the upgrade class only has +2d, so the tower is used to derive the 4d
+            if (this.isUpgrade) {
+                this.towerForUpgradeView = new Tower(this.popologyContext.towerBlueprint, this.popologyContext.path)
+                this.popologyContext.currentTower.data.towerName = this.towerForUpgradeView.towerName
+                this.popologyContext.currentTower.data.towerCrosspathName = this.towerForUpgradeView.towerCrosspathName
+            }
         }
 
         /**
@@ -103,12 +117,13 @@ export class PopologyUi {
          * @param {*} crosspath - The tower's crosspath, if applicable
          * @param {*} bottomText - The text to display at the bottom of the banner
          */
-        updateBanner(name, crosspath, bottomText) {    
+        updateBanner(name, crosspath, bottomText) {
+            console.log(arguments)
             const bannerTitleContainer = new Element("div").children(
                     new Element(UI_CONSTANTS.BANNER.TITLE_TEXT_SIZE).class("luckiestGuy").text(name)
                 )
             
-            if (crosspath != undefined) {
+            if (crosspath !== undefined) {
                 bannerTitleContainer.children(
                     new Element(UI_CONSTANTS.BANNER.CROSSPATH_TEXT_SIZE)
                         .class("luckiestGuy").text(UI_CONSTANTS.BANNER.CROSSPATH_PREFIX + crosspath)
@@ -117,7 +132,7 @@ export class PopologyUi {
     
 
             this.banner.clearHTML().children(bannerTitleContainer)
-            if (bottomText != undefined) {
+            if (bottomText !== undefined) {
                 this.banner.children(
                     new Element("p").text(bottomText).class("mono", "big", "bannerBottomText")
                 )
@@ -128,24 +143,22 @@ export class PopologyUi {
 
         /**
          * Generates the modules of the currently selected tower
-         * @param {*} currentTower 
-         * @returns 
+         * @returns
          */
         generateModules() {
-            const towerPropertiesModule =
-            this.blueprint.data.modules.find(item => item.name === "tower-properties")
+            const towerPropertiesModule = this.blueprint.data.modules.find(item => item.name === "tower-properties")
             if (towerPropertiesModule) {
                 this.moduleContainer.children(
                     UiElements.towerPropertiesModule(towerPropertiesModule)
                 )
-            } else {
+            } else if (!this.isUpgrade) {
                 console.warn(WARNS.NO_TOWER_PROPERTIES_MODULE)
             }
     
             this.blueprint.data.modules.forEach((module) => {
-                if (module.type == "attack") {
+                if (module.type === "attack") {
                     this.moduleContainer.children(
-                        UiElements.module(module, this.blueprint.data, undefined)
+                        UiElements.module(module, this.blueprint.data, undefined, this.towerForUpgradeView)
                     )
                 }
             })

@@ -13,8 +13,6 @@ const popologyContext = new PopologyContext(() => {
 });
 popologyContext.createTower([0, 0, 0], "tower")
 
-console.log(popologyContext)
-
 // UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
 //     new PopologyUi.TowerInfo(popologyContext).element
 // )

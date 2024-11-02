@@ -1,5 +1,45 @@
 import { MODULE_PROPERTIES, UI_CONSTANTS } from "./constants.js"
 
+export function statArrayToDisplayStat(stat) {
+    let statValue = stat.value;
+
+    if (Array.isArray(statValue)) {
+        switch (statValue[0]) {
+            case "+": statValue = `+${statValue[1]}`; break;
+            case "*": statValue = `${statValue[1]*100}%`; break;
+            case "%": statValue = `${statValue[1]*100}%`; break;
+        }
+    }
+
+    if (stat.criteria.showUnitByDefault) {
+        statValue += stat.criteria.unit;
+    }
+
+    if (stat.afterBuffValue !== undefined && !isNaN(stat.afterBuffValue)
+    ) {
+        statValue += ` (${stat.afterBuffValue}${stat.criteria.showUnitByDefault ? stat.criteria.unit : ""})`;
+    }
+
+    return statValue;
+}
+
+export function addAfterBuffValueToPropertyBuff(property, module, tower) {
+    if (tower === undefined || module === undefined) return property;
+    const propertyCopy = structuredClone(property)
+
+    // Find corresponding tower module for this upgrade module
+    const correspondingTowerModule = tower.modules.find(towerModule =>
+        towerModule.allValidNames.includes(module.name)
+    );
+
+    // Find corresponding property for this upgrade's property in the tower module
+    propertyCopy.afterBuffValue = correspondingTowerModule.properties.find(
+        (property) => property.name === propertyCopy.name
+    ).value
+
+    return propertyCopy
+}
+
 export function fixFloatingPoint(number) {
     if (typeof number == "number") return Number(number.toFixed(10))
     return undefined
@@ -28,14 +68,17 @@ export function sumArray(array) {
 }
 
 export function isBasePath(path) {
-    if (path[0] == 0 && path[1] == 0 && path[2] == 0) {
-        return true
-    }
-    return false
+    return path[0] === 0 && path[1] === 0 && path[2] === 0;
+
 }
 
-export function pathDisplayText(path) {
-    return path.join(UI_CONSTANTS.PATH_JOIN_CHARACTER)
+export function pathDisplayText(path, isUpgrade = false) {
+    let pathText = path.join(UI_CONSTANTS.PATH_JOIN_CHARACTER)
+    if (isUpgrade) {
+        pathText = pathText.replace(/0/g, "x");
+    }
+
+    return pathText
 }
 
 export function rep() {
@@ -93,7 +136,7 @@ export class UpgradeSummaryStats {
     populateSummaryArray() {
         this.numberOfNonBuffUpgradeModules()
 
-        if (this.numberOfNonBuffUpgradeModules() == 0) {
+        if (this.numberOfNonBuffUpgradeModules() === 0) {
             this.upgrade.forEach(module => {
                 for (const propertyName in module.properties) {
                     const propertyData = MODULE_PROPERTIES[propertyName]
@@ -115,7 +158,7 @@ export class UpgradeSummaryStats {
                                         valueString = `${value*100}%`
                                         break
                                 }
-                                if (propertyData.unit != undefined) {
+                                if (propertyData.unit !== undefined) {
                                     this.summaryArray.push(`${valueString}${propertyData.unit}`)
                                 } else {
                                     this.summaryArray.push(`${valueString} ${propertyData.displayName}`)
@@ -131,7 +174,7 @@ export class UpgradeSummaryStats {
     numberOfNonBuffUpgradeModules() {
         let number = 0
         this.upgrade.forEach(module => {
-            if (module.action != "buff") {
+            if (module.action !== "buff") {
                 number++
             }
         })
