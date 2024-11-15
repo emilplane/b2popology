@@ -69,14 +69,14 @@
     --btd6central: hsl(219, 76%, 47%);
     --btd6centralLight: #5985e5;
 
-    --light-tournament-color: hsl(19, 100%, 85%);
-    --primary-tournament-color: hsl(19, 100%, 65%);
-    --secondary-tournament-color: hsl(19, 94%, 42%);
-    --dark-tournament-color: hsl(19, 100%, 20%);
+    --light-tournament-color: hsl(110, 100%, 80%);
+    --primary-tournament-color: hsl(110, 100%, 40%);
+    --secondary-tournament-color: hsl(110, 94%, 30%);
+    --dark-tournament-color: hsl(110, 100%, 20%);
 }
 
 html {
-	font-family: "Roboto";
+    font-family: "Roboto", serif;
 }
 
 body {

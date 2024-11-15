@@ -1,5 +1,5 @@
-let announcedDate = new Date("2024-10-31T19:00:00Z");
-let startDate = new Date("2024-11-09T23:00:00Z");
+let announcedDate = new Date("2024-11-15T04:00:00Z");
+let startDate = new Date("2024-11-16T19:00:00Z");
 // let startDate = new Date("2024-09-26T17:55:40Z");
 
 let percentageBarElement = document.getElementById("progressBar");
