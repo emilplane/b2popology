@@ -201,7 +201,7 @@
                                 "content": [
                                     "dart replaced by bolt",
                                     [
-                                        "3d, +6p (8p), +8r (56r), 0.95s, sharp type",
+                                        "3d, +5p (7p), +8r (56r), 0.95s, sharp type",
                                         ["advanced_mode", "+30jsp (360jsp)"]
                                     ]
                                 ]
@@ -224,15 +224,15 @@
                                 "content": [
                                     "bolt attack buffed",
                                     [
-                                        "+3d (9d), +6p (14p), +20r (76r), 0.13s, normal type",
+                                        "+3d (9d), +6p (13p), +20r (76r), 0.13s, normal type",
                                         ["simple_mode", "increased projectile speed"],
                                         ["advanced_mode", "+50jsp (450jsp)"],
                                         "crit now occurs every 5 shots"
                                     ],
                                     "crosspath",
                                     [
-                                        "105: +6p (20p)",
-                                        "205: +8p (28p)",
+                                        "105: +6p (19p)",
+                                        "205: +8p (27p)",
                                     ]
                                 ]
                             }
@@ -1487,7 +1487,7 @@
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "4i",
+                                        "6i",
                                         "jumps to targets within 50 units"
                                     ]
                                 ]
@@ -1519,7 +1519,11 @@
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "40%s (0.636s)"
+                                        "40%s (0.636s)",
+                                    ],
+                                    "shrapnel buffed",
+                                    [
+                                        "on contact",
                                     ],
                                     "gains elite buff",
                                     [
@@ -1903,7 +1907,7 @@
                                     ],
                                     "crosspath",
                                     [
-                                        "401: forward-dart +1p (10p), radial-dart +1p (10p)"
+                                        "401: forward-dart +1p (21p), radial-dart +1p (10p)"
                                     ]
                                 ]
                             },
@@ -4734,7 +4738,6 @@
                                     [
                                         "130: +$100 income ($250) (adds money 2 more times)",
                                         "230: +$100 income ($350) (adds money 2 more times)",
-                                        "031: has a flashing dollar sign when full",
                                         "032: autocollects if the balance is capped at the end of a round"
                                     ]
                                 ]
@@ -4769,12 +4772,9 @@
                         },
                         "bottom": {
                             "1": {
-                                "name": "001 - EZ Collect",
+                                "name": "001 - Quality Soil",
                                 "content": [
-                                    "banana attack buffed",
-                                    [
-                                        "banana collection radius +50%"
-                                    ]
+                                    "top and middle path upgrades are discounted +20%",
                                 ]
                             },
                             "2": {
@@ -5085,6 +5085,7 @@
                                     "gains build-sentry attack",
                                     [
                                         "40r, 10.0s",
+                                        "cannot be buffed by attack cooldown buffs",
                                         "places a sentry subtower randomly on land",
                                         [
                                             "25s lifetime",
@@ -5093,7 +5094,7 @@
                                                 "1d, 2p, 0.98s, 45r, sharp type"
                                             ],
                                             "inherits buffs or can be buffed directly",
-                                            "cannot be buffed by alchemist or attack cooldown buffs"
+                                            "cannot be buffed by alchemist"
                                         ]
                                     ],
                                     "crosspath",
@@ -5680,7 +5681,7 @@
                             "placeable on: land",
                             "fire attack",
                             [
-                                "1d, 3p, 38r, 0.5s, fire type"
+                                "1d, +1ld (2ld), +1frd (2frd), 3p, 38r, 0.5s, fire type"
                             ]
                         ],
                         "2": [
@@ -5695,7 +5696,7 @@
                                 "can see past obstacles",
                                 "places wall-of-fire on the track, targetable manually anywhere within range",
                                 [
-                                    "1d, 26p, 15r zone, 0.24s, fire type, camo",
+                                    "1d, +1ld (2ld), +1frd (2frd), 26p, 15r zone, 0.24s, fire type, camo",
                                     "12s lifetime"
                                 ]
                             ]
@@ -5707,7 +5708,7 @@
                                 "triggered by either the 28th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "10s duration, +1p, lead popping"
+                                    "10s duration, +1ld, +1frd, +1p, lead popping"
                                 ]
                             ]
                         ],
@@ -5718,7 +5719,7 @@
                             ],
                             "grants pyro-expert buff",
                             [
-                                "affects all 4xx+ tack, xx3+ mortar, and x3x+ wizard",
+                                "affects all 4+xx Tack Shooter, xx3+ Mortar Monkey, and x3+x Monkey Wizard",
                                 "+10%r, 90%s"
                             ]
                         ],
@@ -5752,14 +5753,14 @@
                         "10": [
                             "gains firestorm ability (60s cooldown, battle ready)",
                             [
-                                "5d, 20md, ∞p, ∞r, fire type",
+                                "5d, +1ld (7ld), +1frd (7frd), 20md, ∞p, ∞r, fire type",
                                 "applies burn status",
                                 [
                                     "1d/0.5s or 15md/1s, fire type, 8s duration"
                                 ],
-                                "applies extra-heat-it-up buff to all towers on screen",
+                                "applies heat-it-up to all towers on screen, buffed",
                                 [
-                                    "+1d, +1p, lead popping for 8s"
+                                    "8s duration, +1d"
                                 ]
                             ]
                         ],
@@ -5789,7 +5790,7 @@
                         "14": [
                             "wall-of-fire buffed",
                             [
-                                "+1d (2d)",
+                                "+1d (2d, 3ld, 3frd)",
                                 "applies burn status to blimps",
                                 [
                                     "5md/1s, 10s duration"
@@ -5816,7 +5817,7 @@
                         "17": [
                             "heat-it-up buffed",
                             [
-                                "+1d, +1ld (2ld)"
+                                "+1d (3d, 4frd), +1ld (5ld)"
                             ]
                         ],
                         "18": [
@@ -5839,7 +5840,7 @@
                         "20": [
                             "firestorm buffed",
                             [
-                                "+5d (10d), +40md (50md); burn 2d/0.5s, 50md/1s"
+                                "+5d (10d, 12ld, 11frd), +40md (50md); burn 2d/0.5s, 50md/1s"
                             ]
                         ]
                     }
@@ -5855,7 +5856,7 @@
                             "placeable on: land",
                             "fire attack",
                             [
-                                "1d, 1ld (2ld), 1frd (2frd), 3p, 38r, 0.5s, fire type"
+                                "1d, +1gld (2gld), +1ad (2ad), 3p, 38r, 0.5s, fire type"
                             ]
                         ],
                         "2": [
@@ -5870,8 +5871,9 @@
                                 "can see past obstacles",
                                 "places wall-of-fire on the track, targetable manually anywhere within range",
                                 [
-                                    "1d, +1ld (2ld), +1 frd (2frd), 40p, 15r zone, 0.18s, fire type, camo",
-                                    "8s lifetime"
+                                    "2d, 40p, 15r zone, 0.24s, fire type, camo",
+                                    "6s lifetime",
+                                    "deals 4 seconds' worth of acid or glue status on targets each tick and removes the status (minimum 1d)"
                                 ]
                             ]
                         ],
@@ -5882,7 +5884,7 @@
                                 "triggered by either the 36th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "8s duration, +1p, lead popping, +1ld, +1frd"
+                                    "8s duration, +1p, +1gld, +1ad lead popping,"
                                 ]
                             ]
                         ],
@@ -5891,10 +5893,14 @@
                             [
                                 "+2p (7p)"
                             ],
-                            "grants pyro-expert buff",
+                            "grants chemical-expert buff",
                             [
-                                "affects all 4xx+ tack, xx3+ mortar, and x3x+ wizard",
-                                "+10%r, 90%s"
+                                "affects all x2+x Glue Gunner and x3+x Alchemist",
+                                "90%s",
+                                "main projectile buffed",
+                                [
+                                    "+10%r"
+                                ]
                             ]
                         ],
                         "6": [
@@ -5928,13 +5934,14 @@
                             "gains science-storm ability (60s cooldown, battle ready)",
                             [
                                 "5d, 20md, ∞p, ∞r, fire type",
+                                "deals 4 seconds' worth of acid or glue status on targets and removes the status (minimum 1d)",
                                 "applies burn status",
                                 [
-                                    "1d/0.25s or 15md/0.5s, fire type, 3.5s duration"
+                                    "1d/0.25s or 15md/0.5s, fire type, 3s duration"
                                 ],
-                                "applies extra-heat-it-up buff to all towers on screen",
+                                "applies heat-it-up to all towers on screen, buffed",
                                 [
-                                    "+1d, +1ld (+2ld), +1frd (+2frd), +1p, lead popping for 8s"
+                                    "+1d"
                                 ]
                             ]
                         ],
@@ -5985,7 +5992,7 @@
                             ],
                             "firestorm burn buffed",
                             [
-                                "5s duration"
+                                "4.5s duration"
                             ]
                         ],
                         "17": [
@@ -6000,9 +6007,13 @@
                                 "0.15s"
                             ],
                             "heat-it-up now triggered by 70 shots",
-                            "pyro-expert buffed",
+                            "chemical-expert buffed",
                             [
-                                "+20%r, 20%s"
+                                "80%s",
+                                "main projectile buffed",
+                                [
+                                    "+20%r"
+                                ]
                             ]
                         ],
                         "19": [
@@ -6012,9 +6023,10 @@
                             ]
                         ],
                         "20": [
-                            "firestorm buffed",
+                            "science-storm buffed",
                             [
-                                "+5d (10d), +40md (50md); burn 2d/0.25s, 50md/0.5s"
+                                "+3d (8d), +20md (30md); burn 2d/0.25s, 50md/0.5s",
+                                "deals 12 seconds' worth of acid or glue status on targets",
                             ]
                         ]
                     }
@@ -6321,7 +6333,7 @@
                             ]
                         ],
                         "15": [
-                            "oceans-ward buffed:",
+                            "oceans-ward buffed",
                             [
                                 "12s"
                             ],
@@ -7396,8 +7408,9 @@
                                 "targets one blimp, excluding BADs, according to current priority",
                                 "applies hex status",
                                 [
-                                    "(4%+1)d/1s",
+                                    "(4%+1)d/1s, max tick 7500d",
                                     "spawns no children",
+                                    "may stack",
                                     "transfers to the next target if it pops with time remaining"
                                 ]
                             ]
@@ -7586,7 +7599,7 @@
                                 "targets the three strongest blimps, excluding BADs",
                                 "applies clawed status",
                                 [
-                                    "(4%+1)d/1s",
+                                    "(4%+1)d/1s, max tick 5000d",
                                     "spawns no children"
                                 ]
                             ]
@@ -8952,7 +8965,7 @@
                             ]
                         ],
                         "3": [
-                            "drone-swarm ability (60s cooldown, 15s duration)",
+                            "drone-swarm ability (60s cooldown, (12 + 0.5l, l = level number)s duration (13.5s this level)?)",
                             [
                                 "spawns 4 more drone subtowers",
                                 "duration increases 0.5s per level"
@@ -10633,7 +10646,7 @@
                                     <li>Count: 10</li>
                                     <li>Total time: 1.2s</li>
                                     <li>Eco: -$150</li>
-                                    <li>Cost: $7,000</li>
+                                    <li>Cost: $10,000</li>
                                 </ul>
                             </li>
                         </ul>
@@ -10768,15 +10781,27 @@
                     "name": "Health and Speed Ramping",
                     "data": `
                         <ul>
-                            <li>Starting at Round 25 to Round 30
+                            <li>Rounds 25-30
                                 <ul>
                                     <li>+20% base Blimp HP per round</li>
                                     <li>+10% base speed per round</li>
                                 </ul>
                             </li>
-                            <li>Starting at Round 31+
+                            <li>Rounds 30-40
                                 <ul>
                                     <li>+40% base Blimp HP per round</li>
+                                    <li>+10% base speed per round</li>
+                                </ul>
+                            </li>
+                            <li>Rounds 40-50
+                                <ul>
+                                    <li>+80% base Blimp HP per round</li>
+                                    <li>+10% base speed per round</li>
+                                </ul>
+                            </li>
+                            <li>Rounds 50-100
+                                <ul>
+                                    <li>+60% base Blimp HP per round</li>
                                     <li>+10% base speed per round</li>
                                 </ul>
                             </li>
@@ -10798,7 +10823,7 @@
                 "base": 150,
                 "top": [100, 150, 450, 1800, 13500],
                 "middle": [100, 100, 300, 9000, 45000],
-                "bottom": [90, 200, 450, 2000, 25000]
+                "bottom": [90, 200, 600, 2000, 25000]
             },
             "boomerangMonkey": {
                 "base": 325,
@@ -10814,7 +10839,7 @@
             },
             "tackShooter": {
                 "base": 280,
-                "top": [150, 400, 600, 3300, 45500],
+                "top": [150, 400, 700, 3500, 45500],
                 "middle": [100, 225, 750, 3000, 15000],
                 "bottom": [100, 100, 450, 3400, 24000]
             },
@@ -10918,7 +10943,7 @@
                 "base": 1000,
                 "top": [550, 550, 2750, 16000, 66000],
                 "middle": [200, 700, 4400, 8000, 45000],
-                "bottom": [250, 200, 2800, 13000, 46000]
+                "bottom": [400, 250, 2800, 13000, 46000]
             },
             "spikeFactory": {
                 "base": 600,

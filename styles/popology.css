@@ -1,3 +1,12 @@
+.icons-not-ready .material-symbols-outlined {
+    visibility: hidden;
+    font-size: 2px;
+}
+
+.icons-ready .material-symbols-outlined {
+    visibility: visible;
+}
+
 .configButtonsContainerWideMode {
     @media screen and (min-width: 1000px) {
         display: flex;
@@ -245,6 +254,9 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+    opacity: 0;
+    transition: 0.2s;
+    transition-delay: 0.1s;
 }
 
 .compareStats {
@@ -453,16 +465,19 @@
     flex-direction: column;
     align-items: end;
     gap: 8px;
+    opacity: 0;
+    transition: 0.2s;
+    transition-delay: 0.1s;
 }
 
 .cornerButtonContainer button {
-    padding-bottom: 0px;
+    padding-bottom: 0;
 }
 
 .cornerButtons {
     border-radius: 8px;
     display: flex;
-    align-items: right;
+    align-items: end;
     justify-content: end;
     cursor: pointer;
     gap: 8px;
@@ -494,6 +509,25 @@
     }
 }
 
+.costTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.copyCostButton {
+    /*height: 16px; aspect-ratio: 1;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px;
+}
+
+.copyCostButton .material-symbols-outlined {
+    font-size: 10pt;
+
+}
+
 .costsContainer > div {
     @media screen and (max-width: 700px) {
         display: flex;
@@ -506,5 +540,41 @@
     color: hsl(0, 100%, 20%);
     @media (prefers-color-scheme: dark) {
         color: hsl(0, 100%, 80%);
+    }
+}
+
+.loadingOverlay {
+    position: fixed;
+    width: 100vw; height: 100vh;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.ring {
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1;
+}
+.ring:after {
+    content: " ";
+    display: block;
+    width: 16px;
+    aspect-ratio: 1;
+    margin: 0;
+    border-radius: 50%;
+    animation: ring 0.5s linear infinite;
+    border: 6px solid;
+    border-color: var(--primary) var(--primary) transparent transparent;
+}
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

@@ -2,8 +2,8 @@
     "documentation": "docs/versionHistory.txt",
     "currentVersion": [
         0,
-        26,
-        26
+        27,
+        0
     ],
     "versionHistory": {
         "0": {
@@ -1150,6 +1150,20 @@
                     "date": "2024/10/25",
                     "content": [
                         "Fixed xx4 Monkey Sub damage values (jake6542)"
+                    ]
+                }
+            },
+            "27": {
+                "0": {
+                    "date": "2024/11/16",
+                    "content": [
+                        "Added Battles 2 4.3.1 OTA Update #1 balance changes",
+                        "Added the xx1 Banana Farm discount to the tower cost tool",
+                        "Added buttons to the tower cost tool to copy total cost, sellback, and sell loss",
+                        "Fixed issue on the popology page where icons would display as text before loading properly",
+                        "Moved description that 1xx Engineer Monkey's sentry cannot be buffed by attack cooldown buffs to the build-sentry attack (jake6542)",
+                        "Added maximum tick damage to Ezili's and Smudge Catt Ezili's level 10 ability (jake6542)",
+                        "Fixed pierce inconsistency with 4xx and 401 Monkey Buccaneer's forward-dart pierce (jake6542)"
                     ]
                 }
             }

@@ -14,13 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" id="googleIcons"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/popology.css" />
 </head>
 
-<body>
+<body class="icons-not-ready">
     <main id="main">
         <div class="coverImage" id="coverImage"></div>
         <div class="statsPageWrapper">
@@ -197,6 +197,10 @@
             </button>
         </div>
     </div>
+<div class="loadingOverlay">
+    <h4>Loading...</h4>
+    <div class="ring"></div>
+</div>
 </body>
 <dialog class="menu" id="menu">
     <div class="menuHeader">
@@ -216,8 +220,29 @@
         <h3>Discord Server</h3>
     </a>
 </dialog>
-<script type="module" src="scripts/popology.js"></script>
-<style id="compareStyle">
-    
-</style>
+<script id="mainScript" type="module" src="scripts/popology.js"></script>
+<script>
+    elementsLoaded = 0
+    document.getElementById('mainScript').onload = async () => {
+        document.querySelector(".loadingOverlay").style.opacity = "0";
+        document.querySelector(".statsContainer").style.opacity = "1";
+        await sleep(200);
+        document.querySelector(".loadingOverlay").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.fonts.ready.then(async () => {
+            document.body.classList.remove('icons-not-ready');
+            document.body.classList.add('icons-ready');
+            document.querySelector(".cornerButtonContainer").style.opacity = "1";
+        }).catch(() => {
+            console.error('Failed to load Material Icons font.');
+        });
+    });
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+</script>
+<style id="compareStyle"></style>
 </html>

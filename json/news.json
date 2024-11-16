@@ -2,21 +2,12 @@
     "tournaments": [],
     "news": [
         {
-            "title": "Battles 2 Map Design Competition!",
+            "title": "Battles 2 4.3.1 OTA Update #1 is out now!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",
-            "description": "Create a Battles 2 map with a chance to have it implemented in game!",
+            "description": "Balance changes and bug fixes, including huge changes to Banana Farm and Scientist Gwendolin!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1gbttrb/map_design_competition/"]
-            ]
-        },
-        {
-            "title": "Battles 2 Map Design Survey!",
-            "date": "2000/1/1",
-            "timeutc": "00:00:00",
-            "description": "New survey by DestructivForce to get player feedback on map design in Battles 2!",
-            "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1gc25o2/public_battles_2_map_design_survey/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1gr5l1e/431_over_the_air_update_1_is_rolling_out_now/"]
             ]
         }
     ]
