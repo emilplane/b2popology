@@ -8,7 +8,7 @@
     background-color: var(--primary-tournament-color);
     border-radius: 8px;
     position: relative;
-    min-height: 350px;
+    min-height: 400px;
     /* height: max-content; */
     display: flex;
     justify-content: end;
@@ -16,7 +16,7 @@
 }
 
 .nextTournamentBackgroundImg {
-    background-image: url('/media/background_rough.png');
+    background-image: url('/media/background.png');
     background-size: cover;
     width: 50%;
     background-position: center;
