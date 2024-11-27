@@ -5012,7 +5012,7 @@
                                     ],
                                     "smart-boost ability (2.5s duration, passive: triggered by the start of a round)",
                                     [
-                                        "0.25%s (0.4375s)"
+                                        "25%s (0.4375s)"
                                     ]
                                 ]
                             },
