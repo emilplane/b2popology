@@ -1501,7 +1501,8 @@
                                     ],
                                     "gains supply-drop ability (50s cooldown, 15s initial)",
                                     [
-                                        "drops a crate worth $2000"
+                                        "drops a crate worth $2000",
+                                        "can only be used 3 times every round"
                                     ],
                                     "shrapnel buffed",
                                     [
