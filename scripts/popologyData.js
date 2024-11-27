@@ -227,7 +227,7 @@
                                         "+3d (9d), +6p (13p), +20r (76r), 0.13s, normal type",
                                         ["simple_mode", "increased projectile speed"],
                                         ["advanced_mode", "+50jsp (450jsp)"],
-                                        "crit now occurs every 5 shots"
+                                        "100d crit every 5 shots"
                                     ],
                                     "crosspath",
                                     [
