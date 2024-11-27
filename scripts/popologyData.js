@@ -7491,7 +7491,8 @@
                             ],
                             "hex status buffed",
                             [
-                                "(5%+1)d/1s, can affect BADs"
+                                "(8%+1)d per tick, can affect BADs",
+                                "ticks once every 1s"
                             ]
                         ]
                     }
@@ -7671,7 +7672,8 @@
                             "go-smudge-go ability buffed",
                             [
                                 "40s cooldown",
-                                "clawed status buffed: (5%+1)d/1s, can affect BADs"
+                                "clawed status buffed: (4.5%+1)d per tick, can affect BADs",
+                                "ticks once every 0.5714s"
                             ]
                         ]
                     }
