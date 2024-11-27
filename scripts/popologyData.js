@@ -8807,7 +8807,7 @@
                                 [
                                     "(d*2)d (2d), (p*j*7)p (35p), normal type",
                                 ],
-                                "on enemy bloon boost: 0.18% cooldown (9s cooldown)"
+                                "on enemy bloon boost: 18% cooldown (9s cooldown)"
                             ]
                         ],
                         "4": [
