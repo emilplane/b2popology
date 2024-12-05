@@ -2,12 +2,12 @@
     "tournaments": [],
     "news": [
         {
-            "title": "Battles 2 4.3.1 OTA Update #1 is out now!",
+            "title": "Battles 2 4.4 coming soon!",
             "date": "2000/1/1",
             "timeutc": "00:00:00",
-            "description": "Balance changes and bug fixes, including huge changes to Banana Farm and Scientist Gwendolin!",
+            "description": "Sandbox mode, new hero, and more!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1gr5l1e/431_over_the_air_update_1_is_rolling_out_now/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1h5nl0y/battles_2_update_44_coming_soon_update_notes/"]
             ]
         }
     ]
