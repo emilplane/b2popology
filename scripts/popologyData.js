@@ -1020,12 +1020,12 @@
                                     [
                                         "3s duration"
                                     ],
-                                    "gains snowstorm ability (30s cooldown, battle ready)",
+                                    "gains snowstorm ability (8s duration, 30s cooldown, battle ready)",
                                     [
                                         "1d, ∞p, ∞r, shatter type, camo",
-                                        "applies frozen status (6s duration, or 3s for camo/white/blimp)",
+                                        "applies frozen status (ability duration, or 3s for camo/white/blimp)",
                                         "slows down blimps to 2.25 speed",
-                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff for 6s"
+                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff"
                                     ],
                                     "crosspath",
                                     [
@@ -1049,11 +1049,11 @@
                                         "soaks through 3 layers"
                                     ],
                                     "blimps can be targeted: they will take damage, but cannot be frozen",
-                                    "snowstorm replaced by absolute-zero (20s cooldown, battle ready)",
+                                    "snowstorm replaced by absolute-zero (12s duration, 20s cooldown, battle ready)",
                                     [
                                         "1d, ∞p, ∞r, normal type, camo",
-                                        "applies frozen status (10s duration)",
-                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff for 10s",
+                                        "applies frozen status (ability duration)",
+                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff",
                                         "soaks through blimp layers"
                                     ],
                                     "crosspath",
@@ -1106,7 +1106,7 @@
                                     ],
                                     "frozen bloons have icicles",
                                     [
-                                        "2d, 3p, sharp type",
+                                        "2d, +6md (8md), 3p, sharp type",
                                         "does not affect MOAB-class bloons"
                                     ],
                                     "crosspath",
@@ -1120,7 +1120,7 @@
                                 "content": [
                                     "ice-bomb attack buffed",
                                     [
-                                        "+48md (50md), 75%s (0.8625s), shatter type"
+                                        "+68md (70md), 75%s (0.8625s), shatter type"
                                     ],
                                     "icicles buffed",
                                     [
@@ -2982,7 +2982,7 @@
                                         "75° random spread",
                                         "on contact: explosion",
                                         [
-                                            "4d, 8p, 8r blast, normal type"
+                                            "5d, 8p, 8r blast, normal type"
                                         ]
                                     ],
                                     "crosspath:",
@@ -3005,7 +3005,7 @@
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+5cd (9cd), +13md (17md), +10p (18p), +4r (12r)"
+                                        "+4cd (9cd), +12md (17md), +10p (18p), +4r (12r)"
                                     ]
                                 ]
                             }
@@ -4500,7 +4500,7 @@
                                 "content": [
                                     "gains primary-support",
                                     [
-                                        "affects primary towers in range",
+                                        "affects primary towers and Pat Fusty in range",
                                         "+15%p (minimum +1p), +10%r, increased projectile speed"
                                     ]
                                 ]
@@ -4510,7 +4510,7 @@
                                 "content": [
                                     "primary-support buffed",
                                     [
-                                        "+5r, free tier 1 upgrades, -20% ability cooldown time"
+                                        "+5r, free tier 1 upgrades, -20% ability cooldown time, +40% hero XP"
                                     ]
                                 ]
                             },
@@ -4520,7 +4520,7 @@
                                     "+7r (55r)",
                                     "primary-support buffed",
                                     [
-                                        "+30%p (minimum +3p), free tier 2 upgrades, additional -10% ability cooldown time (-30% overall)"
+                                        "+30%p (minimum +3p), free tier 2 upgrades, -10% ability cooldown time (-30% ability cooldown time), +40% hero XP (+80% hero XP)"
                                     ],
                                     "gains catapult attack",
                                     [
@@ -4753,7 +4753,6 @@
                                     "gains loan ability (90s cooldown, 20s initial)",
                                     [
                                         "loan $20,000, to be repaid by taking 50% from all future income",
-                                        "note that only one loan will take repayments at a time, even if enough is gained at once to cover several existing loans"
                                     ]
                                 ]
                             },
@@ -5677,7 +5676,7 @@
                         "1": [
                             "$700",
                             ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
-                            "Unlock Cost: Complete Training Camp",
+                            "Unlock Cost: Free",
                             "size: 7 radius",
                             "placeable on: land",
                             "fire attack",
@@ -7711,8 +7710,12 @@
                         "3": [
                             "rallying-roar ability (50s cooldown, 7s duration, 12s initial)",
                             [
-                                "buffs himself and towers in 35r",
-                                "+1d, ?%s"
+                                "roar buff",
+                                [
+                                    "affects self and towers within 35r",
+                                    "+1d, ?%s",
+                                    "0.8333%s to primary monkeys"
+                                ],
                             ]
                         ],
                         "4": [
@@ -7769,12 +7772,16 @@
                             ]
                         ],
                         "10": [
-                            "big-squeeze ability (30s cooldown, 5s duration, battle ready)",
+                            "big-squeeze ability (30s cooldown, 6s duration, battle ready)",
                             [
                                 "grabs the strongest MOAB-class non-BAD bloon in range and spends 4s popping it",
                                 "Pat cannot attack during the ability duration",
                                 "Pat cannot activate rallying-roar during the ability duration",
-                                "once popped, stuns the children for 2s"
+                                "once popped, stuns the children for 2s",
+                                "squeeze buff",
+                                [
+                                    "+3d",
+                                ],
                             ]
                         ],
                         "11": [
@@ -7848,12 +7855,16 @@
                             ]
                         ],
                         "20": [
-                            "big-squeeze buffed:",
+                            "big-squeeze buffed",
                             [
                                 "2.5s duration",
                                 "affects 6 eligible bloons instead of 1",
                                 "spends 2 seconds to pop the bloons instead of 4"
-                            ]
+                            ],
+                            "squeeze buffed",
+                            [
+                                "+6d (+9d)",
+                            ],
                         ]
                     }
                 },
@@ -7908,9 +7919,18 @@
                                     "applies knockback status",
                                     [
                                         "move backwards at 2x normal speed, 1s duration"
+                                    ],
+                                    "frozen bloons that are hit emit shards when popped"
+                                    [
+                                        "1d, 6j, 3i?, shatter type"
                                     ]
                                 ]
-                            ]
+                            ],
+                            "pat-ice buff",
+                            [
+                                "affects all Ice Monkeys",
+                                "can pop White and Zebra bloons"
+                            ],
                         ],
                         "6": [
                             "slam buffed",
@@ -7950,7 +7970,7 @@
                             ]
                         ],
                         "10": [
-                            "crushing-ice ability (30s cooldown, 5s duration, battle ready)",
+                            "crushing-ice ability (30s cooldown, 4s duration, battle ready)",
                             [
                                 "grabs the strongest MOAB-class non-BAD bloon in range and spends 4s popping it",
                                 "Pat cannot attack during the ability duration",
@@ -7959,7 +7979,12 @@
                                 [
                                     "50r blast",
                                     "freezes bloons for 4s, or 2s for non-BAD MOAB-class bloons"
-                                ]
+                                ],
+                                "crushing-slow effect",
+                                [
+                                    "50r",
+                                    "60% slow"
+                                ],
                             ]
                         ],
                         "11": [
@@ -8036,6 +8061,10 @@
                             "crushing-ice buffed:",
                             [
                                 "affects 6 eligible bloons instead of 1"
+                            ],
+                            "crushing-slow buffed",
+                            [
+                                "80% slow"
                             ],
                             "freeze-bomb buffed",
                             [
@@ -8236,7 +8265,7 @@
                             ]
                         ],
                         "3": [
-                            "stand-and-deliver ability (100s cooldown, 45s initial cooldown)",
+                            "stand-and-deliver ability (100s cooldown, 35s initial cooldown)",
                             [
                                 "takes $200 from the opponent",
                                 [
@@ -8949,7 +8978,7 @@
                     "data": {
                         "1": [
                             "$650",
-                            ["hero_level", {"multiplier": 1.06, "curve": "unknown"}],
+                            ["hero_level", {"multiplier": 1.06, "curve": "Striker Jones"}],
                             "Unlock Cost: 3,000 MM",
                             "size: 6 radius",
                             "placeable on: land",
@@ -9112,6 +9141,174 @@
                         ]
                     }
                 },
+                // "beetienne": {
+                //     "name": "Beetienne",
+                //     "data": {
+                //         "1": [
+                //             "$650",
+                //             ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
+                //             "Unlock Cost: 3,000 MM",
+                //             "size: 6 radius",
+                //             "placeable on: land",
+                //             "55r",
+                //             "spawns two permanent drone subtowers",
+                //             [
+                //                 "dart attack",
+                //                 [
+                //                     "1d, 2p, 0.7s, sharp type",
+                //                     "can see past obstacles"
+                //                 ]
+                //             ]
+                //         ],
+                //         "2": [
+                //             "+5r (60r)",
+                //             "gains spy-drone",
+                //             [
+                //                 "opponent's bloon queue and cash is visible"
+                //             ]
+                //         ],
+                //         "3": [
+                //             "drone-swarm ability (60s cooldown, (12 + 0.5l, l = level number)s duration (13.5s this level)?)",
+                //             [
+                //                 "spawns 4 more drone subtowers",
+                //                 "duration increases 0.5s per level"
+                //             ]
+                //         ],
+                //         "4": [
+                //             "dart buffed",
+                //             [
+                //                 "+1p (3p)"
+                //             ]
+                //         ],
+                //         "5": [
+                //             "dart buffed",
+                //             [
+                //                 "0.55s, camo"
+                //             ]
+                //         ],
+                //         "6": [
+                //             "uav buff",
+                //             [
+                //                 "affects all towers",
+                //                 "every attack has a 20% chance to ignore bloon properties"
+                //             ]
+                //         ],
+                //         "7": [
+                //             "uav buffed",
+                //             [
+                //                 "grants camo"
+                //             ]
+                //         ],
+                //         "8": [
+                //             "dart buffed",
+                //             [
+                //                 "+1d (2d)"
+                //             ]
+                //         ],
+                //         "9": [
+                //             "uav buffed",
+                //             [
+                //                 "every attack now has a 50% chance to ignore bloon properties"
+                //             ]
+                //         ],
+                //         "10": [
+                //             "ucav ability (75s cooldown, 18s duration)",
+                //             [
+                //                 "uav replaced by ucav-drone-ability subtower",
+                //                 [
+                //                     "10j/230°, 1 impact, ∞r, 0.6s",
+                //                     "homing",
+                //                     "always targets first",
+                //                     "on contact: explosion",
+                //                     [
+                //                         "2d, 25p, 20r blast, explosion type, camo"
+                //                     ]
+                //                 ]
+                //             ]
+                //         ],
+                //         "11": [
+                //             "spawns 1 more permanent drone subtower (3)",
+                //             "gains zone defense targeting"
+                //         ],
+                //         "12": [
+                //             "drone buffed",
+                //             [
+                //                 "200% flight speed"
+                //             ],
+                //             "dart buffed",
+                //             [
+                //                 "+3p (6p)"
+                //             ]
+                //         ],
+                //         "13": [
+                //             "ucav buffed",
+                //             [
+                //                 "60s cooldown"
+                //             ]
+                //         ],
+                //         "14": [
+                //             "dart buffed",
+                //             [
+                //                 "+1d (3d)"
+                //             ]
+                //         ],
+                //         "15": [
+                //             "uav buffed",
+                //             [
+                //                 "every attack now has a 100% chance to ignore bloon properties"
+                //             ],
+                //             "ucav buffed",
+                //             [
+                //                 "+6s duration (24s)"
+                //             ],
+                //             "explosion buffed",
+                //             [
+                //                 "+2d (4d), +5p (30p)"
+                //             ]
+                //         ],
+                //         "16": [
+                //             "+20r (80r)",
+                //             "dart buffed",
+                //             [
+                //                 "+3p (9p)"
+                //             ],
+                //             "drone-swarm buffed",
+                //             [
+                //                 "-15s cooldown (45s cooldown)"
+                //             ]
+                //         ],
+                //         "17": [
+                //             "explosion buffed",
+                //             [
+                //                 "+3d (7d)"
+                //             ]
+                //         ],
+                //         "18": [
+                //             "dart buffed",
+                //             [
+                //                 "+1d (4d)"
+                //             ]
+                //         ],
+                //         "19": [
+                //             "spawns 1 more permanent drone subtower (4)"
+                //         ],
+                //         "20": [
+                //             "uav buffed",
+                //             [
+                //                 "missile attack",
+                //                 [
+                //                     "10j 240° spread, 1i, ∞r, 0.6sx, camo",
+                //                     "homing",
+                //                     "always targets first"
+                //                 ],
+                //                 "explosion attack",
+                //                 [
+                //                     "2d, 25p, 20r blast, explosion type, camo"
+                //                 ]
+                //             ]
+                //         ]
+                //     }
+                // },
                 "bonnie": {
                     "name": "Bonnie",
                     "data": {
@@ -10503,7 +10700,7 @@
                                     <li>Rounds: 23+</li>
                                     <li>Count: 60</li>
                                     <li>Total time: 1s</li>
-                                    <li>Eco: +$22</li>
+                                    <li>Eco: +7</li>
                                     <li>Cost: $1,200</li>
                                 </ul>
                             </li>
@@ -10567,7 +10764,7 @@
                                     <li>Count: 40</li>
                                     <li>Total time: 0.8s</li>
                                     <li>Eco: +$0</li>
-                                    <li>Cost: $3,400</li>
+                                    <li>Cost: $2,800</li>
                                 </ul>
                             </li>
                             <li>Super Ceramics
@@ -10853,7 +11050,7 @@
                 "base": 450,
                 "top": [100, 350, 1800, 2700, 34000],
                 "middle": [225, 350, 2900, 3000, 18000],
-                "bottom": [100, 200, 1750, 2400, 32000]
+                "bottom": [100, 200, 1300, 2400, 32000]
             },
             "glueGunner": {
                 "base": 100,
@@ -10955,7 +11152,7 @@
                 "base": 600,
                 "top": [600, 600, 2700, 9500, 90000],
                 "middle": [500, 500, 2500, 5200, 40000],
-                "bottom": [150, 500, 750, 3200, 30000]
+                "bottom": [150, 500, 1200, 3200, 30000]
             },
             "engineerMonkey": {
                 "base": 400,

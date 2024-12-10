@@ -367,7 +367,7 @@ function runPopology(compare) {
             switch (selectedCategory) {
                 case "heroes": 
                     for (let level in popologyData.stats[selectedCategory].entries[selectedPage].data) {
-                        if (level === 1) {
+                        if (Number(level) === 1) {
                             contentHTML += `<h3 class="baseTowerName">Level ${level}</h3>`
                             contentHTML += nestedArraysToHTML(popologyData.stats[selectedCategory].entries[selectedPage].data[level])
                         } else {

@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        0
+        2
     ],
     "versionHistory": {
         "0": {
@@ -1164,6 +1164,23 @@
                         "Moved description that 1xx Engineer Monkey's sentry cannot be buffed by attack cooldown buffs to the build-sentry attack (jake6542)",
                         "Added maximum tick damage to Ezili's and Smudge Catt Ezili's level 10 ability (jake6542)",
                         "Fixed pierce inconsistency with 4xx and 401 Monkey Buccaneer's forward-dart pierce (jake6542)"
+                    ]
+                },
+                "1": {
+                    "date": "2024/11/27",
+                    "content": [
+                        "Added 005 Dart Monkey crit damage (jake6542)",
+                        "Corrected Level 20 Ezili and Smudge Catt Ezili hex damage and maximum damage limit (jake6542)",
+                        "Corrected Fateweaver Adora Level 3 cooldown (destructivforce)",
+                        "Added x4x Sniper Monkey's ability uses per round limit (destructivforce)",
+                        "Corrected formatting on xx2 Spike Factory attack cooldown bonus (anyar)"
+                    ]
+                },
+                "2": {
+                    "date": "2024/12/9",
+                    "content": [
+                        "Added Battles 2 4.4 balance changes",
+                        "Updated Gwendolin unlock cost (qwertyxp2000)"
                     ]
                 }
             }
