@@ -7920,7 +7920,7 @@
                                     [
                                         "move backwards at 2x normal speed, 1s duration"
                                     ],
-                                    "frozen bloons that are hit emit shards when popped"
+                                    "frozen bloons that are hit emit shards when popped",
                                     [
                                         "1d, 6j, 3i?, shatter type"
                                     ]

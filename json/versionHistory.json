@@ -1182,6 +1182,12 @@
                         "Added Battles 2 4.4 balance changes",
                         "Updated Gwendolin unlock cost (qwertyxp2000)"
                     ]
+                },
+                "3": {
+                    "date": "2024/12/10",
+                    "content": [
+                        "Fixed Fusty the Snowman page throwing an error (jake6542)"
+                    ]
                 }
             }
         }
