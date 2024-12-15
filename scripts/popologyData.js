@@ -7901,7 +7901,7 @@
                         "3": [
                             "chilling-cheer ability (50s cooldown, 7s duration, 12s initial)",
                             [
-                                "buffs Ice Monkeys and self in 60r, including self",
+                                "buffs Ice Monkeys and self in 60r",
                                 "+1d",
                                 "-15% attack cooldown"
                             ]
