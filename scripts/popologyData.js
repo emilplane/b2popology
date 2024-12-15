@@ -5590,7 +5590,7 @@
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)",
                             [
-                                "25d, 25md (12), ∞p, 50r zone, 0.05s, plasma type",
+                                "25d, 25md (50), ∞p, 50r zone, 0.05s, plasma type",
                                 "7.5% chance of hitting (per frame)",
                                 "can rehit after 0.05s",
                                 "centered according to Quincy's targeting when activated"
