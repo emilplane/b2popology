@@ -5884,7 +5884,7 @@
                                 "triggered by either the 36th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "8s duration, +1p, +1gld, +1ad lead popping,"
+                                    "8s duration, +1p, +2gld, +2ad, gives lead popping,"
                                 ]
                             ]
                         ],
