@@ -12,9 +12,11 @@ export class Upgrade {
     constructor(upgradeBlueprint) {
         this.modules = [];
 
-        upgradeBlueprint.forEach(module => {
-            this.modules.push(new UpgradeModule(module))
-        });
+        if (Array.isArray(upgradeBlueprint)) {
+            upgradeBlueprint.forEach(module => {
+                this.modules.push(new UpgradeModule(module))
+            });
+        }
     }
 }
 
@@ -35,27 +37,22 @@ export class Tower {
     initTower() {
         this.upgrades = [];
         this.addUpgrade(this.towerBlueprint.upgrades.base);
-    
-        const paths = this.path.map((level, index) => ({
-            level,
-            pathNumber: index,
-            upgrades: this.towerBlueprint.upgrades.paths[index]
-        }));
-    
+
+        const paths = this.path.pathLevelBreakoutObject(this.towerBlueprint)
+
         paths.sort((a, b) => b.level - a.level);
-    
+
         paths.forEach((path, index) => {
             for (let i = 0; i < path.level; i++) {
                 this.addUpgrade(path.upgrades[i]);
             }
 
-            const upgradeData = this.towerBlueprint
-                .upgradeNames[path.pathNumber][path.level - 1];
+            const upgradeData = this.towerBlueprint.upgradeNames[path.pathNumber][path.level - 1];
             let upgradeName = upgradeData ? upgradeData.displayName : undefined;
-            
+
             switch (index) {
                 case 0:
-                    this.towerName = 
+                    this.towerName =
                         (upgradeData === undefined) ? "unknown" : upgradeName;
                     break;
                 case 1:
@@ -70,11 +67,12 @@ export class Tower {
             }
         });
 
+
         const baseTowerName = this.towerBlueprint.displayName
-        if (isBasePath(this.path) && baseTowerName !== undefined) {
-            this.towerName = baseTowerName
+        if (this.path.isBase() && baseTowerName !== undefined) {
+            this.towerName = `Base ${baseTowerName}`
         }
-    
+
         this.constructTower();
     }
 

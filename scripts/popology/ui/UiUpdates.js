@@ -49,11 +49,9 @@ export default class UiUpdates {
     }
 
     static upgradeDisplay(popologyContext) {
-        const index = Math.max(...popologyContext.path) - 1
-        const path = popologyContext.path.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0)
         popologyContext.currentTower = {
             "type": "upgrade",
-            "data": new Upgrade(popologyContext.towerBlueprint.upgrades.paths[path][index])
+            "data": new Upgrade(popologyContext.path.blueprintUpgradeSelector(popologyContext.towerBlueprint.upgrades))
         }
 
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""

@@ -3,6 +3,7 @@ import {addAfterBuffValueToPropertyBuff, setCharAt, statArrayToDisplayStat} from
 import {Element} from "./element.js";
 import UiUpdates from "./UiUpdates.js";
 import {UpgradeModule} from "../modulesHiearchy/moduleLevel.js";
+import {TowerPath} from "../modulesHiearchy/TowerPath.js";
 
 /**
  * Contains functions that create UI elements across the site
@@ -262,51 +263,15 @@ export class UiElements {
      * @param {*} module - The module to display in this element
      * @param {*} tower_upgrade_object - The tower this module comes from
      * @param {*} conditionString
-     * The condition under which this module is used (this is used for submodules)
+     * The condition under which this module is used (this is used for submodules) (ex. "on contact")
      * @param {*} tower - If this module is for an upgrade, pass in the tower to display fully calculated stats for some
      * properties
      * @param {*} useSecondaryModuleStyle
      * Whether to use a darker module style (this alternates as nested modules grow deeper)
      */
     static module(module, tower_upgrade_object, conditionString, tower = undefined, useSecondaryModuleStyle = false) {
-        const title = new Element("div").class("moduleTitle");
-
-        if (conditionString !== undefined) {
-            title.children(
-                new Element("span").class("moduleCondition").text(`${conditionString} `)
-            );
-        }
-
-        // Array of span elements for the title of this module
-        const titleTextElements = [
-            new Element("span").class("moduleName").text(`${module.name}`),
-            document.createTextNode(" "),
-            new Element("span").class("moduleType")
-                .text(`${MODULE_TYPES[module.type].displayName}`)
-        ]
-
-        if (module instanceof UpgradeModule) {
-            switch (module.action) {
-                case "new":
-                    if (conditionString === undefined) {
-                        titleTextElements.unshift(document.createTextNode(" "));
-                        titleTextElements.unshift(new Element("span").text("gains"));
-                    }
-                    break;
-                case "buff":
-                    titleTextElements.push(document.createTextNode(" "));
-                    titleTextElements.push(new Element("span").text("buffed"));
-                    break;
-            }
-        }
-
-        title.children(...titleTextElements);
-
-        const line = new Element("div").class("moduleDividingLine")
-            .children(new Element("div").class("moduleDividingLineHover"));
-
         const damageStats = { "damage": undefined, "secondary": [] };
-        const basicStats = [], submodules = {};
+        const basicStats = [], booleanStats = [], submodules = {};
 
         for (let propertyName in MODULE_PROPERTIES) {
             if (MODULE_PROPERTIES[propertyName].category === "submodules") {
@@ -338,6 +303,9 @@ export class UiElements {
                         basicStats.push(property);
                     }
                     break;
+                case "boolean":
+                    booleanStats.push(property);
+                    break;
                 case "submodules":
                     submodules[property.name].push(property);
                     break;
@@ -345,7 +313,6 @@ export class UiElements {
         });
 
         const moduleStatContainer = new Element("div").class("moduleStatContainer");
-
 
         if (damageStats.damage !== undefined && damageStats.damage.value !== undefined) {
             if (damageStats.secondary.length === 0) {
@@ -382,16 +349,68 @@ export class UiElements {
             moduleStatContainer.children(UiElements.basicStatsContainer(basicStats));
         }
 
+        if (booleanStats.length !== 0) {
+            moduleStatContainer.children(UiElements.basicStatsContainerSmall(booleanStats))
+        }
+
         if (submoduleExists) {
             moduleStatContainer.children(submoduleContainer);
         }
 
+        // Create and return module container
         const container = new Element("div").class("module", `${module.type}Module`)
-            .children(title, line, moduleStatContainer);
-
-        if (useSecondaryModuleStyle) { container.class("secondaryModuleStyle") }
+            .children(
+                UiElements.moduleTitle(module, conditionString),
+                new Element("div").class("moduleDividingLine")
+                    .children(new Element("div").class("moduleDividingLineHover")),
+                moduleStatContainer
+            );
+        if (useSecondaryModuleStyle) container.class("secondaryModuleStyle")
 
         return container;
+    }
+
+    /**
+     * Delivers a module title.
+     * @param {*} module - The module to display in this element
+     * @param {*} conditionString
+     * The condition under which this module is used (this is used for submodules) (ex. "on contact")
+     */
+    static moduleTitle(module, conditionString) {
+        const title = new Element("div").class("moduleTitle");
+
+        if (conditionString !== undefined) {
+            title.children(
+                new Element("span").class("moduleCondition").text(`${conditionString} `)
+            );
+        }
+
+        // Array of span elements for the title of this module
+        const titleTextElements = [
+            new Element("span").class("moduleName").text(`${module.name}`),
+            document.createTextNode(" "),
+            new Element("span").class("moduleType")
+                .text(`${MODULE_TYPES[module.type].displayName}`)
+        ]
+
+        if (module instanceof UpgradeModule) {
+            switch (module.action) {
+                case "new":
+                    if (conditionString === undefined) {
+                        titleTextElements.unshift(document.createTextNode(" "));
+                        titleTextElements.unshift(new Element("span").text("gains"));
+                    }
+                    break;
+                case "buff":
+                    titleTextElements.push(document.createTextNode(" "));
+                    titleTextElements.push(new Element("span").text("buffed"));
+                    break;
+            }
+        }
+
+        title.children(...titleTextElements);
+
+        return title;
     }
 
     /**
@@ -419,6 +438,7 @@ export class UiElements {
     static basicStatsContainer(basicStats) {
         const basicStatsContainer = new Element("div")
             .class("statChipContainer");
+
 
         basicStats.forEach(stat => {
             basicStatsContainer.children(
@@ -534,54 +554,60 @@ export class UiElements {
         towerPathData.forEach((upgrade, index) => {
             let pathString = "000"; pathString = setCharAt(pathString, path, index+1);
 
-            const image = new Element("div").class("towerPortraitContainer")
-                .children(
-                    new Element("img").class("towerPortrait")
-                        .setProperty("src", `media/towerPortraits/wizardMonkey/${pathString}.png`)
-                )
-            
-            const titleContainer = new Element("div").class("towerTitleContainer")
-                .children(
-                    new Element("h3").class("towerTitle", "luckiestGuy")
-                        .text(nameData[index].displayName)
-                )
-
-            const towerButtonsContainer = new Element("div").class("towerButtonsContainer")
-
-            const viewTowerButton = new Element("button").class("towerNavButton").children(
-                document.createTextNode("View Tower"),
-                new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
-            )
-
-            viewTowerButton.onclick(() => {
-                const newPath = [0, 0, 0]
-                newPath[path] = index + 1
-                context.path = newPath
-                UiUpdates.towerDisplay(context)
-            })
-
-            const viewUpgradeButton = new Element("button").class("towerNavButton").children(
-                document.createTextNode("View Upgrade"),
-                new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
-            )
-
-            viewUpgradeButton.onclick(() => {
-                const newPath = [0, 0, 0]
-                newPath[path] = index + 1
-                context.path = newPath
-                UiUpdates.upgradeDisplay(context)
-            })
-
-            towerButtonsContainer.children(viewTowerButton, viewUpgradeButton)
-
-            const card = new Element("div").class("towerCard").children(
-                image, titleContainer, /*towerCardChipContainer,*/ towerButtonsContainer
+            const card = UiElements.towerCard(
+                `media/towerPortraits/wizardMonkey/${pathString}.png`,
+                nameData[index].displayName,
+                new TowerPath({path: path, upgrade: index}),
+                context
             )
 
             container.children(card)
         })
         
         return container;
+    }
+
+    static towerCard(portraitFilepath, towerName, towerPath, context) {
+        // console.log(portraitFilepath, towerName, index, path, context)
+        const image = new Element("div").class("towerPortraitContainer")
+            .children(
+                new Element("img").class("towerPortrait")
+                    .setProperty("src", portraitFilepath)
+            )
+
+        const titleContainer = new Element("div").class("towerTitleContainer")
+            .children(
+                new Element("h3").class("towerTitle", "luckiestGuy")
+                    .text(towerName)
+            )
+
+        const towerButtonsContainer = new Element("div").class("towerButtonsContainer")
+
+        const viewTowerButton = new Element("button").class("towerNavButton").children(
+            document.createTextNode("View Tower"),
+            new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
+        )
+
+        viewTowerButton.onclick(() => {
+            context.path = towerPath
+            UiUpdates.towerDisplay(context)
+        })
+
+        const viewUpgradeButton = new Element("button").class("towerNavButton").children(
+            document.createTextNode("View Upgrade"),
+            new Element("span").class("material-symbols-outlined").text("arrow_forward_ios")
+        )
+
+        viewUpgradeButton.onclick(() => {
+            context.path = towerPath
+            UiUpdates.upgradeDisplay(context)
+        })
+
+        towerButtonsContainer.children(viewTowerButton, viewUpgradeButton)
+
+        return new Element("div").class("towerCard").children(
+            image, titleContainer, /*towerCardChipContainer,*/ towerButtonsContainer
+        )
     }
 
     static UiOverlays = class {

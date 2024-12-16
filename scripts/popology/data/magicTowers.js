@@ -278,7 +278,24 @@ export const magicTowers = {
                             }
                         }
                     ],
-                    [],
+                    [
+                        {
+                            "name": "explosion",
+                            "action": "buff", "type": "subattack",
+
+                            "properties": {
+                                "damage": ["+", 7],
+                            }
+                        },
+                        {
+                            "name": "place-fire",
+                            "action": "buff", "type": "attack",
+
+                            "properties": {
+                                "attackCooldown": ["set", 4.5],
+                            }
+                        }
+                    ],
                     [],
                     []
                 ],

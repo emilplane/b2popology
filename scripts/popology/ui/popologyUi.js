@@ -4,6 +4,7 @@ import { Element } from "./element.js"
 import { UiElements } from "./UiElements.js"
 import UiUpdates from "./UiUpdates.js"
 import {Tower} from "../modulesHiearchy/towerLevel.js";
+import {TowerPath} from "../modulesHiearchy/TowerPath.js";
 
 /**
  * Contains UI content to be used in the uiContent div
@@ -43,14 +44,20 @@ export class PopologyUi {
             const towerNav = UiElements.towerNavBar(this.popologyContext, this.navBarScrollVelocity);
 
             const towerInfoContainer = new Element("div")
-                .class("towerInfoContainer")
+                .class('towerInfoContainer')
                 .children(
                     towerNav, banner
                 );
 
             if (this.blueprint.upgrades === undefined) {
-
+                // Add "no upgrades" screen
             } else {
+                towerInfoContainer.children(UiElements.towerCard(
+                    `media/towerPortraits/wizardMonkey/base.png`,
+                    `Base ${this.blueprint.displayName}`,
+                    new TowerPath('base'),
+                    this.popologyContext
+                ))
                 this.blueprint.upgrades.paths.forEach((path, index) => {
                     towerInfoContainer.children(
                         UiElements.towerInfoPathContainer(index, this.blueprint, this.popologyContext)
@@ -68,8 +75,6 @@ export class PopologyUi {
      */
     static PopologyTowerDisplay = class {
         constructor(popologyContext, isUpgrade) {
-            console.log(popologyContext);
-
             this.popologyContext = popologyContext;
             this.isUpgrade = isUpgrade;
             this.blueprint = popologyContext.currentTower;
@@ -108,7 +113,27 @@ export class PopologyUi {
                 UiUpdates.upgradeSelection(this.popologyContext)
             })
 
-            return new Element("div").class("towerDisplayNavbar").children(backButton)
+            const changeTowerUpgradeButton = new Element("button").class("grayButton")
+
+            switch (this.popologyContext.currentTower.type) {
+                case "tower":
+                    changeTowerUpgradeButton.text("View As Upgrade");
+                    changeTowerUpgradeButton.onclick(() => {
+                        UiUpdates.upgradeDisplay(this.popologyContext)
+                    })
+                    break;
+                case "upgrade": default:
+                    changeTowerUpgradeButton.text("View As Tower");
+                    changeTowerUpgradeButton.onclick(() => {
+                        UiUpdates.towerDisplay(this.popologyContext)
+                    })
+                    break;
+            }
+
+            return new Element("div").class("towerDisplayNavbar").children(
+                backButton,
+                changeTowerUpgradeButton
+            )
         }
 
         /**
@@ -118,7 +143,6 @@ export class PopologyUi {
          * @param {*} bottomText - The text to display at the bottom of the banner
          */
         updateBanner(name, crosspath, bottomText) {
-            console.log(arguments)
             const bannerTitleContainer = new Element("div").children(
                     new Element(UI_CONSTANTS.BANNER.TITLE_TEXT_SIZE).class("luckiestGuy").text(name)
                 )
@@ -129,14 +153,23 @@ export class PopologyUi {
                         .class("luckiestGuy").text(UI_CONSTANTS.BANNER.CROSSPATH_PREFIX + crosspath)
                 )
             }
-    
 
-            this.banner.clearHTML().children(bannerTitleContainer)
+            const pathString = this.popologyContext.path.simplePathString(true)
+
+            const towerPortrait = new Element("div").class("towerBannerPortraitContainer").children(
+                new Element("img").class("towerBannerPortrait").setProperty("src",
+                    `media/towerPortraits/${this.popologyContext.towerBlueprint.name}/${pathString}.png`
+                )
+            )
+
+            const towerBannerContent = new Element("div").class("towerBannerContent").children(bannerTitleContainer)
             if (bottomText !== undefined) {
-                this.banner.children(
+                towerBannerContent.children(
                     new Element("p").text(bottomText).class("mono", "big", "bannerBottomText")
                 )
             }
+
+            this.banner.clearHTML().children(towerBannerContent, towerPortrait)
 
             return this
         }

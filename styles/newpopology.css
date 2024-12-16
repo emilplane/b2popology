@@ -252,13 +252,28 @@
 .towerBanner {
     border-radius: var(--bradius);
     min-height: 120px;
-    background-color: var(--dark2);
     padding: var(--margin-m);
     background: linear-gradient(
         135deg, hsla(281, 90%, 38%, 0.5), hsla(325, 100%, 30%, 0.5)
     );
+    display: grid;
+    grid-template-columns: 1fr auto;
+    flex-direction: column;
+}
+
+.towerBannerContent {
     display: flex;
     flex-direction: column;
+}
+
+.towerBannerPortraitContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.towerBannerPortrait {
+    height: 120px;
 }
 
 .bannerBottomText {
@@ -646,7 +661,7 @@
 
 
 .towerInfoBanner {
-    padding: var(--margin-m);
+    padding: var(--margin-m) 0;
 }
 
 .towerCard {
@@ -676,7 +691,7 @@
 
 .towerPortraitContainer {
     position: absolute;
-    top: 0px; left: 12px;
+    top: 0; left: 12px;
     height: 120px;
     width: 120px;
     display: flex;

@@ -5,9 +5,10 @@ export function statArrayToDisplayStat(stat) {
 
     if (Array.isArray(statValue)) {
         switch (statValue[0]) {
-            case "+": statValue = `+${statValue[1]}`; break;
-            case "*": statValue = `${statValue[1]*100}%`; break;
-            case "%": statValue = `${statValue[1]*100}%`; break;
+            case "set": default:    statValue = `${statValue[1]}`;      break;
+            case "+":               statValue = `+${statValue[1]}`;     break;
+            case "*":               statValue = `${statValue[1]*100}%`; break;
+            case "%":               statValue = `${statValue[1]*100}%`; break;
         }
     }
 
@@ -15,7 +16,10 @@ export function statArrayToDisplayStat(stat) {
         statValue += stat.criteria.unit;
     }
 
-    if (stat.afterBuffValue !== undefined && !isNaN(stat.afterBuffValue)
+    // Adds result value after this buff (like +1d (2d))
+    if (
+        stat.afterBuffValue !== undefined && !isNaN(stat.afterBuffValue)
+        && ["+", "*", "%"].includes(stat.value[0])
     ) {
         statValue += ` (${stat.afterBuffValue}${stat.criteria.showUnitByDefault ? stat.criteria.unit : ""})`;
     }
@@ -73,7 +77,7 @@ export function isBasePath(path) {
 }
 
 export function pathDisplayText(path, isUpgrade = false) {
-    let pathText = path.join(UI_CONSTANTS.PATH_JOIN_CHARACTER)
+    let pathText = path.path.join(UI_CONSTANTS.PATH_JOIN_CHARACTER)
     if (isUpgrade) {
         pathText = pathText.replace(/0/g, "x");
     }
@@ -181,4 +185,8 @@ export class UpgradeSummaryStats {
 
         return number
     }
+}
+
+export function areArraysEqual (arr1, arr2) {
+    return arr1.length === arr2.length && arr1.every((val, index) => val === arr2[index])
 }

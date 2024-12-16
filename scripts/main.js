@@ -2815,7 +2815,7 @@ let data = {
                             `
                         },
                         "2": {
-                            "name": "002 - Centered Path - $300",
+                            "name": "002 - Centered PathAndUpgrade - $300",
                             "content": `
                                 <ul>
                                     <li>gains centered path targeting
