@@ -7,9 +7,9 @@
     --white: hsl(0, 0%, 100%);
     --light1: hsl(0, 0%, 98%);
     --light2: hsl(0, 0%, 95%);
-    --light3: hsl(0, 0%, 90%);
-    --light4: hsl(0, 0%, 85%);
-    --light5: hsl(0, 0%, 80%);
+    --light3: hsl(0, 0%, 85%);
+    --light4: hsl(0, 0%, 75%);
+    --light5: hsl(0, 0%, 65%);
 
     --gray: hsl(0, 0%, 50%);
 
@@ -141,10 +141,14 @@ button {
 }
 
 .grayButton {
-    background-color: var(--dark1);
+    background-color: var(--light5);
 }
 
 @media (prefers-color-scheme: dark) {
+    .grayButton {
+        background-color: var(--dark1);
+    }
+
     button {
         background-color: var(--primaryDark);
     }

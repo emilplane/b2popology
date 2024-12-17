@@ -280,10 +280,19 @@
                 rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5) 25%,
                 rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 110%
             ),
-            url('media/striker.png');
+            url('media/beetienne.png');
 
             @media (prefers-color-scheme: dark) {
-                background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0)), url('media/striker.png');
+                background-image: linear-gradient(to right,
+                    rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.25) 15%,
+                    rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 80%,
+                    rgba(0, 0, 0, 0.25) 85%, rgba(0, 0, 0, 1)
+                ),
+                linear-gradient(to top,
+                    rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5) 25%,
+                    rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 110%
+                ),
+                url('media/beetienne.png');
             }
             opacity: 0;
             background-position-y: 40%;
@@ -305,7 +314,7 @@
     </style>
     <script>
         window.addEventListener('load', async function() {
-            await sleep(1000);
+            await sleep(200);
             document.getElementById('coverImage').classList.add('loaded');
             document.getElementById('artAttribution').classList.add('loaded');
         });

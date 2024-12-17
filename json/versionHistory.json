@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        2
+        5
     ],
     "versionHistory": {
         "0": {
@@ -1187,6 +1187,28 @@
                     "date": "2024/12/10",
                     "content": [
                         "Fixed Fusty the Snowman page throwing an error (jake6542)"
+                    ]
+                },
+                "4": {
+                    "date": "2024/12/15",
+                    "content": [
+                        "Fixed Scigwen's level 4 glue and alch damage (ertos_accounter, jake6542)",
+                        "Fixed Cyber Quincy's Cyber-storm's total moab damage (jake6542)",
+                        "Fixed Snow Pat chilling cheer referencing himself twice (ertos_accounter)"
+                    ]
+                },
+                "5": {
+                    "date": "2024/12/16",
+                    "content": [
+                        "Added Beetienne",
+                        "Added x5x Glue Gunner giving a +3 damage bonus instead of +2 as a bug (hooboo100)",
+                        "Moved Cyber Quincy's level 18 arrow damage buff to level 20 (thedandelionbreath_19484)",
+                        "Changed pierce to impact for xx3 Heli Pilot's shove attack (jake6542)",
+                        "Added 40,000 Adora Points to unlock Fateweaver Adora",
+                        "Changed Bomb Shooter footprint to 7r",
+                        "Changed Dartling Gunner footprint to 8r",
+                        "Moved life cost of abilities into the ability header",
+                        "Fixed formatting for the cooldown of level 7 Ezili"
                     ]
                 }
             }

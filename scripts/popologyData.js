@@ -461,7 +461,7 @@
                     "data": {
                         "base": [
                             "$525 (0 MM)",
-                            "size: 6 radius",
+                            "size: 7 radius",
                             "placeable on: land",
                             "bomb attack",
                             [
@@ -1279,7 +1279,7 @@
                                     ],
                                     "weakening-glue buffed",
                                     [
-                                        "22s duration, 75% slow, soaks 9 layers"
+                                        "take +1 extra damage (+3d) [BUG], 22s duration, 75% slow, soaks 9 layers"
                                     ],
                                     "crosspath",
                                     [
@@ -1635,9 +1635,9 @@
                             "3": {
                                 "name": "300 - Submerge and Support",
                                 "content": [
-                                    "gains submerge targeting option",
+                                    "gains submerge targeting",
                                     [
-                                        "while submerged, dart is replaced by sonar",
+                                        "dart is replaced by sonar",
                                         [
                                             "75p, 52r zone, 1.5s passive, decamo"
                                         ]
@@ -2513,7 +2513,7 @@
                                 "content": [
                                     "gains shove attack",
                                     [
-                                        "1p",
+                                        "1i",
                                         "slows MOABs to -33% normal speed, BFBs to 0%, ZOMGs to 50%, DDTs to 33%"
                                     ],
                                     "crosspath",
@@ -2853,7 +2853,7 @@
                     "data": {
                         "base": [
                             "$800 (500 MM)",
-                            "size: 7 radius",
+                            "size: 8 radius",
                             "placeable on: land",
                             "20r",
                             "dart attack",
@@ -5578,7 +5578,7 @@
                         "8": [
                             "all attacks buffed",
                             [
-                                "+2md (3md)"
+                                "+2md (+3md)"
                             ]
                         ],
                         "9": [
@@ -5590,7 +5590,7 @@
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)",
                             [
-                                "25d, 25md (50), ∞p, 50r zone, 0.05s, plasma type",
+                                "25d, 25md (50md), ∞p, 50r zone, 0.05s, plasma type",
                                 "7.5% chance of hitting (per frame)",
                                 "can rehit after 0.05s",
                                 "centered according to Quincy's targeting when activated"
@@ -5617,7 +5617,7 @@
                         "14": [
                             "all attacks buffed",
                             [
-                                "+8md (11md)"
+                                "+5md (+8md)"
                             ]
                         ],
                         "15": [
@@ -5645,12 +5645,12 @@
                         "18": [
                             "arrow buffed",
                             [
-                                "+27d (35d)"
+                                "?%s (?s)"
                             ],
                             "cyber-storm buffed",
                             [
                                 "50s cooldown",
-                                "+10d (35), +10md (70)",
+                                "+10d (35d), +10md (70md)",
                                 "10% chance to hit"
                             ]
                         ],
@@ -5661,7 +5661,10 @@
                             ]
                         ],
                         "20": [
-                            "arrow buffed: 0.2s",
+                            "arrow buffed",
+                            [
+                                "+27d (35d)"
+                            ],
                             "cyber-storm buffed",
                             [
                                 "+25d (60d), +25md (120md)",
@@ -5884,7 +5887,7 @@
                                 "triggered by either the 36th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "8s duration, +1p, +2gld, +2ad, gives lead popping,"
+                                    "8s duration, +1p, +2gld, +2ad, lead popping"
                                 ]
                             ]
                         ],
@@ -7366,10 +7369,8 @@
                             ]
                         ],
                         "7": [
-                            "sacrifice ability",
+                            "sacrifice ability (90s cooldown, cost 10 lives)",
                             [
-                                "90s cooldown",
-                                "costs 10 lives",
                                 "places sacrificial-totem at selected point",
                                 [
                                     "20s lifetime",
@@ -7560,9 +7561,8 @@
                             ]
                         ],
                         "7": [
-                            "scratch ability (40s cooldown, 11s duration, battle ready)",
+                            "scratch ability (40s cooldown, 11s duration, battle ready, cost 5 lives)",
                             [
-                                "costs 5 lives",
                                 "places scratching-post at selected point",
                                 [
                                     "78r",
@@ -8815,7 +8815,7 @@
                         "1": [
                             "$700",
                             ["hero_level", {"multiplier": 1.2, "curve": "Striker Jones"}],
-                            "Unlock Cost: 5,000 MM",
+                            "Unlock Cost: 5,000 MM + 40,000 Adora Points",
                             "size: 7 radius",
                             "placeable on: land",
                             "fate-bolt attack",
@@ -9002,8 +9002,7 @@
                         "3": [
                             "drone-swarm ability (60s cooldown, (12 + 0.5l, l = level number)s duration (13.5s this level)?)",
                             [
-                                "spawns 4 more drone subtowers",
-                                "duration increases 0.5s per level"
+                                "spawns 4 more drone subtowers"
                             ]
                         ],
                         "4": [
@@ -9141,174 +9140,178 @@
                         ]
                     }
                 },
-                // "beetienne": {
-                //     "name": "Beetienne",
-                //     "data": {
-                //         "1": [
-                //             "$650",
-                //             ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
-                //             "Unlock Cost: 3,000 MM",
-                //             "size: 6 radius",
-                //             "placeable on: land",
-                //             "55r",
-                //             "spawns two permanent drone subtowers",
-                //             [
-                //                 "dart attack",
-                //                 [
-                //                     "1d, 2p, 0.7s, sharp type",
-                //                     "can see past obstacles"
-                //                 ]
-                //             ]
-                //         ],
-                //         "2": [
-                //             "+5r (60r)",
-                //             "gains spy-drone",
-                //             [
-                //                 "opponent's bloon queue and cash is visible"
-                //             ]
-                //         ],
-                //         "3": [
-                //             "drone-swarm ability (60s cooldown, (12 + 0.5l, l = level number)s duration (13.5s this level)?)",
-                //             [
-                //                 "spawns 4 more drone subtowers",
-                //                 "duration increases 0.5s per level"
-                //             ]
-                //         ],
-                //         "4": [
-                //             "dart buffed",
-                //             [
-                //                 "+1p (3p)"
-                //             ]
-                //         ],
-                //         "5": [
-                //             "dart buffed",
-                //             [
-                //                 "0.55s, camo"
-                //             ]
-                //         ],
-                //         "6": [
-                //             "uav buff",
-                //             [
-                //                 "affects all towers",
-                //                 "every attack has a 20% chance to ignore bloon properties"
-                //             ]
-                //         ],
-                //         "7": [
-                //             "uav buffed",
-                //             [
-                //                 "grants camo"
-                //             ]
-                //         ],
-                //         "8": [
-                //             "dart buffed",
-                //             [
-                //                 "+1d (2d)"
-                //             ]
-                //         ],
-                //         "9": [
-                //             "uav buffed",
-                //             [
-                //                 "every attack now has a 50% chance to ignore bloon properties"
-                //             ]
-                //         ],
-                //         "10": [
-                //             "ucav ability (75s cooldown, 18s duration)",
-                //             [
-                //                 "uav replaced by ucav-drone-ability subtower",
-                //                 [
-                //                     "10j/230°, 1 impact, ∞r, 0.6s",
-                //                     "homing",
-                //                     "always targets first",
-                //                     "on contact: explosion",
-                //                     [
-                //                         "2d, 25p, 20r blast, explosion type, camo"
-                //                     ]
-                //                 ]
-                //             ]
-                //         ],
-                //         "11": [
-                //             "spawns 1 more permanent drone subtower (3)",
-                //             "gains zone defense targeting"
-                //         ],
-                //         "12": [
-                //             "drone buffed",
-                //             [
-                //                 "200% flight speed"
-                //             ],
-                //             "dart buffed",
-                //             [
-                //                 "+3p (6p)"
-                //             ]
-                //         ],
-                //         "13": [
-                //             "ucav buffed",
-                //             [
-                //                 "60s cooldown"
-                //             ]
-                //         ],
-                //         "14": [
-                //             "dart buffed",
-                //             [
-                //                 "+1d (3d)"
-                //             ]
-                //         ],
-                //         "15": [
-                //             "uav buffed",
-                //             [
-                //                 "every attack now has a 100% chance to ignore bloon properties"
-                //             ],
-                //             "ucav buffed",
-                //             [
-                //                 "+6s duration (24s)"
-                //             ],
-                //             "explosion buffed",
-                //             [
-                //                 "+2d (4d), +5p (30p)"
-                //             ]
-                //         ],
-                //         "16": [
-                //             "+20r (80r)",
-                //             "dart buffed",
-                //             [
-                //                 "+3p (9p)"
-                //             ],
-                //             "drone-swarm buffed",
-                //             [
-                //                 "-15s cooldown (45s cooldown)"
-                //             ]
-                //         ],
-                //         "17": [
-                //             "explosion buffed",
-                //             [
-                //                 "+3d (7d)"
-                //             ]
-                //         ],
-                //         "18": [
-                //             "dart buffed",
-                //             [
-                //                 "+1d (4d)"
-                //             ]
-                //         ],
-                //         "19": [
-                //             "spawns 1 more permanent drone subtower (4)"
-                //         ],
-                //         "20": [
-                //             "uav buffed",
-                //             [
-                //                 "missile attack",
-                //                 [
-                //                     "10j 240° spread, 1i, ∞r, 0.6sx, camo",
-                //                     "homing",
-                //                     "always targets first"
-                //                 ],
-                //                 "explosion attack",
-                //                 [
-                //                     "2d, 25p, 20r blast, explosion type, camo"
-                //                 ]
-                //             ]
-                //         ]
-                //     }
-                // },
+                "beetienne": {
+                    "name": "Beetienne",
+                    "data": {
+                        "1": [
+                            "$650",
+                            ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
+                            "Unlock Cost: 5,000 MM + 40,000 Etienne Points",
+                            "size: 8 radius",
+                            "placeable on: land",
+                            "43r",
+                            "spawns one permanent bee subtower",
+                            [
+                                "sting attack",
+                                [
+                                    "3d, 1i, 0.45s, sharp type"
+                                ]
+                            ]
+                        ],
+                        "2": [
+                            "+5r (48r)",
+                            "gains making-honey targeting",
+                            [
+                                "bee replaced by honey attack",
+                                [
+                                    "+2 lives, 3s",
+                                    "attack cooldown cannot be buffed"
+                                ],
+                                "defend-bee is disabled"
+                            ],
+                        ],
+                        "3": [
+                            "defend-the-hive ability (45s cooldown, 10s duration, 9s initial cooldown)",
+                            [
+                                "+2d (5d), 51.85%s (0.23s)",
+                                "spawns 2 copies of bee called defend-bee",
+                            ]
+                        ],
+                        "4": [
+                            "sting buffed",
+                            [
+                                "77.78%s (0.35s)"
+                            ]
+                        ],
+                        "5": [
+                            "uses shared range",
+                            [
+                                "can see anything in another tower's primary range, even if there is no direct line of sight",
+                                "can see camo targets in the range of a tower with camo, but cannot pop them natively"
+                            ]
+                        ],
+                        "6": [
+                            "sting buffed",
+                            [
+                                "+1d (4d)",
+                            ],
+                            "honey buffed",
+                            [
+                                "+8 lives",
+                            ]
+                        ],
+                        "7": [
+                            "while in range, camo bloons temporarily do not have the camo property",
+                            [
+                                "if a bloon is popped into children while in this state, the children permanently lose the camo property"
+                            ]
+                        ],
+                        "8": [
+                            "sting buffed",
+                            [
+                                "+1d (5d)",
+                            ],
+                            "honey buffed",
+                            [
+                                "+16 lives",
+                            ]
+                        ],
+                        "9": [
+                            "sting buffed",
+                            [
+                                "71.43%s (0.25s)"
+                            ],
+                            "honey buffed",
+                            [
+                                "+28 lives",
+                            ]
+                        ],
+                        "10": [
+                            "auxiliary-hives ability (60s cooldown, cost 100 lives)",
+                            [
+                                "place aux-hive placeable subtower",
+                                [
+                                    "spawns 1 copy of bee called auxiliary-bee"
+                                ]
+                            ]
+                        ],
+                        "11": [
+                            "spawns 1 more permanent bee subtower (2)",
+                            "honey buffed",
+                            [
+                                "+42 lives",
+                            ]
+                        ],
+                        "12": [
+                            "bee buffed",
+                            [
+                                "200%? flight speed"
+                            ]
+                        ],
+                        "13": [
+                            "defend-the-hive buffed",
+                            [
+                                "0.4%s (0.1s)"
+                            ]
+                        ],
+                        "14": [
+                            "sting buffed",
+                            [
+                                "+1d (6d)",
+                            ],
+                            "honey buffed",
+                            [
+                                "+66 lives",
+                            ]
+                        ],
+                        "15": [
+                            "auxiliary-hives buffed",
+                            [
+                                "cost 200 lives",
+                                "spawns 1 more copy of bee called auxiliary (2)"
+                            ]
+                        ],
+                        "16": [
+                            "defend-the-hive buffed",
+                            [
+                                "-5s cooldown (40s cooldown)"
+                            ],
+                            "sting-swarm buffed",
+                            [
+                                "60%s (0.15s)"
+                            ]
+                        ],
+                        "17": [
+                            "defend-the-hive buffed",
+                            [
+                                "+10d (18d)"
+                            ]
+                        ],
+                        "18": [
+                            "sting buffed",
+                            [
+                                "+3d (9d)",
+                            ],
+                            "honey buffed",
+                            [
+                                "+90 lives",
+                            ]
+                        ],
+                        "19": [
+                            "spawns 1 more permanent bee subtower (3)",
+                            "honey buffed",
+                            [
+                                "+120 lives",
+                            ]
+                        ],
+                        "20": [
+                            "defend-the-hive buffed",
+                            [
+                                "affects aux-hive subtowers"
+                            ]
+                        ]
+                    }
+                },
                 "bonnie": {
                     "name": "Bonnie",
                     "data": {
