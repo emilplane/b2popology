@@ -1511,7 +1511,7 @@
                                     "crosspath",
                                     [
                                         "041: -5s cooldown (45s cooldown)",
-                                        "041: -5s cooldown (40s cooldown)"
+                                        "042: -5s cooldown (40s cooldown)"
                                     ]
                                 ]
                             },
