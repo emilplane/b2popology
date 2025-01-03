@@ -3005,7 +3005,7 @@
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+4cd (9cd), +12md (17md), +10p (18p), +4r (12r)"
+                                        "+3i (4i), +4cd (9cd), +12md (17md), +10p (18p), +4r (12r)"
                                     ]
                                 ]
                             }
@@ -3385,7 +3385,7 @@
                     "name": "Super Monkey",
                     "data": {
                         "base": [
-                            "$1,800 (750 MM)",
+                            "$2,000 (750 MM)",
                             "size: 7 radius",
                             "placeable on: land",
                             "dart attack",
@@ -3730,7 +3730,7 @@
                                 "content": [
                                     "monkeyrang buffed",
                                     [
-                                        "+1d (2d), +2md (6md), +2p (7p), +1j (2j), normal type"
+                                        "+1d (2d), +2p (7p), +1j (2j), normal type"
                                     ],
                                     "darkshift buffed",
                                     [
@@ -3886,7 +3886,7 @@
                                     ],
                                     "gains saboteur buff",
                                     [
-                                        "affects Ninja Monkeys in range",
+                                        "affects Shinobi Tactics Ninja Monkeys in range",
                                         "+2md, +10r",
                                     ]
                                 ]
@@ -7903,7 +7903,8 @@
                             [
                                 "buffs Ice Monkeys and self in 60r",
                                 "+1d",
-                                "-15% attack cooldown"
+                                "-15% attack cooldown",
+                                "Ice Monkeys in range can pop White and Zebra bloons"
                             ]
                         ],
                         "4": [
