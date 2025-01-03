@@ -2997,7 +2997,7 @@
                                 "content": [
                                     "rocket buffed",
                                     [
-                                        "3d, +500md (503md), 300%s (0.396s)"
+                                        "3d, +500md (503md), 300%s (0.396s), +1i (4i)"
                                     ],
                                     "explosion buffed",
                                     [
@@ -3005,7 +3005,7 @@
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+3i (4i), +4cd (9cd), +12md (17md), +10p (18p), +4r (12r)"
+                                        "+4cd (9cd), +12md (17md), +10p (18p), +4r (12r)"
                                     ]
                                 ]
                             }
