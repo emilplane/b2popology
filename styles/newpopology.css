@@ -657,7 +657,9 @@
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    background-color: var(--dark2);
+    .towerNavBarButton {
+        background-color: var(--dark2);
+    }
 }
 
 .towerNavBarButtonImage {

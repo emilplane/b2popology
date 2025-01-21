@@ -1,15 +1,21 @@
 import { UI_CONSTANTS } from "../constants.js"
-import {Tower, Upgrade} from "../modulesHiearchy/towerLevel.js"
-import { pathDisplayText } from "../utilities.js"
+import { Tower, Upgrade } from "../modulesHiearchy/towerLevel.js"
+import { sleep, pathDisplayText } from "../utilities.js"
 import { PopologyUi } from "./popologyUi.js"
 import { PopologyContext } from "../PopologyContext.js";
+import {TowerPath} from "../modulesHiearchy/TowerPath.js";
 
 export default class UiUpdates {
+    static goToTop() {
+        document.querySelector("html").scrollTop = 0
+    }
+
     static mainScreen(popologyContext) {
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
             new PopologyUi.MainScreen(popologyContext).element
         )
+        UiUpdates.goToTop()
     }
 
     /**
@@ -18,15 +24,53 @@ export default class UiUpdates {
      * @param {string} name
      * @param {PopologyContext} popologyContext
      * @param {number} navBarScrollPosition
-     * @param {number} scrollVelocity
      */
-    static upgradeSelection(popologyContext, category, name, navBarScrollPosition = 0, scrollVelocity = 0) {
+    static upgradeSelection(popologyContext, category, name, navBarScrollPosition = 0) {
         popologyContext.selectBlueprint(category, name);
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
         UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
-            new PopologyUi.TowerInfo(popologyContext, scrollVelocity).element
+            new PopologyUi.TowerInfo(popologyContext).element
         )
         document.querySelector(".towerNavBarButtonContainer").scrollLeft = navBarScrollPosition
+        UiUpdates.goToTop()
+    }
+
+    /**
+     * Update the UI to display the current tower or upgrade.
+     * @param popologyContext
+     * @param type {string}
+     * @param path {TowerPath}
+     */
+    static displayEntityStats(popologyContext, type, path) {
+        let isUpgrade = false
+        switch (type) {
+            case "tower":
+                popologyContext.setCurrentEntity(
+                    new Tower(popologyContext.towerBlueprint, path)
+                )
+                break;
+            case "upgrade":
+                isUpgrade = true
+                popologyContext.setCurrentEntity(
+                    new Upgrade(path.blueprintUpgradeSelector(popologyContext.towerBlueprint.upgrades))
+                )
+                break;
+            default:
+                throw new Error("Incorrect entity type!")
+        }
+
+        UI_CONSTANTS.POPOLOGY_UI_CONTAINER.innerHTML = ""
+        UI_CONSTANTS.POPOLOGY_UI_CONTAINER.insertAdjacentElement("beforeend",
+            new PopologyUi.PopologyTowerDisplay(popologyContext, isUpgrade)
+                .updateBanner(
+                    popologyContext.currentEntity.towerName,
+                    popologyContext.currentEntity.towerCrosspathName,
+                    `${pathDisplayText(popologyContext.currentEntity.path, isUpgrade)} ${popologyContext.towerBlueprint.displayName}`
+                )
+                .generateModules()
+                .element
+        )
+        UiUpdates.goToTop()
     }
 
     static towerDisplay(popologyContext) {
@@ -46,6 +90,7 @@ export default class UiUpdates {
                 .generateModules()
                 .element
         )
+        UiUpdates.goToTop()
     }
 
     static upgradeDisplay(popologyContext) {
@@ -65,5 +110,6 @@ export default class UiUpdates {
                 .generateModules()
                 .element
         )
+        UiUpdates.goToTop()
     }
 }

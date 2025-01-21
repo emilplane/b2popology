@@ -118,17 +118,21 @@ export const magicTowers = {
         //     ]
         // },
 
-        "towerProperties": {
-            "range": 40,
-            "towerCamo": true
-        },
-
-        "properties": {
-            "range": 40
-        },
+        // "towerProperties": {
+        //     "range": 40,
+        //     // "towerCamo": true
+        // },
 
         "upgrades": {
             "base": [
+                {
+                    "name": "tower-properties",
+                    "action": "new", "type": "towerProperties",
+
+                    "properties": {
+                        "range": 40,
+                    }
+                },
                 {
                     "name": "magic-bolt",
                     "action": "new", "type": "attack",
@@ -301,7 +305,16 @@ export const magicTowers = {
                 ],
                 [
                     [],
-                    [],
+                    [
+                        {
+                            "name": "tower-properties",
+                            "action": "buff", "type": "towerProperties",
+
+                            "properties": {
+                                "towerCamo": true
+                            }
+                        },
+                    ],
                     [],
                     [],
                     []

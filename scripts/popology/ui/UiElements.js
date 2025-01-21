@@ -126,8 +126,8 @@ export class UiElements {
             .children(pathTrackContainer, upgradeSelectorVisual, numberOverlay);
     }
 
-    static towerNavBar(popologyContext, scrollVelocity) {
-        let velocity = scrollVelocity;
+    static towerNavBar(popologyContext) {
+        let velocity = 0
         let isDragging = false;
 
         const backButton = new Element("button").class("grayButton").text("Back")
@@ -166,7 +166,7 @@ export class UiElements {
                     )
                     .onclick(() => {
                         if (startX <= lastX + 20 && startX >= lastX - 20) {
-                            UiUpdates.upgradeSelection(popologyContext, category, towerName, buttonContainer.element.scrollLeft, velocity)
+                            UiUpdates.upgradeSelection(popologyContext, category, towerName, buttonContainer.element.scrollLeft)
                         }
                     })
 
@@ -252,6 +252,8 @@ export class UiElements {
 
     static towerPropertiesModule(towerProperties) {
         const title = new Element("h5").text("Tower properties");
+
+        if (towerProperties instanceof UpgradeModule) title.text("Tower properties buffed")
 
         const statChipContainer = this.basicStatsContainerSmall(towerProperties.properties);
 
@@ -589,8 +591,9 @@ export class UiElements {
         )
 
         viewTowerButton.onclick(() => {
-            context.path = towerPath
-            UiUpdates.towerDisplay(context)
+            UiUpdates.displayEntityStats(context, "tower", towerPath)
+            // context.path = towerPath
+            // UiUpdates.towerDisplay(context)
         })
 
         const viewUpgradeButton = new Element("button").class("towerNavButton").children(

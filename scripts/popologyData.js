@@ -1196,7 +1196,7 @@
                                 "content": [
                                     "glue replaced by glue-bomb",
                                     [
-                                        "2j, 34.62%s (0.225s), applies glued status",
+                                        "2j, 61.54%s (0.4s), applies glued status",
                                         "on contact: splat",
                                         [
                                             "5p, 12r blast, applies glued status"
@@ -4231,7 +4231,8 @@
                             "thorn attack",
                             [
                                 "1d, 5j, 1p, 35r, 1.1s, sharp type",
-                                "projectiles have random spread"
+                                "projectiles have random spread",
+                                "max attack rate: once every 8 frames"
                             ]
                         ],
                         "top": {
@@ -4441,7 +4442,7 @@
                                     "gains poplust buff",
                                     [
                                         "affects Druids in range, including self",
-                                        "+15%p, +15% speed",
+                                        "+15%p, +17% speed",
                                         "can stack (additively) up to 5 times total",
                                         "note that this is yet another speed buff, which also stacks multiplicatively with tiers 2 and 3"
                                     ]
@@ -4697,7 +4698,7 @@
                                     ],
                                     "gains productivity buff",
                                     [
-                                        "+20% income to all 4xx farms",
+                                        "+20% income to all 4xx farms and Benjamin",
                                         "stacks multiplicatively with x2x valuable bananas"
                                     ]
                                 ]
@@ -4729,7 +4730,7 @@
                                     [
                                         "+$50 income ($150)",
                                         "money is held in the bank instead of being emitted as bananas, to be collected at any time",
-                                        "$550 end of round income",
+                                        "$450 end of round income",
                                         "bank's balance increases by 20% at the end of a round, up to a capacity of $14,000",
                                         [
                                             "this includes the end of round income"
@@ -4737,8 +4738,8 @@
                                     ],
                                     "crosspath",
                                     [
-                                        "130: +$100 income ($250) (adds money 2 more times)",
-                                        "230: +$100 income ($350) (adds money 2 more times)",
+                                        "130: +$100 income ($250) (adds money 2 more times), +$50 ($500) end of round income",
+                                        "230: +$100 income ($350) (adds money 2 more times), +$50 ($550) end of round income",
                                         "032: autocollects if the balance is capped at the end of a round"
                                     ]
                                 ]
@@ -4763,7 +4764,7 @@
                                     [
                                         "+$10,000 capacity ($30,000)"
                                     ],
-                                    "loan replaced by grant (50s cooldown, 25s initial)",
+                                    "loan replaced by grant (50s cooldown, 30s initial)",
                                     [
                                         "gain $20k, which does not need to be repaid"
                                     ]
@@ -5309,7 +5310,7 @@
                                     [
                                         "on damage: applies pinned status",
                                         [
-                                            "1s duration, 100% slow, blimps are immune"
+                                            "0d, 1s duration, 100% slow, blimps are immune"
                                         ]
                                     ]
                                 ]
@@ -5617,7 +5618,7 @@
                         "14": [
                             "all attacks buffed",
                             [
-                                "+5md (+8md)"
+                                "+5md (+8md, 11md)"
                             ]
                         ],
                         "15": [
@@ -5629,7 +5630,7 @@
                         "16": [
                             "arrow buffed",
                             [
-                                "+5d (8d)"
+                                "+5d (8d, 16md)"
                             ]
                         ],
                         "17": [
@@ -5645,7 +5646,7 @@
                         "18": [
                             "arrow buffed",
                             [
-                                "?%s (?s)"
+                                "+8d, +8md (16d, 32md), ?%s (?s)"
                             ],
                             "cyber-storm buffed",
                             [
@@ -5874,7 +5875,7 @@
                                 "can see past obstacles",
                                 "places wall-of-fire on the track, targetable manually anywhere within range",
                                 [
-                                    "2d, 40p, 15r zone, 0.24s, fire type, camo",
+                                    "3d, 40p, 15r zone, 0.36s, fire type, camo",
                                     "6s lifetime",
                                     "deals 4 seconds' worth of acid or glue status on targets each tick and removes the status (minimum 1d)"
                                 ]
@@ -5974,7 +5975,7 @@
                         "14": [
                             "wall-of-fire buffed",
                             [
-                                "+1d (2d)",
+                                "+3d (6d)",
                                 "applies burn status to blimps",
                                 [
                                     "5md/0.5s, 5s duration"
@@ -7071,9 +7072,9 @@
                         "3": [
                             "gains biohack ability (45s cooldown, 11.25s initial)",
                             [
-                                "applies hacked buff to the nearest 4 towers",
+                                "applies hacked buff to the nearest 6 towers",
                                 [
-                                    "6s duration, +1d",
+                                    "6s duration, +12",
                                     "cannot attack for 2s after the buff expires"
                                 ]
                             ]
@@ -7088,14 +7089,15 @@
                             "+$100 end of round income ($250)",
                             "gains bank-hack buff",
                             [
-                                "affects all x3+x farms",
+                                "affects all x3+3+ farms",
                                 "+12% income during the round"
                             ]
                         ],
                         "6": [
-                            "+5 end of round lives",
+                            "gains boost-hack buff",
                             [
-                                "note: cannot go above 150 lives"
+                                "20% lower boost cooldowns",
+                                "[BUG] this buff only applies visually, and does not actually do anything"
                             ]
                         ],
                         "7": [
@@ -7138,12 +7140,11 @@
                             ],
                             "hacked buffed",
                             [
-                                "now +2d, 8s duration"
+                                "now +3d, 8s duration"
                             ]
                         ],
                         "14": [
-                            "+5 end of round lives (10)",
-                            "can heal to 250 lives"
+                            "+1 Tower Boost, +1 Bloon Boost",
                         ],
                         "15": [
                             "+$1,200 end of round income ($2,000)"
@@ -7188,18 +7189,20 @@
                             "Unlock Cost: 2,000 MM + 40,000 Benjamin Points",
                             "size: 7 radius",
                             "placeable on: land",
-                            "20r",
-                            "+$75 end of round income"
+                            "25r",
+                            "$(50+10t) end of round income; t = number of towers in range"
                         ],
                         "2": [
-                            "+$37 end of round income ($112)"
+                            "$(75+15t) end of round income"
                         ],
                         "3": [
                             "gains good-vibes ability (45s cooldown, 11.25s initial)",
-                            "applies party-time buff to the nearest 5 towers",
                             [
-                                "6s duration, +1d",
-                                "cannot attack for 1s after the buff expires"
+                                "applies party-time buff to the farthest 3 towers of each type",
+                                [
+                                    "6s duration, +2d",
+                                    "cannot attack for 2s after the buff expires"
+                                ]
                             ]
                         ],
                         "4": [
@@ -7209,17 +7212,17 @@
                             ]
                         ],
                         "5": [
-                            "+$75.5 end of round income ($187.5)",
-                            "gains bank-hack buff",
+                            "$(125+25t) end of round income",
+                            "gains side-hustle buff",
                             [
-                                "affects all x3+x farms",
-                                "+12% income during the round"
+                                "affects all towers except Monkey Village and Banana Farm",
+                                "+6% income"
                             ]
                         ],
                         "6": [
-                            "+5 end of round lives",
+                            "gains encore buff",
                             [
-                                "note: cannot go above 150 lives"
+                                "activated ability cooldowns reduced by 5%",
                             ]
                         ],
                         "7": [
@@ -7231,12 +7234,12 @@
                             ]
                         ],
                         "8": [
-                            "+$112.5 end of round income ($300)"
+                            "$(200+40t) end of round income"
                         ],
                         "9": [
-                            "bank-hack buffed",
+                            "side-hustle buffed",
                             [
-                                "now +18%"
+                                "+9% income"
                             ]
                         ],
                         "10": [
@@ -7247,7 +7250,7 @@
                             ]
                         ],
                         "11": [
-                            "+$300 end of round income ($600)"
+                            "$(400+80t) end of round income"
                         ],
                         "12": [
                             "skimming buffed",
@@ -7256,27 +7259,25 @@
                             ]
                         ],
                         "13": [
-                            "good-vibes buffed",
-                            [
-                                "affects 7 towers, 35s cooldown"
-                            ],
                             "party-time buffed",
                             [
-                                "now +2d, 8s duration"
+                                "+3d, 8s duration"
                             ]
                         ],
                         "14": [
-                            "+5 end of round healing (10)",
-                            "can heal to 250 lives"
+                            "encore buffed",
+                            [
+                                "activated ability cooldowns reduced by 15%",
+                            ]
                         ],
                         "15": [
-                            "+$900 end of round income (+$1,500)"
+                            "$(1000+200t) end of round income"
                         ],
                         "16": [
                             "trojan buffed: 3s-4s"
                         ],
                         "17": [
-                            "+$1,500 end of round income ($3,000)"
+                            "$(2000+400t) end of round income"
                         ],
                         "18": [
                             "gains camo detection",
@@ -7292,7 +7293,8 @@
                             ],
                             "party-time buffed",
                             [
-                                "now +3d, 9s duration, towers now aren't disabled after buff expires"
+                                "affects 4 farthest monkeys of each type",
+                                "towers now aren't disabled after buff expires"
                             ]
                         ],
                         "20": [
@@ -7310,7 +7312,7 @@
                     "data": {
                         "1": [
                             "$600",
-                            ["hero_level", {"multiplier": 1.06, "curve": "Striker Jones"}],
+                            ["hero_level", { "multiplier": 1.06, "curve": "Striker Jones" }],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -11027,8 +11029,8 @@
         "primary": {
             "dartMonkey": {
                 "base": 150,
-                "top": [100, 150, 450, 1800, 13500],
-                "middle": [100, 100, 300, 9000, 45000],
+                "top": [100, 250, 450, 1700, 13500],
+                "middle": [100, 100, 400, 9000, 45000],
                 "bottom": [90, 200, 600, 2000, 25000]
             },
             "boomerangMonkey": {

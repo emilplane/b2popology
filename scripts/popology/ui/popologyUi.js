@@ -29,9 +29,8 @@ export class PopologyUi {
     }
 
     static TowerInfo = class {
-        constructor(popologyContext, navBarScrollVelocity) {
+        constructor(popologyContext) {
             this.popologyContext = popologyContext;
-            this.navBarScrollVelocity = navBarScrollVelocity;
             this.blueprint = popologyContext.towerBlueprint;
         }
 
@@ -41,7 +40,7 @@ export class PopologyUi {
                     new Element("h2").text(this.blueprint.displayName).class("luckiestGuy")
                 )
 
-            const towerNav = UiElements.towerNavBar(this.popologyContext, this.navBarScrollVelocity);
+            const towerNav = UiElements.towerNavBar(this.popologyContext);
 
             const towerInfoContainer = new Element("div")
                 .class('towerInfoContainer')
@@ -72,6 +71,7 @@ export class PopologyUi {
     /**
      * An element for showing the stats of a tower.
      * @param {*} towerBlueprint - The blueprint of the tower
+     * @param {boolean} isUpgrade - Whether the entity to be displayed is an upgrade
      */
     static PopologyTowerDisplay = class {
         constructor(popologyContext, isUpgrade) {
@@ -85,9 +85,9 @@ export class PopologyUi {
             // +2d (4d)
             // An instance of the upgrade class only has +2d, so the tower is used to derive the 4d
             if (this.isUpgrade) {
-                this.towerForUpgradeView = new Tower(this.popologyContext.towerBlueprint, this.popologyContext.path)
-                this.popologyContext.currentTower.data.towerName = this.towerForUpgradeView.towerName
-                this.popologyContext.currentTower.data.towerCrosspathName = this.towerForUpgradeView.towerCrosspathName
+                this.towerForUpgradeView = new Tower(this.popologyContext.towerBlueprint, this.popologyContext.currentEntity.path)
+                this.popologyContext.currentEntity.towerName = this.towerForUpgradeView.towerName
+                this.popologyContext.currentEntity.towerCrosspathName = this.towerForUpgradeView.towerCrosspathName
             }
         }
 
@@ -154,7 +154,7 @@ export class PopologyUi {
                 )
             }
 
-            const pathString = this.popologyContext.path.simplePathString(true)
+            const pathString = this.popologyContext.currentEntity.path.simplePathString(true)
 
             const towerPortrait = new Element("div").class("towerBannerPortraitContainer").children(
                 new Element("img").class("towerBannerPortrait").setProperty("src",
@@ -179,6 +179,7 @@ export class PopologyUi {
          * @returns
          */
         generateModules() {
+
             const towerPropertiesModule = this.blueprint.data.modules.find(item => item.name === "tower-properties")
             if (towerPropertiesModule) {
                 this.moduleContainer.children(

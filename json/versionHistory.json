@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        5
+        7
     ],
     "versionHistory": {
         "0": {
@@ -1209,6 +1209,25 @@
                         "Changed Dartling Gunner footprint to 8r",
                         "Moved life cost of abilities into the ability header",
                         "Fixed formatting for the cooldown of level 7 Ezili"
+                    ]
+                },
+                "6": {
+                    "date": "2025/1/3",
+                    "content": [
+                        "Snowpat lv3 ability: hits whites (jake6542)",
+                        "Grand sabo buff: affects shinobis only (jake6542)",
+                        "Base Super price: 1800 -> 2000 (jake6542)",
+                        "Mad pierce: 3i -> 4i (jake6542)",
+                        "DK md: +2md -> +0md (jake6542)"
+                    ]
+                },
+                "7": {
+                    "date": "2025/1/20",
+                    "content": [
+                        "Added Battles 2 4.5 changes",
+                        "xx4 Druid buff is +17% attack speed (jake6542)",
+                        "Druid can only attack once every 8 frames at most (jake6542)",
+                        "Pin does 0d (ertos_accounter)"
                     ]
                 }
             }

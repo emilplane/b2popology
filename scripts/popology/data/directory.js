@@ -120,13 +120,6 @@ export const DIRECTORY = {
             ],
             "items": {
                 "wizardMonkey": magicTowers.wizardMonkey,
-                // {
-                // "name": "wizardMonkey", "displayName": "Wizard Monkey",
-                // "nameSplit": [
-                //     {"name": "Wizard", "prioritize": true},
-                //     {"name": "Monkey", "prioritize": false}
-                // ],
-                // },
                 "superMonkey": {
                     "name": "superMonkey", "displayName": "Super Monkey",
                     "nameSplit": [

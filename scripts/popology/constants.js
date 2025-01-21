@@ -656,6 +656,7 @@ export const UI_CONSTANTS = {
     "PATH_JOIN_CHARACTER": "",
     "MODULE_NESTING_MODE": "none",
 
+    "BODY_CONTAINER": document.getElementById("bodyContainer"),
     "POPOLOGY_UI_CONTAINER": document.getElementById("uiContent"),
 
     "CONFIG_PANEL": {

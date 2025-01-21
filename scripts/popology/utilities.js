@@ -1,5 +1,9 @@
 import { MODULE_PROPERTIES, UI_CONSTANTS } from "./constants.js"
 
+export function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export function statArrayToDisplayStat(stat) {
     let statValue = stat.value;
 

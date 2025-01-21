@@ -23,29 +23,27 @@ export class UpgradeModule {
     }
 }
 
-export class TowerPropertiesModule {
-    constructor(towerPropertiesModuleBlueprint) {
-        this.name = "tower-properties";
-        this.allValidNames = ["tower-properties"];
-        this.type = "towerProperties";
-        this.properties = [];
-        
-        for (let propertyName in towerPropertiesModuleBlueprint) {
-            const propertyValue = towerPropertiesModuleBlueprint[propertyName];
-            console.log()
-            this.properties.push(addProperty(propertyName, propertyValue, "new"))
-        }
-    }
-}
+// export class TowerPropertiesModule {
+//     constructor(towerPropertiesModuleBlueprint) {
+//         this.name = "tower-properties";
+//         this.allValidNames = ["tower-properties"];
+//         this.type = "towerProperties";
+//         this.properties = [];
+//
+//         for (let propertyName in towerPropertiesModuleBlueprint) {
+//             const propertyValue = towerPropertiesModuleBlueprint[propertyName];
+//             console.log()
+//             this.properties.push(addProperty(propertyName, propertyValue, "new"))
+//         }
+//     }
+// }
 
 function addProperty(propertyName, propertyValue, action) {
     if (propertyValue instanceof Property || propertyValue instanceof PropertyBuff) {
         return propertyValue;
-    }
-    if (action === "new") {
+    } else if (action === "new") {
         return new Property(propertyName, propertyValue);
-    }
-    if (action === "buff") {
+    } else if (action === "buff") {
         return new PropertyBuff(propertyName, propertyValue);
     }
 }

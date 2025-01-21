@@ -28,15 +28,11 @@ export class TowerPath {
     }
 
     pathLevelBreakoutObject(towerBlueprint) {
-        const obj = this.path.map((level, index) => ({
+        return this.path.map((level, index) => ({
             level,
             pathNumber: index,
             upgrades: towerBlueprint.upgrades.paths[index]
-        }));
-
-        console.log(obj)
-
-        return obj
+        }))
     }
 
     simplePathString(baseStringFor000) {

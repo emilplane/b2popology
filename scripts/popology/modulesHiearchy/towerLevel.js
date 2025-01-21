@@ -1,5 +1,5 @@
 import { isBasePath } from "../utilities.js";
-import { TowerModule, TowerPropertiesModule, UpgradeModule } from "./moduleLevel.js";
+import { TowerModule, UpgradeModule } from "./moduleLevel.js";
 
 /**
  * A collection of modules that make up a tower's upgrade.
@@ -83,7 +83,7 @@ export class Tower {
     constructTower() {
         this.modules = []
 
-        this.modules.push(new TowerPropertiesModule(this.towerBlueprint.towerProperties))
+        // this.modules.push(new TowerPropertiesModule(this.towerBlueprint.towerProperties))
         
         this.upgrades.forEach(upgrade => {
             upgrade.modules.forEach(module => {

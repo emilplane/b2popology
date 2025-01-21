@@ -1,4 +1,4 @@
-import { Tower } from "./modulesHiearchy/towerLevel.js";
+import {Tower, Upgrade} from "./modulesHiearchy/towerLevel.js";
 
 export class PopologyContext {
     /**
@@ -8,8 +8,7 @@ export class PopologyContext {
     constructor(directoryFn) {
         this.directory = directoryFn();
         this.towerBlueprint = undefined;
-        this.path = [0, 0, 0];
-        this.currentTowerOrUpgrade = undefined;
+        this.currentEntity = undefined;
     }
 
     selectBlueprint(category, name) {
@@ -19,17 +18,14 @@ export class PopologyContext {
     }
 
     /**
-     * @param {Array} path - Array of tower levels
-     * @param {string} type - tower or upgrade
+     * Select an instance of a Tower or Upgrade class
+     * @param towerOrUpgrade {Tower||Upgrade}
+     * @returns {PopologyContext}
      */
-    createTower(path, type) {
-        this.path = path;
-        switch (type) {
-            case "tower":
-                // this.currentTowerOrUpgrade = new Tower(this.towerBlueprint, this.path);
-                break;
-            case "upgrade":
-                throw new Error("Not implemented");
+    setCurrentEntity(towerOrUpgrade) {
+        if (!(towerOrUpgrade instanceof Tower || towerOrUpgrade instanceof Upgrade)) {
+            throw new Error("Attempted to set the current selection to something thaat is not an instance of the Tower or Upgrade class!")
         }
+        this.currentEntity = towerOrUpgrade;
     }
 }
