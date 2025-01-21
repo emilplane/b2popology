@@ -1511,7 +1511,7 @@
                                     "crosspath",
                                     [
                                         "041: -5s cooldown (45s cooldown)",
-                                        "041: -5s cooldown (40s cooldown)"
+                                        "042: -5s cooldown (40s cooldown)"
                                     ]
                                 ]
                             },
@@ -2997,7 +2997,7 @@
                                 "content": [
                                     "rocket buffed",
                                     [
-                                        "3d, +500md (503md), 300%s (0.396s)"
+                                        "3d, +500md (503md), 300%s (0.396s), +1i (4i)"
                                     ],
                                     "explosion buffed",
                                     [
@@ -3385,7 +3385,7 @@
                     "name": "Super Monkey",
                     "data": {
                         "base": [
-                            "$1,800 (750 MM)",
+                            "$2,000 (750 MM)",
                             "size: 7 radius",
                             "placeable on: land",
                             "dart attack",
@@ -3730,7 +3730,7 @@
                                 "content": [
                                     "monkeyrang buffed",
                                     [
-                                        "+1d (2d), +2md (6md), +2p (7p), +1j (2j), normal type"
+                                        "+1d (2d), +2p (7p), +1j (2j), normal type"
                                     ],
                                     "darkshift buffed",
                                     [
@@ -3886,7 +3886,7 @@
                                     ],
                                     "gains saboteur buff",
                                     [
-                                        "affects Ninja Monkeys in range",
+                                        "affects Shinobi Tactics Ninja Monkeys in range",
                                         "+2md, +10r",
                                     ]
                                 ]
@@ -7905,7 +7905,8 @@
                             [
                                 "buffs Ice Monkeys and self in 60r",
                                 "+1d",
-                                "-15% attack cooldown"
+                                "-15% attack cooldown",
+                                "Ice Monkeys in range can pop White and Zebra bloons"
                             ]
                         ],
                         "4": [
@@ -11104,7 +11105,7 @@
             "dartlingGunner": {
                 "base": 800,
                 "top": [250, 600, 2800, 12000, 80000],
-                "middle": [250, 500, 5600, 5100, 68000],
+                "middle": [250, 500, 5100, 5500, 68000],
                 "bottom": [150, 800, 3400, 16000, 50000]
             }
         },
