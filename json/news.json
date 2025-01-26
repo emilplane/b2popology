@@ -2,12 +2,12 @@
     "tournaments": [],
     "news": [
         {
-            "title": "Battles 2 4.4 out now!",
-            "date": "2000/1/1",
+            "title": "Battles 2 4.5 out now!",
+            "date": "2024/1/1",
             "timeutc": "00:00:00",
-            "description": "Sandbox mode, new hero, and more!",
+            "description": "New Map: Neo Highway, Ben and DJ rework, and more!",
             "buttons": [
-                ["Learn More", "https://www.reddit.com/r/battles2/comments/1h5nl0y/battles_2_update_44_coming_soon_update_notes/"]
+                ["Learn More", "https://www.reddit.com/r/battles2/comments/1i3j13b/battles_2_update_45_coming_soon_update_notes/"]
             ]
         }
     ]
