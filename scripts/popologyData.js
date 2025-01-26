@@ -6302,7 +6302,7 @@
                         "11": [
                             "wrath-of-the-sea buffed",
                             [
-                                "affects magic towers in range except druids",
+                                "affects all magic towers in range",
                                 "+2p, +5r",
                                 "note: stacks with the existing +1p for magic monkeys",
                                 "note: this means that druids still only get +1p"
@@ -6315,8 +6315,8 @@
                             ],
                             "wrath-of-the-sea buffed",
                             [
-                                "affects druids in range",
-                                "+1d"
+                                "+1d",
+                                "druids don't recive the additional damage buff"
                             ]
                         ],
                         "13": [
