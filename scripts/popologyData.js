@@ -2314,7 +2314,7 @@
                                     [
                                         "204: dart +25%p (18.75p)",
                                         "014: bomb explosion +15p (45p), +3r (23r)",
-                                        "024: dart +1cad (3cad), bomb +1cad (4cad)"
+                                        "024: dart +1cad (3cad), bomb +1cad (5cad)"
                                     ]
                                 ]
                             },
