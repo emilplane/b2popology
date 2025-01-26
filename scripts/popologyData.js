@@ -6304,8 +6304,7 @@
                             [
                                 "affects all magic towers in range",
                                 "+2p, +5r",
-                                "note: stacks with the existing +1p for magic monkeys",
-                                "note: this means that druids still only get +1p"
+                                "note: stacks with the existing +1p for magic monkeys"
                             ]
                         ],
                         "12": [
