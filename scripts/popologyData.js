@@ -7074,7 +7074,7 @@
                             [
                                 "applies hacked buff to the nearest 6 towers",
                                 [
-                                    "6s duration, +12",
+                                    "+2d, 6s duration",
                                     "cannot attack for 2s after the buff expires"
                                 ]
                             ]
