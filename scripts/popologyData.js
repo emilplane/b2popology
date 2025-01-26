@@ -8425,8 +8425,7 @@
                                 "1d, +1 shocked damage, 1i, 0.54s, 40r, plasma type",
                                 "applies shocked status",
                                 [
-                                    "1d/0.95s, 1s duration",
-                                    "[BUG] if a bloon with shocked status is hit it removes the status instead (but still deals the bonus damage)"
+                                    "1d/0.95s, 1s duration"
                                 ]
                             ]
                         ],
