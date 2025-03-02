@@ -1,4 +1,4 @@
-    const data = {
+const data = {
     "stats": {
         "primary": {
             "type": "nestedArrays",
@@ -40,7 +40,7 @@
                                 "content": [
                                     "dart attack replaced by spikeball",
                                     [
-                                        "1d, 1cd (2cd), +17p (22p), +15%r (36.8r), 1.15s, shatter type",
+                                        "1d, 1cd (2cd), +17p (23p), +15%r (36.8r), 1.15s, shatter type",
                                         ["advanced_mode", "5jr, 150jsp, 1js, 0.15ds"],
                                         "can rebound off of walls",
                                         [
@@ -399,8 +399,8 @@
                                     ],
                                     "crosspath",
                                     [
-                                        "103: +10p (30p)",
-                                        "203: +12p (42p)"
+                                        "103: +10p (34p)",
+                                        "203: +12p (46p)"
                                     ]
                                 ]
                             },
@@ -779,7 +779,7 @@
                                         "510: meteor +1p (2p)",
                                         "520: meteor +1p (3p)",
                                         "501: meteor +400d (1,300d)",
-                                        "502: meteor +400d (1,800d)"
+                                        "502: meteor +500d (1,800d)"
                                     ]
                                 ]
                             }
@@ -1210,7 +1210,7 @@
                                     "crosspath",
                                     [
                                         "510: splat +1p (6p)",
-                                        "520: splat +4p (15?p), +13r (25)"
+                                        "520: splat +?p (?p), +13r (25)"
                                     ]
                                 ]
                             }
@@ -1351,7 +1351,7 @@
                                     ],
                                     "crosspath",
                                     [
-                                        "205: glued 1d/2.0s, level 5",
+                                        "205: glued 1d/2.0s",
                                         "025: splat +5p (15p)"
                                     ]
                                 ]
@@ -3329,12 +3329,14 @@
                                     "gains reanimate attack",
                                     [
                                         "60r, 1.5s",
-                                        "spawns 1-5 zombloons, each using 1-10 pops from the graveyard",
+                                        "spawns 1-5 zombloons, each using 18 pops from the graveyard",
                                         [
-                                            "2d, 2-10p (pops used +1), normal type, 10s lifetime",
+                                            "2d, x p, normal type, 10s lifetime",
                                             "travels backwards along the track at red bloon speed",
                                             "+1d for every 200 graveyard bloons, stacking additively up to 10 times"
                                         ],
+                                        "where x is 18 across all zombloons spawned",
+                                        "if there are less than 18 graveyard pops available, then x is the remaining amount of pops",
                                         "-10%s for every 100 graveyard bloons, stacking additively up to 5 times (eg 200-299 in the graveyard means 80% = 1.2s)"
                                     ],
                                     "crosspath",
@@ -3363,13 +3365,13 @@
                                     "gains reanimate-blimp attack",
                                     [
                                         "60r, 3s",
-                                        "if less than 2000 pops in the graveyard, uses 20 to spawn a zmoab",
+                                        "if less than 2000 pops in the graveyard, [BUG: uses 200 instead of 20] to spawn a zmoab",
                                         [
                                             "25d, 20p, normal type, 20s lifetime",
                                             "travels backwards along the track at 60% red speed",
                                             "+1d for every 300 graveyard bloons, stacking additively up to 10 times"
                                         ],
-                                        "if more than 2000 pops in the graveyard, uses 50 to spawn a zbfb",
+                                        "if more than 2000 pops in the graveyard, [BUG: uses 200 instead of 50] to spawn a zbfb",
                                         [
                                             "130d, 50p, normal type, 12.5s lifetime",
                                             "travels backwards along the track at 60% red speed"
@@ -7095,8 +7097,7 @@
                         "6": [
                             "gains boost-hack buff",
                             [
-                                "20% lower boost cooldowns",
-                                "[BUG] this buff only applies visually, and does not actually do anything"
+                                "20% lower boost cooldowns"
                             ]
                         ],
                         "7": [
@@ -7135,7 +7136,7 @@
                         "13": [
                             "biohack buffed",
                             [
-                                "affects 6 towers, 35s cooldown"
+                                "affects 8 towers, 35s cooldown"
                             ],
                             "hacked buffed",
                             [

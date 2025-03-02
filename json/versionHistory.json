@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        7
+        8
     ],
     "versionHistory": {
         "0": {
@@ -1228,6 +1228,18 @@
                         "xx4 Druid buff is +17% attack speed (jake6542)",
                         "Druid can only attack once every 8 frames at most (jake6542)",
                         "Pin does 0d (ertos_accounter)"
+                    ]
+                },
+                "8": {
+                    "date": "2025/3/1",
+                    "content": [
+                        "Added Battles 2 4.5.1 changes",
+                        "Level 13 Benjamin's Biohack ability affects 8 towers (ertos_accounter)",
+                        "3xx Dart Monkey has 23 pierce (minimumprobably)",
+                        "Corrected total pierce numbers on 104 and 204 Boomerang Monkey (minimumprobably)",
+                        "502 Tack Shooter's meteor does +500 damage (1,800 damage) (minimumprobably)",
+                        "Removed random words from the 205 Glue Gunner's description (minimumprobably)",
+                        "Added an assumed bug that xx5 Wizard Monkey uses 200 graveyard for zmoabs and zbfbs (foxyops)"
                     ]
                 }
             }
