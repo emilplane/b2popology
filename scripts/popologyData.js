@@ -2241,7 +2241,7 @@ const data = {
                                     ],
                                     "gains ground-zero ability (35s cooldown, battle ready)",
                                     [
-                                        "700d, 1000p, normal type"
+                                        "700d, ∞p, ∞r, normal type"
                                     ]
                                 ]
                             },
@@ -2254,7 +2254,7 @@ const data = {
                                     ],
                                     "ground-zero replaced by tsar-bomba (35s cooldown, battle ready)",
                                     [
-                                        "3000d, 5000p, normal type",
+                                        "3000d, ∞p, ∞r, normal type",
                                         "applies stun: 8.2s duration"
                                     ]
                                 ]
@@ -2378,7 +2378,8 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "301: +3p (16p)"
+                                        "301: +3p (16p)",
+                                        "302: -0.03s (0.52s)"
                                     ]
                                 ]
                             },

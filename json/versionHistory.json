@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        8
+        9
     ],
     "versionHistory": {
         "0": {
@@ -1240,6 +1240,13 @@
                         "502 Tack Shooter's meteor does +500 damage (1,800 damage) (minimumprobably)",
                         "Removed random words from the 205 Glue Gunner's description (minimumprobably)",
                         "Added an assumed bug that xx5 Wizard Monkey uses 200 graveyard for zmoabs and zbfbs (foxyops)"
+                    ]
+                },
+                "9": {
+                    "date": "2025/3/2",
+                    "content": [
+                        "Added 302 Heli Pilot's razor rotors attack cooldown buff (destructivforce)",
+                        "x4+x Heli Pilot's ground-zero has infinite pierce and range (JoelTheParrot)"
                     ]
                 }
             }
