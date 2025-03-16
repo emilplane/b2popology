@@ -1262,7 +1262,7 @@ const data = {
                                         [
                                             "240: weakening-glue can be applied to blimps, but will not cause them to slow down",
                                             [
-                                                "note: the +2d debuff does not work with this tower's Corrisive Glue"
+                                                "note: the +2d debuff does not work with this tower's 2xx glued status"
                                             ]
                                         ]
                                     ]
@@ -7037,17 +7037,17 @@ const data = {
                             ]
                         ],
                         "20": [
+                            "explosion buffed",
+                            [
+                                "+3d (8d)"
+                            ],
+                            "machine-gun buffed",
+                            [
+                                "+3d (5d)"
+                            ],
                             "orbital-barrage buffed",
                             [
                                 "30s cooldown",
-                                "buffs explosion",
-                                [
-                                    "+3d (8d)"
-                                ],
-                                "buffs machine-gun",
-                                [
-                                    "+3d (5d)"
-                                ]
                             ],
                             "barrage buffed",
                             [

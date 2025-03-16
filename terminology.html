@@ -20,27 +20,7 @@
         <main id="main">
             <div class="statsPageWrapper">
                 <div class="statsPageBody" id="statsPageBody">
-                    <div class="headerWrapper">
-                        
-                        <div class="headerStyle" id="header">
-                            <h4 class="luckiestGuy title">Battles 2 Popology</h4>
-                            <div class="headerContent">
-                                <a href="index.html"><h5>Home</h5></a>
-                                <a href="popology.html"><h5>Popology</h5></a>
-                                <a href="tournaments.html"><h5>Tournaments</h5></a>
-                                <!-- <a href="balance.html"><h5>Balancing</h5></a> -->
-                                <a href="https://discord.com/invite/9YAaxDXAYZ"><h5>Discord</h5></a>
-                            </div>
-                            <div class="menuIcon" id="menuIcon">
-                                <span class="material-symbols-outlined menuIcon">menu</span>
-                            </div>
-                        </div>
-                        <a href="https://bcspopology.com">
-                            <div class="bcsHeader">
-                                <h5 class="bcsfont">BCS Popology</h5>
-                            </div>
-                        </a>
-                    </div>
+                    <div class="headerWrapper" id="headerWrapper"></div>
                     <section class="simpleHeaderSection">
                         <h2>Terminology</h2>
                         <div class="headerLine"></div>
@@ -183,17 +163,12 @@
             </div>
         </main>
     </body>
-    <dialog class="menu" id="menu">
-        <div class="menuHeader">
-            <h2 class="luckiestGuy">Battles 2 Popology</h2>
-            <span class="material-symbols-outlined menuClose" id="menuCloseButton">close</span>
-        </div>
-        <a href="index.html"><h3>Home</h3></a>
-        <a href="popology.html"><h3>Popology</h3></a>
-        <a href="tournaments.html"><h3>Tournaments</h3></a>
-        <a href="balance.html"><h3>Balancing</h3></a>
-        <a href="https://discord.com/invite/9YAaxDXAYZ"><h3>Discord Server</h3></a>
-    </dialog>
+    <dialog class="menu" id="menu"></dialog>
+    <script type="module">
+        import { navigationBar } from "./scripts/navigation.js";
+
+        navigationBar('index')
+    </script>
     <script type="module" src="scripts/hamburger.js"></script>
     <style>
         section {

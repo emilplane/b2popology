@@ -284,6 +284,7 @@ input:focus + .inputUnderline {
 
 .title {
     margin-right: 16px;
+    margin-top: 4px;
 }
 
 .headerContent {
@@ -293,6 +294,34 @@ input:focus + .inputUnderline {
     }
     align-items: end;
 }
+.headerContent > a > h5 {
+    text-decoration: underline 2px;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: 0.2s;
+}
+.headerContent > a:hover > h5 {
+    text-decoration-color: var(--primaryDark2);
+    @media (prefers-color-scheme: dark) {
+        text-decoration-color: var(--primaryLight2);
+    }
+    text-underline-offset: 2px;
+}
+.headerContent > a > .active {
+    text-decoration-color: var(--shade7);
+    @media (prefers-color-scheme: dark) {
+        text-decoration-color: var(--shade2);
+    }
+    text-underline-offset: 2px;
+}
+.headerContent > a:hover > .active {
+    text-decoration-color: var(--shade7);
+    @media (prefers-color-scheme: dark) {
+        text-decoration-color: var(--shade2);
+    }
+    text-underline-offset: 4px;
+}
+
 .menuIcon {
     margin-left: auto;
     font-size: 36px;

@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        9
+        10
     ],
     "versionHistory": {
         "0": {
@@ -1247,6 +1247,15 @@
                     "content": [
                         "Added 302 Heli Pilot's razor rotors attack cooldown buff (destructivforce)",
                         "x4+x Monkey Ace's ground-zero has infinite pierce and range (JoelTheParrot)"
+                    ]
+                },
+                "10": {
+                    "date": "2025/3/15",
+                    "content": [
+                        "Added embed metadata (vuldo)",
+                        "Minor UI/UX improvements",
+                        "Changed language used for 240 Glue Gunner (qwertyxp2000)",
+                        "Fixed Sentai Churchill's level 20 buffs to explosion and machine-gun being categorized under orbital-barrage (jake6542)"
                     ]
                 }
             }

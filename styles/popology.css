@@ -258,6 +258,10 @@
     transition: 0.2s;
     transition-delay: 0.1s;
 }
+.statsContainerInstantTransition {
+    transition: 0s;
+    transition-delay: 0s;
+}
 
 .compareStats {
     display: none;
@@ -552,6 +556,9 @@
     align-items: center;
     justify-content: center;
     transition: 0.2s;
+}
+.loadingOverlayInstantTransition {
+    transition: 0s;
 }
 
 .ring {

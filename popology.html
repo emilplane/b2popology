@@ -25,38 +25,7 @@
         <div class="coverImage" id="coverImage"></div>
         <div class="statsPageWrapper">
             <div class="statsPageBody" id="statsPageBody">
-                <div class="headerWrapper">
-                        
-                    <div class="headerStyle" id="header">
-                        <h4 class="luckiestGuy title">Battles 2 Popology</h4>
-                        <div class="headerContent">
-                            <a href="index.html">
-                                <h5>Home</h5>
-                            </a>
-                            <a href="popology.html">
-                                <h5 style="text-decoration: underline 2px;text-underline-offset: 2px;">Popology</h5>
-                            </a>
-                            <a href="tournaments.html">
-                                <h5>Tournaments</h5>
-                            </a>
-                            <!-- <a href="balance.html">
-                                <h5>Balancing</h5>
-                            </a> -->
-                            <a href="https://discord.com/invite/9YAaxDXAYZ">
-                                <h5>Discord</h5>
-                            </a>
-                        </div>
-                        <div class="menuIcon" id="menuIcon">
-                            <span class="material-symbols-outlined menuIcon">menu</span>
-                        </div>
-                    </div>
-
-                    <a href="https://bcspopology.com">
-                        <div class="bcsHeader">
-                            <h5 class="bcsfont">BCS Popology</h5>
-                        </div>
-                    </a>
-                </div>
+                <div class="headerWrapper" id="headerWrapper"></div>
                 <div class="mainContent">
                     <div class="statsContainer">
                         <div id="mainStats">
@@ -202,54 +171,30 @@
     <div class="ring"></div>
 </div>
 </body>
-<dialog class="menu" id="menu">
-    <div class="menuHeader">
-        <h2 class="luckiestGuy">Battles 2 Popology</h2>
-        <span class="material-symbols-outlined menuClose" id="menuCloseButton">close</span>
-    </div>
-    <a href="index.html">
-        <h3>Home</h3>
-    </a>
-    <a href="popology.html">
-        <h3>Popology</h3>
-    </a>
-    <a href="tournaments.html">
-        <h3>Tournaments</h3>
-    </a>
-    <a href="https://discord.com/invite/9YAaxDXAYZ">
-        <h3>Discord Server</h3>
-    </a>
-</dialog>
-<!--<dialog id="shutdownDialog">-->
-<!--    <h3>Sorry, Battles 2 Popology isn't available right now</h3>-->
-<!--    <p style="margin-top: 8px">A law banning Battles 2 Popology has been enacted in the U.S. Unfortunately, that means you can't use Battles 2 Popology right now.</p>-->
-<!--    <p style="margin-top: 8px">We are fortunate that President Trump has indicated that he will work with us on a solution to reinstate TikTok once he takes office. Please stay tuned!</p>-->
-<!--    <div style="margin-top: 12px; display: flex; align-items: end">-->
-<!--        <button style="margin-left: auto">Learn More</button>-->
-<!--    </div>-->
-<!--</dialog>-->
-<!--<style>-->
-<!--    #shutdownDialog {-->
-<!--        outline: none;-->
-<!--        max-width: 600px;-->
-<!--        height: fit-content;-->
-<!--        max-height: 400px;-->
-<!--    }-->
-<!--</style>-->
-<!--<script>-->
-<!--    document.getElementById('shutdownDialog').showModal()-->
-<!--</script>-->
-<script id="mainScript" type="module" src="scripts/popology.js"></script>
-<script>
-    elementsLoaded = 0
-    document.getElementById('mainScript').onload = async () => {
-        document.querySelector(".loadingOverlay").style.opacity = "0";
-        document.querySelector(".statsContainer").style.opacity = "1";
-        await sleep(200);
-        document.querySelector(".loadingOverlay").style.display = "none";
-    }
+<dialog class="menu" id="menu"></dialog>
+<script type="module">
+    import { navigationBar } from "./scripts/navigation.js";
 
-    document.addEventListener("DOMContentLoaded", () => {
+    navigationBar('popology');
+</script>
+<script id="mainScript" type="module" src="scripts/popology.js"></script>
+<script type="module">const start = performance.now();
+    const loadingOverlay = document.querySelector(".loadingOverlay");
+    const statsContainer = document.querySelector(".statsContainer");
+
+    window.addEventListener("load", async () => {
+        if (performance.now() - start < 200) {
+            loadingOverlay.classList.add("loadingOverlayInstantTransition");
+            statsContainer.classList.add("statsContainerInstantTransition");
+            loadingOverlay.style.opacity = "0";
+            statsContainer.style.opacity = "1";
+            loadingOverlay.style.display = "none";
+        } else {
+            loadingOverlay.style.opacity = "0";
+            statsContainer.style.opacity = "1";
+            await sleep(200);
+            loadingOverlay.style.display = "none";
+        }
         document.fonts.ready.then(async () => {
             document.body.classList.remove('icons-not-ready');
             document.body.classList.add('icons-ready');
