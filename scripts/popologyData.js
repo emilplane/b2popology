@@ -227,7 +227,7 @@ const data = {
                                         "+3d (9d), +6p (13p), +20r (76r), 0.13s, normal type",
                                         ["simple_mode", "increased projectile speed"],
                                         ["advanced_mode", "+50jsp (450jsp)"],
-                                        "100d crit every 5 shots"
+                                        "75d crit every 5 shots"
                                     ],
                                     "crosspath",
                                     [
@@ -994,7 +994,7 @@ const data = {
                                 "content": [
                                     "frozen status buffed",
                                     [
-                                        "soaks through 3 layers"
+                                        "soaks through 2 layers"
                                     ]
                                 ]
                             },
@@ -1008,7 +1008,7 @@ const data = {
                                     "gains slow attack",
                                     [
                                         "35r",
-                                        "60% slow, cannot affect blimp",
+                                        "60% slow, cannot affect MOAB-class bloons",
                                         "land towers are placeable on any water in range"
                                     ]
                                 ]
@@ -1025,7 +1025,7 @@ const data = {
                                         "1d, ∞p, ∞r, shatter type, camo",
                                         "applies frozen status (ability duration, or 3s for camo/white/blimp)",
                                         "slows down blimps to 2.25 speed",
-                                        "all Ice Monkeys and Fusty the Snowman gain 50%s buff"
+                                        "all Ice Monkeys and Fusty the Snowman gain 66.67%s buff"
                                     ],
                                     "crosspath",
                                     [
@@ -1046,7 +1046,7 @@ const data = {
                                     ],
                                     "frozen status buffed",
                                     [
-                                        "soaks through 3 layers"
+                                        "soaks through 4 layers"
                                     ],
                                     "blimps can be targeted: they will take damage, but cannot be frozen",
                                     "snowstorm replaced by absolute-zero (12s duration, 20s cooldown, battle ready)",
@@ -1250,7 +1250,7 @@ const data = {
                             "4": {
                                 "name": "040 - Glue Strike",
                                 "content": [
-                                    "gains glue-strike ability (30s cooldown, battle ready)",
+                                    "gains glue-strike ability (40s cooldown, battle ready)",
                                     [
                                         "∞p, ∞r, camo",
                                         "cannot slow down blimps",
@@ -1271,7 +1271,7 @@ const data = {
                             "5": {
                                 "name": "050 - Glue Storm",
                                 "content": [
-                                    "glue-strike replaced by glue-storm (30s cooldown, 20s duration, battle ready)",
+                                    "glue-strike replaced by glue-storm (40s cooldown, 15s duration, battle ready)",
                                     [
                                         "∞p, ∞r, 2.0s, camo",
                                         "cannot slow down blimps",
@@ -1324,12 +1324,12 @@ const data = {
                                     "gains camo detection",
                                     "on pop: stun-splat",
                                     [
-                                        "6p, 12r, applies stun (1s, MOABs and DDTs for 0.35s, BFBs for 0.2s, ZOMGs for 0.06s)"
+                                        "4p, 12r, applies stun (1s, MOABs and DDTs for 0.35s, BFBs for 0.2s, ZOMGs for 0.06s)"
                                     ],
                                     "crosspath",
                                     [
-                                        "014: stun-splat +1p (7p)",
-                                        "024: stun-splat +3p (10p)"
+                                        "014: stun-splat +1p (5p)",
+                                        "024: stun-splat +1p (6p)"
                                     ]
                                 ]
                             },
@@ -1639,15 +1639,15 @@ const data = {
                                     [
                                         "dart is replaced by sonar",
                                         [
-                                            "75p, 52r zone, 1.5s passive, decamo"
+                                            "75p, 52r zone, 1.2s passive, decamo"
                                         ]
                                     ],
                                     "crosspath",
                                     [
-                                        "301: sonar 85%s (1.275s)",
-                                        "302: sonar 75%s (0.95625s)",
                                         "310: sonar +20%p (90p)",
-                                        "320: sonar +25%p (102.5?p)"
+                                        "320: sonar +25%p (102.5?p)",
+                                        "301: sonar 85%s (1.02s)",
+                                        "302: sonar 75%s (0.765s)"
                                     ]
                                 ]
                             },
@@ -1665,8 +1665,8 @@ const data = {
                                     "while submerged, abilities of water towers in range -15% cooldown time",
                                     "crosspath",
                                     [
-                                        "410: sonar +20%p (180p), radioactive +5p (35p)",
-                                        "420: sonar +25%p (225p), radioactive +1ld, +15p (50), normal type",
+                                        "410: radioactive +5p (35p)",
+                                        "420: radioactive +1ld, +15p (50), normal type",
                                         "401: radioactive 75%s (0.3s)",
                                         "402: radioactive 66.67%s (0.2s)"
                                     ]
@@ -1688,8 +1688,8 @@ const data = {
                                     "hero upgrade cost reduced by 42.8571%",
                                     "crosspath",
                                     [
-                                        "310: sonar +200p (1200p)",
-                                        "320: sonar +300p (1500p)"
+                                        "510: sonar +200p (1200p)",
+                                        "520: sonar +300p (1500p)"
                                     ]
                                 ]
                             }
@@ -2515,11 +2515,11 @@ const data = {
                                     "gains shove attack",
                                     [
                                         "1i",
-                                        "slows MOABs to -33% normal speed, BFBs to 0%, ZOMGs to 50%, DDTs to 33%"
+                                        "slows MOABs to -44% normal speed, BFBs to -11%, ZOMGs to 33%, DDTs to 33%"
                                     ],
                                     "crosspath",
                                     [
-                                        "013: shove buffed (MOABs to -44%, BFBs to -11%, ZOMGs to 33%, DDTs to 22%)"
+                                        "013: shove buffed (MOABs to -56?%, BFBs to -23?%, ZOMGs to ?%, DDTs to 22%)"
                                     ]
                                 ]
                             },
@@ -3249,7 +3249,7 @@ const data = {
                                                 "can see past walls",
                                                 "inherits priority"
                                             ],
-                                            "note: does not inherit buffs, but can receive buffs by flying through their range of influence"
+                                            "note: inherits some buffs, but not others. More documentation is needed."
                                         ]
                                     ]
                                 ]
@@ -3337,12 +3337,11 @@ const data = {
                                             "+1d for every 200 graveyard bloons, stacking additively up to 10 times"
                                         ],
                                         "where x is 18 across all zombloons spawned",
-                                        "if there are less than 18 graveyard pops available, then x is the remaining amount of pops",
-                                        "-10%s for every 100 graveyard bloons, stacking additively up to 5 times (eg 200-299 in the graveyard means 80% = 1.2s)"
+                                        "if there are less than 18 graveyard pops available, then x is the remaining amount of pops"
                                     ],
                                     "crosspath",
                                     [
-                                        "104: zombloons position targetable manually",
+                                        "104: zombloons position targetable manually (default position: furthest point of sent path)",
                                         "014: fireball +1d for every 200 graveyard"
                                     ]
                                 ]
@@ -3352,7 +3351,7 @@ const data = {
                                 "content": [
                                     "magic-bolt buffed",
                                     [
-                                        "25%s (0.275s)"
+                                        "25%s (0.275s), +40r (80r)"
                                     ],
                                     "shimmer buffed",
                                     [
@@ -3365,20 +3364,20 @@ const data = {
                                     "graveyard damage buff now requires 300 bloons each",
                                     "gains reanimate-blimp attack",
                                     [
-                                        "60r, 3s",
-                                        "if less than 2000 pops in the graveyard, [BUG: uses 200 instead of 20] to spawn a zmoab",
+                                        "60r, 2s",
+                                        "if graveyard is 70% full (2000 pops), use 100 to spawn a zbfb",
+                                        [
+                                            "130d, 50p, normal type, 12.5s lifetime",
+                                            "travels backwards along the track at 60% red speed"
+                                        ],
+                                        "otherwise, 55 to spawn a zmoab",
                                         [
                                             "25d, 20p, normal type, 20s lifetime",
                                             "travels backwards along the track at 60% red speed",
                                             "+1d for every 300 graveyard bloons, stacking additively up to 10 times"
-                                        ],
-                                        "if more than 2000 pops in the graveyard, [BUG: uses 200 instead of 50] to spawn a zbfb",
-                                        [
-                                            "130d, 50p, normal type, 12.5s lifetime",
-                                            "travels backwards along the track at 60% red speed"
                                         ]
                                     ],
-                                    "gains buff: +1d and +50% lifetime to all zombloons, zmoabs, and zbfbs from any wizard (including self)"
+                                    "gains buff: +1d and +50% lifetime to all zombloons from any wizard (including self)"
                                 ]
                             }
                         }
@@ -3829,7 +3828,7 @@ const data = {
                                     "crosspath",
                                     [
                                         "510: 100% chance to send bloons back; 50% chance to send MOABs, BFBs back 60-100 units",
-                                        "502: caltrops 2.8s, caltrop 25d"
+                                        "502: caltrops 2.8s, caltrop 75d"
                                     ]
                                 ]
                             }
@@ -4393,14 +4392,16 @@ const data = {
                                     [
                                         "time between grabs 0.3s, damages per 0.15s"
                                     ],
-                                    "gains brambles attack",
+                                    "gains ground-brambles attack",
                                     [
                                         "∞p, 55r zone, camo",
-                                        "range increases by 6 units every 2s until the map is covered",
-                                        "anywhere in range: 2d/0.5s, 10cd/0.5s, 10md/0.5s, normal type",
-                                        "within 100r: +1d (3d), +4cd (15cd), +4md (15md)",
-                                        "within 50r: +1d (4d), +4cd (20cd), +4md (20md)",
-                                        "note: as a damage-over-time, the damage cannot be buffed"
+                                        "applies brambles status",
+                                        [
+                                            "range increases by 6 units every 2s until the map is covered",
+                                            "anywhere in range: 2d/0.5s, 10cd/0.5s, 10md/0.5s, normal type",
+                                            "within 100r: +1d (3d), +4cd (15cd), +4md (15md)",
+                                            "within 50r: +1d (4d), +14cd (30cd), +9md (25md)"
+                                        ]
                                     ],
                                     "gains jungle-lives ability (40s cooldown, 15s initial)",
                                     [
@@ -5389,18 +5390,18 @@ const data = {
                             "placeable on: land",
                             "arrow attack",
                             [
-                                "1d, 4p, 50r, 0.95s, sharp type",
+                                "1d, 5p, 50r, 0.95s, sharp type",
                                 "jumps to nearby (50 units) targets"
                             ]
                         ],
                         "2": [
                             "arrow buffed",
                             [
-                                "+2p (6p)"
+                                "+2p (7p)"
                             ]
                         ],
                         "3": [
-                            "gains rapid-shot ability (45s cooldown, (2 + 0.5l, l = level number)s duration (3.5s this level), battle ready)",
+                            "gains rapid-shot ability (45s cooldown, (3 + 0.5l, l = level number)s duration (4.5s this level), battle ready)",
                             [
                                 "33.33%s"
                             ]
@@ -5408,7 +5409,7 @@ const data = {
                         "4": [
                             "arrow buffed",
                             [
-                                "+2r (52)"
+                                "+2r (52r)"
                             ]
                         ],
                         "5": [
@@ -5438,15 +5439,19 @@ const data = {
                             ]
                         ],
                         "9": [
-                            "arrow and bomb-arrow buffed",
+                            "arrow buffed",
                             [
-                                "+2p (8p)"
+                                "+2p (9p)"
+                            ],
+                            "explosion buffed",
+                            [
+                                "+2p (11p)"
                             ]
                         ],
                         "10": [
                             "gains storm-of-arrows ability (60s cooldown, 3s duration, battle ready)",
                             [
-                                "6d, 6md (12), ∞p, 100r zone, 0.05s, sharp type",
+                                "6d, +6md (12md), 200%cd (12cd), ∞p, 100r zone, 0.05s, sharp type",
                                 "7.5% chance of hitting (per frame)",
                                 "can rehit after 0.05s",
                                 "centered according to Quincy's targeting when activated"
@@ -5461,7 +5466,7 @@ const data = {
                         "12": [
                             "arrow buffed",
                             [
-                                "+1p (9p)"
+                                "+1p (10p)"
                             ]
                         ],
                         "13": [
@@ -5491,10 +5496,7 @@ const data = {
                         "17": [
                             "arrow buffed",
                             [
-                                "+25% lifetime"
-                            ],
-                            "bomb-arrow buffed",
-                            [
+                                "+25% lifetime",
                                 "every other arrow is replaced by bomb-arrow"
                             ]
                         ],
@@ -5512,7 +5514,7 @@ const data = {
                         "19": [
                             "arrow buffed",
                             [
-                                "+1j (3j), +2p (11p)"
+                                "+1j (3j), +2p (12p)"
                             ]
                         ],
                         "20": [
@@ -5536,7 +5538,7 @@ const data = {
                             "placeable on: land",
                             "arrow attack",
                             [
-                                "1d, 4p, 50r, 0.95s, sharp type, 600 projectile speed",
+                                "1d, 5p, 50r, 0.95s, sharp type, 600 projectile speed",
                                 "jumps to nearby (50 units) targets",
                                 "can see past obstacles"
                             ]
@@ -5544,7 +5546,7 @@ const data = {
                         "2": [
                             "arrow buffed",
                             [
-                                "+2p (6p)"
+                                "+2p (7p)"
                             ]
                         ],
                         "3": [
@@ -5586,17 +5588,19 @@ const data = {
                             ]
                         ],
                         "9": [
-                            "arrow and bomb-arrow buffed",
+                            "arrow buffed",
                             [
-                                "+2p (8p)"
+                                "+2p (9p)"
+                            ],
+                            "explosion buffed",
+                            [
+                                "+2p (11p)"
                             ]
                         ],
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)",
                             [
                                 "25d, 25md (50md), ∞p, 50r zone, 0.05s, plasma type",
-                                "7.5% chance of hitting (per frame)",
-                                "can rehit after 0.05s",
                                 "centered according to Quincy's targeting when activated"
                             ]
                         ],
@@ -5609,7 +5613,7 @@ const data = {
                         "12": [
                             "arrow buffed",
                             [
-                                "+1p (9p)"
+                                "+1p (10p)"
                             ]
                         ],
                         "13": [
@@ -5654,14 +5658,14 @@ const data = {
                             "cyber-storm buffed",
                             [
                                 "50s cooldown",
-                                "+10d (35d), +10md (70md)",
+                                "+15d (40d), +10md (70md)",
                                 "10% chance to hit"
                             ]
                         ],
                         "19": [
                             "arrow buffed",
                             [
-                                "+1j (3j), +2p (11p)"
+                                "+1j (3j), +2p (12p)"
                             ]
                         ],
                         "20": [
@@ -5671,7 +5675,7 @@ const data = {
                             ],
                             "cyber-storm buffed",
                             [
-                                "+25d (60d), +25md (120md)",
+                                "+25d (60d), +105md (180md)",
                                 "15% chance to hit"
                             ]
                         ]
@@ -7313,7 +7317,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            ["hero_level", { "multiplier": 1.06, "curve": "Striker Jones" }],
+                            ["hero_level", { "multiplier": 1.5, "curve": "Quincy" }],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7506,7 +7510,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            ["hero_level", {"multiplier": 1.06, "curve": "Striker Jones"}],
+                            ["hero_level", { "multiplier": 1.5, "curve": "Quincy" }],
                             "Unlock Cost: 2,000 MM + 40,000 Ezili Points",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7689,7 +7693,7 @@ const data = {
                     "data": {
                         "1": [
                             "$900",
-                            ["hero_level", {"multiplier": 1.15, "curve": "Quincy"}],
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 8 radius",
                             "placeable on: land and water",
@@ -7876,7 +7880,7 @@ const data = {
                     "data": {
                         "1": [
                             "$950",
-                            ["hero_level", {"multiplier": 1.15, "curve": "Quincy"}],
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM + 40,000 Fusty Points",
                             "size: 8 radius",
                             "placeable on: land and water",
@@ -7929,12 +7933,7 @@ const data = {
                                         "1d, 6j, 3i?, shatter type"
                                     ]
                                 ]
-                            ],
-                            "pat-ice buff",
-                            [
-                                "affects all Ice Monkeys",
-                                "can pop White and Zebra bloons"
-                            ],
+                            ]
                         ],
                         "6": [
                             "slam buffed",
@@ -7964,13 +7963,18 @@ const data = {
                             "chilling-cheer buffed",
                             [
                                 "Ice Monkeys can now target and inflict 3x damage to MOAB-class bloons but without associated slowing status effects.",
-                                "Ice Monkey's Arctic Wind slow attack can affect all non-BAD MOAB-class bloons"
+                                "Ice Monkey's Arctic Wind slow attack applies to MOAB-class bloons: 66% speed"
                             ]
                         ],
                         "9": [
                             "slam buffed",
                             [
                                 "83.33%s (0.75s)"
+                            ],
+                            "pat-ice buff",
+                            [
+                                "affects all Ice Monkeys",
+                                "can pop White and Zebra bloons"
                             ]
                         ],
                         "10": [
@@ -9320,7 +9324,7 @@ const data = {
                     "data": {
                         "1": [
                             "$700",
-                            ["hero_level", {"multiplier": "?", "curve": "unknown"}],
+                            ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
                             "size: ? radius",
                             "placeable on: land",
@@ -9385,10 +9389,10 @@ const data = {
                                     "pops targeted minecart",
                                     "on pop: detonation-explosion",
                                     [
-                                        "3d, 80p, 40r blast, normal type, camo",
+                                        "2d, 80p, 40r blast, normal type, camo",
                                         "on expire: shrapnel",
                                         [
-                                            "8d, 8j 360° spread, 1p, normal type"
+                                            "6d, 8j 360° spread, 1p, normal type"
                                         ]
                                     ]
                                 ]
@@ -9426,11 +9430,11 @@ const data = {
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+1d (4d)"
+                                "+1d (3d)"
                             ],
                             "shrapnel buffed",
                             [
-                                "+2d (10d)"
+                                "+2d (8d)"
                             ]
                         ],
                         "7": [
@@ -9465,11 +9469,11 @@ const data = {
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+4d (8d)"
+                                "+4d (7d)"
                             ],
                             "shrapnel buffed",
                             [
-                                "+10d (20d)"
+                                "+10d (18d)"
                             ]
                         ],
                         "10": [
@@ -9538,11 +9542,11 @@ const data = {
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+8d (16d, 160md)"
+                                "+8d (15d, 160md)"
                             ],
                             "shrapnel buffed",
                             [
-                                "+20d (40d, 400md)"
+                                "+20d (38d, 400md)"
                             ]
                         ],
                         "16": [
@@ -9590,11 +9594,11 @@ const data = {
                             ],
                             "detonation-explosion buffed",
                             [
-                                "+84d (100d, 1000md)"
+                                "+85d (100d, 1000md)"
                             ],
                             "shrapnel buffed",
                             [
-                                "+210d (250d, 2500md)"
+                                "+212d (250d, 2500md)"
                             ]
                         ],
                         "20": [
@@ -10705,7 +10709,7 @@ const data = {
                                 <ul>
                                     <li>Rounds: 23+</li>
                                     <li>Count: 60</li>
-                                    <li>Total time: 1s</li>
+                                    <li>Total time: 1.2s</li>
                                     <li>Eco: +7</li>
                                     <li>Cost: $1,200</li>
                                 </ul>
@@ -10757,7 +10761,7 @@ const data = {
                             </li>
                             <li>Grouped
                                 <ul>
-                                    <li>Rounds: 16-27</li>
+                                    <li>Rounds: 16-23</li>
                                     <li>Count: 2</li>
                                     <li>Total time: 0.22s</li>
                                     <li>Eco: +$5</li>
@@ -10766,7 +10770,7 @@ const data = {
                             </li>
                             <li>Tight
                                 <ul>
-                                    <li>Rounds: 28+</li>
+                                    <li>Rounds: 24+</li>
                                     <li>Count: 40</li>
                                     <li>Total time: 0.8s</li>
                                     <li>Eco: +$0</li>
@@ -11029,10 +11033,10 @@ const data = {
     "prices": {
         "primary": {
             "dartMonkey": {
-                "base": 150,
+                "base": 200,
                 "top": [100, 250, 450, 1700, 13500],
-                "middle": [100, 100, 400, 9000, 45000],
-                "bottom": [90, 200, 600, 2000, 25000]
+                "middle": [100, 100, 350, 9000, 45000],
+                "bottom": [90, 200, 600, 2300, 27000]
             },
             "boomerangMonkey": {
                 "base": 325,
@@ -11056,13 +11060,13 @@ const data = {
                 "base": 450,
                 "top": [100, 350, 1800, 2700, 34000],
                 "middle": [225, 350, 2900, 3000, 18000],
-                "bottom": [100, 200, 1300, 2400, 32000]
+                "bottom": [100, 200, 1300, 2900, 32000]
             },
             "glueGunner": {
                 "base": 100,
-                "top": [150, 300, 2300, 4500, 19000],
-                "middle": [100, 700, 2200, 4000, 14000],
-                "bottom": [120, 400, 3200, 2200, 28000]
+                "top": [150, 500, 2300, 4500, 19000],
+                "middle": [100, 700, 2200, 4000, 18000],
+                "bottom": [120, 400, 3200, 3000, 28000]
             }
         },
         "military": {
@@ -11093,7 +11097,7 @@ const data = {
             "heliPilot": {
                 "base": 800,
                 "top": [600, 250, 1800, 17500, 45000],
-                "middle": [200, 350, 3200, 7500, 30000],
+                "middle": [200, 350, 3200, 8500, 30000],
                 "bottom": [350, 250, 3700, 7500, 35000]
             },
             "mortarMonkey": {
@@ -11126,7 +11130,7 @@ const data = {
                 "base": 400,
                 "top": [150, 200, 700, 2750, 35000],
                 "middle": [200, 375, 2100, 4500, 20000],
-                "bottom": [200, 250, 1800, 4900, 40000]
+                "bottom": [200, 250, 1800, 4600, 40000]
             },
             "alchemist": {
                 "base": 550,
@@ -11136,9 +11140,9 @@ const data = {
             },
             "druid": {
                 "base": 425,
-                "top": [250, 1000, 1500, 4300, 55000],
-                "middle": [350, 250, 700, 4200, 35000],
-                "bottom": [100, 400, 750, 2500, 45000]
+                "top": [250, 1000, 1500, 4000, 55000],
+                "middle": [350, 250, 700, 4000, 35000],
+                "bottom": [100, 400, 750, 2500, 52000]
             }
         },
         "support": {
@@ -11157,7 +11161,7 @@ const data = {
             "spikeFactory": {
                 "base": 600,
                 "top": [600, 600, 2700, 9500, 90000],
-                "middle": [500, 500, 2500, 5200, 40000],
+                    "middle": [500, 500, 2500, 6200, 40000],
                 "bottom": [150, 500, 1200, 3200, 30000]
             },
             "engineerMonkey": {

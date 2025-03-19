@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        10
+        11
     ],
     "versionHistory": {
         "0": {
@@ -1256,6 +1256,21 @@
                         "Minor UI/UX improvements",
                         "Changed language used for 240 Glue Gunner (qwertyxp2000)",
                         "Fixed Sentai Churchill's level 20 buffs to explosion and machine-gun being categorized under orbital-barrage (jake6542)"
+                    ]
+                },
+                "11": {
+                    "date": "2025/3/19",
+                    "content": [
+                        "Added Battles 2 4.6 changes",
+                        "Fixed incorrect 510 and 520 sub crosspath labels",
+                        "Rearranged x5x Druid's brambles attack to formally become a status instead",
+                        "x5x Ice Monkey soaks through 4 layers (planterror)",
+                        "Corrected hero leveling curves for Pat Fusty, Fusty the Snowman, Ezili, Smudge Catt Ezili, and Bonnie (polavux)",
+                        "Added default targeting position for 104 Wizard Monkey's zombloons (foxyops)",
+                        "xx5 Monkey Wizard's reanimate-blimp attack has an attack cooldown of 2s (foxyops)",
+                        "Added xx5 Monkey Wizard's range buff (foxyops)",
+                        "Removed xx4 Monkey Wizard attack cooldown buff due to graveyard size (foxyops)",
+                        "Changed note on x4x Monkey Wizard's phoenix subtower regarding what buffs it can recieve to say that more documentation is needed"
                     ]
                 }
             }
