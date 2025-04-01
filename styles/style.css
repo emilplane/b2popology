@@ -124,10 +124,10 @@ input {
 }
 
 p, ul, td, th {
-    font-family: "Roboto";
-    font-weight: 100;
-    /* font-family: "Comic Neue";
-    font-weight: 400; */
+    /*font-family: "Roboto";*/
+    /*font-weight: 100;*/
+    font-family: "Comic Neue";
+    font-weight: 400;
     padding: 0px 0;
 }
 
