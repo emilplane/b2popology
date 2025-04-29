@@ -7,7 +7,7 @@ const data = {
                     "name": "Dart Monkey",
                     "data": {
                         "base": [
-                            "$150 (0 MM)",
+                            "$200 (0 MM)",
                             "size: 6 radius",
                             "placeable on: land",
                             "dart attack",
