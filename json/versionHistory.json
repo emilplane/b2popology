@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        11
+        12
     ],
     "versionHistory": {
         "0": {
@@ -1271,6 +1271,12 @@
                         "Added xx5 Monkey Wizard's range buff (foxyops)",
                         "Removed xx4 Monkey Wizard attack cooldown buff due to graveyard size (foxyops)",
                         "Changed note on x4x Monkey Wizard's phoenix subtower regarding what buffs it can recieve to say that more documentation is needed"
+                    ]
+                },
+                "12": {
+                    "date": "2025/4/17",
+                    "content": [
+                        "Added embed metadata (vuldo)"
                     ]
                 }
             }
