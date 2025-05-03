@@ -1,0 +1,2 @@
+[console_scripts]
+create_app = create_app.cli:main
