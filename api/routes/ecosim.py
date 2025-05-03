@@ -11,7 +11,7 @@ def eco_sim():
     farms = []
     eco_queue = []
     buy_queue = []
-    
+
     # Define round lengths
     rounds = b2.Rounds(data.get('stallFactor'))
 
@@ -81,10 +81,10 @@ def eco_sim():
 #         {"round": 13.9, "upgrades": [3,2,0]},
 #     ],
 #     "ecoQueue": [
-#         {"round": 10, "sendName": 'Grouped Reds'},
-#         {"round": 12, "sendName": 'Spaced Rainbows'},
-#         {"round": 13, "sendName": 'Zero'},
-#         {"round": 14, "sendName": 'Grouped Blacks'}
+#         {"round": 10, "sendName": "Grouped Reds"},
+#         {"round": 12, "sendName": "Spaced Rainbows"},
+#         {"round": 13, "sendName": "Zero"},
+#         {"round": 14, "sendName": "Grouped Blacks"}
 #     ],
 #     "buyQueue": [
 #         {"cost": 3850, "message": "Sell Into HRP"},
