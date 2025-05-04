@@ -42,3 +42,4 @@ __pycache__
 # misc
 .venv
 deprecated
+/.idea/
