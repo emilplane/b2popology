@@ -12,8 +12,8 @@ function NavLink({ text, url }: NavLinkProps) {
 }
 
 export default function NavBar() {
-    return <div className="flex items-center justify-center bg-gray-200 h-16 sticky top-0">
-        <div className="w-full max-w-5xl grid grid-cols-[auto_1fr]">
+    return <div className="flex items-center justify-center bg-white h-16 sticky top-0">
+        <div className="w-full max-w-7xl grid grid-cols-[auto_1fr]">
             <div>
                 <a href="/">
                     <h1 className="text-brand-dark">Battles 2 Popology</h1>

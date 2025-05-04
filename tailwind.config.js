@@ -14,9 +14,15 @@ module.exports = {
       },
       colors: {
         brand: {
-          DEFAULT: 'hsl(160, 100%, 39%);',
-          light: 'hsl(160, 56%, 74%);',
-          dark: 'hsl(160, 100%, 18%);',
+          DEFAULT: 'hsl(160, 100%, 39%)',
+          light: 'hsl(160, 56%, 74%)',
+          dark: 'hsl(160, 100%, 18%)',
+        },
+        primary: {
+          light: '#87c9ea',
+        },
+        military: {
+          light: '#b2e996'
         }
       }
     },
