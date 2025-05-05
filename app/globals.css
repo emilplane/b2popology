@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Luckiest+Guy&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,13 +16,27 @@
 
 @layer components {
   h1 {
+    @apply text-4xl;
+    font-family: 'Gabarito', sans-serif;
+  }
+
+  p {
+    font-family: 'Gabarito', sans-serif;
+  }
+
+  .monosp {
+    @apply uppercase text-xs text-gray-600;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .luckiest-guy {
     @apply text-2xl;
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: -0.15em;
   }
 
-  p {
-    font-family: 'Gabarito', sans-serif;
+  .icon-shadow {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
   }
 }
 

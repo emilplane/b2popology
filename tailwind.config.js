@@ -19,10 +19,11 @@ module.exports = {
           dark: 'hsl(160, 100%, 18%)',
         },
         primary: {
-          light: '#87c9ea',
+          DEFAULT: '#109ee6',
+          light: '#b0d4e7',
         },
         military: {
-          light: '#b2e996'
+          light: '#c8e9b7'
         }
       }
     },

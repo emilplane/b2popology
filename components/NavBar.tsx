@@ -12,11 +12,11 @@ function NavLink({ text, url }: NavLinkProps) {
 }
 
 export default function NavBar() {
-    return <div className="flex items-center justify-center bg-white h-16 sticky top-0">
-        <div className="w-full max-w-7xl grid grid-cols-[auto_1fr]">
+    return <div className="flex items-center justify-center bg-white h-16 sticky top-0 z-20">
+        <div className="w-full max-w-screen-2xl px-4 grid grid-cols-[auto_1fr]">
             <div>
                 <a href="/">
-                    <h1 className="text-brand-dark">Battles 2 Popology</h1>
+                    <p className="luckiest-guy text-brand-dark">Battles 2 Popology</p>
                 </a>
             </div>
             <div className="flex items-center gap-6 ml-auto">
