@@ -13,7 +13,7 @@ def hello_world():
 
 @app.route("/api/popology/tower_info/<string:tower_name>")
 def get_tower(tower_name):
-    with open(f"statsData/{tower_name}.json") as file:
+    with open(f"statsData/blueprints/{tower_name}.json") as file:
         data = json.load(file)
 
     tower = Tower(data)

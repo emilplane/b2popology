@@ -17,6 +17,10 @@
     "plugins": [
       {
         "name": "next"
+      },
+      {
+        "name": "ts-silence-diagnostics",
+        "ignoredCodes": [2786, 80007],
       }
     ],
     "paths": {
