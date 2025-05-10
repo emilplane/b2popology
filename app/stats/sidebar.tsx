@@ -36,20 +36,20 @@ function StatsTowerCard({ category, displayName, internalName }: StatsTowerCardP
 export default function StatsSidebar() {
     return <div className="flex flex-col gap-4">
         <StatsTowerCard category="Primary" displayName="Dart Monkey"
-                        internalName="dartMonkey"/>
+                        internalName="dart_monkey"/>
         <StatsTowerCard category="Primary" displayName="Boomerang Monkey"
-                        internalName="boomerangMonkey"/>
+                        internalName="boomerang_monkey"/>
         <StatsTowerCard category="Primary" displayName="Bomb Shooter"
-                        internalName="bombShooter"/>
+                        internalName="bomb_shooter"/>
         <StatsTowerCard category="Primary" displayName="Tack Shooter"
-                        internalName="tackShooter"/>
+                        internalName="tack_shooter"/>
         <StatsTowerCard category="Primary" displayName="Ice Monkey"
-                        internalName="iceMonkey"/>
+                        internalName="ice_monkey"/>
         <StatsTowerCard category="Primary" displayName="Glue Gunner"
-                        internalName="glueGunner"/>
+                        internalName="glue_gunner"/>
         <StatsTowerCard category="Military" displayName="Sniper Monkey"
-                        internalName="sniperMonkey"/>
+                        internalName="sniper_monkey"/>
         <StatsTowerCard category="Military" displayName="Monkey Sub"
-                        internalName="monkeySub"/>
+                        internalName="monkey_sub"/>
     </div>
 }

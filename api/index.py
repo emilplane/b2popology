@@ -1,6 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from .routes import register_routes
-from .popology.popology import Tower
+from .popology.popology import PopologyTower, TowerDataFormats
 import json
 
 app = Flask(__name__)
@@ -12,10 +12,27 @@ def hello_world():
     return jsonify({"data": "Hello World!"})
 
 @app.route("/api/popology/tower_info/<string:tower_name>")
-def get_tower(tower_name):
+def get_tower_stats(tower_name):
     with open(f"statsData/blueprints/{tower_name}.json") as file:
         data = json.load(file)
 
-    tower = Tower(data)
+    tower = PopologyTower(data)
     tower_info = tower.get_tower_info()
     return jsonify(tower_info)
+
+@app.route("/api/popology/tower_stats/<string:tower_name>")
+def get_tower_data(tower_name):
+    with open(f"statsData/blueprints/{tower_name}.json") as file:
+        data = json.load(file)
+
+    path1 = request.args.get('path1')
+    path2 = request.args.get('path2')
+    path3 = request.args.get('path3')
+
+    print(path1, path2, path3)
+
+    tower = PopologyTower(data)
+    tower_stats = tower.get_tower(
+        tower_data_format = TowerDataFormats.AS_UPGRADES
+    )
+    return jsonify(tower_stats)
