@@ -596,7 +596,7 @@ const data = {
                             "5": {
                                 "name": "050 - MOAB Eliminator",
                                 "content": [
-                                    "bomb buffed: +170md (201md), normal type",
+                                    "explosion buffed: +170md (201md), normal type",
                                     "assassinate replaced by eliminate (10s cooldown, battle ready)",
                                     [
                                         "4500d",
@@ -1812,7 +1812,7 @@ const data = {
                                     ],
                                     "subdart buffed",
                                     [
-                                        "+2d (3d), +3p (5p)"
+                                        "+1d (2d), +1md (3md), +3p (5p)"
                                     ]
                                 ]
                             },
@@ -2998,7 +2998,7 @@ const data = {
                                 "content": [
                                     "rocket buffed",
                                     [
-                                        "3d, +500md (503md), 300%s (0.396s), +1i (4i)"
+                                        "3d, +447md (450md), 300%s (0.396s), +1i (4i)"
                                     ],
                                     "explosion buffed",
                                     [
@@ -3006,7 +3006,7 @@ const data = {
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+4cd (9cd), +12md (17md), +10p (18p), +4r (12r)"
+                                        "+4cd (9cd), +55md (60md), +10p (18p), +4r (12r)"
                                     ]
                                 ]
                             }
@@ -3881,9 +3881,10 @@ const data = {
                                     [
                                         "all bloons and blimps move at half speed",
                                         "currently sabotaged blimps will remain slowed for the duration of the ability if this ninja is sold",
-                                        "25%d to new blimps entering the map",
+                                        "12.5%d to new blimps entering the map",
                                         [
-                                            "does not contribute to tower pop count"
+                                            "does not contribute to tower pop count",
+                                            "[BUG] affects blimps on screen, contributes to tower pop count"
                                         ]
                                     ],
                                     "gains saboteur buff",
@@ -4749,7 +4750,7 @@ const data = {
                                 ]
                             },
                             "4": {
-                                "name": "040 - IMF loan",
+                                "name": "040 - IMF Loan",
                                 "content": [
                                     "banana attack buffed",
                                     [
@@ -4758,6 +4759,10 @@ const data = {
                                     "gains loan ability (90s cooldown, 20s initial)",
                                     [
                                         "loan $20,000, to be repaid by taking 50% from all future income",
+                                    ],
+                                    "crosspath",
+                                    [
+                                        "240: +$150 ($700) end of round income",
                                     ]
                                 ]
                             },
@@ -4771,6 +4776,10 @@ const data = {
                                     "loan replaced by grant (50s cooldown, 30s initial)",
                                     [
                                         "gain $20k, which does not need to be repaid"
+                                    ],
+                                    "crosspath",
+                                    [
+                                        "250: +$300 ($1,000) end of round income",
                                     ]
                                 ]
                             }
@@ -6412,7 +6421,7 @@ const data = {
                         "2": [
                             "explosion buffed",
                             [
-                                "+4r"
+                                "+4r blast (19r)"
                             ]
                         ],
                         "3": [
@@ -6429,7 +6438,8 @@ const data = {
                         "4": [
                             "gains explosive-expert buff",
                             [
-                                "affects all bomb and mortar towers 90%s"
+                                "affects all bomb and mortar towers and self",
+                                "90%s (1.08s)"
                             ]
                         ],
                         "5": [
@@ -6441,25 +6451,25 @@ const data = {
                         "6": [
                             "explosion buffed",
                             [
-                                "+10p (20p), +50%r (28.5r)"
+                                "+10p (20p), +50%r blast (26.5r)"
                             ]
                         ],
                         "7": [
-                            "bomb buffed",
+                            "explosion buffed",
                             [
                                 "+1d (2d)"
                             ],
                             "gains mortar-expert buff",
                             [
-                                "affects all mortars",
-                                "+25% blast radius"
+                                "affects all mortars and self",
+                                "+25%r blast (28.75r)"
                             ]
                         ],
                         "8": [
                             "gains bomb-expert buff",
                             [
-                                "affects bomb towers in range",
-                                "+40%p, +15%r"
+                                "affects bomb towers in range and self",
+                                "+40%p (28p), +15%r (63.25r)"
                             ]
                         ],
                         "9": [
@@ -6469,13 +6479,14 @@ const data = {
                             ],
                             "concussive-shell buffed",
                             [
-                                "+10d (12d) +10p (58p)",
+                                "+10d (12d), +10p (58p)",
                                 "stuns bloons for 5s and blimps for 3s"
                             ]
                         ],
                         "10": [
-                            "gains artillery-command ability (30s cooldown, battle ready)",
+                            "gains artillery-command ability (30s cooldown, 7s duration, battle ready)",
                             [
+                                "+10md (12md), +200r (263.25r), 25%s (0.225s)",
                                 "every bomb and mortar ability is activated without affecting their ability cooldowns"
                             ]
                         ],
@@ -6488,7 +6499,11 @@ const data = {
                         "12": [
                             "bomb buffed",
                             [
-                                "+1d (3d), +3r (58r)"
+                                "+3r (66.25r)"
+                            ],
+                            "explosion buffed",
+                            [
+                                "+1d (3d)"
                             ]
                         ],
                         "13": [
@@ -6519,7 +6534,11 @@ const data = {
                         "17": [
                             "bomb buffed",
                             [
-                                "+1d (4d), +2r (60r)"
+                                "+2r (68.25r)"
+                            ],
+                            "explosion buffed",
+                            [
+                                "+1d (4d)"
                             ]
                         ],
                         "18": [
@@ -6541,6 +6560,7 @@ const data = {
                         "20": [
                             "artillery-command buffed",
                             [
+                                "10s duration",
                                 "for the next 10s, every bomb and mortar has double damage and double pierce"
                             ]
                         ]
@@ -6579,7 +6599,7 @@ const data = {
                                 "can see past obstacles",
                                 "on contact: explosion",
                                 [
-                                    "3d, 72p, 40r blast, normal type, 1s stun",
+                                    "3d, +4cd (7cd), +8md (11md), 72p, 40r blast, normal type, 1s stun",
                                     "on damage: applies burn status",
                                     [
                                         "2d/1.5s, lasts for 4s"
@@ -6590,14 +6610,15 @@ const data = {
                         "4": [
                             "gains explosive-expert buff",
                             [
-                                "affects all bomb and mortar towers",
-                                "90%s"
+                                "affects all heli pilot and monkey ace towers and self",
+                                "90%s (1.08s)"
                             ]
                         ],
                         "5": [
-                            "applies blast-weakness status to all bloons",
+
+                            "all attacks buffed",
                             [
-                                "black property has a 50% chance of being ignored by explosions"
+                                "+10%p, +10%r"
                             ]
                         ],
                         "6": [
@@ -6611,10 +6632,17 @@ const data = {
                             [
                                 "+1d (2d)"
                             ],
-                            "gains mortar-expert buff",
+                            "gains flying-expert buff",
                             [
-                                "affects all mortars",
-                                "+25% blast radius"
+                                "affects all heli pilot and monkey ace towers",
+                                "flame-trail attack",
+                                [
+                                    "0.16s passive",
+                                    "emits flame",
+                                    [
+                                        "1d, 4p, 1.5s duration"
+                                    ]
+                                ]
                             ]
                         ],
                         "8": [
@@ -6638,7 +6666,7 @@ const data = {
                         "10": [
                             "gains artillery-fire ability (60s cooldown, 7s duration, battle ready)",
                             [
-                                "every bomb and mortar has double damage and applies burn status",
+                                "every heli pilot and monkey ace tower and self has double damage and applies burn status",
                                 [
                                     "2d/1.5s, lasts for 4s"
                                 ]
@@ -6698,9 +6726,10 @@ const data = {
                             [
                                 "0.2s"
                             ],
-                            "blast-weakness buffed",
+                            "gains vehicle buff",
                             [
-                                "black property is always ignored by explosives"
+                                "affects all heli pilot and monkey ace towers",
+                                "+10%p, +10%r"
                             ]
                         ],
                         "20": [
@@ -9180,7 +9209,7 @@ const data = {
                         "3": [
                             "defend-the-hive ability (45s cooldown, 10s duration, 9s initial cooldown)",
                             [
-                                "+2d (5d), 51.85%s (0.23s)",
+                                "51.85%s (0.23s)",
                                 "spawns 2 copies of bee called defend-bee",
                             ]
                         ],
@@ -9283,7 +9312,7 @@ const data = {
                             [
                                 "-5s cooldown (40s cooldown)"
                             ],
-                            "sting-swarm buffed",
+                            "sting buffed",
                             [
                                 "60%s (0.15s)"
                             ]
@@ -9291,7 +9320,7 @@ const data = {
                         "17": [
                             "defend-the-hive buffed",
                             [
-                                "+10d (18d)"
+                                "+2d (8d)"
                             ]
                         ],
                         "18": [
@@ -11080,7 +11109,7 @@ const data = {
                 "base": 325,
                 "top": [130, 500, 950, 2800, 32000],
                 "middle": [300, 300, 1600, 15000, 30000],
-                "bottom": [300, 800, 800, 2800, 25000]
+                "bottom": [300, 800, 800, 3200, 25000]
             },
             "monkeyBuccaneer": {
                 "base": 500,

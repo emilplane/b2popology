@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        12
+        13
     ],
     "versionHistory": {
         "0": {
@@ -1277,6 +1277,18 @@
                     "date": "2025/4/17",
                     "content": [
                         "Added embed metadata (vuldo)"
+                    ]
+                },
+                "13": {
+                    "date": "2025/5/18",
+                    "content": [
+                        "Added Battles 2 4.7 changes",
+                        "Fixed attack name typo for level 16 Beetienne's sting attack",
+                        "Fixed level 7, level 12, and level 17 Striker Jones' damage buffs being associated with the bomb attack instead of the explosion attack",
+                        "Added bonus moab and ceramic damage to Biker Bones' level 3 concussive-fire explosion",
+                        "Fixed 050 Bomb Shooter's buff to the explosion damage being labeled as a buff to the bomb attack (jake6542)",
+                        "Corrected 050 Ninja Monkey's damage done to new blimps entering the map to 12.5%d (jake6542)",
+                        "Added bug where 050 Ninja Monkey's ability also works on on-screen blimps (jake6542)"
                     ]
                 }
             }
