@@ -1,7 +1,4 @@
-from flask import Blueprint 
-
-test_bp = Blueprint('test', __name__)
-
-@test_bp.route('/')
-def status():
-    return {"message": "This is the test route"}
+def register_test_routes(app):
+    @app.route('/api/test')
+    def status():
+        return {"message": "This is the test route"}

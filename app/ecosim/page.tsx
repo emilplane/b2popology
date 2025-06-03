@@ -5,7 +5,7 @@ export default function EcoSimPage() {
     const [data, setData] = useState('');
 
     useEffect(() => {
-        fetch('/api/python', {})
+        fetch('/api/test', {})
             .then((res) => res.json())
             .then((json) => setData(json.data));
     }, []);

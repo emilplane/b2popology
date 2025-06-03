@@ -1,6 +1,11 @@
-from .ecosim import ecosim_bp
-from .test import test_bp
+from .ecosim import register_ecosim_routes
+from .test import register_test_routes
+from .popology import register_popology_routes
+
+# Run register_routes in index.py to access all routes defined in the routes folder.
+# Just make sure they're all included here first!
 
 def register_routes(app):
-    app.register_blueprint(ecosim_bp, url_prefix='/api/ecosim')
-    app.register_blueprint(test_bp,url_prefix='/api/test')
+    register_ecosim_routes(app)
+    register_test_routes(app)
+    register_popology_routes(app)

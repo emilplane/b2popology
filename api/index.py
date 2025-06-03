@@ -1,38 +1,27 @@
-from flask import Flask, jsonify, request
-from .routes import register_routes
-from .popology.popology import PopologyTower, TowerDataFormats
-import json
+# Importing the basics
+from flask import Flask
+from mongoengine import connect 
 
-app = Flask(__name__)
-register_routes(app)
+# Import routes
+from routes import register_routes
 
-@app.route("/api/python")
-def hello_world():
-    print("Serving /api/python")
-    return jsonify({"data": "Hello World!"})
+# Import models
+import models.models as m
 
-@app.route("/api/popology/tower_info/<string:tower_name>")
-def get_tower_stats(tower_name):
-    with open(f"statsData/blueprints/{tower_name}.json") as file:
-        data = json.load(file)
+def create_app():
+    # Create the Flask app
+    app = Flask(__name__)
 
-    tower = PopologyTower(data)
-    tower_info = tower.get_tower_info()
-    return jsonify(tower_info)
+    # Connect to the MongoDB database
+    connect('b2popology', host='mongodb://localhost:27017/b2popology')
 
-@app.route("/api/popology/tower_stats/<string:tower_name>")
-def get_tower_data(tower_name):
-    with open(f"statsData/blueprints/{tower_name}.json") as file:
-        data = json.load(file)
+    # Register routes
+    register_routes(app)
 
-    path1 = request.args.get('path1')
-    path2 = request.args.get('path2')
-    path3 = request.args.get('path3')
+    return app
 
-    print(path1, path2, path3)
+if __name__ == '__main__':
+    # If this script is run directly, create the app and run it
+    app = create_app()
+    app.run(debug=True)
 
-    tower = PopologyTower(data)
-    tower_stats = tower.get_tower(
-        tower_data_format = TowerDataFormats.AS_UPGRADES
-    )
-    return jsonify(tower_stats)

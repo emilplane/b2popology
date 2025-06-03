@@ -1,75 +1,76 @@
-from flask import Blueprint, request, jsonify
+from flask import request, jsonify
 import b2sim.engine as b2
 
-ecosim_bp = Blueprint('ecosim', __name__)
+# For RESTful routes related to the operation of the eco simulator.
 
-@ecosim_bp.route('/', methods=['POST'])
-def eco_sim():
-    print("GOT TO HERE")
-    data = request.get_json()
+def register_ecosim_routes(app):
+    @app.route('/api/ecosim', methods=['POST'])
+    def eco_sim():
+        print("GOT TO HERE")
+        data = request.get_json()
 
-    farms = []
-    eco_queue = []
-    buy_queue = []
+        farms = []
+        eco_queue = []
+        buy_queue = []
 
-    # Define round lengths
-    rounds = b2.Rounds(data.get('stallFactor'))
+        # Define round lengths
+        rounds = b2.Rounds(data.get('stallFactor'))
 
-    # Initialize the farms
-    farm_info = data.get('farms')
-    if farm_info: 
-        farms = [
-            b2.InitFarm(
-                rounds.getTimeFromRound(f['round']), 
-                upgrades = f['upgrades']
-            ) 
-            for f in farm_info
-        ]
+        # Initialize the farms
+        farm_info = data.get('farms')
+        if farm_info: 
+            farms = [
+                b2.InitFarm(
+                    rounds.getTimeFromRound(f['round']), 
+                    upgrades = f['upgrades']
+                ) 
+                for f in farm_info
+            ]
 
-    # Build the eco queue
-    eco_queue_info = data.get('ecoQueue')
-    if eco_queue_info:
-        eco_queue = [
-            b2.ecoSend(
-                time=rounds.getTimeFromRound(e['round']), 
-                send_name=e['sendName']
-            ) 
-            for e in eco_queue_info
-        ]
+        # Build the eco queue
+        eco_queue_info = data.get('ecoQueue')
+        if eco_queue_info:
+            eco_queue = [
+                b2.ecoSend(
+                    time=rounds.getTimeFromRound(e['round']), 
+                    send_name=e['sendName']
+                ) 
+                for e in eco_queue_info
+            ]
 
-    # Build the buy queue 
-    buy_queue_info = data.get('buyQueue')
-    if buy_queue_info:
-        buy_queue = [[
-            b2.buyDefense(
-                b['cost'],
-                min_buy_time=rounds.getTimeFromRound(b.get('minBuyRound')) if b.get('minBuyRound') is not None else None,
-                message=b['message']
-            )
-            ] for b in buy_queue_info
-        ]
+        # Build the buy queue 
+        buy_queue_info = data.get('buyQueue')
+        if buy_queue_info:
+            buy_queue = [[
+                b2.buyDefense(
+                    b['cost'],
+                    min_buy_time=rounds.getTimeFromRound(b.get('minBuyRound')) if b.get('minBuyRound') is not None else None,
+                    message=b['message']
+                )
+                ] for b in buy_queue_info
+            ]
 
 
-    # Form the initial game state
-    initial_state_game = {
-        'Cash': data.get('cash'),
-        'Eco': data.get('eco'),
-        'Rounds': rounds,
-        'Game Round': data.get('startRound'),
-        'Buy Queue': buy_queue,
-        'Eco Queue': eco_queue,
-        'Farms': farms
-    }
+        # Form the initial game state
+        initial_state_game = {
+            'Cash': data.get('cash'),
+            'Eco': data.get('eco'),
+            'Rounds': rounds,
+            'Game Round': data.get('startRound'),
+            'Buy Queue': buy_queue,
+            'Eco Queue': eco_queue,
+            'Farms': farms
+        }
 
-    # Run the simulation 
-    game_state = b2.GameState(initial_state_game)
-    game_state.fastForward(target_round = 15)
+        # Run the simulation 
+        game_state = b2.GameState(initial_state_game)
+        game_state.fastForward(target_round = 15)
 
-    return jsonify({
-        "timeStates": game_state.time_states,
-        "cashStates": game_state.cash_states,
-        "ecoStates": game_state.eco_states
-    })
+        return jsonify({
+            "timeStates": game_state.time_states,
+            "cashStates": game_state.cash_states,
+            "ecoStates": game_state.eco_states
+        })
 
 # A sample JSON object that gets sent might look something like...
 # {
