@@ -31,17 +31,25 @@ class User(Document):
     password = f.StringField(required=True, min_length=8)
     simulations = f.ListField(f.ReferenceField("Simulation"))
 
+    @classmethod
+    def hash_password(cls, sender, document, **kwargs):
+        """Signal handler to hash the password before saving the User document."""
+
+        # Don't hash if password already looks hashed
+        if document.password.startswith("$2b$") or document.password.startswith("$2a$"):
+            return
+        
+        hashed = bcrypt.hashpw(
+            document.password.encode('utf-8'),
+            bcrypt.gensalt())
+        document.password = hashed.decode('utf-8')
+    
     def check_password(self, raw_password):
         """Check if the provided password matches the stored hashed password."""
+        print("Checking password for user:", self.username)
+        print("Raw password:", raw_password)
+        
         return bcrypt.checkpw(raw_password.encode('utf-8'), self.password.encode('utf-8'))
 
 # --- Signal Handlers ---
-
-@signals.pre_save.connect(User)
-def hash_password(sender, document, **kwargs):
-    """Hash the password before saving the user."""
-    if document.password:
-        hashed = bcrypt.hashpw(
-            document.password.encode('utf-8'), 
-            bcrypt.gensalt())
-        document.password = hashed.decode('utf-8')
+signals.pre_save.connect(User.hash_password, sender=User)

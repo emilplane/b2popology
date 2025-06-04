@@ -1,6 +1,6 @@
-from popology.popology import Tower
+from api.popology.popology import Tower
 from flask import jsonify, request
-from popology.popology import PopologyTower, TowerDataFormats
+from api.popology.popology import PopologyTower, TowerDataFormats
 import json
 
 # For RESTful routes related to base popology operations.

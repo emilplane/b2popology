@@ -3,10 +3,10 @@ from flask import Flask
 from mongoengine import connect 
 
 # Import routes
-from routes import register_routes
+from api.routes import register_routes
 
 # Import models
-import models.models as m
+import api.models.models as m
 
 def create_app():
     # Create the Flask app
