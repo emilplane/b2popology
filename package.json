@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "clean": "rm -rf .next node_modules pnpm-lock.yaml",
     "seed": "python -m api.seeds.seed",
-    "api": "python -m api.index",
+    "api": "pip3 install -r requirements.txt && python -m api.index",
     "flask-dev": "cross-env FLASK_DEBUG=1 pip3 install -r requirements.txt && python -m flask --app api/index run -p 5328",
     "next-dev": "next dev",
     "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
@@ -18,20 +19,20 @@
     "@types/node": "20.1.4",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
-    "autoprefixer": "10.4.14",
     "clsx": "^2.1.1",
     "concurrently": "^8.0.1",
     "eslint": "8.40.0",
     "eslint-config-next": "^15.3.1",
     "next": "^15.3.1",
-    "postcss": "8.4.31",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^3.3.2",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "autoprefixer": "10.4.14",
     "cross-env": "^7.0.3",
+    "postcss": "8.4.31",
+    "tailwindcss": "^3.3.2",
     "ts-silence-diagnostics": "^1.0.2"
   }
 }

@@ -43,3 +43,7 @@
 body {
 
 }
+
+.b2-component {
+  @apply text-white bg-green-600 border border-black;
+}

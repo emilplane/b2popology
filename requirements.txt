@@ -1,4 +1,6 @@
 Flask==3.0.3
-
+mongoengine==0.29.1
+dotenv==0.9.9
+bcrypt==4.3.0
 b2sim~=2.3.1
 flask-cors~=5.0.1
