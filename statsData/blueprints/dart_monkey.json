@@ -8,8 +8,18 @@
       "modules": [
         {
           "type": "tower_stats",
-          "key": "range",
-          "value": 40
+          "name": "tower-stats",
+          "properties": {
+            "range": 40,
+            "size": 6
+          }
+        },
+        {
+          "type": "attack",
+          "name": "dart",
+          "properties": {
+            "damage": 3.5
+          }
         }
       ]
     }

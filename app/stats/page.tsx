@@ -4,5 +4,5 @@ import {useEffect} from "react";
 import { redirect } from 'next/navigation'
 
 export default function StatsRedirectPage() {
-    redirect('/stats/dartMonkey')
+    redirect('/stats/dart_monkey')
 }
