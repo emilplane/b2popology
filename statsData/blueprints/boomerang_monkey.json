@@ -1,4 +1,27 @@
 {
   "display_name": "Boomerang Monkey",
-  "category": "Primary"
+  "category": "Primary",
+  "last_changed_version": "4.6.1.[OTA 1]",
+
+  "stats": {
+    "base": {
+      "modules": [
+        {
+          "type": "tower_stats",
+          "name": "tower-stats",
+          "properties": {
+            "range": 40,
+            "size": 6
+          }
+        },
+        {
+          "type": "attack",
+          "name": "rang",
+          "properties": {
+            "damage": 3.5
+          }
+        }
+      ]
+    }
+  }
 }
