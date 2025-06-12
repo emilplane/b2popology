@@ -7,8 +7,8 @@ from api.models.models import Simulation
 prefix = '/api/ecosim/'
 
 def register_ecosim_routes(app):
+    # For now, I will not require authentication for this specific route.
     @app.route(prefix, methods=['POST'])
-    @token_required 
     def eco_sim():
         """POST method to run an eco simulation"""
         data = request.get_json()
@@ -24,7 +24,7 @@ def register_ecosim_routes(app):
         farm_info = data.get('farms')
         if farm_info: 
             farms = [
-                b2.InitFarm(
+                b2.initFarm(
                     rounds.getTimeFromRound(f['round']), 
                     upgrades = f['upgrades']
                 ) 
@@ -70,11 +70,18 @@ def register_ecosim_routes(app):
         game_state = b2.GameState(initial_state_game)
         game_state.fastForward(target_round = 15)
 
-        return jsonify({
+        return_obj = {
             "timeStates": game_state.time_states,
             "cashStates": game_state.cash_states,
             "ecoStates": game_state.eco_states
-        })
+        }
+
+        print("Eco sim returned: ")
+        print(return_obj['timeStates'])
+        print(return_obj['cashStates'])
+        print(return_obj['ecoStates'])
+        
+        return jsonify(return_obj)
 
     @app.route(prefix + 'get', methods=['GET'])
     @token_required

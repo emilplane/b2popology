@@ -1,5 +1,6 @@
 # Importing the basics
 from flask import Flask
+from flask_cors import CORS
 from mongoengine import connect 
 
 # Import routes
@@ -11,6 +12,7 @@ import api.models.models as m
 def create_app():
     # Create the Flask app
     app = Flask(__name__)
+    CORS(app)
 
     # Connect to the MongoDB database
     connect('b2popology', host='mongodb://localhost:27017/b2popology')
