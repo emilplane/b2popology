@@ -1,7 +1,7 @@
 import warnings
 from dataclasses import dataclass
-from enum import Enum, auto
-from typing import Any, Callable, Optional
+from enum import Enum
+from typing import Any
 
 
 class TowerDataFormats(str, Enum):

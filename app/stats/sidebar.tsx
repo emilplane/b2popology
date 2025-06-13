@@ -22,7 +22,7 @@ function StatsTowerCard({ category, displayName, internalName }: StatsTowerCardP
             `flex flex-col justify-center items-start gap-0 relative
             rounded-lg p-1.5 w-full ${getBackgroundColorClass()}`}>
             <p className="monosp">{category}</p>
-            <p className="text-lg leading-[1.25rem] ">{displayName}</p>
+            <p className="text-lg leading-5">{displayName}</p>
             <div className="absolute right-0 w-full h-full flex justify-end items-center mr-4">
                 <div className="h-full aspect-square flex items-center justify-center relative">
                     <Image src={`/towerPortraits/${internalName}/base.png`} alt={`${displayName} icon`} fill

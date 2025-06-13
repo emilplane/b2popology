@@ -1,16 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Luckiest+Guy&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Luckiest+Guy&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
 
+  --color-brand: hsl(160, 100%, 39%);
+  --color-brand-light: hsl(160, 56%, 74%);
+  --color-brand-dark: hsl(160, 100%, 18%);
+
+  --color-primary: #109ee6;
+  --color-primary-light: #b0d4e7;
+  --color-primary-dark: #074564;
+
+  --color-military: #7bdf4a;
+  --color-military-light: #c8e9b7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility monosp {
+  @apply uppercase text-xs text-gray-700;
+  font-family: 'Roboto Mono', monospace;
+}
+
+@utility luckiest-guy {
+  @apply text-2xl;
+  font-family: 'Luckiest Guy', cursive;
+  margin-bottom: -0.15em;
+}
+
+@utility icon-shadow {
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+@layer utilities {
+  :root {
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+    }
   }
 }
 
@@ -20,23 +71,23 @@
     font-family: 'Gabarito', sans-serif;
   }
 
-  p {
+  h3 {
+    @apply text-2xl;
     font-family: 'Gabarito', sans-serif;
   }
 
-  .monosp {
-    @apply uppercase text-xs text-gray-600;
-    font-family: 'Roboto Mono', monospace;
+  h4 {
+    @apply text-xl;
+    font-family: 'Gabarito', sans-serif;
   }
 
-  .luckiest-guy {
-    @apply text-2xl;
-    font-family: 'Luckiest Guy', cursive;
-    margin-bottom: -0.15em;
+  h5 {
+    @apply text-lg;
+    font-family: 'Gabarito', sans-serif;
   }
 
-  .icon-shadow {
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  p {
+    font-family: 'Gabarito', sans-serif;
   }
 }
 

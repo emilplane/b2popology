@@ -14,9 +14,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className='bg-gray-200'>
+        <body className='bg-linear-to-br from-gray-200 to-gray-100 h-screen'>
         <NavBar />
-        <div className="max-w-screen-2xl mx-auto px-4 pt-2 z-10">
+        <div className="max-w-(--breakpoint-2xl) mx-auto px-4 pt-2 z-10">
             {children}
         </div>
         </body>

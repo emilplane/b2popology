@@ -1,6 +1,6 @@
 {
   "display_name": "Dart Monkey",
-  "category": "Primary",
+  "category": "primary",
   "last_changed_version": "4.6.1.[OTA 1]",
 
   "stats": {
@@ -10,7 +10,7 @@
           "type": "tower_stats",
           "name": "tower-stats",
           "properties": {
-            "range": 40,
+            "range": 32,
             "size": 6
           }
         },
@@ -18,7 +18,17 @@
           "type": "attack",
           "name": "dart",
           "properties": {
-            "damage": 3.5
+            "damage": 1,
+            "pierce": 2,
+            "attack_cooldown": 0.95,
+            "attack_type": "sharp"
+          }
+        },
+        {
+          "type": "attack",
+          "name": "test",
+          "properties": {
+            "damage": 1
           }
         }
       ]
