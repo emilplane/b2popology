@@ -1,6 +1,7 @@
 import warnings
 
-from api.popology.definitions import ModuleTypes, Properties, NonNegativeNumber
+from api.popology.definitions import ModuleTypes, Properties, NonNegativeNumber, LimitedString, NumericalStatModifier, \
+    NumericalStatModificationGroup
 from api.popology.upgrade_module import UpgradeModule, UpgradeModuleProperty
 
 
@@ -27,14 +28,22 @@ class TowerModuleProperty:
     def get_stat(self):
         stat = None
         if type(self.property_name.value.type) == NonNegativeNumber:
-            starting_value = 0
+            current_value = None
+            numerical_stat_modification_group = NumericalStatModificationGroup()
             for upgrade_module_property in self.upgrade_module_properties:
-                validated_value = self.property_name.value.validate(upgrade_module_property.value)
-                if type(validated_value) is float:
-                    starting_value = validated_value
+                if isinstance(upgrade_module_property.value, float):
+                    current_value = upgrade_module_property.value
+                    numerical_stat_modification_group = NumericalStatModificationGroup()
+                elif isinstance(upgrade_module_property.value, NumericalStatModifier):
+                    numerical_stat_modification_group.add_modification(upgrade_module_property.value)
                 else:
                     warnings.warn("Not implemented")
-            stat = starting_value
+            if current_value == None:
+                return current_value
+            stat = numerical_stat_modification_group.calculate_stats_with_base_value(current_value)
+        elif type(self.property_name.value.type) == LimitedString:
+            for upgrade_module_property in self.upgrade_module_properties:
+                stat = upgrade_module_property.value
         return stat
 
 

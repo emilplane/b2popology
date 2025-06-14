@@ -29,7 +29,7 @@ class UpgradeModule:
 class UpgradeModuleProperty:
     def __init__(self, property_name: Properties, value):
         self.property_name = property_name
-        self.value = value
+        self.value = self.property_name.value.validate(value)
 
     def __repr__(self):
         return f"{self.property_name}: {self.value}"

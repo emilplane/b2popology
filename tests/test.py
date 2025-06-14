@@ -1,7 +1,7 @@
 import json
 
 from pathlib import Path
-from api.popology.definitions import Properties
+from api.popology.definitions import Properties, StatModifierType, is_valid_modifier_type
 from api.popology.popology import PopologyTower
 
 test_object = {
@@ -34,7 +34,63 @@ test_object = {
                     "type": "attack",
                     "name": "dart",
                     "properties": {
-                        "damage": 3.5,
+                        "damage": ["additive", 2],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": 6,
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["additive", 26],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["percentage", 0.3],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["multiplicative", 0.5],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["multiplicative", 4],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["invalid", "invalid"],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["additive", 18],
+                    }
+                },
+                {
+                    "type": "attack",
+                    "name": "dart",
+                    "properties": {
+                        "damage": ["percentage", 0.15],
                     }
                 },
                 {
@@ -57,6 +113,6 @@ json_path = root_dir / "statsData" / "blueprints" / "dart_monkey.json"
 with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-tower = PopologyTower(data)
+tower = PopologyTower(test_object)
 tower_stats = tower.get_tower([2, 1, 0])
-print(tower_stats)
+print(tower_stats["tower_modules"])
