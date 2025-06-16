@@ -2,9 +2,10 @@ from api.popology.definitions import ModuleTypes
 from api.popology.tower_module import TowerModule
 from api.popology.upgrade_module import UpgradeModule
 
-
 class PopologyTower:
     def __init__(self, tower_json):
+        # Popology towers are determined by their tower jsons
+        # Tower jsons are found in the StatsData folder at the root
         self.tower_json = tower_json
 
     def get_display_name(self):
@@ -27,7 +28,9 @@ class PopologyTower:
         tower_instance = Tower(self.tower_json["stats"], path)
         return tower_instance.get_dict()
 
-
+# PopologyTowers concern a class of monkey, and all the properties it may assume
+# Towers concern a particular instance (upgrade path) of a monkey. 
+# So think of this as being the difference between a Dart Monkey and a [1,2,0] Dart Monkey
 class Tower:
     def __init__(self, stats_object: dict, path: list):
         self.stats_object = stats_object
@@ -38,6 +41,8 @@ class Tower:
         self.tower_stats_module = None
         self.tower_modules = []
 
+        # Towers have something called tower module objects and tower modules, but...
+        # what do these do in the context of the Tower class?
         self._add_tower_module_objects()
         self._create_tower_modules()
 

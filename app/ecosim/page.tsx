@@ -1,8 +1,19 @@
 'use client';
 import {useEffect, useState} from 'react';
+import CashOverTimeChart from '../../components/Chart'
+
+interface EcoSimData {
+    timeStates: number[];
+    ecoStates: number[];
+    cashStates: number[];
+}
 
 export default function EcoSimPage() {
-    const [data, setData] = useState('');
+    const [data, setData] = useState<EcoSimData>({
+        timeStates: [],
+        ecoStates: [],
+        cashStates: []
+    });
 
     const ecosimParams = {
         "stallFactor": 0.1,
@@ -60,13 +71,17 @@ export default function EcoSimPage() {
     }, [data]);
 
     return (
-        <div className="w-screen min-h-screen p-3 border border-black">
-            <div className='grid grid-cols-2 gap-2 border-black'>
+        <div className="w-full min-h-screen p-3 border border-black">
+            <div className='grid grid-cols-4 gap-2 border-black'>
             {/* Contains the two elements needed for our simulator*/}
 
-                <div className="b2-component">
+                <div className="b2-component col-span-3 p-3">
                 {/* Contains a graph that displays simulation results */}
-                    <p>Foo</p>
+                    <p>Simulation Results</p>
+                    <div className="bg-white " style={{ position: 'relative', width: '100%', height: '400px' }}>
+                        <CashOverTimeChart timeStates={data.timeStates} cashStates={data.cashStates} />
+                    </div>
+                    
                 </div>
 
                 <div className="text-white bg-green-600 border border-black">

@@ -15,10 +15,10 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className='bg-linear-to-br from-gray-200 to-gray-100 h-screen'>
-        <NavBar />
-        <div className="max-w-(--breakpoint-2xl) mx-auto px-4 pt-2 z-10">
-            {children}
-        </div>
+            <NavBar />
+            <div className='mx-auto max-w-screen px-4 pt-2 z-10'>
+                {children}
+            </div>
         </body>
         </html>
     )
