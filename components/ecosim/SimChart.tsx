@@ -1,3 +1,5 @@
+// Chart component for the ecosim page
+
 import {
   Chart as ChartJS,
   LineElement,
