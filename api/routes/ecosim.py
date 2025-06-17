@@ -76,10 +76,10 @@ def register_ecosim_routes(app):
             "ecoStates": game_state.eco_states
         }
 
-        print("Eco sim returned: ")
-        print(return_obj['timeStates'])
-        print(return_obj['cashStates'])
-        print(return_obj['ecoStates'])
+        print("Eco sim successful! ")
+        # print(return_obj['timeStates'])
+        # print(return_obj['cashStates'])
+        # print(return_obj['ecoStates'])
         
         return jsonify(return_obj)
 

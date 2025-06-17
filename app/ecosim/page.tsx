@@ -2,6 +2,7 @@
 import {useEffect, useState} from 'react';
 import CashOverTimeChart from '../../components/ecosim/SimChart'
 import SimForm from '../../components/ecosim/SimForm'
+import { SimOptions } from '@/components/exports';
 
 // Interface which concerns the results of an eco simulation
 interface EcoSimData {
@@ -9,16 +10,6 @@ interface EcoSimData {
     ecoStates: number[];
     cashStates: number[];
 };
-
-// Interface which concerns the input data of an eco simulation
-interface SimOptions {
-    stallFactor: number;
-    cash: number;
-    eco: number;
-    startRound: number;
-    targetRound: number;
-    ecoSend: string;
-}
 
 export default function EcoSimPage() {
     const [data, setData] = useState<EcoSimData>({
@@ -76,32 +67,30 @@ export default function EcoSimPage() {
 
     useEffect(() => {
         if (data) {
-            console.log("Data updated to:", JSON.stringify(data, null, 2));
-            console.log(data.timeStates);
-            console.log(data.ecoStates);
+            console.log("Successfully ran simulation!");
         }
     }, [data]);
 
     // When the eco sim form is submitted, run a simulation 
     const onSubmit = async (form: SimOptions) => {
             try {
-                const submitData = {
-                    ...ecosimParams,
-                    stallFactor: form.stallFactor,
-                    cash: form.cash,
-                    eco: form.eco,
-                    startRound: form.startRound,
-                    targetRound: form.targetRound,
+                // Placeholder code...
+                form = {
+                    ...form,
                     ecoQueue: [
                         {round: 0, sendName: form.ecoSend}
                     ]
                 }
+
+                console.log("Sending the following params to b2sim:");
+                console.log(form);
+
                 const res = await fetch('/api/ecosim', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         },
-                    body: JSON.stringify(submitData)
+                    body: JSON.stringify(form)
                 });
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -111,7 +100,7 @@ export default function EcoSimPage() {
             }   catch(err) {
                 console.error("Error fetching simulation data:", err);
             }
-    }
+    };
 
     return (
         <div className="w-full min-h-screen p-3 border border-black">
