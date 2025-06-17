@@ -3,19 +3,24 @@ from api.popology.tower_module import TowerModule
 from api.popology.upgrade_module import UpgradeModule
 
 class PopologyTower:
-    def __init__(self, tower_json):
-        # Popology towers are determined by their tower jsons
-        # Tower jsons are found in the StatsData folder at the root
-        self.tower_json = tower_json
+    def __init__(self, tower_blueprint):
+        """
+        Contains all of the data and functionality for one tower in Battles 2.
+        Create an instance using the data found in a tower's JSON file, which is
+        called a tower blueprint. The instance contains various methods to retrieve
+        data related to the tower.
+        :param tower_blueprint:
+        """
+        self.tower_blueprint = tower_blueprint
 
     def get_display_name(self):
-        return self.tower_json.get("display_name", None) or None
+        return self.tower_blueprint.get("display_name", None) or None
 
     def get_last_changed_version(self):
-        return self.tower_json.get("last_changed_version", None) or None
+        return self.tower_blueprint.get("last_changed_version", None) or None
 
     def get_category(self):
-        return self.tower_json.get("category", None) or None
+        return self.tower_blueprint.get("category", None) or None
 
     def get_tower_info(self):
         return {
@@ -25,7 +30,13 @@ class PopologyTower:
         }
 
     def get_tower(self, path: list):
-        tower_instance = Tower(self.tower_json["stats"], path)
+        """
+        Retrieve the stats of this tower according to a certain path, such as
+        retrieving the stats of a 3-1-0 Monkey Ace.
+        :param path:
+        :return:
+        """
+        tower_instance = Tower(self.tower_blueprint["stats"], path)
         return tower_instance.get_dict()
 
 # PopologyTowers concern a class of monkey, and all the properties it may assume
