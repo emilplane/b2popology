@@ -38,7 +38,7 @@ class TowerModuleProperty:
                     numerical_stat_modification_group.add_modification(upgrade_module_property.value)
                 else:
                     warnings.warn("Not implemented")
-            if current_value == None:
+            if current_value is None:
                 return current_value
             stat = numerical_stat_modification_group.calculate_stats_with_base_value(current_value)
         elif type(self.property_name.value.type) == LimitedString:

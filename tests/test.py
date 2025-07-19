@@ -113,6 +113,6 @@ json_path = root_dir / "statsData" / "blueprints" / "dart_monkey.json"
 with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-tower = PopologyTower(test_object)
-tower_stats = tower.get_tower([2, 1, 0])
-print(tower_stats["tower_modules"])
+tower = PopologyTower(data)
+tower_stats = tower.get_tower([0, 0, 0])
+print(tower_stats["tower_modules"][1])

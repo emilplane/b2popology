@@ -1,6 +1,7 @@
-from api.popology.definitions import ModuleTypes
+from api.popology.definitions import ModuleTypes, UpgradePath
 from api.popology.tower_module import TowerModule
 from api.popology.upgrade_module import UpgradeModule
+
 
 class PopologyTower:
     def __init__(self, tower_blueprint):
@@ -22,11 +23,20 @@ class PopologyTower:
     def get_category(self):
         return self.tower_blueprint.get("category", None) or None
 
+    def get_available_paths_info(self):
+        stats = self.tower_blueprint["stats"].get("paths")
+        if isinstance(stats, list):
+            length_list = [len(sublist) for sublist in stats]
+            return length_list
+        else:
+            return []
+
     def get_tower_info(self):
         return {
             "display_name": self.get_display_name(),
             "last_changed_version": self.get_last_changed_version(),
-            "category": self.get_category()
+            "category": self.get_category(),
+            "available_paths_info": self.get_available_paths_info()
         }
 
     def get_tower(self, path: list):
@@ -36,14 +46,15 @@ class PopologyTower:
         :param path:
         :return:
         """
-        tower_instance = Tower(self.tower_blueprint["stats"], path)
+        tower_instance = Tower(self.tower_blueprint["stats"], UpgradePath(path))
         return tower_instance.get_dict()
+
 
 # PopologyTowers concern a class of monkey, and all the properties it may assume
 # Towers concern a particular instance (upgrade path) of a monkey. 
 # So think of this as being the difference between a Dart Monkey and a [1,2,0] Dart Monkey
 class Tower:
-    def __init__(self, stats_object: dict, path: list):
+    def __init__(self, stats_object: dict, path: UpgradePath):
         self.stats_object = stats_object
         self.path = path
 
@@ -73,7 +84,25 @@ Modules: {len(self.tower_modules)}
         return output_dict
 
     def _add_tower_module_objects(self):
+        # Add base modules
         self.tower_module_objects.extend(self.stats_object["base"]["modules"])
+
+        # Rankes the indices of the paths for which one to append first
+        # For example, for a [2, 4, 0] tower, the middle path's modules should be appended before the top path's modules
+        ranked = sorted(
+            range(len(self.path.upgrade_list)),
+            key=lambda i: (-self.path.upgrade_list[i], i)
+        )
+
+        for ranked_path_index in ranked:
+            # Check if this path exists
+            if ranked_path_index < len(self.stats_object.get("paths", [])):
+                # Iterate through each upgrade in the path
+                for (upgrade_index, upgrade_data) in enumerate(self.stats_object["paths"][ranked_path_index]):
+                    upgrade = upgrade_index + 1
+                    # Add this upgrade if it is part of the specified UpgradePath
+                    if self.path.upgrade_included_in_instance(ranked_path_index, upgrade):
+                        self.tower_module_objects.extend(upgrade_data)
 
     def _create_tower_modules(self):
         self.tower_stats_module = TowerModule(ModuleTypes.tower_stats, "tower-stats")

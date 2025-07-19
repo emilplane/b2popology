@@ -32,6 +32,39 @@
           }
         }
       ]
-    }
+    },
+    "paths": [
+      [
+        [
+          {
+            "type": "attack",
+            "name": "test",
+            "properties": {
+              "damage": ["additive", 2]
+            }
+          }
+        ],
+        [
+          {
+            "type": "attack",
+            "name": "test",
+            "properties": {
+              "damage": ["additive", 7]
+            }
+          }
+        ]
+      ],
+      [
+
+      ],
+      [
+        [
+
+        ],
+        [
+
+        ]
+      ]
+    ]
   }
 }

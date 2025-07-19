@@ -94,6 +94,10 @@ layer(base);
   p {
     font-family: 'Gabarito', sans-serif;
   }
+
+  button {
+    @apply bg-gray-500/20 p-0 px-1.5 rounded-md cursor-pointer
+  }
 }
 
 body {

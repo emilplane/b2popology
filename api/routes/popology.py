@@ -31,5 +31,5 @@ def register_popology_routes(app):
         path3 = request.args.get('path3')
 
         tower = PopologyTower(data)
-        tower_stats = tower.get_tower([0, 0, 0])
+        tower_stats = tower.get_tower([path1, path2, path3])
         return jsonify(tower_stats)

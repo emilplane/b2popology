@@ -2,7 +2,7 @@ import math
 import warnings
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any, Literal
+from typing import Any
 
 
 class TowerDataFormats(str, Enum):
@@ -16,11 +16,31 @@ class ModuleTypes(Enum):
 
 
 class UpgradePath:
-    def __init__(self, path1, path2, path3):
-        self.path1 = path1
-        self.path2 = path2
-        self.path3 = path3
+    def __init__(self, upgrade_list: list):
+        self.upgrade_list = []
+        for upgrade_num in upgrade_list:
+            try:
+                value = int(upgrade_num) if isinstance(upgrade_num, str) else upgrade_num
+            except (ValueError, TypeError):
+                value = 0
 
+            if isinstance(value, int) and value >= 0:
+                self.upgrade_list.append(value)
+            else:
+                self.upgrade_list.append(0)
+
+    def upgrade_in_path(self, index: int):
+        if 0 <= index < len(self.upgrade_list):
+            return self.upgrade_list[index]
+        else:
+            return 0
+
+    def upgrade_included_in_instance(self, path: int, upgrade: int):
+        print(self.upgrade_list)
+        if 0 <= path < len(self.upgrade_list):
+            if upgrade <= self.upgrade_list[path]:
+                return True
+        return False
 
 # --- Numerical stat modification ---
 
@@ -54,8 +74,10 @@ class NumericalStatModifier:
         else:
             self.valid = False
 
+
 class NumericalStatModificationGroup:
     """Handles the calculation of stat modifiers onto a base numerical property value."""
+
     def __init__(self):
         self.additions = []
         self.percentages = []
@@ -70,7 +92,8 @@ class NumericalStatModificationGroup:
             elif modifier.modifier == StatModifierType.MULTIPLICATIVE:
                 self.multiplicatives.append(modifier.modifier_value)
         else:
-            warnings.warn(f"NumericalStatModifier ({modifier.modifier}, {modifier.modifier_value}) ignored because it was marked as not valid")
+            warnings.warn(
+                f"NumericalStatModifier ({modifier.modifier}, {modifier.modifier_value}) ignored because it was marked as not valid")
 
     def calculate_stats_with_base_value(self, base_value: int | float | complex):
         calculated_value = base_value
@@ -81,6 +104,7 @@ class NumericalStatModificationGroup:
         if len(self.additions) > 0:
             calculated_value = calculated_value + sum(self.additions)
         return calculated_value
+
 
 # --- Parent property class ---
 

@@ -4,7 +4,7 @@
 export interface Farm {
     round: number;
     upgrades: number[];
-};
+}
 
 // Eco sends as they are needed to be input into the simulator
 export interface EcoSend {
@@ -24,7 +24,7 @@ export interface SimOptions {
 
     ecoQueue: EcoSend[];
     buyQueue: any[];
-};
+}
 
 export const inputClass = "bg-white text-black mt-1 block w-full border border-black rounded p-2"; // Concerns how input boxes are stylized in SimForm
 export const inputLabelClass = "text-white font-bold"; // Concerns how input labels are stylized in SimForm
