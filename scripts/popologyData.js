@@ -10803,7 +10803,7 @@ const data = {
                                     <li>Count: 40</li>
                                     <li>Total time: 0.8s</li>
                                     <li>Eco: +$0</li>
-                                    <li>Cost: $2,800</li>
+                                    <li>Cost: $3,200</li>
                                 </ul>
                             </li>
                             <li>Super Ceramics
