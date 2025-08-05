@@ -2014,7 +2014,8 @@ const data = {
                                     "explosion buffed: +1d (2d)",
                                     "gains takedown ability (30s cooldown, battle ready)",
                                     [
-                                        "targets the strongest \"small\" blimp (not ZOMG or BAD), immediately removing it"
+                                        "targets the strongest \"small\" blimp (not ZOMG or BAD), immediately removing it",
+                                        "Hooking a MOAB earns 400$, BFB 800$, ZOMG or DDT 1200$"
                                     ],
                                     "crosspath",
                                     [
@@ -2064,7 +2065,7 @@ const data = {
                             "3": {
                                 "name": "003 - Merchantman",
                                 "content": [
-                                    "$300 end of round income"
+                                    "$350 end of round income"
                                 ]
                             },
                             "4": {
@@ -2106,7 +2107,7 @@ const data = {
                     "name": "Monkey Ace",
                     "data": {
                         "base": [
-                            "$700 (500 MM)",
+                            "$850 (500 MM)",
                             "size: 28 units * 18 units",
                             "placeable on: land",
                             "22r",
@@ -2853,7 +2854,7 @@ const data = {
                     "name": "Dartling Gunner",
                     "data": {
                         "base": [
-                            "$800 (500 MM)",
+                            "$700 (500 MM)",
                             "size: 8 radius",
                             "placeable on: land",
                             "20r",
@@ -3435,7 +3436,7 @@ const data = {
                                     "temple sacrifice on upgrade",
                                     [
                                         "sacrifices towers in range, not heroes",
-                                        "on a sacrifice value threshold of $15,000 or greater of primary towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of primary towers:",
                                         [
                                             "gains temple buff",
                                             [
@@ -3446,7 +3447,7 @@ const data = {
                                                 "20d, 8j, 20p, 65r, 1.5s, normal type"
                                             ]
                                         ],
-                                        "on a sacrifice value threshold of $15,000 or greater of military towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of military towers:",
                                         [
                                             "gains temple buff",
                                             [
@@ -3462,7 +3463,7 @@ const data = {
                                                 ]
                                             ]
                                         ],
-                                        "on a sacrifice value threshold of $15,000 or greater of magic towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of magic towers:",
                                         [
                                             "gains magic-tornado attack",
                                             [
@@ -3480,7 +3481,7 @@ const data = {
                                                 "+2p, +50% projectile lifespan"
                                             ]
                                         ],
-                                        "on a sacrifice value threshold of $15,000 or greater of support towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of support towers:",
                                         [
                                             "gains temple buff",
                                             [
@@ -3506,7 +3507,7 @@ const data = {
                                     "temple sacrifice on upgrade",
                                     [
                                         "sacrifices towers in range, not heroes",
-                                        "on a sacrifice value threshold of $15,000 or greater of primary towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of primary towers:",
                                         [
                                             "gains primary-glaives attack",
                                             [
@@ -3514,7 +3515,7 @@ const data = {
                                                 "jumps to a nearby target after hitting",
                                             ]
                                         ],
-                                        "on a sacrifice value threshold of $15,000 or greater of military towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of military towers:",
                                         [
                                             "spawns two golden aircrafts, first after 0.0s, second after 1.2s",
                                             [
@@ -3537,7 +3538,7 @@ const data = {
                                                 ]
                                             ]
                                         ],
-                                        "on a sacrifice value threshold of $15,000 or greater of magic towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of magic towers:",
                                         [
                                             "spawns a mini sun avatar after 10.0s, then more mini sun avatars at an interval of 30.0s",
                                             "places mini sun avatar between tower footprint and range",
@@ -3553,7 +3554,7 @@ const data = {
                                                 ]
                                             ]
                                         ],
-                                        "on a sacrifice value threshold of $15,000 or greater of support towers:",
+                                        "on a sacrifice value threshold of $20,000 or greater of support towers:",
                                         [
                                             "gains temple-permaspikes attack",
                                             [
@@ -4285,6 +4286,7 @@ const data = {
                                     [
                                         "6.0s",
                                         "5s lifetime",
+                                        "has homing",
                                         "has a modified lightning attack (2d, 43r, 0.35s passive)"
                                     ]
                                 ]
@@ -4330,7 +4332,7 @@ const data = {
                                 "content": [
                                     "all attacks buffed",
                                     [
-                                        "on damage: degrow"
+                                        "on damage: degrow, 33% chance to unfortify non-blimps"
                                     ]
                                 ]
                             },
@@ -4788,7 +4790,7 @@ const data = {
                             "1": {
                                 "name": "001 - Quality Soil",
                                 "content": [
-                                    "top and middle path upgrades are discounted +20%",
+                                    "top and middle path upgrades are discounted by 15%",
                                 ]
                             },
                             "2": {
@@ -5148,6 +5150,7 @@ const data = {
                                     "build-sentry buffed",
                                     [
                                         "places crushing-sentry, boom-sentry, cold-sentry, energy-sentry on a cycle, but sentries may be skipped depending on the bloons on screen",
+                                        "4 sentries instantly built on purchase",
                                         [
                                             "crushing-sentry",
                                             [
@@ -5609,7 +5612,7 @@ const data = {
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)",
                             [
-                                "25d, 25md (50md), ∞p, 50r zone, 0.05s, plasma type",
+                                "15d, 25md (40md), ∞p, 50r zone, 0.05s, plasma type",
                                 "centered according to Quincy's targeting when activated"
                             ]
                         ],
@@ -5635,6 +5638,10 @@ const data = {
                             "all attacks buffed",
                             [
                                 "+5md (+8md, 11md)"
+                            ],
+                            "cyber-storm buffed",
+                            [
+                                "+10d (25d)"
                             ]
                         ],
                         "15": [
@@ -5740,7 +5747,7 @@ const data = {
                             "grants pyro-expert buff",
                             [
                                 "affects all 4+xx Tack Shooter, xx3+ Mortar Monkey, and x3+x Monkey Wizard",
-                                "+10%r, 90%s"
+                                "+10%r, 85%s"
                             ]
                         ],
                         "6": [
@@ -5848,7 +5855,7 @@ const data = {
                             "heat-it-up now triggered by 64 shots",
                             "pyro-expert buffed",
                             [
-                                "+20%r, 20%s"
+                                "+20%r, 70%s"
                             ]
                         ],
                         "19": [
@@ -6248,10 +6255,10 @@ const data = {
                                 "Places living-coral on the track",
                                 [
                                     "manually placed anywhere within range or defaulting to close",
-                                    "1d, 20p, sharp type",
+                                    "1d, 30p, sharp type",
                                     "can regenerate",
                                     [
-                                        "+10p/10s, max 100p"
+                                        "+15p/10s, max 150p"
                                     ],
                                     "95s lifetime"
                                 ]
@@ -6284,11 +6291,11 @@ const data = {
                         "7": [
                             "living-coral buffed",
                             [
-                                "+20p (40p)"
+                                "+30p (60p)"
                             ],
                             "regenerate buffed",
                             [
-                                "+20p/10s, max 200p"
+                                "+30p/10s, max 30p"
                             ]
                         ],
                         "8": [
@@ -6365,11 +6372,11 @@ const data = {
                         "16": [
                             "living-coral buffed",
                             [
-                                "+160p (200p), normal type"
+                                "+240p (300p), normal type"
                             ],
                             "regenerate buffed",
                             [
-                                "+100p/10s, max 800p"
+                                "+150p/10s, max 1200p"
                             ]
                         ],
                         "17": [
@@ -7597,7 +7604,7 @@ const data = {
                             ]
                         ],
                         "7": [
-                            "scratch ability (40s cooldown, 11s duration, battle ready, cost 5 lives)",
+                            "scratch ability (40s cooldown, 15s duration, battle ready, cost 5 lives)",
                             [
                                 "places scratching-post at selected point",
                                 [
@@ -7685,7 +7692,7 @@ const data = {
                             ]
                         ],
                         "16": [
-                            "scratch ability buffed: costs 1 life",
+                            "scratch ability buffed: costs 1 life, 30s duration",
                             "scratching-post subtower buffed",
                             [
                                 "60s lifetime"
@@ -10803,7 +10810,7 @@ const data = {
                                     <li>Count: 40</li>
                                     <li>Total time: 0.8s</li>
                                     <li>Eco: +$0</li>
-                                    <li>Cost: $2,800</li>
+                                    <li>Cost: $3,200</li>
                                 </ul>
                             </li>
                             <li>Super Ceramics
@@ -11118,9 +11125,9 @@ const data = {
                 "bottom": [300, 400, 1500, 5700, 19000]
             },
             "monkeyAce": {
-                "base": 700,
+                "base": 850,
                 "top": [550, 600, 1000, 3000, 40000],
-                "middle": [200, 350, 900, 15000, 30000],
+                "middle": [200, 350, 1000, 15000, 30000],
                 "bottom": [450, 300, 2200, 20000, 75000]
             },
             "heliPilot": {
@@ -11136,7 +11143,7 @@ const data = {
                 "bottom": [400, 500, 700, 8500, 40000]
             },
             "dartlingGunner": {
-                "base": 800,
+                "base": 700,
                 "top": [250, 600, 2800, 12000, 80000],
                 "middle": [250, 500, 5100, 5500, 68000],
                 "bottom": [150, 800, 3400, 16000, 50000]
@@ -11151,7 +11158,7 @@ const data = {
             },
             "superMonkey": {
                 "base": 2000,
-                "top": [1400, 2500, 11500, 80000, 200000],
+                "top": [1400, 2500, 13000, 80000, 200000],
                 "middle": [1000, 1000, 10000, 20000, 90000],
                 "bottom": [3000, 1200, 4500, 27000, 100000]
             },
@@ -11179,7 +11186,7 @@ const data = {
                 "base": 1000,
                 "top": [400, 1500, 800, 2500, 25000],
                 "middle": [250, 1700, 5000, 23500, 45000],
-                "bottom": [500, 500, 1500, 7200, 15000]
+                "bottom": [500, 500, 1500, 7200, 20000]
             },
             "bananaFarm": {
                 "base": 1000,
