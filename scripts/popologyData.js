@@ -7112,11 +7112,11 @@ const data = {
                             "+$50 end of round income ($150)"
                         ],
                         "3": [
-                            "gains biohack ability (45s cooldown, 11.25s initial)",
+                            "gains biohack ability (45s cooldown, 11.25s initial, 6s duration)",
                             [
                                 "applies hacked buff to the nearest 6 towers",
                                 [
-                                    "+2d, 6s duration",
+                                    "+2d",
                                     "cannot attack for 2s after the buff expires"
                                 ]
                             ]
@@ -7237,11 +7237,11 @@ const data = {
                             "$(75+15t) end of round income"
                         ],
                         "3": [
-                            "gains good-vibes ability (45s cooldown, 11.25s initial)",
+                            "gains good-vibes ability (45s cooldown, 11.25s initial, 6s duration)",
                             [
                                 "applies party-time buff to the farthest 3 towers of each type",
                                 [
-                                    "6s duration, +2d",
+                                    "+2d",
                                     "cannot attack for 2s after the buff expires"
                                 ]
                             ]
