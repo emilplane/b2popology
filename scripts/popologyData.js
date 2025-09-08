@@ -2147,7 +2147,7 @@ const data = {
                                         "moderate homing (accelerates from a starting turn rate of 25 up to 400, accelerating projectile speed as well)",
                                         "on contact: explosion",
                                         [
-                                            "20d, 4p, 30r blast, normal type"
+                                            "20d, 4p, 12r blast, normal type"
                                         ]
                                     ],
                                     "crosspath",
@@ -2183,7 +2183,7 @@ const data = {
                                     ],
                                     "explosion buffed",
                                     [
-                                        "200d, +1p (5p)"
+                                        "250d, +1p (5p), +10r (22r)"
                                     ]
                                 ]
                             }
@@ -3055,6 +3055,10 @@ const data = {
                                     [
                                         "+1d (5d)"
                                     ],
+                                    "knockback status buffed",
+                                    [
+                                        "can knock back MOABs and BFBs"
+                                    ],
                                     "gains 3 more buckshot attacks, which attack in sequence for effectively 0.375s attack cooldown",
                                     "gains independent targeting",
                                     [
@@ -3071,9 +3075,13 @@ const data = {
                                     [
                                         "independent targeting priorities: first, strong"
                                     ],
+                                    "knockback status buffed",
+                                    [
+                                        "can knock back DDTs and ZOMGs"
+                                    ],
                                     "all attacks buffed",
                                     [
-                                        "+3d (8d), +6j (12j), +2p (9p)"
+                                        "+3d (8d), +6j (12j), +2p (9p), normal type"
                                     ]
                                 ]
                             }
@@ -7132,7 +7140,7 @@ const data = {
                             "gains bank-hack buff",
                             [
                                 "affects all x3+3+ farms",
-                                "+12% income during the round"
+                                "+10% income during the round"
                             ]
                         ],
                         "6": [
@@ -7155,7 +7163,7 @@ const data = {
                         "9": [
                             "bank-hack buffed",
                             [
-                                "now +18%"
+                                "now +15%"
                             ]
                         ],
                         "10": [
@@ -7230,7 +7238,7 @@ const data = {
                             "Unlock Cost: 2,000 MM + 40,000 Benjamin Points",
                             "size: 7 radius",
                             "placeable on: land",
-                            "25r",
+                            "35r",
                             "$(50+10t) end of round income; t = number of towers in range"
                         ],
                         "2": [
@@ -8652,7 +8660,7 @@ const data = {
                             "smuggle-run buffed",
                             [
                                 "40s cooldown",
-                                "$25,000 capacity",
+                                "$27,000 capacity",
                                 "affects BAD bloons"
                             ],
                             "sent fortified bloons buffed",
@@ -8880,7 +8888,7 @@ const data = {
                             [
                                 "buffs fate-bolt",
                                 [
-                                    "(d*2)d (2d), (p*j*7)p (35p), normal type",
+                                    "(d*2)d (2d), (p*j*8)p (35p), normal type",
                                 ],
                                 "on enemy bloon boost: 18% cooldown (9s cooldown)"
                             ]
@@ -11016,6 +11024,12 @@ const data = {
                                     <li>Cash modifier: $2x</li>
                                 </ul>
                             </li>
+                            <li>Phayze
+                                <ul>
+                                    <li>Unlocked Round 15</li>
+                                    <li>Cash modifier: $1.75x</li>
+                                </ul>
+                            </li>
                             <li>Fortified
                                 <ul>
                                     <li>Unlocked Round 18</li>
@@ -11088,7 +11102,7 @@ const data = {
             },
             "tackShooter": {
                 "base": 280,
-                "top": [150, 400, 700, 3500, 45500],
+                "top": [150, 400, 700, 3500, 35500],
                 "middle": [100, 225, 750, 3000, 15000],
                 "bottom": [100, 100, 450, 3400, 24000]
             },
@@ -11125,8 +11139,8 @@ const data = {
                 "bottom": [300, 400, 1500, 5700, 19000]
             },
             "monkeyAce": {
-                "base": 850,
-                "top": [550, 600, 1000, 3000, 40000],
+                "base": 750,
+                "top": [550, 600, 1100, 3000, 40000],
                 "middle": [200, 350, 1000, 15000, 30000],
                 "bottom": [450, 300, 2200, 20000, 75000]
             },

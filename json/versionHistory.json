@@ -3,7 +3,7 @@
     "currentVersion": [
         0,
         27,
-        13
+        14
     ],
     "versionHistory": {
         "0": {
@@ -1289,6 +1289,13 @@
                         "Fixed 050 Bomb Shooter's buff to the explosion damage being labeled as a buff to the bomb attack (jake6542)",
                         "Corrected 050 Ninja Monkey's damage done to new blimps entering the map to 12.5%d (jake6542)",
                         "Added bug where 050 Ninja Monkey's ability also works on on-screen blimps (jake6542)"
+                    ]
+                },
+                "14": {
+                    "date": "2025/9/8",
+                    "content": [
+                        "Added Battles 2 4.9 changes",
+                        "Corrected 3xx Monkey Ace's moab-missile explosion radius"
                     ]
                 }
             }
