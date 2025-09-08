@@ -114,9 +114,14 @@ Modules: {len(self.tower_modules)}
                 # Find the module instance for this UpgradeModule if it has been created already
                 selected_tower_module = None
                 for tower_module in self.tower_modules:
-                    if tower_module.name == upgrade_module.name:
-                        selected_tower_module = tower_module
-                        break
+                    if upgrade_module.replace:
+                        if upgrade_module.replace in tower_module.all_names:
+                            selected_tower_module = tower_module
+                            break
+                    else:
+                        if upgrade_module.name in tower_module.all_names:
+                            selected_tower_module = tower_module
+                            break
 
                 # Create module instance if it does not yet exist
                 if not selected_tower_module:

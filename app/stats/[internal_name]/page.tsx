@@ -18,7 +18,6 @@ export default async function StatsTowerPage({params}: StatsTowerPageProps) {
 
         const resStats = await fetch(`http://localhost:3000/api/popology/tower_stats/${internal_name}?path1=0&path2=0&path3=0`);
         stats = await resStats.json();
-        console.log(stats);
     } catch (error) {
         console.error(error);
     }

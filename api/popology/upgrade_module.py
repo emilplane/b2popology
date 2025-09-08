@@ -12,6 +12,7 @@ class UpgradeModule:
             self.type = member
 
         self.name = module_data["name"]
+        self.replace = module_data.get("replace")
         self.properties = []
 
         for property_name in module_data["properties"]:

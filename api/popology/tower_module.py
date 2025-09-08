@@ -51,6 +51,7 @@ class TowerModule:
     def __init__(self, module_type: ModuleTypes, name: str):
         self.module_type = module_type
         self.name = name
+        self.all_names = [name]
         self.upgrade_modules = []
 
     def __repr__(self):
@@ -71,6 +72,13 @@ class TowerModule:
 
     def add_upgrade_module(self, upgrade_module: UpgradeModule):
         self.upgrade_modules.append(upgrade_module)
+        self.update_names()
+
+    def update_names(self):
+        for upgrade_module in self.upgrade_modules:
+            if upgrade_module.replace:
+                self.name = upgrade_module.name
+                self.all_names.append(upgrade_module.name)
 
     def get_stats(self):
         tower_module_properties = {}

@@ -114,5 +114,5 @@ with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 tower = PopologyTower(data)
-tower_stats = tower.get_tower([0, 0, 0])
-print(tower_stats["tower_modules"][1])
+tower_stats = tower.get_tower([4, 0, 0])
+print(tower_stats["tower_modules"])

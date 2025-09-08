@@ -23,13 +23,6 @@
             "attack_cooldown": 0.95,
             "attack_type": "sharp"
           }
-        },
-        {
-          "type": "attack",
-          "name": "test",
-          "properties": {
-            "damage": 1
-          }
         }
       ]
     },
@@ -38,31 +31,69 @@
         [
           {
             "type": "attack",
-            "name": "test",
+            "name": "dart",
             "properties": {
-              "damage": ["additive", 2]
+              "pierce": ["additive", 1]
             }
           }
         ],
         [
           {
             "type": "attack",
-            "name": "test",
+            "name": "dart",
             "properties": {
-              "damage": ["additive", 7]
+              "pierce": ["additive", 3]
             }
           }
-        ]
-      ],
-      [
-
-      ],
-      [
-        [
-
         ],
         [
-
+          {
+            "type": "attack",
+            "name": "spikeball",
+            "replace": "dart",
+            "properties": {
+              "ceramic_damage": 1,
+              "pierce": ["additive", 17],
+              "attack_cooldown": 1.15,
+              "attack_type": "shatter"
+            }
+          },
+          {
+            "type": "tower_stats",
+            "name": "tower-stats",
+            "properties": {
+              "range": ["percentage", 0.15]
+            }
+          }
+        ],
+        [
+          {
+            "type": "attack",
+            "name": "juggernaut",
+            "replace": "spikeball",
+            "properties": {
+              "damage": ["additive", 1],
+              "ceramic_damage": ["additive", 3],
+              "pierce": ["additive", 27],
+              "attack_cooldown": 1,
+              "attack_type": "normal"
+            }
+          }
+        ],
+        [
+          {
+            "type": "attack",
+            "name": "ultrajugg",
+            "replace": "juggernaut",
+            "properties": {
+              "damage": ["additive", 3],
+              "ceramic_damage": ["additive", 12],
+              "fortified_damage": 5,
+              "pierce": ["additive", 27],
+              "attack_cooldown": 1,
+              "attack_type": "normal"
+            }
+          }
         ]
       ]
     ]

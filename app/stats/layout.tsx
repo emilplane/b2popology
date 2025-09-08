@@ -13,9 +13,11 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <main className="grid grid-cols-[16rem_1fr] gap-4">
-            <StatsSidebar />
-            {children}
-        </main>
+        <div className="flex items-center justify-center">
+            <main className="w-full grid grid-cols-[16rem_1fr] gap-4 max-w-(--breakpoint-2xl)">
+                <StatsSidebar />
+                {children}
+            </main>
+        </div>
     )
 }

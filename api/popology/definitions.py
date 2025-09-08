@@ -36,7 +36,6 @@ class UpgradePath:
             return 0
 
     def upgrade_included_in_instance(self, path: int, upgrade: int):
-        print(self.upgrade_list)
         if 0 <= path < len(self.upgrade_list):
             if upgrade <= self.upgrade_list[path]:
                 return True
@@ -194,6 +193,8 @@ class Properties(Enum):
     range = PropertyData(NonNegativeNumber(), None)
     size = PropertyData(NonNegativeNumber(), None)
     damage = PropertyData(NonNegativeNumber(), None)
+    ceramic_damage = PropertyData(NonNegativeNumber(), None)
+    fortified_damage = PropertyData(NonNegativeNumber(), None)
     pierce = PropertyData(NonNegativeNumber(), None)
     attack_cooldown = PropertyData(NonNegativeNumber(), None)
     attack_type = PropertyData(LimitedString(
