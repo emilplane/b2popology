@@ -7234,7 +7234,7 @@ const data = {
                             "size: 7 radius",
                             "placeable on: land",
                             "35r",
-                            "$(50+10t) end of round income; t = number of towers in range"
+                            "$(50+10t) end of round income; t = number of towers in range (maximum is 10 towers)"
                         ],
                         "2": [
                             "$(75+15t) end of round income"
