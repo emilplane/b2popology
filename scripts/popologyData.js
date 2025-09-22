@@ -6342,11 +6342,6 @@ const data = {
                             "spirit buffed",
                             [
                                 "0.8s"
-                            ],
-                            "wrath-of-the-sea buffed",
-                            [
-                                "+1d",
-                                "druids don't recive the additional damage buff"
                             ]
                         ],
                         "13": [
@@ -7217,7 +7212,7 @@ const data = {
                         "19": [
                             "hacked buffed",
                             [
-                                "now +3d, 9s duration"
+                                "now +4d, 9s duration"
                             ]
                         ],
                         "20": [
@@ -7460,7 +7455,7 @@ const data = {
                                 "targets one blimp, excluding BADs, according to current priority",
                                 "applies hex status",
                                 [
-                                    "(4%+1)d/1s, max tick 7500d",
+                                    "(7%+1)d/1s, max tick 7500d",
                                     "spawns no children",
                                     "may stack",
                                     "transfers to the next target if it pops with time remaining"
