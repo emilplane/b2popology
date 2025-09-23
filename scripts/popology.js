@@ -397,7 +397,7 @@ function runPopology(compare) {
                         contentHTML += `<h3 class="pathName">${pathName(path)} Path</h3>`
                         for (let upgrade in popologyData.stats[selectedCategory].entries[selectedPage].data[path]) {
                             if (popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name === "005 - Monkeyopolis") {
-                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $15,000 + $5,000 * Monkey Village</h5>`
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $20,000 + $5,000 * Monkey Village</h5>`
                             } else {
                                 contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()}</h5>`
                             }
