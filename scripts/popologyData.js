@@ -2107,7 +2107,7 @@ const data = {
                     "name": "Monkey Ace",
                     "data": {
                         "base": [
-                            "$850 (500 MM)",
+                            "$750 (500 MM)",
                             "size: 28 units * 18 units",
                             "placeable on: land",
                             "22r",
