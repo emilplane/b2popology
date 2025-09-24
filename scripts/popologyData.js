@@ -4210,7 +4210,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "104: gold-splash +6p (20p)"
+                                        "104: gold-splash +8p (20p)"
                                     ]
                                 ]
                             },
@@ -7415,7 +7415,7 @@ const data = {
                             ]
                         ],
                         "7": [
-                            "sacrifice ability (90s cooldown, cost 10 lives)",
+                            "sacrifice ability (60s cooldown, cost 10 lives)",
                             [
                                 "places sacrificial-totem at selected point",
                                 [
@@ -7450,7 +7450,7 @@ const data = {
                             ]
                         ],
                         "10": [
-                            "moab-hex ability (60s cooldown, 8.5s duration, battle ready)",
+                            "moab-hex ability (75s cooldown, 8.5s duration, battle ready)",
                             [
                                 "targets one blimp, excluding BADs, according to current priority",
                                 "applies hex status",
@@ -7473,7 +7473,7 @@ const data = {
                             "all attacks buffed: +10md",
                             "heartstopper ability buffed",
                             [
-                                "40s cooldown, 15s duration",
+                                "45s cooldown, 15s duration",
                                 "heartstop status buffed: 15s duration, normal damage type to every tower"
                             ]
                         ],
@@ -7506,7 +7506,7 @@ const data = {
                             ],
                             "sacrificial-totem subtower buffed",
                             [
-                                "60s lifetime"
+                                "40s lifetime"
                             ]
                         ],
                         "17": [
@@ -7534,7 +7534,7 @@ const data = {
                             ],
                             "moab-hex ability buffed",
                             [
-                                "40s cooldown"
+                                "45s cooldown"
                             ],
                             "hex status buffed",
                             [
