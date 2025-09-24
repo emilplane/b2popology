@@ -338,7 +338,7 @@ const data = {
                                 "content": [
                                     "boomerang attack buffed",
                                     [
-                                        "+2md (3md), 0.238s"
+                                        "+1md (2md), 0.238s"
                                     ]
                                 ]
                             },
