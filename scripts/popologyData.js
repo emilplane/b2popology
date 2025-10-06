@@ -2823,7 +2823,7 @@ const data = {
                                     [
                                         "on expire: places wall-of-fire",
                                         [
-                                            "4d, 40p, 15r zone, 0.1s, fire type, camo",
+                                            "4d, 40p, 15r zone, 0.1s, normal type, camo",
                                             "4.5s lifetime"
                                         ]
                                     ],
