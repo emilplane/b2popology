@@ -7,12 +7,16 @@ type StatsTowerCardProps = {
     internalName: string;
 };
 
-function StatsTowerCard({ category, displayName, internalName }: StatsTowerCardProps) {
+function StatsTowerCard({category, displayName, internalName}: StatsTowerCardProps) {
     function getBackgroundColorClass() {
         let backgroundColor: string = "bg-primary-light";
         switch (category) {
-            case "Primary": backgroundColor = "bg-primary-light"; break;
-            case "Military": backgroundColor = "bg-military-light"; break;
+            case "Primary":
+                backgroundColor = "bg-primary-light";
+                break;
+            case "Military":
+                backgroundColor = "bg-military-light";
+                break;
         }
         return backgroundColor;
     }
@@ -26,30 +30,9 @@ function StatsTowerCard({ category, displayName, internalName }: StatsTowerCardP
             <div className="absolute right-0 w-full h-full flex justify-end items-center mr-4">
                 <div className="h-full aspect-square flex items-center justify-center relative">
                     <Image src={`/towerPortraits/${internalName}/base.png`} alt={`${displayName} icon`} fill
-                           className="object-contain scale-125 icon-shadow" />
+                           className="object-contain scale-125 icon-shadow"/>
                 </div>
             </div>
         </button>
     </a>
-}
-
-export default function StatsSidebar() {
-    return <div className="flex flex-col gap-4">
-        <StatsTowerCard category="Primary" displayName="Dart Monkey"
-                        internalName="dart_monkey"/>
-        <StatsTowerCard category="Primary" displayName="Boomerang Monkey"
-                        internalName="boomerang_monkey"/>
-        <StatsTowerCard category="Primary" displayName="Bomb Shooter"
-                        internalName="bomb_shooter"/>
-        <StatsTowerCard category="Primary" displayName="Tack Shooter"
-                        internalName="tack_shooter"/>
-        <StatsTowerCard category="Primary" displayName="Ice Monkey"
-                        internalName="ice_monkey"/>
-        <StatsTowerCard category="Primary" displayName="Glue Gunner"
-                        internalName="glue_gunner"/>
-        <StatsTowerCard category="Military" displayName="Sniper Monkey"
-                        internalName="sniper_monkey"/>
-        <StatsTowerCard category="Military" displayName="Monkey Sub"
-                        internalName="monkey_sub"/>
-    </div>
 }

@@ -2,7 +2,29 @@
   "display_name": "Dart Monkey",
   "category": "primary",
   "last_changed_version": "4.6.1.[OTA 1]",
-
+  "upgrade_names": [
+    [
+      "Sharp Shots",
+      "Razor Sharp Shots",
+      "Spike-o-pult",
+      "Juggernaut",
+      "Ultra-Juggernaut"
+    ],
+    [
+      "Quick Shots",
+      "Very Quick Shots",
+      "Triple Shot",
+      "Super Monkey Fan Club",
+      "Plasma Monkey Fan Club"
+    ],
+    [
+      "Long Range Darts",
+      "Enhanced Eyesight",
+      "Crossbow",
+      "Sharp Shooter",
+      "Crossbow Master"
+    ]
+  ],
   "stats": {
     "base": {
       "modules": [
@@ -33,7 +55,10 @@
             "type": "attack",
             "name": "dart",
             "properties": {
-              "pierce": ["additive", 1]
+              "pierce": [
+                "additive",
+                1
+              ]
             }
           }
         ],
@@ -42,7 +67,10 @@
             "type": "attack",
             "name": "dart",
             "properties": {
-              "pierce": ["additive", 3]
+              "pierce": [
+                "additive",
+                3
+              ]
             }
           }
         ],
@@ -53,7 +81,10 @@
             "replace": "dart",
             "properties": {
               "ceramic_damage": 1,
-              "pierce": ["additive", 17],
+              "pierce": [
+                "additive",
+                17
+              ],
               "attack_cooldown": 1.15,
               "attack_type": "shatter"
             }
@@ -62,7 +93,10 @@
             "type": "tower_stats",
             "name": "tower-stats",
             "properties": {
-              "range": ["percentage", 0.15]
+              "range": [
+                "percentage",
+                0.15
+              ]
             }
           }
         ],
@@ -72,9 +106,18 @@
             "name": "juggernaut",
             "replace": "spikeball",
             "properties": {
-              "damage": ["additive", 1],
-              "ceramic_damage": ["additive", 3],
-              "pierce": ["additive", 27],
+              "damage": [
+                "additive",
+                1
+              ],
+              "ceramic_damage": [
+                "additive",
+                3
+              ],
+              "pierce": [
+                "additive",
+                27
+              ],
               "attack_cooldown": 1,
               "attack_type": "normal"
             }
@@ -86,15 +129,43 @@
             "name": "ultrajugg",
             "replace": "juggernaut",
             "properties": {
-              "damage": ["additive", 3],
-              "ceramic_damage": ["additive", 12],
+              "damage": [
+                "additive",
+                3
+              ],
+              "ceramic_damage": [
+                "additive",
+                12
+              ],
               "fortified_damage": 5,
-              "pierce": ["additive", 27],
+              "pierce": [
+                "additive",
+                27
+              ],
               "attack_cooldown": 1,
               "attack_type": "normal"
             }
           }
         ]
+      ],
+      [
+        [],
+        []
+      ],
+      [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      [
+        []
       ]
     ]
   }

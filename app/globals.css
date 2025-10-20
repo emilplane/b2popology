@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Luckiest+Guy&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap')
-layer(base);
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Luckiest+Guy&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap') layer(base);
 
 @import 'tailwindcss';
 
 @theme {
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-gradient-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
+    --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+    --background-image-gradient-conic: conic-gradient(
+            from 180deg at 50% 50%,
+            var(--tw-gradient-stops)
+    );
 
-  --color-brand: hsl(160, 100%, 39%);
-  --color-brand-light: hsl(160, 56%, 74%);
-  --color-brand-dark: hsl(160, 100%, 18%);
+    --color-brand: hsl(160, 100%, 39%);
+    --color-brand-light: hsl(160, 56%, 74%);
+    --color-brand-dark: hsl(160, 100%, 18%);
 
-  --color-primary: #109ee6;
-  --color-primary-light: #b0d4e7;
-  --color-primary-dark: #074564;
+    --color-primary: #109ee6;
+    --color-primary-light: #b0d4e7;
+    --color-primary-dark: #074564;
 
-  --color-military: #7bdf4a;
-  --color-military-light: #c8e9b7;
+    --color-military: #7bdf4a;
+    --color-military-light: #c8e9b7;
+    --color-military-dark: #385c09;
 }
 
 /*
@@ -31,73 +31,90 @@ layer(base);
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }
 
 @utility monosp {
-  @apply uppercase text-xs text-gray-700;
-  font-family: 'Roboto Mono', monospace;
+    @apply uppercase text-xs text-zinc-700;
+    font-family: 'Roboto Mono', monospace;
+
+    @media (prefers-color-scheme: dark) {
+        @apply uppercase text-xs text-zinc-200;
+
+    }
 }
 
 @utility luckiest-guy {
-  @apply text-2xl;
-  font-family: 'Luckiest Guy', cursive;
-  margin-bottom: -0.15em;
+    @apply text-2xl;
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: -0.15em;
 }
 
 @utility icon-shadow {
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 @layer utilities {
-  :root {
-  }
-
-  @media (prefers-color-scheme: dark) {
     :root {
     }
-  }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+        }
+    }
 }
 
 @layer components {
-  h1 {
-    @apply text-4xl;
-    font-family: 'Gabarito', sans-serif;
-  }
+    h1 {
+        @apply text-4xl;
+        font-family: 'Gabarito', sans-serif;
+    }
 
-  h2 {
-    @apply text-3xl;
-    font-family: 'Gabarito', sans-serif;
-  }
+    h2 {
+        @apply text-3xl;
+        font-family: 'Gabarito', sans-serif;
+    }
 
-  h3 {
-    @apply text-2xl;
-    font-family: 'Gabarito', sans-serif;
-  }
+    h3 {
+        @apply text-2xl;
+        font-family: 'Gabarito', sans-serif;
+    }
 
-  h4 {
-    @apply text-xl;
-    font-family: 'Gabarito', sans-serif;
-  }
+    h4 {
+        @apply text-xl;
+        font-family: 'Gabarito', sans-serif;
+    }
 
-  h5 {
-    @apply text-lg;
-    font-family: 'Gabarito', sans-serif;
-  }
+    h5 {
+        @apply text-lg;
+        font-family: 'Gabarito', sans-serif;
+    }
 
-  p {
-    font-family: 'Gabarito', sans-serif;
-  }
+    h6 {
+        @apply text-base;
+        font-family: 'Gabarito', sans-serif;
+    }
 
-  button {
-    @apply bg-gray-500/20 p-0 px-1.5 rounded-md cursor-pointer
-  }
+    p {
+        font-family: 'Gabarito', sans-serif;
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+        h1, h2, h3, h4, h5, h6, p {
+            @apply text-white
+        }
+    }
+
+    button {
+        @apply bg-gray-500/20 p-0 px-1.5 rounded-md cursor-pointer
+    }
 }
 
 body {
@@ -105,5 +122,5 @@ body {
 }
 
 .b2-component {
-  @apply text-white bg-green-600 border border-black;
+    @apply text-white bg-green-600 border border-black;
 }

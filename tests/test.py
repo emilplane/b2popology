@@ -115,4 +115,4 @@ with open(json_path, "r", encoding="utf-8") as f:
 
 tower = PopologyTower(data)
 tower_stats = tower.get_tower([4, 0, 0])
-print(tower_stats["tower_modules"])
+print(tower.get_upgrade_names())

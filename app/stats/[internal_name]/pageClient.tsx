@@ -1,92 +1,34 @@
 'use client';
 
-import React, {useCallback, useContext, useEffect, useState} from "react";
-import {Category, CategoryContext, SetPathContext} from "@/app/definitions";
-import {categoryStyles} from "@/styles/towerCategoryStyles";
-import SimpleNameValue from "@/components/simpleNameValue";
-import HorizontalStatsContainer from "@/components/horizontalStatsContainer";
-import {ReadonlyURLSearchParams, usePathname, useRouter, useSearchParams} from "next/navigation";
-import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import TowerPathDisplay from "@/components/TowerPathDisplay";
+import React, {createContext, useCallback, useEffect, useState} from "react";
+import {
+    Category,
+    CategoryContext,
+    ClientTowerData, ClientTowerInfo,
+    SetPathContext,
+    TowerDataContext,
+    TowerInfoContext
+} from "@/app/definitions";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {StatsPageHeader} from "@/components/popology/statsPageHeader";
+import {StatsPageContent} from "@/components/popology/statsPageContent";
 
-export function StatsPageSection({children}: { children: React.ReactNode }) {
-    const category = useContext(CategoryContext);
-    return <div className={`p-3 rounded-2xl border-2 border-solid border-${category}-light`}>
-        {children}
-    </div>
+type StatsTowerClientPageProps = {
+    internalName: string,
+    inputTowerInfo: ClientTowerInfo,
+    inputStats: ClientTowerData
 }
 
-export function Toolbar() {
-    return <StatsPageSection>
-        <TowerPathDisplay paths={[5, 5, 5]}/>
-    </StatsPageSection>
-}
-
-type StatsTowerPageHeaderProps = { displayName: string }
-
-export function StatsTowerPageHeader({displayName}: StatsTowerPageHeaderProps) {
-    const category = useContext(CategoryContext);
-    return <StatsPageSection>
-        <h1 className={`underline ${categoryStyles[category].decoration} decoration-solid`}>
-            {displayName}
-        </h1>
-        <p className="monosp text-sm">{category}</p>
-    </StatsPageSection>
-}
-
-type TowerStatsModuleContainerProps = { stats: any }
-
-export function TowerStatsModuleContainer({stats}: TowerStatsModuleContainerProps) {
-    const towerModuleProperties = stats.tower_stats_module.stats
-    const towerStatNodes = towerModuleProperties.map(
-        (prop: { property_name: string; value: string; }) =>
-            <SimpleNameValue name={prop.property_name} value={prop.value}
-                             key={`${stats.tower_stats_module.name} ${prop.property_name}`}/>)
-
-    return <StatsPageSection>
-        <HorizontalStatsContainer>
-            {towerStatNodes}
-        </HorizontalStatsContainer>
-    </StatsPageSection>
-}
-
-type ModuleContainerProps = { module: any }
-
-function ModuleContainer({module}: ModuleContainerProps) {
-    const moduleProperties = module.stats
-    const moduleStatNodes = moduleProperties.map(
-        (prop: { property_name: string; value: string; }) =>
-            <SimpleNameValue name={prop.property_name} value={prop.value}
-                             key={`${module.stats.name} ${prop.property_name}`}/>)
-
-    return <StatsPageSection>
-        <h4 className={"mb-1 text-black"}>
-            <span className={"italic font-bold"}>{module.name}</span> <span>attack</span>
-        </h4>
-        <HorizontalStatsContainer>
-            {moduleStatNodes}
-        </HorizontalStatsContainer>
-    </StatsPageSection>
-}
-
-export function ModulesFragment({stats}: TowerStatsModuleContainerProps) {
-    const moduleArray = stats.tower_modules
-    const moduleNodes = moduleArray.map(
-        (module: any) =>
-            <ModuleContainer module={module}
-                             key={`${module.name} module`}/>)
-
-    return <>{moduleNodes}</>
-}
-
-type StatsTowerClientPageProps = { internalName: string, displayName: string, category: Category, initialStats: any }
-
-export default function StatsTowerClientPage({internalName, displayName, category, initialStats}: StatsTowerClientPageProps) {
+export default function StatsTowerClientPage({
+    internalName,
+    inputTowerInfo,
+    inputStats
+}: StatsTowerClientPageProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
     const pathname = usePathname();
 
-    const [stats, setStats] = useState(initialStats);
+    const [stats, setStats] = useState(inputStats);
 
     const setPathParam = useCallback(
         (index: number, value: number) => {
@@ -94,15 +36,15 @@ export default function StatsTowerClientPage({internalName, displayName, categor
             const updatedPath = updatePathParam(params, index, value);
 
             params.set("path", updatedPath.join("-"));
-            router.push(`${pathname}?${params.toString()}`, { scroll: false });
+            router.push(`${pathname}?${params.toString()}`, {scroll: false});
         },
         [pathname, router, searchParams]
     );
 
     function updatePathParam(params: URLSearchParams, index: number, value: number) {
         const path = params.get("path")
-            ?.split("-")
-            .map(Number)
+                ?.split("-")
+                .map(Number)
             ?? [0, 0, 0]
 
         // Ignore negative index
@@ -138,14 +80,14 @@ export default function StatsTowerClientPage({internalName, displayName, categor
             .catch((err) => console.error(err));
     }, [searchParams, internalName]);
 
-    return <div className="flex flex-col gap-4">
+    return <div>
         <SetPathContext.Provider value={setPathParam}>
-            <CategoryContext.Provider value={category}>
-                <Toolbar />
-                <StatsTowerPageHeader displayName={displayName} />
-                <TowerStatsModuleContainer stats={stats}/>
-                <ModulesFragment stats={stats}/>
-            </CategoryContext.Provider>
+            <TowerInfoContext.Provider value={inputTowerInfo}>
+                <TowerDataContext.Provider value={stats}>
+                    <StatsPageHeader/>
+                    <StatsPageContent/>
+                </TowerDataContext.Provider>
+            </TowerInfoContext.Provider>
         </SetPathContext.Provider>
     </div>
 }
