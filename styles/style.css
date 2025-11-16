@@ -80,10 +80,10 @@ html {
 }
 
 body {
-	margin: 0;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     @media (prefers-color-scheme: dark) {
         background-color: var(--shade8);
     }
@@ -99,8 +99,14 @@ h1, h2, h3, h4, h5, h6, p, ul, select, button, table, thead, tbody, td {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, button, input, select, thead, .tableHead {
-    font-family: "Gabarito";
+h1, h2, h3, h4, button {
+    font-family: "Gabarito", serif;
+    font-weight: 400;
+}
+
+h5, h6, input, select, thead, .tableHead, .chartCanvas {
+    font-family: "Gabarito", serif;
+    font-family: ui-sans-serif, system-ui, "Gabarito", serif;
     font-weight: 400;
 }
 
@@ -124,11 +130,11 @@ input {
 }
 
 p, ul, td, th {
-    font-family: "Roboto";
-    font-weight: 100;
+    font-family: ui-sans-serif, system-ui, "Roboto", serif;
+    /*font-weight: 400;*/
     /* font-family: "Comic Neue";
     font-weight: 400; */
-    padding: 0px 0;
+    padding: 0 0;
 }
 
 .largeText2 {
@@ -140,27 +146,27 @@ p, ul, td, th {
 }
 
 h1 {
-	font-size: 30pt;
+    font-size: 30pt;
 }
 
 h2 {
-	font-size: 24pt;
+    font-size: 24pt;
 }
 
 h3 {
-	font-size: 22pt;
+    font-size: 22pt;
 }
 
 h4 {
-	font-size: 18pt;
+    font-size: 18pt;
 }
 
 h5, thead, .tableHead {
-	font-size: 16pt;
+    font-size: 16pt;
 }
 
 h6, select, button {
-	font-size: 13pt;
+    font-size: 13pt;
 }
 
 .smallText {
@@ -168,7 +174,7 @@ h6, select, button {
 }
 
 p, ul, tbody {
-	font-size: 11pt;
+    font-size: 11pt;
     color: var(--shade7);
     @media (prefers-color-scheme: dark) {
         color: var(--shade2);
@@ -177,10 +183,6 @@ p, ul, tbody {
 
 ul {
     padding-left: 20px;
-}
-
-.chartCanvas {
-    font-family: "Gabarito";
 }
 
 table {
@@ -255,7 +257,7 @@ select {
 
 .inputUnderline {
     background-color: var(--primary);
-    height: 100%; 
+    height: 100%;
     width: 0%;
     margin-left: 50%;
     margin-right: 50%;
@@ -288,18 +290,22 @@ input:focus + .inputUnderline {
 }
 
 .headerContent {
-    display: flex; gap: 16px; margin-left: auto;
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
     @media screen and (max-width: 700px) {
         display: none;
     }
     align-items: end;
 }
+
 .headerContent > a > h5 {
     text-decoration: underline 2px;
     text-decoration-color: transparent;
     text-underline-offset: 4px;
     transition: 0.2s;
 }
+
 .headerContent > a:hover > h5 {
     text-decoration-color: var(--primaryDark2);
     @media (prefers-color-scheme: dark) {
@@ -307,6 +313,7 @@ input:focus + .inputUnderline {
     }
     text-underline-offset: 2px;
 }
+
 .headerContent > a > .active {
     text-decoration-color: var(--shade7);
     @media (prefers-color-scheme: dark) {
@@ -314,6 +321,7 @@ input:focus + .inputUnderline {
     }
     text-underline-offset: 2px;
 }
+
 .headerContent > a:hover > .active {
     text-decoration-color: var(--shade7);
     @media (prefers-color-scheme: dark) {
@@ -332,15 +340,18 @@ input:focus + .inputUnderline {
     }
     cursor: pointer;
 }
+
 .menu {
     border-color: var(--shade2);
     @media (prefers-color-scheme: dark) {
         background-color: var(--shade7);
     };
 }
+
 a {
     text-decoration: none;
 }
+
 .linkUnderline {
     text-decoration: underline 2px var(--primaryDark2);
     color: var(--primaryDark2);
@@ -357,10 +368,12 @@ a {
 .menu > a > h3 {
     margin-bottom: 16px;
 }
+
 .menuHeader {
     display: flex;
     margin-bottom: 16px;
 }
+
 .menuClose {
     margin-left: auto;
 }
@@ -368,7 +381,7 @@ a {
 .mainContent {
     display: flex;
     flex-direction: column;
-    gap: 12px;   
+    gap: 12px;
 }
 
 .titleSection {
@@ -392,10 +405,11 @@ a {
 .coverImage {
     /* opacity: .8; */
     filter: blur(4px);
-    width: 100%; height: 325px;
-    object-fit: cover; 
-    background-size: cover; 
-    background-repeat: no-repeat; 
+    width: 100%;
+    height: 325px;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center 90%;
     margin: 0 auto;
 
@@ -409,34 +423,40 @@ a {
 }
 
 .playerCoverImage {
-    opacity: .5; filter: blur(4px);
-    width: 100%; height: 200px;
-    object-fit: cover; 
-    background-size: cover; 
-    background-repeat: no-repeat; 
+    opacity: .5;
+    filter: blur(4px);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
 .statsPageBody {
-    max-width: 1500px; margin: 0 auto; padding: 16px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 16px;
 }
 
 .statsPageWrapper {
     position: absolute;
-    width: 100%; 
+    width: 100%;
     top: 0
 }
 
 .configurationBar {
-    display: flex; 
+    display: flex;
     align-items: center;
     padding: 8px 12px;
     gap: 32px;
 }
 
 .configurationBarTextSelectorWrapper {
-    display: flex; flex-direction: column; 
-    gap: 4px; align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
 }
 
 .horizontalLine {
@@ -472,7 +492,7 @@ py-script {
 }
 
 .mainStatsSection {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     gap: 16px;
 }
@@ -527,6 +547,7 @@ py-script {
     border-radius: 8px;
     transition: 0.5s;
 }
+
 .infoBox:hover {
     background-color: var(--primaryLight3);
     @media (prefers-color-scheme: dark) {
@@ -539,9 +560,11 @@ py-script {
     display: flex;
     align-items: end;
 }
+
 .clanTableSelect {
     margin-left: 24px;
 }
+
 .clanTableContainer {
     display: flex;
     flex-wrap: wrap;
@@ -609,54 +632,65 @@ dialog {
     display: flex;
     margin-bottom: 8px;
 }
+
 .playerDataNameContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     align-items: end;
 }
+
 .closeButton, .menuClose {
     font-size: 36px;
     cursor: pointer;
 }
+
 .closeButtonContainer {
     margin-left: auto;
 }
+
 .simplePlayerDataContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     align-items: start;
 }
+
 .mainPlayerContent {
     display: flex;
     flex-direction: column;
     gap: 16px
 }
+
 .simplePlayerDataContainer > * {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 4px;
 }
+
 .b2lolButtonContainer {
     margin-left: auto;
 }
+
 .b2lolButton {
     display: flex;
     align-items: center;
 }
+
 .playerPFP {
     width: 30px;
     aspect-ratio: 1;
     background-size: contain;
 }
+
 .bigPlayerPFP {
     width: 36px;
     aspect-ratio: 1;
     background-size: contain;
     margin-right: 8px;
 }
+
 .matches, .towers, .badges {
     display: flex;
     flex-wrap: wrap;
@@ -678,6 +712,7 @@ dialog {
         background-color: var(--shade6_5);
     };
 }
+
 .badgeBox > img {
     height: 64px
 }
@@ -685,6 +720,7 @@ dialog {
 .matches > *, .playerDataBox {
     border-radius: 8px;
 }
+
 .playerDataBox {
     padding: 8px;
     border-radius: 8px;
@@ -693,17 +729,21 @@ dialog {
         background-color: var(--shade6_5);
     };
 }
+
 .greenText {
     color: var(--winColor)
 }
+
 .redText {
     color: var(--lossColor)
 }
+
 .lds-dual-ring {
     display: inline-block;
     width: 20px;
     aspect-ratio: 1;
 }
+
 .lds-dual-ring:after {
     content: " ";
     display: block;
@@ -715,12 +755,13 @@ dialog {
     border: 6px solid var(--shade5);
     border-color: var(--shade5) var(--shade5) transparent transparent;
 }
+
 @keyframes lds-dual-ring {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -797,6 +838,7 @@ dialog {
     flex-direction: column;
     justify-content: center;
 }
+
 .leaderboardRow > .right {
     align-items: end;
 }
@@ -812,17 +854,18 @@ dialog {
     height: 12px;
     padding: 2px;
 }
- 
+
 ::-webkit-scrollbar-track {
     background: transparent;
     padding: 8px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
     background: var(--primaryLight3);
     border-radius: 8px;
     margin: 8px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primaryLight2);
 }
@@ -831,6 +874,7 @@ dialog {
     ::-webkit-scrollbar-thumb {
         background: var(--primaryDark3);
     }
+
     ::-webkit-scrollbar-thumb:hover {
         background: var(--primaryDark2);
     }
@@ -839,14 +883,14 @@ dialog {
 .tournamentSection {
     background-color: hsl(32, 100%, 88%);
     @media (prefers-color-scheme: dark) {
-        background-color: hsl(31, 100%, 16%);        
+        background-color: hsl(31, 100%, 16%);
     };
 }
 
 .tournamentSectionLive {
     background-color: hsl(268, 100%, 88%);
     @media (prefers-color-scheme: dark) {
-        background-color: hsl(268, 100%, 16%);        
+        background-color: hsl(268, 100%, 16%);
     };
 }
 
@@ -873,9 +917,15 @@ dialog {
 
 
 @keyframes liveAnimation {
-    0% {background-color: hsl(0, 100%, 50%)}
-    50% {background-color: hsl(0, 100%, 29%)}
-    100% {background-color: hsl(0, 100%, 50%)}
+    0% {
+        background-color: hsl(0, 100%, 50%)
+    }
+    50% {
+        background-color: hsl(0, 100%, 29%)
+    }
+    100% {
+        background-color: hsl(0, 100%, 50%)
+    }
 }
 
 .liveTournamentButton {
@@ -883,20 +933,22 @@ dialog {
     align-items: center;
     background-color: hsl(268, 100%, 80%);
     @media (prefers-color-scheme: dark) {
-        background-color: hsl(268, 100%, 36%);        
+        background-color: hsl(268, 100%, 36%);
     };
 }
 
 .liveTournamentButton:hover {
     background-color: hsl(268, 100%, 60%);
     @media (prefers-color-scheme: dark) {
-        background-color: hsl(268, 100%, 50%);        
+        background-color: hsl(268, 100%, 50%);
     };
 }
+
 .liveTournamentButton > h6 {
     transition: 0.5s;
 
 }
+
 .liveTournamentButton:hover > h6 {
     color: var(--shade1);
     transition: 0.5s;
@@ -957,5 +1009,5 @@ dialog {
     @media screen and (max-width: 650px) {
         display: none;
     }
-    
+
 }

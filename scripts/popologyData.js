@@ -40,7 +40,7 @@ const data = {
                                 "content": [
                                     "dart attack replaced by spikeball",
                                     [
-                                        "1d, 1cd (2cd), +17p (23p), +15%r (36.8r), 1.15s, shatter type",
+                                        "1d, 1cd (2cd), +24p (30p), +15%r (36.8r), 1.15s, shatter type",
                                         ["advanced_mode", "5jr, 150jsp, 1js, 0.15ds"],
                                         "can rebound off of walls",
                                         [
@@ -54,7 +54,7 @@ const data = {
                                 "content": [
                                     "spikeball attack replaced by juggernaut",
                                     [
-                                        "2d, 4cd (6cd), 50p, 36.8r, 1.0s, normal type",
+                                        "2d, 4cd (6cd), 60p, 36.8r, 1.0s, normal type",
                                         ["advanced_mode", "7jr"],
                                         "can rebound off of walls",
                                         [
@@ -903,7 +903,7 @@ const data = {
                         "base": [
                             "$450 (150 MM)",
                             "size: 6 radius",
-                            "placeable on: land",
+                            "placeable on: land and water",
                             "freeze attack",
                             [
                                 "1d, 40p, 20r zone, 2.4s, cold type",
@@ -1413,7 +1413,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "320: shrapnel +3d (5d)"
+                                        "320: shrapnel +3d (5d), +2p (4p)"
                                     ]
                                 ]
                             },
@@ -1476,7 +1476,8 @@ const data = {
                                     [
                                         "on first hit: shrapnel",
                                         [
-                                            "1d, +2cad (3cad), 5j 45° spread, 2p, sharp type",
+                                            "1d, +2cad (3cad), 5j 45° spread, 2i, sharp type",
+                                            "damage cannot be buffed",
                                             "spread centered around direction fired"
                                         ]
                                     ]
@@ -2984,7 +2985,7 @@ const data = {
                                         "75° random spread",
                                         "on contact: explosion",
                                         [
-                                            "5d, 8p, 8r blast, normal type"
+                                            "5d, 7p, 8r blast, normal type"
                                         ]
                                     ],
                                     "crosspath:",
@@ -3007,7 +3008,7 @@ const data = {
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+4cd (9cd), +55md (60md), +10p (18p), +4r (12r)"
+                                        "+4cd (9cd), +55md (60md), +9p? (18p?), +4r (12r)"
                                     ]
                                 ]
                             }
@@ -3336,6 +3337,10 @@ const data = {
                                         "pops after round 30 are worth 7-13 (at random) in the graveyard, instead of 1",
                                         "each individual pop may only be stored by one wizard"
                                     ],
+                                    "magic-bolt buffed",
+                                    [
+                                        "+1d for every 200 graveyard bloons"
+                                    ],
                                     "gains reanimate attack",
                                     [
                                         "60r, 1.5s",
@@ -3343,7 +3348,6 @@ const data = {
                                         [
                                             "2d, x p, normal type, 10s lifetime",
                                             "travels backwards along the track at red bloon speed",
-                                            "+1d for every 200 graveyard bloons, stacking additively up to 10 times"
                                         ],
                                         "where x is 18 across all zombloons spawned",
                                         "if there are less than 18 graveyard pops available, then x is the remaining amount of pops"
@@ -3499,7 +3503,7 @@ const data = {
                                             [
                                                 "$2,000 income, produced one time per round",
                                                 "15s lifetime"
-                                            ],  
+                                            ],
                                         ]
                                     ]
                                 ]
@@ -3756,7 +3760,7 @@ const data = {
                                     [
                                         "+4d (6d), +4cd (12cd), +4md (14md), +8p (15p), +4r (57r)"
                                     ],
-                                    "gains black-hole ability (120s cooldown, 4s duration, battle ready, triggered by something about to leak)",
+                                    "gains black-hole ability (120s global cooldown, 4s duration, battle ready, triggered by something about to leak)",
                                     [
                                         "anything about to leak is deleted instead",
                                         "deleted bloons give no cash and do not add to any damage counter",
@@ -3868,15 +3872,15 @@ const data = {
                                     [
                                         "affects Ninja Monkeys in range",
                                         "stacks up to 10 times",
-                                        "85%s",
-                                        "+15%p, stacking additively"
+                                        "90%s",
+                                        "+10%p, stacking additively"
                                     ]
                                 ]
                             },
                             "4": {
                                 "name": "040 - Bloon Sabotage",
                                 "content": [
-                                    "gains sabotage ability (60s cooldown, 15s duration, battle ready)",
+                                    "gains sabotage ability (60s cooldown, 10s duration, battle ready)",
                                     [
                                         "all bloons and blimps move at half speed",
                                         "currently sabotaged blimps will remain slowed for the duration of the ability if this ninja is sold"
@@ -3937,7 +3941,7 @@ const data = {
                                         [
                                             "flash-bomb buffed: gains decamo attack",
                                             [
-                                                "75p, 65r, camo",
+                                                "40p, 65r, camo",
                                                 "decamo"
                                             ]
                                         ]
@@ -4468,8 +4472,8 @@ const data = {
                                 "content": [
                                     "thorn buffed",
                                     [
-                                        "+3d (4), +5r (50), 50%s (0.55), longer projectile lifespan",
-                                        "+1d for every 3000 RBE on screen, capped at +24"
+                                        "+3d (4d), +5r (50r), 50%s (0.55), longer projectile lifespan",
+                                        "+1d for every 3000 RBE on screen, capped at +30d"
                                     ]
                                 ]
                             }
@@ -4588,7 +4592,7 @@ const data = {
                             "5": {
                                 "name": "050 - Homeland Defense",
                                 "content": [
-                                    "call-to-arms replaced by homeland-defense (45s cooldown, 17s duration, battle ready)",
+                                    "call-to-arms replaced by homeland-defense (45s global cooldown, 17s duration, battle ready)",
                                     [
                                         "buffs all towers: +100%p, 50%s"
                                     ]
@@ -4601,7 +4605,7 @@ const data = {
                                 "content": [
                                     "support buffed",
                                     [
-                                        "+10% discount to base towers and upgrades up to tier 3"
+                                        "+5% discount to base towers and upgrades up to tier 3"
                                     ]
                                 ]
                             },
@@ -4764,11 +4768,11 @@ const data = {
                                 "content": [
                                     "banana attack buffed",
                                     [
-                                        "+$6,000 capacity ($20,000)"
+                                        "+$4,000 capacity ($18,000)"
                                     ],
                                     "gains loan ability (90s cooldown, 20s initial)",
                                     [
-                                        "loan $20,000, to be repaid by taking 50% from all future income",
+                                        "loan $15,000, to be repaid by taking 50% from all future income",
                                     ],
                                     "crosspath",
                                     [
@@ -4974,7 +4978,7 @@ const data = {
                                             ],
                                             "10-13s lifetime"
                                         ]
-                                    ], 
+                                    ],
                                     "crosspath",
                                     [
                                         "140: storm-spikes +5p (10p)",
@@ -5551,7 +5555,7 @@ const data = {
                     "name": "Cyber Quincy",
                     "data": {
                         "1": [
-                            "$450",
+                            "$550",
                             ["hero_level", {"multiplier": 1.0, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Quincy Points",
                             "size: 7 radius",
@@ -5570,7 +5574,7 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains cyber-shot ability (45s cooldown, (5 + 0.5l, l = level number)s duration (6.5s this level), 11.25s initial)",
+                            "gains cyber-shot ability (45s cooldown, (6 + 0.5l, l = level number)s duration (7.5s this level), 11.25s initial)",
                             [
                                 "+15p (21p), +5r (55r), 84.75%s?",
                             ]
@@ -5596,7 +5600,7 @@ const data = {
                                 "same stats as arrow",
                                 "on first hit: emp-blast",
                                 [
-                                    "300%d, 200%p, 25.7r blast, plasma type",
+                                    "200%d, 200%p, 25.7r blast, plasma type",
                                     "note: bloons can be hit by both the arrow and the emp-blast"
                                 ]
                             ]
@@ -5919,7 +5923,7 @@ const data = {
                                 "triggered by either the 36th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "8s duration, +1p, +2gld, +2ad, lead popping"
+                                    "8s duration, +1p, +1gld, +1ad, lead popping"
                                 ]
                             ]
                         ],
@@ -6625,7 +6629,10 @@ const data = {
                             ]
                         ],
                         "5": [
-
+                            "applies blast-weakness status to all bloons",
+                            [
+                                "black property has a 50% chance of being ignored by explosions"
+                            ],
                             "all attacks buffed",
                             [
                                 "+10%p, +10%r"
@@ -6740,6 +6747,10 @@ const data = {
                             [
                                 "affects all heli pilot and monkey ace towers",
                                 "+10%p, +10%r"
+                            ],
+                            "blast-weakness buffed",
+                            [
+                                "black property is always ignored by explosives"
                             ]
                         ],
                         "20": [
@@ -6948,7 +6959,7 @@ const data = {
                         "2": [
                             "explosion buffed",
                             [
-                                "+2p (7p)"
+                                "+1p (6p)"
                             ]
                         ],
                         "3": [
@@ -7010,7 +7021,7 @@ const data = {
                         "11": [
                             "explosion buffed",
                             [
-                                "+2p (10p)"
+                                "+2p (9p)"
                             ]
                         ],
                         "12": [
@@ -7103,23 +7114,23 @@ const data = {
                     "name": "Benjamin",
                     "data": {
                         "1": [
-                            "$900",
+                            "$950",
                             ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
                             "20r",
-                            "$100 end of round income"
+                            "$75 end of round income"
                         ],
                         "2": [
-                            "+$50 end of round income ($150)"
+                            "+$50 end of round income ($125)"
                         ],
                         "3": [
-                            "gains biohack ability (45s cooldown, 11.25s initial, 6s duration)",
+                            "gains biohack ability (40s cooldown, 11.25s initial, 9s duration)",
                             [
                                 "applies hacked buff to the nearest 6 towers",
                                 [
-                                    "+2d",
+                                    "+1d",
                                     "cannot attack for 2s after the buff expires"
                                 ]
                             ]
@@ -7127,11 +7138,11 @@ const data = {
                         "4": [
                             "gains skimming",
                             [
-                                "+$1 income for each new natural bloon that spawns"
+                                "+$1 income for every other new natural bloon that spawns"
                             ]
                         ],
                         "5": [
-                            "+$100 end of round income ($250)",
+                            "+$75 end of round income ($200)",
                             "gains bank-hack buff",
                             [
                                 "affects all x3+3+ farms",
@@ -7153,16 +7164,20 @@ const data = {
                             ]
                         ],
                         "8": [
-                            "+$150 end of round income ($400)"
+                            "+$150 end of round income ($350)"
                         ],
                         "9": [
                             "bank-hack buffed",
                             [
                                 "now +15%"
+                            ],
+                            "hacked buffed",
+                            [
+                                "+2d"
                             ]
                         ],
                         "10": [
-                            "gains syphon-funding ability (65s cooldown, 17s duration, battle ready)",
+                            "gains syphon-funding ability (60s cooldown, 17s duration, battle ready)",
                             [
                                 "all new spawns below a DDT or BAD are downgraded by one layer",
                                 "can only downgrade up to 10 ZOMGs in an ability, but still continues to downgrade other bloons after this threshold is reached"
@@ -7174,17 +7189,13 @@ const data = {
                         "12": [
                             "skimming buffed",
                             [
-                                "+$2 income"
+                                "+$2 income, affects every natural bloon that spawns"
                             ]
                         ],
                         "13": [
                             "biohack buffed",
                             [
-                                "affects 8 towers, 35s cooldown"
-                            ],
-                            "hacked buffed",
-                            [
-                                "now +3d, 8s duration"
+                                "affects 8 towers, 15s duration, 35s cooldown"
                             ]
                         ],
                         "14": [
@@ -7218,7 +7229,7 @@ const data = {
                         "20": [
                             "syphon-funding buffed",
                             [
-                                "45s cooldown",
+                                "40s cooldown",
                                 "can affect DDTs"
                             ]
                         ]
@@ -7253,6 +7264,11 @@ const data = {
                             "gains skimming",
                             [
                                 "+$1 income for each new natural bloon that spawns"
+                            ],
+                            "gains party buff",
+                            [
+                                "affects anything in range, excluding self",
+                                "+1p, +5r"
                             ]
                         ],
                         "5": [
@@ -7294,7 +7310,11 @@ const data = {
                             ]
                         ],
                         "11": [
-                            "$(400+80t) end of round income"
+                            "$(400+80t) end of round income",
+                            "party buffed",
+                            [
+                                "+2p, +10r"
+                            ]
                         ],
                         "12": [
                             "skimming buffed",
@@ -7356,7 +7376,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            ["hero_level", { "multiplier": 1.5, "curve": "Quincy" }],
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM",
                             "size: 7 radius",
                             "placeable on: land",
@@ -7549,7 +7569,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            ["hero_level", { "multiplier": 1.5, "curve": "Quincy" }],
+                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Ezili Points",
                             "size: 7 radius",
                             "placeable on: land",
@@ -8778,7 +8798,7 @@ const data = {
                             "sun-bolt buffed",
                             [
                                 "+1j (5j)"
-                            ] 
+                            ]
                         ],
                         "13": [
                             "sun-bolt buffed",
@@ -10332,7 +10352,7 @@ const data = {
                             </ul>
                         </ul>
                     `
-            },
+                },
                 "completeBlingSeason": {
                     "name": "Complete the bling season",
                     "data": `
@@ -10349,7 +10369,7 @@ const data = {
                             </ul>
                         </ul>
                         `
-            },
+                },
                 "takePartInClanWarSilver": {
                     "name": "Take a part in a clan war in Silver or higher",
                     "data": `
@@ -10360,7 +10380,7 @@ const data = {
                             </ul>
                         </ul>
                         `
-            },
+                },
                 "takePartInClanWarGold": {
                     "name": "Take a part in a clan war in Gold or higher",
                     "data": `
@@ -10371,7 +10391,7 @@ const data = {
                             </ul>
                         </ul>
                         `
-            },
+                },
                 "takePartInClanWarDiamond": {
                     "name": "Take a part in a clan war in Diamond or higher",
                     "data": `
@@ -10382,7 +10402,7 @@ const data = {
                             </ul>
                         </ul>
                         `
-            },
+                },
                 "takePartInClanWarRuby": {
                     "name": "Take a part in a clan war in Ruby or higher",
                     "data": `
@@ -10393,10 +10413,10 @@ const data = {
                             </ul>
                         </ul>
                         `
-            },
-               "takePartInClanWarBlackDiamond": {
-                "name": "Take a part in a clan war in Black Diamond",
-                "data": `
+                },
+                "takePartInClanWarBlackDiamond": {
+                    "name": "Take a part in a clan war in Black Diamond",
+                    "data": `
                     <ul>
                         <li>Level 1</li>
                         <ul>
@@ -10404,10 +10424,10 @@ const data = {
                         </ul>
                     </ul>
                     `
-        },
+                },
                 "warFinishFirst": {
-                "name": "Finish 1st on the clan war leaderboard",
-                "data": `
+                    "name": "Finish 1st on the clan war leaderboard",
+                    "data": `
                     <ul>
                         <li>Level 1</li>
                         <ul>
@@ -10421,10 +10441,10 @@ const data = {
                         </ul>
                     </ul>
                     `
-        },
+                },
                 "warFinishSecond": {
-                "name": "Finish 2nd on the clan war leaderboard",
-                "data": `
+                    "name": "Finish 2nd on the clan war leaderboard",
+                    "data": `
                     <ul>
                         <li>Level 1</li>
                         <ul>
@@ -10438,10 +10458,10 @@ const data = {
                         </ul>
                     </ul>
                     `
-        },
+                },
                 "warFinishThird": {
-                "name": "Finish 3rd on the clan war leaderboard",
-                "data": `
+                    "name": "Finish 3rd on the clan war leaderboard",
+                    "data": `
                     <ul>
                         <li>Level 1</li>
                         <ul>
@@ -10455,10 +10475,10 @@ const data = {
                         </ul>
                     </ul>
                     `
-        },
+                },
                 "contributeTokens": {
-                "name": "Contribute tokens to unlocking items in the clan shop",
-                "data": `
+                    "name": "Contribute tokens to unlocking items in the clan shop",
+                    "data": `
                     <ul>
                         <li>Level 1</li>
                         <ul>
@@ -10472,10 +10492,10 @@ const data = {
                         </ul>
                     </ul>
                     `
-        },
+                },
                 "winMedallions": {
-                "name": "Win medallions during clan wars",
-                "data": `
+                    "name": "Win medallions during clan wars",
+                    "data": `
                     <ul>
                         <li>Level 1</li>
                         <ul>
@@ -10489,7 +10509,7 @@ const data = {
                         </ul>
                     </ul>
                     `
-        },
+                },
             }
         },
         "bloons": {
@@ -10636,7 +10656,7 @@ const data = {
                                     <li>Count: 5</li>
                                     <li>Total time: 0.35s</li>
                                     <li>Eco: +$2.5</li>
-                                    <li>Cost: $65</li>
+                                    <li>Cost: $75</li>
                                 </ul>
                             </li>
                         </ul>
@@ -10659,10 +10679,10 @@ const data = {
                             <li>Grouped
                                 <ul>
                                     <li>Rounds: 10-25</li>
-                                    <li>Count: 4</li>
+                                    <li>Count: 5</li>
                                     <li>Total time: 0.32s</li>
                                     <li>Eco: +$2.9</li>
-                                    <li>Cost: $75</li>
+                                    <li>Cost: $85</li>
                                 </ul>
                             </li>
                         </ul>
@@ -10748,7 +10768,7 @@ const data = {
                                 <ul>
                                     <li>Rounds: 23+</li>
                                     <li>Count: 60</li>
-                                    <li>Total time: 1.2s</li>
+                                    <li>Total time: 1.5s</li>
                                     <li>Eco: +7</li>
                                     <li>Cost: $1,200</li>
                                 </ul>
@@ -10811,7 +10831,7 @@ const data = {
                                 <ul>
                                     <li>Rounds: 24+</li>
                                     <li>Count: 40</li>
-                                    <li>Total time: 0.8s</li>
+                                    <li>Total time: 1s</li>
                                     <li>Eco: +$0</li>
                                     <li>Cost: $3,200</li>
                                 </ul>
@@ -10861,7 +10881,7 @@ const data = {
                                     <li>Count: 15</li>
                                     <li>Total time: 1s</li>
                                     <li>Eco: -$50</li>
-                                    <li>Cost: $4,000</li>
+                                    <li>Cost: $4,500</li>
                                 </ul>
                             </li>
                         </ul>
@@ -10968,7 +10988,7 @@ const data = {
                                     <li>Count: 3</li>
                                     <li>Total time: 0.6s</li>
                                     <li>Eco: -$200</li>
-                                    <li>Cost: $6,000</li>
+                                    <li>Cost: $6,250</li>
                                 </ul>
                             </li>
                         </ul>
@@ -11022,7 +11042,7 @@ const data = {
                             <li>Phayze
                                 <ul>
                                     <li>Unlocked Round 15</li>
-                                    <li>Cash modifier: $1.75x</li>
+                                    <li>Cash modifier: $1.6x</li>
                                 </ul>
                             </li>
                             <li>Fortified
@@ -11079,7 +11099,7 @@ const data = {
         "primary": {
             "dartMonkey": {
                 "base": 200,
-                "top": [100, 250, 450, 1700, 13500],
+                "top": [100, 250, 450, 1800, 13500],
                 "middle": [100, 100, 350, 9000, 45000],
                 "bottom": [90, 200, 600, 2300, 27000]
             },
@@ -11098,13 +11118,13 @@ const data = {
             "tackShooter": {
                 "base": 280,
                 "top": [150, 400, 700, 3500, 35500],
-                "middle": [100, 225, 750, 3000, 15000],
+                "middle": [100, 225, 750, 3550, 15000],
                 "bottom": [100, 100, 450, 3400, 24000]
             },
             "iceMonkey": {
                 "base": 450,
-                "top": [100, 350, 1800, 2700, 34000],
-                "middle": [225, 350, 2900, 3000, 18000],
+                "top": [100, 350, 2000, 2700, 34000],
+                "middle": [225, 350, 2900, 3500, 18000],
                 "bottom": [100, 200, 1300, 2900, 32000]
             },
             "glueGunner": {
@@ -11118,7 +11138,7 @@ const data = {
             "sniperMonkey": {
                 "base": 300,
                 "top": [250, 750, 2800, 5000, 34000],
-                "middle": [200, 250, 3000, 5800, 14000],
+                "middle": [200, 250, 2250, 5800, 14000],
                 "bottom": [300, 300, 2200, 3800, 14500]
             },
             "monkeySub": {
@@ -11152,10 +11172,10 @@ const data = {
                 "bottom": [400, 500, 700, 8500, 40000]
             },
             "dartlingGunner": {
-                "base": 700,
-                "top": [250, 600, 2800, 12000, 80000],
+                "base": 800,
+                "top": [200, 600, 2800, 14000, 80000],
                 "middle": [250, 500, 5100, 5500, 68000],
-                "bottom": [150, 800, 3400, 16000, 50000]
+                "bottom": [100, 800, 3400, 16000, 50000]
             }
         },
         "magic": {
@@ -11163,7 +11183,7 @@ const data = {
                 "base": 250,
                 "top": [100, 250, 1200, 9000, 32000],
                 "middle": [300, 1000, 3000, 4000, 50000],
-                "bottom": [300, 300, 1500, 2600, 24000]
+                "bottom": [300, 300, 1500, 2800, 28000]
             },
             "superMonkey": {
                 "base": 2000,
@@ -11174,7 +11194,7 @@ const data = {
             "ninjaMonkey": {
                 "base": 400,
                 "top": [150, 200, 700, 2750, 35000],
-                "middle": [200, 375, 2100, 4500, 20000],
+                "middle": [200, 375, 2100, 5200, 20000],
                 "bottom": [200, 250, 1800, 4600, 40000]
             },
             "alchemist": {
@@ -11206,7 +11226,7 @@ const data = {
             "spikeFactory": {
                 "base": 600,
                 "top": [600, 600, 2700, 9500, 90000],
-                    "middle": [500, 500, 2500, 6200, 40000],
+                "middle": [500, 500, 2500, 6200, 40000],
                 "bottom": [150, 500, 1200, 3200, 30000]
             },
             "engineerMonkey": {
