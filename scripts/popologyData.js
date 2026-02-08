@@ -643,8 +643,8 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "103: cluster +6p (14p)",
-                                        "203: cluster +1d (2d), +6p (20p)"
+                                        "103: cluster +4p (12p)",
+                                        "203: cluster +1d (2d), +4p (16p)"
                                     ]
                                 ]
                             },
@@ -2540,7 +2540,7 @@ const data = {
                                             "15s lifetime",
                                             "dart attack",
                                             [
-                                                "1d, 3j, 4p, 42r, 0.15s, sharp type"
+                                                "1d, 3j, 4p, 42r, 0.13s, sharp type"
                                             ],
                                             "rocket attack",
                                             [
@@ -2605,7 +2605,7 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+5p (40p), +8r (26r)"
+                                        "+10p (45p), +12r (30r)"
                                     ]
                                 ]
                             },
@@ -2623,7 +2623,7 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+10r (36r)"
+                                        "+6r (36r)"
                                     ],
                                     "shell buffed",
                                     [
@@ -2651,15 +2651,15 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+5d (7d), +40p (80p), +20r (56r), normal type"
+                                        "+5d (7d), +55p (100p), +20r (56r), normal type"
                                     ],
                                     "stun-explosion buffed",
                                     [
-                                        "+40p (85p), +10r (29r)"
+                                        "+55p (100p), +10r (29r)"
                                     ],
                                     "shockwave buffed",
                                     [
-                                        "+40p (85p), +30r (87r), normal type"
+                                        "+55p (100p), +30r (87r), normal type"
                                     ],
                                     "crosspath",
                                     [
@@ -3836,7 +3836,7 @@ const data = {
                                 "content": [
                                     "shuriken buffed",
                                     [
-                                        "+1d (2d), +10r (57), 50%s (0.217s), +3j 60° spread (8j)"
+                                        "+3d (4d), +10r (57), 50%s (0.217s), +3j 60° spread (8j)"
                                     ],
                                     "crosspath",
                                     [
@@ -3974,6 +3974,10 @@ const data = {
                             "5": {
                                 "name": "005 - Master Bomber",
                                 "content": [
+                                    "shuriken attack buffed",
+                                    [
+                                        "0.887%s (0.55s)"
+                                    ],
                                     "flash-bomb buffed",
                                     [
                                         "+9d (10d), applies stun (0.25s duration) to blimps"
@@ -3986,7 +3990,7 @@ const data = {
                                     [
                                         "1000d",
                                         "explosion 200d"
-                                    ]
+                                    ] 
                                 ]
                             }
                         }
@@ -4787,9 +4791,9 @@ const data = {
                                     [
                                         "+$10,000 capacity ($30,000)"
                                     ],
-                                    "loan replaced by grant (50s cooldown, 30s initial)",
+                                    "loan replaced by grant (40s cooldown, 30s initial)",
                                     [
-                                        "gain $20k, which does not need to be repaid"
+                                        "gain $15,000, which does not need to be repaid"
                                     ],
                                     "crosspath",
                                     [
@@ -4812,7 +4816,7 @@ const data = {
                                     [
                                         "expired bananas are worth 50%"
                                     ],
-                                    "+10% sellback (80%)"
+                                    "+5% sellback (75%)"
                                 ]
                             },
                             "3": {
@@ -4822,7 +4826,8 @@ const data = {
                                     [
                                         "+11j (14j), +$440 income ($560)"
                                     ],
-                                    "bananas are automatically collected immediately"
+                                    "bananas are automatically collected immediately",
+                                    "+5% sellback (80%)"
                                 ]
                             },
                             "4": {
@@ -6607,7 +6612,7 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains concussive-fire ability (24s cooldown, 7.5s initial)",
+                            "gains concussive-fire ability (30s cooldown, 7.5s initial)",
                             [
                                 "∞r, strong priority",
                                 "can see past obstacles",
@@ -6651,13 +6656,13 @@ const data = {
                             ],
                             "gains flying-expert buff",
                             [
-                                "affects all heli pilot and monkey ace towers",
+                                "affects all heli pilots, monkey aces, and the fighter planes of 4xx/5xx buccaneers",
                                 "flame-trail attack",
                                 [
                                     "0.16s passive",
                                     "emits flame",
                                     [
-                                        "1d, 4p, 1.5s duration"
+                                        "1d, 2p, 1.5s duration"
                                     ]
                                 ]
                             ]
@@ -7245,7 +7250,8 @@ const data = {
                             "size: 7 radius",
                             "placeable on: land",
                             "35r",
-                            "$(50+10t) end of round income; t = number of towers in range (maximum is 10 towers)"
+                            "generates 50$ per round, in addition 10$ for every tower in range excluding child towers with a maximum of 10 towers"
+                            "'t' in the stats is used to indicate number of towers in range"
                         ],
                         "2": [
                             "$(75+15t) end of round income"
@@ -7268,7 +7274,7 @@ const data = {
                             "gains party buff",
                             [
                                 "affects anything in range, excluding self",
-                                "+1p, +5r"
+                                "+5r"
                             ]
                         ],
                         "5": [
@@ -7276,7 +7282,7 @@ const data = {
                             "gains side-hustle buff",
                             [
                                 "affects all towers except Monkey Village and Banana Farm",
-                                "+6% income"
+                                "+3% income"
                             ]
                         ],
                         "6": [
@@ -7299,7 +7305,7 @@ const data = {
                         "9": [
                             "side-hustle buffed",
                             [
-                                "+9% income"
+                                "+3% income -> +6% income"
                             ]
                         ],
                         "10": [
@@ -7313,7 +7319,7 @@ const data = {
                             "$(400+80t) end of round income",
                             "party buffed",
                             [
-                                "+2p, +10r"
+                                "+1p, +10r"
                             ]
                         ],
                         "12": [
@@ -7331,7 +7337,7 @@ const data = {
                         "14": [
                             "encore buffed",
                             [
-                                "activated ability cooldowns reduced by 15%",
+                                "activated ability cooldowns reduced by 10%",
                             ]
                         ],
                         "15": [
@@ -7790,13 +7796,13 @@ const data = {
                         "5": [
                             "slam buffed",
                             [
-                                "every 5 attacks replaced by slap",
+                                "every 3 attacks replaced by slap",
                                 [
-                                    "7p",
+                                    "2d, 7p",
                                     "cannot affect BFBs or higher",
                                     "applies knockback status",
                                     [
-                                        "move backwards at 2x normal speed, 1s duration"
+                                        "move backwards at 2x normal speed, 0.5s duration"
                                     ]
                                 ]
                             ]
@@ -7979,13 +7985,13 @@ const data = {
                         "5": [
                             "slam buffed",
                             [
-                                "every 5 attacks replaced by slap",
+                                "every 3 attacks replaced by slap",
                                 [
-                                    "7p",
+                                    "2d, 7p",
                                     "cannot affect BFBs or higher",
                                     "applies knockback status",
                                     [
-                                        "move backwards at 2x normal speed, 1s duration"
+                                        "move backwards at 2x normal speed, 0.5s duration"
                                     ],
                                     "frozen bloons that are hit emit shards when popped",
                                     [
@@ -9053,7 +9059,7 @@ const data = {
                             [
                                 "dart attack",
                                 [
-                                    "1d, 2p, 0.7s, sharp type",
+                                    "1d, 3p, 0.7s, sharp type",
                                     "can see past obstacles"
                                 ]
                             ]
@@ -9074,7 +9080,9 @@ const data = {
                         "4": [
                             "dart buffed",
                             [
-                                "+1p (3p)"
+                                "first gives +1p",
+                                "divide and conquer targeting gives +20 move speed and +10%s",
+                                "zone defence targeting gives +1d"
                             ]
                         ],
                         "5": [
@@ -9103,6 +9111,10 @@ const data = {
                             ]
                         ],
                         "9": [
+                            "dart buffed",
+                            [
+                                "first targeting now gives +2p"
+                            ],
                             "uav buffed",
                             [
                                 "every attack now has a 50% chance to ignore bloon properties"
@@ -9239,7 +9251,7 @@ const data = {
                         "3": [
                             "defend-the-hive ability (45s cooldown, 10s duration, 9s initial cooldown)",
                             [
-                                "51.85%s (0.23s)",
+                                "75%s (0.3375s)",
                                 "spawns 2 copies of bee called defend-bee",
                             ]
                         ],
@@ -10831,7 +10843,7 @@ const data = {
                                 <ul>
                                     <li>Rounds: 24+</li>
                                     <li>Count: 40</li>
-                                    <li>Total time: 1s</li>
+                                    <li>Total time: 1.2s</li>
                                     <li>Eco: +$0</li>
                                     <li>Cost: $3,200</li>
                                 </ul>
@@ -11124,7 +11136,7 @@ const data = {
             "iceMonkey": {
                 "base": 450,
                 "top": [100, 350, 2000, 2700, 34000],
-                "middle": [225, 350, 2900, 3500, 18000],
+                "middle": [225, 350, 2900, 4000, 18000],
                 "bottom": [100, 200, 1300, 2900, 32000]
             },
             "glueGunner": {
@@ -11138,7 +11150,7 @@ const data = {
             "sniperMonkey": {
                 "base": 300,
                 "top": [250, 750, 2800, 5000, 34000],
-                "middle": [200, 250, 2250, 5800, 14000],
+                "middle": [200, 250, 2600, 5800, 14000],
                 "bottom": [300, 300, 2200, 3800, 14500]
             },
             "monkeySub": {
@@ -11163,7 +11175,7 @@ const data = {
                 "base": 800,
                 "top": [600, 250, 1800, 17500, 45000],
                 "middle": [200, 350, 3200, 8500, 30000],
-                "bottom": [350, 250, 3700, 7500, 35000]
+                "bottom": [350, 250, 4000, 7500, 34700]
             },
             "mortarMonkey": {
                 "base": 700,
@@ -11181,7 +11193,7 @@ const data = {
         "magic": {
             "wizardMonkey": {
                 "base": 250,
-                "top": [100, 250, 1200, 9000, 32000],
+                "top": [100, 250, 1300, 9000, 32000],
                 "middle": [300, 1000, 3000, 4000, 50000],
                 "bottom": [300, 300, 1500, 2800, 28000]
             },

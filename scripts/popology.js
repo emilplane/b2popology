@@ -20,7 +20,7 @@ const buffData = {
     "monkeyCommerce1": ["discount", 0.05, 0, 3],
     "monkeyCommerce2": ["discount", 0.05, 0, 3],
     "monkeyCommerce3": ["discount", 0.05, 0, 3],
-    "qualitySoil": ["discount", 0.2, 1, 5],
+    "qualitySoil": ["discount", 0.15, 1, 5],
     "bananaSalvage": ["sellback", 0.1, 0, 5],
     "sunTemple": ["discount", 0.05, 0, 5],
     "trueSunGod": ["discount", 0.05, 0, 5],
