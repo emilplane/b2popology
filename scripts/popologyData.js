@@ -6655,7 +6655,7 @@ const data = {
                             [
                                 "+1d (2d)"
                             ],
-                            "flying-expert buffed",
+                            "gains flame-trail buff",
                             [
                                 "affects all heli pilots, monkey aces, and the fighter planes of 4xx/5xx buccaneers",
                                 "flame-trail attack",
