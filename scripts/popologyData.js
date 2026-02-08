@@ -347,7 +347,8 @@ const data = {
                                 "content": [
                                     "gains turbocharge ability (45s cooldown, 8s duration, battle ready)",
                                     [
-                                        "+1d (2d), 14.2857%s (0.034s)"
+                                        "+1d (2d), 14.2857%s (0.034s)",
+                                        "can see camos while the ability is active"
                                     ]
                                 ]
                             },
@@ -2855,7 +2856,7 @@ const data = {
                     "name": "Dartling Gunner",
                     "data": {
                         "base": [
-                            "$700 (500 MM)",
+                            "$800 (500 MM)",
                             "size: 8 radius",
                             "placeable on: land",
                             "20r",
@@ -5415,7 +5416,7 @@ const data = {
                             "$450",
                             ["hero_level", {"multiplier": 1.0, "curve": "Quincy"}],
                             "Unlock Cost: None",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "arrow attack",
                             [
@@ -5563,7 +5564,7 @@ const data = {
                             "$550",
                             ["hero_level", {"multiplier": 1.0, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Quincy Points",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "arrow attack",
                             [
@@ -5579,7 +5580,7 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains cyber-shot ability (45s cooldown, (6 + 0.5l, l = level number)s duration (7.5s this level), 11.25s initial)",
+                            "gains cyber-shot ability (45s cooldown, (4.5 + 0.5l, l = level number)s duration (6.0s on this level), 11.25s initial)",
                             [
                                 "+15p (21p), +5r (55r), 84.75%s?",
                             ]
@@ -5629,7 +5630,7 @@ const data = {
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)",
                             [
-                                "15d, 25md (40md), ∞p, 50r zone, 0.05s, plasma type",
+                                "15d, 15md (30md), ∞p, 50r zone, 0.05s, plasma type",
                                 "centered according to Quincy's targeting when activated"
                             ]
                         ],
@@ -5721,7 +5722,7 @@ const data = {
                             "$700",
                             ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: Free",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "fire attack",
                             [
@@ -5896,7 +5897,7 @@ const data = {
                             "$700",
                             ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Gwendolin Points",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "fire attack",
                             [
@@ -6082,7 +6083,7 @@ const data = {
                             "$650",
                             ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 3,000 MM",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "spirit attack",
                             [
@@ -6250,7 +6251,7 @@ const data = {
                             "$650",
                             ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Obyn Greenfoot Points",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land and water",
                             "spirit attack",
                             [
@@ -6761,7 +6762,7 @@ const data = {
                         "20": [
                             "artillery-fire buffed",
                             [
-                                "now triples damage and pierce of all bombs and mortars"
+                                "now triples damage and pierce of all monkey aces and heli pilots"
                             ]
                         ]
                     }
@@ -7122,7 +7123,7 @@ const data = {
                             "$950",
                             ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "20r",
                             "$75 end of round income"
@@ -7247,7 +7248,7 @@ const data = {
                             "$900",
                             ["hero_level", {"multiplier": 1, "curve": "Striker Jones"}],
                             "Unlock Cost: 2,000 MM + 40,000 Benjamin Points",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "35r",
                             "generates 50$ per round, in addition 10$ for every tower in range excluding child towers with a maximum of 10 towers",
@@ -7384,7 +7385,7 @@ const data = {
                             "$600",
                             ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 5,000 MM",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "gains camo detection",
                             "curse attack",
@@ -7577,7 +7578,7 @@ const data = {
                             "$600",
                             ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Ezili Points",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "gains camo detection",
                             "curse attack",
@@ -7724,7 +7725,7 @@ const data = {
                             "scratch ability buffed: costs 1 life, 30s duration",
                             "scratching-post subtower buffed",
                             [
-                                "60s lifetime"
+                                "30s lifetime"
                             ]
                         ],
                         "17": [
@@ -8399,11 +8400,17 @@ const data = {
                             ]
                         ],
                         "10": [
-                            "misdirection ability (? cooldown, ? initial cooldown)",
+                            "misdirection ability (80s cooldown, 20s initial cooldown)",
                             [
                                 "takes the strongest MOAB-class bloon up to a BFB and puts it at the opponent's entrance",
                                 [
                                     "bloon health is retained"
+                                ],
+                                "different classes of blimps take up a different percentage of the ability cooldown duration",
+                                [
+                                    "MOABs take up 25% of the cooldown (20s)",
+                                    "BFBs take up 50% of the cooldown (40s)",
+                                    "ZOMGs and DDTs take up 100% of the cooldown (80s)"
                                 ]
                             ]
                         ],
@@ -8460,7 +8467,7 @@ const data = {
                         "18": [
                             "stand-and-deliver buffed",
                             [
-                                "?s cooldown"
+                                "60s cooldown"
                             ]
                         ],
                         "19": [
@@ -8472,7 +8479,7 @@ const data = {
                         "20": [
                             "misdirection ability buffed",
                             [
-                                "?s cooldown"
+                                "16s cooldown"
                             ],
                             "fortified bloon modifier buffed",
                             [
@@ -8888,7 +8895,7 @@ const data = {
                             "$700",
                             ["hero_level", {"multiplier": 1.2, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM + 40,000 Adora Points",
-                            "size: 7 radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "fate-bolt attack",
                             [
@@ -9397,7 +9404,7 @@ const data = {
                             "$700",
                             ["hero_level", {"multiplier": 1.0, "curve": "Striker Jones"}],
                             "Unlock Cost: 5,000 MM",
-                            "size: ? radius",
+                            "size: 6 radius",
                             "placeable on: land",
                             "?r",
                             "dynamites attack",
