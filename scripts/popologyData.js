@@ -6628,7 +6628,7 @@ const data = {
                             ]
                         ],
                         "4": [
-                            "gains explosive-expert buff",
+                            "gains flying-expert buff",
                             [
                                 "affects all heli pilot and monkey ace towers and self",
                                 "90%s (1.08s)"
@@ -6655,7 +6655,7 @@ const data = {
                             [
                                 "+1d (2d)"
                             ],
-                            "gains flying-expert buff",
+                            "flying-expert buffed",
                             [
                                 "affects all heli pilots, monkey aces, and the fighter planes of 4xx/5xx buccaneers",
                                 "flame-trail attack",
@@ -6739,9 +6739,9 @@ const data = {
                             ]
                         ],
                         "18": [
-                            "explosive-expert buffed",
+                            "flying-expert buffed",
                             [
-                                "81%s"
+                                "90%s -> 85%s"
                             ]
                         ],
                         "19": [
