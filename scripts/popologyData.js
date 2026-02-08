@@ -7251,7 +7251,7 @@ const data = {
                             "placeable on: land",
                             "35r",
                             "generates 50$ per round, in addition 10$ for every tower in range excluding child towers with a maximum of 10 towers",
-                            "'t' in the stats is used to indicate number of towers in range"
+                            "t in the stats is used to indicate number of towers in range"
                         ],
                         "2": [
                             "$(75+15t) end of round income"
