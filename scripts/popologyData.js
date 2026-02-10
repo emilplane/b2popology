@@ -5580,7 +5580,7 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains cyber-shot ability (45s cooldown, (4.5 + 0.5l, l = level number)s duration (6.0s on this level), 11.25s initial)",
+                            "gains cyber-shot ability (45s cooldown, (4.0 + 0.5l, l = level number)s duration (6.0s on this level), 11.25s initial)",
                             [
                                 "+15p (21p), +5r (55r), 84.75%s?",
                             ]
@@ -5628,7 +5628,7 @@ const data = {
                             ]
                         ],
                         "10": [
-                            "gains cyber-storm ability (60s cooldown, 1.5s duration, battle ready)",
+                            "gains cyber-storm ability (60s cooldown, 1s duration, battle ready)",
                             [
                                 "15d, 15md (30md), ∞p, 50r zone, 0.05s, plasma type",
                                 "centered according to Quincy's targeting when activated"
@@ -7151,8 +7151,8 @@ const data = {
                             "+$75 end of round income ($200)",
                             "gains bank-hack buff",
                             [
-                                "affects all x3+3+ farms",
-                                "+10% income during the round"
+                                "affects all x3x, x4x, and x5x banana farms",
+                                "+10% income during the round and the round end bonus",
                             ]
                         ],
                         "6": [
@@ -7165,7 +7165,8 @@ const data = {
                             "gains trojan attack",
                             [
                                 "∞r, 5s-7s randomly",
-                                "targets a random bloon with 2+ children up to MOAB",
+                                "targets a random bloon from a pink and up to a MOAB",
+                                "affected bloon earns 1$ per layer",
                                 "affected bloon spawns no children"
                             ]
                         ],
@@ -7213,7 +7214,8 @@ const data = {
                         "16": [
                             "trojan buffed",
                             [
-                                "3s-4s"
+                                "3s-4s",
+                                "affceted bloons now generate 2$ per layer"
                             ]
                         ],
                         "17": [
@@ -7223,7 +7225,8 @@ const data = {
                             "gains camo detection",
                             "trojan buffed",
                             [
-                                "can now target BFBs and DDTs"
+                                "can now target BFBs and DDTs",
+                                "affected BFBs and DDTs don't earn cash"
                             ]
                         ],
                         "19": [
@@ -7282,7 +7285,7 @@ const data = {
                             "$(125+25t) end of round income",
                             "gains side-hustle buff",
                             [
-                                "affects all towers except Monkey Village and Banana Farm",
+                                "affects all towers except Monkey Village, Banana Farm, and Alchemist",
                                 "+3% income"
                             ]
                         ],
@@ -7313,7 +7316,7 @@ const data = {
                             "gains beatdown ability (65s cooldown, battle ready)",
                             [
                                 "12 strongest bloons on screen up to a BFB are downgraded by 1 layer",
-                                "can only downgrade up to 3 BFBs in an ability, but can still downgrade other bloons if this threshold is reached"
+                                "can only downgrade up to 4 BFBs in an ability, but can still downgrade other bloons if this threshold is reached"
                             ]
                         ],
                         "11": [
