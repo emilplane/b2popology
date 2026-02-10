@@ -5753,7 +5753,7 @@ const data = {
                                 "triggered by either the 28th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "10s duration, +1ld, +1frd, +1p, lead popping"
+                                    "10s duration, +1ld, +1frd, +1p, grants lead popping"
                                 ]
                             ]
                         ],
@@ -5803,10 +5803,8 @@ const data = {
                                 [
                                     "1d/0.5s or 15md/1s, fire type, 8s duration"
                                 ],
-                                "applies heat-it-up to all towers on screen, buffed",
-                                [
-                                    "8s duration, +1d"
-                                ]
+                                "applies heat-it-up to all towers on screen",
+                                "gives an additional +1d that lasts for the heat-it-up duartion"
                             ]
                         ],
                         "11": [
@@ -5862,7 +5860,8 @@ const data = {
                         "17": [
                             "heat-it-up buffed",
                             [
-                                "+1d (3d, 4frd), +1ld (5ld)"
+                                "in addition to previous buffs, it now also gives +1d",
+                                "BUG: the bonus lead and frozen damage mentioned in the level up description do not apply, so they remain at +1ld and +1frd"
                             ]
                         ],
                         "18": [
@@ -5901,7 +5900,9 @@ const data = {
                             "placeable on: land",
                             "fire attack",
                             [
-                                "1d, +1gld (2gld), +1ad (2ad), 3p, 38r, 0.5s, fire type"
+                                "1d, +1gld (2gld), +1ad (2ad), 3p, 38r, 0.5s, fire type",
+                                "gld refers to bonus damage to glued bloons",
+                                "ad refers to bonus damage to bloons hit by acid (alchemist attack)"
                             ]
                         ],
                         "2": [
@@ -5929,7 +5930,7 @@ const data = {
                                 "triggered by either the 36th shot or any shot after 4.5s (whichever takes longer)",
                                 "applies heat-it-up buff to towers in range",
                                 [
-                                    "8s duration, +1p, +1gld, +1ad, lead popping"
+                                    "8s duration, +1p, +1gld, +1ad, grants lead popping"
                                 ]
                             ]
                         ],
@@ -5984,10 +5985,8 @@ const data = {
                                 [
                                     "1d/0.25s or 15md/0.5s, fire type, 3s duration"
                                 ],
-                                "applies heat-it-up to all towers on screen, buffed",
-                                [
-                                    "+1d"
-                                ]
+                                "applies heat-it-up to all towers on screen",
+                                "gives an additional +1d that lasts for the heat-it-up duartion"
                             ]
                         ],
                         "11": [
@@ -6043,7 +6042,7 @@ const data = {
                         "17": [
                             "heat-it-up buffed",
                             [
-                                "+1d, +1ld (+2ld), +1frd (+2frd)"
+                                "in addition to previous buffs, it now also gives +1d, +1ld"
                             ]
                         ],
                         "18": [
