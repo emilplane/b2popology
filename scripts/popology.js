@@ -1,15 +1,15 @@
 const menuIcon = document.getElementById('menuIcon');
 const menuDialog = document.getElementById('menu');
 
-menuIcon.addEventListener('click', function() {
-    menuDialog.showModal(); 
+menuIcon.addEventListener('click', function () {
+    menuDialog.showModal();
 });
 
 const menuCloseButton = document.getElementById('menuCloseButton');
 
-menuCloseButton.addEventListener('click', function() {
+menuCloseButton.addEventListener('click', function () {
     // Close the dialog
-    menuDialog.close(); 
+    menuDialog.close();
 });
 
 import popologyData from "/scripts/popologyData.js"
@@ -52,53 +52,53 @@ const advancedButton = document.getElementById('advancedButton');
 
 const buttonHelperText = document.getElementById("cornerButtonPreviewText");
 
-versionHistoryButton.addEventListener('mouseover', function() {
+versionHistoryButton.addEventListener('mouseover', function () {
     buttonHelperText.classList.add("cornerButtonPreviewText")
     buttonHelperText.innerText = "Version history"
 });
 
-versionHistoryButton.addEventListener('mouseout', function() {
+versionHistoryButton.addEventListener('mouseout', function () {
     buttonHelperText.classList.remove("cornerButtonPreviewText")
     buttonHelperText.innerText = ""
 });
 
-terminologyButton.addEventListener('mouseover', function() {
+terminologyButton.addEventListener('mouseover', function () {
     buttonHelperText.classList.add("cornerButtonPreviewText")
     buttonHelperText.innerText = "Terminology"
 });
 
-terminologyButton.addEventListener('mouseout', function() {
+terminologyButton.addEventListener('mouseout', function () {
     buttonHelperText.classList.remove("cornerButtonPreviewText")
     buttonHelperText.innerText = ""
 });
 
-compareButton.addEventListener('click', function() {
+compareButton.addEventListener('click', function () {
     compare = !compare;
     run()
 });
 
-compareButton.addEventListener('mouseover', function() {
+compareButton.addEventListener('mouseover', function () {
     buttonHelperText.classList.add("cornerButtonPreviewText")
     buttonHelperText.innerText = "Compare mode"
 });
 
-compareButton.addEventListener('mouseout', function() {
+compareButton.addEventListener('mouseout', function () {
     buttonHelperText.classList.remove("cornerButtonPreviewText")
     buttonHelperText.innerText = ""
 });
 
-advancedButton.addEventListener('click', function() {
+advancedButton.addEventListener('click', function () {
     advancedMode = !advancedMode;
     run()
 });
 
-advancedButton.addEventListener('mouseover', function() {
+advancedButton.addEventListener('mouseover', function () {
     buttonHelperText.classList.add("cornerButtonPreviewText")
     buttonHelperText.classList.add("dangerPreviewText")
     buttonHelperText.innerText = "Experiments"
 });
 
-advancedButton.addEventListener('mouseout', function() {
+advancedButton.addEventListener('mouseout', function () {
     buttonHelperText.classList.remove("cornerButtonPreviewText")
     buttonHelperText.classList.remove("dangerPreviewText")
     buttonHelperText.innerText = ""
@@ -109,10 +109,10 @@ const mediaQuery = window.matchMedia('(max-width: 700px)');
 
 // Function to handle changes in viewport size
 const handleViewportChange = (mq) => {
-  if (mq.matches && compare) {
-    compare = !compare;
-    run()
-  }
+    if (mq.matches && compare) {
+        compare = !compare;
+        run()
+    }
 };
 
 mediaQuery.addListener(handleViewportChange);
@@ -179,21 +179,21 @@ function runPopology(compare) {
     let selectedPage = "dartMonkey"
 
     urlSection = urlParams.get('section')
-	urlPage = urlParams.get('page')
+    urlPage = urlParams.get('page')
 
-	if (urlSection != null) {
-		selectedCategory = urlSection;
-	}
-	if (urlPage != null) {
-		selectedPage = urlPage;
-	}
+    if (urlSection != null) {
+        selectedCategory = urlSection;
+    }
+    if (urlPage != null) {
+        selectedPage = urlPage;
+    }
 
     let selectedPathForPrice = [0, 0, 0]
 
     let priceBuffs;
 
     let styledCategories = ["primary"]
-    
+
     document.getElementById("towerCostButtonContainer" + compareID).innerHTML = `
         <button id="towerCostButton${compareID}" class="towerCostButton">Calculate Tower Cost</button>
     `
@@ -215,7 +215,7 @@ function runPopology(compare) {
             selectedCategory === "accolades"
         ) {
             document.getElementById("towerCostButton" + compareID).classList.add("hide")
-            
+
         } else {
             document.getElementById("towerCostButton" + compareID).classList.remove("hide")
             document.getElementById("towerCostContent" + compareID).classList.remove("showCost")
@@ -239,15 +239,15 @@ function runPopology(compare) {
 
         if (
             !(selectedCategory === "heroes" ||
-            selectedCategory === "bloons" ||
-            selectedCategory === "accolades")
+                selectedCategory === "bloons" ||
+                selectedCategory === "accolades")
         ) {
             selectedPathForPrice = [0, 0, 0]
             updateCost()
         }
 
         urlParams.set('section', selectedCategory);
-	    urlParams.set('page', selectedPage);
+        urlParams.set('page', selectedPage);
         history.replaceState(null, null, "?" + urlParams.toString());
 
         document.getElementById("towerCostContent" + compareID).classList.remove("showCost")
@@ -268,7 +268,7 @@ function runPopology(compare) {
                     document.getElementById(category + compareID).classList.add(`categoryButtonSelected`)
                     document.getElementById(category + compareID).classList.add(`${category}CategoryButtonSelected`)
                 }
-                if (category === selectedCategory) {selectButton()}
+                if (category === selectedCategory) { selectButton() }
                 document.getElementById(category + compareID).addEventListener("click", () => {
                     resetButtons()
                     selectButton()
@@ -289,7 +289,7 @@ function runPopology(compare) {
             selectedCategory === "accolades"
         ) {
             switch (selectedCategory) {
-                case "heroes": case "bloons": case "accolades": 
+                case "heroes": case "bloons": case "accolades":
                     document.getElementById("dropdownContainer" + compareID).innerHTML = `
                         <div>
                             <h5>Select Page</h5>
@@ -327,12 +327,12 @@ function runPopology(compare) {
                         }
                     }
                 }
-                
+
                 button.addEventListener("click", () => {
                     selectedPage = pageIndex
                     update()
                 });
-                
+
                 if (selectedCategory === "heroes") {
                     clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/${pageIndex}Portrait.png`)
                 } else {
@@ -351,9 +351,9 @@ function runPopology(compare) {
 
     function pathName(pathName) {
         switch (pathName) {
-            case "top":     return "Top"
-            case "middle":  return "Middle"
-            case "bottom":  return "Bottom"
+            case "top": return "Top"
+            case "middle": return "Middle"
+            case "bottom": return "Bottom"
         }
     }
 
@@ -365,7 +365,7 @@ function runPopology(compare) {
         ) {
             let contentHTML = ``
             switch (selectedCategory) {
-                case "heroes": 
+                case "heroes":
                     for (let level in popologyData.stats[selectedCategory].entries[selectedPage].data) {
                         if (Number(level) === 1) {
                             contentHTML += `<h3 class="baseTowerName">Level ${level}</h3>`
@@ -377,7 +377,7 @@ function runPopology(compare) {
                     }
                     document.getElementById("statsContent" + compareID).innerHTML = contentHTML
                     break
-                case "bloons": case "accolades": 
+                case "bloons": case "accolades":
                     contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data
                     document.getElementById("statsContent" + compareID).innerHTML = contentHTML
                     break
@@ -399,7 +399,7 @@ function runPopology(compare) {
                             if (popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name === "005 - Monkeyopolis") {
                                 contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()} + $5,000 * Monkey Village</h5>`
                             } else {
-                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()}</h5>`
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade - 1].toLocaleString()}</h5>`
                             }
                             contentHTML += nestedArraysToHTML(popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].content)
                         }
@@ -418,7 +418,7 @@ function runPopology(compare) {
                             if (popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name === "005 - Monkeyopolis") {
                                 contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $15,000 + $5,000 * Monkey Village</h5>`
                             } else {
-                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade-1].toLocaleString()}</h5>`
+                                contentHTML += `<h5 class="upgradeName">${popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].name} - $${popologyData.prices[selectedCategory][selectedPage][path][upgrade - 1].toLocaleString()}</h5>`
                             }
                             contentHTML += popologyData.stats[selectedCategory].entries[selectedPage].data[path][upgrade].content
                         }
@@ -436,7 +436,7 @@ function runPopology(compare) {
 
         let html = ""
         handleArray(array)
-        
+
         function handleArray(array) {
             html += "<ul>"
             array.forEach(element => {
@@ -495,10 +495,10 @@ function runPopology(compare) {
 
     function htmlStringToArray(htmlString) {
         const doc = new DOMParser().parseFromString(htmlString, 'text/html');
-    
+
         function extractContent(node) {
             const result = [];
-    
+
             Array.from(node.childNodes).forEach(child => {
                 if (child.nodeType === Node.TEXT_NODE) {
                     const text = child.textContent.trim();
@@ -525,13 +525,13 @@ function runPopology(compare) {
                     }
                 }
             });
-    
+
             return result;
         }
-    
+
         // Extract content from the body
         const content = extractContent(doc.body);
-    
+
         // Flatten the result if it's a single wrapped array
         return content.length === 1 && Array.isArray(content[0]) ? content[0] : content;
     }
@@ -667,13 +667,13 @@ function runPopology(compare) {
         for (let buff in priceBuffs) {
             let src;
             switch (buff) {
-                case "favoredTrades":   src = "/media/towerPortraits/monkeyBuccaneer/bottom/monkeyBuccaneer004Portrait.png";   break
-                case "monkeyBusiness":  src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage001Portrait.webp";      break
-                case "monkeyCommerce1": case "monkeyCommerce2": case "monkeyCommerce3": 
-                                        src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp";      break
-                case "sunTemple":       src = "/media/towerPortraits/superMonkey/top/superMonkey400Portrait.webp";             break
-                case "trueSunGod":      src = "/media/towerPortraits/superMonkey/top/superMonkey500Portrait.webp";             break
-                case "obynLevel12":      src = "/media/towerPortraits/obyn/obynPortrait.png";                                  break
+                case "favoredTrades": src = "/media/towerPortraits/monkeyBuccaneer/bottom/monkeyBuccaneer004Portrait.png"; break
+                case "monkeyBusiness": src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage001Portrait.webp"; break
+                case "monkeyCommerce1": case "monkeyCommerce2": case "monkeyCommerce3":
+                    src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp"; break
+                case "sunTemple": src = "/media/towerPortraits/superMonkey/top/superMonkey400Portrait.webp"; break
+                case "trueSunGod": src = "/media/towerPortraits/superMonkey/top/superMonkey500Portrait.webp"; break
+                case "obynLevel12": src = "/media/towerPortraits/obyn/obynPortrait.png"; break
             }
             let required = false
             for (let requiredBuff in forceBuffs) {
@@ -695,20 +695,19 @@ function runPopology(compare) {
                             selectedPathForPrice[1] === 5 ||
                             selectedPathForPrice[2] === 5
                         )
-                    ) 
+                    )
                     || buff !== "obynLevel12"
-                ) 
-                {
+                ) {
                     document.getElementById("buffs" + compareID).insertAdjacentHTML("beforeend", `
                         <button class="buffIcon" id="${buff}${compareID}">
                             <img class="buffIconImage" src="${src}" />
                         </button>
                     `)
-    
+
                     if (priceBuffs[buff]) {
                         document.getElementById(buff + compareID).classList.add("buffIconSelected")
                     }
-        
+
                     document.getElementById(buff + compareID).addEventListener("click", () => {
                         priceBuffs[buff] = !priceBuffs[buff]
                         switch (buff) {
@@ -742,12 +741,12 @@ function runPopology(compare) {
                                     priceBuffs.monkeyCommerce2 = true
                                 }
                                 break
-                            case "sunTemple": 
+                            case "sunTemple":
                                 if (!priceBuffs[buff]) {
                                     priceBuffs.trueSunGod = false
                                 }
                                 break
-                            case "trueSunGod": 
+                            case "trueSunGod":
                                 if (priceBuffs[buff]) {
                                     priceBuffs.sunTemple = true
                                 }
@@ -777,9 +776,9 @@ function runPopology(compare) {
                 `)
             }
         }
-        
+
         for (let pathIndex in selectedPathForPrice) {
-            for (let i=0; i<=5; i++) {
+            for (let i = 0; i <= 5; i++) {
                 let button = document.getElementById(`${numberPathNameConversion(Number(pathIndex))}${i}` + compareID)
                 button.classList.remove("selected")
                 button.addEventListener("click", () => {
@@ -818,7 +817,7 @@ function runPopology(compare) {
                 let required = false;
                 for (let index in forceBuffs) {
                     if (buff === forceBuffs[index])
-                    required = true
+                        required = true
                 }
                 if ((required || priceBuffs[buff] === true) && buffData[buff][0] === "sellback" && buffData[buff][3] >= tier) {
                     sellbackBonus += buffData[buff][1]
@@ -827,31 +826,37 @@ function runPopology(compare) {
             return sellbackBonus;
         }
 
-        let price = (costData.base*(discountForTier(0)))
+        function roundToNextMultipleOf5(num) {
+            return Math.ceil(num / 5) * 5;
+        }
+
+
+
+        let price = (costData.base * (discountForTier(0)))
         for (let path in selectedPathForPrice) {
             for (let i = 0; i < 5; i++) {
                 if (selectedPathForPrice[path] > i) {
-                    price += (popologyData.prices[selectedCategory][selectedPage][numberPathNameConversion(Number(path))][i])*(discountForTier(i+1, path))
+                    price += roundToNextMultipleOf5(popologyData.prices[selectedCategory][selectedPage][numberPathNameConversion(Number(path))][i]) * (discountForTier(i + 1, path))
                 }
             }
         }
 
         const totalCost = price
-        const sellCost = (price*(0.7+sellbackBonusForTier(5)))
-        const sellLoss = (price*(1-(0.7+sellbackBonusForTier(5))))
+        const sellCost = Math.floor(price * (0.7 + sellbackBonusForTier(5)))
+        const sellLoss = totalCost - sellCost
 
         document.getElementById("totalCost" + compareID).innerText = `$${totalCost.toLocaleString()}`
         document.getElementById("sellCost" + compareID).innerText = `$${sellCost.toLocaleString()}`
         document.getElementById("sellLoss" + compareID).innerText = `-$${sellLoss.toLocaleString()}`
 
         document.getElementById("copyTotalCostButton" + compareID).addEventListener("click", () => {
-            navigator.clipboard.writeText(String( Math.round(totalCost * 100)/100 )).then()
+            navigator.clipboard.writeText(String(Math.round(totalCost * 100) / 100)).then()
         })
         document.getElementById("copySellCostButton" + compareID).addEventListener("click", () => {
-            navigator.clipboard.writeText(String( Math.round(sellCost * 100)/100 )).then()
+            navigator.clipboard.writeText(String(Math.round(sellCost * 100) / 100)).then()
         })
         document.getElementById("copySellLossButton" + compareID).addEventListener("click", () => {
-            navigator.clipboard.writeText(String( Math.round(sellLoss * 100)/100 )).then()
+            navigator.clipboard.writeText(String(Math.round(sellLoss * 100) / 100)).then()
         })
     }
 
@@ -872,7 +877,7 @@ function runPopology(compare) {
         for (let pathIndex in path) {
             if (pathIndex !== selectedPathIndex) {
                 highestValueUnselectedPath = pathIndex
-                if (path[pathIndex] !== 0) {numberOfUpgradedPathsBesidesSelectedPath++}
+                if (path[pathIndex] !== 0) { numberOfUpgradedPathsBesidesSelectedPath++ }
             }
         }
         if (numberOfUpgradedPathsBesidesSelectedPath >= 2) {
@@ -883,12 +888,12 @@ function runPopology(compare) {
 
 export function numberPathNameConversion(data) {
     if (typeof data == "string") {
-        if (data === "top") {return 0}
-        if (data === "middle") {return 1}
-        if (data === "bottom") {return 2}
+        if (data === "top") { return 0 }
+        if (data === "middle") { return 1 }
+        if (data === "bottom") { return 2 }
     } else {
-        if (data === 0) {return "top"}
-        if (data === 1) {return "middle"}
-        if (data === 2) {return "bottom"}
+        if (data === 0) { return "top" }
+        if (data === 1) { return "middle" }
+        if (data === 2) { return "bottom" }
     }
 }
