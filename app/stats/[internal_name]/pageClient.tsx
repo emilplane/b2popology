@@ -4,7 +4,6 @@ import React, {createContext, useCallback, useEffect, useState} from "react";
 import {
     Category,
     CategoryContext,
-    ClientTowerData, ClientTowerInfo,
     SetPathContext,
     TowerDataContext,
     TowerInfoContext
@@ -12,6 +11,7 @@ import {
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {StatsPageHeader} from "@/components/popology/statsPageHeader";
 import {StatsPageContent} from "@/components/popology/statsPageContent";
+import {ClientTowerData, ClientTowerInfo} from "@/types/popology";
 
 type StatsTowerClientPageProps = {
     internalName: string,

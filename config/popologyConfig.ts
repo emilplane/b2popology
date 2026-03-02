@@ -2,7 +2,6 @@ export interface PropertyCategorizationType {
     nestedProperties: {
         name: string;
         subProperties: string[];
-        displayAsNested: boolean;
         displaySeperatelyWhenNested: boolean;
     }[];
     standard: string[];
@@ -22,7 +21,6 @@ export const popologyConfig: PopologyConfigType = {
                     "ceramic_damage",
                     "fortified_damage"
                 ],
-                displayAsNested: true,
                 displaySeperatelyWhenNested: true,
             },
             {
@@ -30,8 +28,7 @@ export const popologyConfig: PopologyConfigType = {
                 subProperties: [
                     "attack_type"
                 ],
-                displayAsNested: true,
-                displaySeperatelyWhenNested: true,
+                displaySeperatelyWhenNested: false,
             }
         ],
         standard: [
