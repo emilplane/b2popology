@@ -3464,7 +3464,7 @@ const data = {
                                         [
                                             "gains temple buff",
                                             [
-                                                "+1md, +5p, +30% projectile size"
+                                                "+1md, +30% projectile size"
                                             ],
                                             "gains missile attack",
                                             [
@@ -3491,7 +3491,7 @@ const data = {
                                             ],
                                             "gains temple buff",
                                             [
-                                                "+2p, +50% projectile lifespan"
+                                                "+3p, +50% projectile lifespan"
                                             ]
                                         ],
                                         "on a sacrifice value threshold of $20,000 or greater of support towers:",
@@ -6444,7 +6444,7 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains concussive-shell ability (16s cooldown, 5s initial)",
+                            "gains concussive-shell ability (15s cooldown, 5s initial)",
                             [
                                 "∞r, strong priority",
                                 "can see past obstacles",
