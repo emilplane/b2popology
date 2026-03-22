@@ -6444,13 +6444,13 @@ const data = {
                             ]
                         ],
                         "3": [
-                            "gains concussive-shell ability (15s cooldown, 5s initial)",
+                            "gains concussive-shell ability (16s cooldown, 5s initial)",
                             [
                                 "∞r, strong priority",
                                 "can see past obstacles",
                                 "on contact: explosion",
                                 [
-                                    "2d, 48p, 27r blast, normal type, 1s stun"
+                                    "2d, 48p, 27r blast, normal type, 2s stun"
                                 ]
                             ]
                         ],
@@ -6499,7 +6499,7 @@ const data = {
                             "concussive-shell buffed",
                             [
                                 "+10d (12d), +10p (58p)",
-                                "stuns bloons for 5s and blimps for 3s"
+                                "stuns bloons for 6s and blimps for 4s"
                             ]
                         ],
                         "10": [
@@ -6535,7 +6535,7 @@ const data = {
                             "concussive-shell buffed",
                             [
                                 "+50%r (40.5r)",
-                                "50% longer stun (7.5s on bloons, 4.5s on blimps)"
+                                "50% longer stun (9s on bloons, 6s on blimps)"
                             ]
                         ],
                         "15": [
