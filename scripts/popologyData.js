@@ -581,7 +581,7 @@ const data = {
                                     ],
                                     "explosion buffed",
                                     [
-                                        "+3cd (4cd), +12md (31md)"
+                                        "+3cd (4cd), +22md (41md)"
                                     ],
                                     "gains assassinate ability (30s cooldown, battle ready)",
                                     [
@@ -1466,7 +1466,7 @@ const data = {
                                     "gains camo detection",
                                     "bullet buffed",
                                     [
-                                        "+2cad"
+                                        "+1cad"
                                     ]
                                 ]
                             },
@@ -1743,7 +1743,7 @@ const data = {
                                 "content": [
                                     "gains first-strike ability (60s cooldown, battle ready)",
                                     [
-                                        "7,000d, ∞r, normal type, camo, strong priority",
+                                        "7000d, ∞r, normal type, camo, strong priority",
                                         "penetrates blimp layers",
                                         "creates explosion",
                                         [
@@ -1766,11 +1766,12 @@ const data = {
                                     ],
                                     "first-strike buffed",
                                     [
-                                        "30s cooldown"
+                                        "30s cooldown",
+                                        "+3000d (11000d)"
                                     ],
                                     "gains pre-emptive-strike ability (triggered by a blimp entering the map)",
                                     [
-                                        "800d, normal type, camo",
+                                        "1000d, normal type, camo",
                                         "targets blimp that triggered the ability"
                                     ]
                                 ]
@@ -2060,7 +2061,7 @@ const data = {
                                     "gains camo detection",
                                     "all attacks buffed",
                                     [
-                                        "+2cad"
+                                        "+1cad"
                                     ]
                                 ]
                             },
@@ -2212,8 +2213,7 @@ const data = {
                             "2": {
                                 "name": "020 - Spy Plane",
                                 "content": [
-                                    "gains camo detection",
-                                    "all attacks buffed: +1cad (2cad)"
+                                    "gains camo detection"
                                 ]
                             },
                             "3": {
@@ -2287,7 +2287,7 @@ const data = {
                                 "content": [
                                     "radial-dart buffed",
                                     [
-                                        "+4p (13p), moderate homing (360 turn rate), increased projectile speed"
+                                        "+2p (11p), moderate homing (360 turn rate), increased projectile speed"
                                     ]
                                 ]
                             },
@@ -3193,7 +3193,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "011: fireball +7p (22p), can see past obstacles"
+                                        "011: fireball +5p (20p), can see past obstacles"
                                     ]
                                 ]
                             },
@@ -3308,7 +3308,7 @@ const data = {
                                 "content": [
                                     "magic-bolt buffed",
                                     [
-                                        "+5p (8p), double projectile speed"
+                                        "+3p (6p), double projectile speed"
                                     ]
                                 ]
                             },
@@ -3433,7 +3433,7 @@ const data = {
                                 "content": [
                                     "plasma replaced by sunbeam",
                                     [
-                                        "+5p (8p), +2j (3j)"
+                                        "+3p (6p), +2j (3j)"
                                     ]
                                 ]
                             },
@@ -3746,7 +3746,7 @@ const data = {
                                 "content": [
                                     "monkeyrang buffed",
                                     [
-                                        "+1d (2d), +2p (7p), +1j (2j), normal type"
+                                        "+1d (2d), +2md->+3md (5md) +3p (8p), +1j (2j), normal type"
                                     ],
                                     "darkshift buffed",
                                     [
@@ -3759,7 +3759,7 @@ const data = {
                                 "content": [
                                     "monkeyrang buffed",
                                     [
-                                        "+4d (6d), +4cd (12cd), +4md (14md), +8p (15p), +4r (57r)"
+                                        "+7d (9d), +4cd (12cd), +3md->+7md (16md), +12p (19p), +4r (57r)"
                                     ],
                                     "gains black-hole ability (120s global cooldown, 4s duration, battle ready, triggered by something about to leak)",
                                     [
@@ -3977,7 +3977,7 @@ const data = {
                                 "content": [
                                     "shuriken attack buffed",
                                     [
-                                        "0.887%s (0.55s)"
+                                        "0.645%s (0.4s)"
                                     ],
                                     "flash-bomb buffed",
                                     [
@@ -4478,7 +4478,7 @@ const data = {
                                     "thorn buffed",
                                     [
                                         "+3d (4d), +5r (50r), 50%s (0.55), longer projectile lifespan",
-                                        "+1d for every 3000 RBE on screen, capped at +30d"
+                                        "+1d for every 3000 RBE on screen, capped at +26d"
                                     ]
                                 ]
                             }
@@ -5582,7 +5582,7 @@ const data = {
                         "3": [
                             "gains cyber-shot ability (45s cooldown, (4.0 + 0.5l, l = level number)s duration (6.0s on this level), 11.25s initial)",
                             [
-                                "+15p (21p), +5r (55r), 84.75%s?",
+                                "+10p (16p), +5r (55r), 84.75%s?",
                             ]
                         ],
                         "4": [
@@ -5630,7 +5630,7 @@ const data = {
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1s duration, battle ready)",
                             [
-                                "15d, 15md (30md), ∞p, 50r zone, 0.05s, plasma type",
+                                "10d, 10md (20md), ∞p, 50r zone, 0.05s, plasma type",
                                 "centered according to Quincy's targeting when activated"
                             ]
                         ],
@@ -6086,7 +6086,7 @@ const data = {
                             "placeable on: land",
                             "spirit attack",
                             [
-                                "2d, 4p, 43r, 1.35s, plasma type",
+                                "2d, 5p, 43r, 1.35s, plasma type",
                                 "moderate homing (360 turn rate)",
                                 "can see past obstacles"
                             ]
@@ -6116,7 +6116,7 @@ const data = {
                                 "places on closest part of the track",
                                 "places a ward-totem on the track",
                                 [
-                                    "28r, 25% slow / 12.5% for blimps, 15s lifetime",
+                                    "28r, 35% slow / 12.5% for blimps, 15s lifetime",
                                     "note: camos can be slowed, but the totem does not allow camos in range to be targeted by subs"
                                 ]
                             ]
@@ -6142,7 +6142,7 @@ const data = {
                         "8": [
                             "ward-totem buffed",
                             [
-                                "35% slow / 17.5% for blimps"
+                                "50% slow / 17.5% for blimps"
                             ]
                         ],
                         "9": [
@@ -6157,8 +6157,8 @@ const data = {
                                 "places a tree on the track",
                                 [
                                     "manually placed anywhere within range or defaulting to close",
-                                    "2,000p",
-                                    "pops anything up to its pierce limit and grants ($2 x natural bloon RBE eaten) split across 10 bananas once full",
+                                    "3,000p",
+                                    "pops anything up to its pierce limit and grants ($1.5 x natural bloon RBE eaten) split across 10 bananas once full",
                                     "note: blimps can only be captured if their remaining RBE doesn't exceed the tree's remaining pierce, however bloons can bypass this"
                                 ]
                             ]
@@ -6227,7 +6227,11 @@ const data = {
                             [
                                 "affects all xx3+ druids",
                                 "whenever a round starts, wrath counter is set to the maximum 200 pops for +100% speed"
-                            ]
+                            ],
+                            "natures-wrath buffed",
+                            [
+                                "+10% attack speed to all druids in range",
+                            ],
                         ],
                         "19": [
                             "spirit buffed",
@@ -6238,7 +6242,7 @@ const data = {
                         "20": [
                             "tree buffed",
                             [
-                                "+6,000p (8,000p)"
+                                "+5,500p (8,500p)"
                             ]
                         ]
                     }
@@ -6262,7 +6266,7 @@ const data = {
                         "2": [
                             "gains wrath-of-the-sea buff",
                             [
-                                "affects magic monkeys in range",
+                                "affects magic monkeys and water towers (including ice) in range",
                                 "+1p"
                             ]
                         ],
@@ -6294,6 +6298,10 @@ const data = {
                             ]
                         ],
                         "5": [
+                            "gains ocean-wrath buff",
+                            [
+                                "all water towers in range gain +5% attack speed"
+                            ],
                             "spirit buffed",
                             [
                                 "1.1s"
@@ -6334,8 +6342,8 @@ const data = {
                                 [
                                     "one kraken favors opponent bloons and one favors natural bloons when it comes to targeting"
                                 ],
-                                "1,200p each",
-                                "pops anything up to its pierce limit and grants ($2 x natural bloon RBE eaten) split across 10 bananas once full",
+                                "2500p each",
+                                "pops anything up to its pierce limit and grants ($1 x natural bloon RBE eaten) split across 10 bananas once full",
                                 "note: blimps can only be captured if their remaining RBE doesn't exceed the kraken's remaining pierce, however bloons can bypass this"
                             ]
                         ],
@@ -6351,6 +6359,11 @@ const data = {
                             "spirit buffed",
                             [
                                 "0.8s"
+                            ],
+                            "gains crystal-clarity buff",
+                            [
+                                "affects all magic and water towers",
+                                "+10% attack speed"
                             ]
                         ],
                         "13": [
@@ -6399,10 +6412,9 @@ const data = {
                             "65r"
                         ],
                         "18": [
-                            "gains crystal-clarity buff",
+                            "crystal-clarity buffed",
                             [
-                                "affects all magic monkeys",
-                                "85%s"
+                                "+10% -> +20% attack speed"
                             ]
                         ],
                         "19": [
@@ -7231,7 +7243,7 @@ const data = {
                         "19": [
                             "hacked buffed",
                             [
-                                "now +4d, 9s duration"
+                                "now +4d, 18s duration"
                             ]
                         ],
                         "20": [
@@ -8599,7 +8611,8 @@ const data = {
                                 [
                                     "gives $300",
                                     "opponent debt +$300"
-                                ]
+                                ],
+                                "steals 1.3x as much with BFBs, 2x as much with ZOMGs/DDTs, 3x as much with BADs ",
                             ]
                         ],
                         "9": [
@@ -8627,7 +8640,7 @@ const data = {
                         "11": [
                             "money-trap buffed",
                             [
-                                "MOAB-class bloons sent with the ability give $1,300 and add +$1,300 to opponent debt"
+                                "MOAB-class bloons sent with the ability give $1,100 and add +$1,100 to opponent debt"
                             ]
                         ],
                         "12": [
@@ -8649,7 +8662,7 @@ const data = {
                         "14": [
                             "money-trap buffed",
                             [
-                                "MOAB-class bloons sent with the ability give $3,000 and add +$3,000 to opponent debt"
+                                "MOAB-class bloons sent with the ability give $2,200 and add +$2,200 to opponent debt"
                             ]
                         ],
                         "15": [
@@ -10851,7 +10864,7 @@ const data = {
                             <li>Tight
                                 <ul>
                                     <li>Rounds: 24+</li>
-                                    <li>Count: 40</li>
+                                    <li>Count: 30</li>
                                     <li>Total time: 1.2s</li>
                                     <li>Eco: +$0</li>
                                     <li>Cost: $3,200</li>
@@ -10958,7 +10971,7 @@ const data = {
                                     <li>Count: 1</li>
                                     <li>Total time: 6s</li>
                                     <li>Eco: -$100</li>
-                                    <li>Cost: $5,500</li>
+                                    <li>Cost: $5,000</li>
                                 </ul>
                             </li>
                             <li>Grouped
@@ -10969,8 +10982,8 @@ const data = {
                                     <li>Eco: -$100</li>
                                     <li>Cost:
                                         <ul>
-                                            <li>Rounds 24-25: $5,000</li>
-                                            <li>Rounds 26-29: $4,500</li>
+                                            <li>Rounds 24-25: $4,500</li>
+                                            <li>Rounds 26-29: $4,000</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -11057,7 +11070,7 @@ const data = {
                             <li>Camo
                                 <ul>
                                     <li>Unlocked Round 12</li>
-                                    <li>Cash modifier: $2x</li>
+                                    <li>Cash modifier: $1.75x</li>
                                 </ul>
                             </li>
                             <li>Phayze
@@ -11139,7 +11152,7 @@ const data = {
             "tackShooter": {
                 "base": 280,
                 "top": [150, 400, 700, 3500, 35500],
-                "middle": [100, 225, 750, 3550, 15000],
+                "middle": [100, 225, 600, 3550, 15000],
                 "bottom": [100, 100, 450, 3400, 24000]
             },
             "iceMonkey": {
@@ -11188,8 +11201,8 @@ const data = {
             },
             "mortarMonkey": {
                 "base": 700,
-                "top": [350, 500, 1300, 7300, 28000],
-                "middle": [400, 550, 800, 8000, 27000],
+                "top": [350, 500, 1100, 7300, 28000],
+                "middle": [350, 400, 800, 8000, 27000],
                 "bottom": [400, 500, 700, 8500, 40000]
             },
             "dartlingGunner": {
@@ -11201,16 +11214,16 @@ const data = {
         },
         "magic": {
             "wizardMonkey": {
-                "base": 250,
+                "base": 300,
                 "top": [100, 250, 1300, 9000, 32000],
-                "middle": [300, 1000, 3000, 4000, 50000],
+                "middle": [350, 1000, 3000, 4000, 50000],
                 "bottom": [300, 300, 1500, 2800, 28000]
             },
             "superMonkey": {
                 "base": 2000,
                 "top": [1400, 2500, 13000, 80000, 200000],
                 "middle": [1000, 1000, 10000, 20000, 90000],
-                "bottom": [3000, 1200, 4500, 27000, 100000]
+                "bottom": [3000, 1200, 4500, 32000, 140000]
             },
             "ninjaMonkey": {
                 "base": 400,
@@ -11226,9 +11239,9 @@ const data = {
             },
             "druid": {
                 "base": 425,
-                "top": [250, 1000, 1500, 4000, 55000],
+                "top": [250, 1000, 1500, 4700, 55000],
                 "middle": [350, 250, 700, 4000, 35000],
-                "bottom": [100, 400, 750, 2500, 52000]
+                "bottom": [100, 400, 650, 2500, 52000]
             }
         },
         "support": {
@@ -11239,7 +11252,7 @@ const data = {
                 "bottom": [500, 500, 1500, 7200, 20000]
             },
             "bananaFarm": {
-                "base": 1000,
+                "base": 900,
                 "top": [550, 550, 2750, 16000, 66000],
                 "middle": [200, 700, 4400, 8000, 45000],
                 "bottom": [400, 240, 2800, 13000, 46000]
