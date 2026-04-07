@@ -24,7 +24,8 @@ const buffData = {
     "bananaSalvage": ["sellback", 0.1, 0, 5],
     "sunTemple": ["discount", 0.05, 0, 5],
     "trueSunGod": ["discount", 0.05, 0, 5],
-    "obynLevel12": ["discount", 0.1, 5, 5, "magic"],
+    "obynLevel13": ["discount", 0.1, 5, 5], // Why arr[4] "magic" if it's hard coded later anyways?
+    "ocynLevel13": ["discount", 0.1, 5, 5] // Discount buffs are niche so no reason to include towerCategory
 }
 
 const wideModeIDs = [
@@ -234,7 +235,8 @@ function runPopology(compare) {
             "monkeyCommerce3": false,
             "sunTemple": false,
             "trueSunGod": false,
-            "obynLevel12": false
+            "obynLevel13": false,
+            "ocynLevel13": false
         }
 
         if (
@@ -665,6 +667,7 @@ function runPopology(compare) {
         `
 
         for (let buff in priceBuffs) {
+            // Set the image
             let src;
             switch (buff) {
                 case "favoredTrades":   src = "/media/towerPortraits/monkeyBuccaneer/bottom/monkeyBuccaneer004Portrait.png";   break
@@ -673,9 +676,11 @@ function runPopology(compare) {
                                         src = "/media/towerPortraits/monkeyVillage/bottom/monkeyVillage002Portrait.webp";      break
                 case "sunTemple":       src = "/media/towerPortraits/superMonkey/top/superMonkey400Portrait.webp";             break
                 case "trueSunGod":      src = "/media/towerPortraits/superMonkey/top/superMonkey500Portrait.webp";             break
-                case "obynLevel12":      src = "/media/towerPortraits/obyn/obynPortrait.png";                                  break
+                case "obynLevel13":      src = "/media/towerPortraits/obyn/obynPortrait.png";                                  break
+                case "ocynLevel13":      src = "/media/towerPortraits/oceanObyn/oceanObynPortrait.png";                        break
             }
             let required = false
+            // Set forced buffs (such as boat or quality soil)
             for (let requiredBuff in forceBuffs) {
                 if (forceBuffs[requiredBuff] === buff) {
                     required = true
@@ -688,16 +693,33 @@ function runPopology(compare) {
                     </button>
                 `)
             } else {
-                if (
-                    (
-                        buff === "obynLevel12" && selectedCategory === "magic" && (
+                if (buff === "obynLevel13" && !(selectedPage === "druid" && 
+                        (
                             selectedPathForPrice[0] === 5 ||
                             selectedPathForPrice[1] === 5 ||
                             selectedPathForPrice[2] === 5
                         )
-                    ) 
-                    || buff !== "obynLevel12"
-                ) 
+                    )
+                ) {
+                    //pass
+                }
+                else if (buff == "ocynLevel13" && (
+                        !(
+                            selectedCategory === "magic" ||
+                            selectedPage === "monkeySub" ||
+                            selectedPage === "monkeyBuccaneer" ||
+                            selectedPage === "iceMonkey"
+                        ) || 
+                        !(
+                            selectedPathForPrice[0] === 5 ||
+                            selectedPathForPrice[1] === 5 ||
+                            selectedPathForPrice[2] === 5  
+                        )
+                    )
+                ) {
+                    //pass
+                }
+                else
                 {
                     document.getElementById("buffs" + compareID).insertAdjacentHTML("beforeend", `
                         <button class="buffIcon" id="${buff}${compareID}">
@@ -750,6 +772,16 @@ function runPopology(compare) {
                             case "trueSunGod": 
                                 if (priceBuffs[buff]) {
                                     priceBuffs.sunTemple = true
+                                }
+                                break
+                            case "obynLevel13":
+                                if (priceBuffs[buff]) {
+                                    priceBuffs.ocynLevel13 = false
+                                }
+                                break
+                            case "ocynLevel13":
+                                if (priceBuffs[buff]) {
+                                    priceBuffs.obynLevel13 = false
                                 }
                                 break
                         }
