@@ -581,7 +581,7 @@ const data = {
                                     ],
                                     "explosion buffed",
                                     [
-                                        "+3cd (4cd), +22md (41md)"
+                                        "+4cd (5cd), +22md (41md)"
                                     ],
                                     "gains assassinate ability (30s cooldown, battle ready)",
                                     [
@@ -3099,7 +3099,7 @@ const data = {
                     "name": "Wizard Monkey",
                     "data": {
                         "base": [
-                            "$250 (750 MM)",
+                            "$300 (750 MM)",
                             "size: 7 radius",
                             "placeable on: land",
                             "magic-bolt attack",
@@ -4620,7 +4620,7 @@ const data = {
                                     "support buffed",
                                     [
                                         "+5% discount to base towers and upgrades up to tier 3, stackable up to 3 times total",
-                                        "Note: this means that the maximum discount from villages is (10+3*5)% = 25%, which stacks additively with support temples"
+                                        "Note: this means that the maximum discount from villages is (5+3*5)% = 20%, which stacks additively with support temples"
                                     ]
                                 ]
                             },
@@ -4666,7 +4666,7 @@ const data = {
                     "name": "Banana Farm",
                     "data": {
                         "base": [
-                            "$1,000 (1,000 MM)",
+                            "$900 (1,000 MM)",
                             "size: 27 units*27 units",
                             "placeable on: land",
                             "40r",
@@ -5630,7 +5630,7 @@ const data = {
                         "10": [
                             "gains cyber-storm ability (60s cooldown, 1s duration, battle ready)",
                             [
-                                "10d, 10md (20md), ∞p, 50r zone, 0.05s, plasma type",
+                                "20d, 20md (40md), ∞p, 50r zone, 0.1s, plasma type",
                                 "centered according to Quincy's targeting when activated"
                             ]
                         ],
@@ -5659,7 +5659,7 @@ const data = {
                             ],
                             "cyber-storm buffed",
                             [
-                                "+10d (25d)"
+                                "+30d (50d), +20md -> +50md (100md)"
                             ]
                         ],
                         "15": [
@@ -5687,13 +5687,14 @@ const data = {
                         "18": [
                             "arrow buffed",
                             [
-                                "+8d, +8md (16d, 32md), ?%s (?s)"
+                                "+8d, +8md (16d, 32md)",
+                                "BUG: main attack is NOT faster despite the description"
                             ],
                             "cyber-storm buffed",
                             [
                                 "50s cooldown",
-                                "+15d (40d), +10md (70md)",
-                                "10% chance to hit"
+                                "+30d (80d), +50md -> +80md (160md)",
+                                "10% chance to hit",
                             ]
                         ],
                         "19": [
@@ -5709,7 +5710,7 @@ const data = {
                             ],
                             "cyber-storm buffed",
                             [
-                                "+25d (60d), +105md (180md)",
+                                "+40d (120d), +80md -> +240md (360md)",
                                 "15% chance to hit"
                             ]
                         ]
@@ -6266,7 +6267,7 @@ const data = {
                         "2": [
                             "gains wrath-of-the-sea buff",
                             [
-                                "affects magic monkeys and water towers (including ice) in range",
+                                "affects magic monkeys and water towers including ice in range",
                                 "+1p"
                             ]
                         ],
@@ -6300,7 +6301,8 @@ const data = {
                         "5": [
                             "gains ocean-wrath buff",
                             [
-                                "all water towers in range gain +5% attack speed"
+                                "affects magic and water towers in range",
+                                "attack cooldown decreased by 5% (attacks 5.26% faster)"
                             ],
                             "spirit buffed",
                             [
@@ -6348,11 +6350,11 @@ const data = {
                             ]
                         ],
                         "11": [
-                            "wrath-of-the-sea buffed",
+                            "gains ocean-clarity buff",
                             [
-                                "affects all magic towers in range",
+                                "affects magic and water towers in range",
                                 "+2p, +5r",
-                                "note: stacks with the existing +1p for magic monkeys"
+                                "stacks with the existing +1p from wrath-of-the-sea for a total of +3p"
                             ]
                         ],
                         "12": [
@@ -6360,10 +6362,10 @@ const data = {
                             [
                                 "0.8s"
                             ],
-                            "gains crystal-clarity buff",
+                            "oceans-wrath upgraded to crystal-clarity",
                             [
-                                "affects all magic and water towers",
-                                "+10% attack speed"
+                                "affects magic and water towers",
+                                "attack cooldown decreased by 10% (attacks 11.11% faster)"
                             ]
                         ],
                         "13": [
@@ -6373,8 +6375,9 @@ const data = {
                             ],
                             "wrath-of-the-sea buffed",
                             [
-                                "affects magic towers in range",
-                                "+10% discount to tier 5 upgrades"
+                                "affects magic and water towers in range",
+                                "+10% discount to tier 5 upgrades",
+                                "BUG: the description only mentions magic towers, but water towers also get discounted"
                             ]
                         ],
                         "14": [
@@ -6412,9 +6415,10 @@ const data = {
                             "65r"
                         ],
                         "18": [
-                            "crystal-clarity buffed",
+                            "crystal-clarity upgraded to perfect-clarity",
                             [
-                                "+10% -> +20% attack speed"
+                                "affects magic and water towers in range",
+                                "attack cooldown decreased by 20% (attacks 25% faster)"
                             ]
                         ],
                         "19": [

@@ -16,7 +16,7 @@ import popologyData from "/scripts/popologyData.js"
 
 const buffData = {
     "favoredTrades": ["sellback", 0.1, 0, 5],
-    "monkeyBusiness": ["discount", 0.1, 0, 3],
+    "monkeyBusiness": ["discount", 0.05, 0, 3],
     "monkeyCommerce1": ["discount", 0.05, 0, 3],
     "monkeyCommerce2": ["discount", 0.05, 0, 3],
     "monkeyCommerce3": ["discount", 0.05, 0, 3],
