@@ -1,5 +1,5 @@
 const newsSection = document.getElementById("newsSection")
-const newsURL = "https://raw.githubusercontent.com/emilplane/b2popology/main/json/news.json"
+const newsURL = "./json/news.json"
 
 getNews()
 
