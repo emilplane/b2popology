@@ -1,8 +1,8 @@
 const headerWrapper = document.getElementById('headerWrapper');
 const navDialog = document.getElementById('menu');
 const pages = [
-    { name: 'index', title: 'Home', href: 'index.html' },
-    { name: 'popology', title: 'Popology', href: 'popology.html' },
+    { name: 'index', title: 'Home', href: '/index.html' },
+    { name: 'popology', title: 'Popology', href: '/pages/popology.html' },
     // { name: 'tournaments', title: 'Tournaments', href: 'tournaments.html' },
     { name: 'discord', title: 'Discord', href: 'https://discord.com/invite/9YAaxDXAYZ' },
 ]

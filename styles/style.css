@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'BCS Font';
-    src: url('/bcsfont.ttf') format('truetype');
+    src: url('/fonts/bcsfont.ttf') format('truetype');
 }
 
 :root {

@@ -336,9 +336,9 @@ function runPopology(compare) {
                 });
                 
                 if (selectedCategory === "heroes") {
-                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/${pageIndex}Portrait.png`)
+                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/towerPortraits/${pageIndex}/${pageIndex}Portrait.png`)
                 } else {
-                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`)
+                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`)
                 }
                 document.getElementById("pageButtonContainer" + compareID).appendChild(clone)
                 if (selectedCategory === "heroes" && !compare) {
