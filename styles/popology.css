@@ -131,6 +131,18 @@
         background-color: var(--heroes5);
     }
 }
+.bloonsCategoryButton {
+    background-color: var(--bloons3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--bloons3);
+    }
+}
+.bloonsCategoryButton:hover, .bloonsCategoryButtonSelected {
+    background-color: var(--bloons5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--bloons5);
+    }
+}
 
 .magicCategoryButton:hover > *, .magicCategoryButtonSelected > *
 {

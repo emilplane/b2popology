@@ -51,6 +51,10 @@
     --heroes3: #F3DEC2;
     --heroes5: #F3AB48;
     --heroes7: #ac6e17;
+    
+    --bloons3: #CC5555;
+    --bloons5: #FF4444;
+    --bloons7: #882222;
 
     --winColor: hsl(128, 56%, 45%);
     --lossColorDark: hsl(0, 100%, 34%);
