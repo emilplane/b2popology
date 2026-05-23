@@ -1824,7 +1824,7 @@ const data = {
                                 "content": [
                                     "airburst buffed",
                                     [
-                                        "33.33%s (0.08375s)"
+                                        "60%s (0.15075s)"
                                     ],
                                     "gains command buff",
                                     [
