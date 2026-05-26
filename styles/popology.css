@@ -134,13 +134,26 @@
 .bloonsCategoryButton {
     background-color: var(--bloons3);
     @media (prefers-color-scheme: dark) {
-        background-color: var(--bloons3);
+        background-color: var(--bloons7);
     }
 }
 .bloonsCategoryButton:hover, .bloonsCategoryButtonSelected {
     background-color: var(--bloons5);
     @media (prefers-color-scheme: dark) {
         background-color: var(--bloons5);
+    }
+}
+
+.accoladeCategoryButton {
+    background-color: var(--accolade3);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--accolade7);
+    }
+}
+.accoladeCategoryButton:hover, .accoladeCategoryButtonSelected {
+    background-color: var(--accolade5);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--accolade5);
     }
 }
 

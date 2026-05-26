@@ -56,6 +56,10 @@
     --bloons5: #FF4444;
     --bloons7: #882222;
 
+	--accolade3: #FFFFFF;
+	--accolade5: #DDDDDD;
+	--accolade7: #CCCCCC;
+
     --winColor: hsl(128, 56%, 45%);
     --lossColorDark: hsl(0, 100%, 34%);
     --lossColorLight: hsl(0, 100%, 67%);
@@ -1014,4 +1018,12 @@ dialog {
         display: none;
     }
 
+}
+
+.invertedColor {
+	color: black;
+}
+
+.invertedColor:hover {
+	color: #444444;
 }
