@@ -153,7 +153,7 @@
 
 .resourceTitleContainer {
     display: flex;
-    align-items: end;
+    align-items: center;
     gap: 8px;
 }
 
@@ -187,11 +187,11 @@
     justify-content: center;
     height: 152px;
     text-align: center;
-    padding: 0 24px;
+    padding: 0 0 12px 0;
 }
 
 .welcomeContainer > h1 {
-    margin-top: 24px;
+    margin-top: 12px;
     font-size: 48pt;
     text-shadow: 2px 2px 4px var(--shade4);
     @media screen and (max-width: 700px) {
@@ -205,6 +205,7 @@
     @media screen and (max-width: 700px) {
         font-size: 16pt;
     }
+    margin-bottom: 24px;
 }
 .versionHistoryContainer {
     display: block;
