@@ -1094,7 +1094,8 @@ const data = {
                                         [
                                             "2d, 30p, 20 blast, glacier type",
                                             "applies frozen status (1.5s duration)"
-                                        ]
+                                        ],
+                                        "BUG: camo priority fails to target camo bloons on close targeting",
                                     ]
                                 ]
                             },
