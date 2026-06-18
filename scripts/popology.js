@@ -705,7 +705,6 @@ function runPopology(compare) {
                 }
                 else if (buff == "ocynLevel13" && (
                         !(
-                            selectedCategory === "magic" ||
                             selectedPage === "monkeySub" ||
                             selectedPage === "monkeyBuccaneer" ||
                             selectedPage === "iceMonkey"

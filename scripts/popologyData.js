@@ -809,11 +809,11 @@ const data = {
                                 "content": [
                                     "tacks replaced by blades",
                                     [
-                                        "1d, +2p (4p), 31r, 88%s (1.232s), sharp type, increased projectile size"
+                                        "1d, +1p (3p), 31r, 88%s (1.232s), sharp type, increased projectile size"
                                     ],
                                     "crosspath",
                                     [
-                                        "032: +1p (5p)"
+                                        "032: +1p (4p)"
                                     ]
                                 ]
                             },
@@ -1375,7 +1375,7 @@ const data = {
                             "20r",
                             "bullet attack",
                             [
-                                "2d, 1i, ∞r, 1.59s, sharp type"
+                                "2d, 1i, ∞r, 1.45s, sharp type"
                             ]
                         ],
                         "top": {
@@ -1522,7 +1522,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "40%s (0.636s)",
+                                        "40%s (0.58s)",
                                     ],
                                     "shrapnel buffed",
                                     [
@@ -1548,7 +1548,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "70%s (1.113s)"
+                                        "70%s (1.015s)"
                                     ]
                                 ]
                             },
@@ -1557,7 +1557,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "70%s (0.7791s)"
+                                        "70%s (0.7105s)"
                                     ]
                                 ]
                             },
@@ -1566,7 +1566,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "33.33%s (0.2597s)"
+                                        "33.33%s (0.2368s)"
                                     ]
                                 ]
                             },
@@ -1575,7 +1575,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "50%s (0.12985s), +2md (4md), normal type",
+                                        "50%s (0.1184s), +2md (4md), normal type",
                                     ],
                                     "crosspath",
                                     [
@@ -1589,7 +1589,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "50%s (0.064925s)",
+                                        "50%s (0.0592s)",
                                         "additionally shoots x% faster, where x% is how far along the track the furthest forward bloon is"
                                     ],
                                     "gains retaliation ability (10s cooldown, 7s duration, passive: triggered bloons coming close to the exit)",
@@ -3761,7 +3761,7 @@ const data = {
                                     [
                                         "+7d (9d), +4cd (12cd), +3md->+7md (16md), +12p (19p), +4r (57r)"
                                     ],
-                                    "gains black-hole ability (120s global cooldown, 4s duration, battle ready, triggered by something about to leak)",
+                                    "gains black-hole ability (120s global cooldown, 8s duration, battle ready, triggered by something about to leak)",
                                     [
                                         "anything about to leak is deleted instead",
                                         "deleted bloons give no cash and do not add to any damage counter",
@@ -3778,7 +3778,7 @@ const data = {
                     "name": "Ninja Monkey",
                     "data": {
                         "base": [
-                            "$400 (750 MM)",
+                            "$350 (750 MM)",
                             "size: 6 radius",
                             "placeable on: land",
                             "gains camo detection",
@@ -3872,7 +3872,7 @@ const data = {
                                     "gains shinobi buff",
                                     [
                                         "affects Ninja Monkeys in range",
-                                        "stacks up to 10 times",
+                                        "stacks up to 15 times",
                                         "90%s",
                                         "+10%p, stacking additively"
                                     ]
@@ -3977,7 +3977,7 @@ const data = {
                                 "content": [
                                     "shuriken attack buffed",
                                     [
-                                        "0.645%s (0.4s)"
+                                        "?%s (0.55s)"
                                     ],
                                     "flash-bomb buffed",
                                     [
@@ -4666,7 +4666,7 @@ const data = {
                     "name": "Banana Farm",
                     "data": {
                         "base": [
-                            "$900 (1,000 MM)",
+                            "$950 (1,000 MM)",
                             "size: 27 units*27 units",
                             "placeable on: land",
                             "40r",
@@ -5743,7 +5743,7 @@ const data = {
                                 "places wall-of-fire on the track, targetable manually anywhere within range",
                                 [
                                     "1d, +1ld (2ld), +1frd (2frd), 26p, 15r zone, 0.24s, fire type, camo",
-                                    "12s lifetime"
+                                    "15s lifetime"
                                 ]
                             ]
                         ],
@@ -5861,7 +5861,7 @@ const data = {
                         "17": [
                             "heat-it-up buffed",
                             [
-                                "in addition to previous buffs, it now also gives +1d",
+                                "in addition to previous buffs, it now also gives +2d",
                                 "BUG: the bonus lead and frozen damage mentioned in the level up description do not apply, so they remain at +1ld and +1frd"
                             ]
                         ],
@@ -6267,7 +6267,7 @@ const data = {
                         "2": [
                             "gains wrath-of-the-sea buff",
                             [
-                                "affects magic monkeys and water towers including ice in range",
+                                "affects water towers in range",
                                 "+1p"
                             ]
                         ],
@@ -6301,7 +6301,7 @@ const data = {
                         "5": [
                             "gains ocean-wrath buff",
                             [
-                                "affects magic and water towers in range",
+                                "affects water towers in range",
                                 "attack cooldown decreased by 5% (attacks 5.26% faster)"
                             ],
                             "spirit buffed",
@@ -6352,7 +6352,7 @@ const data = {
                         "11": [
                             "gains ocean-clarity buff",
                             [
-                                "affects magic and water towers in range",
+                                "affects water towers in range",
                                 "+2p, +5r",
                                 "stacks with the existing +1p from wrath-of-the-sea for a total of +3p"
                             ]
@@ -6364,7 +6364,7 @@ const data = {
                             ],
                             "oceans-wrath upgraded to crystal-clarity",
                             [
-                                "affects magic and water towers",
+                                "affects water towers",
                                 "attack cooldown decreased by 10% (attacks 11.11% faster)"
                             ]
                         ],
@@ -6375,9 +6375,8 @@ const data = {
                             ],
                             "wrath-of-the-sea buffed",
                             [
-                                "affects magic and water towers in range",
+                                "affects water towers in range",
                                 "+10% discount to tier 5 upgrades",
-                                "BUG: the description only mentions magic towers, but water towers also get discounted"
                             ]
                         ],
                         "14": [
@@ -6417,7 +6416,7 @@ const data = {
                         "18": [
                             "crystal-clarity upgraded to perfect-clarity",
                             [
-                                "affects magic and water towers in range",
+                                "affects water towers in range",
                                 "attack cooldown decreased by 20% (attacks 25% faster)"
                             ]
                         ],
@@ -7147,7 +7146,7 @@ const data = {
                             "+$50 end of round income ($125)"
                         ],
                         "3": [
-                            "gains biohack ability (40s cooldown, 11.25s initial, 9s duration)",
+                            "gains biohack ability (45s cooldown, 11.25s initial, 7s duration)",
                             [
                                 "applies hacked buff to the nearest 6 towers",
                                 [
@@ -7594,7 +7593,7 @@ const data = {
                     "data": {
                         "1": [
                             "$600",
-                            ["hero_level", {"multiplier": 1.5, "curve": "Quincy"}],
+                            ["hero_level", {"multiplier": 1.25, "curve": "Quincy"}],
                             "Unlock Cost: 2,000 MM + 40,000 Ezili Points",
                             "size: 6 radius",
                             "placeable on: land",
@@ -9085,7 +9084,7 @@ const data = {
                             [
                                 "dart attack",
                                 [
-                                    "1d, 3p, 0.7s, sharp type",
+                                    "1d, 3p, 0.9s, sharp type",
                                     "can see past obstacles"
                                 ]
                             ]
@@ -9107,14 +9106,14 @@ const data = {
                             "dart buffed",
                             [
                                 "first gives +1p",
-                                "divide and conquer targeting gives +20 move speed and +10%s",
+                                "divide and conquer targeting gives +20 move speed and +20%s",
                                 "zone defence targeting gives +1d"
                             ]
                         ],
                         "5": [
                             "dart buffed",
                             [
-                                "0.55s, camo"
+                                "0.65s, camo"
                             ]
                         ],
                         "6": [
@@ -9122,6 +9121,10 @@ const data = {
                             [
                                 "affects all towers",
                                 "every attack has a 20% chance to ignore bloon properties"
+                            ],
+                            "dart buffed",
+                            [
+                                "0.55s"
                             ]
                         ],
                         "7": [
@@ -11156,7 +11159,7 @@ const data = {
             "tackShooter": {
                 "base": 280,
                 "top": [150, 400, 700, 3500, 35500],
-                "middle": [100, 225, 600, 3550, 15000],
+                "middle": [100, 225, 600, 3850, 15000],
                 "bottom": [100, 100, 450, 3400, 24000]
             },
             "iceMonkey": {
@@ -11230,7 +11233,7 @@ const data = {
                 "bottom": [3000, 1200, 4500, 32000, 140000]
             },
             "ninjaMonkey": {
-                "base": 400,
+                "base": 350,
                 "top": [150, 200, 700, 2750, 35000],
                 "middle": [200, 375, 2100, 5200, 20000],
                 "bottom": [200, 250, 1800, 4600, 40000]
@@ -11256,9 +11259,9 @@ const data = {
                 "bottom": [500, 500, 1500, 7200, 20000]
             },
             "bananaFarm": {
-                "base": 900,
-                "top": [550, 550, 2750, 16000, 66000],
-                "middle": [200, 700, 4400, 8000, 45000],
+                "base": 950,
+                "top": [550, 550, 2700, 16000, 66000],
+                "middle": [200, 700, 4800, 8000, 45000],
                 "bottom": [400, 240, 2800, 13000, 46000]
             },
             "spikeFactory": {

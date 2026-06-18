@@ -2,14 +2,14 @@
   "tournaments": [],
   "news": [
     {
-      "title": "Battles 2 4.12 out now!",
+      "title": "Battles 2 4.12 OTA Update 1",
       "date": "2024/1/1",
       "timeutc": "00:00:00",
-      "description": "The map Park from Battles 1 makes a comeback to Battles 2!",
+      "description": "Some decent and some bad balance changes (RIP Blade Shooter)",
       "buttons": [
         [
           "Learn More",
-          "https://www.reddit.com/r/battles2/comments/1ryx868/battles_2_update_412_coming_soon_update_notes/"
+          "https://www.reddit.com/r/battles2/comments/1u90pgs/battles_2_412_ota_update_1_live_now/"
         ]
       ]
     }
