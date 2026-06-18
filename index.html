@@ -40,7 +40,7 @@
                         <h1>Battles 2 Popology</h1>
                         <h2>The information hub for Bloons TD Battles 2</h2>
                     </section>
-                    <section id="artAttribution" style="display: flex; flex-direction: column; align-items: end; padding: 0 12px;">
+                    <section id="artAttribution" class="artAttribution" style="">
                     </section>
                     <section class="blankSection linksSection" id="newsSection">
                     </section>
@@ -206,59 +206,22 @@
                 </div>
             </div>
         </main>
-        <!-- <script>
-            console.log('This is logged to the console from the body tags.');
-        </script> -->
     </body>
     <dialog class="menu" id="menu"></dialog>
-    <style id="coverImageStyle">
-        .coverImage {
-            background-image: linear-gradient(to right,
-                rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.25) 15%,
-                rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%,
-                rgba(255, 255, 255, 0.25) 85%, rgba(255, 255, 255, 1)
-            ),
-            linear-gradient(to top,
-                rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5) 25%,
-                rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 110%
-            ),
-            url('media/clanIsland.png');
-
-            @media (prefers-color-scheme: dark) {
-                background-image: linear-gradient(to right,
-                    rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.25) 15%,
-                    rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.1) 80%,
-                    rgba(0, 0, 0, 0.25) 85%, rgba(0, 0, 0, 1)
-                ),
-                linear-gradient(to top,
-                    rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5) 25%,
-                    rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 110%
-                ),
-                url('media/clanIsland.png');
-            }
-            opacity: 0;
-            background-position-y: 40%;
-        }
-        .coverImage.loaded {
-            transition: opacity 0.5s;
-            opacity: 0.8;
-            @media (prefers-color-scheme: dark) {
-                opacity: 0.6;
-            }
-        }
-        #artAttribution {
-            opacity: 0;
-        }
-        #artAttribution.loaded {
-            transition: opacity 0.5s;
-            opacity: 1;            
-        }
-    </style>
     <script>
+        const backgroundImages = [
+            'bananaDepot.png', 'biker_bones_background.png', 'bloontoniumMines.png', 'clan-banner.jpg',
+            'clanIsland.png', 'dragon.png', 'fateweaver.png', 'homepageBanner.png', 'koru.png',
+            'ports.png', 'salmonLadder.png'
+        ];
+        const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+
+        document.getElementById('coverImage').style.setProperty('--cover-image', 'url("/media/' + randomImage + '")');
         window.addEventListener('load', async function() {
             await sleep(200);
             document.getElementById('coverImage').classList.add('loaded');
             document.getElementById('artAttribution').classList.add('loaded');
+            
         });
 
         function sleep(ms) {
