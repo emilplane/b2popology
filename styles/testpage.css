@@ -1,0 +1,120 @@
+.towerContainer {
+	background-color: #333333;
+	text-align: center;
+	padding: 16px 16px 16px 16px;
+	border-radius: 16px;
+	max-width: 1000px;
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-top: 40px;
+	margin-bottom: 16px;
+}
+
+.towerImgContainer {
+	background-color: #666666;
+	margin-bottom: 16px;
+	border-radius: 16px;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 16px;
+	height: 400px;
+}
+
+.towerImg {
+	height: 95%;
+	width: auto;
+}
+
+.towerName {
+	-webkit-text-stroke: 4px black; 
+	padding-bottom: 4px;
+	color: white;
+	font-size: 60px;
+	font-family: Luckiest Guy;
+	font-weight: bold;
+}
+
+.upgradeName {
+	padding-bottom: 16px;
+	color: #BBBBBB;
+	font-size: 36px;
+	font-family: Luckiest Guy;
+	font-weight: bold;
+}
+
+.iconedStats {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+	flex-wrap: wrap;
+}
+
+.iconedStatImg {
+	height: 48px;
+	width: auto;
+	margin-right: 8px;
+}
+
+.iconedStatBox {
+	background-color: #666666;
+	border-radius: 8px;
+	padding: 4px 8px 4px 8px;
+	margin-right: 8px;
+}
+
+.iconedStatText {
+	color: white;
+	font-size: 24px;
+	font-family: "Gabarito";
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.headerAttacks {
+	margin-left: 120px;
+	margin-bottom: 16px;
+	font-size: 48px;
+	font-family: "Gabarito";
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.attackName {
+	margin-bottom: 16px;
+	margin-left: 120px;
+	font-size: 36px;
+	color: #CCCCCC;
+	font-family: "Gabarito";
+	white-space: nowrap;
+}
+
+p {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.attackStatContainer {
+	max-width: 1000px;
+	padding: 8px 16px 8px 16px;
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-bottom: 32px;
+	background-color: #666666;
+	gap: 16px;
+	border-radius: 6px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.attackStatContainer p {
+	font-size: 24px;
+	padding: 4px 12px 4px 12px;
+	font-family: "Gabarito";
+}
+
+.attackStat {
+	text-align: center;
+	background-color: #333333;
+	border-radius: 4px;
+}

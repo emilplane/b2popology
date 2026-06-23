@@ -1,0 +1,323 @@
+{
+	"towers" : [
+		{
+			"id" : "dartMonkey",
+			"name" : "Dart Monkey",
+			"unlock_cost" : 0,
+			"size" : [6],
+			"placeable_on" : 0,
+			"upgrades" : [
+				{
+					"path" : "000",
+					"name" : "Base",
+					"cost" : 200,
+					"attacks" : 
+					[
+						{
+							"name" : "dart",
+							"damage" : 1,
+							"pierce" : 2,
+							"range": 32,
+							"cooldown" : 0.95,
+							"type" : "SHARP",
+							"camo" : false
+						}
+					]
+				},
+				{
+					"path" : "100",
+					"name" : "Sharp Shots",
+					"cost" : 100,
+					"buffs" : 
+					[
+						{
+							"type" : "pierce",
+							"operation" : "add",
+							"value" : 1,
+							"affected_attacks" : [
+								"all",
+								"EX_masterbolt",
+								"EX_spikeball",
+								"EX_juggernaut",
+								"EX_ultrajugg"
+							]
+						},
+						{
+							"type" : "pierce",
+							"operation" : "add",
+							"value" : 6,
+							"affected_attacks" : ["masterbolt"]
+						}
+					]
+				},
+				{
+					"path" : "200",
+					"name" : "Razor Sharp Shots",
+					"cost" : 250,
+					"buffs" : 
+					[
+						{
+							"type" : "pierce",
+							"operation" : "add",
+							"value" : 3,
+							"affected_attacks" : [
+								"all",
+								"EX_masterbolt",
+								"EX_spikeball",
+								"EX_juggernaut",
+								"EX_ultrajugg"
+							]
+						},
+						{
+							"type" : "pierce",
+							"operation" : "add",
+							"value" : 8,
+							"affected_attacks" : ["masterbolt"]
+						}
+					]
+				},
+				{
+					"path" : "300",
+					"name" : "Spike-o-pult",
+					"cost" : 450,
+					"attacks" : 
+					[
+						{
+							"name" : "spikeball",
+							"damage" : 1,
+							"pierce" : 30,
+							"range": 37,
+							"cooldown" : 1.15,
+							"type" : "SHATTER",
+							"camo" : false,
+							"overwrites" : ["dart"],
+							"bonus_damage": {
+								"ceram" : 1
+							}
+						}
+					]
+				},
+				{
+					"path" : "400",
+					"name" : "Juggernaut",
+					"cost" : 1800,
+					"attacks" : 
+					[
+						{
+							"name" : "juggernaut",
+							"damage" : 2,
+							"pierce" : 60,
+							"range": 37,
+							"cooldown" : 1.0,
+							"type" : "NORMAL",
+							"camo" : false,
+							"overwrites" : ["spikeball"],
+							"bonus_damage": {
+								"ceram" : 4
+							}
+						}
+					]
+				},
+				{
+					"path" : "500",
+					"name" : "Ultra-Juggernaut",
+					"cost" : 13500,
+					"attacks" : 
+					[
+						{
+							"name" : "ultrajugg",
+							"damage" : 5,
+							"pierce" : 200,
+							"range": 37,
+							"cooldown" : 1.0,
+							"type" : "NORMAL",
+							"camo" : false,
+							"overwrites" : ["juggernaut"],
+							"bonus_damage": {
+								"ceram" : 16,
+								"fort" : 5,
+								"lead" : 25
+							}
+						}
+					]
+				},
+				{
+					"path" : "010",
+					"name" : "Quick Shot",
+					"cost" : 100,
+					"buffs" : 
+					[
+						{
+							"type" : "cooldown",
+							"operation" : "mul",
+							"value" : 0.85,
+							"affected_attacks" : ["all"]
+						}
+					]
+				},
+				{
+					"path" : "020",
+					"name" : "Very Quick Shots",
+					"cost" : 100,
+					"buffs" : 
+					[
+						{
+							"type" : "cooldown",
+							"operation" : "mul",
+							"value" : 0.78,
+							"affected_attacks" : ["all"]
+						}
+					]
+				},
+				{
+					"path" : "030",
+					"name" : "Triple Shot",
+					"cost" : 350,
+					"buffs" : 
+					[
+						{
+							"type" : "projectile_count",
+							"operation" : "set",
+							"value" : 3,
+							"affected_attacks" : ["all"]
+						}
+					]
+				},
+				{
+					"path" : "040",
+					"name" : "Super Monkey Fan Club",
+					"cost" : 9000,
+					"buffs" : 
+					[
+						{
+							"type" : "damage",
+							"operation" : "add",
+							"value" : 2,
+							"affected_attacks" : ["all"]
+						},
+						{
+							"type" : "cooldown",
+							"operation" : "mul",
+							"value" : 0.75,
+							"affected_attacks" : ["all"]
+						}
+					]
+				},
+				{
+					"path" : "050",
+					"name" : "Plasma Monkey Fan Club",
+					"cost" : 45000,
+					"cost" : 9000,
+					"buffs" : 
+					[
+						{
+							"type" : "damage",
+							"operation" : "add",
+							"value" : 3,
+							"affected_attacks" : ["all"]
+						}
+					]
+				},
+				{
+					"path" : "001",
+					"name" : "Long Range Darts",
+					"cost" : 90,
+					"buffs" : 
+					[
+						{
+							"type" : "range",
+							"operation" : "add",
+							"value" : 8,
+							"affected_attacks" : [
+								"all",
+								"EX_bolt",
+								"EX_sharpbolt",
+								"EX_masterbolt"
+							]
+						}
+					]
+				},
+				{
+					"path" : "002",
+					"name" : "Enhanced Eyesight",
+					"cost" : 200,
+					"buffs" : 
+					[
+						{
+							"type" : "range",
+							"operation" : "add",
+							"value" : 8,
+							"affected_attacks" : [
+								"all",
+								"EX_bolt",
+								"EX_sharpbolt",
+								"EX_masterbolt"
+							]
+						},
+						{
+							"type" : "camo",
+							"operation" : "set",
+							"value" : true,
+							"affected_attacks" : ["all"]
+						}
+					]
+				},
+				{
+					"path" : "003",
+					"name" : "Crossbow",
+					"cost" : 600,
+					"attacks" : 
+					[
+						{
+							"name" : "bolt",
+							"damage" : 3,
+							"pierce" : 7,
+							"range": 56,
+							"cooldown" : 0.95,
+							"type" : "SHARP",
+							"camo" : true,
+							"overwrites" : ["dart"]
+						}
+					]
+				},
+				{
+					"path" : "004",
+					"name" : "Sharp Shooter",
+					"cost" : 2300,
+					"attacks" : 
+					[
+						{
+							"name" : "sharpbolt",
+							"damage" : 6,
+							"pierce" : 7,
+							"range": 56,
+							"cooldown" : 0.75,
+							"type" : "SHARP",
+							"camo" : true,
+							"overwrites" : ["bolt"]
+						}
+					]
+				},
+				{
+					"path" : "005",
+					"name" : "Crossbow Master",
+					"cost" : 27000,
+					"attacks" : 
+					[
+						{
+							"name" : "masterbolt",
+							"damage" : 9,
+							"pierce" : 13,
+							"range": 74,
+							"cooldown" : 0.13,
+							"type" : "NORMAL",
+							"camo" : true,
+							"overwrites" : ["sharpbolt"]
+						}
+					]
+				}
+
+			]
+		}
+	]
+}
