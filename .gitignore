@@ -4,3 +4,4 @@ media/.DS_Store
 .idea/modules.xml
 .idea/b2popology.iml
 .idea/webResources.xml
+.ptest.*

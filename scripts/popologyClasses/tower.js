@@ -46,6 +46,13 @@ export class Tower {
 		return "/media/towerPortraits/" + this.id + "/" + Tower.getDominantPath(path) + ".png";
 	}
 
+    getUpgradeName(path) {
+        let dpath = Tower.getDominantPath(path);
+        for (let i = 0; i < this.upgrades.length; i++) {
+            if (this.upgrades[i].path == dpath) return this.upgrades[i].name; 
+        }
+    }
+
 	static getDominantPath(path) {
 		const spread = [...path];
 		const nums = [];
@@ -66,6 +73,7 @@ export class Tower {
 				}
 			}
 		});
+        console.log(attacks);
 		let filtered_attacks = [];
 		let flag;
 		for (let i = 0; i < attacks.length; i++) {
@@ -103,6 +111,20 @@ export class Tower {
 			}
 		});
 		return buffs;
+	}
+
+    getAbilities(path) {
+		let abilities = [];
+		this.upgrades.forEach((upgrade) => {
+			if (Tower.isChildUpgrade(path, upgrade.path)) {
+				if (!(upgrade.abilities == null)) {
+					upgrade.abilities.forEach((ability) => {
+						abilities.push(ability);
+					});
+				}
+			}
+		});
+		return abilities;
 	}
 
 	getTotalCost(path) {

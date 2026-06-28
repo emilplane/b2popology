@@ -18,43 +18,46 @@
 		<link rel="stylesheet" type="text/css" href="/styles/testpage.css">
 	</head>
 	<body>
-		<div class="towerContainer">
-			<p class="towerName" id="towerName"></p>
-			<p class="upgradeName" id="upgradeName"></p>
-			<div class="towerImgContainer">
-				<img id="towerImg" class="towerImg">
-			</div>
-			<div id="iconedStats" class="iconedStats">
-				<template id="baseStatTemplate">
-					<div>
-						<img class="iconedStatImg">
-						<div class="iconedStatBox">
-							<p class="iconedStatText"> </p>
-						</div>
-					</div>
-				</template>
-			</div>
-		</div>
-		<h2 class="headerAttacks">Attacks</h2>
-		<template id="attackTemplate">
-			<div>
-				<p id="attackId" class="attackName"></p>
-				<div class="attackStatContainer">
-					<template id="attackBoxTemplate">
-						<div>
-							<p></p>
-							<p class="attackStat"></p>
-						</div>
-					</template>
-					<div id="camo">
-						<img src="/media/propertyIcons/camo.png" style="height: 64px; width: auto; padding-top: 16px;">
-					</div>
-				</div>
-			</div>
-		</template>
-		<div id="attacksContainer"></div>
+    <div class="towerView">
+      <div class="sizeSetter">
+	      <div class="towerContainer">
+			    <p class="towerName" id="towerName"></p>
+			    <p class="upgradeName" id="upgradeName"></p>
+			    <div class="towerImgContainer">
+				    <img id="towerImg" class="towerImg">
+			    </div>
+			    <div id="iconedStats" class="iconedStats">
+				    <template id="baseStatTemplate">
+					  <div>
+						  <img class="iconedStatImg">
+						  <div class="iconedStatBox">
+							  <p class="iconedStatText"> </p>
+						  </div>
+					  </div>
+				    </template>
+			    </div>
+		    </div>
+		    <h2 class="headerAttacks">Attacks</h2>
+		    <template id="attackTemplate">
+			  <div>
+				  <p id="attackId" class="attackName"></p>
+          <div class="grayBox">
+				    <div class="attackStatContainer">
+					    <template id="attackBoxTemplate">
+						  <div>
+							  <p></p>
+							  <p class="attackStat"></p>
+						  </div>
+					    </template>
+				    </div>
+            <p class="footnote"></p>
+          </div>
+			  </div>
+		    </template>
+		    <div id="attacksContainer"></div>
+      </div>
+    </div>
 	</body>
 </html>
 
-<script type="module" src="/scripts/popologyClasses/data.js"></script>
 <script type="module" src="/scripts/testpage.js"></script>

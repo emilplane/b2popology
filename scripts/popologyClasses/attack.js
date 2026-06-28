@@ -17,9 +17,18 @@ export class Attack {
 		return attack;
 	}
 
+    clone() {
+        let attack = new Attack(this.name, this.damage, this.pierce, this.range, this.cooldown, this.type, this.camo, this.overwrites);
+        if (this.bonus_damage != null) attack.bonus_damage = this.bonus_damage;
+        if (this.notes != null) attack.notes = this.notes;
+        if (this.projectile_count != null) attack.projectile_count = this.projectile_count;
+        return attack;
+    }
+
 	static buffedAttack(attack, buff) {
 		if (buff.affected_attacks.includes("EX_" + attack.name)) return attack;
-		let new_attack = structuredClone(attack);
+		let new_attack = attack.clone();
+
 		if (buff.affected_attacks.includes(new_attack.name) || buff.affected_attacks.includes("all")) {
 			new_attack[buff.type] = Attack.applyBuff(new_attack[buff.type], buff.value, buff.operation);
 		}
@@ -41,4 +50,14 @@ export class Attack {
 	static formattedBonusDamage(bonus, damage) {
 		return (damage + bonus) + " (+" + bonus + ")";
 	}
+
+    formattedRange() {
+        if (this.range == null) return null;
+        return this.range + " radius";
+    }
+
+    formattedCooldown() {
+        if (this.cooldown == null || Number.isNaN(this.cooldown)) return null;
+        return this.cooldown + "s";
+    }
 }

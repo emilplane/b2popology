@@ -48,13 +48,20 @@ async function loadData() {
 
 function renderMainInfo(tower, path) {
 	towerName.textContent = tower.name + " " + pathFormatted(path);
+    upgradeName.textContent = tower.getUpgradeName(path);
 	towerImg.src = tower.getImagePath(path);
 	createBaseStatBox("/media/Icons/monkeyMoney.png", tower.formattedUnlockCost());
 	createBaseStatBox("/media/Icons/cash.png", "$" + tower.getTotalCost(path));
 	createBaseStatBox("/media/Icons/size.png", tower.formattedSize());
 	createBaseStatBox("/media/Icons/placement.png", tower.formattedPlacement());
 	createBaseStatBox("/media/Icons/advIntel.png", tower.intel_range)
-	tower.getAttacks(path).forEach(renderAttack)
+	tower.getAttacks(path).forEach((attack) => {
+        renderAttack(attack);
+    });
+   tower.getAbilities(path).forEach((ability) => {
+        renderAbility(ability);
+    });
+     
 }
 
 function createBaseStatBox(imagePath, text) {
@@ -77,20 +84,55 @@ function createAttackBox(topText, bottomText, parent) {
 function renderAttack(attack) {
 	const clone = attackTemplate.content.cloneNode(true);
 	const attackStatContainer = clone.querySelector('.attackStatContainer');
+    const grayBox = clone.querySelector('.grayBox');
 	clone.getElementById("attackId").textContent = attack.name + " attack";
 	createAttackBox("Damage", attack.damage, attackStatContainer);
 	createAttackBox("Pierce", attack.pierce, attackStatContainer);
-	createAttackBox("Range", attack.range + " radius", attackStatContainer);
-	createAttackBox("Cooldown", attack.cooldown + "s", attackStatContainer);
+	createAttackBox("Range", attack.formattedRange(), attackStatContainer);
+	createAttackBox("Cooldown", attack.formattedCooldown(), attackStatContainer);
 	createAttackBox("Type", attack.type, attackStatContainer);
 	createAttackBox("Projectiles", attack.projectile_count, attackStatContainer);
-	if (!attack.camo) clone.getElementById("camo").remove();
+	if (attack.camo) {
+        const camoimg = document.createElement('img');
+        camoimg.src = "/media/propertyIcons/camo.png";
+        camoimg.style = "height: 54px; width: auto; padding-top: 8px;";
+        attackStatContainer.appendChild(camoimg);
+    }
 	if (!(attack.bonus_damage == null)) {
 		Object.keys(attack.bonus_damage).forEach((bonus) => {
 			createAttackBox(Attack.formattedBonus(bonus), Attack.formattedBonusDamage(attack.bonus_damage[bonus], attack.damage), attackStatContainer);
 		});
 	}
+    if (!(attack.notes == null)) {
+        attack.notes.forEach((note) => {
+            addFootnote(note, grayBox);
+        });
+    }
 	attacksContainer.appendChild(clone);
+}
+
+function renderAbility(ability) {
+	const clone = attackTemplate.content.cloneNode(true);
+	const attackStatContainer = clone.querySelector('.attackStatContainer');
+    const grayBox = clone.querySelector('.grayBox');
+	clone.getElementById("attackId").textContent = ability.name + " ability";
+	createAttackBox("Cooldown", ability.cooldown, attackStatContainer);
+	createAttackBox("Duration", ability.duration, attackStatContainer);
+	createAttackBox("Battle-Ready", ability.battle_ready, attackStatContainer);
+    if (!(ability.desc == null)) {
+        ability.desc.forEach((note) => {
+            addFootnote(note, grayBox);
+        });
+    }
+	attacksContainer.appendChild(clone);
+}
+
+function addFootnote(text, parent) {
+    if (text == null) return;
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = "* " + text;
+    newParagraph.className = "footnote";
+    parent.appendChild(newParagraph);
 }
 
 function strPathToNum(str) {

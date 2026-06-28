@@ -39,7 +39,8 @@
 								"EX_masterbolt",
 								"EX_spikeball",
 								"EX_juggernaut",
-								"EX_ultrajugg"
+								"EX_ultrajugg",
+                                "EX_juggernauts"
 							]
 						},
 						{
@@ -65,7 +66,8 @@
 								"EX_masterbolt",
 								"EX_spikeball",
 								"EX_juggernaut",
-								"EX_ultrajugg"
+								"EX_ultrajugg",
+                                "EX_juggernauts"
 							]
 						},
 						{
@@ -93,7 +95,8 @@
 							"overwrites" : ["dart"],
 							"bonus_damage": {
 								"ceram" : 1
-							}
+							},
+                            "notes" : [ "can bounce off walls", "can rehit bloons after bounce"]
 						}
 					]
 				},
@@ -114,7 +117,8 @@
 							"overwrites" : ["spikeball"],
 							"bonus_damage": {
 								"ceram" : 4
-							}
+							},
+                            "notes" : [ "can bounce off walls", "can rehit bloons after bounce"]
 						}
 					]
 				},
@@ -137,7 +141,29 @@
 								"ceram" : 16,
 								"fort" : 5,
 								"lead" : 25
-							}
+							},
+                            "notes" : [
+                                "can bounce off walls",
+                                "can rehit bloons after bounce",
+                                "emits juggernauts attack at 50% pierce usage, 100% pierce usage, or projectile expiry"
+                            ]
+						},
+                        {
+							"name" : "juggernauts",
+							"damage" : 1,
+							"pierce" : 100,
+							"type" : "NORMAL",
+							"camo" : false,
+                            "projectile_count" : 6, 
+							"bonus_damage": {
+								"ceram" : 2,
+								"fort" : 2,
+								"lead" : 5
+							},
+                            "notes" : [
+                                "can bounce off walls",
+                                "can rehit bloons after bounce"
+                            ]
 						}
 					]
 				},
@@ -179,7 +205,7 @@
 							"type" : "projectile_count",
 							"operation" : "set",
 							"value" : 3,
-							"affected_attacks" : ["all"]
+							"affected_attacks" : ["all", "EX_superfan-dart"]
 						}
 					]
 				},
@@ -201,7 +227,34 @@
 							"value" : 0.75,
 							"affected_attacks" : ["all"]
 						}
-					]
+					],
+                    "abilities" : [
+                        {
+                            "id" : "fan-club",
+                            "name" : "Super Monkey Fan Club",
+                            "cooldown" : 50,
+                            "duration" : 12,
+                            "battle_ready" : true,
+                            "desc" : [
+                                "transforms the 10 nearest untransformed dart monkeys within 50 radius (up to 2-4-2) into superfans",
+                                "if limit isn't reached, also transforms newly placed dart monkeys until reached",
+                                "if sold, monkeys remain transformed",
+                                "if transformed darts are upgraded to a non-2-5-2 dart monkey, they do not acquire those upgrades until end of duration",
+                                "superfans inherit crosspathing benefits"
+                            ]
+                        }
+                    ],
+                    "attacks" : [
+                        {
+                            "name" : "superfan-dart",
+							"damage" : 1,
+							"pierce" : 2,
+							"range": 40,
+							"cooldown" : 0.05,
+							"type" : "SHARP",
+							"camo" : false 
+                        }
+                    ]
 				},
 				{
 					"path" : "050",
