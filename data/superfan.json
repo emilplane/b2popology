@@ -1,0 +1,29 @@
+{
+	"id" : "superfan",
+	"name" : "Superfan",
+	"properties": {
+		"size": [6],
+		"placement": 0
+	},
+	"upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 0,
+      "attacks": [
+        {
+          "id": "dart",
+          "name": "Dart",
+          "properties": {
+            "damage": 1,
+            "pierce": 2,
+            "range": 40,
+            "cooldown": 0.05,
+            "type": "sharp"
+          }
+        }
+      ]
+    }
+	]
+
+}

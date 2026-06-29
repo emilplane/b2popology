@@ -1,63 +1,112 @@
+import { PropertyBasic } from './properties/propertyBasic.js';
+import { PropertyCamo } from './properties/propertyCamo.js';
+import { PropertyBonusDamage } from './properties/propertyBonusDamage.js';
+import { PropertyFootnote } from './properties/propertyFootnote.js';
+import { PropertyCrit } from './properties/propertyCrit.js';
+
 export class Attack {
 
-	constructor(name, damage, pierce, range, cooldown, type, camo, overwrites) {
+	constructor(id, name, overwrites, properties) {
+		this.id = id;
 		this.name = name;
-		this.damage = damage;
-		this.pierce = pierce;
-		this.range = range;
-		this.cooldown = cooldown;
-		this.type = type;
-		this.camo = camo
 		this.overwrites = overwrites;
+		this.properties = [];
+		if (properties != null) {
+			Object.keys(properties).forEach((key) => {
+				this.properties.push(...Attack.createProperty(key, properties[key]))
+			});
+		}
 	}
 	
 	static fromJson(data = {}) {
-		let attack = new Attack();
-		Object.assign(attack, data);
-		return attack;
+		return new Attack(data.id, data.name, data.overwrites, data.properties);
+	}
+	
+	static createProperty(key, val) {
+		switch (key) {
+			case "camo":
+				return [new PropertyCamo(key, val)];
+			case "bonusDamage":
+				const arr = [];
+				Object.keys(val).forEach((bkey) => {
+					arr.push(new PropertyBonusDamage(bkey, val[bkey]))
+				});
+				return arr;
+			case "notes":
+				return [new PropertyFootnote(key, val)];
+			case "crit":
+				return [new PropertyCrit(key, val)];
+			default:
+				return [new PropertyBasic(key, val)];
+		}
 	}
 
     clone() {
-        let attack = new Attack(this.name, this.damage, this.pierce, this.range, this.cooldown, this.type, this.camo, this.overwrites);
-        if (this.bonus_damage != null) attack.bonus_damage = this.bonus_damage;
-        if (this.notes != null) attack.notes = this.notes;
-        if (this.projectile_count != null) attack.projectile_count = this.projectile_count;
+        let attack = new Attack();
+		attack.id = this.id;
+		attack.name = this.name
+		attack.overwrites = this.overwrites;
+		this.properties.forEach((property) => {
+			attack.properties.push(property.clone());
+		});
         return attack;
     }
 
-	static buffedAttack(attack, buff) {
-		if (buff.affected_attacks.includes("EX_" + attack.name)) return attack;
-		let new_attack = attack.clone();
-
-		if (buff.affected_attacks.includes(new_attack.name) || buff.affected_attacks.includes("all")) {
-			new_attack[buff.type] = Attack.applyBuff(new_attack[buff.type], buff.value, buff.operation);
+	buffedBy(buff) {
+		let attack = this.clone();
+		if (
+			(!buff.affectedAttacks.includes("EX_" + this.id)) && 
+			((buff.affectedAttacks.includes("all")) || (buff.affectedAttacks.includes(this.id)))
+		) {
+			let propertyToBuff = attack.properties.find(property => property.key == buff.type);
+			if ((buff.operation == "set") && (propertyToBuff == null)) {
+				propertyToBuff = Attack.createProperty(buff.type, null)[0];
+				attack.properties.push(propertyToBuff);
+			}
+			if (propertyToBuff != null) propertyToBuff.applyBuff(buff);
 		}
-		return new_attack;
+		if (buff.type == "damage") {
+			let newBuff = buff.clone();
+			newBuff.type = "crit";
+			return attack.buffedBy(newBuff);
+		}
+		return attack;
 	}
 
-	static applyBuff(value, mod, operation) {
-		if (operation == "add") return value + mod;
-		if (operation == "mul") return value * mod;
-		if (operation == "set") return mod;
-		return value;
+	toHTML() {
+		const divMain = document.createElement('div');
+		const divGray = document.createElement('div');
+		const parName = document.createElement('p');
+		const propertyContainer = document.createElement('div');
+
+		parName.className = "attackName";
+		parName.textContent = this.name + " Attack";
+		divGray.className = "grayBox";
+
+		propertyContainer.className = "attackStatContainer";
+		divGray.appendChild(propertyContainer);
+	
+		this.properties.forEach((property) => {
+			if (property instanceof PropertyFootnote) {
+				divGray.appendChild(property.toHTML());
+			}
+			else if (property instanceof PropertyCamo) {
+				return
+			}
+			else {
+				let element = property.toHTML(this);
+				if (element == null) return;
+				propertyContainer.appendChild(element);
+			}
+		});
+		
+		const camo = this.properties.find(property => property.key == "camo");
+		if ((camo != null) && (camo.val== true)) propertyContainer.appendChild(camo.toHTML());
+
+		divMain.appendChild(parName);
+		divMain.appendChild(divGray);
+
+		return divMain;
 	}
 
-	static formattedBonus(bonus) {
-		const bonuses = { "ceram" : "Ceramic", "fort" : "Fortified", "lead" : "Lead" };
-		return bonuses[bonus] + " Damage";
-	}
-
-	static formattedBonusDamage(bonus, damage) {
-		return (damage + bonus) + " (+" + bonus + ")";
-	}
-
-    formattedRange() {
-        if (this.range == null) return null;
-        return this.range + " radius";
-    }
-
-    formattedCooldown() {
-        if (this.cooldown == null || Number.isNaN(this.cooldown)) return null;
-        return this.cooldown + "s";
-    }
 }

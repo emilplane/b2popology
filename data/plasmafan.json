@@ -1,0 +1,29 @@
+{
+	"id" : "plasmafan",
+	"name" : "Plasmafan",
+	"properties": {
+		"size": [6],
+		"placement": 0
+	},
+	"upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 0,
+      "attacks": [
+        {
+          "id": "plasma",
+          "name": "Plasma",
+          "properties": {
+            "damage": 2,
+            "pierce": 5,
+            "range": 40,
+            "cooldown": 0.025,
+            "type": "plasma"
+          }
+        }
+      ]
+    }
+	]
+
+}

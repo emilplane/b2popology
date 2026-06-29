@@ -3,13 +3,14 @@ import { Buff } from './buff.js';
 import { Ability } from './ability.js'
 
 export class Upgrade {
-	constructor(path, name, cost, attacks, buffs, abilities) {
+	constructor(path, name, cost, attacks, buffs, abilities, subtowers) {
 		this.path = path;
 		this.name = name;
 		this.cost = cost;
 		this.attacks = attacks;
 		this.buffs = buffs;
         this.abilities = abilities;
+		this.subtowers = subtowers;
 	}
 
 	static fromJson(data = {}) {

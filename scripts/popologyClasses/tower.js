@@ -1,47 +1,144 @@
 import { Attack } from './attack.js';
 import { Upgrade } from './upgrade.js';
+import { PropertyIconed } from './properties/propertyIconed.js';
+import { PathSelector } from '/scripts/popologyUI/pathSelector.js';
+
 
 export class Tower {
 
-	constructor(id, name, unlock_cost, size, placeable_on) {
-		this.id = id;						// STRING unique identifier
-		this.name = name;					// STRING Human-readable name displayed on the website
-		this.unlock_cost = unlock_cost;		// NUMBER Unlock cost in Monkey Money
-		this.size = size;					// NUMBER ARRAY Tower's footprint
-		this.placeable_on = placeable_on;   // NUMBER Where the tower can be placed
+	constructor(id, name, properties, upgrades) {
+		this.id = id;
+		this.name = name;
+		this.properties = properties;
+		this.upgrades = upgrades;
 	}
 
 	static fromJson(data = {}) {
 		let tower = new Tower();
-		Object.assign(tower, data);
-		tower.upgrades = (data.upgrades || []).map(upgradeData =>
-            Upgrade.fromJson(upgradeData)
-        );
+		tower.name = data.name;
+		tower.id = data.id;
+		tower.properties = [];
+		if (data.properties != null) {
+			Object.keys(data.properties).forEach((key) => {
+				tower.properties.push(new PropertyIconed(key, data.properties[key]));
+			});
+		}
+		if (data.upgrades != null) {
+			tower.upgrades = (data.upgrades || []).map(upgradeData =>
+				Upgrade.fromJson(upgradeData)
+			);
+		}
 		return tower;
 	}
+	
+	async toHTML(path, parent) {
+		if (path == null) path = "000";
 
-	static getTowerById(id, towerArray) {
-		for (let i = 0; i < towerArray.length; i++) {
-			if (towerArray[i].id == id) { return towerArray[i]; }
+		const rootDiv = document.createElement('div');
+
+		const towerCont = document.createElement('div');
+		towerCont.className = "towerContainer";
+		
+		const pathSelector = new PathSelector(this, path);
+		const pathSelectorHTML = await pathSelector.toHTML(parent);
+		towerCont.append(pathSelectorHTML);
+
+		const towerName = document.createElement('p');
+		towerName.className = "towerName";
+		towerCont.appendChild(towerName);
+
+		const upgradeName = document.createElement('p');
+		upgradeName.className = "upgradeName";
+		towerCont.appendChild(upgradeName);
+
+		const imgCont = document.createElement('div');
+		imgCont.className = "towerImgContainer";
+		towerCont.appendChild(imgCont);
+
+		const towerImg = document.createElement('img');
+		imgCont.appendChild(towerImg);
+
+		const statsCont = document.createElement('div');
+		statsCont.className = "iconedStatsContainer";
+		towerCont.appendChild(statsCont);
+
+		
+
+		towerName.textContent = this.name + " (" + path[0] + "-" + path[1] + "-" + path[2] + ")";
+		upgradeName.textContent = this.getUpgradeName(path);
+		towerImg.src = this.getImagePath(path);
+
+		this.properties.forEach((property) => {
+			if (property.key == "size") {
+				if (this.getTotalCost(path) != 0) {
+					const cashProperty = new PropertyIconed("cost", this.getTotalCost(path));
+					statsCont.appendChild(cashProperty.toHTML());
+				}
+			}
+			statsCont.appendChild(property.toHTML());
+		});
+
+		if ((this.getAttacks(path) != null) && (this.getAttacks(path).length > 0)) {
+			const attacksHeader = document.createElement('p');
+			attacksHeader.className = "attacksHeader";
+			towerCont.appendChild(attacksHeader);
+
+			const attacksCont = document.createElement('div');
+			attacksCont.className = "attacksContainer";
+			towerCont.appendChild(attacksCont);	
+			attacksHeader.textContent = "Attacks";
+
+			this.getAttacks(path).forEach((attack) => {
+				attacksCont.appendChild(attack.toHTML());
+			});
 		}
-		return null;
+		
+		if ((this.getAbilities(path) != null) && (this.getAbilities(path).length > 0)) {
+			const abilitiesHeader = document.createElement('p');
+			abilitiesHeader.className = "attacksHeader";
+			towerCont.appendChild(abilitiesHeader);
+
+			const abilitiesCont = document.createElement('div');
+			abilitiesCont.className = "attacksContainer";
+			towerCont.appendChild(abilitiesCont);
+
+
+			abilitiesHeader.textContent = "Abilities";
+			this.getAbilities(path).forEach((ability) => {
+				abilitiesCont.appendChild(ability.toHTML());
+			});
+		}
+		
+		rootDiv.appendChild(towerCont);
+		const subtowers	= this.getSubtowers(path);
+		for (let i = 0; i < subtowers.length; i++) {
+			const subtower = await Tower.getTowerById(subtowers[i]);
+			const subtowerHTML = await subtower.toHTML();
+			rootDiv.appendChild(subtowerHTML, parent);
+		}
+
+		return rootDiv;
 	}
 
-	formattedUnlockCost() {
-		if (this.unlock_cost == 0) return "Unlocked by default";
-		return this.unlock_cost + " MM";
-	}
-
-	formattedSize() {
-		if (this.size.length == 1) return this.size[0].toString() + " radius";
-		return this.size[0].toString() + "x" + this.size[1].toString();
-	}
-
-	formattedPlacement() {
-		const placement = { 0 : "Land", 1 : "Water", 2 : "Amphibious" };
-		return placement[this.placeable_on];
+	static async getTowerById(id) {
+		let dataPath = '/data/' + id + '.json';
+		const data = await Tower.loadData(dataPath);
+		return Tower.fromJson(data);
+		
 	}
 	
+	static async loadData(dataPath) {
+		try {
+			const response = await fetch(dataPath);
+			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+			const data = await response.json();
+			return data;
+		}
+		catch (error) {
+			console.error("Failed to load JSON:", error);
+		}
+	}
+
 	getImagePath(path) {
 		return "/media/towerPortraits/" + this.id + "/" + Tower.getDominantPath(path) + ".png";
 	}
@@ -63,47 +160,46 @@ export class Tower {
 	}
 
 	getAttacks(path) {
-		let attacks = [];
+		const attacks = [];
 		this.upgrades.forEach((upgrade) => {
 			if (Tower.isChildUpgrade(path, upgrade.path)) {
-				if (!(upgrade.attacks == null)) {
+				if (upgrade.attacks != null) {
 					upgrade.attacks.forEach((attack) => {
 						attacks.push(attack);
 					});
 				}
 			}
 		});
-        console.log(attacks);
-		let filtered_attacks = [];
+		const filteredAttacks = [];
 		let flag;
 		for (let i = 0; i < attacks.length; i++) {
 			flag = true;
 			for (let j = i + 1; j < attacks.length; j++) {
 				if (attacks[j].overwrites == null) continue;
-				if (attacks[j].overwrites.includes(attacks[i].name)) {
+				if (attacks[j].overwrites.includes(attacks[i].id)) {
 					flag = false;
 					break;
 				}
 			}
-			if (flag) filtered_attacks.push(attacks[i]);
+			if (flag) filteredAttacks.push(attacks[i]);
 		}
-		let buffed_attacks = [];
+		const buffedAttacks = [];
 		let buffs = this.getBuffs(path);
-		for (let i = 0; i < filtered_attacks.length; i++) {
-			let curr_atk = filtered_attacks[i]
+		for (let i = 0; i < filteredAttacks.length; i++) {
+			let currentAttack = filteredAttacks[i]
 			for (let j = 0; j < buffs.length; j++) {
-				curr_atk = Attack.buffedAttack(curr_atk, buffs[j]);
+				currentAttack = currentAttack.buffedBy(buffs[j]);
 			}
-			buffed_attacks.push(curr_atk);
+			buffedAttacks.push(currentAttack);
 		}
-		return buffed_attacks;
+		return buffedAttacks;
 	}
 
 	getBuffs(path) {
 		let buffs = [];
 		this.upgrades.forEach((upgrade) => {
 			if (Tower.isChildUpgrade(path, upgrade.path)) {
-				if (!(upgrade.buffs == null)) {
+				if (upgrade.buffs != null) {
 					upgrade.buffs.forEach((buff) => {
 						buffs.push(buff);
 					});
@@ -114,39 +210,76 @@ export class Tower {
 	}
 
     getAbilities(path) {
-		let abilities = [];
+		const abilities = [];
 		this.upgrades.forEach((upgrade) => {
 			if (Tower.isChildUpgrade(path, upgrade.path)) {
-				if (!(upgrade.abilities == null)) {
+				if (upgrade.abilities != null) {
 					upgrade.abilities.forEach((ability) => {
 						abilities.push(ability);
 					});
 				}
 			}
 		});
-		return abilities;
+		const filteredAbilities = [];
+		let flag;
+		for (let i = 0; i < abilities.length; i++) {
+			flag = true;
+			for (let j = i + 1; j < abilities.length; j++) {
+				if (abilities[j].overwrites == null) continue;
+				if (abilities[j].overwrites.includes(abilities[i].id)) {
+					flag = false;
+					break;
+				}
+			}
+			if (flag) filteredAbilities.push(abilities[i]);
+		}
+		return filteredAbilities;
+	}
+
+	getSubtowers(path) {
+		const overwrites = [];
+		this.upgrades.forEach((upgrade) => {
+			if (Tower.isChildUpgrade(path, upgrade.path)) {
+				if (upgrade.overwrites_subtowers != null) {
+					upgrade.overwrites_subtowers.forEach((overwrite) => {
+						overwrites.push(overwrite);
+					});
+				}
+			}
+		});
+		const subtowers = [];
+		this.upgrades.forEach((upgrade) => {
+			if (Tower.isChildUpgrade(path, upgrade.path)) {
+				if (upgrade.subtowers != null) {
+					upgrade.subtowers.forEach((subtower) => {
+						if (!overwrites.includes(subtower)) subtowers.push(subtower);
+					});
+				}
+			}
+		});
+		return subtowers
 	}
 
 	getTotalCost(path) {
-		let total_cost = 0;
+		let totalCost = 0;
 		this.upgrades.forEach((upgrade) => {
-			if (Tower.isChildUpgrade(path, upgrade.path)) total_cost += upgrade.cost;
+			if (Tower.isChildUpgrade(path, upgrade.path)) totalCost += upgrade.cost;
 		});
-		return total_cost;
+		return totalCost;
 	}
 
 	static isChildUpgrade(path, upgrade) {
-		const path_nums = [...path].map(Number);
-		const upgrade_nums = [...upgrade].map(Number);
-		for (let i = 0; i < path_nums.length; i++) {
-			if (upgrade_nums[i] > path_nums[i]) return false;
+		const pathNums = [...path].map(Number);
+		const upgradeNums = [...upgrade].map(Number);
+		for (let i = 0; i < pathNums.length; i++) {
+			if (upgradeNums[i] > pathNums[i]) return false;
 		}
 		return true;
 	}
 
 	static validPath(path) {
-		const path_nums = [...path].map(Number);
-		path_nums.forEach((path) => {
+		const pathNums = [...path].map(Number);
+		pathNums.forEach((path) => {
 			if ((path > 5) || (path < 0)) {
 				console.error("Upgrade path outside of allowed range");
 				return false;
@@ -154,6 +287,7 @@ export class Tower {
 		});
 		return true;
 	}
+
 }
 
 
