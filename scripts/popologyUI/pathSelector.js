@@ -1,9 +1,11 @@
+import { Tower } from '/scripts/popologyClasses/tower.js';
+
 export class PathSelector {
 	
 	constructor(tower, path) {
 		this.tower = tower;
-		this.path = path;
-		this.setSelected(path);
+		this.path = path
+		this.selected = [...path].map(Number);
 	}
 	
 	async toHTML(parent) {
@@ -19,13 +21,22 @@ export class PathSelector {
 			if (upgrade.path == "000") return;
 
 			const butt = document.createElement("button");
+			const pathNums = [...upgrade.path].map(Number);
+			for (let i = 0; i < pathNums.length; i++) {
+				if (pathNums[i] == 0) continue;
+				if (pathNums[i] < this.selected[i]) butt.className = "pathSelectorButtonSub";
+				else if (pathNums[i] == this.selected[i]) butt.className = "pathSelectorButtonDom";
+				else butt.className = "pathSelectorButtonReg";
+			}
+
 			butt.addEventListener('click', async (event) => {
-				const towerHTML = await this.tower.toHTML(upgrade.path, parent);
+				const towerHTML = await this.tower.toHTML(this.combineSelected(upgrade.path), parent);
 				parent.replaceChildren(towerHTML);
 			});
 
 			const img = document.createElement('img');
-			img.src = "/media/upgradeIcons/" + this.tower.id + "/" + upgrade.path + ".png";
+			img.src = this.getUpgradeIconSource(upgrade.path);
+
 			butt.appendChild(img);
 
 			if (upgrade.path[0] != "0") topCont.appendChild(butt);
@@ -40,48 +51,30 @@ export class PathSelector {
 		return mainCont;
 	}
 
-	combineSelected(path) {
-		if (PathSelector.getTier(path) > 2) {
-			return path;
-		}
+	getUpgradeIconSource(path) {
+		const domPath = Tower.getDominantPath(path);
+		const upgrade = this.tower.upgrades.find(upgrade => upgrade.path == domPath);
+		if ((upgrade != null) && (upgrade.iconSource != null)) return upgrade.iconSource;
+		return "/media/upgradeIcons/" + this.tower.id + "/" + domPath + ".png";
 	}
 
-	setSelected(path) {
-		let found = 0;
+	combineSelected(path) {
 		const pathNums = [...path].map(Number);
 		for (let i = 0; i < pathNums.length; i++) {
-			if (pathNums[i] != 0) {
-				if (found == 0) {
-					this.selected1 = PathSelector.posAndTierToPath(i, pathNums[i]);
-					found++;
+			if (pathNums[i] == this.selected[i]) this.selected[i] = 0;
+			else if (pathNums[i] != 0) {
+				if (pathNums[i] > 2) {
+					for (let j = 0; j < this.selected.length; j++) {
+						if (this.selected[j] > 2) this.selected[j] = 0;
+					}
 				}
-				else {
-					this.selected2 = PathSelector.posAndTierToPath(i, pathNums[i]);
-					found++;
+				for (let j = 0; j < this.selected.length; j++) {
+					if (this.selected[j] <= 2) this.selected[j] = 0;
 				}
+				this.selected[i] = pathNums[i];
 			}
 		}
-		if (found < 2) this.selected2 = "000";
-		if (found < 1) this.selected1 = "000";
+		return this.selected.join("");
 	}
-	
-	static posAndTierToPath(pos, tier) {
-		switch (pos) {
-			case 0:
-				return tier + "00";
-			case 1:
-				return "0" + tier + "0";
-			case 2:
-				return "00" + tier;
-		}
-	}
-
-	static getTier(path) {
-		for (let i = 0; i < path.length; i++) {
-			if (path[i] != "0") return path[i];
-		}
-		return "0";
-	}
-
 
 }

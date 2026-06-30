@@ -23,7 +23,147 @@
           }
         }
       ]
+    },
+	{
+	"path": "100",
+      "name": "Sharp Shots",
+      "cost": 0,
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/100.png",
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [ "all" ]
+        }
+      ]
+    },
+    {
+      "path": "200",
+      "name": "Razor Sharp Shots",
+      "cost": 0,
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/200.png",
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 3,
+          "affectedAttacks": [ "all" ]
+        }
+      ]
+    },
+	{
+      "path": "010",
+      "name": "Quick Shot",
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/010.png",
+      "cost": 0,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.85,
+          "affectedAttacks": [ "all" ]
+        }
+      ]
+    },
+    {
+      "path": "020",
+      "name": "Very Quick Shots",
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/020.png",
+      "cost": 0,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.78,
+          "affectedAttacks": [ "all" ]
+        }
+      ]
+    },
+    {
+      "path": "030",
+      "name": "Triple Shot",
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/030.png",
+      "cost": 0
+    },
+    {
+      "path": "040",
+      "name": "Super Monkey Fan Club",
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/040.png",
+      "cost": 0,
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 2,
+          "affectedAttacks": [ "all" ]
+        },
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.75,
+          "affectedAttacks": [ "all" ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "fan-club",
+          "name": "Super Monkey Fan Club",
+          "properties": {
+            "cooldown": 50,
+            "duration": 12,
+            "desc": [
+              "transforms the 10 nearest untransformed dart monkeys within 50 radius (up to 2-4-2) into superfans",
+              "if limit isn't reached, also transforms newly placed dart monkeys until reached",
+              "if sold, monkeys remain transformed",
+              "if transformed darts are upgraded to a non-2-5-2 dart monkey, they do not acquire those upgrades until end of duration",
+              "superfans inherit crosspathing benefits"
+            ]
+          }
+        }
+      ]
+    },
+	{
+      "path": "001",
+      "name": "Long Range Darts",
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/001.png",
+      "cost": 0,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 8,
+          "affectedAttacks": [ "all" ]
+        }
+      ]
+    },
+    {
+      "path": "002",
+      "name": "Enhanced Eyesight",
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
+	  "iconSource" : "/media/upgradeIcons/dartMonkey/002.png",
+      "cost": 0,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 8,
+          "affectedAttacks": [ "all" ]
+        },
+        {
+          "type": "camo",
+          "operation": "set",
+          "value": true,
+          "affectedAttacks": [ "all" ]
+        }
+      ]
     }
 	]
-
 }

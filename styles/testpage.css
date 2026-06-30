@@ -162,6 +162,22 @@ p {
 	margin-bottom: 8px;
 }
 
+.pathSelectorButtonDom {
+	background-color: #22AA66;
+}
+
+.pathSelectorButtonSub {
+	background-color: #556B55;
+}
+
+.pathSelectorButtonReg {
+	background-color: #555555;
+}
+
+.pathSelectorContainer button {
+	margin: 2px 2px 2px 2px;
+}
+
 .pathSelectorContainer img {
 	height: 42px;
 }

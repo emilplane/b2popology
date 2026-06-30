@@ -112,9 +112,11 @@ export class Tower {
 		rootDiv.appendChild(towerCont);
 		const subtowers	= this.getSubtowers(path);
 		for (let i = 0; i < subtowers.length; i++) {
+			const subParent = document.createElement('div');
 			const subtower = await Tower.getTowerById(subtowers[i]);
-			const subtowerHTML = await subtower.toHTML();
-			rootDiv.appendChild(subtowerHTML, parent);
+			const subtowerHTML = await subtower.toHTML("000", subParent);
+			subParent.appendChild(subtowerHTML);
+			rootDiv.appendChild(subParent);
 		}
 
 		return rootDiv;
@@ -140,7 +142,10 @@ export class Tower {
 	}
 
 	getImagePath(path) {
-		return "/media/towerPortraits/" + this.id + "/" + Tower.getDominantPath(path) + ".png";
+		const domPath = Tower.getDominantPath(path);
+		const upgrade = this.upgrades.find(upgrade => upgrade.path == domPath);
+		if ((upgrade != null) && (upgrade.portraitSource != null)) return upgrade.portraitSource;
+		return "/media/towerPortraits/" + this.id + "/" + domPath + ".png";
 	}
 
     getUpgradeName(path) {
