@@ -1,0 +1,23 @@
+.path-selector-container {
+	margin-bottom: 8px;
+}
+
+.path-selector-button-dom {
+	background-color: #22AA66;
+}
+
+.path-selector-button-sub {
+	background-color: #556B55;
+}
+
+.path-selector-button-reg {
+	background-color: #555555;
+}
+
+.path-selector-container button {
+	margin: 2px 2px 2px 2px;
+}
+
+.path-selector-container img {
+	height: 42px;
+}

@@ -1,0 +1,447 @@
+{
+  "id": "dartMonkey",
+  "name": "Dart Monkey",
+  "properties": {
+    "unlockCost": 0,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 200,
+      "attacks": [
+        {
+          "id": "dart",
+          "name": "Dart",
+          "properties": {
+            "damage": 1,
+            "pierce": 2,
+            "range": 32,
+            "cooldown": 0.95,
+            "type": "sharp",
+            "camo": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "100",
+      "name": "Sharp Shots",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "all",
+            "EX_masterbolt",
+            "EX_spikeball",
+            "EX_juggernaut",
+            "EX_ultrajugg",
+            "EX_juggernauts"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 6,
+          "affectedAttacks": [
+            "masterbolt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "200",
+      "name": "Razor Sharp Shots",
+      "cost": 250,
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 3,
+          "affectedAttacks": [
+            "all",
+            "EX_masterbolt",
+            "EX_spikeball",
+            "EX_juggernaut",
+            "EX_ultrajugg",
+            "EX_juggernauts"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 8,
+          "affectedAttacks": [
+            "masterbolt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "300",
+      "name": "Spike-o-pult",
+      "cost": 450,
+      "attacks": [
+        {
+          "id": "spikeball",
+          "name": "Spikeball",
+          "overwrites": [
+            "dart"
+          ],
+          "properties": {
+            "damage": 1,
+            "pierce": 30,
+            "range": 37,
+            "cooldown": 1.15,
+            "type": "shatter",
+            "camo": false,
+            "bonusDamage": {
+              "ceram": 1
+            },
+            "notes": [
+              "can bounce off walls",
+              "can rehit bloons after bounce"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "400",
+      "name": "Juggernaut",
+      "cost": 1800,
+      "attacks": [
+        {
+          "id": "juggernaut",
+          "name": "Juggernaut",
+          "overwrites": [
+            "spikeball"
+          ],
+          "properties": {
+            "damage": 2,
+            "pierce": 60,
+            "range": 37,
+            "cooldown": 1.0,
+            "type": "normal",
+            "camo": false,
+            "bonusDamage": {
+              "ceram": 4
+            },
+            "notes": [
+              "can bounce off walls",
+              "can rehit bloons after bounce"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "500",
+      "name": "Ultra-Juggernaut",
+      "cost": 13500,
+      "attacks": [
+        {
+          "id": "ultrajugg",
+          "name": "Ultrajugg",
+          "overwrites": [
+            "juggernaut"
+          ],
+          "properties": {
+            "damage": 5,
+            "pierce": 200,
+            "range": 37,
+            "cooldown": 1.0,
+            "type": "normal",
+            "camo": false,
+            "bonusDamage": {
+              "ceram": 16,
+              "fort": 5,
+              "lead": 25
+            },
+            "notes": [
+              "can bounce off walls",
+              "can rehit bloons after bounce",
+              "emits juggernauts attack at 50% pierce usage, 100% pierce usage, or projectile expiry"
+            ]
+          }
+        },
+        {
+          "id": "juggernauts",
+          "name": "Juggernauts",
+          "properties": {
+            "damage": 1,
+            "pierce": 100,
+            "type": "normal",
+            "camo": false,
+            "projectiles": 6,
+            "bonusDamage": {
+              "ceram": 2,
+              "fort": 2,
+              "lead": 5
+            },
+            "notes": [
+              "can bounce off walls",
+              "can rehit bloons after bounce"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "010",
+      "name": "Quick Shot",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.85,
+          "affectedAttacks": [
+            "all"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "020",
+      "name": "Very Quick Shots",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.78,
+          "affectedAttacks": [
+            "all"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "030",
+      "name": "Triple Shot",
+      "cost": 350,
+      "buffs": [
+        {
+          "type": "projectiles",
+          "operation": "set",
+          "value": 3,
+          "affectedAttacks": [
+            "all",
+            "EX_superfan-dart"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "040",
+      "name": "Super Monkey Fan Club",
+      "cost": 9000,
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 2,
+          "affectedAttacks": [
+            "all"
+          ]
+        },
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.75,
+          "affectedAttacks": [
+            "all"
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "fan-club",
+          "name": "Super Monkey Fan Club",
+          "properties": {
+            "cooldown": 50,
+            "duration": 12,
+            "desc": [
+              "transforms the 10 nearest untransformed dart monkeys within 50 radius (up to 2-4-2) into superfans",
+              "if limit isn't reached, also transforms newly placed dart monkeys until reached",
+              "if sold, monkeys remain transformed",
+              "if transformed darts are upgraded to a non-2-5-2 dart monkey, they do not acquire those upgrades until end of duration",
+              "superfans inherit crosspathing benefits"
+            ]
+          }
+        }
+      ],
+      "subtowers": [
+        "superFan"
+      ]
+    },
+    {
+      "path": "050",
+      "name": "Plasma Monkey Fan Club",
+      "cost": 45000,
+	  "subtowers" :
+	  [
+        "plasmaFan"
+	  ],
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 3,
+          "affectedAttacks": [
+            "all"
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "plasma-fan-club",
+          "name": "Plasma Monkey Fan Club",
+          "overwrites": [
+            "fan-club"
+          ],
+          "properties": {
+            "cooldown": 50,
+            "duration": 15,
+            "desc": [
+              "transforms the 20 nearest untransformed dart monkeys within 50 radius (up to 2-4-2) into superfans",
+              "if limit isn't reached, also transforms newly placed dart monkeys until reached",
+              "if sold, monkeys remain transformed",
+              "if transformed darts are upgraded to a non-2-5-2 dart monkey, they do not acquire those upgrades until end of duration",
+              "superfans inherit crosspathing benefits"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "001",
+      "name": "Long Range Darts",
+      "cost": 90,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 8,
+          "affectedAttacks": [
+            "all",
+            "EX_bolt",
+            "EX_sharpbolt",
+            "EX_masterbolt"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "002",
+      "name": "Enhanced Eyesight",
+      "cost": 200,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 8,
+          "affectedAttacks": [
+            "all",
+            "EX_bolt",
+            "EX_sharpbolt",
+            "EX_masterbolt"
+          ]
+        },
+        {
+          "type": "camo",
+          "operation": "set",
+          "value": true,
+          "affectedAttacks": [
+            "all"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "003",
+      "name": "Crossbow",
+      "cost": 600,
+      "attacks": [
+        {
+          "id": "bolt",
+          "name": "Bolt",
+          "overwrites": [
+            "dart"
+          ],
+          "properties": {
+            "damage": 3,
+            "pierce": 7,
+            "range": 56,
+            "cooldown": 0.95,
+            "type": "sharp",
+            "camo": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "004",
+      "name": "Sharp Shooter",
+      "cost": 2300,
+      "attacks": [
+        {
+          "id": "sharpbolt",
+          "name": "Bolt",
+          "overwrites": [
+            "bolt"
+          ],
+          "properties": {
+            "damage": 6,
+            "pierce": 7,
+            "range": 56,
+            "cooldown": 0.75,
+            "type": "sharp",
+            "camo": true,
+            "crit": [
+              7,
+              50
+            ],
+			"notes" : [
+				"first attack always crits"
+			]
+          }
+        }
+      ]
+    },
+    {
+      "path": "005",
+      "name": "Crossbow Master",
+      "cost": 27000,
+      "attacks": [
+        {
+          "id": "masterbolt",
+          "name": "Bolt",
+          "overwrites": [
+            "sharpbolt"
+          ],
+          "properties": {
+            "damage": 9,
+            "pierce": 13,
+            "range": 74,
+            "cooldown": 0.13,
+            "type": "normal",
+            "camo": true,
+            "crit": [
+              5,
+              75
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

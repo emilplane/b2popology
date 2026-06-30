@@ -1,7 +1,14 @@
 @font-face {
-    font-family: 'BCS Font';
-    src: url('/fonts/bcsfont.ttf') format('truetype');
+    font-family: 'Luckiest Guy';
+    src: url('/fonts/luckiest-guy.ttf') format('truetype');
 }
+
+
+@font-face {
+    font-family: 'Gabarito';
+    src: url('/fonts/gabarito.ttf') format('truetype');
+}
+
 
 :root {
     --primaryLight3: hsl(161, 61%, 82%);

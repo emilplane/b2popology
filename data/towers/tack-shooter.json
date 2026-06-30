@@ -1,0 +1,477 @@
+{
+  "id": "tackShooter",
+  "name": "Tack Shooter",
+  "properties": {
+    "unlockCost": 0,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 280,
+      "attacks": [
+        {
+          "id": "tacks",
+          "name": "Tacks",
+          "properties": {
+            "damage": 1,
+            "pierce": 1,
+            "range": 23,
+            "cooldown": 1.4,
+            "projectiles": 8,
+            "type": "sharp",
+            "camo": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "100",
+      "name": "Faster Shooting",
+      "cost": 150,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.75,
+          "affectedAttacks": [
+            "all", 
+            "EX_ringOfFire",
+            "EX_meteor"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "200",
+      "name": "Even Faster Shooting",
+      "cost": 400,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.6,
+          "affectedAttacks": [ 
+            "all",
+            "EX_ringOfFire",
+            "EX_meteor"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "300",
+      "name": "Hot Shots",
+      "cost": 700,
+
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "all",
+            "EX_ringOfFire",
+            "EX_meteor"
+          ]
+        },
+		{
+			"type" : "type",
+			"operation" : "set",
+			"value" : "normal",
+			"affectedAttacks" : [
+				"all",
+				"EX_ringOfFire",
+				"EX_meteor"
+			]
+		}
+      ]
+    },
+    {
+      "path": "400",
+      "name": "Ring of Fire",
+      "cost": 3500,
+      "attacks": [
+        {
+          "id": "ringOfFire",
+          "name": "Ring of Fire",
+          "overwrites": [
+            "tacks"
+          ],
+          "properties": {
+            "damage": 3,
+            "pierce": 45,
+            "range": 23,
+            "cooldown": 0.47,
+            "type": "fire",
+            "camo": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "500",
+      "name": "Inferno Ring",
+      "cost": 35500,
+      "attacks": [
+        {
+          "id": "meteor",
+          "name": "Meteor",
+		  "properties" : {
+			"damage": 900,
+			"pierce": 1,
+			"infiniteRange": true,
+			"cooldown" : 4.0,
+			"type": "fire",
+			"camo" : true,
+			"notes" : [
+				"follows targeting",
+				"can see past obstacles",
+				"weak homing (100 turn rate)",
+				"applies burn status:",
+				"150d/1.0s, fire type, 4.1s duration",
+				"explodes on contact:",
+				"150d single-layer, 10p, 18r blast, explosion type, no camo"
+			]
+		  }
+		}
+      ]
+    },
+    {
+      "path": "010",
+      "name": "Long Range Tacks",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 4,
+          "affectedAttacks": [
+			"all",
+			"EX_blade"
+		  ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 10,
+          "affectedAttacks": [
+            "ringOfFire"
+          ]
+        },
+		{
+          "type": "pierce",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "meteor"
+          ]
+		}
+      ]
+    },
+    {
+      "path": "020",
+      "name": "Super Range Tacks",
+      "cost": 225,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 4,
+          "affectedAttacks": [
+            "all",
+			"EX_blade",
+			"EX_tackzone"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "all",
+			"EX_blade",
+			"EX_ringOfFire",
+			"EX_tackzone"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 5,
+          "affectedAttacks": [
+            "ringOfFire"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 6,
+          "affectedAttacks": [
+            "tackzone"
+          ]
+        },
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 16,
+          "affectedAttacks": [
+            "tackzone"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "030",
+      "name": "Blade Shooter",
+      "cost": 600,
+
+      "attacks": [
+        {
+          "id": "blade",
+          "name": "Blades",
+		  "overwrites" : [ "tacks" ],
+          "properties": {
+            "damage": 1,
+            "pierce": 3,
+            "range": 31,
+            "cooldown": 1.232,
+            "projectiles": 8,
+            "type": "sharp",
+            "camo": false,
+            "notes": [
+              "increased projectile size"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "040",
+      "name": "Blade Maelstrom",
+      "cost": 3850,
+      "abilities": [
+        {
+          "id": "maelstrom",
+          "name": "Maelstrom",
+          "properties": {
+            "cooldown": 20,
+            "duration": 3
+          },
+		  "attacks" : [
+			{
+				"id" : "maelstrom",
+				"name" : "Maelstrom",
+				"properties" : {
+					"damage" : 1,
+					"projectiles": 2,
+					"pierce" : 200,
+					"cooldown" : 0.0333,
+					"type" :"sharp",
+					"notes" : [
+						"rotates at a constant speed",
+						"041: maelstrom rotates counterclockwise at a constant speed"
+					]
+				}
+			}
+		  ]
+        }
+      ]
+    },
+    {
+      "path": "050",
+      "name": "Super Maelstrom",
+      "cost": 15000,
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "all"
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "superMaelstrom",
+          "name": "Super Maelstrom",
+          "overwrites": [
+            "maelstrom"
+          ],
+          "properties": {
+            "cooldown": 20,
+            "duration": 9
+          },
+		  "attacks" : [
+			{
+				"id" : "superMaelstrom",
+				"name" : "Super Maelstrom",
+				"properties" : {
+					"damage" : 2,
+					"projectiles": 4,
+					"pierce" : 500,
+					"cooldown" : 0.0333,
+					"type" :"normal",
+					"notes" : [
+						"rotates at a constant speed",
+						"051: maelstrom rotates counterclockwise at a constant speed"
+					]
+				}
+			}
+		  ]
+        }
+      ]
+    },
+    {
+      "path": "001",
+      "name": "More Tacks",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "projectiles",
+          "operation": "add",
+          "value": 2,
+          "affectedAttacks": [
+            "all",
+			"EX_ringOfFire",
+			"EX_tackzone"
+          ]
+        },
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "ringOfFire"
+          ]
+        },
+		{
+          "type": "damage",
+          "operation": "add",
+          "value": 400,
+          "affectedAttacks": [
+            "meteor"
+          ]
+		}
+      ]
+    },
+    {
+      "path": "002",
+      "name": "Even More Tacks",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "projectiles",
+          "operation": "add",
+          "value": 2,
+          "affectedAttacks": [
+            "all",
+			"EX_ringOfFire",
+			"EX_tackzone"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "blade"
+          ]
+        },
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "ringOfFire"
+          ]
+        },
+		{
+          "type": "damage",
+          "operation": "add",
+          "value": 500,
+          "affectedAttacks": [
+            "meteor"
+          ]
+		}
+      ]
+    },
+    {
+      "path": "003",
+      "name": "Tack Sprayer",
+      "cost": 450,
+
+      "buffs": [
+        {
+          "type": "projectiles",
+          "operation": "add",
+          "value": 4,
+          "affectedAttacks": [
+            "tacks"
+          ]
+        },
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.75,
+		  "affectedAttacks": [
+			"tacks"
+		  ]
+        }
+      ]
+    },
+    {
+      "path": "004",
+      "name": "Overdrive",
+      "cost": 3400,
+
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "tacks"
+          ]
+        },
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.33333,
+          "affectedAttacks": [
+            "tacks"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "005",
+      "name": "The Tack Zone",
+      "cost": 24000,
+
+      "attacks": [
+        {
+          "id": "tackzone",
+          "name": "Tacks",
+          "overwrites": [
+            "tacks"
+          ],
+          "properties": {
+            "damage": 2,
+            "pierce": 4,
+            "range": 30,
+            "cooldown": 0.2625,
+            "projectiles": 32,
+            "type": "sharp",
+            "camo": false
+          }
+        }
+      ]
+    }
+  ]
+}
