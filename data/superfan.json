@@ -10,6 +10,7 @@
       "path": "000",
       "name": "Base",
       "cost": 0,
+	  "portraitSource" : "/media/towerPortraits/superMonkey/000.png",
       "attacks": [
         {
           "id": "dart",

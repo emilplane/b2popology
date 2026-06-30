@@ -61,19 +61,52 @@ export class PathSelector {
 	combineSelected(path) {
 		const pathNums = [...path].map(Number);
 		for (let i = 0; i < pathNums.length; i++) {
+			// if we select an already selected button, deslect it
 			if (pathNums[i] == this.selected[i]) this.selected[i] = 0;
 			else if (pathNums[i] != 0) {
-				if (pathNums[i] > 2) {
-					for (let j = 0; j < this.selected.length; j++) {
-						if (this.selected[j] > 2) this.selected[j] = 0;
+				if (pathNums[i] > 2) { // if we get a t3+ upgrade then...
+					for (let j = 0; j < this.selected.length; j++) { // unselect current t3+
+						if (this.selected[j] > 2) {
+							this.selected[j] = 0;
+						}
+					}
+					this.selected[i] = pathNums[i]; // select new t3+
+				}
+				else { // if we get a t2 or t1 upgrade then...
+					let highTierSelected = false;
+					for (let j = 0; j < this.selected.length; j++) { // find out if we have a t3+
+						if (this.selected[j] > 2) {
+							highTierSelected = true;
+						}
+					}
+					if (highTierSelected) { // if found then...
+						for (let j = 0; j < this.selected.length; j++) { // unselect previous t2/t1
+							if (this.selected[j] <= 2) {
+								this.selected[j] = 0;
+							}
+						}
+						this.selected[i] = pathNums[i]; // select the new t2/t1
+					}
+					else { // if we do not have a high tier, count low tiers
+						let lowTierCount = 0;
+						for (let j = 0; j < this.selected.length; j++) {
+							if (this.selected[j] <= 2) {
+								lowTierCount++;
+							}
+						}
+						if (lowTierCount == 2) { // if we two low tiers selected, deselect both of them
+							for (let j = 0; j < this.selected.length; j++) {
+								if (this.selected[j] <= 2) {
+									this.selected[j] == 0;
+								}
+							}
+						}
+						this.selected[i] = pathNums[i];
 					}
 				}
-				for (let j = 0; j < this.selected.length; j++) {
-					if (this.selected[j] <= 2) this.selected[j] = 0;
-				}
-				this.selected[i] = pathNums[i];
 			}
 		}
+
 		return this.selected.join("");
 	}
 
