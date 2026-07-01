@@ -4,6 +4,9 @@
   --header-primary: #000000;
   --header-secondary: #222222;
   --text-common: #000000;
+  --outline-default: #111111;
+  --outline-orange: #DD9944;
+  --outline-blue: #4499DD;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +16,9 @@
     --header-primary: #FFFFFF;
     --header-secondary: #BBBBBB;
     --text-common: #FFFFFF;
+    --outline-default: #CCCCCC;
+    --outline-orange: #CC6622;
+    --outline-blue: #2266CC;
   }
 }
 
@@ -73,10 +79,23 @@ h4 {
   border-radius: 16px;
 }
 
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
 .tower-image-container img {
   height: 110%;
   width: auto;
   margin-top: -16px;
+}
+
+.properties-container-styler {
+  max-width: 1024px;
+  padding: 8px 16px 8px 16px;
+  margin: 0 16px 8px 16px;
+  background-color: var(--background-secondary);
+  border-radius: 6px;
 }
 
 .properties-container {
@@ -91,14 +110,6 @@ h4 {
   font-size: 20px;
   font-family: "Gabarito";
   padding: 4px 10px 4px 10px;
-}
-
-.properties-container-styler {
-  max-width: 1024px;
-  padding: 8px 16px 8px 16px;
-  margin: 0 16px 8px 16px;
-  background-color: var(--background-secondary);
-  border-radius: 6px;
 }
 
 .property-basic-value {
@@ -122,11 +133,6 @@ h4 {
   font-family: "Gabarito";
 }
 
-.center-container {
-  display: flex;
-  justify-content: center;
-}
-
 .property-footnote {
   text-align: left;
   white-space: pre-wrap;
@@ -143,18 +149,12 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #444444;
+  background-color: var(--background-primary);
   border-radius: 3px;
+  outline-width: 2px;
+  outline-style: solid;
 }
 
 .property-unkeyed-container p {
   white-space: pre-wrap;
-}
-
-.outline-orange {
-  outline: 2px solid orange;
-}
-
-.outline-blue {
-  outline: 2px solid #2288BB;
 }

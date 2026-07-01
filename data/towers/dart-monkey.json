@@ -289,7 +289,8 @@
       "cost": 45000,
 	  "subtowers" :
 	  [
-        "plasmaFan"
+        "plasmaFan",
+        "EX_superFan"
 	  ],
       "buffs": [
         {

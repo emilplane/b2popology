@@ -1,24 +1,17 @@
-import { Property } from './property.js';
+import { PropertyUnkeyed } from './property-unkeyed.js';
 
-export class PropertyCrit extends Property {
+export class PropertyCrit extends PropertyUnkeyed {
 
   clone() {
     return new PropertyCrit(this.key, this.val);
   }
 
-  toHTML() {
-    if (!this.key || !this.val) return;
+  getFormattedValue() {
+    return 'Crits every ' + this.val[0] + ' attacks, dealing ' + this.val[1] + ' damage';
+  }
 
-    const container = document.createElement('div');
-    const p = document.createElement('p');
-
-    container.append(p);
-
-    container.classList.add('property-unkeyed-container', 'outline-orange');
-
-    p.textContent = 'Crits every ' + this.val[0] + ' attacks, dealing ' + this.val[1] + ' damage';
-
-    return container;
+  getOutlineVariable() {
+    return '--outline-orange';
   }
 
 }

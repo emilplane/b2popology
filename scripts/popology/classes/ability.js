@@ -1,4 +1,4 @@
-import { CreateProperty } from './properties/create-property.js';
+import { PropertiesManager } from './properties/properties-manager.js';
 import { Attack } from './attack.js';
 import { Buff } from './buff.js';
 
@@ -15,24 +15,14 @@ export class Ability {
   }
 
   static fromData(data = {}) {
-    const ability = new Ability();
-    ability.id = data.id;
-    ability.name = data.name;
-    ability.overwrites = data.overwrites;
-    ability.attacks = (data.attacks || []).map(attackData =>
+    const attacks = (data.attacks || []).map(attackData =>
     Attack.fromData(attackData)
     );
-    ability.buffs = (data.buffs || []).map(buffData =>
+    const buffs = (data.buffs || []).map(buffData =>
     Buff.fromData(buffData)
     );
-    const properties = [];
-    Object.entries(data.properties).forEach(([key, value]) => {
-      const property = CreateProperty.create(key, value);
-      if (Array.isArray(property)) properties.push(...property);
-      else properties.push(property);
-    });
-      ability.properties = properties
-      return ability;
+    const properties = PropertiesManager.propertiesFromData(data.properties);
+    return new Ability(data.id, data.name, data.overwrites, attacks, buffs, properties);
   }
 
   clone() {
@@ -47,48 +37,41 @@ export class Ability {
   }
 
   toHTML() {
-    const divMain = document.createElement('div');
-    const divCenterGray = document.createElement('div');
-    divCenterGray.className = "center-container";
+    const properties = Array.from(this.properties);
 
-    const divGray = document.createElement('div');
-    const parName = document.createElement('h4');
-    const propertyContainer = document.createElement('div');
+    const rootContainer = document.createElement('div');
+    const abilityName = document.createElement('h4');
+    const centerContainer = document.createElement('div');
+    const propertiesContainerStyler = document.createElement('div');
+    const propertiesContainer = document.createElement('div');
 
-    parName.textContent = this.name + " Ability";
-    divGray.className = "properties-container-styler";
+    rootContainer.append(abilityName, centerContainer);
+    centerContainer.append(propertiesContainerStyler);
+    propertiesContainerStyler.append(propertiesContainer);
 
-    if ((this.properties.initialCooldown == null) || (this.properties.initialCooldown == 0)) {
-      const p = document.createElement('p');
-      p.textContent = 'Battle\nReady';
+    centerContainer.className = 'center-container';
+    propertiesContainerStyler.className = 'properties-container-styler';
+    propertiesContainer.className = 'properties-container';
 
-      const battleReadyCont = document.createElement('div');
-      battleReadyCont.classList.add('property-basic-value', 'outline-blue');
+    abilityName.textContent = this.name + ' Ability';
 
-      battleReadyCont.append(p);
-      propertyContainer.append(battleReadyCont);
+    const initialCooldown = properties.find(property => property.key == 'initialCooldown');
+    if (initialCooldown == null || initialCooldown.val == 0) {
+      properties.push(PropertiesManager.createProperty('battleReady', true));
     }
 
-    propertyContainer.className = "properties-container";
-    divGray.append(propertyContainer);
-
-    this.properties.forEach((property) => {
+    properties.forEach((property) => {
       if (property.key == 'notes') {
-        divGray.append(property.toHTML());
+        propertiesContainerStyler.append(property.toHTML());
       }
       else {
         let element = property.toHTML(this);
         if (element == null) return;
-        propertyContainer.append(element);
+        propertiesContainer.append(element);
       }
     });
 
-    divCenterGray.append(divGray);
-
-    divMain.append(parName);
-    divMain.append(divCenterGray);
-
-    return divMain;
+    return rootContainer;
   }
 
 }

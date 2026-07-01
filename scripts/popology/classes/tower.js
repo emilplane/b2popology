@@ -1,5 +1,5 @@
 import { Upgrade } from './upgrade.js';
-import { CreateProperty } from './properties/create-property.js';
+import { PropertiesManager } from './properties/properties-manager.js';
 import { PathSelector } from '/scripts/popology/ui/path-selector.js';
 
 export class Tower {
@@ -12,18 +12,12 @@ export class Tower {
   }
 
   static fromData(data) {
-    if ((!data.properties) || (!data.upgrades)) {
+    if (!data.properties || !data.upgrades) {
       console.error('Properties or upgrades are invalid');
       return;
     }
 
-    const properties = [];
-    Object.entries(data.properties).forEach(([key, value]) => {
-      const property = CreateProperty.create(key, value);
-      if (Array.isArray(property)) properties.push(...property);
-      else properties.push(property);
-    });
-
+    const properties = PropertiesManager.propertiesFromData(data.properties);
     const upgrades = data.upgrades.map(Upgrade.fromData);
 
     return new Tower(data.id, data.name, properties, upgrades);
@@ -38,31 +32,29 @@ export class Tower {
     const subtowers = this.getSubtowers(path);
     const totalCost = this.getTotalCost(path);
 
-    const rootDiv = document.createElement('div');
+    const rootContainer = document.createElement('div');
     const towerContainer = document.createElement('div');
-    const towerName = document.createElement('h1');
-    const upgradeName = document.createElement('h2');
-    const towerImgContainer = document.createElement('div');
-    const towerImg = document.createElement('img');
-    const towerPropertiesContainer = document.createElement('div');
-
     const pathSelector = new PathSelector(this, path);
     const pathSelectorHTML = await pathSelector.toHTML(parent);
+    const towerName = document.createElement('h1');
+    const upgradeName = document.createElement('h2');
+    const towerImageContainer = document.createElement('div');
+    const towerImage = document.createElement('img');
+    const towerPropertiesContainer = document.createElement('div');
 
-    towerImgContainer.append(towerImg);
-    towerContainer.append(pathSelectorHTML, towerName, upgradeName, towerImgContainer, towerPropertiesContainer);
-    rootDiv.append(towerContainer);
+    rootContainer.append(towerContainer);
+    towerContainer.append(pathSelectorHTML, towerName, upgradeName, towerImageContainer, towerPropertiesContainer);
+    towerImageContainer.append(towerImage);
 
     towerContainer.className = 'tower-container';
-    towerImgContainer.className = 'tower-image-container';
+    towerImageContainer.className = 'tower-image-container';
     towerPropertiesContainer.className = 'properties-container';
 
     towerName.textContent = this.formattedName(path)
     upgradeName.textContent = this.getUpgrade(path).name;
-    towerImg.src = this.getImagePath(path);
+    towerImage.src = this.getImagePath(path);
 
-
-    if (totalCost) properties.push(CreateProperty.create('cost', totalCost));
+    if (totalCost) properties.push(PropertiesManager.createProperty('cost', totalCost));
 
     properties.forEach((property) => {
       towerPropertiesContainer.append(property.toHTML());
@@ -96,17 +88,17 @@ export class Tower {
 
     if ((subtowers != null) && (subtowers.length > 0)) {
       for (const subtowerId of subtowers) {
-        const subParentDiv = document.createElement('div');
+        const subParentContainer = document.createElement('div');
 
         const subtower = await Tower.loadTower(subtowerId);
-        const subtowerHTML = await subtower.toHTML('000', subParentDiv);
+        const subtowerHTML = await subtower.toHTML('000', subParentContainer);
 
-        subParentDiv.append(subtowerHTML);
-        rootDiv.append(subParentDiv);
+        subParentContainer.append(subtowerHTML);
+        rootContainer.append(subParentContainer);
       }
     }
 
-    return rootDiv;
+    return rootContainer;
   }
 
   static async loadTower(id) {
@@ -238,16 +230,17 @@ export class Tower {
         });
       }
     });
-
+    console.log('overwrites: ', overwrites);
     const subtowers = [];
     this.upgrades.forEach((upgrade) => {
       if (this.isChildUpgrade(path, upgrade.path) && upgrade.subtowers) {
         upgrade.subtowers.forEach((subtower) => {
-          if (!overwrites.includes(subtower)) subtowers.push(subtower);
+          if (!overwrites.includes(subtower) && subtower.slice(0, 3) != 'EX_') subtowers.push(subtower);
         });
       }
     });
 
+    console.log(subtowers);
     return subtowers
   }
 

@@ -1,4 +1,5 @@
-import { CreateProperty } from './properties/create-property.js';
+import { PropertiesManager } from './properties/properties-manager.js';
+import { PropertiesContainer } from '../ui/properties-container.js';
 
 export class Attack {
 
@@ -10,12 +11,7 @@ export class Attack {
   }
 
   static fromData(data) {
-    const properties = [];
-    Object.entries(data.properties).forEach(([key, value]) => {
-      const property = CreateProperty.create(key, value);
-      if (Array.isArray(property)) properties.push(...property);
-      else properties.push(property);
-    });
+    const properties = PropertiesManager.propertiesFromData(data.properties);
       return new Attack(data.id, data.name, data.overwrites, properties);
   }
 
@@ -35,7 +31,7 @@ export class Attack {
     ) {
       let propertyToBuff = attack.properties.find(property => property.key == buff.type);
       if ((buff.operation == 'set') && (propertyToBuff == null)) {
-        propertyToBuff = CreateProperty.create(buff.type, buff.value);
+        propertyToBuff = PropertiesManager.createProperty(buff.type, buff.value);
         attack.properties.push(propertyToBuff);
       }
       if (propertyToBuff != null) propertyToBuff.applyBuff(buff);
@@ -49,42 +45,19 @@ export class Attack {
   }
 
   toHTML() {
-    const divMain = document.createElement('div');
-    const divCenterGray = document.createElement('div');
-    const divGray = document.createElement('div');
+    const rootContainer = document.createElement('div');
     const attackName = document.createElement('h4');
-    const propertiesContainer = document.createElement('div');
+    const centerContainer = document.createElement('div');
+    const propertiesContainer = new PropertiesContainer(this.properties, this)
 
-    attackName.textContent = this.name + " Attack";
-    divCenterGray.className = "center-container";
-    divGray.className = "properties-container-styler";
+    rootContainer.append(attackName, centerContainer);
+    centerContainer.append(propertiesContainer.toHTML());
 
-    propertiesContainer.className = 'properties-container';
-    divGray.append(propertiesContainer);
+    centerContainer.className = 'center-container';
 
-    this.properties.forEach((property) => {
-      if (property.key == 'notes') {
-        divGray.append(property.toHTML());
-      }
-      else if (property.key == 'camo') {
-        return
-      }
-      else {
-        let element = property.toHTML(this);
-        if (element == null) return;
-        propertiesContainer.append(element);
-      }
-    });
+    attackName.textContent = this.name + ' Attack';
 
-    const camo = this.properties.find(property => property.key == 'camo');
-    if ((camo != null) && (camo.val== true)) propertiesContainer.append(camo.toHTML());
-
-    divCenterGray.append(divGray);
-
-    divMain.append(attackName);
-    divMain.append(divCenterGray);
-
-    return divMain;
+    return rootContainer;
   }
 
 }
