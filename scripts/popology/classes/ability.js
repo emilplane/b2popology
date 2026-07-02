@@ -77,6 +77,10 @@ export class Ability {
       }
     });
 
+    this.buffs.forEach((buff) => {
+      propertiesContainerStyler.append(buff.toHTML());
+    });
+
     return rootContainer;
   }
 

@@ -17,6 +17,8 @@ export class Property {
       case 'mul':
         this.val = parseFloat((this.val * buff.value).toFixed(4));
         break;
+      case 'div':
+        this.val = parseFloat((this.val / buff.value).toFixed(4));
       case 'set':
         this.val = buff.value;
         break;

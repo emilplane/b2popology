@@ -41,7 +41,11 @@
           "operation": "add",
           "value": 3,
           "affectedAttacks": [
-            "boomerang"
+            "all",
+            "EX_orbital-glaive",
+            "EX_ricochet",
+            "EX_kylie",
+            "EX_press"
           ]
         },
         {
@@ -73,7 +77,11 @@
           "operation": "add",
           "value": 3,
           "affectedAttacks": [
-            "boomerang"
+            "all",
+            "EX_orbital-glaive",
+            "EX_ricochet",
+            "EX_kylie",
+            "EX_press"
           ]
         },
         {
@@ -231,7 +239,8 @@
           "value": 0.75,
           "affectedAttacks": [
             "all",
-            "EX_orbital-glaive"
+            "EX_orbital-glaive",
+            "EX_bionic"
           ]
         }
       ]
@@ -247,7 +256,8 @@
           "value": 0.75,
           "affectedAttacks": [
             "all",
-            "EX_orbital-glaive"
+            "EX_orbital-glaive",
+            "EX_bionic"
           ]
         }
       ]
@@ -287,13 +297,34 @@
           "name": "Turbo Charge",
           "properties": {
             "cooldown": 45,
-            "duration": 8,
-            "desc": [
-              "grants +1 damage to self while active",
-              "attacks every 0.034s while active",
-              "grants camo detection while active"
-            ]
-          }
+            "duration": 8
+          },
+          "buffs" : [
+            {
+              "type": "damage",
+              "operation": "add",
+              "value": 1,
+              "affectedAttacks": [
+                "bionic"
+              ]
+            },
+            {
+              "type": "cooldown",
+              "operation": "div",
+              "value": 7,
+              "affectedAttacks": [
+                "bionic"
+              ]
+            },
+            {
+              "type": "camo",
+              "operation": "set",
+              "value": true,
+              "affectedAttacks": [
+                "bionic"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -312,8 +343,8 @@
         },
         {
           "type": "cooldown",
-          "operation": "set",
-          "value": 0.034,
+          "operation": "div",
+          "value": 7,
           "affectedAttacks": [
             "bionic"
           ]
@@ -328,13 +359,18 @@
           ],
           "properties": {
             "cooldown": 40,
-            "duration": 15,
-            "desc": [
-              "grants +10 damage to self while active",
-              "damage bonus increased to +12 with 052 crosspath",
-              "statistics here may be wrong since popologies wording on these buffs wasn't perfect"
-            ]
-          }
+            "duration": 15
+          },
+          "buffs" : [
+            {
+              "type": "damage",
+              "operation": "add",
+              "value": 10,
+              "affectedAttacks": [
+                "bionic"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -345,12 +381,13 @@
       "buffs": [
         {
           "type": "range",
-          "operation": "add",
-          "value": 6.45,
+          "operation": "mul",
+          "value": 1.15,
           "affectedAttacks": [
-            "boomerang",
-            "bionic"
-          ]
+            "all",
+            "EX_kylie",
+            "EX_press"
+            ]
         }
       ]
     },
@@ -364,16 +401,42 @@
           "operation": "add",
           "value": 1,
           "affectedAttacks": [
-            "all"
+            "all",
+            "EX_kylie",
+            "EX_press"
+          ],
+          "affectedPaths" : [
+            "all",
+            "EX_050"
           ]
         },
         {
           "type": "lead",
-          "operation": "set",
+          "operation": "add",
           "value": 1,
           "affectedAttacks": [
-            "boomerang",
-            "bionic"
+            "all",
+            "EX_kylie",
+            "EX_press"
+          ]
+        },
+        {
+          "type": "damageType",
+          "operation": "set",
+          "value": "normal",
+          "affectedAttacks": [
+            "all"
+          ]
+        },
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 4,
+          "affectedAttacks" : [
+            "all"
+          ],
+          "affectedPaths": [
+            "050"
           ]
         }
       ]
@@ -385,7 +448,7 @@
       "attacks": [
         {
           "id": "kylie",
-          "name": "Kylie Boomerang",
+          "name": "Kylie",
           "overwrites": [
             "boomerang"
           ],
@@ -396,7 +459,7 @@
           "properties": {
             "damage": 2,
             "pierce": 24,
-            "range": 49.75,
+            "range": 49.45,
             "cooldown": 1.2,
             "damageType": "normal",
             "camo": false
@@ -415,7 +478,7 @@
           "properties": {
             "damage": 1,
             "pierce": 200,
-            "range": 49.75,
+            "range": 49.45,
             "cooldown": 10,
             "damageType": "normal",
             "camo": false,
@@ -436,43 +499,64 @@
       "path": "005",
       "name": "Moab Domination",
       "cost": 52000,
-      "attacks": [
+      "buffs" : [
         {
-          "id": "dom",
-          "name": "Moab Domination",
-          "overwrites": [
-            "press"
-          ],
-          "properties": {
-            "damage": 5,
-            "pierce": 300,
-            "range": 100,
-            "cooldown": 5,
-            "damageType": "normal",
-            "camo": false,
-            "bonusDamage": {
-              "moab": 45
-            },
-            "notes": [
-              "on expire: explosion"
-            ]
-          }
+          "type": "damage",
+          "operation": "add",
+          "value": 10,
+          "affectedAttacks" : [
+            "kylie"
+          ]
         },
         {
-          "id": "explosion",
-          "name": "Explosion",
-          "properties": {
-            "damage": 100,
-            "pierce": 40,
-            "range": 100,
-            "cooldown": 0,
-            "damageType": "normal",
-            "camo": false,
-            "notes": [
-              "applies burn status",
-              "0.25s stun"
-            ]
-          }
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.5,
+          "affectedAttacks" : [
+            "all"
+          ]
+        },
+        {
+          "type": "moab",
+          "operation": "add",
+          "value": 45,
+          "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 100,
+          "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
+          "type": "range",
+          "operation": "set",
+          "value": 100,
+          "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
+          "type": "notes",
+          "operation": "set",
+          "value": [
+            "can see past obstacles",
+            "can target BADs",
+            "0.25s stun",
+            "sends ZOMGs back 0.5 units",
+            "lifetime halved, so it expires instead of returning",
+            "on expire or 100%p: triggers an explosion:",
+            "100d, 40p, 50r blast, normal type",
+            "applies burn status at 50d/1s for 4s duration",
+            "205 crosspath: explosion +10p (50p), +25r (75r)"
+          ],
+          "affectedAttacks" : [
+            "press"
+          ]
         }
       ]
     }

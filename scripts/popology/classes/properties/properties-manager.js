@@ -33,6 +33,7 @@ export class PropertiesManager {
       });
       return propertyArray;
     }
+    if (['lead', 'fort', 'moab', 'ceram'].includes(key)) return new PropertyBonusDamage(key, val);
     if (key == 'camo') return new PropertyCamo(key, val);
     if (key =='crit') return new PropertyCrit(key, val);
     if (key == 'notes' || key == 'desc') return new PropertyFootnote(key, val);

@@ -30,15 +30,26 @@ export class Attack {
       ((buff.affectedAttacks.includes('all')) || (buff.affectedAttacks.includes(this.id)))
     ) {
       let propertyToBuff = attack.properties.find(property => property.key == buff.type);
-      if ((buff.operation == 'set') && (propertyToBuff == null)) {
-        propertyToBuff = PropertiesManager.createProperty(buff.type, buff.value);
-        attack.properties.push(propertyToBuff);
+      if (propertyToBuff == null) {
+        if (buff.operation == 'set') {
+          propertyToBuff = PropertiesManager.createProperty(buff.type, buff.value);
+          attack.properties.push(propertyToBuff);
+        }
+        else if ((buff.operation == 'add') && (['lead', 'fort', 'moab', 'ceram'].includes(buff.type))) {
+          propertyToBuff = PropertiesManager.createProperty(buff.type, 0);
+          attack.properties.push(propertyToBuff);
+        }
       }
       if (propertyToBuff != null) propertyToBuff.applyBuff(buff);
     }
     if (buff.type == 'damage') {
       const newBuff = buff.clone();
       newBuff.type = 'crit';
+      return attack.buffedBy(newBuff);
+    }
+    if (buff.type == 'range') {
+      const newBuff = buff.clone();
+      newBuff.type = 'rangeZone';
       return attack.buffedBy(newBuff);
     }
     return attack;

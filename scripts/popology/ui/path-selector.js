@@ -27,7 +27,7 @@ export class PathSelector {
         else butt.className = 'path-selector-button-reg';
       }
 
-      butt.addEventListener('click', async (event) => {
+      butt.addEventListener('click', async () => {
         const towerHTML = await this.tower.toHTML(this.combineSelected(upgrade.path), parent);
         parent.replaceChildren(towerHTML);
       });
@@ -96,15 +96,13 @@ export class PathSelector {
           else { // if we do not have a high tier, count low tiers
             let lowTierCount = 0;
             for (let j = 0; j < this.selected.length; j++) {
-              if (this.selected[j] <= 2) {
+              if (0 < this.selected[j] && this.selected[j] <= 2) {
                 lowTierCount++;
               }
             }
             if (lowTierCount == 2) { // if we two low tiers selected, deselect both of them
               for (let j = 0; j < this.selected.length; j++) {
-                if (this.selected[j] <= 2) {
-                  this.selected[j] == 0;
-                }
+                this.selected[j] = 0;
               }
             }
             this.selected[i] = pathNums[i];

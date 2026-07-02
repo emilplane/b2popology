@@ -183,10 +183,12 @@ export class Tower {
 
   getBuffs(path) {
     const buffs = [];
+    const domPath = this.getDominantPath(path);
     this.upgrades.forEach((upgrade) => {
       if (this.isChildUpgrade(path, upgrade.path) && upgrade.buffs) {
         upgrade.buffs.forEach((buff) => {
-          buffs.push(buff);
+          if (buff.affectedPaths != null && buff.affectedPaths.includes('EX_' + domPath)) return;
+          if (buff.affectedPaths == null || buff.affectedPaths.includes(domPath) || buff.affectedPaths.includes('all')) buffs.push(buff);
         });
       }
     });

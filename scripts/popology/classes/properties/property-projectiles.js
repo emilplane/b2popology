@@ -24,9 +24,6 @@ export class PropertyProjectiles extends PropertyBasic {
         if (!Array.isArray(this.val)) this.val = this.val + buff.value[0];
         else console.warn('Buff object tried to add spread, try setting spread instead');
         break;
-      case 'mul':
-        console.warn('Buff object tried to multiply projectile count');
-        break;
       case 'set':
         this.val = buff.value;
         break;
@@ -38,9 +35,6 @@ export class PropertyProjectiles extends PropertyBasic {
       case 'add':
         if (!Array.isArray(this.val)) this.val = this.val + buff.value;
         else this.val[0] = this.val[0] + buff.value;
-        break;
-      case 'mul':
-        console.warn('Buff object tried to multiply projectile count');
         break;
       case 'set':
         if (!Array.isArray(this.val)) this.val = buff.value;
