@@ -22,7 +22,7 @@
             "pierce": 5,
             "range": 40,
             "cooldown": 0.025,
-            "type": "plasma"
+            "damageType": "plasma"
           }
         }
       ]

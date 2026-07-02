@@ -22,7 +22,7 @@
             "pierce": 2,
             "range": 32,
             "cooldown": 0.95,
-            "type": "sharp",
+            "damageType": "sharp",
             "camo": false
           }
         }
@@ -100,7 +100,7 @@
             "pierce": 30,
             "range": 37,
             "cooldown": 1.15,
-            "type": "shatter",
+            "damageType": "shatter",
             "camo": false,
             "bonusDamage": {
               "ceram": 1
@@ -129,7 +129,7 @@
             "pierce": 60,
             "range": 37,
             "cooldown": 1.0,
-            "type": "normal",
+            "damageType": "normal",
             "camo": false,
             "bonusDamage": {
               "ceram": 4
@@ -158,7 +158,7 @@
             "pierce": 200,
             "range": 37,
             "cooldown": 1.0,
-            "type": "normal",
+            "damageType": "normal",
             "camo": false,
             "bonusDamage": {
               "ceram": 16,
@@ -178,7 +178,7 @@
           "properties": {
             "damage": 1,
             "pierce": 100,
-            "type": "normal",
+            "damageType": "normal",
             "camo": false,
             "projectiles": 6,
             "bonusDamage": {
@@ -232,7 +232,7 @@
         {
           "type": "projectiles",
           "operation": "set",
-          "value": 3,
+          "value": [3, 30],
           "affectedAttacks": [
             "all",
             "EX_superfan-dart"
@@ -355,7 +355,8 @@
             "EX_bolt",
             "EX_sharpbolt",
             "EX_masterbolt"
-          ]
+          ],
+          "notes" : ["increased projectile speed"]
         },
         {
           "type": "camo",
@@ -383,7 +384,7 @@
             "pierce": 7,
             "range": 56,
             "cooldown": 0.95,
-            "type": "sharp",
+            "damageType": "sharp",
             "camo": true
           }
         }
@@ -405,14 +406,15 @@
             "pierce": 7,
             "range": 56,
             "cooldown": 0.75,
-            "type": "sharp",
+            "damageType": "sharp",
             "camo": true,
             "crit": [
               7,
               50
             ],
 			"notes" : [
-				"first attack always crits"
+				"first attack always crits",
+				"increased projectile speed"
 			]
           }
         }
@@ -434,12 +436,13 @@
             "pierce": 13,
             "range": 74,
             "cooldown": 0.13,
-            "type": "normal",
+            "damageType": "normal",
             "camo": true,
             "crit": [
               5,
               75
-            ]
+            ],
+            "notes" : ["increased projectile speed"]
           }
         }
       ]

@@ -15,4 +15,21 @@ export class Buff {
     return new Buff(this.type, this.operation, this.value, this.affectedAttacks);
   }
 
+  toHTML() {
+    const p = document.createElement('p');
+    let str = '';
+    for (let i = 0; i < this.affectedAttacks.length; i++) {
+      if (i != 0) str += ' ';
+      str += this.affectedAttacks[i]
+      if (i != this.affectedAttacks.length - 1) str + ','
+    }
+    str += ' attack';
+    if (this.affectedAttacks.length == 1) str += 's';
+    str += ' buffed.\n';
+    if (this.operation == 'add') str += `+${this.value} ${this.type}.`;
+    else if (this.operation == 'mul') str += `${this.type} multiplied by ${this.value}.`;
+    else str += `${this.type} set to ${this.value}.`;
+    return p;
+  }
+
 }

@@ -3,8 +3,13 @@ import { PropertyBattleReady } from './property-battle-ready.js';
 import { PropertyBonusDamage } from './property-bonus-damage.js';
 import { PropertyCamo } from './property-camo.js';
 import { PropertyCrit } from './property-crit.js';
+import { PropertyDamageType } from './property-damage-type.js';
 import { PropertyFootnote } from './property-footnote.js';
 import { PropertyIconed } from './property-iconed.js';
+import { PropertyInfiniteRange } from './property-infinite-range.js';
+import { PropertyProjectiles } from './property-projectiles.js';
+import { PropertyRangeZone } from './property-rangeZone.js';
+import { PropertyTime } from './property-time.js';
 
 export class PropertiesManager {
 
@@ -33,6 +38,11 @@ export class PropertiesManager {
     if (key == 'notes' || key == 'desc') return new PropertyFootnote(key, val);
     if (['cost', 'unlockCost', 'size', 'placement'].includes(key)) return new PropertyIconed(key, val);
     if (key == 'battleReady') return new PropertyBattleReady(key, val);
+    if (key == 'projectiles') return new PropertyProjectiles(key, val);
+    if (key == 'cooldown' || key == 'duration') return new PropertyTime(key, val);
+    if (key == 'infiniteRange') return new PropertyInfiniteRange(key, val);
+    if (key == 'damageType') return new PropertyDamageType(key, val);
+    if (key == 'rangeZone') return new PropertyRangeZone(key, val);
     return new PropertyBasic(key, val);
   }
 

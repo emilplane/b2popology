@@ -1,452 +1,480 @@
 {
-	"id": "boomerangMonkey",
-	"name": "Boomerang Monkey",
-	"properties": {
-		"unlockCost": 150,
-		"size": [
-			6
-		],
-		"placement": 0
-	},
-	"upgrades": [
-		{
-			"path": "000",
-			"name": "Base",
-			"cost": 325,
-			"attacks": [
-				{
-					"id": "boomerang",
-					"name": "Boomerang",
-					"properties": {
-						"damage": 1,
-						"pierce": 4,
-						"range": 43,
-						"cooldown": 1.2,
-						"type": "sharp",
-						"camo": false
-					}
-				}
-			]
-		},
-		{
-			"path": "100",
-			"name": "Improved Rangs",
-			"cost": 200,
-			"buffs": [
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 3,
-					"affectedAttacks": [
-						"boomerang"
-					]
-				},
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 10,
-					"affectedAttacks": [
-						"kylie"
-					]
-				},
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 100,
-					"affectedAttacks": [
-						"press",
-						"dom"
-					]
-				}
-			]
-		},
-		{
-			"path": "200",
-			"name": "Glaive Thrower",
-			"cost": 280,
-			"buffs": [
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 3,
-					"affectedAttacks": [
-						"boomerang"
-					]
-				},
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 12,
-					"affectedAttacks": [
-						"kylie"
-					]
-				},
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 120,
-					"affectedAttacks": [
-						"press",
-						"dom"
-					]
-				},
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 10,
-					"affectedAttacks": [
-						"explosion"
-					]
-				},
-				{
-					"type": "range",
-					"operation": "add",
-					"value": 25,
-					"affectedAttacks": [
-						"explosion"
-					]
-				}
-			]
-		},
-		{
-			"path": "300",
-			"name": "Glaive Ricochet",
-			"cost": 1300,
-			"attacks": [
-				{
-					"id": "ricochet",
-					"name": "Ricochet",
-					"overwrites": [
-						"boomerang"
-					],
-					"properties": {
-						"damage": 1,
-						"pierce": 40,
-						"range": 43,
-						"cooldown": 1.2,
-						"type": "sharp",
-						"camo": false,
-						"notes": [
-							"jumps to a nearby (62.5 units) target after hitting",
-							"travels in a straight line"
-						]
-					}
-				}
-			]
-		},
-		{
-			"path": "400",
-			"name": "M.O.A.R. Glaives",
-			"cost": 3400,
-			"buffs": [
-				{
-					"type": "pierce",
-					"operation": "add",
-					"value": 40,
-					"affectedAttacks": [
-						"ricochet"
-					],
-					"notes": [
-						"increased projectile speed",
-						"can jump up to 187.5 units"
-					]
-				}
-			]
-		},
-		{
-			"path": "500",
-			"name": "Glaive Lord",
-			"cost": 30000,
-			"attacks": [
-				{
-					"id": "orbital-glaive",
-					"name": "Orbital Glaive",
-					"properties": {
-						"damage": 2,
-						"pierce": 1000,
-						"range": 30,
-						"cooldown": 0.1,
-						"type": "sharp",
-						"camo": true,
-						"bonusDamage": {
-							"ceram": 5,
-							"fort": 5,
-							"moab": 5
-						},
-						"notes": [
-							"orbit around the boomerang"
-						]
-					}
-				}
-			],
-			"buffs": [
-				{
-					"type": "damage",
-					"operation": "add",
-					"value": 7,
-					"affectedAttacks": [
-						"ricochet"
-					],
-					"notes": [
-						"first hit applies shred status"
-					]
-				}
-			]
-		},
-		{
-			"path": "010",
-			"name": "Faster Throwing",
-			"cost": 175,
-			"buffs": [
-				{
-					"type": "cooldown",
-					"operation": "mul",
-					"value": 0.75,
-					"affectedAttacks": [
-						"boomerang"
-					]
-				}
-			]
-		},
-		{
-			"path": "020",
-			"name": "Faster Rangs",
-			"cost": 250,
-			"buffs": [
-				{
-					"type": "cooldown",
-					"operation": "mul",
-					"value": 0.75,
-					"affectedAttacks": [
-						"boomerang"
-					]
-				}
-			]
-		},
-		{
-			"path": "030",
-			"name": "Bionic Boomerang",
-			"cost": 1100,
-			"attacks": [
-				{
-					"id": "bionic",
-					"name": "Bionic Boomerang",
-					"overwrites": [
-						"boomerang"
-					],
-					"properties": {
-						"damage": 1,
-						"pierce": 4,
-						"range": 43,
-						"cooldown": 0.238,
-						"type": "sharp",
-						"camo": false,
-						"bonusDamage": {
-							"moab": 1
-						}
-					}
-				}
-			]
-		},
-		{
-			"path": "040",
-			"name": "Turbo Charge",
-			"cost": 4500,
-			"abilities": [
-				{
-					"id": "turbocharge",
-					"name": "Turbo Charge",
-					"properties": {
-						"cooldown": 45,
-						"duration": 8,
-						"desc": [
-							"grants +1 damage to self while active",
-							"attacks every 0.034s while active",
-							"grants camo detection while active"
-						]
-					}
-				}
-			]
-		},
-		{
-			"path": "050",
-			"name": "Permacharge",
-			"cost": 33000,
-			"buffs": [
-				{
-					"type": "damage",
-					"operation": "add",
-					"value": 3,
-					"affectedAttacks": [
-						"bionic"
-					]
-				},
-				{
-					"type" : "cooldown",
-					"operation": "set",
-					"value": 0.034,
-					"affectedAttacks": [
-						"bionic"
-					]
-				}
-			],
-			"abilities": [
-				{
-					"id": "permacharge",
-					"name": "Perma Charge",
-					"overwrites": [
-						"turbocharge"
-					],
-					"properties": {
-						"cooldown": 40,
-						"duration": 15,
-						"desc": [
-							"grants +10 damage to self while active",
-							"damage bonus increased to +12 with 052 crosspath",
-							"statistics here may be wrong since popologies wording on these buffs wasn't perfect"
-						]
-					}
-				}
-			]
-		},
-		{
-			"path": "001",
-			"name": "Long Range Rangs",
-			"cost": 100,
-			"buffs": [
-				{
-					"type": "range",
-					"operation": "add",
-					"value": 6.45,
-					"affectedAttacks": [
-						"boomerang",
-						"bionic"
-					]
-				}
-			]
-		},
-		{
-			"path": "002",
-			"name": "Red Hot Rangs",
-			"cost": 300,
-			"buffs": [
-				{
-					"type": "damage",
-					"operation": "add",
-					"value": 1,
-					"affectedAttacks": [
-						"boomerang",
-						"bionic"
-					]
-				},
-				{
-					"type": "lead",
-					"operation": "add",
-					"value": 1,
-					"affectedAttacks": [
-						"boomerang",
-						"bionic"
-					]
-				}
-			]
-		},
-		{
-			"path": "003",
-			"name": "Kylie Boomerang",
-			"cost": 1100,
-			"attacks": [
-				{
-					"id": "kylie",
-					"name": "Kylie Boomerang",
-					"overwrites": [
-						"boomerang"
-					],
-					"notes": [
-						"moves in a straight line, then returns",
-						"can rehit bloons after 0.3 seconds"
-					],
-					"properties": {
-						"damage": 2,
-						"pierce": 24,
-						"range": 49.75,
-						"cooldown": 1.2,
-						"type": "normal",
-						"camo": false
-					}
-				}
-			]
-		},
-		{
-			"path": "004",
-			"name": "Moab Press",
-			"cost": 3400,
-			"attacks": [
-				{
-					"id": "press",
-					"name": "Moab Press",
-					"properties": {
-						"damage": 1,
-						"pierce": 200,
-						"range": 49.75,
-						"cooldown": 10,
-						"type": "normal",
-						"camo": false,
-						"bonusDamage": {
-							"moab": 4
-						},
-						"notes": [
-							"can rehit after 0.13 seconds",
-							"can only target blimps below BAD",
-							"sends back blimps:",
-							"MOABs 2.4 units, BFBs 1 unit, ZOMGs 0.35 units, DDTs 0.5 units"
-						]
-					}
-				}
-			]
-		},
-		{
-			"path": "005",
-			"name": "Moab Domination",
-			"cost": 52000,
-			"attacks": [
-				{
-					"id": "dom",
-					"name": "Moab Domination",
-					"overwrites": [
-						"press"
-					],
-					"properties": {
-						"damage": 5,
-						"pierce": 300,
-						"range": 100,
-						"cooldown": 5,
-						"type": "normal",
-						"camo": false,
-						"bonusDamage": {
-							"moab": 45
-						},
-						"notes": [
-							"on expire: explosion"
-						]
-					}
-				},
-				{
-					"id": "explosion",
-					"name": "Explosion",
-					"properties": {
-						"damage": 100,
-						"pierce": 40,
-						"range": 100,
-						"cooldown": 0,
-						"type": "normal",
-						"camo": false,
-						"notes": [
-							"applies burn status",
-							"0.25s stun"
-						]
-					}
-				}
-			]
-		}
-	]
+  "id": "boomerangMonkey",
+  "name": "Boomerang Monkey",
+  "properties": {
+    "unlockCost": 150,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 325,
+      "attacks": [
+        {
+          "id": "boomerang",
+          "name": "Boomerang",
+          "properties": {
+            "damage": 1,
+            "pierce": 4,
+            "range": 43,
+            "cooldown": 1.2,
+            "damageType": "sharp",
+            "camo": false,
+            "notes": [
+              "follows a counterclockwise or clockwise arc instead of a straight line, depending on targeting"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "100",
+      "name": "Improved Rangs",
+      "cost": 200,
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 3,
+          "affectedAttacks": [
+            "boomerang"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 10,
+          "affectedAttacks": [
+            "kylie"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 100,
+          "affectedAttacks": [
+            "press",
+            "dom"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "200",
+      "name": "Glaive Thrower",
+      "cost": 280,
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 3,
+          "affectedAttacks": [
+            "boomerang"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 12,
+          "affectedAttacks": [
+            "kylie"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 120,
+          "affectedAttacks": [
+            "press",
+            "dom"
+          ]
+        },
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 10,
+          "affectedAttacks": [
+            "explosion"
+          ]
+        },
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 25,
+          "affectedAttacks": [
+            "explosion"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "300",
+      "name": "Glaive Ricochet",
+      "cost": 1300,
+      "attacks": [
+        {
+          "id": "ricochet",
+          "name": "Ricochet",
+          "overwrites": [
+            "boomerang"
+          ],
+          "properties": {
+            "damage": 1,
+            "pierce": 40,
+            "range": 43,
+            "cooldown": 1.2,
+            "damageType": "sharp",
+            "camo": false,
+            "notes": [
+              "jumps to a nearby target after hitting, up to 62.5 units",
+              "travels in a straight line"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "400",
+      "name": "M.O.A.R. Glaives",
+      "cost": 3400,
+      "buffs": [
+        {
+          "type": "pierce",
+          "operation": "add",
+          "value": 40,
+          "affectedAttacks": [
+            "ricochet"
+          ]
+        },
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.5,
+          "affectedAttacks": [
+            "ricochet"
+          ]
+        },
+        {
+          "type": "notes",
+          "operation": "set",
+          "value": [
+            "jumps to a nearby target after hitting, up to 187.5 units",
+            "travels in a straight line",
+            "increased projectile speed"
+          ],
+          "affectedAttacks": [
+            "ricochet"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "500",
+      "name": "Glaive Lord",
+      "cost": 30000,
+      "attacks": [
+        {
+          "id": "orbital-glaive",
+          "name": "Orbital Glaive",
+          "properties": {
+            "damage": 2,
+            "pierce": 1000,
+            "rangeZone": 30,
+            "cooldown": 0.1,
+            "damageType": "sharp",
+            "camo": true,
+            "bonusDamage": {
+              "ceram": 5,
+              "fort": 5,
+              "moab": 5
+            },
+            "notes": [
+              "orbits around the boomerang monkey"
+            ]
+          }
+        }
+      ],
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 7,
+          "affectedAttacks": [
+            "ricochet"
+          ]
+        },
+        {
+          "type": "notes",
+          "operation": "add",
+          "value": [
+            "first hit applies shred status",
+            "100md/1.0s, 15.1s duration"
+          ],
+          "affectedAttacks": [
+            "ricochet"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "010",
+      "name": "Faster Throwing",
+      "cost": 175,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.75,
+          "affectedAttacks": [
+            "all",
+            "EX_orbital-glaive"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "020",
+      "name": "Faster Rangs",
+      "cost": 250,
+      "buffs": [
+        {
+          "type": "cooldown",
+          "operation": "mul",
+          "value": 0.75,
+          "affectedAttacks": [
+            "all",
+            "EX_orbital-glaive"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "030",
+      "name": "Bionic Boomerang",
+      "cost": 1100,
+      "attacks": [
+        {
+          "id": "bionic",
+          "name": "Bionic Boomerang",
+          "overwrites": [
+            "boomerang"
+          ],
+          "properties": {
+            "damage": 1,
+            "pierce": 4,
+            "range": 43,
+            "cooldown": 0.238,
+            "damageType": "sharp",
+            "camo": false,
+            "bonusDamage": {
+              "moab": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "040",
+      "name": "Turbo Charge",
+      "cost": 4500,
+      "abilities": [
+        {
+          "id": "turbocharge",
+          "name": "Turbo Charge",
+          "properties": {
+            "cooldown": 45,
+            "duration": 8,
+            "desc": [
+              "grants +1 damage to self while active",
+              "attacks every 0.034s while active",
+              "grants camo detection while active"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "050",
+      "name": "Permacharge",
+      "cost": 33000,
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 3,
+          "affectedAttacks": [
+            "bionic"
+          ]
+        },
+        {
+          "type": "cooldown",
+          "operation": "set",
+          "value": 0.034,
+          "affectedAttacks": [
+            "bionic"
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "permacharge",
+          "name": "Perma Charge",
+          "overwrites": [
+            "turbocharge"
+          ],
+          "properties": {
+            "cooldown": 40,
+            "duration": 15,
+            "desc": [
+              "grants +10 damage to self while active",
+              "damage bonus increased to +12 with 052 crosspath",
+              "statistics here may be wrong since popologies wording on these buffs wasn't perfect"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "001",
+      "name": "Long Range Rangs",
+      "cost": 100,
+      "buffs": [
+        {
+          "type": "range",
+          "operation": "add",
+          "value": 6.45,
+          "affectedAttacks": [
+            "boomerang",
+            "bionic"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "002",
+      "name": "Red Hot Rangs",
+      "cost": 300,
+      "buffs": [
+        {
+          "type": "damage",
+          "operation": "add",
+          "value": 1,
+          "affectedAttacks": [
+            "all"
+          ]
+        },
+        {
+          "type": "lead",
+          "operation": "set",
+          "value": 1,
+          "affectedAttacks": [
+            "boomerang",
+            "bionic"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "003",
+      "name": "Kylie Boomerang",
+      "cost": 1100,
+      "attacks": [
+        {
+          "id": "kylie",
+          "name": "Kylie Boomerang",
+          "overwrites": [
+            "boomerang"
+          ],
+          "notes": [
+            "moves in a straight line, then returns",
+            "can rehit bloons after 0.3 seconds"
+          ],
+          "properties": {
+            "damage": 2,
+            "pierce": 24,
+            "range": 49.75,
+            "cooldown": 1.2,
+            "damageType": "normal",
+            "camo": false
+          }
+        }
+      ]
+    },
+    {
+      "path": "004",
+      "name": "Moab Press",
+      "cost": 3400,
+      "attacks": [
+        {
+          "id": "press",
+          "name": "Moab Press",
+          "properties": {
+            "damage": 1,
+            "pierce": 200,
+            "range": 49.75,
+            "cooldown": 10,
+            "damageType": "normal",
+            "camo": false,
+            "bonusDamage": {
+              "moab": 4
+            },
+            "notes": [
+              "can rehit after 0.13 seconds",
+              "can only target blimps below BAD",
+              "sends back blimps:",
+              "MOABs 2.4 units, BFBs 1 unit, ZOMGs 0.35 units, DDTs 0.5 units"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "path": "005",
+      "name": "Moab Domination",
+      "cost": 52000,
+      "attacks": [
+        {
+          "id": "dom",
+          "name": "Moab Domination",
+          "overwrites": [
+            "press"
+          ],
+          "properties": {
+            "damage": 5,
+            "pierce": 300,
+            "range": 100,
+            "cooldown": 5,
+            "damageType": "normal",
+            "camo": false,
+            "bonusDamage": {
+              "moab": 45
+            },
+            "notes": [
+              "on expire: explosion"
+            ]
+          }
+        },
+        {
+          "id": "explosion",
+          "name": "Explosion",
+          "properties": {
+            "damage": 100,
+            "pierce": 40,
+            "range": 100,
+            "cooldown": 0,
+            "damageType": "normal",
+            "camo": false,
+            "notes": [
+              "applies burn status",
+              "0.25s stun"
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

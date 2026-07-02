@@ -60,8 +60,14 @@ export class Ability {
       properties.push(PropertiesManager.createProperty('battleReady', true));
     }
 
+    this.attacks.forEach((attack) => {
+      const attackNote = PropertiesManager.createProperty('notes', [String( 'Activates ' + attack.name + ' attack for the duration of the ability')]);
+      properties.push(attackNote);
+      rootContainer.append(attack.toHTML());
+    });
+
     properties.forEach((property) => {
-      if (property.key == 'notes') {
+      if (property.key == 'notes' || property.key == 'desc') {
         propertiesContainerStyler.append(property.toHTML());
       }
       else {

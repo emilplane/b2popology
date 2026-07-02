@@ -230,7 +230,7 @@ export class Tower {
         });
       }
     });
-    console.log('overwrites: ', overwrites);
+
     const subtowers = [];
     this.upgrades.forEach((upgrade) => {
       if (this.isChildUpgrade(path, upgrade.path) && upgrade.subtowers) {
@@ -240,7 +240,6 @@ export class Tower {
       }
     });
 
-    console.log(subtowers);
     return subtowers
   }
 

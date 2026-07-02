@@ -23,4 +23,17 @@ export class PropertyFootnote extends Property {
     return p;
   }
 
+  applyBuff(buff) {
+    switch (buff.operation) {
+      case 'add':
+        if (Array.isArray(buff.value)) this.val = [...this.val, ...buff.value];
+        else this.val = this.val.push(buff.value);
+        break;
+      case 'set':
+        if (Array.isArray(buff.value)) this.val = buff.value;
+        else this.val = [buff.value];
+        break;
+    }
+  }
+
 }

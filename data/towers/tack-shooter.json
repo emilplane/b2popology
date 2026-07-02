@@ -22,8 +22,8 @@
             "pierce": 1,
             "range": 23,
             "cooldown": 1.4,
-            "projectiles": 8,
-            "type": "sharp",
+            "projectiles": [8, 360],
+            "damageType": "sharp",
             "camo": false
           }
         }
@@ -80,7 +80,7 @@
           ]
         },
 		{
-			"type" : "type",
+			"type" : "damageType",
 			"operation" : "set",
 			"value" : "normal",
 			"affectedAttacks" : [
@@ -105,9 +105,9 @@
           "properties": {
             "damage": 3,
             "pierce": 45,
-            "range": 23,
+            "rangeZone": 23,
             "cooldown": 0.47,
-            "type": "fire",
+            "damageType": "fire",
             "camo": false
           }
         }
@@ -126,7 +126,7 @@
 			"pierce": 1,
 			"infiniteRange": true,
 			"cooldown" : 4.0,
-			"type": "fire",
+			"damageType": "fire",
 			"camo" : true,
 			"notes" : [
 				"follows targeting",
@@ -240,8 +240,8 @@
             "pierce": 3,
             "range": 31,
             "cooldown": 1.232,
-            "projectiles": 8,
-            "type": "sharp",
+            "projectiles": [8, 360],
+            "damageType": "sharp",
             "camo": false,
             "notes": [
               "increased projectile size"
@@ -271,7 +271,7 @@
 					"projectiles": 2,
 					"pierce" : 200,
 					"cooldown" : 0.0333,
-					"type" :"sharp",
+					"damageType" :"sharp",
 					"notes" : [
 						"rotates at a constant speed",
 						"041: maelstrom rotates counterclockwise at a constant speed"
@@ -316,7 +316,7 @@
 					"projectiles": 4,
 					"pierce" : 500,
 					"cooldown" : 0.0333,
-					"type" :"normal",
+					"damageType" :"normal",
 					"notes" : [
 						"rotates at a constant speed",
 						"051: maelstrom rotates counterclockwise at a constant speed"
@@ -466,8 +466,8 @@
             "pierce": 4,
             "range": 30,
             "cooldown": 0.2625,
-            "projectiles": 32,
-            "type": "sharp",
+            "projectiles": [32, 360],
+            "damageType": "sharp",
             "camo": false
           }
         }

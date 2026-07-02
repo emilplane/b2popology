@@ -24,32 +24,11 @@ export class PropertyBasic extends Property {
   }
 
   formattedKey() {
-    let formatted = '';
-    switch(this.key) {
-      case 'infiniteRange':
-        formatted = 'range';
-        break;
-      default:
-        formatted = this.key;
-        break;
-    }
-    const uppercaseKey = formatted[0].toUpperCase() + formatted.slice(1);
-    return uppercaseKey
+    return this.key[0].toUpperCase() + this.key.slice(1);
   }
 
   formattedValue() {
-    switch (this.key) {
-      case 'cooldown':
-        return this.val + 's';
-      case 'duration':
-        return this.val + 's';
-      case 'infiniteRange':
-        return '∞';
-      case 'type':
-        return this.val[0].toUpperCase() + this.val.slice(1);
-      default:
-        return this.val;
-    }
+    return this.val;
   }
 
 }

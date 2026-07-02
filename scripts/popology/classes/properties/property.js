@@ -19,6 +19,7 @@ export class Property {
         break;
       case 'set':
         this.val = buff.value;
+        break;
     }
   }
 
