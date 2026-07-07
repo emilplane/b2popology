@@ -23,8 +23,11 @@ export class PropertyBasic extends Property {
     return container;
   }
 
-  formattedKey() {
-    return this.key[0].toUpperCase() + this.key.slice(1);
+  formattedKey() { // Converts from camelCase to readable text
+    return this.key
+      .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+      .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
+      .replace(/^./, c => c.toUpperCase());
   }
 
   formattedValue() {

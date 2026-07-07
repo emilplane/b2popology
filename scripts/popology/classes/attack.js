@@ -1,26 +1,39 @@
 import { PropertiesManager } from './properties/properties-manager.js';
 import { PropertiesContainer } from '../ui/properties-container.js';
+import { DoT } from './dot.js';
 
 export class Attack {
 
-  constructor(id, name, overwrites, properties) {
+  constructor(id, name, overwrites, dots, properties) {
     this.id = id;
     this.name = name;
     this.overwrites = overwrites;
+    this.dots = dots;
     this.properties = properties;
   }
 
   static fromData(data) {
+    const dots = [];
     const properties = PropertiesManager.propertiesFromData(data.properties);
-      return new Attack(data.id, data.name, data.overwrites, properties);
+    if (data.dots != null) {
+      data.dots.forEach((dot) => {
+        dots.push(DoT.fromData(dot));
+      });
+    }
+    return new Attack(data.id, data.name, data.overwrites, dots, properties);
   }
 
   clone() {
+    const dots = [];
     const properties = [];
+    this.dots.forEach((dot) => {
+      dots.push(dot.clone());
+    });
     this.properties.forEach((property) => {
       properties.push(property.clone());
     });
-    return new Attack(this.id, this.name, this.overwrites, properties);
+
+    return new Attack(this.id, this.name, this.overwrites, dots, properties);
   }
 
   buffedBy(buff) {
@@ -67,6 +80,12 @@ export class Attack {
     centerContainer.className = 'center-container';
 
     attackName.textContent = this.name + ' Attack';
+
+    if (this.dots != null) {
+      this.dots.forEach((dot) => {
+        rootContainer.append(dot.toHTML());
+      });
+    }
 
     return rootContainer;
   }

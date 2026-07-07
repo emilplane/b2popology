@@ -132,12 +132,21 @@
 				"follows targeting",
 				"can see past obstacles",
 				"weak homing (100 turn rate)",
-				"applies burn status:",
-				"150d/1.0s, fire type, 4.1s duration",
 				"explodes on contact:",
 				"150d single-layer, 10p, 18r blast, explosion type, no camo"
 			]
-		  }
+		  },
+		  "dots" : [
+              {
+                "name" : "burn",
+                  "properties" : {
+                  "damage" : 150,
+                  "damageType" : "fire",
+                  "tickDuration" : 1.0,
+                  "totalDuration" : 4.1
+                }
+              }
+			]
 		}
       ]
     },

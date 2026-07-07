@@ -40,7 +40,7 @@ export class PropertiesManager {
     if (['cost', 'unlockCost', 'size', 'placement'].includes(key)) return new PropertyIconed(key, val);
     if (key == 'battleReady') return new PropertyBattleReady(key, val);
     if (key == 'projectiles') return new PropertyProjectiles(key, val);
-    if (key == 'cooldown' || key == 'duration') return new PropertyTime(key, val);
+    if (['cooldown', 'duration', 'tickDuration', 'totalDuration'].includes(key)) return new PropertyTime(key, val);
     if (key == 'infiniteRange') return new PropertyInfiniteRange(key, val);
     if (key == 'damageType') return new PropertyDamageType(key, val);
     if (key == 'rangeZone') return new PropertyRangeZone(key, val);

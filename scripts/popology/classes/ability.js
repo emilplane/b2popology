@@ -11,7 +11,6 @@ export class Ability {
     this.attacks = attacks;
     this.buffs = buffs;
     this.properties = properties;
-
   }
 
   static fromData(data = {}) {
@@ -26,14 +25,19 @@ export class Ability {
   }
 
   clone() {
-    const ability = new Ability();
-    ability.id = this.id;
-    ability.name = this.name
-    ability.overwrites = this.overwrites;
-    this.properties.forEach((property) => {
-      ability.properties.push(property.clone());
+    const attacks = [];
+    const buffs = [];
+    const properties = [];
+    this.attacks.forEach((attack) => {
+      attacks.push(attack.clone());
     });
-    return ability;
+    this.buffs.forEach((buff) => {
+      buffs.push(buff.clone());
+    });
+    this.properties.forEach((property) => {
+      properties.push(property.clone());
+    });
+    return new Ability(this.id, this.name, this.overwrites, attacks, buffs, properties);
   }
 
   toHTML() {
