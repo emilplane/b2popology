@@ -128,15 +128,7 @@
 			"cooldown" : 4.0,
 			"damageType": "fire",
 			"camo" : true,
-			"notes" : [
-				"follows targeting",
-				"can see past obstacles",
-				"weak homing (100 turn rate)",
-				"explodes on contact:",
-				"150d single-layer, 10p, 18r blast, explosion type, no camo"
-			]
-		  },
-		  "dots" : [
+			"dots" : [
               {
                 "name" : "burn",
                   "properties" : {
@@ -146,7 +138,15 @@
                   "totalDuration" : 4.1
                 }
               }
+			],
+			"notes" : [
+				"follows targeting",
+				"can see past obstacles",
+				"weak homing (100 turn rate)",
+				"explodes on contact:",
+				"150d single-layer, 10p, 18r blast, explosion type, no camo"
 			]
+		  }
 		}
       ]
     },

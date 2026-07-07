@@ -26,8 +26,9 @@ export class PropertyBonusDamage extends Property {
 
     pkey.textContent = PropertyBonusDamage.FORMATTED_TYPES[this.key] +' Damage';
 
-    const damage_property = attack.properties.find(property => property.key == 'damage');
-    pval.textContent = (damage_property.val + this.val) + ' (+' + this.val + ')';
+    const damageProperty = attack.properties.find(property => property.key == 'damage');
+    if (damageProperty != null) pval.textContent = (damageProperty.val + this.val) + ' (+' + this.val + ')';
+    else pval.textContent = this.val;
 
     return container;
   }

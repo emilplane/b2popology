@@ -1,39 +1,27 @@
 import { PropertiesManager } from './properties/properties-manager.js';
 import { PropertiesContainer } from '../ui/properties-container.js';
-import { DoT } from './dot.js';
 
 export class Attack {
 
-  constructor(id, name, overwrites, dots, properties) {
+  constructor(id, name, overwrites, properties) {
     this.id = id;
     this.name = name;
     this.overwrites = overwrites;
-    this.dots = dots;
     this.properties = properties;
   }
 
   static fromData(data) {
-    const dots = [];
     const properties = PropertiesManager.propertiesFromData(data.properties);
-    if (data.dots != null) {
-      data.dots.forEach((dot) => {
-        dots.push(DoT.fromData(dot));
-      });
-    }
-    return new Attack(data.id, data.name, data.overwrites, dots, properties);
+    return new Attack(data.id, data.name, data.overwrites, properties);
   }
 
   clone() {
-    const dots = [];
     const properties = [];
-    this.dots.forEach((dot) => {
-      dots.push(dot.clone());
-    });
     this.properties.forEach((property) => {
       properties.push(property.clone());
     });
 
-    return new Attack(this.id, this.name, this.overwrites, dots, properties);
+    return new Attack(this.id, this.name, this.overwrites, properties);
   }
 
   buffedBy(buff) {
@@ -42,6 +30,12 @@ export class Attack {
       (!buff.affectedAttacks.includes('EX_' + this.id)) &&
       ((buff.affectedAttacks.includes('all')) || (buff.affectedAttacks.includes(this.id)))
     ) {
+      if (buff.type == 'appendDoT') {
+        if (attack.properties.dots == null) attack.properties.dots = [];
+        console.log(buff);
+        attack.properties.push(PropertiesManager.createProperty('dot', buff.value));
+        return attack;
+      }
       let propertyToBuff = attack.properties.find(property => property.key == buff.type);
       if (propertyToBuff == null) {
         if (buff.operation == 'set') {
@@ -73,6 +67,7 @@ export class Attack {
     const attackName = document.createElement('h4');
     const centerContainer = document.createElement('div');
     const propertiesContainer = new PropertiesContainer(this.properties, this)
+    propertiesContainer.addChildren(this.dots);
 
     rootContainer.append(attackName, centerContainer);
     centerContainer.append(propertiesContainer.toHTML());
@@ -80,12 +75,6 @@ export class Attack {
     centerContainer.className = 'center-container';
 
     attackName.textContent = this.name + ' Attack';
-
-    if (this.dots != null) {
-      this.dots.forEach((dot) => {
-        rootContainer.append(dot.toHTML());
-      });
-    }
 
     return rootContainer;
   }

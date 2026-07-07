@@ -1,6 +1,8 @@
 import { PropertiesManager } from './properties/properties-manager.js';
+import { PropertiesContainer } from '../ui/properties-container.js';
 import { Attack } from './attack.js';
 import { Buff } from './buff.js';
+import { ChildHeader } from '../ui/child-header.js';
 
 export class Ability {
 
@@ -42,48 +44,28 @@ export class Ability {
 
   toHTML() {
     const properties = Array.from(this.properties);
-
-    const rootContainer = document.createElement('div');
-    const abilityName = document.createElement('h4');
-    const centerContainer = document.createElement('div');
-    const propertiesContainerStyler = document.createElement('div');
-    const propertiesContainer = document.createElement('div');
-
-    rootContainer.append(abilityName, centerContainer);
-    centerContainer.append(propertiesContainerStyler);
-    propertiesContainerStyler.append(propertiesContainer);
-
-    centerContainer.className = 'center-container';
-    propertiesContainerStyler.className = 'properties-container-styler';
-    propertiesContainer.className = 'properties-container';
-
-    abilityName.textContent = this.name + ' Ability';
-
     const initialCooldown = properties.find(property => property.key == 'initialCooldown');
     if (initialCooldown == null || initialCooldown.val == 0) {
       properties.push(PropertiesManager.createProperty('battleReady', true));
     }
 
+    const rootContainer = document.createElement('div');
+    const abilityName = document.createElement('h4');
+    const centerContainer = document.createElement('div');
+    const propertiesContainer = new PropertiesContainer(properties)
+    propertiesContainer.addChildren(this.buffs);
     this.attacks.forEach((attack) => {
-      const attackNote = PropertiesManager.createProperty('notes', [String( 'Activates ' + attack.name + ' attack for the duration of the ability')]);
-      properties.push(attackNote);
-      rootContainer.append(attack.toHTML());
+      const attackHeader = new ChildHeader(attack.name);
+      propertiesContainer.addChildren(attackHeader, attack);
     });
 
-    properties.forEach((property) => {
-      if (property.key == 'notes' || property.key == 'desc') {
-        propertiesContainerStyler.append(property.toHTML());
-      }
-      else {
-        let element = property.toHTML(this);
-        if (element == null) return;
-        propertiesContainer.append(element);
-      }
-    });
 
-    this.buffs.forEach((buff) => {
-      propertiesContainerStyler.append(buff.toHTML());
-    });
+    rootContainer.append(abilityName, centerContainer);
+    centerContainer.append(propertiesContainer.toHTML());
+
+    centerContainer.className = 'center-container';
+
+    abilityName.textContent = this.name + ' Ability';
 
     return rootContainer;
   }

@@ -4,12 +4,15 @@ import { PropertyBonusDamage } from './property-bonus-damage.js';
 import { PropertyCamo } from './property-camo.js';
 import { PropertyCrit } from './property-crit.js';
 import { PropertyDamageType } from './property-damage-type.js';
+import { PropertyDoT } from './property-dot.js';
 import { PropertyFootnote } from './property-footnote.js';
 import { PropertyIconed } from './property-iconed.js';
 import { PropertyInfiniteRange } from './property-infinite-range.js';
 import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertyRangeZone } from './property-rangeZone.js';
 import { PropertyTime } from './property-time.js';
+
+import { DoT } from '../dot.js';
 
 export class PropertiesManager {
 
@@ -29,7 +32,7 @@ export class PropertiesManager {
     if (key == 'bonusDamage') {
       const propertyArray = [];
       Object.entries(val).forEach(([bkey, bval]) => {
-        propertyArray.push(new PropertyBonusDamage(bkey,bval));
+        propertyArray.push(new PropertyBonusDamage(bkey, bval));
       });
       return propertyArray;
     }
@@ -44,6 +47,24 @@ export class PropertiesManager {
     if (key == 'infiniteRange') return new PropertyInfiniteRange(key, val);
     if (key == 'damageType') return new PropertyDamageType(key, val);
     if (key == 'rangeZone') return new PropertyRangeZone(key, val);
+    if (key == 'dots') {
+      const propertyArray = [];
+      let i = 0;
+      val.forEach((dot) => {
+        let dotObject;
+        if (dot instanceof DoT) dotObject = dot;
+        else dotObject = DoT.fromData(dot);
+        propertyArray.push(new PropertyDoT('dot' + i, dotObject));
+        i++;
+      });
+      return propertyArray;
+    }
+    if (key == 'dot') {
+      let dotObject;
+      if (val instanceof DoT) dotObject = val;
+      else dotObject = DoT.fromData(val);
+      return new PropertyDoT('dot', dotObject);
+    }
     return new PropertyBasic(key, val);
   }
 
@@ -51,7 +72,7 @@ export class PropertiesManager {
     const containerProperties = [];
 
     properties.forEach((property) => {
-      if (!['notes', 'desc'].includes(property.key)) {
+      if (!['notes', 'desc'].includes(property.key) && (!(property instanceof PropertyDoT))) {
         containerProperties.push(property);
       }
     });
@@ -69,6 +90,18 @@ export class PropertiesManager {
     });
 
     return noteProperties;
+  }
+
+  static getDotProperties(properties) {
+    const dotProperties = [];
+
+    properties.forEach((property) => {
+      if (property instanceof PropertyDoT) {
+        dotProperties.push(property);
+      }
+    });
+
+    return dotProperties;
   }
 
   static sortedContainerProperties(properties) {

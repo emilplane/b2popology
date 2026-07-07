@@ -3,6 +3,11 @@ import { PropertiesContainer } from "../ui/properties-container.js";
 
 export class DoT {
 
+  static COLORS = {
+    "burn" : "red",
+    "shred" : "purple"
+  }
+
   constructor(name, properties, metadata) {
     this.name = name
     this.properties = properties;
@@ -24,14 +29,20 @@ export class DoT {
 
   toHTML() {
     const rootContainer = document.createElement('div');
-    const dotName = document.createElement('h4');
+    const dotName = document.createElement('h5');
     const centerContainer = document.createElement('div');
     const propertiesContainer = new PropertiesContainer(this.properties, this)
+    const backgroundColorVariable = '--background-' + DoT.COLORS[this.name];
+    const backgroundColor = window.getComputedStyle(document.body).getPropertyValue(backgroundColorVariable);
+    propertiesContainer.setBackgroundColor(backgroundColor);
 
     rootContainer.append(dotName, centerContainer);
     centerContainer.append(propertiesContainer.toHTML());
 
     centerContainer.className = 'center-container';
+    const textColorVariable = '--text-' + DoT.COLORS[this.name];
+    const textColor = window.getComputedStyle(document.body).getPropertyValue(textColorVariable);
+    dotName.style.color = textColor
 
     dotName.textContent = 'Applies ' + this.name + ' effect (damage over time)'
 

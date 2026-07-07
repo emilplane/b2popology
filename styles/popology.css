@@ -1,29 +1,44 @@
 :root {
   --background-primary: #999999;
   --background-secondary: #CCCCCC;
+  --background-red: #DDAAAA;
+  --background-purple: #CC99CC;
   --header-primary: #000000;
   --header-secondary: #222222;
   --text-common: #000000;
+  --text-red: #FF9999;
+  --text-purple: #FFCCFF;
   --outline-default: #111111;
+  --outline-dark: #111111;
   --outline-orange: #DD9944;
   --outline-blue: #4499DD;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-primary: #333333;
     --background-secondary: #666666;
+    --background-purple: #664B66;
+    --background-red: #665252;
     --header-primary: #FFFFFF;
     --header-secondary: #BBBBBB;
     --text-common: #FFFFFF;
+    --text-red: #FF9999;
+    --text-purple: #FFCCFF;
     --outline-default: #CCCCCC;
+    --outline-dark: #111111;
     --outline-orange: #CC6622;
     --outline-blue: #2266CC;
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  paint-order: stroke fill;
+}
+
 h1 {
-  -webkit-text-stroke: 3px black;
+  -webkit-text-stroke: 8px black;
   color: white;
   font-size: 40px;
   font-family: Luckiest Guy;
@@ -48,6 +63,12 @@ h4 {
   color: var(--header-secondary);
   font-size: 28px;
   font-family: "Gabarito";
+}
+
+h5 {
+  font-size: 22px;
+  font-family: "Gabarito";
+  -webkit-text-stroke: 4px var(--outline-dark);
 }
 
 .tower-view {
@@ -92,8 +113,9 @@ h4 {
 
 .properties-container-styler {
   max-width: 1024px;
-  padding: 8px 16px 8px 16px;
-  margin: 0 16px 8px 16px;
+  min-width: 512px;
+  padding: 4px 12px 4px 12px;
+  margin: 4px 16px 8px 16px;
   background-color: var(--background-secondary);
   border-radius: 6px;
 }
@@ -102,6 +124,7 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 8px;
 }
 
@@ -109,7 +132,7 @@ h4 {
   color: var(--text-common);
   font-size: 20px;
   font-family: "Gabarito";
-  padding: 4px 10px 4px 10px;
+  padding: 2px 8px 2px 8px;
 }
 
 .property-basic-value {
@@ -157,4 +180,10 @@ h4 {
 
 .property-unkeyed-container p {
   white-space: pre-wrap;
+}
+
+.inner-container {
+  padding: 0 0 4px 0;
+  margin: 4px 0 0 0;
+  width: 98%;
 }

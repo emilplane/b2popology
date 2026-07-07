@@ -216,12 +216,16 @@
           ]
         },
         {
-          "type": "notes",
-          "operation": "add",
-          "value": [
-            "first hit applies shred status",
-            "100md/1.0s, 15.1s duration"
-          ],
+          "type": "appendDoT",
+          "value": {
+            "name" : "shred",
+            "properties" : {
+            "moab" : 100,
+            "damageType" : "sharp",
+            "tickDuration" : 1.0,
+            "totalDuration" : 4.1
+            }
+          },
           "affectedAttacks": [
             "ricochet"
           ]
@@ -366,6 +370,14 @@
               "type": "damage",
               "operation": "add",
               "value": 10,
+              "affectedAttacks": [
+                "bionic"
+              ]
+            },
+            {
+              "type": "camo",
+              "operation": "set",
+              "value": true,
               "affectedAttacks": [
                 "bionic"
               ]
