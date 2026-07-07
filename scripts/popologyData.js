@@ -416,7 +416,8 @@ const data = {
                                         "sends back blimps",
                                         [
                                             "MOABs 2.4 units, BFBs 1 unit, ZOMGs 0.35 units, DDTs 0.5 units"
-                                        ]
+                                        ],
+                                        "multiple moab press knockback will not stack with each other if applied in the same time window"
                                     ],
                                     "crosspath",
                                     [
@@ -2231,8 +2232,8 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "130: bombing-run +7p (17p), 60%s (1.02s)",
-                                        "031: bombing-run +12p (24p)"
+                                        "130: bombing-run +60%s (1.02s)",
+                                        "031: bombing-run +7p (17p)"
                                     ]
                                 ]
                             },
@@ -9104,9 +9105,9 @@ const data = {
                             ]
                         ],
                         "4": [
-                            "dart buffed",
+                            "all attacks buffed",
                             [
-                                "first gives +1p",
+                                "first targeting gives +1p",
                                 "divide and conquer targeting gives +20 move speed and +20%s",
                                 "zone defence targeting gives +1d"
                             ]
@@ -9141,7 +9142,7 @@ const data = {
                             ]
                         ],
                         "9": [
-                            "dart buffed",
+                            "all attacks buffed",
                             [
                                 "first targeting now gives +2p"
                             ],
@@ -9167,7 +9168,11 @@ const data = {
                         ],
                         "11": [
                             "spawns 1 more permanent drone subtower (3)",
-                            "gains zone defense targeting"
+                            "gains zone defense targeting",
+                            "all attacks buffed",
+                            [
+                              "zone defence targeting gives +1d"
+                            ]
                         ],
                         "12": [
                             "drone buffed",
