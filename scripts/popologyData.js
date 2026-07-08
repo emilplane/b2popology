@@ -357,15 +357,18 @@ const data = {
                                 "content": [
                                     "boomerang attack buffed",
                                     [
-                                        "+3d (4, 6md), 0.034s"
+                                        "+3d (4d, 5md), 0.034s"
                                     ],
                                     "turbocharge replaced by permacharge (40s cooldown, 15s duration, battle ready)",
                                     [
-                                        "+10d (14d, 16md)"
+                                        "+10d (14d, 15md)"
                                     ],
-                                    "crosspath",
+                                    "crosspath: 052",
                                     [
-                                        "052: +4d (8d, 10md), permacharge +12d (16d, 18md)"
+                                      "boomerang attack buffed",
+                                      [
+                                        "+4d (8d, 9md, 9ld)"
+                                      ]
                                     ]
                                 ]
                             }
@@ -2954,7 +2957,8 @@ const data = {
                                 "content": [
                                     "dart buffed",
                                     [
-                                        "58.4d%s (0.132s)"
+                                        "58.4d%s (0.11666s)",
+                                        "WARNING: attack speed buff for later paths is very likely inaccurate"
                                     ]
                                 ]
                             },
