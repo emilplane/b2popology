@@ -74,9 +74,7 @@
           "operation": "add",
           "value": 1,
           "affectedAttacks": [
-            "all",
-            "EX_ringOfFire",
-            "EX_meteor"
+            "tacks"
           ]
         },
 		{
@@ -84,9 +82,7 @@
 			"operation" : "set",
 			"value" : "normal",
 			"affectedAttacks" : [
-				"all",
-				"EX_ringOfFire",
-				"EX_meteor"
+				"tacks"
 			]
 		}
       ]
@@ -128,6 +124,7 @@
 			"cooldown" : 4.0,
 			"damageType": "fire",
 			"camo" : true,
+			"onContact" : "meteor-explosion",
 			"dots" : [
               {
                 "name" : "burn",
@@ -142,10 +139,20 @@
 			"notes" : [
 				"follows targeting",
 				"can see past obstacles",
-				"weak homing (100 turn rate)",
-				"explodes on contact:",
-				"150d single-layer, 10p, 18r blast, explosion type, no camo"
-			]
+				"weak homing (100 turn rate)"
+			],
+			"embeddedAttacks" : [
+          {
+          "id": "meteor-explosion",
+          "properties" : {
+            "damage" : 150,
+            "pierce": 10,
+            "blastRadius" : 18,
+            "damageType": "explosion",
+            "attackType": "explosion"
+            }
+          }
+		]
 		  }
 		}
       ]

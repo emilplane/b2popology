@@ -464,17 +464,16 @@
           "overwrites": [
             "boomerang"
           ],
-          "notes": [
-            "moves in a straight line, then returns",
-            "can rehit bloons after 0.3 seconds"
-          ],
           "properties": {
             "damage": 2,
             "pierce": 24,
             "range": 49.45,
             "cooldown": 1.2,
             "damageType": "normal",
-            "camo": false
+            "notes": [
+              "moves in a straight line, then returns",
+              "can rehit bloons after 0.3 seconds"
+            ]
           }
         }
       ]

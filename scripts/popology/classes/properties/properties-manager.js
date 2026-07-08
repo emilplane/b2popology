@@ -1,3 +1,5 @@
+import { Attack } from '../attack.js';
+import { DoT } from '../dot.js';
 import { PropertyBasic } from './property-basic.js';
 import { PropertyBattleReady } from './property-battle-ready.js';
 import { PropertyBonusDamage } from './property-bonus-damage.js';
@@ -6,13 +8,13 @@ import { PropertyCrit } from './property-crit.js';
 import { PropertyDamageType } from './property-damage-type.js';
 import { PropertyDoT } from './property-dot.js';
 import { PropertyFootnote } from './property-footnote.js';
+import { PropertyHidden } from './property-hidden.js';
 import { PropertyIconed } from './property-iconed.js';
 import { PropertyInfiniteRange } from './property-infinite-range.js';
+import { PropertyOnContact } from './property-on-contact.js';
 import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertyRangeZone } from './property-rangeZone.js';
 import { PropertyTime } from './property-time.js';
-
-import { DoT } from '../dot.js';
 
 export class PropertiesManager {
 
@@ -65,6 +67,16 @@ export class PropertiesManager {
       else dotObject = DoT.fromData(val);
       return new PropertyDoT('dot', dotObject);
     }
+    if (key == 'onContact')  return new PropertyOnContact(key, val);
+    if (['attackType'].includes(key)) return new PropertyHidden(key, val);
+    if (key == 'embeddedAttacks') {
+      const embeddedAttacks = [];
+      val.forEach((attack) => {
+        if (attack instanceof Attack) embeddedAttacks.push(attack.clone());
+        else embeddedAttacks.push(Attack.fromData(attack));
+      });
+      return new PropertyHidden(key, embeddedAttacks);
+    }
     return new PropertyBasic(key, val);
   }
 
@@ -72,7 +84,7 @@ export class PropertiesManager {
     const containerProperties = [];
 
     properties.forEach((property) => {
-      if (!['notes', 'desc'].includes(property.key) && (!(property instanceof PropertyDoT))) {
+      if (!['notes', 'desc', 'onContact'].includes(property.key) && (!(property instanceof PropertyDoT))) {
         containerProperties.push(property);
       }
     });
@@ -102,6 +114,18 @@ export class PropertiesManager {
     });
 
     return dotProperties;
+  }
+
+  static getOnContactProperties(properties) {
+    const onContactProperties = [];
+
+    properties.forEach((property) => {
+      if (property.key == 'onContact') {
+        onContactProperties.push(property);
+      }
+    });
+
+    return onContactProperties;
   }
 
   static sortedContainerProperties(properties) {

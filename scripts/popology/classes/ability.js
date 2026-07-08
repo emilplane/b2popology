@@ -59,7 +59,6 @@ export class Ability {
       propertiesContainer.addChildren(attackHeader, attack);
     });
 
-
     rootContainer.append(abilityName, centerContainer);
     centerContainer.append(propertiesContainer.toHTML());
 

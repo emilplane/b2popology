@@ -3,6 +3,10 @@ import { PropertiesContainer } from '../ui/properties-container.js';
 
 export class Attack {
 
+  static ATTACKTYPE = {
+    "explosion" : "Explosion"
+  }
+
   constructor(id, name, overwrites, properties) {
     this.id = id;
     this.name = name;
@@ -32,7 +36,6 @@ export class Attack {
     ) {
       if (buff.type == 'appendDoT') {
         if (attack.properties.dots == null) attack.properties.dots = [];
-        console.log(buff);
         attack.properties.push(PropertiesManager.createProperty('dot', buff.value));
         return attack;
       }
@@ -64,17 +67,21 @@ export class Attack {
 
   toHTML() {
     const rootContainer = document.createElement('div');
-    const attackName = document.createElement('h4');
+    if (this.name != null) {
+      const attackName = document.createElement('h4');
+      rootContainer.append(attackName)
+      attackName.textContent = this.name + ' Attack';
+    }
     const centerContainer = document.createElement('div');
     const propertiesContainer = new PropertiesContainer(this.properties, this)
     propertiesContainer.addChildren(this.dots);
 
-    rootContainer.append(attackName, centerContainer);
+    rootContainer.append(centerContainer);
     centerContainer.append(propertiesContainer.toHTML());
 
     centerContainer.className = 'center-container';
 
-    attackName.textContent = this.name + ' Attack';
+
 
     return rootContainer;
   }

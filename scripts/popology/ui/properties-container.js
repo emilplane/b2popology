@@ -18,7 +18,7 @@ export class PropertiesContainer {
 
   addFlags(...flags) {
     flags.forEach((flag) => {
-      if (this.flags.includes(flag)) return;
+      if (this.flags.includes(flag) || flag == null) return;
       this.flags.push(flag);
     });
   }
@@ -28,46 +28,36 @@ export class PropertiesContainer {
   }
 
   toHTML() {
-    const mainProperties = PropertiesManager.sortedContainerProperties(this.properties);
-    const noteProperties = PropertiesManager.getNoteProperties(this.properties)
+    const minorProperties = PropertiesManager.sortedContainerProperties(this.properties);
+
+    const onContactProperties = PropertiesManager.getOnContactProperties(this.properties);
     const dotProperties = PropertiesManager.getDotProperties(this.properties);
+    const noteProperties = PropertiesManager.getNoteProperties(this.properties);
+
+    const majorProperties  = [...onContactProperties, ...dotProperties, ...noteProperties ,...this.children];
 
     const rootContainer = document.createElement('div');
     const propertiesContainer = document.createElement('div');
 
     rootContainer.classList.add('properties-container-styler');
-
     rootContainer.style.backgroundColor = this.backgroundColor;
-
-    propertiesContainer.className = 'properties-container';
+    propertiesContainer.classList.add('properties-container');
 
     rootContainer.append(propertiesContainer);
 
-    mainProperties.forEach((property) => {
+    minorProperties.forEach((property) => {
       const propertyHTML = property.toHTML(this.attack);
       if (propertyHTML != null) propertiesContainer.append(propertyHTML);
     });
 
-    dotProperties.forEach((property) => {
+    majorProperties.forEach((property) => {
+      if (property == null) return;
       const propertyHTML = property.toHTML(this.attack);
       if (propertyHTML != null) {
       const stylerContainer = propertyHTML.querySelector('.properties-container-styler');
       if (stylerContainer != null) stylerContainer.classList.add('inner-container');
         rootContainer.append(propertyHTML);
       }
-    });
-
-    this.children.forEach((child) => {
-      if (child == null) return;
-      const childRootContainer = child.toHTML();
-      const stylerContainer = childRootContainer.querySelector('.properties-container-styler');
-      if (stylerContainer != null) stylerContainer.classList.add('inner-container');
-      rootContainer.append(childRootContainer);
-    });
-
-    noteProperties.forEach((property) => {
-      const propertyHTML = property.toHTML()
-      if (propertyHTML != null) rootContainer.append(propertyHTML);
     });
 
     return rootContainer;
