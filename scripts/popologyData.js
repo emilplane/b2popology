@@ -1526,10 +1526,6 @@ const data = {
                                     [
                                         "40%s (0.58s)",
                                     ],
-                                    "shrapnel buffed",
-                                    [
-                                        "on contact",
-                                    ],
                                     "gains elite buff",
                                     [
                                         "affects all snipers, excluding self",
@@ -2958,7 +2954,7 @@ const data = {
                                 "content": [
                                     "dart buffed",
                                     [
-                                        "66%s (0.132s)"
+                                        "58.4d%s (0.132s)"
                                     ]
                                 ]
                             },
@@ -5695,8 +5691,7 @@ const data = {
                             "cyber-storm buffed",
                             [
                                 "50s cooldown",
-                                "+30d (80d), +50md -> +80md (160md)",
-                                "10% chance to hit",
+                                "+30d (80d), +50md -> +80md (160md)"
                             ]
                         ],
                         "19": [
@@ -5712,8 +5707,7 @@ const data = {
                             ],
                             "cyber-storm buffed",
                             [
-                                "+40d (120d), +80md -> +240md (360md)",
-                                "15% chance to hit"
+                                "+40d (120d), +80md -> +240md (360md)"
                             ]
                         ]
                     }
