@@ -11067,38 +11067,45 @@ const data = {
                         </ul>
                     `
                 },
-                "modifiers": {
-                    "name": "Bloon Modifiers",
-                    "data": `
-                        <ul>
-                            <li>Regrow
-                                <ul>
-                                    <li>Unlocked Round 8</li>
-                                    <li>Cash modifier: $1.6x</li>
-                                    <li>Grows one extra layer every 2.55 seconds, up to their original form.</li>
-                                </ul>
-                            </li>
-                            <li>Camo
-                                <ul>
-                                    <li>Unlocked Round 12</li>
-                                    <li>Cash modifier: $1.75x</li>
-                                </ul>
-                            </li>
-                            <li>Phayze
-                                <ul>
-                                    <li>Unlocked Round 15</li>
-                                    <li>Cash modifier: $1.6x</li>
-                                </ul>
-                            </li>
-                            <li>Fortified
-                                <ul>
-                                    <li>Unlocked Round 18</li>
-                                    <li>Cash modifier: $2x</li>
-                                    <li>Eco modifier for Blimps only: 2x greater eco loss</li>
-                                </ul>
-                            </li>
-                        </ul>
+                "regrow" : {
+                  "name" : "Regrow Bloons",
+                  "data" : `
+                  <ul>
+                    <li>Unlocked Round 8</li>
+                    <li>Cash modifier: $1.6x</li>
+                    <li>Grows one extra layer every 2.55 seconds, up to their original form</li>
+                  </ul>
                     `
+                },
+                "camo" : {
+                  "name" : "Camo Bloons",
+                  "data" : `
+                  <ul>
+                    <li>Unlocked Round 12</li>
+                    <li>Cash modifier: $1.75x</li>
+                    <li>Can only be damaged by attacks with camo detecion</li>
+                  </ul>
+                  `
+                },
+                "fortified" : {
+                  "name" : "Fortified Bloons",
+                  "data" : `
+                  <ul>
+                    <li>Unlocked Round 18</li>
+                    <li>Cash modifier: $2x</li>
+                    <li>Eco modifier for Blimps only: 2x greater eco loss</li>
+                  </ul>
+                  `
+                },
+                "phayze" : {
+                  "name" : "Phayze Bloons",
+                  "data" : `
+                  <ul>
+                    <li>Unlocked Round 15</li>
+                    <li>Cash modifier: $1.6x</li>
+                    <li>Phyaze bloons have a shield with 1% of their total HP, travels 10% of the track once shield is popped</li>
+                  </ul>
+                  `
                 },
                 "ramping": {
                     "name": "Health and Speed Ramping",

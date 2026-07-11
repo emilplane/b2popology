@@ -287,7 +287,6 @@ function runPopology(compare) {
         document.getElementById("dropdownContainer" + compareID).innerHTML = ""
 
         if (
-            selectedCategory === "bloons" ||
             selectedCategory === "accolades"
         ) {
             switch (selectedCategory) {
@@ -336,9 +335,11 @@ function runPopology(compare) {
                 });
                 
                 if (selectedCategory === "heroes") {
-                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/towerPortraits/${pageIndex}/${pageIndex}Portrait.png`)
+                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/towerPortraits/${pageIndex}/${pageIndex}Portrait.png`);
+                } else if (selectedCategory == 'bloons') {
+                  clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/Bloons/${pageIndex}.png`);
                 } else {
-                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`)
+                    clone.getElementById("pageButtonImage" + compareID).setAttribute("src", `/media/towerPortraits/${pageIndex}/base/${pageIndex}Portrait.png`);
                 }
                 document.getElementById("pageButtonContainer" + compareID).appendChild(clone)
                 if (selectedCategory === "heroes" && !compare) {
