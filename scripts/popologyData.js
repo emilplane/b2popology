@@ -1768,7 +1768,7 @@ const data = {
                                     "first-strike buffed",
                                     [
                                         "30s cooldown",
-                                        "+3000d (11000d)"
+                                        "+4000d (11000d)"
                                     ],
                                     "gains pre-emptive-strike ability (triggered by a blimp entering the map)",
                                     [
