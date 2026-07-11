@@ -147,7 +147,7 @@ h5 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .properties-container p {

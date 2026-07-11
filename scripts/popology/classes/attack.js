@@ -57,11 +57,6 @@ export class Attack {
       newBuff.type = 'crit';
       return attack.buffedBy(newBuff);
     }
-    if (buff.type == 'range') {
-      const newBuff = buff.clone();
-      newBuff.type = 'rangeZone';
-      return attack.buffedBy(newBuff);
-    }
     return attack;
   }
 

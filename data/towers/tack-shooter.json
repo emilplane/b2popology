@@ -101,7 +101,11 @@
           "properties": {
             "damage": 3,
             "pierce": 45,
-            "rangeZone": 23,
+            "range":
+            {
+              "value" :23,
+              "attribute" : "aoe"
+            },
             "cooldown": 0.47,
             "damageType": "fire",
             "camo": false
@@ -120,7 +124,9 @@
 		  "properties" : {
 			"damage": 900,
 			"pierce": 1,
-			"infiniteRange": true,
+			"range" : {
+              "attribute" : "infinite"
+			},
 			"cooldown" : 4.0,
 			"damageType": "fire",
 			"camo" : true,

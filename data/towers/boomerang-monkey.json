@@ -191,7 +191,10 @@
           "properties": {
             "damage": 2,
             "pierce": 1000,
-            "rangeZone": 30,
+            "range": {
+              "value" : 30,
+              "attribute" :"aoe"
+            },
             "cooldown": 0.1,
             "damageType": "sharp",
             "camo": true,
@@ -470,9 +473,9 @@
             "range": 49.45,
             "cooldown": 1.2,
             "damageType": "normal",
+            "rehit" : 0.3,
             "notes": [
-              "moves in a straight line, then returns",
-              "can rehit bloons after 0.3 seconds"
+              "moves in a straight line, then returns"
             ]
           }
         }
@@ -496,12 +499,14 @@
             "bonusDamage": {
               "moab": 4
             },
-            "notes": [
-              "can rehit after 0.13 seconds",
-              "can only target blimps below BAD",
-              "sends back blimps:",
-              "MOABs 2.4 units, BFBs 1 unit, ZOMGs 0.35 units, DDTs 0.5 units"
-            ]
+            "rehit" : 0.13,
+            "noTarget" : "bad",
+            "knockback" : {
+              "moab" : 2.4,
+              "bfb" : 1.0,
+              "zomg" : 0.35,
+              "ddt" : 0.5
+            }
           }
         }
       ]
@@ -552,13 +557,18 @@
           ]
         },
         {
+          "type": "stun",
+          "operation": "set",
+          "value": 0.25,
+          "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
           "type": "notes",
           "operation": "set",
           "value": [
             "can see past obstacles",
-            "can target BADs",
-            "0.25s stun",
-            "sends ZOMGs back 0.5 units",
             "lifetime halved, so it expires instead of returning",
             "on expire or 100%p: triggers an explosion:",
             "100d, 40p, 50r blast, normal type",
