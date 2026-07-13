@@ -1,4 +1,4 @@
-export class ChildHeader {
+export class PropertyHeader {
 
   constructor(text) {
     this.text = text;
@@ -6,7 +6,7 @@ export class ChildHeader {
 
   toHTML() {
     const header = document.createElement('h5');
-    header.textContent = 'Activates ' + this.text + ' attack for the duration of the ability';
+    header.textContent = this.text;
     return header;
   }
 

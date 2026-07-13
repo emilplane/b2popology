@@ -45,7 +45,8 @@
             "EX_orbital-glaive",
             "EX_ricochet",
             "EX_kylie",
-            "EX_press"
+            "EX_press",
+            "EX_moab-dom-explosion"
           ]
         },
         {
@@ -81,7 +82,8 @@
             "EX_orbital-glaive",
             "EX_ricochet",
             "EX_kylie",
-            "EX_press"
+            "EX_press",
+            "EX_moab-dom-explosion"
           ]
         },
         {
@@ -106,15 +108,15 @@
           "operation": "add",
           "value": 10,
           "affectedAttacks": [
-            "explosion"
+            "moab-dom-explosion"
           ]
         },
         {
-          "type": "range",
+          "type": "blastRadius",
           "operation": "add",
           "value": 25,
           "affectedAttacks": [
-            "explosion"
+            "moab-dom-explosion"
           ]
         }
       ]
@@ -418,7 +420,8 @@
           "affectedAttacks": [
             "all",
             "EX_kylie",
-            "EX_press"
+            "EX_press",
+            "EX_moab-dom-explosion"
           ],
           "affectedPaths" : [
             "all",
@@ -432,7 +435,8 @@
           "affectedAttacks": [
             "all",
             "EX_kylie",
-            "EX_press"
+            "EX_press",
+            "EX_moab-dom-explosion"
           ]
         },
         {
@@ -569,13 +573,53 @@
           "operation": "set",
           "value": [
             "can see past obstacles",
-            "lifetime halved, so it expires instead of returning",
-            "on expire or 100%p: triggers an explosion:",
-            "100d, 40p, 50r blast, normal type",
-            "applies burn status at 50d/1s for 4s duration",
-            "205 crosspath: explosion +10p (50p), +25r (75r)"
+            "lifetime halved, so it expires instead of returning"
           ],
           "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
+          "type": "appendAttack",
+          "value":
+          {
+            "id": "moab-dom-explosion",
+            "properties" : {
+              "damage" : 100,
+              "pierce": 40,
+              "blastRadius" : 50,
+              "damageType": "normal",
+              "attackType": "explosion"
+            }
+          }
+          ,
+          "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
+          "type": "summonAttack",
+          "operation": "set",
+          "value": {
+            "attackId" : "moab-dom-explosion",
+            "type" : [ "onExpiry", "onPierce" ]
+          },
+          "affectedAttacks" : [
+            "press"
+          ]
+        },
+        {
+          "type": "appendDoT",
+          "value": {
+            "name" : "burn",
+            "properties" : {
+            "damage" : 50,
+            "damageType" : "fire",
+            "tickDuration" : 1.0,
+            "totalDuration" : 4.0
+            }
+          },
+          "affectedAttacks": [
             "press"
           ]
         }

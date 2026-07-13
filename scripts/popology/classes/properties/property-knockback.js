@@ -1,4 +1,6 @@
 import { Property } from './property.js';
+import { PropertiesContainer } from '../../ui/properties-container.js';
+import { PropertyIconed } from './property-iconed.js';
 
 export class PropertyKnockback extends Property {
 
@@ -7,18 +9,24 @@ export class PropertyKnockback extends Property {
   }
 
   toHTML() {
+    const properties = [];
+
+    Object.keys(this.val).forEach((key) => {
+      const iconedProperty = new PropertyIconed(key, `${this.val[key]} units`);
+      properties.push(iconedProperty);
+    });
+
     const rootContainer = document.createElement('div');
     const title = document.createElement('h5');
 
-    rootContainer.append(title);
+    const propertiesContainer = new PropertiesContainer(properties);
+    const backgroundColorVariable = '--background-thirdary';
+    const backgroundColor = window.getComputedStyle(document.body).getPropertyValue(backgroundColorVariable);
+    propertiesContainer.setBackgroundColor(backgroundColor);
 
-    title.textContent = 'Knocksback MOAB-Class bloons';
+    rootContainer.append(title, propertiesContainer.toHTML());
 
-    Object.keys(this.val).forEach((key) => {
-      const stuff = document.createElement('p');
-      stuff.textContent = key + ': ' + this.val[key] + ' units';
-      rootContainer.append(stuff);
-    });
+    title.textContent = 'Knocks MOAB-Class bloons back';
 
     return rootContainer;
   }

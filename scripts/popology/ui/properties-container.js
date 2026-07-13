@@ -30,11 +30,12 @@ export class PropertiesContainer {
   toHTML() {
     const minorProperties = PropertiesManager.sortedContainerProperties(this.properties);
 
-    const onContactProperties = PropertiesManager.getOnContactProperties(this.properties);
+    const knockbackProperties = PropertiesManager.getKnockbackProperties(this.properties);
+    const summonAttackProperties = PropertiesManager.getSummonAttackProperties(this.properties);
     const dotProperties = PropertiesManager.getDotProperties(this.properties);
     const noteProperties = PropertiesManager.getNoteProperties(this.properties);
 
-    const majorProperties  = [...onContactProperties, ...dotProperties, ...noteProperties ,...this.children];
+    const majorProperties  = [...knockbackProperties, ...summonAttackProperties, ...dotProperties, ...noteProperties ,...this.children];
 
     const rootContainer = document.createElement('div');
     const propertiesContainer = document.createElement('div');

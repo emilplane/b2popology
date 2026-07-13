@@ -193,7 +193,18 @@ export class Tower {
       }
     });
 
-    return buffs;
+    const priorityBuffs = [];
+    const normalBuffs = [];
+    buffs.forEach((buff) => {
+      if (buff.type == 'appendDoT' || buff.type == 'appendAttack') {
+        priorityBuffs.push(buff);
+      }
+      else normalBuffs.push(buff);
+    });
+
+    const buffsMerged = [...priorityBuffs, ...normalBuffs];
+
+    return buffsMerged;
   }
 
   getAbilities(path) {

@@ -135,8 +135,7 @@
               "ceram": 4
             },
             "notes": [
-              "can bounce off walls",
-              "can rehit bloons after bounce"
+              "can bounce off walls and rehit bloons after bounce"
             ]
           }
         }
@@ -159,36 +158,38 @@
             "range": 37,
             "cooldown": 1.0,
             "damageType": "normal",
-            "camo": false,
             "bonusDamage": {
               "ceram": 16,
               "fort": 5,
               "lead": 25
             },
             "notes": [
-              "can bounce off walls",
-              "can rehit bloons after bounce",
-              "emits juggernauts attack at 50% pierce usage, 100% pierce usage, or projectile expiry"
-            ]
-          }
-        },
-        {
-          "id": "juggernauts",
-          "name": "Juggernauts",
-          "properties": {
-            "damage": 1,
-            "pierce": 100,
-            "damageType": "normal",
-            "camo": false,
-            "projectiles": 6,
-            "bonusDamage": {
-              "ceram": 2,
-              "fort": 2,
-              "lead": 5
+              "can bounce off walls and rehit bloons after bounce"
+            ],
+            "summonAttack" : {
+              "type" : [ "onHalfPierce", "onPierce", "onExpiry" ],
+              "attackId" : "juggernauts"
             },
-            "notes": [
-              "can bounce off walls",
-              "can rehit bloons after bounce"
+            "embeddedAttacks" : [
+              {
+              "id": "juggernauts",
+              "name": "Juggernauts",
+              "properties": {
+                "damage": 1,
+                "pierce": 100,
+                "damageType": "normal",
+                "attackType" : "mini juggernauts",
+                "projectiles": 6,
+                "bonusDamage": {
+                  "ceram": 2,
+                  "fort": 2,
+                  "lead": 5
+                },
+                "notes": [
+                  "can bounce off walls and rehit bloons after bounce"
+                ]
+              }
+            }
             ]
           }
         }

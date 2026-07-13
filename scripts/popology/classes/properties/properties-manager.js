@@ -11,9 +11,9 @@ import { PropertyFootnote } from './property-footnote.js';
 import { PropertyHidden } from './property-hidden.js';
 import { PropertyIconed } from './property-iconed.js';
 import { PropertyKnockback } from './property-knockback.js';
-import { PropertyOnContact } from './property-on-contact.js';
 import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertyRange } from './property-range.js';
+import { PropertySummonAttack } from './property-summon-attack.js';
 import { PropertyTime } from './property-time.js';
 
 export class PropertiesManager {
@@ -67,7 +67,7 @@ export class PropertiesManager {
       else dotObject = DoT.fromData(val);
       return new PropertyDoT('dot', dotObject);
     }
-    if (key == 'onContact')  return new PropertyOnContact(key, val);
+    if (key == 'summonAttack')  return new PropertySummonAttack(key, val);
     if (['attackType'].includes(key)) return new PropertyHidden(key, val);
     if (key == 'embeddedAttacks') {
       const embeddedAttacks = [];
@@ -84,7 +84,7 @@ export class PropertiesManager {
     const containerProperties = [];
 
     properties.forEach((property) => {
-      if (!['notes', 'desc', 'onContact'].includes(property.key) && (!(property instanceof PropertyDoT))) {
+      if (!['notes', 'desc', 'summonAttack', 'knockback'].includes(property.key) && (!(property instanceof PropertyDoT))) {
         containerProperties.push(property);
       }
     });
@@ -116,16 +116,28 @@ export class PropertiesManager {
     return dotProperties;
   }
 
-  static getOnContactProperties(properties) {
-    const onContactProperties = [];
+  static getSummonAttackProperties(properties) {
+    const summonAttackProperties = [];
 
     properties.forEach((property) => {
-      if (property.key == 'onContact') {
-        onContactProperties.push(property);
+      if (property.key == 'summonAttack') {
+        summonAttackProperties.push(property);
       }
     });
 
-    return onContactProperties;
+    return summonAttackProperties;
+  }
+
+  static getKnockbackProperties(properties) {
+    const knockbackProperties = [];
+
+    properties.forEach((property) => {
+      if (property.key == 'knockback') {
+        knockbackProperties.push(property);
+      }
+    });
+
+    return knockbackProperties;
   }
 
   static sortedContainerProperties(properties) {

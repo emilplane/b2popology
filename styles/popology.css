@@ -1,6 +1,7 @@
 :root {
   --background-primary: #999999;
   --background-secondary: #CCCCCC;
+  --background-thirdary: #AFAFAF;
   --background-red: #DDAAAA;
   --background-purple: #CC99CC;
   --header-primary: #000000;
@@ -13,13 +14,13 @@
   --outline-dark: #111111;
   --outline-orange: #DD9944;
   --outline-blue: #4499DD;
-
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-primary: #333333;
     --background-secondary: #666666;
+    --background-thirdary: #555555;
     --background-purple: #664B66;
     --background-red: #665252;
     --header-primary: #FFFFFF;

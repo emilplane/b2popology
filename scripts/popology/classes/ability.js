@@ -2,7 +2,7 @@ import { PropertiesManager } from './properties/properties-manager.js';
 import { PropertiesContainer } from '../ui/properties-container.js';
 import { Attack } from './attack.js';
 import { Buff } from './buff.js';
-import { ChildHeader } from '../ui/child-header.js';
+import { PropertyHeader } from '../ui/property-header.js';
 
 export class Ability {
 
@@ -53,9 +53,12 @@ export class Ability {
     const abilityName = document.createElement('h4');
     const centerContainer = document.createElement('div');
     const propertiesContainer = new PropertiesContainer(properties)
+
     propertiesContainer.addChildren(this.buffs);
     this.attacks.forEach((attack) => {
-      const attackHeader = new ChildHeader(attack.name);
+      attack.addFlag('noHeader');
+      attack.addFlag('thirdaryBackground')
+      const attackHeader = new PropertyHeader(`Activates ${attack.name} attack for the duration of the ability`);
       propertiesContainer.addChildren(attackHeader, attack);
     });
 
