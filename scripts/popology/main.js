@@ -10,7 +10,7 @@ main();
 
 async function main() {
   const towerId = (params.get("id") != null) ? params.get("id") : "dart-monkey"
-  const towerPath = (params.get("path") != null) ? params.get("path") : "000"
+  const towerPath = (params.get("tpath") != null) ? params.get("tpath") : "000"
 
   const towerSelector = new TowerSelector(towerViewContainer);
   towerSelectorContainer.append(towerSelector.toHTML());

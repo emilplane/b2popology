@@ -1,0 +1,93 @@
+{
+  "id": "bomb-shooter",
+  "name": "Bomb Shooter",
+  "properties": {
+    "unlockCost": 0,
+    "size": [
+      7
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 525
+    },
+    {
+      "path": "100",
+      "name": "Bigger Bombs",
+      "cost": 350
+    },
+    {
+      "path": "200",
+      "name": "Heavy Bombs",
+      "cost": 650
+    },
+    {
+      "path": "300",
+      "name": "Really Big Bombs",
+      "cost": 1200
+    },
+    {
+      "path": "400",
+      "name": "Bloon Impact",
+      "cost": 3600
+    },
+    {
+      "path": "500",
+      "name": "Bloon Crush",
+      "cost": 55000
+    },
+    {
+      "path": "010",
+      "name": "Faster Reload",
+      "cost": 250
+    },
+    {
+      "path": "020",
+      "name": "Missile Launcher",
+      "cost": 400
+    },
+    {
+      "path": "030",
+      "name": "MOAB Mauler",
+      "cost": 900
+    },
+    {
+      "path": "040",
+      "name": "MOAB Assassin",
+      "cost": 3200
+    },
+    {
+      "path": "050",
+      "name": "MOAB Eliminator",
+      "cost": 25000
+    },
+    {
+      "path": "001",
+      "name": "Extra Range",
+      "cost": 200
+    },
+    {
+      "path": "002",
+      "name": "Frag Bombs",
+      "cost": 300
+    },
+    {
+      "path": "003",
+      "name": "Cluster Bombs",
+      "cost": 900
+    },
+    {
+      "path": "004",
+      "name": "Recursive Cluster",
+      "cost": 3200
+    },
+    {
+      "path": "005",
+      "name": "Bomb Blitz",
+      "cost": 38000
+    }
+  ]
+}

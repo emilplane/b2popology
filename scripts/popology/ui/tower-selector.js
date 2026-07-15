@@ -7,7 +7,8 @@ export class TowerSelector {
     this.towerIds = [
       'dart-monkey',
       'tack-shooter',
-      'boomerang-monkey'
+      'boomerang-monkey',
+      'bomb-shooter'
     ];
   }
 

@@ -23,7 +23,6 @@
             "range": 43,
             "cooldown": 1.2,
             "damageType": "sharp",
-            "camo": false,
             "notes": [
               "follows a counterclockwise or clockwise arc instead of a straight line, depending on targeting"
             ]
@@ -138,7 +137,6 @@
             "range": 43,
             "cooldown": 1.2,
             "damageType": "sharp",
-            "camo": false,
             "notes": [
               "jumps to a nearby target after hitting, up to 62.5 units",
               "travels in a straight line"
@@ -288,7 +286,6 @@
             "range": 43,
             "cooldown": 0.238,
             "damageType": "sharp",
-            "camo": false,
             "bonusDamage": {
               "moab": 1
             }
@@ -499,12 +496,11 @@
             "range": 49.45,
             "cooldown": 10,
             "damageType": "normal",
-            "camo": false,
+            "cantTarget": ["bloons"],
             "bonusDamage": {
               "moab": 4
             },
             "rehit" : 0.13,
-            "noTarget" : "bad",
             "knockback" : {
               "moab" : 2.4,
               "bfb" : 1.0,

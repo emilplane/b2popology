@@ -4,6 +4,7 @@ import { PropertyBasic } from './property-basic.js';
 import { PropertyBattleReady } from './property-battle-ready.js';
 import { PropertyBonusDamage } from './property-bonus-damage.js';
 import { PropertyCamo } from './property-camo.js';
+import { PropertyCantTarget } from './property-cant-target.js';
 import { PropertyCrit } from './property-crit.js';
 import { PropertyDamageType } from './property-damage-type.js';
 import { PropertyDoT } from './property-dot.js';
@@ -49,6 +50,7 @@ export class PropertiesManager {
     if (['cooldown', 'duration', 'tickDuration', 'totalDuration', 'stun', 'rehit'].includes(key)) return new PropertyTime(key, val);
     if (key == 'damageType') return new PropertyDamageType(key, val);
     if (key == 'knockback') return new PropertyKnockback(key, val);
+    if (key == 'cantTarget') return new PropertyCantTarget(key, val);
     if (key == 'dots') {
       const propertyArray = [];
       let i = 0;
