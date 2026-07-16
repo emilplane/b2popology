@@ -1,0 +1,93 @@
+{
+  "name": "Monkey Village",
+  "id": "monkey-village",
+  "properties": {
+    "unlockCost": 1000,
+    "size": [
+      11
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 1000
+    },
+    {
+      "path": "100",
+      "name": "Bigger Radius",
+      "cost": 400
+    },
+    {
+      "path": "200",
+      "name": "Jungle Drums",
+      "cost": 1500
+    },
+    {
+      "path": "300",
+      "name": "Primary Training",
+      "cost": 800
+    },
+    {
+      "path": "400",
+      "name": "Primary Mentoring",
+      "cost": 2500
+    },
+    {
+      "path": "500",
+      "name": "Primary Expertise",
+      "cost": 25000
+    },
+    {
+      "path": "010",
+      "name": "Grow Blocker",
+      "cost": 250
+    },
+    {
+      "path": "020",
+      "name": "Radar Scanner",
+      "cost": 1700
+    },
+    {
+      "path": "030",
+      "name": "Monkey Intelligence Bureau",
+      "cost": 5000
+    },
+    {
+      "path": "040",
+      "name": "Call to Arms",
+      "cost": 23500
+    },
+    {
+      "path": "050",
+      "name": "Homeland Defense",
+      "cost": 45000
+    },
+    {
+      "path": "001",
+      "name": "Monkey Business",
+      "cost": 500
+    },
+    {
+      "path": "002",
+      "name": "Monkey Commerce",
+      "cost": 500
+    },
+    {
+      "path": "003",
+      "name": "Monkeyconomy",
+      "cost": 1500
+    },
+    {
+      "path": "004",
+      "name": "Monkey City",
+      "cost": 7200
+    },
+    {
+      "path": "005",
+      "name": "Monkeyopolis",
+      "cost": 20000
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "name": "Wizard Monkey",
+  "id": "wizard-monkey",
+  "properties": {
+    "unlockCost": 750,
+    "size": [
+      7
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 300
+    },
+    {
+      "path": "100",
+      "name": "Guided Magic",
+      "cost": 100
+    },
+    {
+      "path": "200",
+      "name": "Arcane Blast",
+      "cost": 250
+    },
+    {
+      "path": "300",
+      "name": "Arcane Mastery",
+      "cost": 1300
+    },
+    {
+      "path": "400",
+      "name": "Arcane Spike",
+      "cost": 9000
+    },
+    {
+      "path": "500",
+      "name": "Archmage",
+      "cost": 32000
+    },
+    {
+      "path": "010",
+      "name": "Fireball",
+      "cost": 350
+    },
+    {
+      "path": "020",
+      "name": "Wall of Fire",
+      "cost": 1000
+    },
+    {
+      "path": "030",
+      "name": "Dragon's Breath",
+      "cost": 3000
+    },
+    {
+      "path": "040",
+      "name": "Summon Phoenix",
+      "cost": 4000
+    },
+    {
+      "path": "050",
+      "name": "Wizard Lord Phoenix",
+      "cost": 50000
+    },
+    {
+      "path": "001",
+      "name": "Intense Magic",
+      "cost": 300
+    },
+    {
+      "path": "002",
+      "name": "Monkey Sense",
+      "cost": 300
+    },
+    {
+      "path": "003",
+      "name": "Shimmer",
+      "cost": 1500
+    },
+    {
+      "path": "004",
+      "name": "Necromancer: Unpopped Army",
+      "cost": 2800
+    },
+    {
+      "path": "005",
+      "name": "Prince of Darkness",
+      "cost": 28000
+    }
+  ]
+}

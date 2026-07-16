@@ -1,0 +1,93 @@
+{
+  "name": "Mortar Monkey",
+  "id": "mortar-monkey",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      8
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 700
+    },
+    {
+      "path": "100",
+      "name": "Bigger Blast",
+      "cost": 350
+    },
+    {
+      "path": "200",
+      "name": "Bloon Buster",
+      "cost": 500
+    },
+    {
+      "path": "300",
+      "name": "Shell Shock",
+      "cost": 1100
+    },
+    {
+      "path": "400",
+      "name": "The Big One",
+      "cost": 7300
+    },
+    {
+      "path": "500",
+      "name": "The Biggest One",
+      "cost": 28000
+    },
+    {
+      "path": "010",
+      "name": "Faster Reload",
+      "cost": 350
+    },
+    {
+      "path": "020",
+      "name": "Rapid Reload",
+      "cost": 400
+    },
+    {
+      "path": "030",
+      "name": "Heavy Shells",
+      "cost": 800
+    },
+    {
+      "path": "040",
+      "name": "Artillery Battery",
+      "cost": 8000
+    },
+    {
+      "path": "050",
+      "name": "Pop and Awe",
+      "cost": 27000
+    },
+    {
+      "path": "001",
+      "name": "Dynamic Targeting",
+      "cost": 400
+    },
+    {
+      "path": "002",
+      "name": "Burny Stuff",
+      "cost": 500
+    },
+    {
+      "path": "003",
+      "name": "Signal Flare",
+      "cost": 700
+    },
+    {
+      "path": "004",
+      "name": "Shattering Shells",
+      "cost": 8500
+    },
+    {
+      "path": "005",
+      "name": "Blooncineration",
+      "cost": 40000
+    }
+  ]
+}

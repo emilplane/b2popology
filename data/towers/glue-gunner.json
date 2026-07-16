@@ -1,0 +1,93 @@
+{
+  "name": "Glue Gunner",
+  "id": "glue-gunner",
+  "properties": {
+    "unlockCost": 150,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 100
+    },
+    {
+      "path": "100",
+      "name": "Glue Soak",
+      "cost": 150
+    },
+    {
+      "path": "200",
+      "name": "Corrosive Glue",
+      "cost": 500
+    },
+    {
+      "path": "300",
+      "name": "Bloon Dissolver",
+      "cost": 2300
+    },
+    {
+      "path": "400",
+      "name": "Bloon Liquefier",
+      "cost": 4500
+    },
+    {
+      "path": "500",
+      "name": "The Bloon Solver",
+      "cost": 19000
+    },
+    {
+      "path": "010",
+      "name": "Bigger Globs",
+      "cost": 100
+    },
+    {
+      "path": "020",
+      "name": "Glue Splatter",
+      "cost": 700
+    },
+    {
+      "path": "030",
+      "name": "Glue Hose",
+      "cost": 2200
+    },
+    {
+      "path": "040",
+      "name": "Glue Strike",
+      "cost": 4000
+    },
+    {
+      "path": "050",
+      "name": "Glue Storm",
+      "cost": 18000
+    },
+    {
+      "path": "001",
+      "name": "Stickier Glue",
+      "cost": 120
+    },
+    {
+      "path": "002",
+      "name": "Stronger Glue",
+      "cost": 400
+    },
+    {
+      "path": "003",
+      "name": "MOAB Glue",
+      "cost": 3200
+    },
+    {
+      "path": "004",
+      "name": "Relentless Glue",
+      "cost": 3000
+    },
+    {
+      "path": "005",
+      "name": "Super Glue",
+      "cost": 28000
+    }
+  ]
+}

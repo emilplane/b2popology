@@ -78,22 +78,22 @@ h5 {
   -webkit-text-stroke: 4px var(--outline-dark);
 }
 
-.tower-selector-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 4px 16px 0 16px;
-}
-
-.tower-selector-container button {
-  width: 80px;
-  height: 80px;
-  margin: 0 4px 0 4px;
-}
-
-.tower-selector-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
 }
 
 .tower-view {
@@ -107,7 +107,34 @@ h5 {
   max-width: 1600px;
 }
 
-.tower-container {	
+.basics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.tower-container {
+  flex: 1 1 600px;
+  min-width: 600px;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--background-primary);
+  padding: 16px 0 16px 0;
+  margin: 4px 16px 16px 16px;
+  border-radius: 16px;
+}
+
+@media (max-width: 632px) {
+  .tower-container {
+    flex: 1 1 400px;
+    min-width: 400px;
+  }
+}
+
+.upgrades-container {
+  justify-content: center;
   text-align: center;
   background-color: var(--background-primary);
   padding: 16px 0 16px 0;
@@ -123,6 +150,13 @@ h5 {
   margin-right: auto;
   margin-bottom: 8px;
   border-radius: 16px;
+}
+
+@media (max-width: 600px) {
+  .tower-image-container {
+    width: 320px;
+    height: 256px;
+  }
 }
 
 .center-container {
@@ -143,6 +177,13 @@ h5 {
   margin: 4px 16px 8px 16px;
   background-color: var(--background-secondary);
   border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .properties-container-styler {
+    max-width: 600px;
+    min-width: 200px;
+  }
 }
 
 .properties-container {
@@ -181,6 +222,7 @@ h5 {
   font-family: "Gabarito";
 }
 
+
 .property-footnote {
   text-align: left;
   white-space: pre-wrap;
@@ -190,6 +232,25 @@ h5 {
   margin-left: 8px;
   color: var(--text-common);
   font-family: "Gabarito";
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 16px;
+  }
+
+  .properties-container p {
+    font-size: 16px;
+  }
+
+  .property-iconed-container p {
+    font-size: 16px;
+  }
+
+  .property-footnote {
+    font-size: 16px;
+  }
+
 }
 
 .property-unkeyed-container {

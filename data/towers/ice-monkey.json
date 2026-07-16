@@ -1,0 +1,93 @@
+{
+  "name": "Ice Monkey",
+  "id": "ice-monkey",
+  "properties": {
+    "unlockCost": 150,
+    "size": [
+      6
+    ],
+    "placement": 2
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 450
+    },
+    {
+      "path": "100",
+      "name": "Permafrost",
+      "cost": 100
+    },
+    {
+      "path": "200",
+      "name": "Cold Snap",
+      "cost": 350
+    },
+    {
+      "path": "300",
+      "name": "Ice Shards",
+      "cost": 2000
+    },
+    {
+      "path": "400",
+      "name": "Embrittlement",
+      "cost": 2700
+    },
+    {
+      "path": "500",
+      "name": "Super Brittle",
+      "cost": 34000
+    },
+    {
+      "path": "010",
+      "name": "Enhanced Freeze",
+      "cost": 225
+    },
+    {
+      "path": "020",
+      "name": "Deep Freeze",
+      "cost": 350
+    },
+    {
+      "path": "030",
+      "name": "Arctic Wind",
+      "cost": 2900
+    },
+    {
+      "path": "040",
+      "name": "Snowstorm",
+      "cost": 4000
+    },
+    {
+      "path": "050",
+      "name": "Absolute Zero",
+      "cost": 18000
+    },
+    {
+      "path": "001",
+      "name": "Larger Radius",
+      "cost": 100
+    },
+    {
+      "path": "002",
+      "name": "Re-Freeze",
+      "cost": 200
+    },
+    {
+      "path": "003",
+      "name": "Cryo Cannon",
+      "cost": 1300
+    },
+    {
+      "path": "004",
+      "name": "Icicles",
+      "cost": 2900
+    },
+    {
+      "path": "005",
+      "name": "Icicle Impale",
+      "cost": 32000
+    }
+  ]
+}

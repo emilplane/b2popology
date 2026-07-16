@@ -1,0 +1,93 @@
+{
+  "name": "Ninja Monkey",
+  "id": "ninja-monkey",
+  "properties": {
+    "unlockCost": 750,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 350
+    },
+    {
+      "path": "100",
+      "name": "Ninja Discipline",
+      "cost": 150
+    },
+    {
+      "path": "200",
+      "name": "Sharp Shurikens",
+      "cost": 200
+    },
+    {
+      "path": "300",
+      "name": "Double Shot",
+      "cost": 700
+    },
+    {
+      "path": "400",
+      "name": "Bloonjitsu",
+      "cost": 2750
+    },
+    {
+      "path": "500",
+      "name": "Grandmaster Ninja",
+      "cost": 35000
+    },
+    {
+      "path": "010",
+      "name": "Distraction",
+      "cost": 200
+    },
+    {
+      "path": "020",
+      "name": "Counter-Espionage",
+      "cost": 375
+    },
+    {
+      "path": "030",
+      "name": "Shinobi Tactics",
+      "cost": 2100
+    },
+    {
+      "path": "040",
+      "name": "Bloon Sabotage",
+      "cost": 5200
+    },
+    {
+      "path": "050",
+      "name": "Grand Saboteur",
+      "cost": 20000
+    },
+    {
+      "path": "001",
+      "name": "Seeking Shuriken",
+      "cost": 200
+    },
+    {
+      "path": "002",
+      "name": "Caltrops",
+      "cost": 250
+    },
+    {
+      "path": "003",
+      "name": "Flash Bomb",
+      "cost": 1800
+    },
+    {
+      "path": "004",
+      "name": "Sticky Bomb",
+      "cost": 4600
+    },
+    {
+      "path": "005",
+      "name": "Master Bomber",
+      "cost": 40000
+    }
+  ]
+}

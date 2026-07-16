@@ -1,0 +1,93 @@
+{
+  "name": "Dartling Gunner",
+  "id": "dartling-gunner",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      8
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 800
+    },
+    {
+      "path": "100",
+      "name": "Focused Firing",
+      "cost": 200
+    },
+    {
+      "path": "200",
+      "name": "Laser Shock",
+      "cost": 600
+    },
+    {
+      "path": "300",
+      "name": "Laser Cannon",
+      "cost": 2800
+    },
+    {
+      "path": "400",
+      "name": "Plasma Accelerator",
+      "cost": 14000
+    },
+    {
+      "path": "500",
+      "name": "Ray of Doom",
+      "cost": 80000
+    },
+    {
+      "path": "010",
+      "name": "Advanced Targeting",
+      "cost": 250
+    },
+    {
+      "path": "020",
+      "name": "Faster Barrel Spin",
+      "cost": 500
+    },
+    {
+      "path": "030",
+      "name": "Hydra Rocket Pods",
+      "cost": 5100
+    },
+    {
+      "path": "040",
+      "name": "Rocket Storm",
+      "cost": 5500
+    },
+    {
+      "path": "050",
+      "name": "M.A.D",
+      "cost": 68000
+    },
+    {
+      "path": "001",
+      "name": "Faster Swivel",
+      "cost": 100
+    },
+    {
+      "path": "002",
+      "name": "Powerful Darts",
+      "cost": 800
+    },
+    {
+      "path": "003",
+      "name": "Buckshot",
+      "cost": 3400
+    },
+    {
+      "path": "004",
+      "name": "Bloon Area Denial System",
+      "cost": 16000
+    },
+    {
+      "path": "005",
+      "name": "Bloon Exclusion Zone",
+      "cost": 50000
+    }
+  ]
+}

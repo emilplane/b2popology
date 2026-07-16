@@ -1,0 +1,93 @@
+{
+  "name": "Engineer Monkey",
+  "id": "engineer-monkey",
+  "properties": {
+    "unlockCost": 1000,
+    "size": [
+      7
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 400
+    },
+    {
+      "path": "100",
+      "name": "Sentry Gun",
+      "cost": 400
+    },
+    {
+      "path": "200",
+      "name": "Faster Engineering",
+      "cost": 350
+    },
+    {
+      "path": "300",
+      "name": "Sprockets",
+      "cost": 500
+    },
+    {
+      "path": "400",
+      "name": "Sentry Expert",
+      "cost": 2800
+    },
+    {
+      "path": "500",
+      "name": "Sentry Champion",
+      "cost": 32000
+    },
+    {
+      "path": "010",
+      "name": "Larger Service Area",
+      "cost": 250
+    },
+    {
+      "path": "020",
+      "name": "Deconstruction",
+      "cost": 350
+    },
+    {
+      "path": "030",
+      "name": "Cleansing Foam",
+      "cost": 800
+    },
+    {
+      "path": "040",
+      "name": "Overclock",
+      "cost": 13500
+    },
+    {
+      "path": "050",
+      "name": "Ultraboost",
+      "cost": 100000
+    },
+    {
+      "path": "001",
+      "name": "Oversize Nails",
+      "cost": 450
+    },
+    {
+      "path": "002",
+      "name": "Pin",
+      "cost": 200
+    },
+    {
+      "path": "003",
+      "name": "Double Gun",
+      "cost": 350
+    },
+    {
+      "path": "004",
+      "name": "Bloon Trap",
+      "cost": 3600
+    },
+    {
+      "path": "005",
+      "name": "XXXL Trap",
+      "cost": 54000
+    }
+  ]
+}

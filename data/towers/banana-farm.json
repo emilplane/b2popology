@@ -1,0 +1,93 @@
+{
+  "id": "banana-farm",
+  "name": "Banana Farm",
+  "properties": {
+    "unlockCost": 1000,
+    "size": [
+      27, 27
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 950
+    },
+    {
+      "path": "100",
+      "name": "Increased Production",
+      "cost": 550
+    },
+    {
+      "path": "200",
+      "name": "Greater Production",
+      "cost": 550
+    },
+    {
+      "path": "300",
+      "name": "Banana Plantation",
+      "cost": 2700
+    },
+    {
+      "path": "400",
+      "name": "Banana Research Facility",
+      "cost": 16000
+    },
+    {
+      "path": "500",
+      "name": "Banana Central",
+      "cost": 66000
+    },
+    {
+      "path": "010",
+      "name": "Long Life Bananas",
+      "cost": 200
+    },
+    {
+      "path": "020",
+      "name": "Valuable Bananas",
+      "cost": 700
+    },
+    {
+      "path": "030",
+      "name": "Monkey Bank",
+      "cost": 4800
+    },
+    {
+      "path": "040",
+      "name": "IMF Loan",
+      "cost": 8000
+    },
+    {
+      "path": "050",
+      "name": "Monkey-Nomics",
+      "cost": 45000
+    },
+    {
+      "path": "001",
+      "name": "Quality Soil",
+      "cost": 400
+    },
+    {
+      "path": "002",
+      "name": "Banana Salvage",
+      "cost": 240
+    },
+    {
+      "path": "003",
+      "name": "Marketplace",
+      "cost": 2800
+    },
+    {
+      "path": "004",
+      "name": "Central Market",
+      "cost": 13000
+    },
+    {
+      "path": "005",
+      "name": "Monkey Wall Street",
+      "cost": 46000
+    }
+  ]
+}

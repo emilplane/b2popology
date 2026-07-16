@@ -1,0 +1,93 @@
+{
+  "name": "Spike Factory",
+  "id": "spike-factory",
+  "properties": {
+    "unlockCost": 1000,
+    "size": [
+      8
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 600
+    },
+    {
+      "path": "100",
+      "name": "Bigger Stacks",
+      "cost": 600
+    },
+    {
+      "path": "200",
+      "name": "White Hot Spikes",
+      "cost": 600
+    },
+    {
+      "path": "300",
+      "name": "Spiked Balls",
+      "cost": 2700
+    },
+    {
+      "path": "400",
+      "name": "Spiked Mines",
+      "cost": 9500
+    },
+    {
+      "path": "500",
+      "name": "Super Mines",
+      "cost": 90000
+    },
+    {
+      "path": "010",
+      "name": "Faster Production",
+      "cost": 500
+    },
+    {
+      "path": "020",
+      "name": "Even Faster Production",
+      "cost": 500
+    },
+    {
+      "path": "030",
+      "name": "MOAB SHREDR",
+      "cost": 2500
+    },
+    {
+      "path": "040",
+      "name": "Spike Storm",
+      "cost": 6200
+    },
+    {
+      "path": "050",
+      "name": "Carpet of Spikes",
+      "cost": 40000
+    },
+    {
+      "path": "001",
+      "name": "Long Reach",
+      "cost": 150
+    },
+    {
+      "path": "002",
+      "name": "Smart Spikes",
+      "cost": 500
+    },
+    {
+      "path": "003",
+      "name": "Long Life Spikes",
+      "cost": 1200
+    },
+    {
+      "path": "004",
+      "name": "Deadly Spikes",
+      "cost": 3200
+    },
+    {
+      "path": "005",
+      "name": "Perma-Spike",
+      "cost": 30000
+    }
+  ]
+}

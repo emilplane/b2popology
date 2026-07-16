@@ -1,0 +1,52 @@
+.tower-selector-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 8px 4px 4px 4px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .tower-selector-arrow {
+    display: none;
+  }
+
+  .tower-selector-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tower-selector-button {
+    width: 86px;
+    height: 86px;
+    margin: 0 4px 4px 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tower-selector-button-container {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .tower-selector-button {
+    width: 72px;
+    height: 72px;
+    margin: 0 4px 4px 4px;
+  }
+}
+
+.tower-selector-arrow {
+  height: 72px;
+  width: auto;
+}
+
+.tower-selector-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+

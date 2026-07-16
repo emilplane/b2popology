@@ -1,0 +1,93 @@
+{
+  "id": "monkey-buccaneer",
+  "name": "Monkey Buccaneer",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      8
+    ],
+    "placement": 1
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 500
+    },
+    {
+      "path": "100",
+      "name": "Faster Shooting",
+      "cost": 350
+    },
+    {
+      "path": "200",
+      "name": "Double Shot",
+      "cost": 550
+    },
+    {
+      "path": "300",
+      "name": "Destroyer",
+      "cost": 2200
+    },
+    {
+      "path": "400",
+      "name": "Aircraft Carrier",
+      "cost": 6400
+    },
+    {
+      "path": "500",
+      "name": "Carrier Flagship",
+      "cost": 25000
+    },
+    {
+      "path": "010",
+      "name": "Grape Shot",
+      "cost": 550
+    },
+    {
+      "path": "020",
+      "name": "Hot Shot",
+      "cost": 500
+    },
+    {
+      "path": "030",
+      "name": "Cannon Ship",
+      "cost": 900
+    },
+    {
+      "path": "040",
+      "name": "Monkey Pirates",
+      "cost": 5250
+    },
+    {
+      "path": "050",
+      "name": "Pirate Lord",
+      "cost": 21000
+    },
+    {
+      "path": "001",
+      "name": "Long Range",
+      "cost": 300
+    },
+    {
+      "path": "002",
+      "name": "Crow's Nest",
+      "cost": 400
+    },
+    {
+      "path": "003",
+      "name": "Merchantman",
+      "cost": 1500
+    },
+    {
+      "path": "004",
+      "name": "Favored Trades",
+      "cost": 5700
+    },
+    {
+      "path": "005",
+      "name": "Trade Empire",
+      "cost": 19000
+    }
+  ]
+}

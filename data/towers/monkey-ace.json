@@ -1,0 +1,94 @@
+{
+  "name": "Monkey Ace",
+  "id": "monkey-ace",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      28,
+      18
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 750
+    },
+    {
+      "path": "100",
+      "name": "Rapid Fire",
+      "cost": 550
+    },
+    {
+      "path": "200",
+      "name": "Lots More Darts",
+      "cost": 600
+    },
+    {
+      "path": "300",
+      "name": "Fighter Plane",
+      "cost": 1000
+    },
+    {
+      "path": "400",
+      "name": "Operation: Dart Storm",
+      "cost": 3000
+    },
+    {
+      "path": "500",
+      "name": "Sky Shredder",
+      "cost": 40000
+    },
+    {
+      "path": "010",
+      "name": "Exploding Pineapple",
+      "cost": 200
+    },
+    {
+      "path": "020",
+      "name": "Spy Plane",
+      "cost": 350
+    },
+    {
+      "path": "030",
+      "name": "Bomber Ace",
+      "cost": 1100
+    },
+    {
+      "path": "040",
+      "name": "Ground Zero",
+      "cost": 15000
+    },
+    {
+      "path": "050",
+      "name": "Tsar Bomba",
+      "cost": 30000
+    },
+    {
+      "path": "001",
+      "name": "Sharper Darts",
+      "cost": 450
+    },
+    {
+      "path": "002",
+      "name": "Advanced Navigation",
+      "cost": 300
+    },
+    {
+      "path": "003",
+      "name": "Neva-Miss Targeting",
+      "cost": 2200
+    },
+    {
+      "path": "004",
+      "name": "Spectre",
+      "cost": 20000
+    },
+    {
+      "path": "005",
+      "name": "Flying Fortress",
+      "cost": 75000
+    }
+  ]
+}

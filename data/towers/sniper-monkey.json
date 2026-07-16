@@ -1,0 +1,93 @@
+{
+  "name": "Sniper Monkey",
+  "id": "sniper-monkey",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 300
+    },
+    {
+      "path": "100",
+      "name": "Full Metal Jacket",
+      "cost": 250
+    },
+    {
+      "path": "200",
+      "name": "Large Calibre",
+      "cost": 750
+    },
+    {
+      "path": "300",
+      "name": "Deadly Precision",
+      "cost": 2800
+    },
+    {
+      "path": "400",
+      "name": "Maim MOAB",
+      "cost": 5000
+    },
+    {
+      "path": "500",
+      "name": "Cripple MOAB",
+      "cost": 34000
+    },
+    {
+      "path": "010",
+      "name": "Night Vision Goggles",
+      "cost": 200
+    },
+    {
+      "path": "020",
+      "name": "Shrapnel Shot",
+      "cost": 250
+    },
+    {
+      "path": "030",
+      "name": "Bouncing Bullet",
+      "cost": 2600
+    },
+    {
+      "path": "040",
+      "name": "Supply Drop",
+      "cost": 5800
+    },
+    {
+      "path": "050",
+      "name": "Elite Sniper",
+      "cost": 14000
+    },
+    {
+      "path": "001",
+      "name": "Fast Firing",
+      "cost": 300
+    },
+    {
+      "path": "002",
+      "name": "Even Faster Firing",
+      "cost": 300
+    },
+    {
+      "path": "003",
+      "name": "Semi-Automatic",
+      "cost": 2200
+    },
+    {
+      "path": "004",
+      "name": "Full Auto Rifle",
+      "cost": 3800
+    },
+    {
+      "path": "005",
+      "name": "Elite Defender",
+      "cost": 14500
+    }
+  ]
+}

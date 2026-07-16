@@ -1,0 +1,93 @@
+{
+  "name": "Druid",
+  "id": "druid",
+  "properties": {
+    "unlockCost": 750,
+    "size": [
+      7
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 425
+    },
+    {
+      "path": "100",
+      "name": "Hard Thorns",
+      "cost": 250
+    },
+    {
+      "path": "200",
+      "name": "Heart of Thunder",
+      "cost": 1000
+    },
+    {
+      "path": "300",
+      "name": "Druid of the Storm",
+      "cost": 1500
+    },
+    {
+      "path": "400",
+      "name": "Ball Lightning",
+      "cost": 4700
+    },
+    {
+      "path": "500",
+      "name": "Superstorm",
+      "cost": 55000
+    },
+    {
+      "path": "010",
+      "name": "Thorn Swarm",
+      "cost": 350
+    },
+    {
+      "path": "020",
+      "name": "Heart of Oak",
+      "cost": 250
+    },
+    {
+      "path": "030",
+      "name": "Druid of the Jungle",
+      "cost": 700
+    },
+    {
+      "path": "040",
+      "name": "Jungle's Bounty",
+      "cost": 4000
+    },
+    {
+      "path": "050",
+      "name": "Spirit of the Forest",
+      "cost": 35000
+    },
+    {
+      "path": "001",
+      "name": "Druidic Reach",
+      "cost": 100
+    },
+    {
+      "path": "002",
+      "name": "Heart of Vengeance",
+      "cost": 400
+    },
+    {
+      "path": "003",
+      "name": "Druid of Wrath",
+      "cost": 650
+    },
+    {
+      "path": "004",
+      "name": "Poplust",
+      "cost": 2500
+    },
+    {
+      "path": "005",
+      "name": "Avatar of Wrath",
+      "cost": 52000
+    }
+  ]
+}

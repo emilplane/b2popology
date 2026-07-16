@@ -1,0 +1,93 @@
+{
+  "name": "Super Monkey",
+  "id": "super-monkey",
+  "properties": {
+    "unlockCost": 750,
+    "size": [
+      7
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 2000
+    },
+    {
+      "path": "100",
+      "name": "Laser Blasts",
+      "cost": 1400
+    },
+    {
+      "path": "200",
+      "name": "Plasma Blasts",
+      "cost": 2500
+    },
+    {
+      "path": "300",
+      "name": "Sun Avatar",
+      "cost": 13000
+    },
+    {
+      "path": "400",
+      "name": "Sun Temple",
+      "cost": 80000
+    },
+    {
+      "path": "500",
+      "name": "True Sun God",
+      "cost": 200000
+    },
+    {
+      "path": "010",
+      "name": "Super Range",
+      "cost": 1000
+    },
+    {
+      "path": "020",
+      "name": "Epic Range",
+      "cost": 1000
+    },
+    {
+      "path": "030",
+      "name": "Robo Monkey",
+      "cost": 10000
+    },
+    {
+      "path": "040",
+      "name": "Tech Terror",
+      "cost": 20000
+    },
+    {
+      "path": "050",
+      "name": "The Anti-Bloon",
+      "cost": 90000
+    },
+    {
+      "path": "001",
+      "name": "Knockback",
+      "cost": 3000
+    },
+    {
+      "path": "002",
+      "name": "Ultravision",
+      "cost": 1200
+    },
+    {
+      "path": "003",
+      "name": "Dark Knight",
+      "cost": 4500
+    },
+    {
+      "path": "004",
+      "name": "Dark Champion",
+      "cost": 32000
+    },
+    {
+      "path": "005",
+      "name": "Legend of the Night",
+      "cost": 140000
+    }
+  ]
+}

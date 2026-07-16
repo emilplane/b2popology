@@ -1,0 +1,93 @@
+{
+  "id": "monkey-sub",
+  "name": "Monkey Sub",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      7
+    ],
+    "placement": 1
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 325
+    },
+    {
+      "path": "100",
+      "name": "Longer Range",
+      "cost": 130
+    },
+    {
+      "path": "200",
+      "name": "Advanced Intel",
+      "cost": 500
+    },
+    {
+      "path": "300",
+      "name": "Submerge and Support",
+      "cost": 950
+    },
+    {
+      "path": "400",
+      "name": "Bloontonium Reactor",
+      "cost": 2800
+    },
+    {
+      "path": "500",
+      "name": "Energizer",
+      "cost": 32000
+    },
+    {
+      "path": "010",
+      "name": "Barbed Darts",
+      "cost": 300
+    },
+    {
+      "path": "020",
+      "name": "Heat-tipped Darts",
+      "cost": 300
+    },
+    {
+      "path": "030",
+      "name": "Ballistic Missile",
+      "cost": 1600
+    },
+    {
+      "path": "040",
+      "name": "First Strike Capability",
+      "cost": 15000
+    },
+    {
+      "path": "050",
+      "name": "Pre-emptive Strike",
+      "cost": 30000
+    },
+    {
+      "path": "001",
+      "name": "Twin Guns",
+      "cost": 300
+    },
+    {
+      "path": "002",
+      "name": "Airburst Darts",
+      "cost": 800
+    },
+    {
+      "path": "003",
+      "name": "Triple Guns",
+      "cost": 800
+    },
+    {
+      "path": "004",
+      "name": "Armor Piercing Darts",
+      "cost": 3200
+    },
+    {
+      "path": "005",
+      "name": "Sub Commander",
+      "cost": 25000
+    }
+  ]
+}

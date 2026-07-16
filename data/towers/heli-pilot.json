@@ -1,0 +1,94 @@
+{
+  "name": "Heli Pilot",
+  "id": "heli-pilot",
+  "properties": {
+    "unlockCost": 500,
+    "size": [
+      18,
+      18
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 800
+    },
+    {
+      "path": "100",
+      "name": "Quad Darts",
+      "cost": 600
+    },
+    {
+      "path": "200",
+      "name": "Pursuit",
+      "cost": 250
+    },
+    {
+      "path": "300",
+      "name": "Razor Rotors",
+      "cost": 1800
+    },
+    {
+      "path": "400",
+      "name": "Apache Dartship",
+      "cost": 17500
+    },
+    {
+      "path": "500",
+      "name": "Apache Prime",
+      "cost": 45000
+    },
+    {
+      "path": "010",
+      "name": "Bigger Jets",
+      "cost": 200
+    },
+    {
+      "path": "020",
+      "name": "IFR",
+      "cost": 350
+    },
+    {
+      "path": "030",
+      "name": "Downdraft",
+      "cost": 3200
+    },
+    {
+      "path": "040",
+      "name": "Support Chinook",
+      "cost": 8500
+    },
+    {
+      "path": "050",
+      "name": "Special Poperations",
+      "cost": 30000
+    },
+    {
+      "path": "001",
+      "name": "Faster Darts",
+      "cost": 350
+    },
+    {
+      "path": "002",
+      "name": "Faster Firing",
+      "cost": 250
+    },
+    {
+      "path": "003",
+      "name": "MOAB Shove",
+      "cost": 4000
+    },
+    {
+      "path": "004",
+      "name": "Comanche Defense",
+      "cost": 7500
+    },
+    {
+      "path": "005",
+      "name": "Comanche Commander",
+      "cost": 34700
+    }
+  ]
+}

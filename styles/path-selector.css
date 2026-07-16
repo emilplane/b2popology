@@ -1,5 +1,6 @@
 .path-selector-container {
-	margin-bottom: 8px;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .path-selector-button-dom {
@@ -15,9 +16,9 @@
 }
 
 .path-selector-container button {
-	margin: 2px 2px 2px 2px;
+	margin: 0 0 6px 6px;
 }
 
 .path-selector-container img {
-	height: 42px;
+	height: 48px;
 }

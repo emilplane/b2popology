@@ -33,6 +33,8 @@ export class Tower {
     const totalCost = this.getTotalCost(path);
 
     const rootContainer = document.createElement('div');
+    const basicsContainer = document.createElement('div');
+    const upgradesContainer = document.createElement('div');
     const towerContainer = document.createElement('div');
     const pathSelector = new PathSelector(this, path);
     const pathSelectorHTML = await pathSelector.toHTML(parent);
@@ -42,13 +44,16 @@ export class Tower {
     const towerImage = document.createElement('img');
     const towerPropertiesContainer = document.createElement('div');
 
-    rootContainer.append(towerContainer);
-    towerContainer.append(pathSelectorHTML, towerName, upgradeName, towerImageContainer, towerPropertiesContainer);
+    rootContainer.append(basicsContainer, upgradesContainer);
+    basicsContainer.append(pathSelectorHTML, towerContainer);
+    towerContainer.append(towerName, upgradeName, towerImageContainer, towerPropertiesContainer);
     towerImageContainer.append(towerImage);
 
-    towerContainer.className = 'tower-container';
-    towerImageContainer.className = 'tower-image-container';
-    towerPropertiesContainer.className = 'properties-container';
+    basicsContainer.classList.add('basics-container')
+    towerContainer.classList.add('tower-container');
+    upgradesContainer.classList.add('upgrades-container');
+    towerImageContainer.classList.add('tower-image-container');
+    towerPropertiesContainer.classList.add('properties-container');
 
     towerName.textContent = this.formattedName(path)
     upgradeName.textContent = this.getUpgrade(path).name;
@@ -64,7 +69,7 @@ export class Tower {
       const attacksHeader = document.createElement('h3');
       const attacksContainer = document.createElement('div');
 
-      towerContainer.append(attacksHeader, attacksContainer);
+      upgradesContainer.append(attacksHeader, attacksContainer);
 
       attacksHeader.textContent = 'Attacks';
 
@@ -77,7 +82,7 @@ export class Tower {
       const abilitiesHeader = document.createElement('h3');
       const abilitiesContainer = document.createElement('div');
 
-      towerContainer.append(abilitiesHeader, abilitiesContainer);
+      upgradesContainer.append(abilitiesHeader, abilitiesContainer);
 
       abilitiesHeader.textContent = 'Abilities';
 

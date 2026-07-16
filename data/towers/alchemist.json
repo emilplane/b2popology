@@ -1,0 +1,93 @@
+{
+  "name": "Alchemist",
+  "id": "alchemist",
+  "properties": {
+    "unlockCost": 750,
+    "size": [
+      6
+    ],
+    "placement": 0
+  },
+  "upgrades": [
+    {
+      "path": "000",
+      "name": "Base",
+      "cost": 550
+    },
+    {
+      "path": "100",
+      "name": "Larger Potions",
+      "cost": 250
+    },
+    {
+      "path": "200",
+      "name": "Acidic Mixture Dip",
+      "cost": 350
+    },
+    {
+      "path": "300",
+      "name": "Berserker Brew",
+      "cost": 1650
+    },
+    {
+      "path": "400",
+      "name": "Stronger Stimulant",
+      "cost": 2800
+    },
+    {
+      "path": "500",
+      "name": "Permanent Brew",
+      "cost": 55000
+    },
+    {
+      "path": "010",
+      "name": "Stronger Acid",
+      "cost": 250
+    },
+    {
+      "path": "020",
+      "name": "Perishing Potions",
+      "cost": 475
+    },
+    {
+      "path": "030",
+      "name": "Unstable Concoction",
+      "cost": 4000
+    },
+    {
+      "path": "040",
+      "name": "Transforming Tonic",
+      "cost": 4500
+    },
+    {
+      "path": "050",
+      "name": "Total Transformation",
+      "cost": 45000
+    },
+    {
+      "path": "001",
+      "name": "Faster Throwing",
+      "cost": 550
+    },
+    {
+      "path": "002",
+      "name": "Acid Pool",
+      "cost": 450
+    },
+    {
+      "path": "003",
+      "name": "Lead to Gold",
+      "cost": 1000
+    },
+    {
+      "path": "004",
+      "name": "Rubber to Gold",
+      "cost": 2500
+    },
+    {
+      "path": "005",
+      "name": "Bloon Master Alchemist",
+      "cost": 40000
+    }
+  ]
+}
