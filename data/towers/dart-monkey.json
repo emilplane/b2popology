@@ -22,8 +22,7 @@
             "pierce": 2,
             "range": 32,
             "cooldown": 0.95,
-            "damageType": "sharp",
-            "camo": false
+            "damageType": "sharp"
           }
         }
       ]
@@ -101,13 +100,11 @@
             "range": 37,
             "cooldown": 1.15,
             "damageType": "shatter",
-            "camo": false,
             "bonusDamage": {
               "ceram": 1
             },
             "notes": [
-              "can bounce off walls",
-              "can rehit bloons after bounce"
+              "can bounce off walls and rehit bloons after bounce"
             ]
           }
         }
@@ -130,7 +127,6 @@
             "range": 37,
             "cooldown": 1.0,
             "damageType": "normal",
-            "camo": false,
             "bonusDamage": {
               "ceram": 4
             },
@@ -173,7 +169,6 @@
             "embeddedAttacks" : [
               {
               "id": "juggernauts",
-              "name": "Juggernauts",
               "properties": {
                 "damage": 1,
                 "pierce": 100,
@@ -356,8 +351,7 @@
             "EX_bolt",
             "EX_sharpbolt",
             "EX_masterbolt"
-          ],
-          "notes" : ["increased projectile speed"]
+          ]
         },
         {
           "type": "camo",
@@ -413,10 +407,9 @@
               7,
               50
             ],
-			"notes" : [
-				"first attack always crits",
-				"increased projectile speed"
-			]
+            "notes" : [
+              "first attack always crits"
+            ]
           }
         }
       ]
@@ -442,8 +435,7 @@
             "crit": [
               5,
               75
-            ],
-            "notes" : ["increased projectile speed"]
+            ]
           }
         }
       ]

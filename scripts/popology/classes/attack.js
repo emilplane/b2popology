@@ -110,7 +110,7 @@ export class Attack {
     rootContainer.append(centerContainer);
     centerContainer.append(propertiesContainer.toHTML());
 
-    centerContainer.className = 'center-container';
+    centerContainer.classList.add('center-container');
 
     return rootContainer;
   }

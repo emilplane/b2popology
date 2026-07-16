@@ -16,6 +16,7 @@ import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertyRange } from './property-range.js';
 import { PropertySummonAttack } from './property-summon-attack.js';
 import { PropertyTime } from './property-time.js';
+import { PropertyUnkeyed } from './property-unkeyed.js';
 
 export class PropertiesManager {
 
@@ -86,7 +87,8 @@ export class PropertiesManager {
     const containerProperties = [];
 
     properties.forEach((property) => {
-      if (!['notes', 'desc', 'summonAttack', 'knockback'].includes(property.key) && (!(property instanceof PropertyDoT))) {
+      if (!['notes', 'desc', 'summonAttack', 'knockback', 'crit'].includes(property.key) &&
+        (!(property instanceof PropertyDoT)) && (!(property instanceof PropertyUnkeyed))) {
         containerProperties.push(property);
       }
     });
@@ -128,6 +130,18 @@ export class PropertiesManager {
     });
 
     return summonAttackProperties;
+  }
+
+  static getUnkeyedProperties(properties) {
+    const unkeyedProperties = [];
+
+    properties.forEach((property) => {
+      if (property instanceof PropertyUnkeyed || property.key == 'crit') {
+        unkeyedProperties.push(property);
+      }
+    });
+
+    return unkeyedProperties;
   }
 
   static getKnockbackProperties(properties) {

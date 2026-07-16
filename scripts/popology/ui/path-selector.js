@@ -76,6 +76,13 @@ export class PathSelector {
               this.selected[j] = 0;
             }
           }
+          let selcount = 0;
+          for (let j = 0; j < this.selected.length; j++) { // unselect t2 if 2 are picked
+            if (this.selected[j] != 0) selcount += 1;
+          }
+          if (selcount == 2) {
+            for (let j = 0; j < this.selected.length; j++) this.selected[j] = 0;
+          }
           this.selected[i] = pathNums[i]; // select new t3+
         }
         else { // if we get a t2 or t1 upgrade then...

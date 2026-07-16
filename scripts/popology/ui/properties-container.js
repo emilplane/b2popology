@@ -30,6 +30,8 @@ export class PropertiesContainer {
   toHTML() {
     const minorProperties = PropertiesManager.sortedContainerProperties(this.properties);
 
+    const unkeyedProperties = PropertiesManager.getUnkeyedProperties(this.properties);
+
     const knockbackProperties = PropertiesManager.getKnockbackProperties(this.properties);
     const summonAttackProperties = PropertiesManager.getSummonAttackProperties(this.properties);
     const dotProperties = PropertiesManager.getDotProperties(this.properties);
@@ -39,16 +41,25 @@ export class PropertiesContainer {
 
     const rootContainer = document.createElement('div');
     const propertiesContainer = document.createElement('div');
+    const unkeyedContainer = document.createElement('div');
 
     rootContainer.classList.add('properties-container-styler');
     rootContainer.style.backgroundColor = this.backgroundColor;
     propertiesContainer.classList.add('properties-container');
+    unkeyedContainer.classList.add('properties-container');
 
     rootContainer.append(propertiesContainer);
+
+    if (unkeyedProperties.length != 0) rootContainer.append(unkeyedContainer);
 
     minorProperties.forEach((property) => {
       const propertyHTML = property.toHTML(this.attack);
       if (propertyHTML != null) propertiesContainer.append(propertyHTML);
+    });
+
+    unkeyedProperties.forEach((property) => {
+      const propertyHTML = property.toHTML(this.attack);
+      if (propertyHTML != null) unkeyedContainer.append(propertyHTML);
     });
 
     majorProperties.forEach((property) => {

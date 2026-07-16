@@ -192,6 +192,7 @@ h5 {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-bottom: 6px;
 }
 
 .properties-container p {

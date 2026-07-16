@@ -3,7 +3,7 @@ import { Property } from './property.js';
 export class PropertySummonAttack extends Property {
 
   clone() {
-    return new PropertySummonAttack(this.key, Array.from(this.val));
+    return new PropertySummonAttack(this.key, this.val);
   }
 
   toHTML(attack) {
