@@ -33,14 +33,7 @@ export class PropertiesManager {
   }
 
   static createProperty(key, val) {
-    if (key == 'bonusDamage') {
-      const propertyArray = [];
-      Object.entries(val).forEach(([bkey, bval]) => {
-        propertyArray.push(new PropertyBonusDamage(bkey, bval));
-      });
-      return propertyArray;
-    }
-    if (['lead', 'fort', 'moab', 'ceram'].includes(key)) return new PropertyBonusDamage(key, val);
+    if (key == 'bonusDamage') return new PropertyBonusDamage(key, val);
     if (key == 'range') return new PropertyRange(key, val);
     if (key == 'camo') return new PropertyCamo(key, val);
     if (key =='crit') return new PropertyCrit(key, val);
@@ -70,7 +63,7 @@ export class PropertiesManager {
       else dotObject = DoT.fromData(val);
       return new PropertyDoT('dot', dotObject);
     }
-    if (key == 'summonAttack')  return new PropertySummonAttack(key, val);
+    if (key == 'summonAttack') return new PropertySummonAttack(key, val);
     if (['attackType'].includes(key)) return new PropertyHidden(key, val);
     if (key == 'embeddedAttacks') {
       const embeddedAttacks = [];

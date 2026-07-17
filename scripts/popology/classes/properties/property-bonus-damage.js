@@ -1,3 +1,4 @@
+import { PropertyBasic } from './property-basic.js';
 import { Property } from './property.js';
 
 export class PropertyBonusDamage extends Property {
@@ -10,27 +11,50 @@ export class PropertyBonusDamage extends Property {
   }
 
   clone() {
-    return new PropertyBonusDamage(this.key, this.val);
+    return new PropertyBonusDamage(this.key, structuredClone(this.val));
   }
 
   toHTML(attack) {
     if (!this.key || !this.val || !attack) return;
 
-    const container = document.createElement('div');
-    const pkey = document.createElement('p');
-    const pval = document.createElement('p');
+    const propertiesHTML = [];
+    Object.keys(this.val).forEach((key) => {
+      const property = new PropertyBasic(this.formatKey(key),this.formatVal(this.val[key], attack));
+      propertiesHTML.push(property.toHTML());
+    });
 
-    container.append(pkey, pval);
+    return propertiesHTML;
+  }
 
-    pval.className = 'property-basic-value';
+  formatKey(key) {
+    return `${PropertyBonusDamage.FORMATTED_TYPES[key]} Damage`;
+  }
 
-    pkey.textContent = PropertyBonusDamage.FORMATTED_TYPES[this.key] +' Damage';
-
+  formatVal(val, attack) {
     const damageProperty = attack.properties.find(property => property.key == 'damage');
-    if (damageProperty != null) pval.textContent = (damageProperty.val + this.val) + ' (+' + this.val + ')';
-    else pval.textContent = this.val;
+    return `${val + damageProperty.val} (+${val})`;
+  }
 
-    return container;
+  applyBuff(buff) {
+    switch (buff.operation) {
+      case 'add':
+        Object.keys(buff.value).forEach((key) => {
+          if (this.val[key] == null) this.val[key] = 0;
+          this.val[key] += buff.value[key];
+        });
+        break;
+      case 'mul':
+        Object.keys(buff.value).forEach((key) => {
+          if (this.val[key] == null) return;
+          this.val[key] = parseFloat((this.val[key] * buff.value[key]).toFixed(2));
+        });
+        break;
+      case 'set':
+        Object.keys(buff.value).forEach((key) => {
+          this.val[key] = buff.value[key];
+        });
+        break;
+    }
   }
 
 }

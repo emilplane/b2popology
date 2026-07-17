@@ -130,10 +130,12 @@
 			"cooldown" : 4.0,
 			"damageType": "fire",
 			"camo" : true,
-			"summonAttack" : {
-              "attackId" : "meteor-explosion",
-              "type" : [ "onContact" ]
-			},
+			"summonAttack" : [
+              {
+                "attackId" : "meteor-explosion",
+                "type" : [ "onContact" ]
+              }
+			],
 			"dots" : [
               {
                 "name" : "burn",

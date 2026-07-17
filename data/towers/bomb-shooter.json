@@ -12,72 +12,436 @@
     {
       "path": "000",
       "name": "Base",
-      "cost": 525
+      "cost": 525,
+      "attacks" : [
+      {
+        "id" : "bomb",
+        "name" : "Bomb",
+        "properties" : {
+            "range" : 40,
+            "cooldown": 1.5,
+            "summonAttack" : [
+              {
+                "attackId" : "base-explosion",
+                "type" : [ "onContact" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "base-explosion",
+                  "properties" : {
+                  "attackType" : "explosion",
+                  "damage" : 1,
+                  "pierce" : 14,
+                  "blastRadius" : 12,
+                  "damageType" : "explosion"
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "path": "100",
       "name": "Bigger Bombs",
-      "cost": 350
+      "cost": 350,
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 6,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "blastRadius",
+          "operation" : "mul",
+          "value" : 1.5,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [
+            "cluster"
+          ]
+        }
+      ]
     },
     {
       "path": "200",
       "name": "Heavy Bombs",
-      "cost": 650
+      "cost": 650,
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [
+            "base-explosion",
+            "cluster"
+          ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [
+            "cluster"
+          ]
+        }
+      ]
     },
     {
       "path": "300",
       "name": "Really Big Bombs",
-      "cost": 1200
+      "cost": 1200,
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 20,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "blastRadius",
+          "operation" : "mul",
+          "value" : 1.5,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        },
+        {
+          "type" : "impactPierce",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        },
+        {
+          "type" : "projectiles",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        }
+      ]
     },
     {
       "path": "400",
       "name": "Bloon Impact",
-      "cost": 3600
+      "cost": 3600,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "impactPierce",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        },
+        {
+          "type" : "projectiles",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        }
+      ]
     },
     {
       "path": "500",
       "name": "Bloon Crush",
-      "cost": 55000
+      "cost": 55000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 27,
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 27,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        },
+        {
+          "type" : "impactPierce",
+          "operation" : "add",
+          "value" : 17,
+          "affectedAttacks" : [
+            "frags"
+          ]
+        }
+      ]
     },
     {
       "path": "010",
       "name": "Faster Reload",
-      "cost": 250
+      "cost": 250,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.75,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        }
+      ]
     },
     {
       "path": "020",
       "name": "Missile Launcher",
-      "cost": 400
+      "cost": 400,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.73333333,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        }
+      ]
     },
     {
       "path": "030",
       "name": "MOAB Mauler",
-      "cost": 900
+      "cost": 900,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 5,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 18
+          },
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        }
+      ]
     },
     {
       "path": "040",
       "name": "MOAB Assassin",
-      "cost": 3200
+      "cost": 3200,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 5,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 22
+          },
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        }
+      ]
     },
     {
       "path": "050",
       "name": "MOAB Eliminator",
-      "cost": 25000
+      "cost": 25000,
+      "buffs" : [
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 170
+          },
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        }
+      ]
     },
     {
       "path": "001",
       "name": "Extra Range",
-      "cost": 200
+      "cost": 200,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 7,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        }
+      ]
     },
     {
       "path": "002",
       "name": "Frag Bombs",
-      "cost": 300
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 7,
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [
+            "base-explosion"
+          ]
+        },
+        {
+          "type" : "appendAttack",
+          "value" : {
+            "id" : "frags",
+            "properties" : {
+              "damage" : 1,
+              "projectiles" : [8, 360],
+              "impactPierce" : 1,
+              "damageType" : "sharp",
+              "attackType" : "fragments"
+            }
+          },
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "summonAttack",
+          "operation" : "append",
+          "value" : {
+            "attackId" : "frags",
+            "type" : [ "onContact" ]
+          },
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        }
+      ]
     },
     {
       "path": "003",
       "name": "Cluster Bombs",
-      "cost": 900
+      "cost": 900,
+      "buffs" : [
+        {
+          "type" : "summonAttack",
+          "operation" : "remove",
+          "value" : "frags",
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "summonAttack",
+          "operation" : "append",
+          "value" : {
+            "attackId" : "cluster",
+            "type" : [ "onContact" ]
+          },
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        },
+        {
+          "type" : "appendAttack",
+          "value" : {
+            "id" : "cluster",
+            "properties" : {
+              "damage" : 1,
+              "pierce" : 8,
+              "projectiles" : [8 , 360],
+              "blastRadius" : 15,
+              "damageType" : "normal",
+              "attackType" : "cluster"
+            }
+          },
+          "affectedAttacks" : [
+            "bomb"
+          ]
+        }
+      ]
     },
     {
       "path": "004",

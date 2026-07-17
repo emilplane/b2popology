@@ -162,10 +162,12 @@
             "notes": [
               "can bounce off walls and rehit bloons after bounce"
             ],
-            "summonAttack" : {
-              "type" : [ "onHalfPierce", "onPierce", "onExpiry" ],
-              "attackId" : "juggernauts"
-            },
+            "summonAttack" : [
+              {
+                "type" : [ "onHalfPierce", "onPierce", "onExpiry" ],
+                "attackId" : "juggernauts"
+              }
+            ],
             "embeddedAttacks" : [
               {
               "id": "juggernauts",

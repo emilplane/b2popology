@@ -71,16 +71,20 @@ export class Attack {
         if (buff.operation == 'set') {
           propertyToBuff = PropertiesManager.createProperty(buff.type, buff.value);
           attack.properties.push(propertyToBuff);
+        } // exceptions to create default values on add/append
+        if (buff.operation == 'add' && buff.type == 'bonusDamage') {
+          propertyToBuff = PropertiesManager.createProperty(buff.type, {});
+          attack.properties.push(propertyToBuff);
         }
-        else if ((buff.operation == 'add') && (['lead', 'fort', 'moab', 'ceram'].includes(buff.type))) {
-          propertyToBuff = PropertiesManager.createProperty(buff.type, 0);
+        if (buff.operation == 'append' && buff.type == 'summonAttack') {
+          propertyToBuff = PropertiesManager.createProperty(buff.type, []);
           attack.properties.push(propertyToBuff);
         }
       }
       if (propertyToBuff != null) propertyToBuff.applyBuff(buff);
     }
-    // damage buffs also buff crits
-    if (buff.type == 'damage') {
+    // damage buffs get applied to crits too
+    if (buff.type == 'damage' && this.properties.find(property => property.key == 'crit') != null) {
       const newBuff = buff.clone();
       newBuff.type = 'crit';
       return attack.buffedBy(newBuff);

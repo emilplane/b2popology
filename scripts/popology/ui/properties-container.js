@@ -54,7 +54,9 @@ export class PropertiesContainer {
 
     minorProperties.forEach((property) => {
       const propertyHTML = property.toHTML(this.attack);
-      if (propertyHTML != null) propertiesContainer.append(propertyHTML);
+      if (propertyHTML == null) return;
+      if (Array.isArray(propertyHTML)) propertiesContainer.append(...propertyHTML);
+      else propertiesContainer.append(propertyHTML);
     });
 
     unkeyedProperties.forEach((property) => {
@@ -64,12 +66,18 @@ export class PropertiesContainer {
 
     majorProperties.forEach((property) => {
       if (property == null) return;
-      const propertyHTML = property.toHTML(this.attack);
-      if (propertyHTML != null) {
-      const stylerContainer = propertyHTML.querySelector('.properties-container-styler');
-      if (stylerContainer != null) stylerContainer.classList.add('inner-container');
+      const propertiesHTML = property.toHTML(this.attack);
+      if (propertiesHTML == null) return;
+
+      if (Array.isArray(propertiesHTML)) propertiesHTML.forEach(propertyHTML => styleAndAppend(propertyHTML));
+      else styleAndAppend(propertiesHTML);
+
+      function styleAndAppend(propertyHTML) {
+        const stylerContainer = propertyHTML.querySelector('.properties-container-styler');
+        if (stylerContainer != null) stylerContainer.classList.add('inner-container');
         rootContainer.append(propertyHTML);
       }
+
     });
 
     return rootContainer;

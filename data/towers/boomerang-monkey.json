@@ -103,6 +103,17 @@
           ]
         },
         {
+          "type": "knockback",
+          "operation": "mul",
+          "value": {
+            "all" : 1.5
+          },
+          "affectedAttacks": [
+            "press",
+            "dom"
+          ]
+        },
+        {
           "type": "pierce",
           "operation": "add",
           "value": 10,
@@ -426,9 +437,11 @@
           ]
         },
         {
-          "type": "lead",
+          "type": "bonusDamage",
           "operation": "add",
-          "value": 1,
+          "value": {
+            "lead" : 1
+          },
           "affectedAttacks": [
             "all",
             "EX_kylie",
@@ -533,9 +546,11 @@
           ]
         },
         {
-          "type": "moab",
+          "type": "bonusDamage",
           "operation": "add",
-          "value": 45,
+          "value": {
+            "moab" : 45
+          },
           "affectedAttacks" : [
             "press"
           ]
@@ -595,7 +610,7 @@
         },
         {
           "type": "summonAttack",
-          "operation": "set",
+          "operation": "append",
           "value": {
             "attackId" : "moab-dom-explosion",
             "type" : [ "onExpiry", "onPierce" ]
