@@ -446,7 +446,34 @@
     {
       "path": "004",
       "name": "Recursive Cluster",
-      "cost": 3200
+      "cost": 3200,
+      "attacks" : [
+        {
+          "id" : "superbomb",
+          "name" : "Superbomb",
+          "properties" : {
+            "summonAttack" : [
+              {
+                "attackId" : "supercluster",
+                "type" : [ "onContact" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "supercluster",
+                  "properties" : {
+                  "damage" : 1,
+                  "pierce" : 8,
+                  "projectiles" : [8 , 360],
+                  "blastRadius" : 15,
+                  "damageType" : "normal",
+                  "attackType" : "supercluster"
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "path": "005",
