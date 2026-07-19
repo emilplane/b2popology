@@ -6,7 +6,7 @@ export class PropertyUnkeyed extends Property {
     return new PropertyUnkeyed(this.key, this.val);
   }
 
-  toHTML() {
+  toHTML(attack) {
     if (!this.key || !this.val) return;
 
     const container = document.createElement('div');
@@ -19,7 +19,7 @@ export class PropertyUnkeyed extends Property {
     const outlineColor = window.getComputedStyle(document.body).getPropertyValue(outlineVariable);
     container.style.outlineColor = outlineColor;
 
-    p.textContent = this.getFormattedValue();
+    p.textContent = this.getFormattedValue(attack);
 
     return container;
   }

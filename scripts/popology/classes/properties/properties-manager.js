@@ -1,5 +1,7 @@
 import { Attack } from '../attack.js';
 import { DoT } from '../dot.js';
+import { PropertyAlternateAttack } from './property-alternate-attack.js';
+import { PropertyAttributed } from './property-attributed.js'
 import { PropertyBasic } from './property-basic.js';
 import { PropertyBattleReady } from './property-battle-ready.js';
 import { PropertyBonusDamage } from './property-bonus-damage.js';
@@ -13,7 +15,7 @@ import { PropertyHidden } from './property-hidden.js';
 import { PropertyIconed } from './property-iconed.js';
 import { PropertyKnockback } from './property-knockback.js';
 import { PropertyProjectiles } from './property-projectiles.js';
-import { PropertyRange } from './property-range.js';
+import { PropertyStun } from './property-stun.js';
 import { PropertySummonAttack } from './property-summon-attack.js';
 import { PropertyTime } from './property-time.js';
 import { PropertyUnkeyed } from './property-unkeyed.js';
@@ -34,17 +36,19 @@ export class PropertiesManager {
 
   static createProperty(key, val) {
     if (key == 'bonusDamage') return new PropertyBonusDamage(key, val);
-    if (key == 'range') return new PropertyRange(key, val);
+    if (['range', 'blastRadius', 'pierce'].includes(key)) return new PropertyAttributed(key, val);
     if (key == 'camo') return new PropertyCamo(key, val);
     if (key =='crit') return new PropertyCrit(key, val);
     if (key == 'notes' || key == 'desc') return new PropertyFootnote(key, val);
     if (['cost', 'unlockCost', 'size', 'placement'].includes(key)) return new PropertyIconed(key, val);
     if (key == 'battleReady') return new PropertyBattleReady(key, val);
     if (key == 'projectiles') return new PropertyProjectiles(key, val);
-    if (['cooldown', 'duration', 'tickDuration', 'totalDuration', 'stun', 'rehit'].includes(key)) return new PropertyTime(key, val);
+    if (['cooldown', 'duration', 'tickDuration', 'totalDuration', 'domStun', 'rehit'].includes(key)) return new PropertyTime(key, val);
     if (key == 'damageType') return new PropertyDamageType(key, val);
     if (key == 'knockback') return new PropertyKnockback(key, val);
     if (key == 'cantTarget') return new PropertyCantTarget(key, val);
+    if (key == 'alternateAttack') return new PropertyAlternateAttack(key, val);
+    if (key == 'stun') return new PropertyStun(key, val);
     if (key == 'dots') {
       const propertyArray = [];
       let i = 0;

@@ -1,15 +1,15 @@
 import { PropertyBasic } from "./property-basic.js";
 
-export class PropertyRange extends PropertyBasic {
+export class PropertyAttributed extends PropertyBasic {
 
   clone() {
-    if (!(typeof this.val === 'object')) return new PropertyRange(this.key, this.val);
+    if (!(typeof this.val === 'object')) return new PropertyAttributed(this.key, this.val);
     if (this.val.attribute == null) {
       const newVal = { "value" : this.val.value };
-      return new PropertyRange(this.key, newVal);
+      return new PropertyAttributed(this.key, newVal);
     }
     const newVal = { "value" : this.val.value , "attribute" : this.val.attribute};
-    return new PropertyRange(this.key, newVal);
+    return new PropertyAttributed(this.key, newVal);
 
   }
 

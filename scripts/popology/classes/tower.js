@@ -153,9 +153,15 @@ export class Tower {
 
   getAttacks(path) {
     const attacks = [];
+    const removedAttacks = [];
     this.upgrades.forEach((upgrade) => {
-      if (this.isChildUpgrade(path, upgrade.path) && upgrade.attacks) {
-        upgrade.attacks.forEach((attack) => { attacks.push(attack); });
+      if (this.isChildUpgrade(path, upgrade.path)) {
+        if (upgrade.metadata != null && upgrade.metadata.removeAttacks != null)
+          removedAttacks.push(...upgrade.metadata.removeAttacks);
+        if (upgrade.attacks == null) return;
+        upgrade.attacks.forEach((attack) => {
+          attacks.push(attack);
+        });
       }
     });
 
@@ -164,14 +170,14 @@ export class Tower {
     for (let i = 0; i < attacks.length; i++) {
       flag = true;
       for (let j = i + 1; j < attacks.length; j++) {
-        if (attacks[j].overwrites == null) continue;
-        if (attacks[j].overwrites.includes(attacks[i].id)) {
+        if (removedAttacks.includes(attacks[i].id) || (attacks[j].overwrites != null && attacks[j].overwrites.includes(attacks[i].id))) {
           flag = false;
           break;
         }
       }
       if (flag) filteredAttacks.push(attacks[i]);
     }
+
 
     const buffedAttacks = [];
     const buffs = this.getBuffs(path);

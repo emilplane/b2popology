@@ -31,7 +31,8 @@ export class PropertySummonAttack extends Property {
       if (i == 0) str += ' ';
       else if (i == summon.type.length - 1) str += ', or ';
       else str += ', ';
-      str += this.typeToText(summon.type[i]);
+      if (summon.type[i] == 'afterTime') str += `after ${summon.time}s`;
+      else str += this.typeToText(summon.type[i]);
     }
     title.textContent = str;
 

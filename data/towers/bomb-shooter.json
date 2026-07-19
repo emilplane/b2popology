@@ -52,7 +52,8 @@
           "operation" : "add",
           "value" : 6,
           "affectedAttacks" : [
-            "base-explosion"
+            "base-explosion",
+            "super-explosion"
           ]
         },
         {
@@ -60,7 +61,10 @@
           "operation" : "mul",
           "value" : 1.5,
           "affectedAttacks" : [
-            "base-explosion"
+            "base-explosion",
+            "super-explosion",
+            "cluster",
+            "supercluster"
           ]
         },
         {
@@ -68,7 +72,24 @@
           "operation" : "add",
           "value" : 4,
           "affectedAttacks" : [
-            "cluster"
+            "cluster",
+            "supercluster"
+          ]
+        },
+        {
+          "type" : "blastRadius",
+          "operation" : "add",
+          "value" : 3.5,
+          "affectedAttacks" : [
+            "subcluster"
+          ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 36,
+          "affectedAttacks" : [
+            "subcluster"
           ]
         }
       ]
@@ -83,7 +104,8 @@
           "operation" : "add",
           "value" : 10,
           "affectedAttacks" : [
-            "base-explosion"
+            "base-explosion",
+            "super-explosion"
           ]
         },
         {
@@ -91,8 +113,8 @@
           "operation" : "add",
           "value" : 1,
           "affectedAttacks" : [
-            "base-explosion",
-            "cluster"
+            "all",
+            "EX_frags"
           ]
         },
         {
@@ -100,7 +122,16 @@
           "operation" : "add",
           "value" : 4,
           "affectedAttacks" : [
-            "cluster"
+            "cluster",
+            "supercluster"
+          ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 36,
+          "affectedAttacks" : [
+            "subcluster"
           ]
         }
       ]
@@ -196,6 +227,17 @@
           "affectedAttacks" : [
             "frags"
           ]
+        },
+        {
+          "type" : "stun",
+          "operation" : "set",
+          "affectedAttacks" : [ "base-explosion" ],
+          "value" : {
+            "stunDurations" : {
+              "bloons" : 1
+            },
+            "canReapply" : true
+          }
         }
       ]
     },
@@ -227,6 +269,25 @@
           "affectedAttacks" : [
             "frags"
           ]
+        },
+        {
+          "type" : "stun",
+          "operation" : "add",
+          "affectedAttacks" : [ "base-explosion" ],
+          "value" : {
+            "moab" : 1.5,
+            "bfb" : 1.5,
+            "zomg" : 1.5,
+            "ddt" : 1.5
+          }
+        },
+        {
+          "type" : "stun",
+          "operation" : "add",
+          "affectedAttacks" : [ "base-explosion" ],
+          "value" : {
+            "bloons" : 0.5
+          }
         }
       ]
     },
@@ -240,7 +301,8 @@
           "operation" : "mul",
           "value" : 0.75,
           "affectedAttacks" : [
-            "bomb"
+            "bomb",
+            "superbomb"
           ]
         }
       ]
@@ -255,7 +317,8 @@
           "operation" : "mul",
           "value" : 0.73333333,
           "affectedAttacks" : [
-            "bomb"
+            "bomb",
+            "superbomb"
           ]
         },
         {
@@ -263,7 +326,8 @@
           "operation" : "add",
           "value" : 4,
           "affectedAttacks" : [
-            "bomb"
+            "bomb",
+            "superbomb"
           ]
         }
       ]
@@ -297,6 +361,45 @@
       "path": "040",
       "name": "MOAB Assassin",
       "cost": 3200,
+      "abilities" : [
+        {
+          "id": "assasinate",
+          "name" : "Assasinate",
+          "properties" : {
+            "cooldown" : 30
+          },
+          "attacks" : [
+            {
+              "id" : "assassinate",
+              "name" : "Assasinate",
+              "properties" : {
+                "damage" : 750,
+                "range" : {
+                  "attribute" : "infinite"
+                },
+                "summonAttack" : [
+                  {
+                    "attackId" : "assassin-explosion",
+                    "type" : [ "onContact" ]
+                  }
+                ],
+                "embeddedAttacks": [
+                  {
+                    "id" : "assassin-explosion",
+                    "properties" : {
+                      "damage" : 3,
+                      "pierce" : 100,
+                      "blastRadius" : 30,
+                      "damageType" : "explosion",
+                      "attackType" : "explosion"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
       "buffs" : [
         {
           "type" : "range",
@@ -322,6 +425,49 @@
       "path": "050",
       "name": "MOAB Eliminator",
       "cost": 25000,
+      "abilities" : [
+        {
+          "id": "eliminate",
+          "name" : "Eliminate",
+          "overwrites" : [ "assasinate" ],
+          "properties" : {
+            "cooldown" : 10
+          },
+          "attacks" :
+          [
+            {
+              "id" : "eliminate",
+              "name" : "Eliminate",
+              "properties" :
+              {
+                "damage" : 4500,
+                "range" : {
+                  "attribute" : "infinite"
+                },
+                "summonAttack" :
+                [
+                  {
+                    "attackId" : "elim-explosion",
+                    "type" : [ "onContact" ]
+                  }
+                ],
+                "embeddedAttacks": [
+                  {
+                    "id" : "elim-explosion",
+                    "properties" : {
+                      "damage" : 3,
+                      "pierce" : 100,
+                      "blastRadius" : 30,
+                      "damageType" : "explosion",
+                      "attackType" : "explosion"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
       "buffs" : [
         {
           "type" : "bonusDamage",
@@ -345,7 +491,8 @@
           "operation" : "add",
           "value" : 7,
           "affectedAttacks" : [
-            "bomb"
+            "bomb",
+            "superbomb"
           ]
         }
       ]
@@ -360,7 +507,8 @@
           "operation" : "add",
           "value" : 7,
           "affectedAttacks" : [
-            "bomb"
+            "bomb",
+            "superbomb"
           ]
         },
         {
@@ -368,7 +516,8 @@
           "operation" : "set",
           "value" : "normal",
           "affectedAttacks" : [
-            "base-explosion"
+            "base-explosion",
+            "super-explosion"
           ]
         },
         {
@@ -447,27 +596,74 @@
       "path": "004",
       "name": "Recursive Cluster",
       "cost": 3200,
+      "buffs" : [
+        {
+          "type" : "alternateAttack",
+          "operation" : "set",
+          "value" : {
+            "attackId" : "superbomb",
+            "frequency" : 2
+          },
+          "affectedAttacks" : [ "bomb" ]
+        }
+      ],
       "attacks" : [
         {
           "id" : "superbomb",
           "name" : "Superbomb",
           "properties" : {
+            "range" : 40,
+            "cooldown": 1.5,
             "summonAttack" : [
               {
+                "attackId" : "super-explosion",
+                "type" : [ "onContact", "onExpiry" ]
+              },
+              {
                 "attackId" : "supercluster",
-                "type" : [ "onContact" ]
+                "type" : [ "onContact", "onExpiry" ]
               }
             ],
             "embeddedAttacks" : [
               {
-                "id" : "supercluster",
+                "id" : "super-explosion",
                   "properties" : {
+                  "attackType" : "explosion",
                   "damage" : 1,
-                  "pierce" : 8,
-                  "projectiles" : [8 , 360],
-                  "blastRadius" : 15,
-                  "damageType" : "normal",
-                  "attackType" : "supercluster"
+                  "pierce" : 14,
+                  "blastRadius" : 12,
+                  "damageType" : "normal"
+                }
+              },
+              {
+                "id" : "supercluster",
+                "properties" : {
+                  "damage" : 1,
+                    "pierce" : 8,
+                    "projectiles" : [8 , 360],
+                    "blastRadius" : 15,
+                    "damageType" : "normal",
+                    "attackType" : "supercluster",
+                    "summonAttack" : [
+                      {
+                        "attackId" : "subcluster",
+                        "type" : [ "afterTime" ],
+                        "time" : 0.45
+                      }
+                    ],
+                    "embeddedAttacks" : [
+                      {
+                        "id" : "subcluster",
+                        "properties" : {
+                          "damage" : 1,
+                          "pierce" : 48,
+                          "projectiles": [ 8, 360 ],
+                          "blastRadius" : 34,
+                          "damageType" : "normal",
+                          "attackType" : "subcluster"
+                        }
+                      }
+                    ]
                 }
               }
             ]
@@ -478,7 +674,37 @@
     {
       "path": "005",
       "name": "Bomb Blitz",
-      "cost": 38000
+      "cost": 38000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "all" ]
+        }
+      ],
+      "abilities" : [
+        {
+          "id": "bomb-blitz",
+          "name": "Bomb Blitz",
+          "properties": {
+            "cooldown": 40,
+            "damage" : 3000,
+            "pierce" : {
+              "attribute" : "infinite"
+            },
+            "blastRadius" : {
+              "attribute" : "infinite"
+            },
+            "damageType" : "normal",
+            "camo" : true
+          }
+        }
+      ],
+      "metadata" : {
+        "removeAttacks" : [ "bomb" ]
+      }
     }
   ]
 }
+
