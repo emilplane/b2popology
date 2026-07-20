@@ -1,6 +1,7 @@
 {
   "name": "Monkey Village",
   "id": "monkey-village",
+  "category" : "support",
   "properties": {
     "unlockCost": 1000,
     "size": [

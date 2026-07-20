@@ -1,6 +1,7 @@
 {
 	"id" : "superFan",
 	"name" : "Superfan",
+	"category" : "primary",
 	"properties": {
 		"size": [6],
 		"placement": 0

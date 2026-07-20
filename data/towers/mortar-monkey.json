@@ -1,6 +1,7 @@
 {
   "name": "Mortar Monkey",
   "id": "mortar-monkey",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

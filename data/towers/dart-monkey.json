@@ -1,6 +1,7 @@
 {
   "id": "dartMonkey",
   "name": "Dart Monkey",
+  "category" : "primary",
   "properties": {
     "unlockCost": 0,
     "size": [

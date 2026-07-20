@@ -1,6 +1,7 @@
 {
   "id": "monkey-sub",
   "name": "Monkey Sub",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

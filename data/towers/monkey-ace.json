@@ -1,6 +1,7 @@
 {
   "name": "Monkey Ace",
   "id": "monkey-ace",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

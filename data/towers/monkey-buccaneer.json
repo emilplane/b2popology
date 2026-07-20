@@ -1,6 +1,7 @@
 {
   "id": "monkey-buccaneer",
   "name": "Monkey Buccaneer",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

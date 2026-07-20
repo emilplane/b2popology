@@ -1,6 +1,7 @@
 {
   "id": "boomerangMonkey",
   "name": "Boomerang Monkey",
+  "category" : "primary",
   "properties": {
     "unlockCost": 150,
     "size": [
@@ -583,12 +584,17 @@
           "type": "notes",
           "operation": "set",
           "value": [
-            "can see past obstacles",
             "lifetime halved, so it expires instead of returning"
           ],
           "affectedAttacks" : [
             "press"
           ]
+        },
+        {
+          "type" : "ignoreObstacle",
+          "operation" : "set",
+          "value" : true,
+          "affectedAttacks" : [ "press" ]
         },
         {
           "type": "appendAttack",

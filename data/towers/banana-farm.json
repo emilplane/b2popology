@@ -1,6 +1,7 @@
 {
   "id": "banana-farm",
   "name": "Banana Farm",
+  "category" : "support",
   "properties": {
     "unlockCost": 1000,
     "size": [

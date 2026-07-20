@@ -21,6 +21,8 @@ export class PropertyCantTarget extends PropertyUnkeyed {
     switch (target) {
       case 'bloons':
         return 'Non-blimps';
+      case 'blimps':
+        return 'MOAB-Class bloons';
       default:
         return target;
     }

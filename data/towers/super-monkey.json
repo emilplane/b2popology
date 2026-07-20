@@ -1,6 +1,7 @@
 {
   "name": "Super Monkey",
   "id": "super-monkey",
+  "category" : "magic",
   "properties": {
     "unlockCost": 750,
     "size": [

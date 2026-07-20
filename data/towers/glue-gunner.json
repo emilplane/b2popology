@@ -1,6 +1,7 @@
 {
   "name": "Glue Gunner",
   "id": "glue-gunner",
+  "category" : "primary",
   "properties": {
     "unlockCost": 150,
     "size": [

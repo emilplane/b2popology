@@ -13,6 +13,7 @@ import { PropertyDoT } from './property-dot.js';
 import { PropertyFootnote } from './property-footnote.js';
 import { PropertyHidden } from './property-hidden.js';
 import { PropertyIconed } from './property-iconed.js';
+import { PropertyIgnoreObstacle } from './property-ignore-obstacle.js';
 import { PropertyKnockback } from './property-knockback.js';
 import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertyStun } from './property-stun.js';
@@ -49,6 +50,7 @@ export class PropertiesManager {
     if (key == 'cantTarget') return new PropertyCantTarget(key, val);
     if (key == 'alternateAttack') return new PropertyAlternateAttack(key, val);
     if (key == 'stun') return new PropertyStun(key, val);
+    if (key == 'ignoreObstacle') return new PropertyIgnoreObstacle(key, val);
     if (key == 'dots') {
       const propertyArray = [];
       let i = 0;

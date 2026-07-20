@@ -4,29 +4,29 @@ export class TowerSelector {
 
   constructor(towerViewContainer) {
     this.towerViewContainer = towerViewContainer;
-    this.towerIds = [
-      'dart-monkey',
-      'boomerang-monkey',
-      'bomb-shooter',
-      'tack-shooter',
-      'ice-monkey',
-      'glue-gunner',
-      'sniper-monkey',
-      'monkey-sub',
-      'monkey-buccaneer',
-      'monkey-ace',
-      'heli-pilot',
-      "mortar-monkey",
-      "dartling-gunner",
-      "wizard-monkey",
-      "super-monkey",
-      "ninja-monkey",
-      "alchemist",
-      "druid",
-      "monkey-village",
-      'banana-farm',
-      "spike-factory",
-      "engineer-monkey"
+    this.towerInfo = [
+      { id: "dart-monkey", category: "primary" },
+      { id: "boomerang-monkey", category: "primary" },
+      { id: "bomb-shooter", category: "primary" },
+      { id: "tack-shooter", category: "primary" },
+      { id: "ice-monkey", category: "primary" },
+      { id: "glue-gunner", category: "primary" },
+      { id: "sniper-monkey", category: "military" },
+      { id: "monkey-sub", category: "military" },
+      { id: "monkey-buccaneer", category: "military" },
+      { id: "monkey-ace", category: "military" },
+      { id: "heli-pilot", category: "military" },
+      { id: "mortar-monkey", category: "military" },
+      { id: "dartling-gunner", category: "military" },
+      { id: "wizard-monkey", category: "magic" },
+      { id: "super-monkey", category: "magic" },
+      { id: "ninja-monkey", category: "magic" },
+      { id: "alchemist", category: "magic" },
+      { id: "druid", category: "magic" },
+      { id: "monkey-village", category: "support" },
+      { id: "banana-farm", category: "support" },
+      { id: "spike-factory", category: "support" },
+      { id: "engineer-monkey", category: "support" }
     ];
   }
 
@@ -45,22 +45,22 @@ export class TowerSelector {
     arrowRight.src = '/media/icons/arrow-right.png';
     arrowRight.classList.add('tower-selector-arrow');
 
-    this.towerIds.forEach((id) => {
+    this.towerInfo.forEach((info) => {
       const button = document.createElement('button');
       const img = document.createElement('img');
       button.append(img);
-      button.classList.add('tower-selector-button');
+      button.classList.add('tower-selector-button', `category-button-${info.category}`);
       button.addEventListener('click', async () => {
-        const tower = await Tower.loadTower(id);
+        const tower = await Tower.loadTower(info.id);
         const towerHTML = await tower.toHTML('000', this.towerViewContainer);
         this.towerViewContainer.replaceChildren(towerHTML);
         history.replaceState(
-          { id },
+          { info },
           "",
-          `/pages/popology.html?id=${encodeURIComponent(id)}`
+          `/pages/popology.html?id=${encodeURIComponent(info.id)}`
         );
       });
-      img.src = '/media/tower-portraits/' + id + '/000.png';
+      img.src = '/media/tower-portraits/' + info.id + '/000.png';
       img.classList.add('tower-selector-image');
       buttonContainer.append(button);
     });

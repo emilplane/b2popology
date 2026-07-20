@@ -1,6 +1,7 @@
 {
   "name": "Spike Factory",
   "id": "spike-factory",
+  "category" : "support",
   "properties": {
     "unlockCost": 1000,
     "size": [

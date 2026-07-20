@@ -1,6 +1,7 @@
 {
   "name": "Engineer Monkey",
   "id": "engineer-monkey",
+  "category" : "support",
   "properties": {
     "unlockCost": 1000,
     "size": [

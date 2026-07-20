@@ -1,6 +1,7 @@
 {
   "name": "Dartling Gunner",
   "id": "dartling-gunner",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

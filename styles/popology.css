@@ -16,6 +16,14 @@
   --outline-blue: #4499DD;
   --outline-red: #FF0000;
   --outline-yellow: #FFFF00;
+  --category-primary: #446699;
+  --category-military: #558811;
+  --category-magic: #772277;
+  --category-support: #885511;
+  --category-primary-hover: #5599CC;
+  --category-military-hover: #88BB22;
+  --category-magic-hover: #AA22AA;
+  --category-support-hover: #BB8822;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +45,14 @@
     --outline-blue: #2266CC;
     --outline-red: #FF0000;
     --outline-yellow: #FFFF00;
+    --category-primary: #446699;
+    --category-military: #558811;
+    --category-magic: #772277;
+    --category-support: #885511;
+    --category-primary-hover: #5599CC;
+    --category-military-hover: #88BB22;
+    --category-magic-hover: #AA22AA;
+    --category-support-hover: #BB8822;
   }
 }
 
@@ -274,4 +290,33 @@ h5 {
   padding: 0 0 4px 0;
   margin: 4px 0 0 0;
   width: 98%;
+}
+
+.category-button-primary {
+  background-color: var(--category-primary);
+}
+
+.category-button-primary:hover {
+  background-color: var(--category-primary-hover);
+}
+.category-button-military {
+  background-color: var(--category-military);
+}
+
+.category-button-military:hover {
+  background-color: var(--category-military-hover);
+}
+.category-button-magic {
+  background-color: var(--category-magic);
+}
+
+.category-button-magic:hover {
+  background-color: var(--category-magic-hover);
+}
+.category-button-support {
+  background-color: var(--category-support);
+}
+
+.category-button-support:hover {
+  background-color: var(--category-support-hover);
 }

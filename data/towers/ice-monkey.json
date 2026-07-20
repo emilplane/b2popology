@@ -1,6 +1,7 @@
 {
   "name": "Ice Monkey",
   "id": "ice-monkey",
+  "category" : "primary",
   "properties": {
     "unlockCost": 150,
     "size": [
@@ -12,52 +13,286 @@
     {
       "path": "000",
       "name": "Base",
-      "cost": 450
+      "cost": 450,
+      "attacks" : [
+        {
+          "id" : "freeze",
+          "name" : "Freeze",
+          "properties" : {
+            "damage" : 1,
+            "cooldown" : 2.4,
+            "pierce" : 40,
+            "range" : {
+              "value" : 20,
+              "attribute" : "aoe"
+            },
+            "damageType" : "cold",
+            "cantTarget" : [ "blimps" ],
+            "freeze" : {
+              "duration" : 1.5,
+              "soak" : 1,
+              "targetBlimp" : false
+            }
+          }
+        }
+      ]
     },
     {
       "path": "100",
       "name": "Permafrost",
-      "cost": 100
+      "cost": 100,
+      "buffs" : [
+        {
+          "type" : "freeze",
+          "operation" : "append",
+          "value" : {
+            "slow" : 0.5,
+            "slowBlimps" : 0.25
+          },
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ]
     },
     {
       "path": "200",
       "name": "Cold Snap",
-      "cost": 350
+      "cost": 350,
+      "buffs" : [
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "glacier",
+          "affectedAttacks" : [ "all" ]
+        },
+        {
+          "type" : "camo",
+          "operation" : "set",
+          "value" : true,
+          "affectedAttacks" : [ "all" ]
+        }
+      ]
     },
     {
       "path": "300",
       "name": "Ice Shards",
-      "cost": 2000
+      "cost": 2000,
+      "buffs" : [
+        {
+          "type" : "summonAttack",
+          "operation" : "append",
+          "value" : {
+              "attackId" : "shards",
+              "type" : [ "onProc" ]
+            },
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "appendAttack",
+          "affectedAttacks" : [ "freeze" ],
+          "value" : {
+            "id" : "shards",
+            "properties" : {
+              "damage" : 1,
+              "projectiles" : 3,
+              "impactPierce" : 3,
+              "damageType" : "shatter",
+              "attackType" : "shards"
+            }
+          }
+        }
+      ]
     },
     {
       "path": "400",
       "name": "Embrittlement",
-      "cost": 2700
+      "cost": 2700,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 5,
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "debuff",
+          "operation" : "set",
+          "affectedAttacks" : [ "freeze" ],
+          "value" : [
+            {
+              "debuffType" : "degrow"
+            },
+            {
+              "debuffType" : "decamo"
+            },
+            {
+              "id" : "brittle",
+              "debuffType" : "damage",
+              "debuffValue" : 1,
+              "debuffDuration" : 2.0,
+              "cantStack" : [ "super-brittle" ]
+            },
+            {
+              "id" : "brittle",
+              "debuffType" : "damage",
+              "debuffValue" : 1,
+              "debuffDuration" : 2.0,
+              "cantStack" : [ "super-brittle" ]
+            },
+            {
+              "debuffType" : "noImmunity",
+              "debuffDuration" : 2.0
+            }
+          ]
+        },
+        {
+          "type" : "cantTarget",
+          "operation": "remove",
+          "value" : "blimps",
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "debuff",
+          "operation" : "set",
+          "affectedAttacks" : [ "shards" ],
+          "value" : [
+            {
+              "debuffType" : "degrow"
+            },
+            {
+              "debuffType" : "decamo"
+            }
+          ]
+        }
+      ]
     },
     {
       "path": "500",
       "name": "Super Brittle",
-      "cost": 34000
+      "cost": 34000,
+      "buffs": [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.9,
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "debuff",
+          "operation" : "remove",
+          "value" : "brittle",
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "debuff",
+          "operation" : "append",
+          "value" :  {
+            "id" : "super-brittle",
+            "debuffType" : "damage",
+            "debuffValue" : 4,
+            "debuffDuration" : 2.0,
+            "cantStack" : [ "brittle" ]
+          },
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ]
     },
     {
       "path": "010",
       "name": "Enhanced Freeze",
-      "cost": 225
+      "cost": 225,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.75,
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "freeze",
+          "operation" : "add",
+          "value" : {
+            "duration" : 0.7
+          },
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ]
     },
     {
       "path": "020",
       "name": "Deep Freeze",
-      "cost": 350
+      "cost": 350,
+      "buffs" : [
+        {
+          "type" : "freeze",
+          "operation" : "add",
+          "value" : {
+            "soak" : 1
+          },
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ]
     },
     {
       "path": "030",
       "name": "Arctic Wind",
-      "cost": 2900
+      "cost": 2900,
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 60,
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ],
+      "attacks" : [
+        {
+          "id" : "slow",
+          "name" : "Slow",
+          "properties" : {
+            "range" : 35,
+            "areaSlow" : 60,
+            "cantTarget" : [ "blimps" ],
+            "notes" : [ "land towers become placeable on water in range" ]
+          }
+        }
+      ]
     },
     {
       "path": "040",
       "name": "Snowstorm",
-      "cost": 4000
+      "cost": 4000,
+      "buffs" : [
+        {
+          "type" : "freeze",
+          "operation" : "add",
+          "value" : {
+            "duration" : 0.8
+          },
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ],
+      "abilities" : [
+        {
+          "id" : "snowstorm",
+          "name" : "Snowstorm",
+          "properties" : {
+            "cooldown" : 30,
+            "duration" : 8
+          }
+        }
+      ]
     },
     {
       "path": "050",

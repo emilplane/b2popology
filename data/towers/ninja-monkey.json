@@ -1,6 +1,7 @@
 {
   "name": "Ninja Monkey",
   "id": "ninja-monkey",
+  "category" : "magic",
   "properties": {
     "unlockCost": 750,
     "size": [

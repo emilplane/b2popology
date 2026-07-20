@@ -1,6 +1,7 @@
 {
   "name": "Druid",
   "id": "druid",
+  "category" : "magic",
   "properties": {
     "unlockCost": 750,
     "size": [

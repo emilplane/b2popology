@@ -1,6 +1,7 @@
 {
   "name": "Sniper Monkey",
   "id": "sniper-monkey",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

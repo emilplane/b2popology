@@ -1,6 +1,7 @@
 {
   "name": "Heli Pilot",
   "id": "heli-pilot",
+  "category" : "military",
   "properties": {
     "unlockCost": 500,
     "size": [

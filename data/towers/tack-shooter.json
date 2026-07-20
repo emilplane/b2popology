@@ -1,6 +1,7 @@
 {
   "id": "tackShooter",
   "name": "Tack Shooter",
+  "category" : "primary",
   "properties": {
     "unlockCost": 0,
     "size": [
@@ -130,6 +131,7 @@
 			"cooldown" : 4.0,
 			"damageType": "fire",
 			"camo" : true,
+			"ignoreObstacle": true,
 			"summonAttack" : [
               {
                 "attackId" : "meteor-explosion",
@@ -149,7 +151,6 @@
 			],
 			"notes" : [
 				"follows targeting",
-				"can see past obstacles",
 				"weak homing (100 turn rate)"
 			],
 			"embeddedAttacks" : [

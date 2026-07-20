@@ -4,9 +4,10 @@ import { PathSelector } from '/scripts/popology/ui/path-selector.js';
 
 export class Tower {
 
-  constructor(id, name, properties, upgrades) {
+  constructor(id, name, category, properties, upgrades) {
     this.id = id;
     this.name = name;
+    this.category = category;
     this.properties = properties;
     this.upgrades = upgrades;
   }
@@ -20,7 +21,7 @@ export class Tower {
     const properties = PropertiesManager.propertiesFromData(data.properties);
     const upgrades = data.upgrades.map(Upgrade.fromData);
 
-    return new Tower(data.id, data.name, properties, upgrades);
+    return new Tower(data.id, data.name, data.category, properties, upgrades);
   }
 
   async toHTML(path, parent) {

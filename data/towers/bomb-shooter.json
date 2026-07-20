@@ -1,6 +1,7 @@
 {
   "id": "bomb-shooter",
   "name": "Bomb Shooter",
+  "category" : "primary",
   "properties": {
     "unlockCost": 0,
     "size": [
