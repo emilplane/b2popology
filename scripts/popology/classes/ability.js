@@ -75,4 +75,22 @@ export class Ability {
     return rootContainer;
   }
 
+  buffedBy(buff) {
+    const ability = this.clone();
+    if (
+      (!buff.affectedAbilities.includes('EX_' + this.id)) &&
+      ((buff.affectedAbilities.includes('all')) || (buff.affectedAbilities.includes(this.id)))
+    ) {
+      let propertyToBuff = ability.properties.find(property => property.key == buff.type);
+      if (propertyToBuff == null) {
+        if (buff.operation == 'set') {
+          propertyToBuff = PropertiesManager.createProperty(buff.type, buff.value);
+          ability.properties.push(propertyToBuff);
+        }
+      }
+      if (propertyToBuff != null) propertyToBuff.applyBuff(buff);
+    }
+    return ability;
+  }
+
 }

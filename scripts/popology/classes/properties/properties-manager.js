@@ -9,12 +9,16 @@ import { PropertyCamo } from './property-camo.js';
 import { PropertyCantTarget } from './property-cant-target.js';
 import { PropertyCrit } from './property-crit.js';
 import { PropertyDamageType } from './property-damage-type.js';
+import { PropertyDebuff } from './property-debuff.js';
 import { PropertyDoT } from './property-dot.js';
+import { PropertyExternalBuff } from './property-external-buff.js';
 import { PropertyFootnote } from './property-footnote.js';
+import { PropertyFreeze } from './property-freeze.js';
 import { PropertyHidden } from './property-hidden.js';
 import { PropertyIconed } from './property-iconed.js';
 import { PropertyIgnoreObstacle } from './property-ignore-obstacle.js';
 import { PropertyKnockback } from './property-knockback.js';
+import { PropertyPercentage } from './property-percentage.js';
 import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertyStun } from './property-stun.js';
 import { PropertySummonAttack } from './property-summon-attack.js';
@@ -22,6 +26,52 @@ import { PropertyTime } from './property-time.js';
 import { PropertyUnkeyed } from './property-unkeyed.js';
 
 export class PropertiesManager {
+
+  static propertyMap = {
+    "bonusDamage": PropertyBonusDamage,
+
+    "range": PropertyAttributed,
+    "blastRadius": PropertyAttributed,
+    "pierce": PropertyAttributed,
+
+    "camo": PropertyCamo,
+    "crit": PropertyCrit,
+
+    "notes": PropertyFootnote,
+    "desc": PropertyFootnote,
+
+    "cost": PropertyIconed,
+    "unlockCost": PropertyIconed,
+    "size": PropertyIconed,
+    "placement": PropertyIconed,
+
+    "battleReady": PropertyBattleReady,
+    "projectiles": PropertyProjectiles,
+
+    "cooldown": PropertyTime,
+    "duration": PropertyTime,
+    "durationWeak": PropertyTime,
+    "tickDuration": PropertyTime,
+    "totalDuration": PropertyTime,
+    "domStun": PropertyTime,
+    "rehit": PropertyTime,
+
+    "damageType": PropertyDamageType,
+    "knockback": PropertyKnockback,
+    "cantTarget": PropertyCantTarget,
+    "alternateAttack": PropertyAlternateAttack,
+    "stun": PropertyStun,
+    "ignoreObstacle": PropertyIgnoreObstacle,
+    "freeze": PropertyFreeze,
+
+    "permaSlow": PropertyPercentage,
+    "permaSlowBlimps": PropertyPercentage,
+    "areaSlow": PropertyPercentage,
+
+    "debuff": PropertyDebuff,
+
+    "externalBuff" : PropertyExternalBuff,
+  };
 
   static propertiesFromData(data) {
     const properties = [];
@@ -36,21 +86,8 @@ export class PropertiesManager {
   }
 
   static createProperty(key, val) {
-    if (key == 'bonusDamage') return new PropertyBonusDamage(key, val);
-    if (['range', 'blastRadius', 'pierce'].includes(key)) return new PropertyAttributed(key, val);
-    if (key == 'camo') return new PropertyCamo(key, val);
-    if (key =='crit') return new PropertyCrit(key, val);
-    if (key == 'notes' || key == 'desc') return new PropertyFootnote(key, val);
-    if (['cost', 'unlockCost', 'size', 'placement'].includes(key)) return new PropertyIconed(key, val);
-    if (key == 'battleReady') return new PropertyBattleReady(key, val);
-    if (key == 'projectiles') return new PropertyProjectiles(key, val);
-    if (['cooldown', 'duration', 'tickDuration', 'totalDuration', 'domStun', 'rehit'].includes(key)) return new PropertyTime(key, val);
-    if (key == 'damageType') return new PropertyDamageType(key, val);
-    if (key == 'knockback') return new PropertyKnockback(key, val);
-    if (key == 'cantTarget') return new PropertyCantTarget(key, val);
-    if (key == 'alternateAttack') return new PropertyAlternateAttack(key, val);
-    if (key == 'stun') return new PropertyStun(key, val);
-    if (key == 'ignoreObstacle') return new PropertyIgnoreObstacle(key, val);
+    const PropertyClass = PropertiesManager.propertyMap[key];
+    if (PropertyClass != null) return new PropertyClass(key, val);
     if (key == 'dots') {
       const propertyArray = [];
       let i = 0;
@@ -82,91 +119,20 @@ export class PropertiesManager {
     return new PropertyBasic(key, val);
   }
 
-  static getContainerProperties(properties) {
-    const containerProperties = [];
+  static getProperties(properties, minorOnly) {
+    const majorProperties = [];
+    const minorProperties = [];
 
     properties.forEach((property) => {
-      if (!['notes', 'desc', 'summonAttack', 'knockback', 'crit'].includes(property.key) &&
-        (!(property instanceof PropertyDoT)) && (!(property instanceof PropertyUnkeyed))) {
-        containerProperties.push(property);
-      }
+      if (
+        ['notes', 'desc', 'summonAttack', 'knockback', 'crit', 'debuff'].includes(property.key) ||
+        property instanceof PropertyDoT ||
+        property instanceof PropertyUnkeyed
+      ) majorProperties.push(property);
+      else minorProperties.push(property);
     });
 
-    return containerProperties;
-  }
-
-  static getNoteProperties(properties) {
-    const noteProperties = [];
-
-    properties.forEach((property) => {
-      if (['notes', 'desc'].includes(property.key)) {
-        noteProperties.push(property);
-      }
-    });
-
-    return noteProperties;
-  }
-
-  static getDotProperties(properties) {
-    const dotProperties = [];
-
-    properties.forEach((property) => {
-      if (property instanceof PropertyDoT) {
-        dotProperties.push(property);
-      }
-    });
-
-    return dotProperties;
-  }
-
-  static getSummonAttackProperties(properties) {
-    const summonAttackProperties = [];
-
-    properties.forEach((property) => {
-      if (property.key == 'summonAttack') {
-        summonAttackProperties.push(property);
-      }
-    });
-
-    return summonAttackProperties;
-  }
-
-  static getUnkeyedProperties(properties) {
-    const unkeyedProperties = [];
-
-    properties.forEach((property) => {
-      if (property instanceof PropertyUnkeyed || property.key == 'crit') {
-        unkeyedProperties.push(property);
-      }
-    });
-
-    return unkeyedProperties;
-  }
-
-  static getKnockbackProperties(properties) {
-    const knockbackProperties = [];
-
-    properties.forEach((property) => {
-      if (property.key == 'knockback') {
-        knockbackProperties.push(property);
-      }
-    });
-
-    return knockbackProperties;
-  }
-
-  static sortedContainerProperties(properties) {
-    const containerProperties = PropertiesManager.getContainerProperties(properties);
-    const sortedPropeties = [];
-
-    containerProperties.forEach((property) => {
-      if (property.key != 'camo') sortedPropeties.push(property);
-    });
-
-    const camoProperty = containerProperties.find(property => property.key == 'camo');
-    if (camoProperty != null) sortedPropeties.push(camoProperty);
-
-    return sortedPropeties;
+    return minorOnly ? minorProperties : majorProperties;
   }
 
 }

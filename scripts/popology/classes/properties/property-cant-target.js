@@ -6,6 +6,11 @@ export class PropertyCantTarget extends PropertyUnkeyed {
     return new PropertyCantTarget(this.key, this.val);
   }
 
+  toHTML() {
+    if (this.val.length == 0) return null;
+    return super.toHTML();
+  }
+
   getFormattedValue() {
     let str = 'Cannot target, damage, or apply effects to:'
     for (let i = 0; i < this.val.length; i++) {

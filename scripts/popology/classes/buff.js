@@ -1,19 +1,22 @@
 export class Buff {
 
-  constructor(type, operation, value, affectedAttacks, affectedPaths) {
+  constructor(type, operation, value, affectedAttacks, affectedAbilities, affectedPaths) {
     this.type = type;
     this.operation = operation;
     this.value = value;
     this.affectedAttacks = affectedAttacks;
+    this.affectedAbilities = affectedAbilities;
     this.affectedPaths = affectedPaths;
   }
 
   static fromData(data) {
-    return new Buff(data.type, data.operation, data.value, data.affectedAttacks, data.affectedPaths);
+    if (data.affectedAbilities == null) data.affectedAbilities = [];
+    if (data.affectedAttacks == null) data.affectedAttacks = [];
+    return new Buff(data.type, data.operation, data.value, data.affectedAttacks, data.affectedAbilities, data.affectedPaths);
   }
 
   clone() {
-    return new Buff(this.type, this.operation, this.value, this.affectedAttacks, this.affectedPaths);
+    return new Buff(this.type, this.operation, this.value, this.affectedAttacks, this.affectedAbilities, this.affectedPaths);
   }
 
   toHTML() {

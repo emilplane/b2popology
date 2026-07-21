@@ -46,10 +46,18 @@
           "type" : "freeze",
           "operation" : "append",
           "value" : {
-            "slow" : 0.5,
-            "slowBlimps" : 0.25
+            "permaSlow" : 0.5
           },
           "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "freeze",
+          "operation" : "append",
+          "value" : {
+            "permaSlow" : 0.5,
+            "permaSlowBlimps" : 0.25
+          },
+          "affectedAbilities" : [ "snowstorm", "absolute-zero" ]
         }
       ]
     },
@@ -62,7 +70,13 @@
           "type" : "damageType",
           "operation" : "set",
           "value" : "glacier",
-          "affectedAttacks" : [ "all" ]
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAbilities" : [ "snowstorm" ]
         },
         {
           "type" : "camo",
@@ -129,13 +143,6 @@
             },
             {
               "debuffType" : "decamo"
-            },
-            {
-              "id" : "brittle",
-              "debuffType" : "damage",
-              "debuffValue" : 1,
-              "debuffDuration" : 2.0,
-              "cantStack" : [ "super-brittle" ]
             },
             {
               "id" : "brittle",
@@ -262,7 +269,7 @@
           "name" : "Slow",
           "properties" : {
             "range" : 35,
-            "areaSlow" : 60,
+            "areaSlow" : 0.6,
             "cantTarget" : [ "blimps" ],
             "notes" : [ "land towers become placeable on water in range" ]
           }
@@ -289,7 +296,32 @@
           "name" : "Snowstorm",
           "properties" : {
             "cooldown" : 30,
-            "duration" : 8
+            "duration" : 8,
+            "damage" : 1,
+            "pierce" : {
+              "attribute" : "infinite"
+            },
+            "range" : {
+              "attribute" : "infinite"
+            },
+            "damageType" : "shatter",
+            "camo" : true,
+            "freeze" :{
+              "duration" : 8,
+              "durationWeak" : 3,
+              "slowBlimps" : 2.25
+            },
+            "externalBuff" : {
+              "targets" : ["ice-monkey", "fusty-the-snowman" ],
+              "buffs" : [
+                {
+                  "type" : "cooldown",
+                  "operation" : "mul",
+                  "value" : 0.66666667,
+                  "affectedAttacks": [ "all" ]
+                }
+              ]
+            }
           }
         }
       ]
@@ -297,27 +329,157 @@
     {
       "path": "050",
       "name": "Absolute Zero",
-      "cost": 18000
+      "cost": 18000,
+      "abilities" : [
+        {
+          "id" : "absolute-zero",
+          "name" : "Absolute Zero",
+          "overwrites" : "snowstorm",
+          "properties" : {
+            "cooldown" : 20,
+            "duration" : 12,
+            "damage" : 1,
+            "pierce" : {
+              "attribute" : "infinite"
+            },
+            "range" : {
+              "attribute" : "infinite"
+            },
+            "damageType" : "normal",
+            "camo" : true,
+            "freeze" :{
+              "duration" : 12,
+              "slowBlimps" : 2.25
+            },
+            "externalBuff" : {
+              "targets" : ["ice-monkey", "fusty-the-snowman" ],
+              "buffs" : [
+                {
+                  "type" : "cooldown",
+                  "operation" : "mul",
+                  "value" : 0.5,
+                  "affectedAttacks": [ "all" ]
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 200,
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "areaSlow",
+          "operation" : "add",
+          "value" : 0.2,
+          "affectedAttacks" : [ "slow" ]
+        },
+        {
+          "type" : "freeze",
+          "operation" : "add",
+          "value" : {
+            "soak": 2
+          },
+          "affectedAttacks" : [ "freeze" ]
+        },
+        {
+          "type" : "cantTarget",
+          "operation" : "remove",
+          "value" : "blimps",
+          "affectedAttacks" : [ "freeze" ]
+        }
+      ]
     },
     {
       "path": "001",
       "name": "Larger Radius",
-      "cost": 100
+      "cost": 100,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 7,
+          "affectedAttacks" : [ "all" ]
+        }
+      ]
     },
     {
       "path": "002",
       "name": "Re-Freeze",
-      "cost": 200
+      "cost": 200,
+      "buffs" : [
+        {
+
+        }
+      ]
     },
     {
       "path": "003",
       "name": "Cryo Cannon",
-      "cost": 1300
+      "cost": 1300,
+      "attacks" : [
+        {
+          "id" : "ice-bomb",
+          "name" : "Ice Bomb",
+          "overwrites" : "freeze",
+          "properties" : {
+            "cooldown" : 1.15,
+            "range" : 46,
+            "cantTarget" : [ "blimps" ],
+            "summonAttack" : [
+              {
+                "attackId" : "ice-explosion",
+                "type" : [ "onContact" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "ice-explosion",
+                "properties" : {
+                  "damage" : 2,
+                  "pierce" : 30,
+                  "blastRadius" : 20,
+                  "damageType" : "glacier",
+                  "attackType" : "ice-explosion",
+                  "freeze" : {
+                    "duration" : 1.5,
+                    "soak" : 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "path": "004",
       "name": "Icicles",
-      "cost": 2900
+      "cost": 2900,
+      "buffs" : [
+        {
+          "type" : "cantTarget",
+          "operation" : "remove",
+          "value" : "blimps",
+          "affectedAttacks" : [ "ice-bomb" ]
+        },
+        {
+          "type" : "cantTarget",
+          "operation" : "remove",
+          "value" : "blimps",
+          "affectedAttacks" : [ "ice-bomb" ]
+        }
+      ]
     },
     {
       "path": "005",

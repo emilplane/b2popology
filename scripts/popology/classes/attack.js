@@ -3,10 +3,6 @@ import { PropertiesContainer } from '../ui/properties-container.js';
 
 export class Attack {
 
-  static ATTACKTYPE = {
-    "explosion" : "Explosion"
-  }
-
   constructor(id, name, overwrites, properties) {
     this.id = id;
     this.name = name;

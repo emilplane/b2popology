@@ -474,7 +474,7 @@
           "type" : "bonusDamage",
           "operation" : "add",
           "value" : {
-            "moab" : 170
+            "moab" : 160
           },
           "affectedAttacks" : [
             "base-explosion"

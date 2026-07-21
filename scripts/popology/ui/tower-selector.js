@@ -54,10 +54,11 @@ export class TowerSelector {
         const tower = await Tower.loadTower(info.id);
         const towerHTML = await tower.toHTML('000', this.towerViewContainer);
         this.towerViewContainer.replaceChildren(towerHTML);
+        const state = { "id" : info.id }
         history.replaceState(
-          { info },
+          state,
           "",
-          `/pages/popology.html?id=${encodeURIComponent(info.id)}`
+          `/pages/popology.html?id=${encodeURIComponent(state.id)}`
         );
       });
       img.src = '/media/tower-portraits/' + info.id + '/000.png';

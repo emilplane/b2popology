@@ -28,7 +28,15 @@ export class PathSelector {
       }
 
       butt.addEventListener('click', async () => {
-        const towerHTML = await this.tower.toHTML(this.combineSelected(upgrade.path), parent);
+        const combinedPath = this.combineSelected(upgrade.path);
+        const state = window.history.state;
+        state.tpath = combinedPath;
+        history.replaceState(
+          state,
+          "",
+          `/pages/popology.html?id=${encodeURIComponent(state.id)}&tpath=${encodeURIComponent(state.tpath)}`
+        );
+        const towerHTML = await this.tower.toHTML(combinedPath, parent);
         parent.replaceChildren(towerHTML);
       });
 

@@ -179,7 +179,6 @@ export class Tower {
       if (flag) filteredAttacks.push(attacks[i]);
     }
 
-
     const buffedAttacks = [];
     const buffs = this.getBuffs(path);
     for (let i = 0; i < filteredAttacks.length; i++) {
@@ -235,15 +234,25 @@ export class Tower {
       flag = true;
       for (let j = i + 1; j < abilities.length; j++) {
         if (abilities[j].overwrites == null) continue;
-          if (abilities[j].overwrites.includes(abilities[i].id)) {
-            flag = false;
-            break;
-          }
+        if (abilities[j].overwrites.includes(abilities[i].id)) {
+          flag = false;
+          break;
         }
-        if (flag) filteredAbilities.push(abilities[i]);
       }
+      if (flag) filteredAbilities.push(abilities[i]);
+    }
 
-    return filteredAbilities;
+    const buffedAbilities = [];
+    const buffs = this.getBuffs(path);
+    for (let i = 0; i < filteredAbilities.length; i++) {
+      let currentAbility = filteredAbilities[i]
+      for (let j = 0; j < buffs.length; j++) {
+        currentAbility = currentAbility.buffedBy(buffs[j]);
+      }
+      buffedAbilities.push(currentAbility);
+    }
+
+    return buffedAbilities;
   }
 
   getSubtowers(path) {

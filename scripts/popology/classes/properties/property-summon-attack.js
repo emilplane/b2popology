@@ -46,6 +46,8 @@ export class PropertySummonAttack extends Property {
       case 'onPierce': return 'when all pierce is used up';
       case 'onHalfPierce': return 'when half of its pierce is used up';
       case 'onExpiry': return 'when the attack expires';
+      case 'onProc': return 'on proc';
+      default: return `ERROR add type ${type} to summonAttack property`;
     }
   }
 
