@@ -12,6 +12,14 @@ async function main() {
   const towerId = (params.get("id") != null) ? params.get("id") : "dart-monkey"
   const towerPath = (params.get("tpath") != null) ? params.get("tpath") : "000"
 
+  const state = { "id" : towerId, "tpath" : towerPath };
+
+  history.replaceState(
+    state,
+    "",
+    `/pages/popology.html?id=${encodeURIComponent(state.id)}&tpath=${encodeURIComponent(state.tpath)}`
+  );
+
   const towerSelector = new TowerSelector(towerViewContainer);
   towerSelectorContainer.append(towerSelector.toHTML());
 

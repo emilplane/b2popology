@@ -44,6 +44,8 @@ export class Ability {
 
   toHTML() {
     const properties = Array.from(this.properties);
+
+
     const initialCooldown = properties.find(property => property.key == 'initialCooldown');
     if (initialCooldown == null || initialCooldown.val == 0) {
       properties.push(PropertiesManager.createProperty('battleReady', true));
@@ -55,6 +57,7 @@ export class Ability {
     const propertiesContainer = new PropertiesContainer(properties)
 
     propertiesContainer.addChildren(this.buffs);
+
     this.attacks.forEach((attack) => {
       attack.addFlag('noHeader');
       attack.addFlag('thirdaryBackground')

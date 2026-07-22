@@ -3,7 +3,7 @@ import { Property } from './property.js';
 export class PropertyFootnote extends Property {
 
   clone() {
-    return new PropertyFootnote(this.key, this.val);
+    return new PropertyFootnote(this.key, structuredClone(this.val));
   }
 
   toHTML() {
@@ -26,8 +26,9 @@ export class PropertyFootnote extends Property {
   applyBuff(buff) {
     switch (buff.operation) {
       case 'add':
+        console.log(this.val);
         if (Array.isArray(buff.value)) this.val = [...this.val, ...buff.value];
-        else this.val = this.val.push(buff.value);
+        else this.val.push(buff.value);
         break;
       case 'set':
         if (Array.isArray(buff.value)) this.val = buff.value;

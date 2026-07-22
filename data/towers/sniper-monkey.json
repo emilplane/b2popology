@@ -7,58 +7,311 @@
     "size": [
       6
     ],
-    "placement": 0
+    "placement": 0,
+    "intelRange" : 20
   },
   "upgrades": [
     {
       "path": "000",
       "name": "Base",
-      "cost": 300
+      "cost": 300,
+      "attacks" : [
+        {
+          "id" : "bullet",
+          "name" : "Bullet",
+          "properties" : {
+            "damage" : 2,
+            "cooldown" : 1.35,
+            "impactPierce" : 1,
+            "range" : {
+              "attribute" : "infinite"
+            },
+            "damageType" : "sharp"
+          }
+        }
+      ]
     },
     {
       "path": "100",
       "name": "Full Metal Jacket",
-      "cost": 250
+      "cost": 250,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 1
+          },
+          "affectedAttacks" : [ "bullet" ],
+          "affectedPaths" : [ "004", "005" ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "all" ]
+        }
+      ]
     },
     {
       "path": "200",
       "name": "Large Calibre",
-      "cost": 750
+      "cost": 750,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [ "shrapnel" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 1
+          },
+          "affectedAttacks" : [ "bullet" ],
+          "affectedPaths" : [ "004", "005" ]
+        }
+      ]
     },
     {
       "path": "300",
       "name": "Deadly Precision",
-      "cost": 2800
+      "cost": 2800,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 23,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "ceram" : 15
+          },
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "shrapnel" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "shrapnel" ]
+        }
+      ]
     },
     {
       "path": "400",
       "name": "Maim MOAB",
-      "cost": 5000
+      "cost": 5000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 15,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "shrapnel" ]
+        },
+        {
+          "type" : "stun",
+          "operation" : "set",
+          "value" : {
+            "stunDurations" : {
+              "moab" : 2.0,
+              "bfb" : 1.0,
+              "zomg" : 0.45,
+              "ddt" : 0.5
+            },
+            "canReapply" : true
+          },
+          "affectedAttacks" : [ "bullet", "shrapnel" ]
+        }
+      ]
     },
     {
       "path": "500",
       "name": "Cripple MOAB",
-      "cost": 34000
+      "cost": 34000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 250,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "shrapnel" ]
+        },
+        {
+          "type" : "stun",
+          "operation" : "set",
+          "value" : {
+            "stunDurations" : {
+              "moab" : 7.0,
+              "bfb" : 6.0,
+              "zomg" : 3.0,
+              "ddt" : 4.0
+            },
+            "canReapply" : true
+          },
+          "affectedAttacks" : [ "bullet", "shrapnel" ]
+        },
+        {
+          "type" : "debuff",
+          "operation" : "set",
+          "value" : [
+            {
+              "debuffTarget" : "moab",
+              "debuffType" : "damage",
+              "debuffValue" : 5,
+              "debuffDuration" : 7.0
+            },
+            {
+              "debuffTarget" : "bfb",
+              "debuffType" : "damage",
+              "debuffValue" : 5,
+              "debuffDuration" : 6.0
+            },
+            {
+              "debuffTarget" : "zomg",
+              "debuffType" : "damage",
+              "debuffValue" : 5,
+              "debuffDuration" : 3.0
+            },
+            {
+              "debuffTarget" : "ddt",
+              "debuffType" : "damage",
+              "debuffValue" : 5,
+              "debuffDuration" : 4.0
+            },
+            {
+              "debuffTarget" : "bad",
+              "debuffType" : "damage",
+              "debuffValue" : 5,
+              "debuffDuration" : 0.5
+            }
+          ],
+          "affectedAttacks" : [ "bullet", "shrapnel" ]
+        }
+      ]
     },
     {
       "path": "010",
       "name": "Night Vision Goggles",
-      "cost": 200
+      "cost": 200,
+      "buffs" : [
+        {
+          "type" : "camo",
+          "operation" : "set",
+          "value" : true,
+          "affectedAttacks" : [ "all" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "camo": 1
+          },
+          "affectedAttacks" : [ "all" ]
+        }
+      ]
     },
     {
       "path": "020",
       "name": "Shrapnel Shot",
-      "cost": 250
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "appendAttack",
+          "affectedAttacks" : [ "bullet" ],
+          "value" : {
+            "id" : "shrapnel",
+            "properties" : {
+              "damage" : 1,
+              "bonusDamage" : {
+                "camo" : 2
+              },
+              "projectiles" : [5, 45],
+              "impactPierce" : 2,
+              "damageType" : "sharp",
+              "notes" : [
+                "external damage buffs do not apply",
+                "spread centered around direction fired"
+              ],
+              "attackType" : "shrapnel"
+            }
+          }
+        },
+        {
+          "type" : "summonAttack",
+          "operation" : "append",
+          "value" : {
+            "attackId" : "shrapnel",
+            "type" : [ "onFirstHit" ]
+          },
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     },
     {
       "path": "030",
       "name": "Bouncing Bullet",
-      "cost": 2600
+      "cost": 2600,
+      "buffs" : [
+        {
+          "type" : "impactPierce",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "shrapnel" ]
+        },
+        {
+          "type" : "notes",
+          "operation" : "add",
+          "value" : "jumps to targets within 50 units",
+          "affectedAttacks" : [ "shrapnel" ]
+        }
+      ]
     },
     {
       "path": "040",
       "name": "Supply Drop",
-      "cost": 5800
+      "cost": 5800,
+      "buffs" :[
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "shrapnel" ]
+        }
+      ]
     },
     {
       "path": "050",
@@ -68,27 +321,106 @@
     {
       "path": "001",
       "name": "Fast Firing",
-      "cost": 300
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.7,
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     },
     {
       "path": "002",
       "name": "Even Faster Firing",
-      "cost": 300
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.7,
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     },
     {
       "path": "003",
       "name": "Semi-Automatic",
-      "cost": 2200
+      "cost": 2100,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.3333333333,
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     },
     {
       "path": "004",
       "name": "Full Auto Rifle",
-      "cost": 3800
+      "cost": 3800,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.5,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab": 2
+          },
+          "affectedAttacks" : [ "bullet" ]
+        },
+         {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     },
     {
       "path": "005",
       "name": "Elite Defender",
-      "cost": 14500
+      "cost": 14500,
+      "abilities" : [
+        {
+          "id" : "retaliation",
+          "name" : "Retaliation",
+          "properties" : {
+            "cooldown" : 10,
+            "duration" : 7,
+            "notes" : [ "passive: triggered bloons coming close to the exit"]
+          },
+          "buffs" : [
+            {
+              "type" : "cooldown",
+              "operation" : "mul",
+              "value" : 0.25,
+              "affectedAttacks" : [ "bullet" ]
+            }
+          ]
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.5,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "notes",
+          "operation" : "set",
+          "value" : "additionally shoots x% faster, where x% is how far along the track the furthest forward bloon is",
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     }
   ]
 }

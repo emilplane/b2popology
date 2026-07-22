@@ -7,7 +7,8 @@ export class PropertyBonusDamage extends Property {
     ceram : "Ceramic",
     lead : "Lead",
     fort : "Fortified",
-    moab : "Moab"
+    moab : "Moab",
+    camo : "Camo"
   }
 
   clone() {

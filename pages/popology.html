@@ -11,9 +11,16 @@
   <link rel="stylesheet" type="text/css" href="/styles/tower-selector.css">
 </head>
 <body>
+  <div class="headerWrapper" id="headerWrapper"></div>
   <div id="tower-selector-container"></div>
   <div id="tower-view" class="tower-view"></div>
 </body>
+<dialog class="menu" id="menu"></dialog>
+<script type="module">
+  import { navigationBar } from "/scripts/navigation.js";
+  navigationBar('popology')
+</script>
+<script type="module" src="/scripts/hamburger.js"></script>
 <script type="module" src="/scripts/popology/main.js"></script>
 </html>
 

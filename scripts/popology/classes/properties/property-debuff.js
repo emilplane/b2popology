@@ -24,6 +24,7 @@ export class PropertyDebuff extends Property {
 
   debuffToText(debuff) {
     let str = '';
+    if (debuff.debuffTarget != null) str += `applies only to ${debuff.debuffTarget}: ` ;
     if (debuff.debuffType != null) str += debuff.debuffType;
     if (debuff.debuffValue != null) str += ` (${debuff.debuffValue})`;
     if (debuff.debuffDuration != null) str += ` for ${debuff.debuffDuration}s`;

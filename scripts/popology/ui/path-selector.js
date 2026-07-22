@@ -50,9 +50,7 @@ export class PathSelector {
       else botCont.appendChild(butt);
     });
 
-      mainCont.appendChild(topCont);
-      mainCont.appendChild(midCont);
-      mainCont.appendChild(botCont);
+      mainCont.append(topCont, midCont, botCont);
 
       return mainCont;
   }

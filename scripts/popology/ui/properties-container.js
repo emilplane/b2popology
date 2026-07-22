@@ -28,26 +28,37 @@ export class PropertiesContainer {
   }
 
   toHTML() {
-    const minorProperties = PropertiesManager.getProperties(this.properties, true);
-    const majorProperties  = PropertiesManager.getProperties(this.properties, false);
+    const minorProperties = PropertiesManager.sortProperties(this.properties, 'minor');
+    const unkeyProperties = PropertiesManager.sortProperties(this.properties, 'unkey');
+    const majorProperties = PropertiesManager.sortProperties(this.properties, 'major');
 
     const rootContainer = document.createElement('div');
-    const propertiesContainer = document.createElement('div');
+    const minorPropertiesContainer = document.createElement('div');
+    const unkeyPropertiesContainer = document.createElement('div');
 
     rootContainer.classList.add('properties-container-styler');
     rootContainer.style.backgroundColor = this.backgroundColor;
-    propertiesContainer.classList.add('properties-container');
+    minorPropertiesContainer.classList.add('properties-container');
+    unkeyPropertiesContainer.classList.add('properties-container');
 
-    rootContainer.append(propertiesContainer);
+    if (minorProperties.length != 0) rootContainer.append(minorPropertiesContainer);
+    if (unkeyProperties.length != 0) rootContainer.append(unkeyPropertiesContainer);
 
     minorProperties.forEach((property) => {
       const propertyHTML = property.toHTML(this.attack);
       if (propertyHTML == null) return;
-      if (Array.isArray(propertyHTML)) propertiesContainer.append(...propertyHTML);
-      else propertiesContainer.append(propertyHTML);
+      if (Array.isArray(propertyHTML)) minorPropertiesContainer.append(...propertyHTML);
+      else minorPropertiesContainer.append(propertyHTML);
     });
 
-    majorProperties.forEach((property) => {
+    unkeyProperties.forEach((property) => {
+      const propertyHTML = property.toHTML(this.attack);
+      if (propertyHTML == null) return;
+      if (Array.isArray(propertyHTML)) unkeyPropertiesContainer.append(...propertyHTML);
+      else unkeyPropertiesContainer.append(propertyHTML);
+    });
+
+    [...majorProperties, ...this.children].forEach((property) => {
       if (property == null) return;
       const propertiesHTML = property.toHTML(this.attack);
       if (propertiesHTML == null) return;

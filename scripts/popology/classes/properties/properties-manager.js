@@ -44,6 +44,7 @@ export class PropertiesManager {
     "unlockCost": PropertyIconed,
     "size": PropertyIconed,
     "placement": PropertyIconed,
+    "intelRange": PropertyIconed,
 
     "battleReady": PropertyBattleReady,
     "projectiles": PropertyProjectiles,
@@ -119,20 +120,28 @@ export class PropertiesManager {
     return new PropertyBasic(key, val);
   }
 
-  static getProperties(properties, minorOnly) {
+  static sortProperties(properties, group) {
     const majorProperties = [];
     const minorProperties = [];
+    const unkeyProperties = [];
 
     properties.forEach((property) => {
       if (
-        ['notes', 'desc', 'summonAttack', 'knockback', 'crit', 'debuff'].includes(property.key) ||
-        property instanceof PropertyDoT ||
-        property instanceof PropertyUnkeyed
+        ['notes', 'desc', 'summonAttack', 'knockback', 'debuff'].includes(property.key) ||
+        property instanceof PropertyDoT
       ) majorProperties.push(property);
+      else if (property instanceof PropertyUnkeyed) unkeyProperties.push(property);
       else minorProperties.push(property);
     });
 
-    return minorOnly ? minorProperties : majorProperties;
+    switch (group) {
+      case 'minor':
+        return minorProperties;
+      case 'major':
+        return majorProperties;
+      case 'unkey':
+        return unkeyProperties;
+    }
   }
 
 }
