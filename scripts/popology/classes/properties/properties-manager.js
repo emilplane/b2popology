@@ -50,6 +50,7 @@ export class PropertiesManager {
     "projectiles": PropertyProjectiles,
 
     "cooldown": PropertyTime,
+    "initialCooldown" : PropertyTime,
     "duration": PropertyTime,
     "durationWeak": PropertyTime,
     "tickDuration": PropertyTime,

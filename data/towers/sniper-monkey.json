@@ -304,11 +304,31 @@
       "path": "040",
       "name": "Supply Drop",
       "cost": 5800,
-      "buffs" :[
+      "abilities" : [
+        {
+          "id" : "supply-drop",
+          "name" : "Supply Drop",
+          "properties" : {
+            "cooldown" : 50,
+            "initialCooldown" : 15,
+            "notes" : [
+              "drops a crate worth $1750",
+              "can only be used 3 times every round"
+            ]
+          }
+        }
+      ],
+      "buffs" : [
         {
           "type" : "damageType",
           "operation" : "set",
           "value" : "normal",
+          "affectedAttacks" : [ "shrapnel" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 1,
           "affectedAttacks" : [ "shrapnel" ]
         }
       ]
@@ -316,7 +336,45 @@
     {
       "path": "050",
       "name": "Elite Sniper",
-      "cost": 14000
+      "cost": 14000,
+      "abilities" : [
+        {
+          "id" : "elite-supplies",
+          "name" : "Elite Supplies",
+          "overwrites" : "supply-drop",
+          "properties" : {
+            "cooldown" : 50,
+            "initialCooldown" : 15,
+            "notes" : [
+              "drops a crate worth $4500",
+              "can only be used 3 times every round"
+            ]
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.4,
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "summonAttack",
+          "operation" : "remove",
+          "value" : "shrapnel",
+          "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "summonAttack",
+          "operation" : "append",
+          "value" : {
+            "attackId" : "shrapnel",
+            "type" : [ "onBounce" ]
+          },
+          "affectedAttacks" : [ "bullet" ]
+        }
+      ]
     },
     {
       "path": "001",
@@ -328,6 +386,12 @@
           "operation" : "mul",
           "value" : 0.7,
           "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "add",
+          "value" : -5,
+          "affectedAbilities" : [ "supply-drop", "elite-supplies" ]
         }
       ]
     },
@@ -341,6 +405,12 @@
           "operation" : "mul",
           "value" : 0.7,
           "affectedAttacks" : [ "bullet" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "add",
+          "value" : -5,
+          "affectedAbilities" : [ "supply-drop", "elite-supplies" ]
         }
       ]
     },
