@@ -614,7 +614,6 @@
           "name" : "Superbomb",
           "properties" : {
             "range" : 40,
-            "cooldown": 1.5,
             "summonAttack" : [
               {
                 "attackId" : "super-explosion",

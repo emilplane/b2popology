@@ -128,7 +128,7 @@ export class PropertiesManager {
 
     properties.forEach((property) => {
       if (
-        ['notes', 'desc', 'summonAttack', 'knockback', 'debuff'].includes(property.key) ||
+        ['notes', 'desc', 'summonAttack', 'knockback', 'debuff', 'stun'].includes(property.key) ||
         property instanceof PropertyDoT
       ) majorProperties.push(property);
       else if (property instanceof PropertyUnkeyed) unkeyProperties.push(property);

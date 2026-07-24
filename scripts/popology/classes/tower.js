@@ -211,15 +211,17 @@ export class Tower {
     });
 
     const priorityBuffs = [];
+    const setBuffs = [];
     const normalBuffs = [];
     buffs.forEach((buff) => {
       if (buff.type == 'appendDoT' || buff.type == 'appendAttack') {
         priorityBuffs.push(buff);
       }
+      else if (buff.operation == 'set') setBuffs.push(buff);
       else normalBuffs.push(buff);
     });
 
-    const buffsMerged = [...priorityBuffs, ...normalBuffs];
+    const buffsMerged = [...priorityBuffs, ...setBuffs,...normalBuffs];
 
     return buffsMerged;
   }

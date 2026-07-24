@@ -14,62 +14,422 @@
     {
       "path": "000",
       "name": "Base",
-      "cost": 750
+      "cost": 750,
+      "attacks" : [
+        {
+          "id" : "radial-dart",
+          "name" : "Radial Dart",
+          "properties" : {
+            "damage" : 1,
+            "projectiles" : [8, 360],
+            "pierce" : 5,
+            "cooldown" : 1.5,
+            "damageType" : "sharp"
+          }
+        }
+      ]
     },
     {
       "path": "100",
       "name": "Rapid Fire",
-      "cost": 550
+      "cost": 550,
+      "buffs" :
+      [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.75,
+          "affectedAttacks" : [ "radial-dart" , "barrage-dart"]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.6,
+          "affectedAttacks" : [ "bombing-run" ]
+        }
+      ]
     },
     {
       "path": "200",
       "name": "Lots More Darts",
-      "cost": 600
+      "cost": 600,
+      "buffs" :
+      [
+        {
+          "type" : "projectiles",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "mul",
+          "value" : 1.25,
+          "affectedAttacks" : [ "barrage-dart" ]
+        }
+      ]
     },
     {
       "path": "300",
       "name": "Fighter Plane",
-      "cost": 1000
+      "cost": 1000,
+      "attacks" : [
+        {
+          "id" : "moab-missile",
+          "name" : "Moab Missile",
+          "properties" : {
+            "projectiles" : 2,
+            "cooldown" : 3.0,
+            "cantTarget" : ["bloons"],
+            "summonAttack" :
+            [
+              {
+                "attackId" : "moab-missile-explosion",
+                "type" : [ "onContact" ]
+              }
+            ],
+            "embeddedAttacks" :
+            [
+              {
+                "id" : "moab-missile-explosion",
+                "properties" : {
+                  "damage" : 20,
+                  "pierce" : 4,
+                  "blastRadius" : 12,
+                  "cantTarget" : ["bloons"],
+                  "damageType" : "normal",
+                  "attackType" : "explosion"
+                }
+              }
+            ],
+            "notes" : [ "moderate homing (accelerates from a starting turn rate of 25 up to 400, accelerating projectile speed as well)" ]
+          }
+        }
+      ]
     },
     {
       "path": "400",
       "name": "Operation: Dart Storm",
-      "cost": 3000
+      "cost": 3000,
+      "buffs" :[
+        {
+          "type" : "projectiles",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.48,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.5,
+          "affectedAttacks" : [ "moab-missile" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 6,
+          "affectedAttacks" : [ "moab-missile-explosion" ]
+        }
+      ]
     },
     {
       "path": "500",
       "name": "Sky Shredder",
-      "cost": 40000
+      "cost": 40000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : { "ceram" : 2 },
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "projectiles",
+          "operation" : "add",
+          "value" : 16,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 5,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.5,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 224,
+          "affectedAttacks" : [ "moab-missile-explosion" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [ "moab-missile-explosion" ]
+        },
+        {
+          "type" : "blastRadius",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [ "moab-missile-explosion" ]
+        }
+      ]
     },
     {
       "path": "010",
       "name": "Exploding Pineapple",
-      "cost": 200
+      "cost": 200,
+      "attacks" : [
+        {
+          "id" : "pineapple",
+          "name" : "Pineapple",
+          "properties" : {
+            "cooldown" : 2.0,
+            "summonAttack" : [
+              {
+                "attackId" : "pineapple-explosion",
+                "type" : [ "onExpiry" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "pineapple-explosion",
+                "properties" : {
+                  "damage" : 1,
+                  "pierce" : 20,
+                  "blastRadius" : 25,
+                  "cooldown" : 2.0,
+                  "damageType" : "explosion",
+                  "attackType" : "explosion"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "moab-missile-explosion" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 15,
+          "affectedAttacks" : [ "barrage-bomb-explosion" ]
+        },
+        {
+          "type" : "blastRadius",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "barrage-bomb-explosion" ]
+        }
+      ]
     },
     {
       "path": "020",
       "name": "Spy Plane",
-      "cost": 350
+      "cost": 350,
+      "buffs" : [
+        {
+          "type" : "camo",
+          "operation" : "set",
+          "value" : true,
+          "affectedAttacks" : [ "all" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "camo":1
+          },
+          "affectedAttacks" : [ "barrage-dart", "barrage-bomb-explosion" ]
+        }
+      ]
     },
     {
       "path": "030",
       "name": "Bomber Ace",
-      "cost": 1100
+      "cost": 1100,
+      "attacks" : [
+        {
+          "id" : "bombing-run",
+          "name" : "Bombing Run",
+          "overwrites" : [ "pineapple" ],
+          "properties" : {
+            "cooldown" : 1.7,
+            "projectiles" : 4,
+            "summonAttack" : [
+              {
+                "attackId" : "bombing-run-explosion",
+                "type" : [ "onExpiry" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "bombing-run-explosion",
+                "properties" : {
+                  "damage" : 3,
+                  "bonusDamage" : { "camo" : 1 },
+                  "pierce" : 10,
+                  "blastRadius" : 35,
+                  "cooldown" : 1.7,
+                  "damageType" : "explosion",
+                  "attackType" : "explosion"
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "path": "040",
       "name": "Ground Zero",
-      "cost": 15000
+      "cost": 15000,
+      "abilities" : [
+        {
+          "id" : "ground-zero",
+          "name" : "Ground Zero",
+          "properties" : {
+            "cooldown" : 35
+          },
+          "attacks" : [
+            {
+              "id" : "ground-zero",
+              "properties" : {
+                "damage" : 700,
+                "pierce" : {
+                  "attribute" : "infinite"
+                },
+                "blastRadius" : {
+                  "attribute" : "infinite"
+                },
+                "damageType" : "normal"
+              }
+            }
+          ]
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 7,
+          "affectedAttacks" : [ "bombing-run-explosion" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 20,
+          "affectedAttacks" : [ "bombing-run-explosion" ]
+        }
+      ]
     },
     {
       "path": "050",
       "name": "Tsar Bomba",
-      "cost": 30000
+      "cost": 30000,
+      "abilities" : [
+        {
+          "id" : "tsar-bomba",
+          "name" : "Tsar Bomba",
+          "overwrites" : [ "ground-zero" ],
+          "properties" : {
+            "cooldown" : 35
+          },
+          "attacks" : [
+            {
+              "id" : "ground-zero",
+              "properties" : {
+                "damage" : 3000,
+                "pierce" : {
+                  "attribute" : "infinite"
+                },
+                "blastRadius" : {
+                  "attribute" : "infinite"
+                },
+                "stun" :{
+                  "stunDurations" : {
+                    "bloons" : 8.2,
+                    "moab" : 8.2,
+                    "bfb" : 8.2,
+                    "zomg" : 8.2,
+                    "ddt" : 8.2
+                  },
+                  "canReapply" : true
+                },
+                "damageType" : "normal"
+              }
+            }
+          ]
+        }
+      ],
+      "buffs" :[
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "bombing-run-explosion" ]
+        }
+      ]
     },
     {
       "path": "001",
       "name": "Sharper Darts",
-      "cost": 450
+      "cost": 450,
+      "buffs" :[
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "radial-dart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 12,
+          "affectedAttacks" : [ "pineapple-explosion" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 7,
+          "affectedAttacks" : [ "bombing-run-explosion" ]
+        }
+      ]
     },
     {
       "path": "002",
@@ -79,17 +439,117 @@
     {
       "path": "003",
       "name": "Neva-Miss Targeting",
-      "cost": 2200
+      "cost": 2200,
+      "buffs" : [
+        {
+          "type" : "homing",
+          "operation" : "set",
+          "value" : 360,
+          "affectedAttacks" : [ "radial-dart" ]
+        }
+      ]
     },
     {
       "path": "004",
       "name": "Spectre",
-      "cost": 20000
+      "cost": 20000,
+      "attacks" : [
+        {
+          "id" : "barrage-dart",
+          "name" : "Barrage Dart",
+          "overwrites" : [ "radial-dart" ],
+          "properties" : {
+            "damage" : 2,
+            "bonusDamage" : {
+              "ceram" : 2,
+              "moab" : 2
+            },
+            "pierce" : 15,
+            "cooldown" : 0.04,
+            "range": {
+              "attribute" : "infinite"
+            },
+            "homing" : 80,
+            "alternateAttack" : {
+              "attackId" : "barrage-bomb",
+              "frequency" : 2
+            },
+            "notes" : [ "always targets first" ]
+          }
+        },
+        {
+          "id" : "barrage-bomb",
+          "name" : "Barrage Bomb",
+          "properties" : {
+            "homing" : 80,
+            "summonAttack" : [
+              {
+                "attackId" : "barrage-bomb-explosion",
+                "type" : [ "onContact" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "barrage-bomb-explosion",
+                "properties" : {
+                  "damage" : 4,
+                  "bonusDamage" : {
+                    "ceram" : 2
+                  },
+                  "pierce" : 30,
+                  "blastRadius" : 20,
+                  "damageType" : "explosion",
+                  "notes" : [ "always targets first" ],
+                  "attackType" : "explosion"
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "path": "005",
       "name": "Flying Fortress",
-      "cost": 75000
+      "cost": 75000,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.75,
+          "affectedAttacks" : [ "barrage-dart" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [ "barrage-dart" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "barrage-bomb-explosion" ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "barrage-dart" , "barrage-bomb-explosion" ]
+        },
+        {
+          "type" : "projectiles",
+          "operation" : "set",
+          "value" : 3,
+          "affectedAttacks" : [ "barrage-dart" , "barrage-bomb-explosion" ]
+        },
+        {
+          "type" : "notes",
+          "operation" : "set",
+          "value" : [ "each projectile has a different targeting: first, last, and strong" ],
+          "affectedAttacks" : [ "barrage-dart" , "barrage-bomb-explosion" ]
+        }
+      ]
     }
   ]
 }
