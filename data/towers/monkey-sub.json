@@ -13,82 +13,557 @@
     {
       "path": "000",
       "name": "Base",
-      "cost": 325
+      "cost": 325,
+      "attacks" : [
+        {
+          "id" : "dart",
+          "name" : "Dart",
+          "properties" : {
+            "damage" : 1,
+            "pierce" : 2,
+            "range" : 42,
+            "cooldown" : 0.75,
+            "homing" : 360,
+            "damageType" : "sharp"
+          }
+        }
+      ]
     },
     {
       "path": "100",
       "name": "Longer Range",
-      "cost": 130
+      "cost": 130,
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [ "dart" ]
+        }
+      ]
     },
     {
       "path": "200",
       "name": "Advanced Intel",
-      "cost": 500
+      "cost": 500,
+      "buffs" : [
+        {
+          "type" : "notes",
+          "operation" : "add",
+          "affectedAttacks" : [ "dart", "airburst", "missile" ],
+          "value" : [
+            "can target anything in the visible range circle of any tower - usually the range of the primary attack",
+            "a projectile can see camo if aiming at the range of a tower that can see camo with its primary attack, so, any tower that \"gains camo detection\""
+          ]
+        }
+      ]
     },
     {
       "path": "300",
       "name": "Submerge and Support",
-      "cost": 950
+      "cost": 950,
+      "attacks" : [
+        {
+          "id" : "sonar",
+          "name" : "Sonar",
+          "properties" : {
+            "pierce" : 75,
+            "range" : {
+              "value" : 52,
+              "attribute" : "aoe"
+            },
+            "cooldown" : 1.2,
+            "debuff" : [
+              {
+                "debuffType" : "decamo"
+              }
+            ],
+            "notes" : [ "active only on submerge targeting" ]
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "notes",
+          "operation" : "add",
+          "affectedAttacks" : [ "dart", "airburst" ],
+          "value" : [ "disabled when targeting is set to submerge" ]
+        }
+      ]
     },
     {
       "path": "400",
       "name": "Bloontonium Reactor",
-      "cost": 2800
+      "cost": 2800,
+      "attacks" : [
+        {
+          "id" : "radioactive",
+          "name" : "Radioactive",
+          "properties" : {
+            "damage" : 1,
+            "pierce" : 30,
+            "range" : {
+              "value" : 52,
+              "attribute" : "aoe"
+            },
+            "cooldown" : 0.4,
+            "damageType" : "shatter",
+            "notes" : [
+            "active only on submerge targeting",
+            "while submerged, abilities of water towers in range -15% cooldown time"
+            ]
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "set",
+          "value" : 0.4,
+          "affectedAttacks" : [ "sonar" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "set",
+          "value" : 150,
+          "affectedAttacks" : [ "sonar" ]
+        }
+      ]
     },
     {
       "path": "500",
       "name": "Energizer",
-      "cost": 32000
+      "cost": 32000,
+       "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "set",
+          "value" : 1000,
+          "affectedAttacks" : [ "sonar", "radioactive" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 4,
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {"ceram" : 10},
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "notes",
+          "operation" : "set",
+          "value" : [
+          "active only on submerge targeting",
+          "while submerged, abilities of water towers in range have -50% cooldown time, all other abilities have -20% cooldown time",
+          "hero in range gains +75% XP",
+          "hero upgrade cost reduced by 42.8571%"
+          ],
+          "affectedAttacks" : [ "radioactive" ]
+        }
+      ]
     },
     {
       "path": "010",
       "name": "Barbed Darts",
-      "cost": 300
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "dart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "mul",
+          "value" : 1.2,
+          "affectedAttacks" : [ "sonar" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 5,
+          "affectedAttacks" : [ "radioactive" ],
+          "affectedPaths" : [ "400" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 200,
+          "affectedPaths" : [ "500" ],
+          "affectedAttacks" : [ "radioactive" ]
+        }
+      ]
     },
     {
       "path": "020",
       "name": "Heat-tipped Darts",
-      "cost": 300
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "dart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "mul",
+          "value" : 1.25,
+          "affectedAttacks" : [ "sonar" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 15,
+          "affectedPaths" : [ "400" ],
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : { "lead" : 1 },
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "damageType",
+          "operation" : "set",
+          "value" : "normal",
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 300,
+          "affectedPaths" : [ "500" ],
+          "affectedAttacks" : [ "radioactive" ]
+        }
+      ]
     },
     {
       "path": "030",
       "name": "Ballistic Missile",
-      "cost": 1600
+      "cost": 1600,
+      "attacks" :
+      [
+        {
+          "id" : "missile",
+          "name" : "Missile",
+          "properties" : {
+            "range" : 50,
+            "cooldown" : 1.105,
+            "summonAttack" : [
+              {
+                "attackId" : "balli-explosion",
+                "type" : [ "onExpiry" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "balli-explosion",
+                "properties" :
+                {
+                  "damage" : 2,
+                  "bonusDamage" : {
+                    "ceram" : 5,
+                    "moab" : 5
+                  },
+                  "pierce" : 50,
+                  "blastRadius" : 18,
+                  "damageType" : "explosion",
+                  "attackType" : "explosion"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 8,
+          "affectedAttacks" : [ "dart" ]
+        }
+      ]
     },
     {
       "path": "040",
       "name": "First Strike Capability",
-      "cost": 15000
+      "cost": 15000,
+      "abilities" : [
+        {
+          "id" : "first-strike",
+          "name" : "First Strike",
+          "properties" : {
+            "cooldown" : 60,
+            "damage" : 7000,
+            "range" : { "attribute" : "infinite" },
+            "damageType" : "normal",
+            "camo" : true,
+            "targetPriority" : "strong",
+            "notes" : [ "penetrates blimp layers" ],
+            "summonAttack" : [
+              {
+                "attackId" : "fs-explosion",
+                "type" : [ "onContact" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "fs-explosion",
+                "properties" : {
+                  "damage" : 200,
+                  "pierce" : 80,
+                  "blastRadius" : 65,
+                  "damageType" : "normal",
+                  "notes" : [ "penetrates blimp layers" ],
+                  "attackType" : "explosion"
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "path": "050",
       "name": "Pre-emptive Strike",
-      "cost": 30000
+      "cost": 30000,
+      "abilities" : [
+        {
+          "id" : "premp",
+          "name" : "Pre-emptive Strike",
+          "properties" : {
+            "damage": 1000,
+            "damageType" : "normal",
+            "camo" : true,
+            "battleReady" : false,
+            "desc": ["triggered by a blimp entering the map"]
+          }
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "set",
+          "value" : 0.5,
+          "affectedAttacks" : [ "missile" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 8,
+          "affectedAttacks" : [ "balli-explosion" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "ceram" :9,
+            "moab" : 9
+          },
+          "affectedAttacks" : [ "balli-explosion" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "set",
+          "value" : 30,
+          "affectedAbilities" : [ "first-strike" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 4000,
+          "affectedAbilities" : [ "first-strike" ]
+        }
+      ]
     },
     {
       "path": "001",
       "name": "Twin Guns",
-      "cost": 300
+      "cost": 300,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.5,
+          "affectedAbilities" : [ "dart" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.85,
+          "affectedAttacks" : [ "sonar" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.75,
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.9,
+          "affectedAttacks" : [ "missile" ]
+        }
+      ]
     },
     {
       "path": "002",
       "name": "Airburst Darts",
-      "cost": 800
+      "cost": 800,
+      "attacks" :
+      [
+        {
+          "id" : "airburst",
+          "name" : "Airburst",
+          "overwrites" : [ "dart" ],
+          "properties" : {
+            "damage" : 1,
+            "impactPierce" : 1,
+            "range" : 42,
+            "cooldown": 0.375,
+            "damageType" : "sharp",
+            "summonAttack" : [
+              {
+                "attackId" : "subdart",
+                "type" : [ "onContact", "onExpiry" ]
+              }
+            ],
+            "embeddedAttacks" : [
+              {
+                "id" : "subdart",
+                "properties" : {
+                  "damage" : 1,
+                  "pierce" : 2,
+                  "projectiles" : [3, 75],
+                  "damageType" : "sharp",
+                  "attackType" : "sub darts"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "buffs" :
+      [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.75,
+          "affectedAttacks" : [ "sonar" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.666666667,
+          "affectedAttacks" : [ "radioactive" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.9,
+          "affectedAttacks" : [ "missile" ]
+        }
+      ]
     },
     {
       "path": "003",
       "name": "Triple Guns",
-      "cost": 800
+      "cost": 800,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.666666667,
+          "affectedAttacks" : [ "airburst" ]
+        }
+      ]
     },
     {
       "path": "004",
       "name": "Armor Piercing Darts",
-      "cost": 3200
+      "cost": 3200,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "airburst" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 2
+          },
+          "affectedAttacks" : [ "airburst" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [ "subdart" ]
+        },
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "moab" : 1
+          },
+          "affectedAttacks" : [ "subdart" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "subdart" ]
+        }
+      ]
     },
     {
       "path": "005",
       "name": "Sub Commander",
-      "cost": 25000
+      "cost": 25000,
+      "externalBuffs" : [
+        {
+        "targets" : ["monkey-sub"],
+          "buffs" : [
+            {
+              "type" : "damage",
+              "operation" : "mul",
+              "value" : 2,
+              "affectedAttacks": [ "all" ]
+            },
+            {
+              "type" : "pierce",
+              "operation" : "add",
+              "value" : 6,
+              "affectedAttacks": [ "all" ]
+            },
+            {
+              "type" : "range",
+              "operation" : "add",
+              "value" : 20,
+              "affectedAttacks": [ "all" ]
+            }
+          ]
+        }
+      ],
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.6,
+          "affectedAttacks" : [ "airburst" ]
+        }
+      ]
     }
   ]
 }

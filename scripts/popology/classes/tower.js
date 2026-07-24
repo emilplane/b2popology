@@ -31,6 +31,7 @@ export class Tower {
     const attacks = this.getAttacks(path);
     const abilities = this.getAbilities(path);
     const subtowers = this.getSubtowers(path);
+    const externalBuffs = this.getExternalBuffs(path);
     const totalCost = this.getTotalCost(path);
 
     const rootContainer = document.createElement('div');
@@ -62,11 +63,9 @@ export class Tower {
 
     if (totalCost) properties.push(PropertiesManager.createProperty('cost', totalCost));
 
-    properties.forEach((property) => {
-      towerPropertiesContainer.append(property.toHTML());
-    });
+    properties.forEach(property => towerPropertiesContainer.append(property.toHTML()));
 
-    if ((attacks != null) && (attacks.length > 0)) {
+    if (attacks != null && attacks.length > 0) {
       const attacksHeader = document.createElement('h3');
       const attacksContainer = document.createElement('div');
 
@@ -74,12 +73,10 @@ export class Tower {
 
       attacksHeader.textContent = 'Attacks';
 
-      attacks.forEach((attack) => {
-        attacksContainer.append(attack.toHTML());
-      });
+      attacks.forEach(attack => attacksContainer.append(attack.toHTML()));
     }
 
-    if ((abilities != null) && (abilities.length > 0)) {
+    if (abilities != null && abilities.length > 0) {
       const abilitiesHeader = document.createElement('h3');
       const abilitiesContainer = document.createElement('div');
 
@@ -87,12 +84,10 @@ export class Tower {
 
       abilitiesHeader.textContent = 'Abilities';
 
-      abilities.forEach((ability) => {
-          abilitiesContainer.append(ability.toHTML());
-        });
-      }
+      abilities.forEach(ability => abilitiesContainer.append(ability.toHTML()));
+    }
 
-    if ((subtowers != null) && (subtowers.length > 0)) {
+    if (subtowers != null && subtowers.length > 0) {
       for (const subtowerId of subtowers) {
         const subParentContainer = document.createElement('div');
 
@@ -102,6 +97,17 @@ export class Tower {
         subParentContainer.append(subtowerHTML);
         rootContainer.append(subParentContainer);
       }
+    }
+
+    if (externalBuffs != null && externalBuffs.length > 0) {
+      const ebHeader = document.createElement('h3');
+      const ebContainer = document.createElement('div');
+
+      upgradesContainer.append(ebHeader, ebContainer);
+
+      ebHeader.textContent = 'External Buffs';
+
+      externalBuffs.forEach(eb => ebContainer.append(eb.toHTML()));
     }
 
     return rootContainer;
@@ -275,6 +281,17 @@ export class Tower {
     });
 
     return subtowers
+  }
+
+  getExternalBuffs(path) {
+    const externalBuffs = [];
+    this.upgrades.forEach((upgrade) => {
+      if (this.isChildUpgrade(path, upgrade.path) && upgrade.externalBuffs) {
+        upgrade.externalBuffs.forEach(externalBuff => externalBuffs.push(externalBuff));
+      }
+    });
+
+    return externalBuffs
   }
 
   getTotalCost(path) {

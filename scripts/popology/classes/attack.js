@@ -72,7 +72,10 @@ export class Attack {
           propertyToBuff = PropertiesManager.createProperty(buff.type, {});
           attack.properties.push(propertyToBuff);
         }
-        if (buff.operation == 'append' && buff.type == 'summonAttack') {
+        if (
+          (buff.operation == 'append' && buff.type == 'summonAttack') ||
+          buff.operation == 'add' && buff.type == 'notes'
+        ) {
           propertyToBuff = PropertiesManager.createProperty(buff.type, []);
           attack.properties.push(propertyToBuff);
         }

@@ -1,10 +1,11 @@
 import { Attack } from './attack.js';
 import { Buff } from './buff.js';
-import { Ability } from './ability.js'
+import { Ability } from './ability.js';
+import { PropertiesManager } from './properties/properties-manager.js';
 
 export class Upgrade {
 
-  constructor(path, name, cost, attacks, buffs, abilities, subtowers, metadata) {
+  constructor(path, name, cost, attacks, buffs, abilities, subtowers, externalBuffs, metadata) {
     this.path = path;
     this.name = name;
     this.cost = cost;
@@ -12,6 +13,7 @@ export class Upgrade {
     this.buffs = buffs;
     this.abilities = abilities;
     this.subtowers = subtowers;
+    this.externalBuffs = externalBuffs;
     this.metadata = metadata
   }
 
@@ -19,8 +21,12 @@ export class Upgrade {
     const attacks = (data.attacks || []).map(Attack.fromData);
     const buffs = (data.buffs || []).map(Buff.fromData);
     const abilities = (data.abilities || []).map(Ability.fromData);
+    const ebs = [];
 
-    return new Upgrade(data.path, data.name, data.cost, attacks, buffs, abilities, data.subtowers, data.metadata);
+    if (data.externalBuffs == null);
+    else data.externalBuffs.forEach(eb => ebs.push(PropertiesManager.createProperty('externalBuff', eb)));
+
+    return new Upgrade(data.path, data.name, data.cost, attacks, buffs, abilities, data.subtowers, ebs, data.metadata);
   }
 
 }

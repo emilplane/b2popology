@@ -47,14 +47,15 @@ export class Ability {
 
 
     const initialCooldown = properties.find(property => property.key == 'initialCooldown');
-    if (initialCooldown == null || initialCooldown.val == 0) {
+    const battleReady = properties.find(property => property.key == 'battleReady');
+    if ((initialCooldown == null || initialCooldown.val == 0) && !(battleReady != null && battleReady.val == false)) {
       properties.push(PropertiesManager.createProperty('battleReady', true));
     }
 
     const rootContainer = document.createElement('div');
     const abilityName = document.createElement('h4');
     const centerContainer = document.createElement('div');
-    const propertiesContainer = new PropertiesContainer(properties)
+    const propertiesContainer = new PropertiesContainer(properties, this)
 
     propertiesContainer.addChildren(this.buffs);
 

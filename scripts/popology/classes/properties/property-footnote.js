@@ -26,7 +26,6 @@ export class PropertyFootnote extends Property {
   applyBuff(buff) {
     switch (buff.operation) {
       case 'add':
-        console.log(this.val);
         if (Array.isArray(buff.value)) this.val = [...this.val, ...buff.value];
         else this.val.push(buff.value);
         break;
