@@ -36,7 +36,30 @@
     {
       "path": "200",
       "name": "Laser Shock",
-      "cost": 600
+      "cost": 600,
+      "buffs" : [
+        {
+          "type" : "bonusDamage",
+          "operation" : "add",
+          "value" : {
+            "laser" : 1
+          },
+          "affectedAttacks" : [ "all" ]
+        },
+        {
+          "type" : "appendDoT",
+          "value" : {
+            "name" : "laser",
+            "properties" : {
+              "damage" : 1,
+              "damageType" : "sharp",
+              "tickDuration" : 0.95,
+              "totalDuration" : 1.0
+            }
+          },
+          "affectedAttacks" : [ "all" ]
+        }
+      ]
     },
     {
       "path": "300",
@@ -273,12 +296,52 @@
     {
       "path": "004",
       "name": "Bloon Area Denial System",
-      "cost": 16000
+      "cost": 16000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [ "buckshot" ]
+        },
+        {
+          "type" : "attackCount",
+          "operation" : "set",
+          "value" : 4,
+          "affectedAttacks" : [ "buckshot" ]
+        }
+      ]
     },
     {
       "path": "005",
       "name": "Bloon Exclusion Zone",
-      "cost": 50000
+      "cost": 50000,
+      "buffs" : [
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "buckshot" ]
+        },
+        {
+          "type" : "projectiles",
+          "operation" : "add",
+          "value" : 6,
+          "affectedAttacks" : [ "buckshot" ]
+        },
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "buckshot" ]
+        },
+        {
+          "type" : "attackCount",
+          "operation" : "add",
+          "value" : 2,
+          "affectedAttacks" : [ "buckshot" ]
+        }
+      ]
     }
   ]
 }

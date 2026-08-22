@@ -10,7 +10,8 @@ export class PropertyBonusDamage extends Property {
     moab : "Moab",
     camo : "Camo",
     stun : "Stunned Bloon",
-    bad : "BAD"
+    bad : "BAD",
+    laser : "Lasered Bloon"
   }
 
   clone() {

@@ -4,9 +4,10 @@ import { PropertiesContainer } from "../ui/properties-container.js";
 export class DoT {
 
   static COLORS = {
-    "burn" : "red",
+    "burn" : "orange",
     "shred" : "purple",
-    "corrosive glue" : "yellow"
+    "corrosive glue" : "yellow",
+    "laser" : "red"
   }
 
   constructor(name, properties, metadata) {
