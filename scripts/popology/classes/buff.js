@@ -53,7 +53,8 @@ export class Buff {
 
     if (this.affectedAttacks) {
       if (this.affectedAttacks.includes('all')) {
-        str += 'all attacks excluding ';
+        str += 'all attacks ';
+        if (this.affectedAttacks.length > 1) str =+ 'excluding ';
         for (let i = 0; i < this.affectedAttacks.length; i++) {
           if (this.affectedAttacks[i] == 'all') continue;
           str += this.affectedAttacks[i].slice(3);

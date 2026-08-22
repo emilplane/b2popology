@@ -13,47 +13,176 @@
     {
       "path": "000",
       "name": "Base",
-      "cost": 350
+      "cost": 350,
+      "attacks" : [
+        {
+          "id" : "shuriken",
+          "name" : "Shuriken",
+          "properties" : {
+            "damage" : 1,
+            "camo" : true,
+            "pierce" : 3,
+            "range" : 40,
+            "cooldown" : 0.62,
+            "damageType" : "sharp"
+          }
+        }
+      ]
     },
     {
       "path": "100",
       "name": "Ninja Discipline",
-      "cost": 150
+      "cost": 150,
+      "buffs" : [
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.7,
+          "affectedAttacks" : [ "all" ]
+        },
+        {
+          "type" : "range",
+          "operation" : "mul",
+          "value" : 1.175,
+          "affectedAttacks" : [ "all" ]
+        }
+      ]
     },
     {
       "path": "200",
       "name": "Sharp Shurikens",
-      "cost": 200
+      "cost": 200,
+      "buffs" : [
+        {
+          "type" : "pierce",
+          "operation" : "add",
+          "value" : 1,
+          "affectedAttacks" : [ "shuriken" ]
+        }
+      ]
     },
     {
       "path": "300",
       "name": "Double Shot",
-      "cost": 700
+      "cost": 700,
+      "buffs" : [
+        {
+          "type" : "projectiles",
+          "operation" : "set",
+          "value" : [2, 30],
+          "affectedAttacks" : [ "shuriken" ]
+        }
+      ]
     },
     {
       "path": "400",
       "name": "Bloonjitsu",
-      "cost": 2750
+      "cost": 2750,
+      "buffs" : [
+        {
+          "type" : "projectiles",
+          "operation" : "set",
+          "value" : [5, 45],
+          "affectedAttacks" : [ "shuriken" ]
+        }
+      ]
     },
     {
       "path": "500",
       "name": "Grandmaster Ninja",
-      "cost": 35000
+      "cost": 35000,
+      "buffs" : [
+        {
+          "type" : "projectiles",
+          "operation" : "set",
+          "value" : [8, 60],
+          "affectedAttacks" : [ "shuriken" ]
+        },
+        {
+          "type" : "cooldown",
+          "operation" : "mul",
+          "value" : 0.5,
+          "affectedAttacks" : [ "shuriken" ]
+        },
+        {
+          "type" : "damage",
+          "operation" : "add",
+          "value" : 3,
+          "affectedAttacks" : [ "shuriken" ]
+        },
+        {
+          "type" : "range",
+          "operation" : "add",
+          "value" : 10,
+          "affectedAttacks" : [ "shuriken" ]
+        }
+      ]
     },
     {
       "path": "010",
       "name": "Distraction",
-      "cost": 200
+      "cost": 200,
+      "buffs" : [
+        {
+          "type" : "knockbackMin",
+          "operation" : "set",
+          "value" : 100,
+          "affectedAttacks" : [ "shuriken" ]
+        },
+        {
+          "type" : "knockbackMax",
+          "operation" : "set",
+          "value" : 150,
+          "affectedAttacks" : [ "shuriken" ]
+        },
+        {
+          "type" : "knockbackChance",
+          "operation" : "set",
+          "value" : "25%",
+          "affectedAttacks" : [ "shuriken" ]
+        }
+      ]
     },
     {
       "path": "020",
       "name": "Counter-Espionage",
-      "cost": 375
+      "cost": 375,
+      "buffs" : [
+        {
+          "type" : "debuff",
+          "operation" : "set",
+          "value" : [
+            {
+              "debuffType" : "decamo"
+            }
+          ],
+          "affectedAttacks" : [ "shuriken" ]
+        }
+      ]
     },
     {
       "path": "030",
       "name": "Shinobi Tactics",
-      "cost": 2100
+      "cost": 2100,
+      "externalBuffs" : [
+              {
+                "targets" : [ "ninjas in range up to 15 stacks" ],
+                "buffs" : [
+                  {
+                    "type" : "cooldown",
+                    "operation" : "mul",
+                    "value" : 0.9,
+                    "affectedAttacks": [ "all" ]
+                  },
+                  {
+                    "type" : "pierce",
+                    "operation" : "add",
+                    "value" : "10% * unbuffed pierce",
+                    "affectedAttacks": [ "all" ]
+                  }
+                ]
+              }
+            ]
     },
     {
       "path": "040",
