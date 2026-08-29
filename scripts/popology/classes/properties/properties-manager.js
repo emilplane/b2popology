@@ -9,6 +9,7 @@ import { PropertyBonusDamage } from './property-bonus-damage.js';
 import { PropertyCamo } from './property-camo.js';
 import { PropertyCantTarget } from './property-cant-target.js';
 import { PropertyCrit } from './property-crit.js';
+import { PropertyDamageType } from './property-damage-type.js';
 import { PropertyDebuff } from './property-debuff.js';
 import { PropertyDoT } from './property-dot.js';
 import { PropertyExternalBuffs } from './property-external-buffs.js';
@@ -37,7 +38,7 @@ export class PropertiesManager {
     "range": PropertyIconed,
     "blastRadius": PropertyIconed,
     "pierce": PropertyIconed,
-    "damageType": PropertyIconed,
+    "damageType": PropertyDamageType,
 
     "camo": PropertyCamo,
     "crit": PropertyCrit,

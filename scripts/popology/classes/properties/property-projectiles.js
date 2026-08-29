@@ -1,6 +1,6 @@
-import { PropertyBasic } from './property-basic.js';
+import { PropertyIconed } from './property-iconed.js';
 
-export class PropertyProjectiles extends PropertyBasic {
+export class PropertyProjectiles extends PropertyIconed {
 
   clone() {
     if (Array.isArray(this.val)) return new PropertyProjectiles(this.key, Array.from(this.val));
