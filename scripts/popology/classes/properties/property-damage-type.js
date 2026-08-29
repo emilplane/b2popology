@@ -1,6 +1,6 @@
-import { PropertyBasic } from './property-basic.js';
+import { PropertyIconed } from './property-iconed.js';
 
-export class PropertyDamageType extends PropertyBasic {
+export class PropertyDamageType extends PropertyIconed {
 
   static TYPE_PRIORITY = {
     "normal" : 100,

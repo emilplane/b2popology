@@ -25,4 +25,8 @@ export class Property {
     }
   }
 
+  toText() {
+    return `${this.formattedValue()} ${this.formattedKey()}`;
+  }
+
 }

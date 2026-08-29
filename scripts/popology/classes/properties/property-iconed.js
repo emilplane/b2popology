@@ -1,6 +1,6 @@
-import { Property } from './property.js';
+import { PropertyAttributed } from './property-attributed.js';
 
-export class PropertyIconed extends Property {
+export class PropertyIconed extends PropertyAttributed {
 
   static PLACEMENT = ["Land", "Water", "Amphibious"];
 
@@ -47,7 +47,8 @@ export class PropertyIconed extends Property {
   }
 
   formattedKey() {
-    return PropertyIconed.KEY_NAMES[this.key];
+    if (PropertyIconed.KEY_NAMES[this.key] != null) return PropertyIconed.KEY_NAMES[this.key];
+    return super.formattedKey();
   }
 
   formattedValue() {
@@ -64,7 +65,7 @@ export class PropertyIconed extends Property {
       case 'cost':
         return '$' + this.val.toLocaleString();
       default:
-        return this.val;
+        return super.formattedValue();
     }
   }
 

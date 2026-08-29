@@ -3,14 +3,12 @@ import { DoT } from '../dot.js';
 import { ExternalBuff } from '../external-buff.js';
 
 import { PropertyAlternateAttack } from './property-alternate-attack.js';
-import { PropertyAttributed } from './property-attributed.js'
 import { PropertyBasic } from './property-basic.js';
 import { PropertyBattleReady } from './property-battle-ready.js';
 import { PropertyBonusDamage } from './property-bonus-damage.js';
 import { PropertyCamo } from './property-camo.js';
 import { PropertyCantTarget } from './property-cant-target.js';
 import { PropertyCrit } from './property-crit.js';
-import { PropertyDamageType } from './property-damage-type.js';
 import { PropertyDebuff } from './property-debuff.js';
 import { PropertyDoT } from './property-dot.js';
 import { PropertyExternalBuffs } from './property-external-buffs.js';
@@ -26,6 +24,7 @@ import { PropertyProjectiles } from './property-projectiles.js';
 import { PropertySoak } from './property-soak.js';
 import { PropertyStun } from './property-stun.js';
 import { PropertySummonAttack } from './property-summon-attack.js';
+import { PropertyTimeIconed } from './property-time-iconed.js';
 import { PropertyTime } from './property-time.js';
 import { PropertyUnkeyed } from './property-unkeyed.js';
 
@@ -34,9 +33,11 @@ export class PropertiesManager {
   static propertyMap = {
     "bonusDamage": PropertyBonusDamage,
 
-    "range": PropertyAttributed,
-    "blastRadius": PropertyAttributed,
-    "pierce": PropertyAttributed,
+    "damage" : PropertyIconed,
+    "range": PropertyIconed,
+    "blastRadius": PropertyIconed,
+    "pierce": PropertyIconed,
+    "damageType": PropertyIconed,
 
     "camo": PropertyCamo,
     "crit": PropertyCrit,
@@ -53,7 +54,7 @@ export class PropertiesManager {
     "battleReady": PropertyBattleReady,
     "projectiles": PropertyProjectiles,
 
-    "cooldown": PropertyTime,
+    "cooldown": PropertyTimeIconed,
     "abilityCooldown" : PropertyTime,
     "initialCooldown" : PropertyTime,
     "duration": PropertyTime,
@@ -66,7 +67,6 @@ export class PropertiesManager {
     "rehit": PropertyTime,
     "attackFrequency" : PropertyTime,
 
-    "damageType": PropertyDamageType,
     "knockback": PropertyKnockback,
     "cantTarget": PropertyCantTarget,
     "alternateAttack": PropertyAlternateAttack,

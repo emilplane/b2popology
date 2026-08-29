@@ -10,7 +10,6 @@ export class PropertyAttributed extends PropertyBasic {
     }
     const newVal = { "value" : this.val.value , "attribute" : this.val.attribute};
     return new PropertyAttributed(this.key, newVal);
-
   }
 
   formattedValue() {
