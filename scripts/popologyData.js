@@ -106,7 +106,7 @@ const data = {
                                 "content": [
                                     "dart attack buffed",
                                     [
-                                        "78%s (0.6299s)"
+                                        "82%s (0.66215s)"
                                     ]
                                 ]
                             },
@@ -124,7 +124,7 @@ const data = {
                                 "content": [
                                     "dart attack buffed",
                                     [
-                                        "+2d (3d), 75%s (0.4774s)"
+                                        "+2d (3d)"
                                     ],
                                     "gains fan-club ability (50s cooldown, 12s duration, battle ready)",
                                     [
@@ -152,7 +152,7 @@ const data = {
                                     [
                                         "+3d (6d)"
                                     ],
-                                    "fan-club ability replaced by plasma-club (50s cooldown, 15s duration, battle ready)",
+                                    "fan-club ability replaced by plasma-club (50s cooldown, 12s duration, battle ready)",
                                     [
                                         "transforms 20 nearest dart monkeys within 50r (up to 2-5-2) into plasmafans",
                                         [
@@ -397,14 +397,14 @@ const data = {
                                 "content": [
                                     "boomerang replaced by kylie",
                                     [
-                                        "2d, +20p (24p), 49.45r, 1.2s, normal type",
+                                        "2d, +14p (18p), 49.45r, 1.2s, normal type",
                                         "can rehit bloons after 0.3s",
                                         "travels in a straight line then returns"
                                     ],
                                     "crosspath",
                                     [
-                                        "103: +10p (34p)",
-                                        "203: +12p (46p)"
+                                        "103: +8p (26p)",
+                                        "203: +10p (36p)"
                                     ]
                                 ]
                             },
@@ -514,7 +514,7 @@ const data = {
                                 "content": [
                                     "bomb buffed",
                                     [
-                                        "+3r (43r), normal damage"
+                                        "normal damage"
                                     ],
                                     "explosion buffed",
                                     [
@@ -531,7 +531,7 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+27d (30), normal type"
+                                        "+27d (30), normal type, 33.48r"
                                     ],
                                     "stun buffed",
                                     [
@@ -568,7 +568,7 @@ const data = {
                                 "content": [
                                     "bomb buffed",
                                     [
-                                        "+5r (49r)"
+                                        "+4r (48r)"
                                     ],
                                     "explosion buffed",
                                     [
@@ -601,7 +601,7 @@ const data = {
                             "5": {
                                 "name": "050 - MOAB Eliminator",
                                 "content": [
-                                    "explosion buffed: +170md (201md), normal type",
+                                    "explosion buffed: +199md (240md), normal type",
                                     "assassinate replaced by eliminate (10s cooldown, battle ready)",
                                     [
                                         "4500d",
@@ -751,8 +751,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "410: +10p (55p)",
-                                        "420: +5p (60p)",
+                                        "420: +15p (60p)",
                                         "401: +1d (4d)",
                                         "402: +1d (5d)"
                                     ]
@@ -763,7 +762,8 @@ const data = {
                                 "content": [
                                     "ring-of-fire buffed",
                                     [
-                                        "+8d (11d), +11md (22md), +11.5r (34.5r), 0.1s"
+                                        "+8d (11d), +11md (22md), +11.5r (34.5r), 0.14s",
+										"cannot gain attack speed"
                                     ],
                                     "gains meteor attack",
                                     [
@@ -813,7 +813,7 @@ const data = {
                                 "content": [
                                     "tacks replaced by blades",
                                     [
-                                        "1d, +1p (3p), 31r, 88%s (1.232s), sharp type, increased projectile size"
+                                        "1d, +1p (3p), 31r, 85%s (1.19s), sharp type, projectile size increase (2 -> 6)"
                                     ],
                                     "crosspath",
                                     [
@@ -975,7 +975,7 @@ const data = {
                                     ],
                                     "brittle status buffed",
                                     [
-                                        "take +4d"
+                                        "take +4d, 3s duration"
                                     ]
                                 ]
                             }
@@ -1178,6 +1178,10 @@ const data = {
                             "3": {
                                 "name": "300 - Bloon Dissolver",
                                 "content": [
+                                    "glue attack buffed",
+                                    [
+                                        "0.75s"
+                                    ],
                                     "glued status buffed",
                                     [
                                         "1d/0.575s, 2cd/0.575s, 2md/0.575s"
@@ -1189,7 +1193,7 @@ const data = {
                                 "content": [
                                     "glue attack buffed",
                                     [
-                                        "+1p (2p), 72.22%s (0.65s)"
+                                        "+1p (2p), 0.65s"
                                     ],
                                     "glued status buffed",
                                     [
@@ -1202,7 +1206,7 @@ const data = {
                                 "content": [
                                     "glue replaced by glue-bomb",
                                     [
-                                        "2j, 61.54%s (0.4s), applies glued status",
+                                        "2j, 0.4s, applies glued status",
                                         "on contact: splat",
                                         [
                                             "5p, 12r blast, applies glued status"
@@ -1249,7 +1253,7 @@ const data = {
                                 "content": [
                                     "glue-bomb attack buffed",
                                     [
-                                        "34%s (0.306s)"
+                                        "33.3%s (0.3s)"
                                     ]
                                 ]
                             },
@@ -1380,7 +1384,7 @@ const data = {
                             "20r",
                             "bullet attack",
                             [
-                                "2d, 1i, ∞r, 1.45s, sharp type"
+                                "2d, 1i, ∞r, 1.35s, sharp type"
                             ]
                         ],
                         "top": {
@@ -1415,7 +1419,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "+13d (20d), +15cd (35cd)"
+                                        "+23d (30d), +15cd (35cd)"
                                     ],
                                     "crosspath",
                                     [
@@ -1428,7 +1432,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "+10d (30d, 45cd)",
+                                        "+15d (45d, 45cd)",
                                         "applies stun",
                                         [
                                             "2s duration for MOABs, BFBs 1s, DDTs 0.5s, ZOMGs 0.45s"
@@ -1445,7 +1449,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "+250d (280d, 295cd)"
+                                        "280d, 295cd"
                                     ],
                                     "stun duration buffed",
                                     [
@@ -1527,7 +1531,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "40%s (0.58s)",
+                                        "40%s (0.54s)",
                                     ],
                                     "gains elite buff",
                                     [
@@ -1538,7 +1542,7 @@ const data = {
                                     ],
                                     "supply-drop replaced by elite-supplies (50s cooldown, inherit cooldown)",
                                     [
-                                        "drops a crate worth $5000"
+                                        "drops a crate worth $4000"
                                     ]
                                 ]
                             }
@@ -1549,7 +1553,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "70%s (1.015s)"
+                                        "70%s (0.945s)"
                                     ]
                                 ]
                             },
@@ -1558,7 +1562,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "70%s (0.7105s)"
+                                        "70%s (0.6615s)"
                                     ]
                                 ]
                             },
@@ -1567,7 +1571,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "33.33%s (0.2368s)"
+                                        "33.33%s (0.2205s)"
                                     ]
                                 ]
                             },
@@ -1576,7 +1580,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "50%s (0.1184s), +2md (4md), normal type",
+                                        "50%s (0.11025s), +2md (4md), normal type",
                                     ],
                                     "crosspath",
                                     [
@@ -1590,7 +1594,7 @@ const data = {
                                 "content": [
                                     "bullet buffed",
                                     [
-                                        "50%s (0.0592s)",
+                                        "50%s (0.055s)",
                                         "additionally shoots x% faster, where x% is how far along the track the furthest forward bloon is"
                                     ],
                                     "gains retaliation ability (10s cooldown, 7s duration, passive: triggered bloons coming close to the exit)",
@@ -1649,8 +1653,8 @@ const data = {
                                     [
                                         "310: sonar +20%p (90p)",
                                         "320: sonar +25%p (102.5?p)",
-                                        "301: sonar 85%s (1.02s)",
-                                        "302: sonar 75%s (0.765s)"
+                                        "301: sonar 80%s (0.96s)",
+                                        "302: sonar 70%s (0.672s)"
                                     ]
                                 ]
                             },
@@ -1825,7 +1829,7 @@ const data = {
                                 "content": [
                                     "airburst buffed",
                                     [
-                                        "60%s (0.15075s)"
+                                        "33%s (capped to 0.141s)"
                                     ],
                                     "gains command buff",
                                     [
@@ -2069,7 +2073,7 @@ const data = {
                             "3": {
                                 "name": "003 - Merchantman",
                                 "content": [
-                                    "$350 end of round income"
+                                    "$400 end of round income"
                                 ]
                             },
                             "4": {
@@ -2153,10 +2157,6 @@ const data = {
                                         [
                                             "20d, 4p, 12r blast, normal type"
                                         ]
-                                    ],
-                                    "crosspath",
-                                    [
-                                        "310: moab-missile explosion +2p (6p), +4.5r (34.5r)"
                                     ]
                                 ]
                             },
@@ -2245,7 +2245,8 @@ const data = {
                                     ],
                                     "gains ground-zero ability (35s cooldown, battle ready)",
                                     [
-                                        "700d, ∞p, ∞r, normal type"
+                                        "700d, ∞p, ∞r, normal type",
+										"0.2s delay"
                                     ]
                                 ]
                             },
@@ -2327,7 +2328,7 @@ const data = {
                                 "content": [
                                     "barrage buffed",
                                     [
-                                        "75%s (0.03s)"
+                                        "0.03s"
                                     ],
                                     "dart buffed",
                                     [
@@ -2464,7 +2465,7 @@ const data = {
                                     ],
                                     "gains supplies ability (60s cooldown, 20s initial)",
                                     [
-                                        "drops $4000 cash and 15 lives"
+                                        "drops $3500 cash and 15 lives"
                                     ]
                                 ]
                             },
@@ -2593,7 +2594,7 @@ const data = {
                             "30r",
                             "shell attack",
                             [
-                                "2.0s passive",
+                                "1.8s passive",
                                 "targets randomly within 8 units of selected points",
                                 "on expire (0.5s): explosion",
                                 [
@@ -2607,7 +2608,7 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+10p (45p), +12r (30r)"
+                                        "+10p (45p), +40%r, + 4 (29.2r)"
                                     ]
                                 ]
                             },
@@ -2625,19 +2626,19 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+6r (36r)"
+                                        "+10r (39.2r)"
                                     ],
                                     "shell buffed",
                                     [
                                         "on expire: stun-explosion",
                                         [
-                                            "45p, 19r blast",
+                                            "45p, 19.6r blast",
                                             "cannot affect black, zebra, or blimps",
                                             "applies stun status: 0.4s duration"
                                         ],
                                         "on expire: shockwave",
                                         [
-                                            "1d, 45p, 57r blast, explosion type",
+                                            "1d, 45p, 58.8r blast, explosion type",
                                             "additionally ignores anything within half of the blast radius",
                                             "note: blimps are large enough that they won't fully fit in this inner radius and so get hit"
                                         ]
@@ -2653,15 +2654,15 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+5d (7d), +55p (100p), +20r (56r), normal type"
+                                        "+5d (7d), +55p (100p), +100%r (78.4r), normal type"
                                     ],
                                     "stun-explosion buffed",
                                     [
-                                        "+55p (100p), +10r (29r)"
+                                        "+55p (100p), +100%r (39.2r)"
                                     ],
                                     "shockwave buffed",
                                     [
-                                        "+55p (100p), +30r (87r), normal type"
+                                        "+55p (100p), +100%r (117.6r), normal type"
                                     ],
                                     "crosspath",
                                     [
@@ -2674,15 +2675,15 @@ const data = {
                                 "content": [
                                     "explosion buffed",
                                     [
-                                        "+43d (50d), +115p (195p), +16r (72r), normal type"
+                                        "+43d (50d), +115p (195p), +80%r (141.12r), normal type"
                                     ],
                                     "stun-explosion buffed",
                                     [
-                                        "+115p (200p), +8r (37r), additionally stuns blimps for 0.35s"
+                                        "+115p (200p), +80%r (70.56r), additionally stuns blimps for 0.35s"
                                     ],
                                     "shockwave buffed",
                                     [
-                                        "+115p (200p), +20cd (21cd), +24r (111r), normal type"
+                                        "+115p (200p), +20cd (21cd), +80%r (211.68r), normal type"
                                     ],
                                     "crosspath",
                                     [
@@ -2697,7 +2698,7 @@ const data = {
                                 "content": [
                                     "shell buffed",
                                     [
-                                        "75%s (1.5s)"
+                                        "75%s (1.35s)"
                                     ]
                                 ]
                             },
@@ -2706,7 +2707,7 @@ const data = {
                                 "content": [
                                     "shell buffed",
                                     [
-                                        "72%s (1.08s)"
+                                        "72%s (0.972)"
                                     ]
                                 ]
                             },
@@ -2883,7 +2884,7 @@ const data = {
                                         "+1 shocked1 damage (2 shocked1 damage)",
                                         "applies shocked1 status",
                                         [
-                                            "1d/0.95s, 1s duration"
+                                            "1d/1s, 1.1s duration"
                                         ]
                                     ]
                                 ]
@@ -2897,7 +2898,7 @@ const data = {
                                         "random targeting spread set to 0°",
                                         "applies shocked2 status",
                                         [
-                                            "1d/0.95s, 2s duration"
+                                            "1d/1s, 2.1s duration"
                                         ]
                                     ]
                                 ]
@@ -2911,7 +2912,7 @@ const data = {
                                         "one solid beam from the tower to the target (or an obstacle on the way)",
                                         "applies shocked3 status",
                                         [
-                                            "1d/0.95s, 5s duration"
+                                            "1d/1s, 5.1s duration"
                                         ],
                                         "any pierce not used on bloons is used to create a focus at the target",
                                         [
@@ -2935,7 +2936,7 @@ const data = {
                                         "one solid beam to the edge of the screen",
                                         "applies shocked4 status",
                                         [
-                                            "20d/0.95s, 5s duration"
+                                            "20d/1s, 5.1s duration"
                                         ]
                                     ],
                                     "crosspath",
@@ -2957,7 +2958,7 @@ const data = {
                                 "content": [
                                     "dart buffed",
                                     [
-                                        "58.4d%s (0.11666s)",
+                                        "58.4%s (0.11666s)",
                                         "WARNING: attack speed buff for later paths is very likely inaccurate"
                                     ]
                                 ]
@@ -3011,7 +3012,7 @@ const data = {
                                     ],
                                     "rocket-storm explosion buffed",
                                     [
-                                        "+4cd (9cd), +55md (60md), +9p? (18p?), +4r (12r)"
+                                        "+4cd (9cd), +55md (60md), +10p (17p), +4r (12r)"
                                     ]
                                 ]
                             }
@@ -3289,12 +3290,12 @@ const data = {
                                         [
                                             "flame attack",
                                             [
-                                                "55d, 50p, ∞r, 0.1s, normal type, camo",
+                                                "55d, 15fd, 50p, ∞r, 0.1s, normal type, camo",
                                                 "can see past walls"
                                             ],
                                             "meteor attack",
                                             [
-                                                "50d, 8j, 255p, ∞r, 1.0s passive, normal type, camo",
+                                                "50d, 15fd, 8j, 255p, ∞r, 1.0s passive, normal type, camo",
                                                 "can see past walls"
                                             ],
                                             "note: technically a separate tower so is not affected by buffs to the original wizard"
@@ -3346,7 +3347,7 @@ const data = {
                                     ],
                                     "gains reanimate attack",
                                     [
-                                        "60r, 1.5s",
+                                        "60r, 1s",
                                         "spawns 1-5 zombloons, each using 18 pops from the graveyard",
                                         [
                                             "2d, x p, normal type, 10s lifetime",
@@ -3381,14 +3382,14 @@ const data = {
                                     "gains reanimate-blimp attack",
                                     [
                                         "60r, 2s",
-                                        "if graveyard is 70% full (2000 pops), use 100 to spawn a zbfb",
+                                        "if graveyard is 70% full (2000 pops), use 100 to spawn an unpopped bfb",
                                         [
-                                            "130d, 50p, normal type, 12.5s lifetime",
+                                            "130d, 100p, normal type, 12.5s lifetime",
                                             "travels backwards along the track at 60% red speed"
                                         ],
-                                        "otherwise, 55 to spawn a zmoab",
+                                        "otherwise, 55 to spawn an unpopped moab",
                                         [
-                                            "25d, 20p, normal type, 20s lifetime",
+                                            "25d, 40p, normal type, 20s lifetime",
                                             "travels backwards along the track at 60% red speed",
                                             "+1d for every 300 graveyard bloons, stacking additively up to 10 times"
                                         ]
@@ -3408,7 +3409,7 @@ const data = {
                             "placeable on: land",
                             "dart attack",
                             [
-                                "1d, 1p, 50r, 0.045, sharp type"
+                                "1d, 1p, 50r, 0.045s, sharp type"
                             ]
                         ],
                         "top": {
@@ -3979,7 +3980,7 @@ const data = {
                                 "content": [
                                     "shuriken attack buffed",
                                     [
-                                        "?%s (0.55s)"
+                                        "0.55s"
                                     ],
                                     "flash-bomb buffed",
                                     [
@@ -6473,7 +6474,7 @@ const data = {
                             "gains explosive-expert buff",
                             [
                                 "affects all bomb and mortar towers and self",
-                                "90%s (1.08s)"
+                                "85%s (1.02s)"
                             ]
                         ],
                         "5": [
@@ -6578,7 +6579,7 @@ const data = {
                         "18": [
                             "explosive-expert buffed",
                             [
-                                "75%s"
+                                "72%s"
                             ]
                         ],
                         "19": [
@@ -6755,13 +6756,13 @@ const data = {
                         "18": [
                             "flying-expert buffed",
                             [
-                                "90%s -> 85%s"
+                                "90%s -> 81%s"
                             ]
                         ],
                         "19": [
                             "bomb buffed",
                             [
-                                "0.2s"
+                                "0.247s"
                             ],
                             "gains vehicle buff",
                             [
@@ -8808,9 +8809,15 @@ const data = {
                         "10": [
                             "ball-of-light ability (60s cooldown, 12s duration)",
                             [
-                                "gains beam attack",
+                                "gains terminus attack",
                                 [
                                     "4d, +4fd (8fd), 1p, ∞r, 0.05s, plasma type",
+                                    "can see past obstacles"
+                                ],
+                                "gains beam attack",
+                                [
+                                    "3d, +3fd (8fd), 8p, ∞r, 0.05s, plasma type",
+									"one solid beam from the ball to it's target",
                                     "can see past obstacles"
                                 ]
                             ]
@@ -8852,9 +8859,13 @@ const data = {
                             [
                                 "+1d (2d)"
                             ],
-                            "beam attack buffed",
+                            "terminus attack buffed",
                             [
                                 "+3d (7d), +3fd (14fd)"
+                            ],
+                            "beam buffed",
+                            [
+                                "+2d (5d), +2fd (10fd)"
                             ]
                         ],
                         "16": [
@@ -8895,9 +8906,13 @@ const data = {
                                 "+(10+0.8x)%r, (90-0.8x)%s",
                                 "where x = dollars sacrificed / 100, and may not exceed 50",
                             ],
-                            "beam buffed",
+                            "terminus buffed",
                             [
                                 "+23d (30d), +23fd (60fd), normal type"
+                            ],
+                            "beam buffed",
+                            [
+                                "+15d (20d), +15fd (20fd), normal type"
                             ],
                             "if a 5xx Super Monkey is purchased with Adora in range, Adora merges with that Super Monkey to form the True Sun Goddess",
                             [
@@ -11157,7 +11172,7 @@ const data = {
             },
             "boomerangMonkey": {
                 "base": 325,
-                "top": [200, 280, 1300, 3400, 30000],
+                "top": [200, 200, 1400, 3400, 30000],
                 "middle": [175, 250, 1100, 4500, 33000],
                 "bottom": [100, 300, 1100, 3400, 52000]
             },
@@ -11203,13 +11218,13 @@ const data = {
                 "base": 500,
                 "top": [350, 550, 2200, 6400, 25000],
                 "middle": [550, 500, 900, 5250, 21000],
-                "bottom": [300, 400, 1500, 5700, 19000]
+                "bottom": [300, 400, 2000, 5700, 19000]
             },
             "monkeyAce": {
                 "base": 750,
                 "top": [550, 600, 1000, 3000, 40000],
                 "middle": [200, 350, 1100, 15000, 30000],
-                "bottom": [450, 300, 2200, 20000, 75000]
+                "bottom": [450, 300, 1900, 20000, 75000]
             },
             "heliPilot": {
                 "base": 800,

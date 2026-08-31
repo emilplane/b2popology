@@ -16,12 +16,12 @@ You can also speed up changes by submitting your own pull requests.
 
 2. Create a new branch in your fork and name it in accordance to the change you want to make.
 
-3. (OPTIONAL) if you want to edit files locally and preview changes clone the repository locally.
-if using git commmand line `git clone LINK_TO_YOUR_REPO`, then switch to the appopriate branch `git switch BRANCH_NAME`.
+3. (OPTIONAL) if you want to edit files locally and preview changes, then clone the repository:
+if using git in the command line run `git clone LINK_TO_YOUR_REPO`, and switch to the appopriate branch `git switch BRANCH_NAME`.
 
 4. Make the changes you want. (Tower stats are located at `scripts/popologyData.js`).
 
-5. Add and commit these changes `git commit -am "Type here a summary of what the changes"`, if you use the online Github text editor this is done automatically.
+5. Add and commit these changes `git commit -am "Write a short summary of the changes here"`. if you use the online Github text editor this is done automatically.
 
 6. Submit a pull request from the original repository to your fork at the correct branch.
 
