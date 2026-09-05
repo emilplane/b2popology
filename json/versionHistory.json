@@ -1304,6 +1304,44 @@
             "Added Battles 2 4.10 changes",
             "Sniper Monkey's x2x shrapnel attack cannot receive pierce or damage buffs (pierce changed to impact)"
           ]
+        },
+        "16": {
+          "date": "2026/8/30",
+          "content": [
+            "Added Battles 2 4.11 through 4.13 OTA 1 changes",
+            "Corrected x2x Dart Monkey's Attack Cooldown Multiplier (PJDJ)",
+            "Removed x4x Dart Monkey's Attack Cooldown Multiplier [as it isn't in the game] (PJDJ)",
+            "Corrected x5x Dart Monkey's Duration (PJDJ)",
+            "Corrected radius stats of 4xx and 5xx Bomb Shooter (PJDJ)",
+            "Corrected x3x Bomb Shooter's Range Modifier (PJDJ)",
+            "Corrected x5x Bomb Shooter's MOAB Damage (PJDJ)",
+            "Corrected 4xx Tack Shooter's Crosspath Benefits (PJDJ)",
+            "Corrected 5xx Tack Shooter's RoF Attack Speed (PJDJ)",
+            "Corrected x3x Tack Shooter's Attack Cooldown Multiplier and specified it's projectile size (PJDJ)",
+            "Added the super brittle duration status buff (PJDJ)",
+            "Corrected 3xx Glue Gunner's Attack Cooldown (PJDJ)",
+            "Corrected x3x Glue Gunner's Attack Cooldown Multiplier (PJDJ)",
+            "Corrected xx5 Submarine's Attack Cooldown Multiplier (PJDJ)",
+            "Corrected 3xx Submarine's Crosspath Benefits (PJDJ)",
+            "Removed 3xx Ace Pilot's Crosspath Benefits [as they are not in the game] (PJDJ)",
+            "Added the delay of Ground Zero's damage (PJDJ)",
+            "Corrected base Mortar's Attack Cooldown (PJDJ)",
+            "Corrected 3xx through 5xx Mortar's Blast Radius (PJDJ)",
+            "Corrected 2xx Dartling Gunner's status duration and interval (PJDJ)",
+            "Corrected typo in x2x Dartling Gunner's Attack Cooldown Multiplier (PJDJ)",
+            "Specified unknown pierce values in x4x Dartling Gunner's Rocket Storm Explosion (PJDJ)",
+            "Added x5x Wizard Lord Phoenix's Fortified Damage modifier",
+            "Corrected xx4 Wizard Monkey's Reanimate Attack Cooldown (PJDJ)",
+            "Corrected xx5 Wizard Monkey's Unpopped MOAB and Unpopped BFB Pierce stats (PJDJ)",
+            "Corrected typo in Super Monkey's Attack Cooldown (PJDJ)",
+            "Replaced xx5 Ninja Monkey's Attack Cooldown Multiplier [the game sets this value, and does not multiply it] (PJDJ)",
+            "Corrected Striker Jones' Level 4 and Level 18 Explosive Expert Buffs (PJDJ)",
+            "Corrected Biker Bones' Level 18 Flying Expert Buffs (PJDJ)",
+            "Corrected Biker Bones' Level 19 Attack Cooldown (PJDJ)",
+            "Corrected Adora Level 10's Ball of Light Subattacks [split it into the terminus and beam attack] (PJDJ)",
+            "Corrected Obyn's Ward Totem MOAB Stall (PJDJ)",
+            "Added Beetienne's Level 3 bugged interactions with level 5 (PJDJ)"
+          ]
         }
       }
     }
