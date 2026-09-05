@@ -2465,7 +2465,7 @@ const data = {
                                     ],
                                     "gains supplies ability (60s cooldown, 20s initial)",
                                     [
-                                        "drops $3500 cash and 15 lives"
+                                        "drops $3500 cash"
                                     ]
                                 ]
                             },
@@ -6118,7 +6118,7 @@ const data = {
                                 "places on closest part of the track",
                                 "places a ward-totem on the track",
                                 [
-                                    "28r, 35% slow / 12.5% for blimps, 15s lifetime",
+                                    "28r, 35% slow / 16.5% for blimps, 15s lifetime",
                                     "note: camos can be slowed, but the totem does not allow camos in range to be targeted by subs"
                                 ]
                             ]
@@ -6144,7 +6144,7 @@ const data = {
                         "8": [
                             "ward-totem buffed",
                             [
-                                "50% slow / 17.5% for blimps"
+                                "50% slow / 23.1% for blimps"
                             ]
                         ],
                         "9": [
@@ -6208,7 +6208,7 @@ const data = {
                             ],
                             "ward-totem buffed",
                             [
-                                "34r, 50% slow / 25% for blimps"
+                                "34r, 50% slow / 33% for blimps"
                             ]
                         ],
                         "16": [
@@ -9299,7 +9299,7 @@ const data = {
                         "3": [
                             "defend-the-hive ability (45s cooldown, 10s duration, 9s initial cooldown)",
                             [
-                                "75%s (0.3375s)",
+                                "67%s (0.315s)",
                                 "spawns 2 copies of bee called defend-bee",
                             ]
                         ],
@@ -9313,7 +9313,7 @@ const data = {
                             "uses shared range",
                             [
                                 "can see anything in another tower's primary range, even if there is no direct line of sight",
-                                "can see camo targets in the range of a tower with camo, but cannot pop them natively"
+                                "can see camo targets in the range of a tower with camo, but cannot pop them natively (BUG: defend-bee [summoned by Level 3] can pop these camos)"
                             ]
                         ],
                         "6": [
@@ -11218,18 +11218,18 @@ const data = {
                 "base": 500,
                 "top": [350, 550, 2200, 6400, 25000],
                 "middle": [550, 500, 900, 5250, 21000],
-                "bottom": [300, 400, 2000, 5700, 19000]
+                "bottom": [300, 400, 2000, 5300, 24000]
             },
             "monkeyAce": {
                 "base": 750,
                 "top": [550, 600, 1000, 3000, 40000],
                 "middle": [200, 350, 1100, 15000, 30000],
-                "bottom": [450, 300, 1900, 20000, 75000]
+                "bottom": [450, 300, 1900, 24000, 75000]
             },
             "heliPilot": {
                 "base": 800,
                 "top": [600, 250, 1800, 17500, 45000],
-                "middle": [200, 350, 3200, 8500, 30000],
+                "middle": [200, 350, 3200, 7500, 30000],
                 "bottom": [350, 250, 4000, 7500, 34700]
             },
             "mortarMonkey": {
@@ -11298,7 +11298,7 @@ const data = {
             },
             "engineerMonkey": {
                 "base": 400,
-                "top": [400, 350, 500, 2800, 32000],
+                "top": [400, 350, 500, 3250, 32000],
                 "middle": [250, 350, 800, 13500, 100000],
                 "bottom": [450, 200, 350, 3600, 54000]
             }
