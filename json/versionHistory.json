@@ -1342,6 +1342,19 @@
             "Corrected Obyn's Ward Totem MOAB Stall (PJDJ)",
             "Added Beetienne's Level 3 bugged interactions with level 5 (PJDJ)"
           ]
+        },
+        "17": {
+          "date": "2026/9/7",
+          "content": [
+            "Corrected Flash Bomb Pierce (Jake6542)",
+            "Corrected Cyberstorm duration (PJDJ)",
+            "Added Fateweaver Level 3 buffs at level 11 and level 17 (Juno)",
+            "Added super monkey attack speed cap (PJDJ)",
+			"Added Multiattack delays of HRP and Churchill (PJDJ)",
+			"Corrected crosspath benefits of Bloon Trap (PJDJ)",
+			"Corrected sun temple blade attack projectile count (Cubic)",
+			"Specified unknown slowdown of 013 MOAB Shove (PJDJ)"
+          ]
         }
       }
     }

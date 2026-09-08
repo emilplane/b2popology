@@ -2524,7 +2524,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "013: shove buffed (MOABs to -56?%, BFBs to -23?%, ZOMGs to ?%, DDTs to 22%)"
+                                        "013: shove buffed (MOABs to -55%, BFBs to -23%, ZOMGs to -10%, DDTs to 22%)"
                                     ]
                                 ]
                             },
@@ -2971,7 +2971,8 @@ const data = {
                                         "3i, 0.132s",
                                         "on contact: explosion",
                                         [
-                                            "1d, 6p, 8r blast, normal type"
+                                            "1d, 6p, 8r blast, normal type",
+                                            "minimum 0.0375s delay between each explosion"
                                         ]
                                     ],
                                     "crosspath:",
@@ -3409,7 +3410,8 @@ const data = {
                             "placeable on: land",
                             "dart attack",
                             [
-                                "1d, 1p, 50r, 0.045s, sharp type"
+                                "1d, 1p, 50r, 0.045s, sharp type",
+                                "attack speed cap of 0.044s"
                             ]
                         ],
                         "top": {
@@ -3427,7 +3429,8 @@ const data = {
                                 "content": [
                                     "laser replaced by plasma",
                                     [
-                                        "66.67%s (0.03s), +1p (3p), plasma type"
+                                        "66.67%s (0.03s), +1p (3p), plasma type",
+										"attack speed cap decreased to 0.015s"
                                     ]
                                 ]
                             },
@@ -3460,7 +3463,7 @@ const data = {
                                             ],
                                             "gains primary-blades attack",
                                             [
-                                                "20d, 8j, 20p, 65r, 1.5s, normal type"
+                                                "20d, 7j, 20p, 65r, 1.5s, normal type"
                                             ]
                                         ],
                                         "on a sacrifice value threshold of $20,000 or greater of military towers:",
@@ -3672,7 +3675,8 @@ const data = {
                                 "content": [
                                     "dart replaced by plasma",
                                     [
-                                        "1d, +6p (13p), 72r, 80%s (0.036s), plasma type"
+                                        "1d, +6p (13p), 72r, 80%s (0.036s), plasma type",
+                                        "attack speed cap increases the cooldown to 0.044s without plasma xpath"
                                     ],
                                     "gains annihilate ability (45s cooldown, battle ready)",
                                     [
@@ -3936,7 +3940,7 @@ const data = {
                                 "content": [
                                     "every 3rd shuriken replaced by flash-bomb",
                                     [
-                                        "1d, 75p, 40r blast, normal type",
+                                        "1d, 40p, 40r blast, normal type",
                                         "applies stun (1s duration) to bloons"
                                     ],
                                     "crosspath",
@@ -5376,9 +5380,9 @@ const data = {
                                             "pops any visible non-MOAB-class bloon up to its impact limit",
                                             "once full, can be collected manually (100r) or automatically (5s)",
                                             [
-                                                "when collected, gives $1.5 times the amount of natural RBE collected",
+                                                "when collected, gives $1 for every RBE collected from a natural bloon",
                                                 [
-                                                    "does not give money for bloons captured over the impact limit (max $750)"
+                                                    "does not give money for bloons captured over the impact limit (max $500)"
                                                 ]
                                             ],
                                             "attack rate and deploy time can't be buffed"
@@ -5386,7 +5390,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "204: trap build time 60%s (5.4s)",
+                                        "204: trap build time 80%s (7.2s)",
                                         "014: allows the build-trap attack to be targeted manually anywhere in range, and retargeting the trap collects the current one"
                                     ]
                                 ]
@@ -5631,7 +5635,7 @@ const data = {
                             ]
                         ],
                         "10": [
-                            "gains cyber-storm ability (60s cooldown, 1s duration, battle ready)",
+                            "gains cyber-storm ability (60s cooldown, 1.1s duration, battle ready)",
                             [
                                 "20d, 20md (40md), ∞p, 50r zone, 0.1s, plasma type",
                                 "centered according to Quincy's targeting when activated"
@@ -6796,7 +6800,8 @@ const data = {
                                 "3i, 63r, 0.7s",
                                 "on contact: explosion",
                                 [
-                                    "1d, 15p, 18r blast, explosion type"
+                                    "1d, 15p, 18r blast, explosion type",
+									"minimum of 0.05s between each explosion"
                                 ]
                             ]
                         ],
@@ -9014,6 +9019,10 @@ const data = {
                             "bad-luck buffed",
                             [
                                 "+10% ability cooldown time"
+                            ],
+                            "sharp-sting-of-fate buffed",
+                            [
+                                "+25% damage"
                             ]
                         ],
                         "12": [
@@ -9054,6 +9063,10 @@ const data = {
                             "fate-bolt buffed",
                             [
                                 "0.6s"
+                            ],
+                            "sharp-sting-of-fate buffed",
+                            [
+                                "+20% damage"
                             ]
                         ],
                         "18": [
