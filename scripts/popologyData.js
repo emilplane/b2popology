@@ -1486,7 +1486,7 @@ const data = {
                                     [
                                         "on first hit: shrapnel",
                                         [
-                                            "1d, +2cad (3cad), 5j 45° spread, 2i, sharp type",
+                                            "1d, +1cad (2cad), 5j 45° spread, 2i, sharp type",
                                             "damage cannot be buffed",
                                             "spread centered around direction fired"
                                         ]
@@ -2079,7 +2079,7 @@ const data = {
                             "4": {
                                 "name": "004 - Favored Trades",
                                 "content": [
-                                    "+$900 end of round income ($1,200)",
+                                    "+$800 end of round income ($1,200)",
                                     "dart buffed",
                                     [
                                         "50%s (0.5s)"
@@ -2289,7 +2289,7 @@ const data = {
                                 "content": [
                                     "radial-dart buffed",
                                     [
-                                        "+2p (11p), moderate homing (360 turn rate), increased projectile speed"
+                                        "moderate homing (360 turn rate), increased projectile speed"
                                     ]
                                 ]
                             },
@@ -2463,7 +2463,7 @@ const data = {
                                     [
                                         "move a tower, except for: aces, helis, farms, villages, aircraft carriers (4xx or 5xx buccaneers), and temples (4xx or 5xx supers)"
                                     ],
-                                    "gains supplies ability (60s cooldown, 20s initial)",
+                                    "gains supplies ability (40s cooldown, 20s initial)",
                                     [
                                         "drops $3500 cash"
                                     ]
@@ -2540,7 +2540,7 @@ const data = {
                                         "summons up to 1 mini-comanche when a bloon crosses 25% of the track, 2 mini-comanches when a bloon crosses 50%, and 3 at 75%",
                                         "mini-comanche subtower",
                                         [
-                                            "15s lifetime",
+                                            "20s lifetime",
                                             "dart attack",
                                             [
                                                 "1d, 3j, 4p, 42r, 0.13s, sharp type"
@@ -4847,8 +4847,8 @@ const data = {
                                     ],
                                     "gains marketplace buff",
                                     [
-                                        "+10% end of round income to all xx3+ buccaneers",
-                                        "stacks additively up to 10 times (+100%)"
+                                        "+5% end of round income to all xx3+ buccaneers",
+                                        "stacks additively up to 10 times (+50%)"
                                     ]
                                 ]
                             },
@@ -5247,7 +5247,7 @@ const data = {
                                     ],
                                     "crosspath",
                                     [
-                                        "501: champion-sentry plasma +1p (6p)",
+                                        "501: champion-sentry plasma +25%p (6p)",
                                         "502: champion-sentry plasma applies pinned status"
                                     ]
                                 ]
@@ -6273,7 +6273,7 @@ const data = {
                             "gains wrath-of-the-sea buff",
                             [
                                 "affects water towers in range",
-                                "+1p"
+                                "+25%p"
                             ]
                         ],
                         "3": [
@@ -6358,8 +6358,8 @@ const data = {
                             "gains ocean-clarity buff",
                             [
                                 "affects water towers in range",
-                                "+2p, +5r",
-                                "stacks with the existing +1p from wrath-of-the-sea for a total of +3p"
+                                "+25%p, +5r",
+                                "stacks with the existing +25%p from wrath-of-the-sea for a total of +50%p"
                             ]
                         ],
                         "12": [
